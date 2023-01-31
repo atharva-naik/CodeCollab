@@ -1,0 +1,12 @@
+'avg. #code': 6.08,
+'avg. #markdown': 5.1,
+'max func': 23,
+'max vars': 61,
+'mean func': 1.9404051565377542,
+'mean vars': 2.819944751381215,
+'cell using ctxt': 1943,
+'percent cells using ctxt': 58.81,
+'#parsing errors': 81,
+'percent parsing errors': 2.45,
+'incomplete nbs': 0.6556169429097606,
+'percent incomplete nbs': 65.56

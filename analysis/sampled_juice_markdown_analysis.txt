@@ -1,0 +1,17 @@
+Analysis of titles
+
+6 levels:
+#    339
+##   502
+###  539
+#### 156
+##### 24
+###### 8
+
+degree of interleaving
+'avg. code seq len': 1.41,
+'avg. markdown seq len': 1.308,
+'avg. no. of transitions': 7.225,
+'max code seq len': 11,
+'max markdown seq len': 11,
+'max no. of transitions': 12
