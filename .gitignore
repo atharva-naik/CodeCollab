@@ -131,3 +131,5 @@ data/ExeDS/.*json
 data/juice-dataset/*.jsonl
 data/juice-dataset/*.json
 data/juice-dataset/sampled_juice_nbs/
+*.pt
+*.ckpt

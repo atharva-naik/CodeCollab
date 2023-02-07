@@ -1,0 +1,12 @@
+## True counts:
+code: 2720
+markdown 2545
+
+## Pred counts:
+code: 2896
+markdown: 2369
+
+## Confusion matrix:
+            P code  P markdown
+    T code:   2386         334 (2720)
+T markdown:    510        2035 (2545)

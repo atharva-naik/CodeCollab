@@ -9,16 +9,65 @@ from tqdm import tqdm
 import nbformat as nbf
 from collections import defaultdict
 
-def read_jsonl(path: str, use_tqdm: bool=True) -> List[dict]:
+def read_jsonl(path: str, use_tqdm: bool=True, 
+               cutoff: Union[int, None]=None) -> List[dict]:
     data, i = [], 0
     with open(path, "r") as f:
         for line in tqdm(f, disable=not(use_tqdm)):
             i += 1
             rec = json.loads(line.strip())
             data.append(rec)
-            # if i == 10000: break
+            if cutoff is not None and i == cutoff: break
+            
     return data
 
+def read_cell_seq(path: str, use_tqdm: bool=True): # block_size: int=1000, num_lines: int=1518104):
+    cell_seqs = []
+    cell_type_map = {
+        "start": 0, "raw": 1, "code": 2,
+        "markdown": 3, "heading": 4, "end": 5,
+    }
+    with open(path, "r") as f: 
+        line_ctr = 0
+        for line in tqdm(f, disable=not(use_tqdm)):
+            line = line.strip()
+            rec = json.loads(line)
+            inst = [cell_type_map["start"]]
+            for cell in rec["context"][::-1]:
+                inst.append(cell_type_map[cell["cell_type"]])
+            inst.append(cell_type_map["code"])
+            inst.append(cell_type_map["end"])
+            cell_seqs.append(inst)
+            line_ctr += 1 
+    # if line_ctr == 80000: break
+    return cell_seqs
+
+def read_cell_content_and_type_seq(path: str, use_tqdm: bool=True): 
+    # block_size: int=1000, num_lines: int=1518104):
+    content_and_type_seq = []
+    cell_type_map = {
+        "start": 0, "raw": 1, "code": 2,
+        "markdown": 3, "heading": 4, "end": 5,
+    }
+    with open(path, "r") as f: 
+        line_ctr = 0
+        for line in tqdm(f, disable=not(use_tqdm)):
+            line = line.strip()
+            rec = json.loads(line)
+            inst = [cell_type_map["start"]]
+            for cell in rec["context"][::-1]:
+                inst.append(cell_type_map[cell["cell_type"]])
+            inst.append(cell_type_map["code"])
+            inst.append(cell_type_map["end"])
+            cell_seqs.append(inst)
+            line_ctr += 1 
+    # if line_ctr == 80000: break
+    return cell_seqs
+    # num_blocks = (num_lines-1) // block_size + 1
+    # all_idx = list(range(num_lines))
+    # for i in range(num_blocks):
+    #     idx = all_idx[i:i+1]
+    #     for rec in linecache.getlines(path, idx):
 def sample_from_trainset(path, idx: List[int]):
     """given a list of line numbers and a file, load the instances on those line numbers
     and return the resultant sampled set of the data"""

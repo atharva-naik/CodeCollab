@@ -1,0 +1,10 @@
+{
+    "train_path": "./data/juice-dataset/train.jsonl",
+    "val_path": "./data/juice-dataset/dev.jsonl",
+    "exp": "experiments/cell_seq_clf_incoder_lr1e5_ctx5_as8_2lh",
+    "lr": 1e-05,
+    "log_steps": 2000,
+    "batch_size": 8,
+    "num_epochs": 5,
+    "accum_steps": 8
+}

@@ -1,0 +1,602 @@
+{
+    "0": [
+        "markdown",
+        "## Check the sample data\nLet's see what this data looks like. I'll print the first three of each (you can ignore the [None] output):"
+    ],
+    "1": [
+        "code",
+        "import networkx as nx\nimport matplotlib.pyplot as plt\nimport math, powerlaw, csv, random, warnings\nimport numpy as np\nimport pandas as pd\nfrom sklearn.manifold import TSNE\nfrom sklearn.decomposition import PCA\nfrom itertools import count\nwarnings.filterwarnings(\"ignore\")"
+    ],
+    "2": [
+        "code",
+        "# I'll start with 100 estimators\nfrom sklearn.ensemble import AdaBoostClassifier\n\nif runFull:\n    mdl = AdaBoostClassifier(n_estimators=100)\n    mdl.fit(train_X, train_y)\n    train_acc = mdl.score(train_X, train_y)\n    test_acc = mdl.score(test_X, test_y)\n\n    print(train_acc, test_acc)"
+    ],
+    "3": [
+        "code",
+        "# your turn: scatter plot between *RM* and *PRICE*\n\nplt.scatter(bos.RM, bos.PRICE)\nplt.xlabel(\"Average number of rooms per dwelling\")\nplt.ylabel(\"Housing Price\")\nplt.title(\"Relationship between RM and Price\")"
+    ],
+    "4": [
+        "markdown",
+        "Breaking our survivors down by gender we see that 104 more females made it out than males. This is starting to support my Titanic movie theory of \"Women and children first\" but we need to do some further analysis and we also need to keep in mind that this entire data set is only a sample as there were 2229 total passengers on board."
+    ],
+    "5": [
+        "markdown",
+        "Below we assign some global variables that will be used across the rest of the notebook.    \n**Please change these variables accordingly if you intend to use this for other studies. **"
+    ],
+    "6": [
+        "markdown",
+        "### `add_axes()`\n\nSee https://matplotlib.org/users/artists.html\n\nTotal flexibility in placing the Axes: we specify `[left, bottom, width, height]` in 0-1 relative figure coordinates."
+    ],
+    "7": [
+        "code",
+        "untrue_list = [\"Python\", \"is\", \"no\", \"fun\"]\n\ntrue_generator = (x for x in untrue_list if x is not \"no\")\n\nfor x in true_generator:\n    print(x)"
+    ],
+    "8": [
+        "code",
+        "data.groupby(\"title_year\").size().sort_values(ascending=False).head()"
+    ],
+    "9": [
+        "code",
+        "faulty = collections.defaultdict(list)\nfor (tag, stretches) in spans.items():\n    for span in stretches:\n        if len(span) != 2:\n            faulty[tag].append(span)\n    print('{:<9}: {:>5} spans, {:>3} faulty'.format(tag, len(stretches), len(faulty[tag])))"
+    ],
+    "10": [
+        "code",
+        "print(MarginalMomentsFromMAP (D0, D1, 3))\nprint(MomentsFromPH(alpha, A, 3))"
+    ],
+    "11": [
+        "code",
+        "coordinate = ['x', 'y', 'z']\nvalue = [3, 4, 5, 0, 9]\n\nresult = zip(coordinate, value)\nresultList = list(result)\nprint(resultList)\n\nc, v =  zip(*resultList)\nprint('c =', c)\nprint('v =', v)"
+    ],
+    "12": [
+        "code",
+        "print('Min-value after min-max scaling:\\nAlcohol = {:.2f}, Malic acid = {:.2f}'\n      .format(df_minmax[:,0].min(), df_minmax[:,1].min()))\nprint('\\nMax-value after min-max scaling:\\nAlcohol = {:.2f}, Malic acid = {:.2f}'\n      .format(df_minmax[:,0].max(), df_minmax[:,1].max()))"
+    ],
+    "13": [
+        "markdown",
+        "To see how the percentiles relate to the ECDF, you will plot the percentiles of Iris versicolor petal lengths you calculated in the last exercise on the ECDF plot you generated in chapter 1. The percentile variables from the previous exercise are available in the workspace as ptiles_vers and percentiles.\n\nNote that to ensure the Y-axis of the ECDF plot remains between 0 and 1, you will need to rescale the percentiles array accordingly - in this case, dividing it by 100.\nInstructions\n\n    Plot the percentiles as red diamonds on the ECDF. \n    Pass the x and y co-ordinates - ptiles_vers and percentiles/100 - as positional arguments and specify the marker='D', color='red' and linestyle='none' keyword arguments. \n    The argument for the y-axis - percentiles/100 has been specified for you.\n    Display the plot.\n"
+    ],
+    "14": [
+        "code",
+        "def myloss(circuit_output, targets):\n    return tf.losses.mean_squared_error(labels=circuit_output, predictions=targets)"
+    ],
+    "15": [
+        "markdown",
+        "Plot Age density by Education"
+    ],
+    "16": [
+        "markdown",
+        "# Dealing with Colorspaces"
+    ],
+    "17": [
+        "markdown",
+        "Since our CSV is just a list of lists, we could add to it by adding another row. And that's as easy as adding a new list:"
+    ],
+    "18": [
+        "code",
+        "# Split dataset into training and test sets (preserve ordering)\npercent = 0.85\nsplit = int(percent*X_data.shape[0])\nX_train = X_data[:split,:]\ny_train = y_data[:split]\nX_test = X_data[split:,:]\ny_test = y_data[split:]\nprint(X_train.shape)\nprint(y_train.shape)\nprint(X_test.shape)\nprint(y_test.shape)"
+    ],
+    "19": [
+        "code",
+        "ax = opcsim.plots.cdfplot(urban, weight='mass', rho=1.65)\n\nax.set_ylim(0, None)\nsns.despine()"
+    ],
+    "20": [
+        "markdown",
+        "This looks quite good to me. There is a very large error at the beginning of the track, but the filter is able to settle down and start producing good data.\n\nLet's revisit the nonlinearity of the angles. I will position the target between the two sensors with the same y-coordinate. This will cause a nonlinearity in the computation of the sigma means and the residuals because the mean angle will be near zero. As the angle goes below 0 the measurement function will compute a large positive angle of nearly $2\\pi$. The residual between the prediction and measurement will thus be very large, nearly $2\\pi$ instead of nearly 0. This makes it impossible for the filter to perform accurately, as seen in the example below."
+    ],
+    "21": [
+        "code",
+        "user_name = input('What is your name? ')\n\nfile_name = 'chapter_10_output/user_name.json'\nwith open(file_name, 'w') as file_object:\n    json.dump(user_name, file_object)\n    print(\"We'll remember you when you come back, \" + user_name + \"!\")"
+    ],
+    "22": [
+        "markdown",
+        "#### Scaling train and test set"
+    ],
+    "23": [
+        "markdown",
+        "## <a src=\"data/iris.txt\">Iris Dataset</a>\n\nFamous data set from (Fisher, 1926)\n\n|Class 1 | Class 2 | Class 3 | ? | ? |\n|-------------|\n| Iris Setosa | Iris Versicolour | Iris Virginica | ? | ? |\n| <img src=\"data/iris1.png\" width=\"200\"> </img> | <img src=\"data/iris2.png\" width=\"200\"> </img> | <img src=\"data/iris3.png\" width=\"200\"> </img> | <img src=\"data/versi1.jpeg\" width=\"200\"> | <img src=\"data/versi2.jpeg\" width=\"200\">  </img>  \n\n__Features__\n- sepal length in cm\n- sepal width in cm\n- petal length in cm\n- petal width in cm\n\n<img src=\"data/564px-Petal-sepal.jpg\" width=\"200\"> </img>\n\n"
+    ],
+    "24": [
+        "markdown",
+        "### Synthetic Perfect Interferometer ###\nThe synthetic interferometer's UV coverage map (it's a perfect interferometer)"
+    ],
+    "25": [
+        "code",
+        "# you can write to stdout for debugging purposes, e.g.\n# print \"this is a debug message\"\n\ndef solution(A):\n    # write your code in Python 2.7\n    \n    N = len(A)\n    \n    # suppose every element was present.\n    sumP = (N+1) * (N+2) / 2\n    \n    for val in A:\n        \n        sumP -= val\n        \n    return sumP"
+    ],
+    "26": [
+        "code",
+        "from datapop import AccessProbabilityPrediction\napp = AccessProbabilityPrediction(metadata=metadata, access_history=access_history, forecast_horizont=26)\nreport = app.predict()\nreport.head()"
+    ],
+    "27": [
+        "code",
+        "# Sex- it would be interseting to see this feature's relation with 'Survived' feature\nfig, (ax1,ax2) = plt.subplots(1,2,figsize=(12,5))\nsns.barplot(x='Sex',y='Survived',data=train_data,ax=ax2)\nsns.countplot(train_data[\"Sex\"],ax=ax1)"
+    ],
+    "28": [
+        "code",
+        "## Use this and additional cells to answer Question 4c. If you have    ##\n## not done so yet, consider revising some of your previous code to    ##\n## make use of functions for reusability.                              ##           \ndef avg_trip_length_user_or_sub(filename):\n    with open(filename, 'r') as f_in:\n        # set up csv reader object\n        reader = csv.DictReader(f_in)\n\n        subscribers_duration = 0\n        Customer_duration = 0\n        # t = int(datum['tripduration'])\n        for row in reader:\n\n            duration = float(row['duration'])\n            if(row['user_type'] == 'Subscriber'):\n                subscribers_duration += duration\n            else:\n                Customer_duration += duration\n\n    return(subscribers_duration, Customer_duration)\n"
+    ],
+    "29": [
+        "code",
+        "figs = []"
+    ],
+    "30": [
+        "markdown",
+        "# Evaluate\n\nThe same procedure as last time ..."
+    ],
+    "31": [
+        "code",
+        "def tokenizer(raw):\n    \n    # get tokens from raw text\n    tokens = nltk.word_tokenize(raw)\n    \n    # retrieve common stop words form nltk\n    stopwords = nltk.corpus.stopwords.words('english')\n    \n    # isalpha returns true when no special characters and numbers are in a string\n    # create stemmed list of tokens not found in remove words or when isaplha is not satisfied\n    return [t.lower() for t in set(tokens) if t.lower() not in stopwords and t.isalpha()]"
+    ],
+    "32": [
+        "code",
+        "# Initialize\n#import os; os.getcwd(); os.chdir(\"C:/Users/Uwe/Desktop/python\") #need to set working dir?\n#exec(open(\"../code/0_init.py\").read())\n\ndef setdiff(a, b):\n    return [x for x in a if x not in set(b)]"
+    ],
+    "33": [
+        "markdown",
+        "We conclude difference is not statistically significant. The model built by Cleaver can be used instead of the LambdaMart model."
+    ],
+    "34": [
+        "markdown",
+        "\n\nCompute ICA on MEG data and remove artifacts\n============================================\n\nICA is fit to MEG raw data.\nThe sources matching the ECG and EOG are automatically found and displayed.\nSubsequently, artifact detection and rejection quality are assessed.\n\n"
+    ],
+    "35": [
+        "code",
+        "cal = ds.sel(longitude=slice(220, 250), latitude=slice(20,50))\nquick_quiver(cal.scow_zonal_wind_stress, cal.scow_meridional_wind_stress,\n             mag_max=0.05, sampling_x=3, sampling_y=3, figsize=(8,8));"
+    ],
+    "36": [
+        "code",
+        "df.applymap(lambda x: str(x)+'%')"
+    ],
+    "37": [
+        "markdown",
+        "# Repeat with higher rewiring"
+    ],
+    "38": [
+        "markdown",
+        "## Modify the Display"
+    ],
+    "39": [
+        "code",
+        "#Trying a different alpha\nalpha = 0.2\nlasso = Lasso(alpha=alpha)\n\ny_pred_lasso = lasso.fit(X_train, y_train).predict(X_test)\nr2_score(y_test, y_pred_lasso)"
+    ],
+    "40": [
+        "code",
+        "wine.sample(frac=0.5).quality.value_counts()"
+    ],
+    "41": [
+        "code",
+        "def multiple_linear_reg_model_gda(X_train,y_train,m,learning_rate,num_iters):\n    #initialize the values of parameter vector beta. It should be a column vector of zeros of dimension(m,1)\n    beta= None\n    \n    #calculate the initial cost by calling the function you coded above.\n    initial_cost=None\n    print(\"Initial Cost\")\n    print(initial_cost)\n    \n    #calculate the optimized value of gradients by calling the gradient_descent function coded above\n    \n    beta= None\n    \n    #Calculate the cost with the optimized value of beta by calling the cost function.\n    \n    final_cost=None\n    print(\"Final Cost\")\n    print(final_cost)\n    return beta"
+    ],
+    "42": [
+        "code",
+        "def gender_features(word):\n    return {'last_letter': word[-1]}"
+    ],
+    "43": [
+        "code",
+        "url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/00373'\nfile_name = 'drug_consumption.data'\nfile_url = '%s/%s' % (url, file_name)\ndata_directory = '/tmp/drug_data'"
+    ],
+    "44": [
+        "code",
+        "# Argmax idea from: https://github.com/keras-team/keras/issues/2524\n\ndef categorical_accuracy_calc(y_actual, y_predicted):\n    correct_classifications = 0 \n    \n    for actual, predicted in zip(y_actual, y_predicted):\n        correct_classifications += (np.argmax(actual) == np.argmax(predicted))\n        \n    return correct_classifications / float(len(y_predicted))"
+    ],
+    "45": [
+        "markdown",
+        "This week, we will talk how to use scikit-learn for classification problems. The idea is quite simple, we have different classes of objects, that we want to build a model that can tell which one is belong to which class. We will use the famous Iris dataset, you can check [last week's blog](http://qingkaikong.blogspot.com/2017/07/machine-learning-using-scikit-learn.html) to get more information about the dataset. "
+    ],
+    "46": [
+        "markdown",
+        "We also want to look at results that are complete.  We particularly interested in Name, Sex, WeightClassKg, BestSquatKg, BestBenchKg, BestDeadliftKg and Totalkg."
+    ],
+    "47": [
+        "code",
+        "from sklearn.ensemble import RandomForestClassifier\n# Use our function train_test_model with a variety of values for the hyperparameter C (inverse regularization strength) and class_weight (different weights can be given to different features).\nrf_model = train_test_model(RandomForestClassifier(random_state = 0), {'min_samples_split': [2, 4, 8, 16], 'min_samples_leaf': [1, 3, 5, 10], 'max_depth': [3, None], 'class_weight': [None, 'balanced']}, X_train, X_valid, y_train, y_valid)"
+    ],
+    "48": [
+        "markdown",
+        "2. Write a function `retrieve_climate_table` that takes as its only argument a Wikipedia URL, and returns the `BeautifulSoup` object corresponding to the climate data table (if it exists in the page) and returns `None` if no such table exists on the page. You should check that the URL is retrieved successfully, and raise an error if `urllib2` fails to successfully read the website. You may notice that some city pages include more than one climate data table or several nested tables (see, for example, https://en.wikipedia.org/wiki/Los_Angeles). In this case, your function may arbitrarily choose one of the tables to return as a `BeautifulSoup` object. **Note:** a good way to check for edge cases is to test your script on the Wikipedia pages for a few of your favorite cities. The pages for Los Angeles, Hyderabad and Boston will give good examples of edge cases that you should be able to handle, but note that these are by no means exhaustive of all the possible edge cases. **Hint:** make use of the `contents` attribute of the `BeautifulSoup` objects and the ability to change the elements of the contents list to Unicode."
+    ],
+    "49": [
+        "markdown",
+        "- <b>Girls study more than boys even after drinking the same amount of alcohol .However the box diagram shows that the average grades is almost the same for boys and girls</b> "
+    ],
+    "50": [
+        "code",
+        "nodes = [line.split()[0] for line in test_case]\nnodes"
+    ],
+    "51": [
+        "markdown",
+        "## 12. eye/identity matrix"
+    ],
+    "52": [
+        "code",
+        "p11, m11 = perform_experiment(*get_11bit_mp_actors(), trials=TRIALS)"
+    ],
+    "53": [
+        "markdown",
+        "- Print the head and the tail."
+    ],
+    "54": [
+        "markdown",
+        "## 2.1 use train and validation set with Manhattan distance"
+    ],
+    "55": [
+        "code",
+        "question = (\"What sort of topological invariant do we get if we take a 3D TI, and try to make a 4D system with strong invariant, \"\n            \"like we did when making a 3D TI out of QSHE?\")\n\nanswers =  [\"We get another $Z_2$ topological invariant\",\n            \"A 4D system with the Chern number as invariant.\",\n            \"This construction cannot be repeated anymore.\",\n            \"The topological invariant stays the same.\"]\n\nexplanation = (\"A quick check with the table shows that symmetry class AII in 4D has a $Z$ invariant, \"\n               \"and it should be the second Chern number.\")\n\nMoocMultipleChoiceAssessment(question=question, answers=answers, correct_answer=1, explanation=explanation)"
+    ],
+    "56": [
+        "code",
+        "#analyze strontium decay\n#assume mass of electron is negligible\n\n#reactants. Sr-90\nmSr90 = 89.908 #AMU\nm_react = mSr90\nprint(\"Mass of Reactants = {} AMU\".format(m_react))\n\n#products. Zr-90 and 2 Beta\nmZr90 = 89.905 #AMU\nm_prod = mZr90\nprint(\"Mass of Products = {} AMU\".format(m_prod))\n\n#difference in products and reactants\nm_diff = m_react - m_prod\nprint(\"Mass lost to energy = {} AMU\".format(m_diff))\n\n#calculate energy in MEV. conversion = 934MEV/1AMU\nenergy = m_diff * 934\nprint(\"Energy production per decay = {} MEV\".format(energy))"
+    ],
+    "57": [
+        "code",
+        "# Initialize two empty dicts to store the slice of z-stack we want to analyze (curly brackets!)\n# Because there are three channels, our final dictionary will have keys = channel name,\n# and value = corresponding image in the channel\ndrug_slice = {}\nnodrug_slice = {}\n\n# Initialize slice number we want to extract\nslicenum = 3\n\n# Use your favorite for loop to fill in the dicts!\n# Remember that meta_nodrug['channels'] is a list, the \"enumerate\" function allows you to index the list\nfor idx, channel in enumerate(meta_nodrug[\"channels\"]):\n    \n    # recall the dimension/shape of the z-stack is (slice, row, column, channel)\n    drug_slice[channel] = data_drug[slicenum,:,:,idx]\n    nodrug_slice[channel] = data_nodrug[slicenum,:,:,idx]\n    \n    # print out the channel to make sure we fill in the dict with correct keys\n    print(channel)"
+    ],
+    "58": [
+        "markdown",
+        "Simple Turning Machine, from srcatch"
+    ],
+    "59": [
+        "markdown",
+        "#### Fitting and prediction"
+    ],
+    "60": [
+        "code",
+        "np.random.rand(3,2).astype('float64')"
+    ],
+    "61": [
+        "markdown",
+        "Earth's orbit is like 0.0167 in eccentricity... so pretty much all of these planets have reallllllyyyyy extreme eccentricity levels in comparison, excluding the possibility for liquid water. If you have an extremely eccentric orbit that lasts like 14000 days (which is the case with one of these planets) you can have liquid water for a long time (Years one earth) but if there is also a large amount of time without acceptable temperatures, earth like life cannot evolve (without hibernation but there isn't any proof of that, and it would need to EVOLVE to hibernate, which would be unlikely)"
+    ],
+    "62": [
+        "markdown",
+        "A more sophisticated example (makes use of `json` and plotting, but just to show a real use case!)"
+    ],
+    "63": [
+        "markdown",
+        "## Home/Slipper Timeout\n\nThe features are roughly the same as when the home team is the running team, and we can draw basically the same conclusion: At best, a timeout by the slipping team is no different than no timeout, except you used a timeout."
+    ],
+    "64": [
+        "markdown",
+        "always remember to place a tring variable within quotes. above assignment throws error"
+    ],
+    "65": [
+        "code",
+        "for p in np.linspace(0, 1, 11):\n    q = 1.0 - p\n    d = dmultinomial(np.array([2, 8]), np.array([p, q]))\n    print('p_1 = {}, p_2 = {}, prob = {}'.format(p, q, d))"
+    ],
+    "66": [
+        "code",
+        "plt.plot(range(max_steps), average_rewards_1, label='epsilon=0.1')\nplt.plot(range(max_steps), average_rewards_2, label='epsilon=0.01')\nplt.plot(range(max_steps), average_rewards_3, label='epsilon=0.0')\nplt.legend()\nplt.show()"
+    ],
+    "67": [
+        "markdown",
+        "Using the *chsh_corr* function defined above we calculate the CSHS correlation value."
+    ],
+    "68": [
+        "markdown",
+        "#### Face and eye detection in human faces\n\n##### reference https://docs.opencv.org/trunk/d7/d8b/tutorial_py_face_detection.html "
+    ],
+    "69": [
+        "markdown",
+        "# Load the data\nNow that you have implemented a two-layer network that passes gradient checks and works on toy data, it's time to load up our favorite CIFAR-10 data so we can use it to train a classifier on a real dataset."
+    ],
+    "70": [
+        "code",
+        "# Make a copy of gold: medals\nmedals = gold.copy()\n\nmedals.head()"
+    ],
+    "71": [
+        "markdown",
+        "### Release Month"
+    ],
+    "72": [
+        "code",
+        "mails = mails.take(np.random.permutation(len(mails)))"
+    ],
+    "73": [
+        "markdown",
+        "## Analysis of the Results\n\nThe paper presents the following features used in half-life regression:\n\n1. interaction features\n - number of all correct answers (square root)\n - number of all wrong answers (square root)\n2. lexeme tag features\n - bias dependent on a lexeme\n \nI really do not underestand why there is no learners' feature (e.g., UI language, or estimated prior skill)."
+    ],
+    "74": [
+        "code",
+        "num_cols = ['RT_user_norm', 'Metacritic_user_nom', 'IMDB_norm', 'Fandango_Ratingvalue']\n\nfix, ax = plt.subplots()\nax.boxplot(norm_reviews[num_cols].values)\nax.set_xticklabels(num_cols, rotation = 90)\nax.set_ylim(0,5)\nplt.show()"
+    ],
+    "75": [
+        "code",
+        "L = 10\nN = 2**16\nx = np.random.uniform(-L/2,L/2,N)\ny = np.random.uniform(-L/2,L/2,N)\n\u03c7 = np.random.uniform(0,\u03c0_import_samp(0,0,L),N)"
+    ],
+    "76": [
+        "markdown",
+        "That didn't work like I had hoped, I'm going to just have to cut out those garbage words manually.  Lets get a better Idea of what I'm working with"
+    ],
+    "77": [
+        "code",
+        "h_conv2 = tf.nn.relu(convolve2)"
+    ],
+    "78": [
+        "markdown",
+        "Let us consider this crancked wing:\n    "
+    ],
+    "79": [
+        "markdown",
+        "Ploting the ration of made/failed shots on some particular games"
+    ],
+    "80": [
+        "code",
+        "def tokenizer(text, stop_words):\n    text = clean_text(text)    \n    tokens = [word_tokenize(sent) for sent in sent_tokenize(text)]\n    tokens = list(reduce(lambda x,y: x+y, tokens))\n    tokens = list(filter(lambda token: token not in (stop_words + list(punctuation)) , tokens))\n    return tokens"
+    ],
+    "81": [
+        "code",
+        "from sklearn.linear_model import LogisticRegression\nlogit = LogisticRegression()\nlogit.fit(breast.data, breast.target)"
+    ],
+    "82": [
+        "code",
+        "dates = pd.date_range('20130626', periods=4)\ndata2 = pd.DataFrame(\n    np.random.rand(4, 4),\n    index=dates, columns=list('ABCD'))\ndata2"
+    ],
+    "83": [
+        "code",
+        "# we use get_fresh_dir so that we can keep track of different\n# runs of our graph; here, it will creates directories like:\n# tbout/basic_summaries/1 \n# tbout/basic_summaries/2 \n# tbout/basic_summaries/3\nfrom helpers_01 import get_fresh_dir\n\nsess = tf.Session(graph=summary_graph)\nwriter = tf.summary.FileWriter(get_fresh_dir('tbout/basic_summaries'), \n                               graph=summary_graph)\nsess.run(init)"
+    ],
+    "84": [
+        "code",
+        "vect_likelihood = []\niterations = 100\nfor i in range(iterations):\n    log_particles, log_W, log_marginal_likelihood = SMC(Y, T, L, n_0,model,sigma_eps, sigma_w,B_0=b_0,B_2=b_2,B_3=b_3)\n    vect_likelihood.append(log_marginal_likelihood)\nprint('Mean log-likelihood :' + str(np.mean(vect_likelihood))+' ; Variance : '+str(np.var(vect_likelihood)))"
+    ],
+    "85": [
+        "markdown",
+        "A synset is identified with a 3-part name of the form: word.pos.nn. Except of the last synset, all other synsets of *dog* above are nouns with the *part-of-speech* tag *n*. We can pick a synset with a specific PoS:"
+    ],
+    "86": [
+        "code",
+        "# Import libruaries and set environment\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom sklearn import tree\nfrom sklearn.ensemble import RandomForestClassifier"
+    ],
+    "87": [
+        "code",
+        "def inflow(row):\n    pattern_idx = (row.name.hour, row.name.minute)\n    pattern_value = daily_pattern[pattern_idx]\n    return row.flow1 - pattern_value\n\n\ndata_frame['inflow'] = data_frame.apply(inflow, axis=1)\ndata_frame.tail()"
+    ],
+    "88": [
+        "code",
+        "import numpy as np\n\nimport pandas as pd\nfrom pandas import Series,DataFrame\nfrom bokeh.layouts import gridplot, row, column\n\nfrom bokeh.io import push_notebook, show, output_notebook\nfrom bokeh.plotting import figure\n\nfrom sklearn.datasets import load_boston\n\nfrom bokeh.models import (BasicTicker, ColumnDataSource, Grid, LinearAxis,\n                         DataRange1d, PanTool, Plot, WheelZoomTool)\nimport sklearn.model_selection\n\n# For very simple visualizations (without too much interaction, output_notebook works too, which we enable here)\noutput_notebook()"
+    ],
+    "89": [
+        "markdown",
+        "There are several methods of **dimensional reduction** that attempt to pull out a lower-dimensional structure.  We'll be using Truncated Singular Value Decomposition (SVD), which works well with sparse matrices.  SVD attempts to find orthogonal directions within feature space, along which the feature matrix has the most variation. It's very closely related to Principal Component Analysis (PCA), a very popular dimensionality reduction and clustering technique.\n\nIn fact, it's so popular that it's worth understanding a bit better. Let's give PCA the same treatment we gave K Nearest Neighbors. We'll look at two tags we know to be semantically identical: \"adapted from: book\" and \"based on a book\". We can imagine that we don't really need two separate dimensions for these tags (really, we don't need two different tags) - we can collapse them to one single dimension conveying the same meaning. \n\nNote that we don't see a very dramatic change here in 2 dimensions. PCA (and related decomposition methods) really shines across a high-dimensional feature space with many features, as we'll see."
+    ],
+    "90": [
+        "code",
+        "commute_mask = (data['Start Location Name'] =='Home') & (data['End Location Name'] =='Work')|(data['End Location Name'] =='Home') & (data['Start Location Name'] =='Work')\ndata.loc[commute_mask, 'Tags'] = 'commute'\ndata.Tags = data.Tags.fillna('Other')"
+    ],
+    "91": [
+        "code",
+        "sns.regplot(x = 'years', y = 'median', data=df);\nplt.ylabel('Median Sample Size');\nplt.xlabel('Year');\n\n#plt.plot(nums)"
+    ],
+    "92": [
+        "code",
+        "l = ['abc', [1, 2, (3, 4)]]"
+    ],
+    "93": [
+        "markdown",
+        "### 2.2 Data distribution over the years"
+    ],
+    "94": [
+        "code",
+        "model = Model(inputs=inputs,outputs=outputs)\nmodel.load_weights('model.h5')\nmodel.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])\nmodel.fit_generator(train_generator, train_steps_per_epoch, epochs=1,\n                    validation_data=valid_generator,validation_steps=valid_steps_per_epoch)\nmodel.save('model.h5')"
+    ],
+    "95": [
+        "code",
+        "model = MoneyModel(50, 10, 10)\nfor i in range(100):\n    model.step()"
+    ],
+    "96": [
+        "markdown",
+        "Now, let's drop all matches that were played by nations that don't exist anymore, such as Yugoslavia and Czechoslovakia.\nAdditionally, there are new nations that didn't exist before, such as South Sudan.\n\nNow there are around ~19000 records of games. "
+    ],
+    "97": [
+        "code",
+        "model = LinearRegression()\n-cross_val_score(model, X=training, y=y, cv=10, scoring=\"neg_mean_squared_error\").mean()"
+    ],
+    "98": [
+        "markdown",
+        "## New Zealand transcription error"
+    ],
+    "99": [
+        "code",
+        "#Some metrics\ndef huber(y_true, y_pred, delta=1.0):\n\ty_true = y_true.reshape(-1,1)\n\ty_pred = y_pred.reshape(-1,1)\n\treturn np.mean(delta**2*( (1+((y_true-y_pred)/delta)**2)**0.5 -1))"
+    ],
+    "100": [
+        "markdown",
+        "<h2>Counting of POS Tag (a.k.a bag of Tag)</h2>\n\nHere, we count the use of some caracter, and n-grams of caracter.<br>\nSo we have, some non-topic sensitive features.<br>\nBut we can produce an other type of feature based on the POS_tagging.\n\nPOS tag features. \n\nWe will check the occurence of the elements from the Upenn Tagset. <br>"
+    ],
+    "101": [
+        "markdown",
+        "Nice to see some hard numbers. Cool takeaway for an artist is that if they make it onto Hype Machine and peak in the 25-50 range they should be hoping to reach 63,728 plays or more in order to be in line with the pack. Same with Mid-Tier and Top 10: 81,512 and 211,912 respectively.\n\nSo it seems there should be a correlation between where you peak on Hype Machine and the number of plays received. Let's test that out."
+    ],
+    "102": [
+        "markdown",
+        "Gross overall number of shooters are in the White race category."
+    ],
+    "103": [
+        "markdown",
+        "### Random Forest Classifier (RFC)"
+    ],
+    "104": [
+        "markdown",
+        "# Data Structure for Recurrent Neural Networks\n\nPreviously we trained neural networks with input ($x$) and expected output ($y$).  $X$ was a matrix, the rows were training examples and the columns were values to be predicted.  The definition of $x$ will be expanded and y will stay the same.\n\nDimensions of training set ($x$):\n* Axis 1: Training set elements (sequences) (must be of the same size as $y$ size)\n* Axis 2: Members of sequence\n* Axis 3: Features in data (like input neurons)\n\nPreviously, we might take as input a single stock price, to predict if we should buy (1), sell (-1), or hold (0)."
+    ],
+    "105": [
+        "markdown",
+        "Because some of the age values are missing, we have to impute them. However, imputing the mean or median might skew the data, so instead we will impute the data based on title. Eg: \"Mr\",\"Mrs\", and \"Miss\". \nAs a offshoot of this, we will assume that if they have parents aboard according to the \"Parch\" field, they are a child and therefore belong in a younger category. "
+    ],
+    "106": [
+        "markdown",
+        "<a id=\"byprotein\"></a>\n### Aggregating values across samples by proteins"
+    ],
+    "107": [
+        "markdown",
+        "# Floyd-Warshall Algorithm\n\nProbably the most common algorithm for finding shortest path is the Dijkstra algorithm. Dijkstra algorithm can find the shorstest path from one origin node to all reachable destinations. However, oftentimes we want to know the shortest path from any origin to any destination. While it is possible to run Dijkstra algorithm for all possible origins, Floyd-Warshall algorithm is a simple choice for computing all-to-all shortest paths. This notebook concerns on how to implement the Floyd-Warshal algorithm. \n\nInterestingly, even though the algorithm is name after two independet researchers, Robert Floyd and Stephen Warshall, there were several work around 1960 related to the same problem. Robert Floyd published in 1962 an algorithm for finding all-to-shortest paths. In the same year, Stephen Warshall published a paper describing essentially the same algorithm in order to find the Transitive Closure of a Graph. Transitive Closure refers to determining for all node pairs if there is at least one path connecting them. These two problems are similar as finding a shortest path means that there is a path. Few years later, Bernard Roy published essentially the same algorithm in French and apparently remained unnoticed. Nevertheless, sometimes the same algorithm is often referred to as Roy-Floyd-Warshall algorithm. Still in 1962, Peter Ingerman published the version of the algorithm that is currently used.\n\nIt is assumed to a directed graph $G$ containing several nodes $n$ in the node set $N$ arcs [u,v] in the link (arc) $A$ where $u$ refers to the upstream node of the link and $v$ refers to the downstream node. Also, each arc [u,v] has its associated cost where in the domain of transportation networks is often associated to travel time along the link.\n\nLet's firt have a graph as example. The graph below has $N=[1,2,3,4,5]$ and arcs $ A = [(1,2),(2,1),(1,3), (3,1), (2,4),(4,2),(4,3),(3,5), (5,4)]$  with their associated costs. Except from 3-5 to 4 there are multiple paths from node to node. So let's find all the shortest path in this graph.\n\n<img src=\"graphexample.png\">\n\n# Dependencies"
+    ],
+    "108": [
+        "markdown",
+        "The goal of this analysis is to explore clustering in the S&P 500 index. By identifying stocks that move together, we can predict stock price movements of similar stocks.\n\nTo do this, we use the 2015 daily adjusted close prices of all of the firms listed on the S&P 500. The data can be found on and downloaded from websites such as Google Finance or Yahoo Finance.\n\nWe will be using Jupyter notebooks (an application to run annotated, interactive python code) to explore the data and conduct our analysis.\n\nFirst we import the Python data science libraries (Pandas, Numpy, MatPlotLib) as well as the csv module so we can import the dataset."
+    ],
+    "109": [
+        "code",
+        "# Build the frequency distribution table\nquotes_freq = nltk.FreqDist(quotes)\nquotes_freq = pd.DataFrame(quotes_freq.most_common(200), columns=['word','n'])\nquotes_freq['relative_frequency'] = (quotes_freq['n']/float(len(quotes)))\nquotes_freq.head(20)"
+    ],
+    "110": [
+        "code",
+        "def ln_gaussian(mean, des,x):\n    \"\"\"\n    mean, standard deviation and the value\n    \"\"\"\n    return -0.5*((x-mean)/des)**2"
+    ],
+    "111": [
+        "markdown",
+        "For plotting purposes, I created two arrays that will consistently label and plot races with a the same words and colors."
+    ],
+    "112": [
+        "markdown",
+        "#Correlation matrix for basic stats and stats on occurences page graph"
+    ],
+    "113": [
+        "markdown",
+        "As you can see, it returns a dictionary. Let us now explore parameters of a single spine. We will call Help function for that."
+    ],
+    "114": [
+        "markdown",
+        "### Changing 'acct' key to 'account_key' in daily_engagement.csv"
+    ],
+    "115": [
+        "markdown",
+        "plot a running mean to see if there are variations over longer time periods (seconds)"
+    ],
+    "116": [
+        "markdown",
+        "a last one: \"RIKER [CO]\" should probably be \"RIKER [OC]\":"
+    ],
+    "117": [
+        "markdown",
+        "Cell to save the current model"
+    ],
+    "118": [
+        "markdown",
+        "With the shape_element function in place, I can now parse and shape the data, and write it to CSV files.\n\nThe main function is what I used to call my audit function to update street names and postcodes. The python script shaping_csv.py takes care of creating the CSV files."
+    ],
+    "119": [
+        "markdown",
+        "# Convert from Dict to Data Frame and Vice versa "
+    ],
+    "120": [
+        "markdown",
+        "#### 6. Defending"
+    ],
+    "121": [
+        "markdown",
+        "I guess this result is very bad since the data for my model does not include one single metal band. So the bad result is no surprise."
+    ],
+    "122": [
+        "code",
+        "fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(nrows=2, ncols=2, figsize=(12, 12))\n\nax1.imshow(wt_imgs[0], cmap=\"gray\")\nax2.imshow(wt_imgs[1], cmap=\"gray\")\nax3.imshow(wt_imgs[2], cmap=\"gray\")\nax4.imshow(wt_imgs[3], cmap=\"gray\")\n\nplt.tight_layout()\n\nplt.show()"
+    ],
+    "123": [
+        "code",
+        "for user in users:\n    user[\"friends\"] = []\n    \nfor i, j in friendships:\n    # this works because users[i] is the user whose id is i \n    users[i][\"friends\"].append(users[j])  # add i as a friend of j\n    users[j][\"friends\"].append(users[i])  # add j as a friend of i"
+    ],
+    "124": [
+        "markdown",
+        "Ok cool, filling the nans with the mean allowed us to rescale, will get back to this later"
+    ],
+    "125": [
+        "code",
+        "factor_cols=train_data.select_dtypes(include=['object']).columns\nnumeric_cols=train_data.select_dtypes(exclude=['object']).columns\n\nsns.boxplot(x=\"Utilities\", y='SalePrice', data=train_data)\nplt.show()"
+    ],
+    "126": [
+        "markdown",
+        "To improve the fit, we can also force the line to go through a given fix point. For example here, we know, that the\nfit crosses the y-line at 30:"
+    ],
+    "127": [
+        "markdown",
+        "Doing the t-test of means<Br>\n$H_0$ = there is no difference in the difference between participation in the dominant and non-dominant exams. That is regardless of which exam is dominant, relative to the dominant exam, there are similar participation rates in the non-dominant exam.<br>\n$H_A$ = there is a difference in the difference between participation rates in the dominant and non-dominant exams. That is relative to the dominant exam, the non-dominant exam for one exam type, the non-dominant exam maintains a higher participation rate than the other.<br><Br>\nFor example, we might find where the SAT is dominant, students still take the ACT in high numbers, however where the ACT is dominant, very few people take the SAT."
+    ],
+    "128": [
+        "code",
+        "## Variable learning rate\nlearning_rate = tf.train.exponential_decay(starter_learning_rate, 0, 5, 0.85, staircase=True)\n## Adam optimzer for finding the right weight\noptimizer = tf.train.AdamOptimizer(learning_rate).minimize(loss,var_list=[weights_0,weights_1,weights_2,\n                                                                         bias_0,bias_1,bias_2])"
+    ],
+    "129": [
+        "code",
+        "map1.zoom = 10"
+    ],
+    "130": [
+        "markdown",
+        "Negative index is read as [string lenght + (index)]"
+    ],
+    "131": [
+        "markdown",
+        "### Isolated \"M1\" molecule in the gas phase - results"
+    ],
+    "132": [
+        "code",
+        "import wpca"
+    ],
+    "133": [
+        "code",
+        "3.14159**4/90"
+    ],
+    "134": [
+        "markdown",
+        "The linear transformation that rotates a vector $x$ $\\epsilon$   $\\rm I\\!R^{2}$ through an angle $\\theta$ is represented by the 2 x 2 matrix:  \n\n\\begin{equation*}\n\\begin{vmatrix}\n\\cos\\theta & -sin\\theta  \\\\\n\\sin\\theta &  cos\\theta  \n\\end{vmatrix}\n\\end{equation*}"
+    ],
+    "135": [
+        "code",
+        "total_groups/prot_chains.count()"
+    ],
+    "136": [
+        "code",
+        "geo_vcpts = geo_crimepts[geo_crimepts.violent_crime==1].reset_index()\nprint(geo_vcpts.violent_crime.value_counts())\n\ngeo_assaultweaponpts = geo_crimepts[geo_crimepts.assault_weapon==1].reset_index()\nprint(geo_assaultweaponpts.assault_weapon.value_counts())\n\ngeo_robberypts = geo_crimepts[geo_crimepts.robbery==1].reset_index()\nprint(geo_robberypts.robbery.value_counts())\n\ngeo_homicidepts = geo_crimepts[geo_crimepts.homicide==1].reset_index()\nprint(geo_homicidepts.homicide.value_counts())"
+    ],
+    "137": [
+        "code",
+        "len(dataframe_online_merged.float_degree.unique())"
+    ],
+    "138": [
+        "code",
+        "import os\nos.chdir('H:/My Documents/Python/New folder')\nfrom datetime import datetime\nimport pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport pylab\nimport seaborn as sns"
+    ],
+    "139": [
+        "markdown",
+        "#  Code to filter transparent nederland data and produce a gephi file"
+    ],
+    "140": [
+        "code",
+        "import re, string\ndef is_valid_email_address(email):\n    punctuation_symbols = string.punctuation.replace('.','').replace('-','') # yeah, I forgot to remove the dot from the punctuation chars\n    email_pattern = re.compile('^[^{0}]+?@[^{0}]+?\\.(com|org|net|de)$'.format(re.escape(punctuation_symbols)))\n    return email_pattern.match(email)\n\nassert(is_valid_email_address('dan.haeberlein@googlemail.com'))\nassert(is_valid_email_address('matthew.munson@phil.uni-goettingen.de'))\nassert(not is_valid_email_address('@matthew@google.mat'))"
+    ],
+    "141": [
+        "code",
+        "S1_out = get_pricing('MTRN', fields=['price'], \n                        start_date='2016-01-01', end_date='2016-07-01')['price']\nS2_out = get_pricing('SCCO', fields=['price'], \n                        start_date='2016-01-01', end_date='2016-07-01')['price']\n\n#Your code goes here"
+    ],
+    "142": [
+        "markdown",
+        "Random value between our `lower_bound` and `upper_bound`"
+    ],
+    "143": [
+        "code",
+        "ToughestReferee.plot.bar(width=0.75)\nplt.rcParams['figure.figsize']=(20,10)"
+    ],
+    "144": [
+        "markdown",
+        "#### Kernel Ridge regression\nKernel Ridge regression is Ridge regression(l2 regularization) with the use of kernel trick.This is similar to Support Vector regression except for the loss function.In SVR the loss function use episolon insensitive loss where are KRR uses squared error loss both combined with l2 regularization"
+    ],
+    "145": [
+        "markdown",
+        "###  Further Issues with Tokenization\n\nImportant to have a \"gold standard\" for tokenization to compare performance of a custom tokenizer...\n\nNLTK Corpus includes Penn Treebank corpus, tokenized and raw text, for this purpose:\n\n**`nltk.corpus.treebank_raw.raw()`** and **`nltk.corpus.treebank.words()`**\n\n---\n\n## Segmentation\n\n**Tokenization** is a specific case of the more general **segmentation**\n\n### Sentence Segmentation\n\n**Average number of words per sentence:**"
+    ],
+    "146": [
+        "markdown",
+        "## Components Chosen: 5 / 1279"
+    ],
+    "147": [
+        "markdown",
+        "### What is the mutation rate of each of the 3 driver genes in each histology? "
+    ],
+    "148": [
+        "code",
+        "nGS = 1\nzen = np.random.uniform(-1,1,nGS)*5*math.pi/180/60\nazi = np.random.uniform(0,2*math.pi,nGS)\ngs = ceo.Source(\"K\",zenith=zen,azimuth=azi,height=float(\"inf\"),resolution=(nPx,nPx))"
+    ],
+    "149": [
+        "code",
+        "for i in range(len(x_values)):\n    print (x_values[i-1]*x_values[i])"
+    ]
+}

@@ -4,6 +4,7 @@ import json
 import numpy as np
 import pandas as pd
 from typing import *
+from tqdm import tqdm
 
 builtins_set = set(['ArithmeticError',
  'AssertionError',
@@ -236,14 +237,136 @@ def get_line_count(code: str) -> int:
 
     return num_lines
 
-def strip_magic_from_code(cell_code: str):
+def strip_magic_from_code(cell_code: str): # and notebook commands (start with !).
     filt_lines = []
     for line in cell_code.split("\n"):
-        if not(line.strip().startswith("%")):
+        lstrip = line.strip()
+        if not(lstrip.startswith("%") or lstrip.startswith("!")):
             filt_lines.append(line)
 
     return "\n".join(filt_lines)
 
+def strip_notebook_command(cell_code: str):
+    filt_lines = []
+    for line in cell_code.split("\n"):
+        if not(line.strip().startswith("")):
+            filt_lines.append(line)
+
+    return "\n".join(filt_lines)
+
+# program to test code construct sequence extraction from code cells. 
+__TEST_PROGRAM = """
+import json # import
+from tqdm import tqdm # from
+
+# func_def
+def test(x):
+# yield
+    yield x+1
+
+# class_def
+class Test:
+# pass
+    pass
+
+# func_def
+def test2(x):
+# return
+    return x-1
+
+# func_def
+def test3(x):
+# pass
+    pass
+
+async def test_async(x):
+    print(x+1)
+    
+z = -1
+path = 'test.txt'
+while True: 
+    if z > 0:
+        break
+    elif z < 0: 
+        z += 1
+    else: z = 0
+    test(x)
+    del x
+    try: 
+        x+1
+        continue
+    except: 
+        x
+        raise Exception(str(x))
+    assert isinstance(x, bool)
+    for i in range(z):
+        print(z-1)
+    async for i in range(z):
+        print(z-1)
+    with open(path, 'w') as f:
+        json.dump(x, f, indent=4)
+    async with open(path, 'w') as f:
+        json.dump(x, f, indent=4)"""
+
+def fix_python2_prints(code: str):
+    fixed_code = []
+    for line in code.split("\n"):
+        try:
+            first_token = line.strip().split()[0].strip()
+            second_token = line.strip().split()[1].strip()
+            if first_token == "print" and not(second_token.startswith("(")):
+                line = line.replace("print ", "print(")+")"
+        except: pass
+        fixed_code.append(line)
+    
+    return "\n".join(fixed_code)
+
+def ast_parse(code: str) -> ast.Module:
+    code = strip_magic_from_code(code)
+    try: root = ast.parse(code)
+    except Exception as e:
+        code = fix_python2_prints(code)
+        root = ast.parse(code)
+
+    return root
+
+def get_code_construct_seq(code: str, api_sequence: List[str]=[]) -> List[str]:
+    use_ref_api_seq, op_seq = False, []
+    if len(api_sequence) != 0: use_ref_api_seq = True
+    root = ast_parse(code)
+    # ignore_node_types = (
+    #     ast.Module, ast.Store, ast.withitem,
+    #     ast.Attribute, ast.List, ast.Constant,
+    #     ast.Name, ast.Load, ast.Expr, ast.Call,
+    # )
+    node_type_to_str = {
+        ast.With: "with", ast.Assign: "assign",
+        ast.For: "for", ast.FunctionDef: "func_def",
+        ast.ClassDef: "class_def", ast.Delete: "delete",
+        ast.Import: "import", ast.ImportFrom: "import_from",
+        ast.Pass: "pass", ast.Return: "return", ast.Try: "try",
+        ast.AsyncFor: "async_for", ast.AsyncWith: "async_with",
+        ast.Assert: "assert", ast.AsyncFunctionDef: "async_func_def",
+        ast.Break: "break", ast.Continue: "continue", ast.While: "while"
+    }
+    skipped = set()
+    for node in ast.walk(root):
+        # if isinstance(node, ast.Call):
+        #     func = node.func
+        #     if isinstance(func, ast.Name): func = func.id
+        #     elif isinstance(func, ast.Attribute): func = func.attr
+        #     if use_ref_api_seq:
+        #         if func not in api_sequence: continue
+        #         op_seq.append(func)
+        #     else: op_seq.append(func)
+        # elif 
+        if isinstance(node, tuple(node_type_to_str.keys())):
+            construct_type = node_type_to_str[type(node)]
+            op_seq.append(construct_type)
+        else: skipped.add(str(node))
+
+    return op_seq
+    # elif isinstance(node, ast.):        
 def analyze_code_cell(cell_code: str, imported_module_names: List[str]=[],
                       func_set: set=set(), vars_set: set=set()) -> Tuple[Dict[str, int], Set[str], Set[str]]:
     """
@@ -262,10 +385,16 @@ def analyze_code_cell(cell_code: str, imported_module_names: List[str]=[],
     - func_set: update the func_set (optional input from above)
     - vars_set: update the vars_set (optional input from above)
     """
-    cell_code = strip_magic_from_code(cell_code)
-    try: root = ast.parse(cell_code)
+    f = open("ast_parse_error_codes.jsonl", "a")
+    # cell_code = strip_magic_from_code(cell_code)
+    try: root = ast_parse(cell_code)
     except Exception as e:
         print(e)
+        print(cell_code)
+        f.write(json.dumps({
+            "code": cell_code,
+            "error": str(e),
+        })+"\n")
         # error in parsing AST
         stats = {
             "#vars need ctxt": 0,
@@ -355,8 +484,14 @@ def analyze_inst(inst: dict):
         cell_stats["vars_set"] = copy.deepcopy(vars_set)
         stats.append(cell_stats)
     summary["#code"] = num_code
-    summary["max func"] = np.max(func_counts)
-    summary["max vars"] = np.max(vars_counts)
+    try: summary["max func"] = np.max(func_counts)
+    except Exception as e:
+        summary["max func"] = 0
+        print(e, func_counts)
+    try: summary["max vars"] = np.max(vars_counts)
+    except Exception as e:
+        summary["max vars"] = 0
+        print(e, func_counts)
     summary["mean func"] = round(np.mean(func_counts), 2)
     summary["mean vars"] = round(np.mean(vars_counts), 2)
     summary["#markdown"] = num_markdown
@@ -368,7 +503,7 @@ def analyze_inst(inst: dict):
 
 def analyze_all_data(data: Dict[str, dict]) -> List[Dict[str, Union[float, int, bool]]]:
     analysis_summary = []
-    for id, inst in data.items():
+    for id, inst in tqdm(data.items()):
         _, summary = analyze_inst(inst)
         summary["id"] = id
         analysis_summary.append(summary)
@@ -395,6 +530,7 @@ def generate_final_stats(summ: List[Dict[str, Union[float, int, bool]]]) -> Dict
 if __name__ == "__main__":
     path = "./data/juice-dataset/sampled_juice_train.json"
     data = json.load(open(path))
+    open("ast_parse_error_codes.jsonl", "w") # clear errors log.
     analysis_summary = analyze_all_data(data)
-    analysis_df = pd.DataFrame(analysis_summary)
-    analysis_df.to_excel("./analysis/sampled_juice_analysis_summary.xlsx")
+    # analysis_df = pd.DataFrame(analysis_summary)
+    # analysis_df.to_excel("./analysis/sampled_juice_analysis_summary.xlsx")
