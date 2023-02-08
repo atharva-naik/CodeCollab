@@ -131,3 +131,77 @@ class InCoderCellSeqDataset(Dataset):
         return [tok_dict["input_ids"][0], 
                 tok_dict["attention_mask"][0], 
                 cell_type]
+
+# next cell type prediction task given the cell sequence and 
+class InCoderInFillDataset(Dataset):
+    def __init__(self, path: str, tok_path="facebook/incoder-1B", 
+                 tok_args: dict={
+                    "padding": "max_length",
+                    "return_tensors": "pt",                
+                    "truncation": True,
+                    "max_length": 300, 
+                 }):
+        super(InCoderInFillDataset, self).__init__()
+        self.tok_args = tok_args
+        self.tokenizer = AutoTokenizer.from_pretrained(tok_path)
+        self.tokenizer.pad_token = "<pad>"
+        self.tokenizer.padding_side = "left"
+        self.data = []
+        self.code_type_to_ind = {
+            "code": 0, "markdown": 1,
+            "heading": 2, "raw": 3, 
+        }
+        # header = "<| file ext=.ipynb:python |>\n"
+        with open(path) as f:
+            line_ctr = 0
+            pbar = tqdm(f)
+            for line in pbar:
+                line = line.strip()
+                rec = json.loads(line)
+                context_chain = rec["context"][::-1]
+                if len(context_chain) == 0: continue # skip empty contexts.
+                current_context = [self.wrap_cell(context_chain[0])]
+                for cell in context_chain[1:]:
+                    cell_type = cell["cell_type"]
+                    if cell_type == "markdown":
+                        self.data.append([
+                            "\n".join(current_context)+"""
+<text>
+<|mask:0|>
+</text>""",
+                            cell['nl_original'],
+                        ])
+                    current_context.append(
+                        self.wrap_cell(cell)
+                    )
+                line_ctr += 1
+                pbar.set_description(f"{len(self.data)} inst")
+                if line_ctr == 100000: break
+
+    def wrap_cell(self, cell: dict):
+        cell_type = cell["cell_type"]
+        if cell_type == "markdown":
+            return self.wrap_markdown(cell)
+        else: return self.wrap_code_like(cell)
+
+    def wrap_code_like(self, cell: dict):
+        return f"""<cell>
+{cell['code']}
+</cell>"""
+
+    def wrap_markdown(self, cell: dict):
+        return f"""<text>
+{cell['nl_original']}
+</text>"""
+
+    def __getitem__(self, i: int): return self.data[i]
+
+    def __len__(self): return len(self.data)
+    # def __getitem__(self, i: int):
+    #     context = self.data[i][0]
+    #     tok_dict = self.tokenizer(context, **self.tok_args)
+    #     cell_type = torch.as_tensor(self.data[i][1])
+
+    #     return [tok_dict["input_ids"][0], 
+    #             tok_dict["attention_mask"][0], 
+    #             cell_type]
