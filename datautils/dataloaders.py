@@ -135,7 +135,7 @@ class InCoderCellSeqDataset(Dataset):
 # next cell type prediction task given the cell sequence and 
 class InCoderInFillDataset(Dataset):
     def __init__(self, path: str, tok_path="facebook/incoder-1B", 
-                 tok_args: dict={
+                 max_ctxt_len: int=5, tok_args: dict={
                     "padding": "max_length",
                     "return_tensors": "pt",                
                     "truncation": True,
@@ -165,11 +165,8 @@ class InCoderInFillDataset(Dataset):
                     cell_type = cell["cell_type"]
                     if cell_type == "markdown":
                         self.data.append([
-                            "\n".join(current_context)+"""
-<text>
-<|mask:0|>
-</text>""",
-                            cell['nl_original'],
+                            "\n".join(current_context[-max_ctxt_len:])+"""\n<text>""",
+                            cell['nl_original'], line_ctr,
                         ])
                     current_context.append(
                         self.wrap_cell(cell)

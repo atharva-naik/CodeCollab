@@ -6,7 +6,7 @@ from typing import *
 from tqdm import tqdm
 from collections import defaultdict
 from torch.utils.data import DataLoader
-from datautils.dataloaders import InCoderCellSeqDataset
+from datautils.dataloaders import InCoderInFillDataset
 from transformers import AutoModelForCausalLM, AutoTokenizer, StoppingCriteriaList, StoppingCriteria
 
 # special tokens.
@@ -54,7 +54,7 @@ def make_sentinel(i):
     # signals (1) a location to insert an infill and (2) the start of the infill generation
     return f"<|mask:{i}|>"
 
-def generate(input: str, max_to_generate: int=128, 
+def generate(model, tokenizer, input: str, max_to_generate: int=128, 
              temperature: float=0.2, device: str="cuda"):
     """
     Do standard left-to-right completion of the prefix `input` by sampling from the model
@@ -65,14 +65,16 @@ def generate(input: str, max_to_generate: int=128,
     if max_length > 2048:
         print("warning: max_length {} is greater than the context window {}".format(max_length, 2048))
     with torch.no_grad():
-        output = model.generate(input_ids=input_ids, do_sample=True, top_p=0.95, temperature=temperature, max_length=max_length)
+        output = model.generate(input_ids=input_ids, do_sample=True, 
+                                top_p=0.95, temperature=temperature, 
+                                max_length=max_length)
     # pass clean_up_tokenization_spaces=False to avoid removing spaces before punctuation, e.g. "from ." -> "from."
     detok_hypo_str = tokenizer.decode(output.flatten(), clean_up_tokenization_spaces=False)
     if detok_hypo_str.startswith(BOS):
         detok_hypo_str = detok_hypo_str[len(BOS):]
     return detok_hypo_str
 
-def infill(parts: List[str], max_to_generate: int=128, 
+def infill(model, tokenizer, parts: List[str], max_to_generate: int=128, 
            temperature: float=0.2, extra_sentinel: bool=True, 
            max_retries: int=1, verbose: bool=True):
     """
@@ -98,12 +100,9 @@ def infill(parts: List[str], max_to_generate: int=128,
     assert isinstance(parts, list)
     retries_attempted = 0
     done = False
-
     while (not done) and (retries_attempted < max_retries):
         retries_attempted += 1
-
         if verbose: print(f"retry {retries_attempted}")
-        
         ## (1) build the prompt
         if len(parts) == 1:
             prompt = parts[0]
@@ -114,18 +113,15 @@ def infill(parts: List[str], max_to_generate: int=128,
                 prompt += part
                 if extra_sentinel or (sentinel_ix < len(parts) - 1):
                     prompt += make_sentinel(sentinel_ix)
-        
-        infills = []
-        complete = []
-
+        infills, complete = [], []
         done = True
-
         ## (2) generate infills
         for sentinel_ix, part in enumerate(parts[:-1]):
             complete.append(part)
             prompt += make_sentinel(sentinel_ix)
             # TODO: this is inefficient as it requires re-encoding prefixes repeatedly
-            completion = generate(prompt, max_to_generate, temperature)
+            completion = generate(model, tokenizer, prompt, 
+                                  max_to_generate, temperature)
             completion = completion[len(prompt):]
             if EOM not in completion:
                 if verbose: print(f"warning: {EOM} not found")
@@ -139,7 +135,7 @@ def infill(parts: List[str], max_to_generate: int=128,
         complete.append(parts[-1])
         text = ''.join(complete)
 
-    if VERBOSE:
+    if verbose:
         print("generated text:")
         print(prompt)
         print()
@@ -158,18 +154,7 @@ def infill(parts: List[str], max_to_generate: int=128,
         'parts': parts, # List[str], length N. Same as passed to the method
         'infills': infills, # List[str], length N-1. The list of infills generated
         'retries_attempted': retries_attempted, # number of retries used (if max_retries > 1)
-    } 
-
-def predict_continuation(model, tokenizer, input: str, generator_args: dict={
-        "temperature": 0.8, "top_p": 0.95, "max_new_tokens": 100, }): #temperature: float=0.8):
-    args = tokenizer(input, return_tensors="pt", add_special_tokens=True)
-    i = len(args["input_ids"].squeeze())
-    for k in args: args[k] = args[k].cuda()
-    args.update(generator_args) # add the generator args to the tensor inputs.
-    op = model.generate(**args).squeeze()
-
-    return tokenizer.decode(op[i:], skip_special_tokens=True,
-                            clean_up_tokenization_spaces=False)
+    }
 
 def remove_extra_code(input):
     """TODO: what does this function do?"""
@@ -179,110 +164,28 @@ def remove_extra_code(input):
         if stop_token in input: min_stop_position = min(min_stop_position, input.index(stop_token)) 
     return input[:min_stop_position]
 
-def batched_predict_continuation(model, tokenizer, inputs: List[str], trim: bool=True,
-                                 temperature: float=0.8, strategy: str="nucleus", top_p=0.95,
-                                 device: str="cuda", max_to_generate: int=128, stop_words=None):
-    assert tokenizer.padding_side == 'left'
-    assert isinstance(inputs, list)
-    batch = tokenizer(inputs, return_tensors="pt", 
-                      truncation=True, padding="longest")
-    batch = batch.to(device)
-    max_input_length = batch.input_ids.size(1)
-    max_length = max_input_length + max_to_generate
-    stopping_criteria = StoppingCriteriaList()
-    if stop_words is not None:
-        stop_words_encoded = [tokenizer.encode(word, add_special_tokens=False) for word in stop_words]
-        stopping_criteria.append(StopWordsStoppingCriteria([max_input_length for l in inputs], stop_words_encoded))
-    if max_length > 2048:
-        print("warning: max_length {} is greater than the context window {}".format(max_length, 2048))
-    with torch.no_grad():
-        if strategy == "nucleus":
-            outputs = model.generate(
-                input_ids=batch.input_ids, attention_mask=batch.attention_mask,
-                max_length=max_length, stopping_criteria=stopping_criteria, 
-                do_sample=True, top_p=top_p, temperature=temperature
-            )
-        elif strategy == "greedy": 
-            outputs = model.generate(
-                input_ids=batch.input_ids, attention_mask=batch.attention_mask,
-                max_length=max_length, stopping_criteria=stopping_criteria, 
-                do_sample=False, num_beams=1,
-            )    
-
-    hypo_strs = []
-    for input, output in zip(inputs, outputs):
-        detok_hypo_str = tokenizer.decode(output.flatten(), clean_up_tokenization_spaces=False)
-        while detok_hypo_str.startswith(PAD):
-            detok_hypo_str = detok_hypo_str[len(PAD):]
-        if detok_hypo_str.startswith(BOS):
-            detok_hypo_str = detok_hypo_str[len(BOS):]
-
-        if trim:
-            detok_hypo_str = detok_hypo_str[len(input):]
-            detok_hypo_str = remove_extra_code(detok_hypo_str)
-        hypo_strs.append(detok_hypo_str)
-
-    return hypo_strs
-
-def batch_predict_next_cell_type(
-    model, tokenizer, inputs: List[str], *args, **kwargs):
-    hypo_strs = batched_predict_continuation(model, tokenizer, 
-                                             inputs, *args, **kwargs)
-    incoder_to_juice_format = {"<text>": "markdown", "<cell>": "code"}
-    next_preds = []
-    for hypo_str in hypo_strs:
-        # to get rid of any errant ending tags at the start.
-        hypo_str = hypo_str.replace("</text>", "").replace("</code>", "") 
-        hypo_str = hypo_str.strip()
-        try: hypo_str = hypo_str.split()[0].strip()
-        except: hypo_str = "ERROR"
-        hypo_str = incoder_to_juice_format.get(
-            hypo_str, hypo_str
-        )
-        next_preds.append(hypo_str)
-    
-    return next_preds
-
-def predict_next_cell_type(model, tokenizer, input):
-    """zero shot prediction of the next cell type."""
-    try:
-        cont = predict_continuation(model, tokenizer, input) # continuation.
-        return cont.strip().split()[0].strip()
-    except IndexError as e:
-        print(e)
-        return "ERROR"
-
 # main
 if __name__ == "__main__":
-    dataset = UnTokenizedDataset("./data/juice-dataset/dev.jsonl")
-    # tokenizer = AutoTokenizer.from_pretrained("facebook/incoder-1B") # InCoder tokenizer.
+    dataset = InCoderInFillDataset("./data/juice-dataset/dev.jsonl")
     tokenizer = dataset.tokenizer
     model = AutoModelForCausalLM.from_pretrained("facebook/incoder-1B") # incoder-1B model.
     model.cuda() # move to GPU
-    dataloader = DataLoader(dataset, batch_size=16, shuffle=True)
-    next_cell_preds = defaultdict(lambda:0)
-    
-    matches, tot = 0, 0
-    pbar = tqdm(dataloader)
-    WRITE_PATH = "./analysis/incoder_greedy_nctp_juice_val.jsonl"
+    WRITE_PATH = "./analysis/incoder_markdown_infill_val.jsonl"
     open(WRITE_PATH, "w")
-    for batch in pbar:
-        trues = list(batch[1])
-        inputs = list(batch[0])
-        # preds = batch_predict_next_cell_type(
-        #     model, tokenizer, inputs,
-        #     temperature=0.1, top_p=0.95,
-        # )
-        preds = batch_predict_next_cell_type(
-            model, tokenizer, inputs,
-            strategy="greedy",
-        )
-        with open(WRITE_PATH, "a") as f:
-            for true, pred in zip(trues, preds): 
-                next_cell_preds[pred] += 1
-                matches += int(pred == true)
-                tot += 1
-                dumped_rec = json.dumps({"pred": pred, "true": true})
-                f.write(dumped_rec+"\n")
-        pbar.set_description(f"acc: {(100*matches/tot):.2f}")
-    print(f"acc: {matches/tot}")
+    for batch in tqdm(dataset):
+        op = infill(model, tokenizer, verbose=False,
+                    parts=[batch[0], "</text>"]) 
+        predicted_next_markdown_step = op['infills'][0].split("</text>")[0].strip()
+        inst = {
+            "id": batch[2], 
+            "true": batch[1], 
+            "pred": predicted_next_markdown_step,
+        }
+        with open(WRITE_PATH, "a") as f: f.write(json.dumps(inst)+"\n")
+        #     for true, pred in zip(trues, preds): 
+        #         next_cell_preds[pred] += 1
+        #         matches += int(pred == true)
+        #         tot += 1
+        #         dumped_rec = json.dumps({"pred": pred, "true": true})
+        #         f.write(dumped_rec+"\n")
+        # pbar.set_description(f"acc: {(100*matches/tot):.2f}")
