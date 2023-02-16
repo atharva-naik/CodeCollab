@@ -159,6 +159,12 @@ builtins_set = set(['ArithmeticError',
  'type',
  'vars',
  'zip'])
+def extract_fn_name(func):
+    if isinstance(func, ast.Call): 
+        return extract_fn_name(func.func)
+    elif isinstance(func, ast.Name): return func.id
+    elif isinstance(func, ast.Attribute): return func.attr
+
 def get_uniq_vars_and_funcs(cell_code_ast_root: ast.Module, 
                             imported_module_names: List[str]=[]) -> Dict[str, Dict[str, bool]]:
     """
@@ -192,6 +198,8 @@ def get_uniq_vars_and_funcs(cell_code_ast_root: ast.Module,
                 is_attr_call = False
             elif isinstance(node.func, ast.Attribute):
                 func = node.func.attr
+            elif isinstance(node.func, ast.Call):
+                func = extract_fn_name(node.func)
             if func in skip_names: continue 
             if func not in uniq_func_seq:
                 uniq_func_seq[func] = is_attr_call
@@ -509,6 +517,9 @@ def analyze_all_data(data: Dict[str, dict]) -> List[Dict[str, Union[float, int, 
         analysis_summary.append(summary)
 
     return analysis_summary
+
+def extract_python_comments():
+    return ""
 
 def generate_final_stats(summ: List[Dict[str, Union[float, int, bool]]]) -> Dict[str, Union[float, int, bool]]:
     summ_df = pd.DataFrame(summ)

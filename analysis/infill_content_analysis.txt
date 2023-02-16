@@ -1,0 +1,7 @@
+code fragment overlap: 4.26%
+func entities overlap: 35.79%
+vars entities overlap: 22.34%
+noun chunks fuzzy overlap: 44.76%
+verb chunks fuzzy overlap: 35.13%
+yake: keyphrase fuzzy overlap: 48.77%
+hf: keyphrase fuzzy overlap: 
