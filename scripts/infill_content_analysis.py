@@ -60,7 +60,7 @@ def get_keyphrases(markdown: str, extractor=None):
     for phrase, score in keyphrases:
         words = set(phrase.strip().split())
         if len(words.difference(words_seen_till_now)) > 0:
-            non_redundant_kps.append((phrase, score))
+            non_redundant_kps.append(phrase)
         for word in words: words_seen_till_now.add(word)
 
     return non_redundant_kps
@@ -93,11 +93,14 @@ def analyze_code_in_markdown(infill, val_insts):
     print(f"func entities overlap: {(100*func_overlap/func_tot):.2f}%")        
     print(f"vars entities overlap: {(100*vars_overlap/vars_tot):.2f}%")
 
-def analyze_keyphrases_in_markdown(infill, extractor):
+def analyze_keyphrases_in_markdown(infill, extractor, name="yake"):
     tot, overlap = 0, 0
     for rec in tqdm(infill):
-        true_kp = get_keyphrases(rec['true'], extractor)
-        pred_kp = get_keyphrases(rec['pred'], extractor)
+        if name == "yake":
+            true_kp = get_keyphrases(rec['true'], extractor)
+            pred_kp = get_keyphrases(rec['pred'], extractor)
+        elif name == "hf":
+            true_kp = extractor(rec['true'])
         # check for fuzzy string match using fuzzywuzzy.
         for kp_t in true_kp:
             align_scores = [fuzz.token_sort_ratio(kp_t, kp_p) for kp_p in pred_kp]
@@ -107,6 +110,7 @@ def analyze_keyphrases_in_markdown(infill, extractor):
                 continue
             i = np.argmax(align_scores) # pkp = pred_kp[i]
             tot += 100
+            print(kp_t, pred_kp[i])
             overlap += align_scores[i]
     print(f"keyphrase fuzzy overlap: {(100*overlap/tot):.2f}%")
 
@@ -148,9 +152,9 @@ if __name__ == "__main__":
     infill = read_jsonl("./analysis/incoder_markdown_infill_val.jsonl")
     val_insts = read_jsonl("./data/juice-dataset/dev.jsonl")
     ANALYZE_CODE_IN_MARKDOWN = False # mixed: instruction+whole code level
-    ANALYZE_KEYPHRASES = False  # local: instruction level.
+    ANALYZE_KEYPHRASES = True  # local: instruction level.
     use_keyphrase_extractor = ["yake", "hf"][0] # hf is a huggingface based transformer model for keyphrase extraction.
-    ANALYZE_VERB_AND_NOUN_PHRASES = True # local: instruction level.
+    ANALYZE_VERB_AND_NOUN_PHRASES = False # local: instruction level.
     ANALYZE_INSTRUCTION_TOPICS = False # global: topic model is fit on all the markdown comments.s
     if ANALYZE_CODE_IN_MARKDOWN:
         # analyze the 
@@ -163,7 +167,11 @@ if __name__ == "__main__":
             import yake
             extractor = yake.KeywordExtractor()
         elif use_keyphrase_extractor == "hf":
-            pass
+            from datautils.keyphrase_extraction import KeyphraseExtractionPipeline
+            model_name = "ml6team/keyphrase-extraction-kbir-inspec"
+            extractor = KeyphraseExtractionPipeline(
+                model=model_name, device="cuda",
+            )
         analyze_keyphrases_in_markdown(infill, extractor)
     if ANALYZE_VERB_AND_NOUN_PHRASES:
         analyze_vp_np_overlap(infill)
