@@ -4,4 +4,4 @@ vars entities overlap: 22.34%
 noun chunks fuzzy overlap: 44.76%
 verb chunks fuzzy overlap: 35.13%
 yake: keyphrase fuzzy overlap: 45.28%
-hf: keyphrase fuzzy overlap: 
+hf: keyphrase fuzzy overlap: 30.22%
