@@ -92,6 +92,21 @@ def context_to_cell_seq(context: List[dict]) -> List[Tuple[str, int]]:
 
     return cell_seq
 
+def write_instance_as_nb(inst: dict, path):
+    """programmatically create jupyter notebook from JuICe dataset instance."""
+    nb = nbf.v4.new_notebook()
+    nb["cells"] = []
+    context = inst["context"][::-1]
+    for cell in context:
+        cell_type = cell["cell_type"]
+        if cell_type == "markdown": content = cell["nl_original"]
+        else: content = cell["code"]
+        if cell_type == "markdown": nb["cells"].append(nbf.v4.new_markdown_cell(content))
+        elif cell_type == "raw": nb["cells"].append(nbf.v4.new_raw_cell(content))
+        elif cell_type == "heading": nb["cells"].append(nbf.v4_new_heading_cell(content))
+        else: nb["cells"].append(nbf.v4.new_code_cell(content)) # code cell.
+    with open(path, "w") as f: nbf.write(nb, f)
+
 def write_cells_as_nb(cells: List[Tuple[str, int]], path):
     """programmatically create jupyter notebook from cell sequence.
     Each element of the sequence is a (content, cell_type) tuple."""
