@@ -13,6 +13,7 @@ from nltk.corpus import stopwords
 from collections import defaultdict
 from gensim.utils import simple_preprocess
 from datautils.plan_graph_extraction import get_verb_phrases
+from datautils.markdown_cell_analysis import process_markdown
 from datautils.code_cell_analysis import ast_parse, get_uniq_vars_and_funcs
 
 # stop words for English.
@@ -22,14 +23,6 @@ stop_words = stopwords.words('english')
 #     'data', 'question', 'assignment', 
 #     'use', 'using', 'function', 'model',
 # ])
-
-def process_markdown(markdown: str):
-    """strip formatting and syntax cues from markdown."""
-    markdown = markdown.replace("#", " ").replace("`", " ").replace("*", " ")
-    markdown = " ".join(markdown.split())
-    
-    return markdown
-
 def get_code_entity_mentions(markdown: str, inst: dict):
     imports = inst["imports"]
     func_names = set() 

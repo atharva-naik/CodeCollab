@@ -61,7 +61,9 @@ def gather_notebooks_by_topic(path: str, serialize_nbs: bool=True,
                               use_full_path: bool=False, 
                               filt_non_alts: bool=False) -> Dict[str, List[dict]]:
     """group notebooks by the base file name as a proxy for the topic.
+    
     Parameters:
+    - `path`: path to the validation data JSONL.
     - `seralize_nbs`: convert JuICe instances to a sequence of cells in the correct chronological order.
     - `use_full_path`: use the full `path` field in the metadata in order to group notebooks.
     - `filt_non_alts`: fitler out notebook synsets of size 1 (no potentially alternative implements).
@@ -85,10 +87,19 @@ def gather_notebooks_by_topic(path: str, serialize_nbs: bool=True,
 def is_nb_prefix(nb1: List[Tuple[str, str]], nb2: List[Tuple[str, str]]):
     min_len = min(len(nb1), len(nb2))
     for i in range(min_len):
-        if nb1[i][0].strip() != nb2[i][0].strip(): return False
+        c1 = nb1[i][0]
+        c2 = nb2[i][0]
+        if c1.strip() != c2.strip(): 
+            for l1, l2 in zip(c1.split(), c2.split()):
+                l1 = l1.strip()
+                l2 = l2.strip()
+                if l1 != l2:
+                    print(l1, l2)
+            return False
     return True
 
-def name_to_paths_dict(data: List[dict], filt_out_lt_1: bool=True) -> Dict[str, List[str]]:
+def name_to_paths_dict(data: List[dict], 
+                       filt_out_lt_1: bool=True) -> Dict[str, List[str]]:
     name_to_paths = defaultdict(lambda: set())
     for i, nb in enumerate(data):
         path = nb["metadata"]["path"]
@@ -113,13 +124,20 @@ def nb_prefix_inter_path_filename_synset_analysis(path: str):
     tot_pairs = 0
     prefix_pairs = 0
     non_prefix_pairs = []
-    for path, nbs in nb_clusters.items():
-        for i in range(len(nbs)-1):
-            for j in range(i+1, len(nbs)):
-                tot_pairs += 1
-                if is_nb_prefix(nbs[i], nbs[j]):
-                    prefix_pairs += 1
-                else: non_prefix_pairs.append(nbs[i], nbs[j])
+    for name, paths in name_to_paths.items():
+        for i in range(len(paths)-1):
+            for j in range(i+1, len(paths)):
+                p1c = nb_clusters[paths[i]]
+                p2c = nb_clusters[paths[j]]
+                for ii in range(len(p1c)):
+                    for jj in range(len(p2c)):
+                        nb1 = p1c[ii]
+                        nb2 = p2c[jj]
+                        tot_pairs += 1
+                        if is_nb_prefix(nb1, nb2): prefix_pairs += 1
+                        else: non_prefix_pairs.append((nb1, nb2))
+    print(f"percent of prefix-pairs: {(100*prefix_pairs/tot_pairs):.2f}% ({prefix_pairs}/{tot_pairs})")
+    print(f"non-prefix pairs found: {len(non_prefix_pairs)}")
     
     return non_prefix_pairs
 

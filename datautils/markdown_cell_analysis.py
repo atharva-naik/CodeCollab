@@ -246,6 +246,13 @@ def cluster_titles(data: List[dict], model, path: str):
     with open(path, "w") as f:
         json.dump(titles, f, indent=4)
 
+def process_markdown(markdown: str):
+    """strip formatting and syntax cues from markdown."""
+    markdown = markdown.replace("#", " ").replace("`", " ").replace("*", " ")
+    markdown = " ".join(markdown.split())
+    
+    return markdown
+                
 def compute_interleave_stats(data: List[dict]):
     seq_lens = {"code": [], "markdown": [], "raw": []}
     switches = [] # number of switches.
