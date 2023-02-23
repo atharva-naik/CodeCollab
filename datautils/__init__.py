@@ -1,5 +1,6 @@
 # package for dataset processing
 import os
+import re
 import json
 import random
 import pathlib
@@ -8,6 +9,11 @@ from typing import *
 from tqdm import tqdm
 import nbformat as nbf
 from collections import defaultdict
+
+def camel_case_split(identifier, do_lower: bool=False):
+    matches = re.finditer('.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
+    if do_lower: return [m.group(0).lower() for m in matches]
+    return [m.group(0) for m in matches]
 
 def read_jsonl(path: str, use_tqdm: bool=True, 
                cutoff: Union[int, None]=None) -> List[dict]:

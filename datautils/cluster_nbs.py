@@ -1,9 +1,54 @@
-import re
 import pathlib
+import numpy as np
 from typing import *
-from datautils import read_jsonl
+from tqdm import tqdm
+from sklearn.cluster import KMeans
 from collections import defaultdict
+# from sklearn.cluster import k_means_
+from sklearn.preprocessing import normalize
+from datautils import read_jsonl, camel_case_split
+from datautils.keyphrase_extraction import load_keyphrases
+from sklearn.metrics.pairwise import cosine_similarity, pairwise_distances
+from datautils.code_cell_analysis import split_func_name, extract_api_full_name_dict
 
+def filter_out_short_prefixes(data: List[dict]) -> List[dict]:
+    path_wise_nbs = defaultdict(lambda:[])
+    for inst in data:
+        path = inst["metadata"]["path"]
+        path_wise_nbs[path].append(inst)
+    longest_nbs = []
+    for path, nbs in path_wise_nbs.items():
+        i = np.argmax([len(nb["context"]) for nb in nbs])
+        longest_nbs.append(nbs[i])
+
+    return longest_nbs 
+
+def filter_data_as_mapping(data: List[dict], use_full_path: bool=True) -> List[dict]:
+    path_wise_nbs = defaultdict(lambda:[])
+    for id, inst in enumerate(data):
+        path = inst["metadata"]["path"]
+        if use_full_path: 
+            path = pathlib.Path(path).stem
+        path_wise_nbs[path].append((inst, id))
+    longest_nbs = {}
+    for path, nbs_and_ids in path_wise_nbs.items():
+        i = np.argmax([len(nb["context"]) for nb, id in nbs_and_ids])
+        nb, id = nbs_and_ids[i]
+        longest_nbs[id] = nb
+
+    return longest_nbs 
+# def create_cluster(sparse_data, nclust = 10):
+#     # Manually override euclidean
+#     def euc_dist(X, Y = None, Y_norm_squared = None, squared = False):
+#         #return pairwise_distances(X, Y, metric = 'cosine', n_jobs = 10)
+#         return cosine_similarity(X, Y)
+#     k_means_.euclidean_distances = euc_dist
+#     scaler = StandardScaler(with_mean=False)
+#     sparse_data = scaler.fit_transform(sparse_data)
+#     kmeans = k_means_.KMeans(n_clusters = nclust, n_jobs = 20, random_state = 3425)
+#     _ = kmeans.fit(sparse_data)
+
+#     return kmeans
 def gather_nbs_by_metadata(path: str) -> Dict[str, Dict[int, dict]]:
     # gather notebook
     data = read_jsonl(path)
@@ -24,6 +69,78 @@ def gather_nbs_by_metadata(path: str) -> Dict[str, Dict[int, dict]]:
         "topics": topics
     }
 
+def build_bop_notebook_repr(inst: Dict[str, Any], nb_keyphrases: Dict[int, dict],
+                            vocab_mapping: Dict[str, int]={}) -> List[Dict[str, Union[str, List[str]]]]:
+    """given a notebook instance build a BOP (Bag of Phrases) representation from it.
+    Parameters:
+    - `inst`: dictionary corresponding to the instance.
+    - `nb_keyphrases`: list of keyphrases for this notebook."""
+    phrase_counts = defaultdict(lambda:0)
+    kp_dict = {}
+    vocab_size = len(vocab_mapping)
+    for rec in nb_keyphrases:
+        kp_dict[rec["md_id"]] = rec["keyphrases"]
+    for i, cell in enumerate(inst["context"][::-1]):
+        cell_type = cell["cell_type"]
+        if cell_type == "code":
+            # full_api_names = extract_api_full_name_dict(inst["code"])
+            if cell["api_sequence"] is None: continue
+            for api in cell["api_sequence"]:
+                if api == "NO_API_SEQUENCE": continue
+                # full_api = full_api_names[api]
+                phrase = " ".join(split_func_name(api))
+                phrase_counts[phrase] += 1
+
+        if cell_type == "markdown":
+            for phrase in kp_dict[i]:
+                phrase_counts[phrase] += 1
+    # full_api_names = extract_api_full_name_dict(inst['code'])
+    if inst["api_sequence"] is not None:
+        for api in inst["api_sequence"]:
+            # full_api = full_api_names[api]
+            if api == "NO_API_SEQUENCE": continue
+            # api_phrase = " ".join(split_func_name(full_api))
+            # cell_repr["content"].append(api_phrase)
+            phrase = " ".join(split_func_name(api))
+            phrase_counts[phrase] += 1
+
+    if vocab_size == 0: return phrase_counts
+    else:
+        vec = np.zeros(vocab_size)
+        for phrase, count in phrase_counts.items():
+            phrase_id = vocab_mapping[phrase]
+            vec[phrase_id] = count
+
+        return vec
+
+def fit_bop_model(path: str, keyphrase_path: str):
+    data = filter_data_as_mapping(read_jsonl(path))
+    nb_kps = load_keyphrases(keyphrase_path)
+    vocab_mapping = set()
+    for id in tqdm(data):
+        phrase_counts = build_bop_notebook_repr(data[id], nb_kps[id])
+        for phrase in phrase_counts:
+            vocab_mapping.add(phrase)
+    vocab_mapping = sorted(list(vocab_mapping))
+    vocab_mapping = {k:v for v,k in enumerate(vocab_mapping)}
+    print(f"using vocab size: {len(vocab_mapping)}")
+    phrase_vecs = []
+    for id in tqdm(data):
+        phrase_vec = build_bop_notebook_repr(data[id], nb_kps[id], vocab_mapping)
+        phrase_vecs.append(phrase_vec)
+    phrase_vecs = np.stack(phrase_vecs)
+
+    return data, phrase_vecs
+
+def get_nb_clusters(path: str, keyphrase_path: str, **kmeans_params):
+    data, X_bop = fit_bop_model(path, keyphrase_path)
+    kmeans = KMeans(**kmeans_params).fit(normalize(X_bop))
+    nb_clusters = defaultdict(lambda:[])
+    for nb, label in zip(data.values(), kmeans.labels_):
+        nb_clusters[label].append(nb)
+    # kmeans = create_cluster(X_bop, n_clust)
+    return nb_clusters, kmeans
+
 def extract_notebook(inst: dict) -> List[Tuple[str, str]]:
     nb = []
     context = inst["context"][::-1]
@@ -36,11 +153,6 @@ def extract_notebook(inst: dict) -> List[Tuple[str, str]]:
     nb.append((inst['code'], "code"))
 
     return nb
-
-def camel_case_split(identifier, do_lower: bool=False):
-    matches = re.finditer('.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
-    if do_lower: return [m.group(0).lower() for m in matches]
-    return [m.group(0) for m in matches]
 
 def get_interesting_topics(nb_clusters: Dict[str, dict]) -> Dict[str, dict]:
     filt_nbs = defaultdict(lambda:[])
@@ -59,7 +171,8 @@ def get_interesting_topics(nb_clusters: Dict[str, dict]) -> Dict[str, dict]:
 
 def gather_notebooks_by_topic(path: str, serialize_nbs: bool=True, 
                               use_full_path: bool=False, 
-                              filt_non_alts: bool=False) -> Dict[str, List[dict]]:
+                              filt_non_alts: bool=False,
+                              consider_longest_ones: bool=False) -> Dict[str, List[dict]]:
     """group notebooks by the base file name as a proxy for the topic.
     
     Parameters:
@@ -70,6 +183,8 @@ def gather_notebooks_by_topic(path: str, serialize_nbs: bool=True,
     """
     # gather notebooks
     data = read_jsonl(path)
+    if consider_longest_ones:
+        data = filter_out_short_prefixes(data)
     nb_groups = defaultdict(lambda:[])
     for i, nb in enumerate(data):
         if use_full_path: topic_path = nb["metadata"]["path"]
@@ -93,8 +208,7 @@ def is_nb_prefix(nb1: List[Tuple[str, str]], nb2: List[Tuple[str, str]]):
             for l1, l2 in zip(c1.split(), c2.split()):
                 l1 = l1.strip()
                 l2 = l2.strip()
-                if l1 != l2:
-                    print(l1, l2)
+                if l1 != l2: pass# print(l1 ,"||", l2)
             return False
     return True
 
@@ -116,10 +230,19 @@ def name_to_paths_dict(data: List[dict],
 
     return name_to_paths
 
-def nb_prefix_inter_path_filename_synset_analysis(path: str):
+def nb_prefix_inter_path_filename_synset_analysis(
+        path: str, consider_longest_ones: bool=True,
+    ):
     """compare within notebooks having the same full path."""
     val_data = read_jsonl(path)
-    nb_clusters = gather_notebooks_by_topic(path, use_full_path=True, filt_non_alts=False)
+    if consider_longest_ones:
+        val_data = filter_out_short_prefixes(val_data)
+        print("filtering out the shortest prefixes gives instances:", len(val_data))
+    nb_clusters = gather_notebooks_by_topic(
+        path, use_full_path=True, 
+        filt_non_alts=False, serialize_nbs=False,
+        consider_longest_ones=consider_longest_ones,
+    )
     name_to_paths = name_to_paths_dict(val_data)
     tot_pairs = 0
     prefix_pairs = 0
@@ -134,7 +257,8 @@ def nb_prefix_inter_path_filename_synset_analysis(path: str):
                         nb1 = p1c[ii]
                         nb2 = p2c[jj]
                         tot_pairs += 1
-                        if is_nb_prefix(nb1, nb2): prefix_pairs += 1
+                        if is_nb_prefix(extract_notebook(nb1), extract_notebook(nb2)): 
+                            prefix_pairs += 1
                         else: non_prefix_pairs.append((nb1, nb2))
     print(f"percent of prefix-pairs: {(100*prefix_pairs/tot_pairs):.2f}% ({prefix_pairs}/{tot_pairs})")
     print(f"non-prefix pairs found: {len(non_prefix_pairs)}")

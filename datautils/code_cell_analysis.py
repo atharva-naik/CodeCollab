@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 from typing import *
 from tqdm import tqdm
+from datautils import camel_case_split
 
 builtins_set = set(['ArithmeticError',
  'AssertionError',
@@ -244,6 +245,55 @@ def get_line_count(code: str) -> int:
         if line != "": num_lines += 1
 
     return num_lines
+
+def extract_value_str(value):
+    if isinstance(value, ast.Name):
+        return value.id
+    elif isinstance(value, ast.Attribute):
+        return extract_value_str(value.value)+"."+value.attr
+
+def get_full_func_name(node: ast.Call):
+    func = node.func
+    if isinstance(func, ast.Attribute):
+        return extract_value_str(func.value)+"."+func.attr
+    elif isinstance(func, ast.Name):
+        return func.id
+
+def extract_api_call_seq(code: str) -> List[str]:
+    root = ast.parse(code)
+    api_call_seq = []
+    for node in ast.walk(root):
+        if isinstance(node, ast.Call):
+            func_name = get_full_func_name(node)
+            api_call_seq.append(func_name)
+
+    return api_call_seq
+
+def get_short_func_name(node: ast.Call):
+    func = node.func
+    if isinstance(func, ast.Attribute):
+        return func.attr
+    elif isinstance(func, ast.Name):
+        return func.id
+
+def extract_api_full_name_dict(code: str) -> List[str]:
+    root = ast.parse(code)
+    api_full_names = {}
+    for node in ast.walk(root):
+        if isinstance(node, ast.Call):
+            full_func_name = get_full_func_name(node)
+            short_func_name = get_short_func_name(node)
+            api_full_names[short_func_name] = full_func_name
+    
+    return api_full_names
+
+def split_func_name(name: str, do_lower: bool=True) -> List[str]:
+    if name == "NO_API_SEQUENCE": return []
+    terms = []
+    for term in name.strip().replace(".", " ").replace("_", " ").split(): # print(term)
+        terms += camel_case_split(term, do_lower=do_lower)
+
+    return terms
 
 def strip_magic_from_code(cell_code: str): # and notebook commands (start with !).
     filt_lines = []

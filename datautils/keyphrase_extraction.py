@@ -7,6 +7,7 @@ from transformers import (
     AutoModelForTokenClassification,
     AutoTokenizer,
 )
+from collections import defaultdict
 from transformers.pipelines import AggregationStrategy
 from datautils.markdown_cell_analysis import process_markdown
 
@@ -26,6 +27,16 @@ class KeyphraseExtractionPipeline(TokenClassificationPipeline):
             aggregation_strategy=AggregationStrategy.SIMPLE,
         )
         return np.unique([result.get("word").strip() for result in results])
+
+def load_keyphrases(path: str) -> Dict[str, List[dict]]:
+    nb_wise_kps = defaultdict(lambda:[])
+    with open(path, 'r') as f:
+        for line in f:
+            line = line.strip()
+            rec = json.loads(line)
+            nb_wise_kps[rec["nb_id"]].append(rec)
+
+    return nb_wise_kps
 
 def extract_keyphrases_for_val_data(data: List[dict], extractor, path: str) -> List[dict]:
     extracted_keyphrases = []
