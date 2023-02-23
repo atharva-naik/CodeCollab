@@ -246,9 +246,47 @@ def cluster_titles(data: List[dict], model, path: str):
     with open(path, "w") as f:
         json.dump(titles, f, indent=4)
 
+def strip_urls_from_markdown(markdown: str):
+    # import re
+    # return re.sub(
+    #     r'^https?:\/\/.*[\r\n]*', '', 
+    #     markdown, flags=re.MULTILINE,
+    # )
+    import pandas as pd
+    import texthero as hero
+    return hero.remove_urls(pd.Series(markdown))[0]
+
+def replace_markdown_links_with_display_text(markdown: str):
+    import re
+    # Anything that isn't a square closing bracket
+    name_regex = "[^]]+"
+    # http:// or https:// followed by anything but a closing paren
+    url_regex = "http[s]?://[^)]+"
+    markup_regex = '\[({0})]\(\s*({1})\s*\)'.format(name_regex, url_regex)
+    # return [match for match in re.findall(markup_regex, markdown)]
+    for disp_text, url in re.findall(markup_regex, markdown):
+        replace_str = f"[{disp_text}]({url})"
+        markdown = markdown.replace(replace_str, disp_text)
+
+    return markdown
+
+def strip_img_tags(markdown: str):
+    import re
+    return re.sub(
+        "(<img.*?>)", "", markdown, 0, 
+        re.IGNORECASE | re.DOTALL | re.MULTILINE,
+    )
+
 def process_markdown(markdown: str):
     """strip formatting and syntax cues from markdown."""
     markdown = markdown.replace("#", " ").replace("`", " ").replace("*", " ")
+    # replace markdown URLs with display text:
+    markdown = replace_markdown_links_with_display_text(markdown)
+    # strip out remaining URLs (without display text).
+    markdown = strip_urls_from_markdown(markdown)
+    # strip out img tags.
+    markdown = strip_img_tags(markdown)
+    # re-tokenize.
     markdown = " ".join(markdown.split())
     
     return markdown
