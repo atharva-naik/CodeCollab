@@ -9,6 +9,7 @@ from typing import *
 from tqdm import tqdm
 import nbformat as nbf
 from collections import defaultdict
+from torch.utils.data import Dataset, DataLoader
 
 def camel_case_split(identifier, do_lower: bool=False):
     matches = re.finditer('.+?(?:(?<=[a-z])(?=[A-Z])|(?<=[A-Z])(?=[A-Z][a-z])|$)', identifier)
@@ -26,6 +27,59 @@ def read_jsonl(path: str, use_tqdm: bool=True,
             if cutoff is not None and i == cutoff: break
             
     return data
+
+# dataset class for CoNaLa code search.
+class CoNaLaCodeSearchDataset(Dataset):
+    """load CoNaLa data for code-search training."""
+    def __init__(self, folder: str="./data/CoNaLa", 
+                 split: str="train", tokenizer=None, **tok_args):
+        self.split = split
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        if self.split == "train":
+            self.data = read_jsonl(os.path.join(
+                folder, "train.jsonl"
+            ))
+        else:
+            self.data = json.load(open(
+                os.path.join(
+                    folder, f"{split}.json"
+                )
+            ))
+    
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, i):
+        q = self.data[i]["intent"] # query
+        c = self.data[i]["snippet"] # document/code
+        q_tok_dict = self.tokenizer(q, **self.tok_args)
+        c_tok_dict = self.tokenizer(c, **self.tok_args)
+        
+        return [
+            q_tok_dict["input_ids"][0], q_tok_dict["attention_mask"][0],
+            c_tok_dict["input_ids"][0], c_tok_dict["attention_mask"][0],
+        ]
+# not a good idea.
+# def load_conala_data_for_code_sim(folder="./data/CoNaLa"):
+#     import os
+#     from collections import defaultdict
+#     train_path = os.path.join(folder, "train.jsonl")
+#     train_data = read_jsonl(train_path)[:100000] # load the top 100K most relevant NL-PL pairs.
+#     # group together simiar code based on NL.
+#     code_synsets = defaultdict(lambda:[])
+#     for rec in train_data:
+#         nl = rec["intent"]
+#         pl = rec["snippet"]
+#         code_synsets[nl].append(pl)
+#     code_sim_pairs = []
+#     for synset in code_synsets.values():
+#         for i in range(len(synset)-1):
+#             for j in range(i+1, len(synset)):
+#                 code_sim_pairs.append((synset[i], synset[j]))
+
+#     return {"train": code_sim_pairs}
 
 def read_cell_seq(path: str, use_tqdm: bool=True): # block_size: int=1000, num_lines: int=1518104):
     cell_seqs = []
