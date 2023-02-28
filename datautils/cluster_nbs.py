@@ -1,3 +1,4 @@
+import torch
 import pathlib
 import numpy as np
 from typing import *
@@ -6,6 +7,7 @@ from sklearn.cluster import KMeans
 from collections import defaultdict
 # from sklearn.cluster import k_means_
 from sklearn.preprocessing import normalize
+from torch.utils.data import Dataset, DataLoader
 from datautils import read_jsonl, camel_case_split
 from datautils.keyphrase_extraction import load_keyphrases
 from sklearn.metrics.pairwise import cosine_similarity, pairwise_distances
@@ -157,29 +159,55 @@ class BOPModel:
     def __init__(self, kp_extractor):
         self.kp_extractor = kp_extractor
         
+class DenseModelDataset(Dataset):
+    def __init__(self, cell_seq: List[Tuple[str, str]],
+                 tokenizer, **tok_args):
+        super(DenseModelDataset, self).__init__()
+        self.tokenizer = tokenizer
+        self.cell_seq = cell_seq
+        self.tok_args = tok_args
+        
+
+    def __len__(self):
+        return len(self.cell_seq)
+
+    def __getitem__(self, i):
+        content, cell_type = self.cell_seq[i]
+        if cell_type == "markdown":
+            content = process_markdown(content)
+        else: 
+            content = remove_comments_and_docstrings(content, lang="python")
+        tokenized_input = self.tokenizer(content, return_tensors="pt", truncation=True,
+                                         padding="max_length", max_length=200)
+        
+        return [tokenized_input["input_ids"][0], tokenized_input["attention_mask"][0]]
+        
 # way to model 
 class DenseNBModel:
     """class to model NBs using dense transformer representations."""
     def __init__(self, path: str="microsoft/codebert-base"):
         from transformers import RobertaModel, RobertaTokenizer
-        self.tokenizer = RobertaTokenizer.from_pretrained(path)
         self.transformer = RobertaModel.from_pretrained(path)
+        self.tokenizer = RobertaTokenizer.from_pretrained(path)
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
     def to(self, device: str):
+        self.device = device
         self.transformer.to(device)
 
     def encode(self, inst: dict):
         cell_seq = extract_notebook(inst)
-        proc_seq = []
-        for content, cell_type in cell_seq:
-            if cell_type == "markdown":
-                proc_seq.append(process_markdown(content))
-            else: 
-                proc_seq.append(remove_comments_and_docstrings(content, lang="python"))
-        tokenized_input = self.tokenizer(proc_seq, return_tensors="pt", truncation=True, 
-                                         padding="max_length", max_length=200)
+        dataset = DenseModelDataset(cell_seq, tokenizer=self.tokenizer)
+        dataloader = DataLoader(dataset, batch_size=16)
+        op = []
+        for batch in dataloader:
+            for i in range(len(batch)):
+                batch[i] = batch[i].to(self.device)
+            mini_batch_op = self.transformer(batch[0], batch[1]).pooler_output
+            for cell_rep in mini_batch_op:
+                op.append(cell_rep)
 
-        return self.transformer(**tokenized_input).pooler_output
+        return torch.stack(op)
 
 def test_dense_nb_model():
     model = DenseNBModel()
