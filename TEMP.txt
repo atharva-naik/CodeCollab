@@ -1,0 +1,1831 @@
+4.3-lab-intro-numpy-stats-solution
+Sentiment Classification - Project 2 Solution
+machine_learning
+A4_DataAnalysis
+lab1-checkpoint
+assignment2_p2_student
+solution-code-5
+Problem_2-checkpoint
+regex-lecture-solutions
+Advanced-Calculus Solutions
+A2_S8881
+Lab4-Solutions
+lab4
+01_solutions_pandas
+NLP Project - Solutions
+5.1-Classification-Review-and-Case-Study-Churn-Problem-Solution-checkpoint
+Spatial Data and Networks Lab-checkpoint
+HW3_solution
+solution-code
+03_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+Problem 1
+w8-2.2-solutions
+BasicVectorOps
+w4p1
+A3_S8881
+Ecommerce Purchases Exercise - Solutions
+SentimentAnalysis_solution
+01-using-PCA-to-plot-in-two-dimensions-checkpoint
+Data Visualization and EDA Lab
+2-15_solutions
+Decision Trees and Random Forest Project - Solutions
+section_4_solutions
+Sentiment Classification - Project 2 Solution
+practice-postgres-sql-solutions
+12_PCA_Solution
+w7p1
+w9d1_trendline_codealong_SOLUTION
+2_compare_alignment_vs_quasialignment_solution
+lab02
+2. Sierpinski Triangle
+02_Basic_Python_II_Control_Flow_and_Functions_solutions
+Week6-assignments
+w7p2
+solutions-02
+A4_DataAnalysis
+Exercises_code_with_solutions
+Exercises_with_solutions
+Graph Analysis
+Solutions
+solution-code
+Regression Models Lab-checkpoint
+Problem_2
+07_Introduction_To_Pandas_solutions
+A2_R9050-checkpoint
+3.1_Linear_Algebra-solution
+NLP Project - Solutions
+python-data-viz-lab-solutions
+Exercises_with_Solutions
+Exercises_with_solutions
+w13p2
+numpy Exercise Notebook-SOLUTIONS
+CS109B_lab_intro_regularization_solutions
+2_compare_alignment_vs_quasialignment_solution
+Decision Trees and Random Forest Project - Solutions-checkpoint
+Exercise_with_solutions
+MissingValues
+02_Numpy_I_Ruofan-checkpoint
+unit5_lesson3_solutions
+6.1-Pipelines-lesson-solutions
+02-customizing-visual-appearance-with-solutions
+SimpsonsMergeConcat
+~SingleShell
+problem3
+NLP Project - Solutions
+Advanced-Simplification Solutions
+baby_names_claj-checkpoint
+lab07
+baby_names_claj-checkpoint
+w2p3-checkpoint
+A4_DataAnalysis
+chap14soln
+solution-code-3
+01_Python_introduction_lab_solutions
+Dealing with data solutions
+01_Basic_Python_I_Object_and_Data_Structures_solutions
+BasicVectorOps
+sheet2-checkpoint
+fv_homo_1d_solution
+ml_101_solution
+Exercises_with_solutions
+matplotlib Exercise Notebook-SOLUTIONS
+Running a Multivariate Regression in Python - Solution
+01_Python_I-checkpoint
+Exercises_solutions
+problem0-checkpoint
+Logistic Regression 
+timeseries_SOLUTION-checkpoint
+SF Salaries Exercise- Solutions
+Homework5-checkpoint
+DBSCAN_kmeans_and_hierarchical-lab-solutions
+w3p3
+Sentiment Classification - Project 5 Solution
+01_solutions
+08_Logistic_Regression_Solutions
+Regression - Frank-checkpoint
+Advanced-Calculus Solutions
+w6p3
+w6p1
+lab04_solution
+w5p3-checkpoint
+sheet4-checkpoint
+adv3_panorama-stitching-solution
+trendline_SOLUTION
+GPTutorial2_WithSolutions
+WordCount-checkpoint
+lab02_solution
+1_MDP_Review
+A5_NaturalLanguageProcessing
+Ecommerce Purchases Exercise - Solutions
+09-Function Practice Exercises - Solutions-checkpoint
+minipset-underactuated-robotics
+Logistic Regression Project - Solutions
+w2p3
+Solutions
+06_Introduction_To_Matplotlib_solutions
+NLP Project - Solutions
+w6p1
+lab02-checkpoint
+3. Nearest Redi Problem
+solutions-module-1
+w2-1.4-solution
+hello
+1-titanic_EDA_first_models
+w3p2
+exercise-02
+ml_101_solution
+03_solutions
+recommendation_engine
+Problems and Solutions
+WordCount_solution
+01_Lab_1_Introduction_solution
+linear_regression-review-lab-solutions
+w7p3
+Spatial Data and Networks Lab-checkpoint
+Lab1-numstack_solutions
+module-6-decision-tree-practical-assignment-solution
+Quiz_reglin-sgd_multi
+08_Basic_Processing_Exercise-with_solutions
+Solutions
+13_LSI_Solution
+Computing Alpha, Beta, and R Squared in Python - Solution
+A2_DataExploration
+ICA7
+Exercise-1-problem-1-2-checkpoint
+Data Tidying and Cleaning Lab
+DSA-Python-Basics-checkpoint
+w9p1
+Exercises_with_solutions
+SF Salaries Exercise- Solutions
+Naive_Bayes_tutorial_solution
+linear_regression-review-lab-solutions
+Exercise_with_Solution
+Naive_Bayes_tutorial_solution
+Idaho lakes solution
+Indexing_solutions
+A2_S8881
+Tokenization
+solution4
+Naive_Bayes_tutorial_solution
+Input_and_Output_Solutions
+Computing Alpha, Beta, and R Squared in Python - Solution
+musclehub-solutions
+chap03soln
+03-the-python-numerical-stack
+A5_NaturalLanguageProcessing
+w7p3
+chap13soln
+01_Lab_1_Introduction_solution
+A4_L69781
+hw1_solution
+solution-code
+miniBrokerSolutions
+MatplotlibExoplanets
+A2_S8881
+A2_R9050-checkpoint
+A2_DataExploration_solutions
+lab3
+ChinookSQL-checkpoint
+HW5_solution
+survey+Logistic+Regression+model
+A2_R6931
+2-13 Heatmaps_solutions
+Decision Trees and Random Forest Project - Solutions
+Advanced-Matrices Solutions
+lab02
+sheet4-checkpoint
+Numpy-specific_help_functions_Solutions
+WordCount
+C2_handout
+hw1_solution
+02-SF Salaries Exercise - Solutions
+2. Sierpinski Triangle
+foodwheel-solutions
+Exercises_01WithSolution-checkpoint
+chap02soln
+A4_DataAnalysis
+07-working-with-large-datasets-with-solutions
+chap03soln
+Sentiment_Classification_Solutions
+w9p2
+01-API_solutions
+BootstrapCoinToss
+solution_06_scaling_the_fish_data
+DSA-Python-Basics
+05-working-with-gridded-data-with-solutions
+PythonBasicsx
+B11S. Sandbox Solutions
+Python for Data Analytics - Exercise 1 solutions
+08_Logistic_Regression_Solutions
+chap02soln
+A2_R6931
+lab_generator_and_discriminator_SUBMISSION
+solution_06_scaling_the_fish_data
+module-6-decision-tree-practical-assignment-solution
+Lab0_IntroPython_solutions
+A3_L69781-checkpoint
+SoccerMatches-checkpoint
+A4_DataAnalysis
+Naive_Bayes_tutorial_solution
+Sentiment Classification - Project 3 Solution
+chap05soln
+A4_M4901
+3-titanic_feature_engineering_ML
+03_waveform_data-with_solutions
+lab04_solution
+DNN_lab_solution
+lab03-checkpoint
+Homework6-checkpoint
+02_solutions
+Week+2_SEKA GitHUB
+A3_S8881
+A2_DataExploration_solutions
+w9p2-checkpoint
+03_waveform_data-with_solutions
+Decision Trees and Random Forest Project - Solutions-checkpoint
+Lab1_solutions-checkpoint
+Tokenization-checkpoint
+machine_learning
+layer4_analysis_solutions
+MovieLensMergeConcat-checkpoint
+linear_regression-solutions
+Spatial-Data-and-Networks-Labsvetla
+K Nearest Neighbors Project - Solutions
+A2_DataExploration-checkpoint
+linear_regression-review-lab-solutions
+solutions-module-1
+Numpy Exercise - Solutions
+imdb-hands-on-solution
+lab2-checkpoint
+Problems and Solutions
+Exercise_with_Solutions
+Exercises_with_solutions
+Data Tidying and Cleaning Lab-checkpoint
+Advanced-Calculus Solutions
+w8-1.4-solutions
+13_decision_trees_solutions
+hw3_solution
+nbgrader-template
+w3p3
+3-titanic_feature_engineering_ML
+solution-code
+Exercise_with_solutions
+tutorial07_solution
+solution-code
+Exercises_with_solutions
+CS109B_lab_intro_regularization_solutions
+03_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+Week2_Solutions
+hw1
+A2_A12615927
+lab3
+Exercise_with_Solutions
+Exercises_with_solutions
+anomaly_detection
+hw2-checkpoint
+hw01_solution
+sentiment-analysis-solutions
+RNN-task-Solution
+index
+Week4-assignment
+machine_learning
+w5p3
+A2_A11970626
+w13p2
+A2_A12615927
+solution_07_clustering_the_fish-checkpoint
+2-titanic_first_ML-model
+practice-postgres-sql-solutions
+lab09_solution
+hw2-checkpoint
+Exercises_with_code_and_solutions
+module-8-boosting-assignment-1-solution
+w13p1
+A3_R6931
+HW5_solution
+ml_101_solution
+w1-3.4-lab-solution
+problem0-checkpoint
+A4_DataAnalysis
+02_Basic_Python_II_Control_Flow_and_Functions_solutions
+SpeedOfLight
+sentiment-analysis-solutions
+Exercises-with-solutions-code
+01_solutions
+w8d1-1.4-ex2.3-lab-data-imputation-bayesian-pt1-solution
+1. Neural Activation
+sheet3_solution
+1-titanic_EDA_first_models
+musclehub-solutions
+Python_Crash_Course-with_solutions
+w7p1
+A2_A11972408
+K Nearest Neighbors Project - Solutions
+ex08_2_nltk-SOLUTIONS-checkpoint
+11_advanced_sklearn_solutions
+1-25_solutions
+index
+w2-1.4-solution
+07_Introduction_To_Pandas_solutions
+W1-L1.4-list-practice-solution
+anomaly_detection
+GameOfLife
+hw1
+1-25_solutions
+Exercise_with_Solutions
+Exercises-with-solutions-and-code
+w1d4-lab-intro-numpy-stats-solution
+A3_S8881
+chap14soln
+02_ObsPy_Introduction_with_output_and_solutions
+Problem 2
+lab02_solution
+w2-1.4-solution
+Problems with Solutions -checkpoint
+minipset-underactuated-robotics
+A2_DataExploration
+5.1-Classification-Review-and-Case-Study-Churn-Problem-Solution
+A3_R6931
+05-Crash-Course-Review-Exercises-Solutions
+w7p1
+Stu_Plotting
+Tensorflow_NeuralNetworks
+practice-postgres-sql-solutions
+Numpy Exercise - Solutions
+11596619_11129778_lab1
+MissingValues
+10170359_11919698_10761225_lab3
+w1-3.4-lab-solution
+A2_A13952215
+practice-postgres-sql-solutions
+Exercises_with_solutions
+Problems and Solutions
+Exercise_with_Solution
+Exercise_with_Solutions
+Problems and Solutions
+solution-code
+ExtractingPeriodicSignalsSolutions
+regex-syntax-solutions
+w8p1
+2_compare_alignment_vs_quasialignment_solution
+Exercises_with_solutions
+A5_NaturalLanguageProcessing
+11_KMeans_Clustering_Solutions
+lab05
+Exercises_with_solutions
+anomaly_detection
+traffic-sign-classification-with-keras-solution
+2-titanic_first_ML-model
+01_Lab_1_Introduction_solution
+13_decision_trees_solutions
+Running a Multivariate Regression in Python - Solution
+DeepLearningProject-Solution-checkpoint
+hw1
+hw1
+einsum_solutions
+numpy Exercise Notebook-SOLUTIONS
+foodwheel-solutions
+01_solutions
+Naive_Bayes_tutorial_solution
+13_decision_trees_solutions
+Graph Analysis
+lab1
+w8d2-lab-naive-bayes-solution-code
+1-titanic_EDA_first_models
+Departure Delay Prediction using Random Forests
+Problem_3-checkpoint
+adv3_panorama-stitching-solution
+w8-2.3-solutions
+w8d2-lab-naive-bayes-solution-code
+TooBriefVizSolutions
+recommendation_engine
+5.1-Classification-Review-and-Case-Study-Churn-Problem-Solution
+w10p3
+hw02_solution
+w5p2
+Sentiment Analysis with TFLearn - Solution
+HW3_solution
+ml_101_solution
+ml_101_solution
+Finance Project - Solutions-checkpoint
+section_4_solutions
+11_advanced_sklearn_solutions
+12_PCA_Solution
+Decision Trees
+07-working-with-large-datasets-with-solutions
+PewReligion
+DSA Preparatory Notebook 1
+lab02
+Exercises_with_Solutions
+A2_DataExploration-checkpoint
+practice-postgres-sql-solutions
+Exercises_with_solutions
+Support Vector Machines Project - Solutions
+solutions-module-1
+05-Crash-Course-Review-Exercises-Solutions
+Problems and Solutions
+Support Vector Machines Project - Solutions
+week4-1.4-solution
+machine_learning
+Advanced-Matrices Solutions
+A2_DataExploration-checkpoint
+practice-postgres-sql-solutions
+DSA-Python-Basics-checkpoint
+forecasting
+lab02_solution
+solution_03_inspect_your_clustering
+Homework2
+02_Basic_Python_II_Control_Flow_and_Functions_solutions
+Sentiment Classification - Project 4 Solution
+solution_06_scaling_the_fish_data-checkpoint
+nbgrader-template
+hw03_solution
+practice-postgres-sql-solutions
+Week6-assignments
+Solutions-3-video-games
+Numpy Exercise - Solutions
+A5_A12818225
+01_decoding_sklearn_solutions
+10631186_10260250_lab1
+w9p1
+Stu_Voice_RecognitioML
+Exercises_with_solutions
+A2_DataExploration-checkpoint
+Homework3
+Working with Images and Text Lab
+WordCount_solution
+pandas-plotting-solutions
+NLP Project - Solutions
+A2_DataExploration
+MatplotlibExoplanets-checkpoint
+Exercises_with_code_and_solutions
+Exercise_with_Solution
+assignment2_sol
+Problem_3-checkpoint
+lab09_solution
+ml_101_solution
+TP1
+2.1-Altair-Demo-Solutions
+BootstrapLineFitting
+Exercises_with_Solutions
+01_Python_introduction_lab_solutions
+Numpy Exercise - Solutions
+Indexing_solutions
+Exercises_solutions
+practice-postgres-sql-solutions
+5.1-Classification-Review-and-Case-Study-Churn-Problem-Solution-checkpoint
+SF Salaries Exercise- Solutions
+dotProducts
+A4_M4901
+1_MDP_Review
+Exercises_with_solutions
+solution_09_which_stocks_move_together
+07_FDSN-with_solutions
+Spatial Data and Networks Lab-checkpoint
+Polynomials
+chap02soln
+Exercises_with_solutions
+K Nearest Neighbors Project - Solutions
+Week8-assignment-checkpoint
+5.1-Classification-Review-and-Case-Study-Churn-Problem-Solution-checkpoint
+w13p2
+A2_B9430
+A4_R6931
+Tokenization-checkpoint
+Spatial Data and Networks Lab-checkpoint
+08_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+chap03soln
+solution-code
+02-customizing-visual-appearance-with-solutions
+Exercises_with_solutions
+solutions-02
+DSA-Machine-learning-2
+A4_M4901
+02_Numpy_I_Ruofan-checkpoint
+03_solutions
+Week6-assignment
+A2
+Lecture13-Practice-Solution
+Solution-Code-Guided
+assignment2_p2_student
+Stu_Plotting
+Decision Trees and Random Forest Project - Solutions
+lab02_solution
+test-with-output
+Support Vector Machines Project - Solutions
+A3_O5524-checkpoint
+solution_06_scaling_the_fish_data-checkpoint
+index
+FunctionsInPython_inclass
+2-15_solutions
+hw4
+w10p2
+hw1_solution
+Exercises_with_code_and_solutions
+12_lab_nlp_solutions
+07_Basic_Processing_Exercise-with_solutions
+musclehub-solutions
+Week10-assignment
+Week10-assignment
+solutions-module-1
+CarsGroupAgg
+A2
+Sentiment_Classification_Solutions
+A4_DataAnalysis
+11_advanced_sklearn_solutions
+DS Project Architecture Lab-checkpoint
+Stu_Voice_RecognitioML
+FINAL-Beer_Foam-flight
+Exercises_with_solutions
+Working with Arrays - Solution
+01_decoding_sklearn_solutions
+Indexing_solutions
+Regression - Solutions
+A5_NaturalLanguageProcessing
+musclehub-solutions
+matplotlib Exercise Notebook-SOLUTIONS
+NLP Project - Solutions
+w10p3
+Advanced Functions Test Solutions
+A2_F4143
+06_FDSN-with_solutions
+chap13soln
+01_Lab_1_Introduction_solution
+K Nearest Neighbors Project - Solutions
+10-Guessing Game Challenge - Solution
+K Nearest Neighbors Project - Solutions
+Numpy-specific_help_functions_Solutions
+Spatial Data and Networks Lab-checkpoint
+Numpy Exercise - Solutions
+05_Intro_to_Regression_Solutions
+Logistic Regression Project - Solutions
+w8-4.2-solutions
+lab3
+Exercises_solutions
+Running a Multivariate Regression in Python - Solution
+Sentiment Classification - Project 6 Solution
+Python for Data Analytics - Exercise 1 solutions
+w8-1.4-solutions
+w8-4.2-solutions
+WordCount
+Exercises_with_solutions
+A1_SettingUp
+3.1_Linear_Algebra-solution
+Advanced-Simplification Solutions
+A3_S8881
+Obtaining the Efficient Frontier - Part II - Solution
+Lab0_IntroPython_solutions
+load-and-parse-importio-solution
+Naive_Bayes_tutorial_solution
+09_logistic_regression_all_solutions
+SklearnTutorial-solution
+Support Vector Machines Project - Solutions
+A2_L1369
+Exercises-with-solutions-code
+solution-code
+11_KMeans_Clustering_Solutions
+m3_numerics_hw
+Sentiment_Classification_Solutions
+baby_names_claj-checkpoint
+index
+lab02
+A5_NaturalLanguageProcessing
+A2_DataExploration_solutions
+A4_M4901
+Naive_Bayes_tutorial_solution
+chap05soln
+adv3_panorama-stitching-solution
+A2_DataExploration_Solutions
+w8p2
+Decision Trees and Random Forest Project - Solutions
+Regression Models Lab-checkpoint
+Spatial Data and Networks Lab
+Exercise 2 - Working with DOI lists and Article Level Metrics
+A1_SettingUp_Solutions
+w14p3
+01_Python_introduction_lab_solutions
+IntroToParaViewSolutions
+w4p2
+09-Function Practice Exercises - Solutions-checkpoint
+SF Salaries Exercise- Solutions
+lab1
+DBSCAN_kmeans_and_hierarchical-lab-solutions
+lab04_solution
+Problems and Solutions
+Running a Multivariate Regression in Python - Solution
+A4_R6931
+solution_02_clustering_2D_points
+TrumpClintonTweetsEDA-checkpoint
+A2_DataExploration_Solutions
+Indexing_solutions
+w14p1
+Python Crash Course Exercises - Solutions
+lab_layers_solutions
+Sentiment Classification - Project 3 Solution
+A3_G0579
+w7p3-checkpoint
+Lecture13-Practice-Solution
+miniBrokerSolutions
+A2_DataExploration_solutions
+A4_DataAnalysis
+MC - Predicting Gross Profit - Part I - Solution
+Advanced Python Objects - Test - Solutions
+Sentiment Classification - Project 4 Solution
+solution
+SimpsonsMergeConcat
+lesson-01-basic-numeric-types-checkpoint
+Decision Trees and Random Forest Project - Solutions
+CodingChallenge1
+Python Crash Course Exercises - Solutions
+linear_regression-review-lab-solutions
+Graph Concepts
+11389095_11871431_lab3-checkpoint
+w4p1
+17_Time_Series_Analysis_Solution
+collinearPoints
+TitanicClassification-checkpoint
+ml_101_solution
+w8p2
+solution
+5.1-Classification-Review-and-Case-Study-Churn-Problem-Solution-checkpoint
+w8p3
+A2_A11970626
+machine_learning
+Running a Multivariate Regression in Python - Solution
+Exercises_01WithSolution-checkpoint
+Stu_Plotting
+solutions-02
+SentimentAnalysis_solution
+5 - Advanced NumPy
+06_knn_sklearn-solutions
+problem1
+A5_NaturalLanguageProcessing
+Finance Project - Solutions
+WordCount
+lab02
+sheet2
+lab03
+08_Logistic_Regression_Solutions
+Data Tidying and Cleaning Lab-checkpoint
+Lab06-Experiment1-Part1
+w3p2
+TitanicClassification-checkpoint
+5.1-Classification-Review-and-Case-Study-Churn-Problem-Solution
+10631186_10260250_lab1
+lab02
+solution_03_inspect_your_clustering
+01 - Introduction to Apache Spark
+solution_06_scaling_the_fish_data-checkpoint
+08-Seaborn Exercises - Solutions
+w4p1
+hw3_solution
+lab03_solution
+ml_101_solution
+HW5_solution
+machine_learning
+Week8-assignment-checkpoint
+MissingValues
+linear_regression-review-lab-solutions
+~SieveOfEratosthenes
+Week9-assignment-checkpoint
+Decision Trees and Random Forest Project - Solutions
+w4p1
+hw2-checkpoint
+lab2-checkpoint
+~Grid
+P3 Solution MS-10 Prcnt File-Copy1-checkpoint
+A2_DataExploration_Solutions
+01-API_solutions
+Exercise_with_solutions
+Constants_Sequences_and_Random_Values_Solutions
+01 - Introduction to Apache Spark
+08_Logistic_Regression_Solutions
+hw1_solution
+unit5_lesson3_solutions
+w8-2.3-solutions
+CorrallingUnrulyDataSolutions
+A1_SettingUp
+solution_02_clustering_2D_points
+05-Crash-Course-Review-Exercises-Solutions
+CentralLimitTheorem
+w13p1
+logistic-regression-solution
+Python for Data Analytics - Exercise 9 solutions
+6.1-Pipelines-lesson-solutions
+Exercises_with_solutions
+A5_NaturalLanguageProcessing
+17_load_exercise-solution
+project2-solutions
+Constants_Sequences_and_Random_Values_Solutions
+lab04_solution
+Problems and Solutions
+2-13 Heatmaps_solutions
+1-titanic_EDA_first_models
+NLP Project - Solutions
+w7p1
+06_Intro_to_Classification_KNN_Solutions
+lab02_solution
+chap05soln
+01_Basic_Python_I_Object_and_Data_Structures_solutions
+hw2-checkpoint
+w5p3
+Exercise_with_Solutions
+HW5_solution
+LEGALST-190 Word Embedding SOLUTIONS
+Exercises-with-solutions-and-code
+A2_L1369
+solution-code
+Exercise_with_Solution
+5 - Advanced NumPy
+Naive_Bayes_solution
+Spatial Data and Networks Lab-checkpoint
+11_KMeans_Clustering_Solutions
+A2_DataExploration
+w14p1
+solution-code-checkpoint
+baby_names_claj-checkpoint
+2-titanic_first_ML-model
+section_4_solutions
+07_Basic_Processing_Exercise-with_solutions
+A4_M4901
+Day_8_Pre_Class_Notebook_SOLUTIONS
+Problem_2
+Exercises_with_solutions
+A5_NaturalLanguageProcessing
+traffic-sign-classification-with-keras-solution
+17_Time_Series_Analysis_Solution
+A2_DataExploration-checkpoint
+lab09_solution
+solutions-02
+module-8-boosting-assignment-1-solution
+lab09_solution
+CorrallingUnrulyDataSolutions
+05-Crash-Course-Review-Exercises-Solutions
+decision_trees_solution
+musclehub-solutions
+Exercises_with_Solutions
+Working with Arrays - Solution
+Support Vector Machines Project - Solutions
+AUC-sacramento-housing-solution
+solutions-module-1
+Solutions-3-video-games
+11_advanced_sklearn_solutions
+1-25_solutions
+Logistic Regression Project - Solutions
+Solution-Code-Guided
+Lecture8-Practice-Solutions
+NLP Project - Solutions
+NLP Project - Solutions
+Sentiment Classification - Project 6 Solution
+K Nearest Neighbors Project - Solutions
+A4_DataAnalysis
+A2_DataExploration-checkpoint
+w2p1
+Exercises_with_solutions
+dotProducts
+08_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+Session 5 Solutions
+collinearPoints
+hw1
+lab09_solution
+EXTRA_autograding_example
+W3-L1.3-solution
+Trees and SVMs Lab
+Python for Data Analytics - Exercise 6 solutions
+A4_M4901
+DictionariesInClassExercises_inclass1
+solution-code
+w8-4.4-solutions
+m10_pandas_hw-checkpoint
+load-and-parse-importio-solution
+Tensorflow Project Exercise - Solutions
+A4_DataAnalysis
+10170359_11919698_10761225_lab3
+Exercise_with_solutions
+solution_09_which_stocks_move_together
+w6p2
+Advanced Functions Test Solutions
+w8-1.4-solution
+Ecommerce Purchases Exercise - Solutions
+Input_and_Output_Solutions
+w6p2
+TitanicClassification-checkpoint
+P01_intro_obspy_solution
+timeseries_clustering
+lab07_solution
+A2_DataExploration
+Exercise01
+Lab06-Experiment1-Part1
+Exercise_with_solutions
+6 - Truth Tables
+w8p1
+linear_regression-review-lab-solutions
+w7p3-checkpoint
+Linked List Reversal - SOLUTION
+Computing Alpha, Beta, and R Squared in Python - Solution
+tutorial07_solution
+Solutions
+Day_12_Pre_Class_Notebook_SOLUTIONS
+A2_O5524-checkpoint
+13_LSI_Solution
+D1-exercises
+A4_M4901
+Exercises_with_solutions
+Sentiment Classification - Project 4 Solution
+lab03
+Pandas Data Visualization Exercise - Solutions
+09-Classification-Exercise-Solution
+Python Crash Course Exercises - Solutions
+lab_gan_training
+A2_S8881
+07_Introduction_To_Pandas_solutions
+Numpy Exercise - Solutions
+03 - Running Blast on Spark
+Data Tidying and Cleaning Lab
+Obtaining the Efficient Frontier - Part II - Solution
+A2_DataExploration
+index
+w8-2.3-solutions
+Tokenization-checkpoint
+webscraping-in-class-solutions
+11_KMeans_Clustering_Solutions
+SpeedOfLight
+w9p3-checkpoint
+sentiment-analysis-solutions
+solution-code
+2-13 Heatmaps_solutions
+Regression Models Lab-checkpoint
+MovieLensMergeConcat-checkpoint
+A4_DataAnalysis
+A5_A12818225
+DSA-Python-Basics-checkpoint
+w1-3.4-lab-solution
+hw01_solution
+07_Introduction_To_Pandas_solutions
+ml_101_solution
+Sentiment_Classification_Solutions
+Data Tidying and Cleaning Lab-checkpoint
+Advanced-Expression Manipulation Solutions
+A5_A12818225
+Clustering Exercise Notebook - SOLUTIONS-checkpoint
+week3_task1_first_cnn_cifar10_Solution
+03_waveform_data-with_solutions
+Estimating the Sharpe Ratio in Python - Solution
+A3_L69781-checkpoint
+Exercise_with_Solutions
+02_UTCDateTime-with_solutions
+A5_A12818225
+Exercise_with_Solutions
+TrumpClintonTweetsEDA
+Decision Trees and Random Forest Project - Solutions
+lab3
+timeseries_SOLUTION
+w2-1.4-solution
+foodwheel-solutions
+Exercise_with_Solutions
+1.Linear Algebra Review
+Data Tidying and Cleaning Lab-checkpoint
+Day_8_Pre_Class_Notebook_SOLUTIONS
+A2_L5359-checkpoint
+TooBriefMLSolutions
+Spatial Data and Networks Lab
+datetime_SOLUTION
+lab2-checkpoint
+index
+2-titanic_first_ML-model
+Week9-assignment-checkpoint
+A2_DataExploration-checkpoint
+module-9-precision-recall-assignment-solution
+w7p1
+sheet1
+radar_probs14_sols
+w8p1
+BasicVectorOps
+w13p1
+Seaborn Exercises - Solutions
+A1_SettingUp_solutions
+musclehub-solutions
+SpeedOfLight-checkpoint
+01_Lab_1_Introduction_solution
+Stacking_images_solutions
+ChinookSQL-checkpoint
+3-titanic_feature_engineering_ML
+02-ipython-magic-checkpoint
+Sentiment Classification - Project 4 Solution
+Spatial Data and Networks Lab-checkpoint
+A2_DataExploration
+load-and-parse-importio-solution
+Python Crash Course Exercises - Solutions
+SklearnTutorial-solution
+intro-to-dataframes-solutions
+w3p2
+Problem_2-checkpoint
+Data Tidying and Cleaning Lab
+sentiment-analysis-solutions
+Pi
+Lecture13-Practice-Solution
+Exercises_code_with_solutions
+Lecture13-Practice-Solution
+A3_R6931
+dotProducts
+m13_regular_expressions
+C2_handout
+08_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+03_solutions
+survey+Logistic+Regression+model
+13_LSI_Solution
+Tensorflow_NeuralNetworks
+PythonBasicsx
+Exercises_with_solutions
+Departure Delay Prediction using Random Forests
+w11p2
+Support Vector Machines Project - Solutions
+03_solutions_scikit_learn
+day04-in-class-activity-SOLUTIONS
+section_4_solutions
+section_4_solutions
+solution_04_how_many_clusters_of_grain-checkpoint
+Exercises_with_code_and_solutions
+A2_A11972408
+A3_G0579
+Problem 1
+01_Lab_1_Introduction_solution
+Exercises_with_solutions
+index
+lab3
+MC - Predicting Gross Profit - Part I - Solution
+A2_DataExploration_Solutions
+Running a Multivariate Regression in Python - Solution
+lab02_solution
+w6p2
+~ValidTimes
+proj2
+Ex1-Dice_Simulation_solutions
+timeseries_SOLUTION
+3-Recursion Homework Example Problems - SOLUTIONS
+w9p1
+Exercise_with_solutions
+w8-3.2-solutions
+03-K Nearest Neighbors Project - Solutions
+Exercises_with_solutions
+w6p3
+WordCount
+w13p2
+02_ObsPy_Introduction_with_output_and_solutions
+solution-code-3
+A5_NaturalLanguageProcessing
+SLOPoliceTidy
+3.1_Linear_Algebra-solution
+Departure Delay Prediction using Random Forests
+1-python-basics_source-checkpoint
+Problem_3
+lab04_solution
+2-15_solutions
+ml_101_solution
+Support Vector Machines Project - Solutions
+Spatial Data and Networks Lab
+02_solutions
+hw2-checkpoint
+w14p3
+Computing Alpha, Beta, and R Squared in Python - Solution
+w6p2
+NLP Project - Solutions
+ChinookSQL-checkpoint
+machine_learning
+Stu_Respiratory_Disease
+A1_SettingUp
+TP1
+Numpy Exercise - Solutions
+Running a Multivariate Regression in Python - Solution
+NLP Project - Solutions
+03-exploration-with-containers-with-solutions
+Lab0_IntroPython_solutions
+Juggling Pandas Solutions
+w7p2
+stephan_11853018_10770518_lab2
+StudentAlcoholEDA
+MissingValues-checkpoint
+Advanced Python Objects - Test - Solutions
+Exercise_with_Solution
+09_lab_time_series-solutions
+regex-syntax-solutions
+regex-syntax-solutions
+08_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+week4-1.4-solution
+lab03_solution
+Problemas
+A3_S8881
+Graph Concepts
+Regression Models Lab-checkpoint
+Exercises_with_code_and_solutions
+hw1_solution
+example_exercise
+06_Introduction_To_Matplotlib_solutions
+A4_G0579
+Exercise-1-problem-1-2
+TP1
+1-25_solutions
+miniBrokerSolutions
+D1-exercises
+hw1_solution
+Pre-Class_Shotgun_sequencing-SOLUTION
+solution_07_clustering_the_fish-checkpoint
+A2
+Regression Exercise Notebook - SOLUTIONS-checkpoint
+11_KMeans_Clustering_Solutions
+6.1-Pipelines-lesson-solutions
+Spatial Data and Networks Lab-checkpoint
+Data Visualization and EDA Lab-checkpoint
+Part 1 - Tensors in PyTorch (Solution)
+Quiz_reglin-sgd
+05_Intro_to_Regression_Solutions
+01_Lab_1_Introduction_solution
+Exercises-with-solutions-code
+Bayesian_inference_tutorial_with_solutions
+collinearPoints
+D1-exercises
+Clustering Solutions
+12_lab_nlp_solutions
+WordCount_solution
+03_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+Data Tidying and Cleaning Lab-checkpoint
+Week4-assignment
+ChinookSQL-checkpoint
+Advanced-Calculus Solutions
+Sentiment_RNN_Solution
+DictionariesInClassExercises_inclass2
+w3p1
+Data Tidying and Cleaning Lab
+A4_O5524-checkpoint
+A2_DataExploration_Solutions
+A2_B9430
+Problem_2
+Numpy Exercise - Solutions
+moremovies
+solution-code
+solutions-03-part-01
+w7p3
+Exercises_01WithSolution-checkpoint
+07.0_linear_regression-solutions
+Homework5-checkpoint
+lab2-checkpoint
+w8-1.4-solutions
+moremovies-checkpoint
+Exercises_with_code_and_solutions
+01_Basic_Python_I_Object_and_Data_Structures_solutions
+Stu_Doctor_Decoder
+solutions-module-1
+machine_learning
+04_waveform_data-with_solutions
+Week9-assignment
+week3_task1_first_cnn_cifar10_Solution
+validation_regularization_solutions
+lab09_solution
+Working with Images and Text Lab
+A4_M4901
+lab04_solution
+Regression Models Lab-checkpoint
+w8-1.4-solutions
+Advanced Functions Test Solutions
+07_nlp_lab_solutions
+06_FDSN-with_solutions
+05_Intro_to_Regression_Solutions
+3-titanic_feature_engineering_ML
+4.Regression I
+05_Intro_to_Regression_Solutions
+lab01
+hw2_solution
+Solutions-3-video-games
+exercise-02
+Exercises-with-solutions-code
+B11S. Sandbox Solutions
+09-Function Practice Exercises - Solutions-checkpoint
+09_lab_time_series-solutions
+sheet2_solution
+Assignment#2c-Text-Classification-Solution-checkpoint
+solution4
+einsum_solutions
+hw2-checkpoint
+lab_gan_training
+Exercises_with_code_and_solutions
+Exercises_with_solutions
+01_solutions_pandas
+Exercises-with-solutions-and-code
+chap05soln
+Python for Data Analytics - Exercise 6 solutions
+07_Basic_Processing_Exercise-with_solutions
+w2p3
+Solutions
+Problems and Solutions
+chap10soln
+A2_DataExploration_Solutions
+A4_M4901
+machine_learning
+UsingWordVectors
+intro-to-dataframes-solutions
+A5_A12818225
+Obtaining the Efficient Frontier - Part II - Solution
+Exercises_with_solutions
+lab02_revised
+timeseries_SOLUTION
+HW5_solution
+w8p1
+Sentiment Analysis with TFLearn - Solution
+assignment2_p2_student
+Regression Models Lab-checkpoint
+1_MDP_Review-solution
+Decision Trees and Random Forest Project - Solutions-checkpoint
+w10p3
+w7p2
+08_Logistic_Regression_Solutions
+A2_DataExploration_solutions
+Decision Trees and Random Forest Project - Solutions
+module-6-decision-tree-practical-assignment-solution
+08_Logistic_Regression_Solutions
+lab_autoencoder_SUBMISSION_UPDATED
+machine_learning
+practice-postgres-sql-solutions
+chap09soln
+w14p1
+Pandas Data Visualization Exercise - Solutions
+17_Time_Series_Analysis_Solution
+SklearnTutorial-solution
+lab02_solution
+Problem_3-checkpoint
+tutorial02_solution
+w8-2.2-solutions
+section_3_solutions
+decision_trees_solution
+CorrallingUnrulyDataSolutions
+SF Salaries Exercise- Solutions
+Obtaining the Efficient Frontier - Part II - Solution
+hw3_solution
+w7p2
+Exercises_with_solutions
+Regression Models Lab-checkpoint
+02-syntax-solutions
+w9p3-checkpoint
+problem0-checkpoint
+LEGALST-190 Word Embedding SOLUTIONS
+module-8-boosting-assignment-1-solution
+w8p1
+lab02_solution
+Exercises_with_code_and_solutions
+A2_S8881
+lab3-checkpoint
+PandasObjects
+survey+Logistic+Regression+model
+Classification_Exercise_Notebook_-_SOLUTIONS
+m9_calculus
+Advanced-Simplification Solutions
+A2_S8881
+chap10soln
+Stu_Plotting
+10580395_10560963_lab1
+w2p1
+sheet3
+A2_DataExploration
+w8p1
+SklearnTutorial-solution
+w10p2
+13_decision_trees_solutions
+tutorial02_solution
+timeseries_SOLUTION
+index
+solution-code-18
+Lab0_IntroPython_solutions
+Midterm part 2
+DSA Preparatory Notebook 1
+SF Salaries Exercise- Solutions
+moremovies
+solution_07_clustering_the_fish
+Support Vector Machines Project - Solutions
+w14p2
+ps1-iris-joshuacook
+BootstrapCoinToss
+problem3
+ml_101_solution
+Logistic Regression Project - Solutions-checkpoint
+Lab1-numstack_solutions
+Exercise_with_Solutions
+lab12_solution
+problem1
+w5p1-checkpoint
+knn_sklearn-solutions
+0_intro
+Finance Project - Solutions
+Sentiment Classification - Project 3 Solution
+HW5_solution
+03 - Running Blast on Spark
+Data Visualization and EDA Lab-checkpoint
+TooBriefMLSolutions
+Exercises_with_code_and_solutions
+lab2-checkpoint
+A2_R9050-checkpoint
+Exercises-with-solutions-code
+01_Python_introduction_lab_solutions
+A2_A13952215
+lab_ocr_SUBMISSION
+problem3
+A3_L8073
+05-working-with-gridded-data-with-solutions
+HW5_solution
+Finance Project - Solutions
+NLP Project - Solutions-checkpoint
+optfoil
+week4-2.2-solution
+ds100
+Week4-assignment
+A2_DataExploration_Solutions
+Problem_2-checkpoint
+09-Classification-Exercise-Solution
+Sentiment_Classification_Solutions
+solutions-module-1
+lab03_solution
+constellation-solution-checkpoint
+lab02_solution
+Exercises_with_solutions
+6.1-Pipelines-lesson-solutions
+layer4_analysis_solutions
+Logistic Regression Project - Solutions
+02 - Counting Kmers with Spark
+A2_A12818225
+w8-4.2-solutions
+chap07soln
+Polynomials
+JSONExercises-checkpoint
+Sentiment_Classification_Solutions
+K Nearest Neighbors Project - Solutions
+chap03soln
+09_lab_time_series-solutions
+lab09_solution
+regex-lecture-solutions
+Advanced-Matrices Solutions
+DeepLearningProject-Solution
+A4_DataAnalysis
+hw04_solution
+A2_A11970626
+ml_101_solution
+nbgrader-template
+solution-code
+lab10
+Sentiment Classification - Project 2 Solution
+Solution-Code-Guided
+Problem 1
+01_Python_I-checkpoint
+w7p3-checkpoint
+Graph Concepts
+w3p1
+MovieLensMergeConcat-checkpoint
+SpeedOfLight
+Preliminaries
+3. Nearest Redi Problem
+WorkingWithICD9_inclass2
+Stu_Plotting
+sheet3
+hw03_solution
+adv3_panorama-stitching-solution
+CodingChallenge1
+Finance Project - Solutions
+BootstrapLineFitting
+Logistic Regression Project - Solutions
+SklearnTutorial-solution
+Solution-2
+Exercise_with_solutions
+Exercises_with_code_and_solutions
+machine_learning
+musclehub-solutions
+A2_DataExploration
+adv3_panorama-stitching-solution
+solutions-02
+PandasObjects
+chap13soln
+04-Finance Project - Solutions
+regex-syntax-solutions
+lab2-checkpoint
+Part 1 - Tensors in PyTorch (Solution)
+w9d1_trendline_codealong_SOLUTION
+GPTutorial2_WithSolutions
+solution-code
+Exercise_with_solutions
+Exercises_with_solutions
+solution-code-18
+Constants_Sequences_and_Random_Values_Solutions
+lab02-checkpoint
+SentimentAnalysis_solution
+Homework5-checkpoint
+Problems and Solutions
+Sentiment Classification - Project 2 Solution
+Problems and Solutions
+sql-commands-together-solution
+ChinookSQL
+2D_Assignment_Transient_Error_solution
+Quiz1_norma
+06_FDSN-with_solutions
+linear_regression-review-lab-solutions
+Assignment#2c-Text-Classification-Solution-checkpoint
+machine_learning
+DBSCAN_kmeans_and_hierarchical-lab-solutions
+Ecommerce Purchases Exercise - Solutions
+A4_M4901
+adv3_panorama-stitching-solution
+02_Basic_Python_II_Control_Flow_and_Functions_solutions
+lab10_solution
+moremovies
+Problems with Solutions -checkpoint
+lab04_solution
+Lab0_IntroPython_solutions
+problem2
+In-Class-Strings-SOLUTION
+Exercises_with_solutions
+w3p2
+Computing Alpha, Beta, and R Squared in Python - Solution
+3.1_Linear_Algebra-solution
+A2_DataExploration_Solutions
+Spiral
+PageRank
+w2p2
+2-titanic_first_ML-model
+Stu_Doctor_Decoder
+Computing Alpha, Beta, and R Squared in Python - Solution
+Regression Models Lab-checkpoint
+moremovies-checkpoint
+07_Basic_Processing_Exercise-with_solutions
+Exercises_with_solutions
+w2p2
+validation_regularization_solutions
+HW5_solution
+m7_functions_hw
+Week4-assignment
+w6p2
+lab_autoencoder_SUBMISSION
+Exercises_with_solutions
+K Nearest Neighbors Project - Solutions
+Lab1_solutions-checkpoint
+homework_2_solution
+solution-code
+Data Engineering - Part 1 - With Solutions
+w4p2
+Exercise_with_Solutions
+Week8-assignment-checkpoint
+MovieQueries
+SF Salaries Exercise- Solutions
+Data Tidying and Cleaning Lab-checkpoint
+A3_A1951
+A5_NaturalLanguageProcessing
+Naive_Bayes_solution
+timeseries_clustering
+Homework5-checkpoint
+K Nearest Neighbors Project - Solutions
+Naive_Bayes_solution
+Exercises_with_Solutions
+Sentiment Classification - Project 4 Solution
+intro-to-dataframes-solutions
+Exercise_with_solutions
+w10p3
+Finance Project - Solutions
+A2_DataExploration
+D1-exercises
+A4_M4901
+Exercise_with_Solutions
+4.Regression I
+numpy Exercise Notebook-SOLUTIONS
+A2_DataExploration
+Pandas Data Visualization Exercise - Solutions
+anomaly_detection
+solutions-module-1
+hw1
+m12_oop_person
+Data Tidying and Cleaning Lab
+hw1
+w8-1.4-solutions
+Tokenization-checkpoint
+decision_trees_solution
+Solution-2
+Numpy Exercise - Solutions
+hw04_solution
+Exercises_with_solutions
+day04-in-class-activity-SOLUTIONS
+w9p1
+CorrallingUnrulyDataSolutions
+w8-3.2-solutions
+practice-postgres-sql-solutions
+Running a Multivariate Regression in Python - Solution
+LEGALST-190 Word Embedding SOLUTIONS
+SklearnTutorial-solution
+miniBrokerSolutions
+Exercise 2 - Working with DOI lists and Article Level Metrics
+Exercise_with_Solutions
+Week7-assignment-checkpoint
+Support Vector Machines Project - Solutions
+section_4_solutions
+modeling
+lab1_new
+5.1-Classification-Review-and-Case-Study-Churn-Problem-Solution
+baby_names_claj-checkpoint
+3.1_Linear_Algebra-solution
+assignment2_sol
+foodwheel-solutions
+MarkovChain
+Exercise_with_solutions
+solution-code-3
+13_LSI_Solution
+TooBriefVizSolutions
+Sentiment Classification - Project 4 Solution
+assignment2
+unit5_lesson3_solutions
+01-introduction
+solution-code-3
+08_Logistic_Regression_Solutions
+MovieQueries-checkpoint
+13_LSI_Solution
+Spatial Data and Networks Lab-checkpoint
+NLP Project - Solutions
+Constants_Sequences_and_Random_Values_Solutions
+hw1-checkpoint
+Exercises_with_solutions
+lab10_solution
+DeepLearningProject-Solution
+1.Linear Algebra Review
+recommendation_engine
+FunctionsInPython_inclass
+solution-code
+A4_G0579
+Graph Analysis
+solutions-02
+D1-exercises
+w3p1
+Midterm part 2
+Logistic Regression Project - Solutions
+w3p1
+w9p3
+solution-code-5
+TrumpClintonTweetsEDA
+w6p3
+intro-to-dataframes-solutions
+03_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+chap10soln
+Stu_Voice_RecognitioML
+In-Class-Shotgun_sequencing-SOLUTION
+4 - Manipulating and Plotting Data
+SF_Food_Safety
+lab10
+Lab0_IntroPython_solutions
+w8-1.2-solutions
+05_Intro_to_Regression_Solutions
+w8-3.2-solutions
+A2_S8881
+17_load_exercise-solution
+Exercises_with_code_and_solutions
+lab02_solution
+sheet2-checkpoint
+0_Weight_Regularization
+w14p3
+1. Neural Activation
+Exercise_with_solutions
+pandas_indexing
+Advanced-Calculus Solutions
+Variables_Solutions
+solution_04_how_many_clusters_of_grain
+Exercises_with_solutions_code
+14_principal_component_analysis-solutions
+03-Errors and Exceptions Homework - Solution
+problem1
+solution-code
+regex-syntax-solutions
+Exercise_with_Solution
+machine_learning
+Finance Project - Solutions
+Advanced-Calculus Solutions
+Running a Multivariate Regression in Python - Solution
+linear_regression_solutions
+NLP Project - Solutions
+solutions-module-1
+Solutions
+A2_R6931
+ml_101_solution
+~RandomNumbers
+solution-code
+A2_DataExploration_solutions
+Obtaining the Efficient Frontier - Part II - Solution
+hw2
+Stu_Plotting
+w2p1
+Regression Models Lab-checkpoint
+WordCount
+Exercises-with-solutions-and-code
+Bayesian_inference_tutorial_with_solutions
+Problem 2
+A4_L1369
+GPTutorial2_WithSolutions
+bias_and_variance
+02_Basic_Python_II_Control_Flow_and_Functions_solutions
+Advanced-Simplification Solutions
+Mock Test Assignment_3_P1
+HW3_solution
+adv3_panorama-stitching-solution
+Problem_2-checkpoint
+A2_L1369
+chap10soln
+Exercise_with_Solutions
+lab2-checkpoint
+Exercises_with_solutions
+DSA-Machine-learning-2
+solutions-module-1
+ex08_2_nltk-SOLUTIONS-checkpoint
+HW5_solution
+Seaborn Exercises - Solutions
+ml_101_solution
+SF Salaries Exercise- Solutions
+2_compare_alignment_vs_quasialignment
+MovieLensMergeConcat-checkpoint
+A2_A12615927
+A2_A11970626
+A5_A12818225
+03_solutions
+Clustering Solutions
+Linear-and-Logistic-Regression
+BootstrapLineFitting
+Exercises_with_solutions_code
+HW5_solution
+11_KMeans_Clustering_Solutions
+04-Finance Project - Solutions
+w6p1-checkpoint
+3-titanic_feature_engineering_ML
+A2_S8881
+w1-3.1-review-problem-1-solution
+13_decision_trees_solutions
+solution
+Lab1_solutions-checkpoint
+Week6-assignment
+Exercises_with_solutions
+07_Basic_Processing_Exercise-with_solutions
+Problem_3
+NLP Project - Solutions
+chap10soln
+08_Logistic_Regression_Solutions
+w5p3
+2_compare_alignment_vs_quasialignment
+A2_A11970626
+3.1_Linear_Algebra-solution
+w7p2
+solution
+solutions-module-1
+Exercise+1+-+Interacting+with+online+services
+LEGALST-190 Word Embedding SOLUTIONS
+Problem_3-checkpoint
+Naive_Bayes_solution
+Exercises_with_solutions
+02 - Counting Kmers with Spark
+03_Intro_To_Scientific_Computing_solutions
+Homework1-checkpoint
+ChinookSQL-checkpoint
+Spatial Data and Networks Lab-checkpoint
+baby_names_claj-checkpoint
+Support Vector Machines Project - Solutions
+chap04soln
+Sentiment Classification - Project 4 Solution
+Problem_3
+Exercises_with_code_and_solutions
+A5_NaturalLanguageProcessing
+section_4_solutions
+Stu_Brains
+index
+Exercise_with_solutions
+DSA-Python-2
+chap02soln
+01_solutions
+Week9-assignment-checkpoint
+day04-in-class-activity-SOLUTIONS
+Finance Project - Solutions
+10170359_11919698_10761225_lab3
+Pandas Data Visualization Exercise - Solutions-checkpoint
+w14p2
+Spatial Data and Networks Lab-checkpoint
+Decision Trees and Random Forest Project - Solutions-checkpoint
+Sentiment_Classification_Solutions
+A5_A12818225
+V04S. Seaborn Solutions-checkpoint
+A2_L8073
+lab2-checkpoint
+InteractEx03
+hw2
+5.Regressing to the mean
+Bayesian_inference_tutorial_with_solutions
+sentiment-analysis-solutions
+w2-1.4-solution
+hw0
+FINAL-Beer_Foam-ML2
+ex08_1_database-SOLUTIONS-checkpoint
+Data Tidying and Cleaning Lab
+lab_autoencoder_SUBMISSION_UPDATED
+06_FDSN-with_solutions
+08_Logistic_Regression_Solutions
+w2p2
+02_solutions
+baby_names_claj-checkpoint
+WordCount
+Data Tidying and Cleaning Lab
+w5p3
+3.PCA_Stocks_Spark
+module-8-boosting-assignment-1-solution
+solution_06_scaling_the_fish_data-checkpoint
+PewReligion
+baby_names_claj-checkpoint
+chap13soln
+Finance Project - Solutions
+Exercise_with_solutions
+A4_M4901
+MovieLensMergeConcat-checkpoint
+~JuliaIteration
+A2_H7031
+hw1
+07.0_linear_regression-solutions
+solution_03_inspect_your_clustering
+linear_regression-review-lab-solutions
+solution
+Problem Set
+Finance Project - Solutions
+A4_DataAnalysis
+Spatial Data and Networks Lab-checkpoint
+Week4-assignment
+Advanced-Expression Manipulation Solutions
+chap02soln
+w7p1
+4-19_Ensemble_Methods_SOLUTIONS
+A2_DataExploration_solutions
+ComputeStatistics-checkpoint
+NLP Project - Solutions
+A3_S8881
+Solutions-3-video-games
+Stu_Dates-checkpoint
+03_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+hw1
+linear_regression_solutions
+w6p1
+machine_learning
+solution-code
+17_load_exercise-solution
+lab3
+07_Basic_Processing_Exercise-with_solutions
+Exercises_with_solutions
+Numpy Exercise - Solutions
+Exercise_with_solutions
+Classification_Exercise_Notebook_-_SOLUTIONS
+hw2_solution
+Homework1-checkpoint
+PythonBasicsx
+index
+hw3_solution
+Sentiment_Classification_Solutions
+Bayesian_inference_tutorial_with_solutions
+K Nearest Neighbors Project - Solutions
+08_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+ExtractingPeriodicSignalsSolutions
+DeepLearningProject-Solution
+Problem_3
+Indexing_solutions
+0_intro
+FastText_intro-solutions
+w14p1
+notebook10_part1
+09-lists-checkpoint
+hw2_solution
+ex08_3_twitter-SOLUTIONS-checkpoint
+w8p3
+ChinookSQL-checkpoint
+01_Lab_1_Introduction_solution
+IntroToParaViewSolutions
+NLP Project - Solutions
+problem1
+Solution-2
+DSA-Machine-learning-2
+anomaly_detection
+08_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+project2-solutions
+Exercise_with_solutions
+Parsing Text with Python-Solution
+pandas-plotting-solutions
+Mock Test Assignment_3_P1
+2-13 Heatmaps_solutions
+Sentiment Classification - Project 1 Solution
+InteractEx03
+06_Intro_to_Classification_KNN_Solutions-checkpoint
+test-with-output
+S_06_Rayleigh_Taylor
+Exercises_with_solutions
+Exercise_with_Solutions
+Checkerboard
+A4_M4901
+chap10soln
+w8-3.2-solutions
+w13p2
+Ecommerce Purchases Exercise - Solutions
+Running a Multivariate Regression in Python - Solution
+survey+Logistic+Regression+model
+Homework8
+Preliminaries
+baby_names_claj-checkpoint
+Stu_Voice_RecognitioML
+Working with Images and Text Lab
+Advanced - Special Series Solutions
+machine_learning
+w1-3.4-lab-solution
+1-25_solutions
+w8p2
+Advanced Functions Test Solutions
+w13p1
+w7p3
+solution-code-3
+hw03_solution
+A2_L9781-checkpoint
+w8p1
+Problems and Solutions
+baby_names_claj-checkpoint
+Problem_3
+Clustering Exercise Notebook - SOLUTIONS-checkpoint
+Part 2 - Perturbation and Conditioning
+Problems and Solutions
+09-Function Practice Exercises - Solutions-checkpoint
+Problems and Solutions
+TP1
+week4-2.2-solution
+A2_A12818225
+Stacking_images_solutions
+module-8-boosting-assignment-1-solution
+hw2
+2-15_solutions
+w8-2.3-solutions
+SklearnTutorial-solution
+02_solutions
+w10p1
+pandas-plotting-solutions
+HW3_solution
+DictionariesInClassExercises_inclass2
+Clustering Exercise Notebook - SOLUTIONS-checkpoint
+w3p3
+hw2_solution
+w2p1
+chap02soln
+lab_tensorflow_keras_SUBMISSION
+Naive_Bayes_tutorial_solution
+Midterm part 2
+w6p1
+DS Project Architecture Lab
+08_Exercise__2008_MtCarmel_Earthquake_and_Aftershock_Series-with_solutions
+05_Intro_to_Regression_Solutions
+Exercises_with_code_and_solutions
+DeepLearningProject-Solution
+Regression Models Lab-checkpoint
+Sentiment_Classification_Solutions
+Exercises_with_code_and_solutions
+Juggling Pandas Solutions
+lab03-checkpoint
+3.1_Linear_Algebra-solution
+Advanced-Expression Manipulation Solutions
+w5p2
+Lab0_IntroPython_solutions
+Problem 2
+Problem_3
+13_decision_trees_solutions
+HW3_solution
+module-9-precision-recall-assignment-solution
+Midterm part 2
+01_decoding_sklearn_solutions
+WordCount-checkpoint
+Solutions
+lab02_solution
+K Nearest Neighbors Project - Solutions
+In-Class-Strings-SOLUTION
+2-15_solutions
+solution-code
+NLP Project - Solutions
+w9p1
+09-Function Practice Exercises - Solutions-checkpoint
+Stu_Plotting
+musclehub-solutions
+w4p2
+1-titanic_EDA_first_models
+CarsGroupAgg
+sentiment-analysis-solutions
+python-data-viz-lab-solutions
+w6p1-checkpoint
+W1-L1.4-list-practice-solution
+Statements Assessment Test - Solutions
+Quiz1_norma
+Obtaining the Efficient Frontier - Part II - Solution
+Lab1-numstack_solutions
+section_3_solutions
+w2p3-checkpoint
+chap04soln
+Exercises_with_solutions
+baby_names_claj-checkpoint
+WordCount
+webscraping-in-class-solutions
+Logical and Identity Operators - Solution
+12_PCA_Solution
+Linear Regression - Project Exercise - Solutions
+chap05soln
+w9p3-checkpoint
+musclehub-solutions
+Exercises_with_Solutions

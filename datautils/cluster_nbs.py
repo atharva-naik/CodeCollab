@@ -10,6 +10,8 @@ from datautils import read_jsonl, camel_case_split
 from datautils.keyphrase_extraction import load_keyphrases
 from sklearn.metrics.pairwise import cosine_similarity, pairwise_distances
 from datautils.code_cell_analysis import split_func_name, extract_api_full_name_dict
+from datautils.markdown_cell_analysis import process_markdown
+from CodeBERT.GraphCodeBERT.codesearch.parser.utils import remove_comments_and_docstrings
 
 def filter_out_short_prefixes(data: List[dict]) -> List[dict]:
     path_wise_nbs = defaultdict(lambda:[])
@@ -23,17 +25,35 @@ def filter_out_short_prefixes(data: List[dict]) -> List[dict]:
 
     return longest_nbs 
 
-def filter_data_as_mapping(data: List[dict], use_full_path: bool=True) -> List[dict]:
+def extract_notebook(inst: dict) -> List[Tuple[str, str]]:
+    nb = []
+    context = inst["context"][::-1]
+    for cell in context:
+        cell_type = cell["cell_type"]
+        if cell_type == "markdown": 
+            content = cell["nl_original"]
+        else: content = cell["code"]
+        nb.append((content, cell_type))
+    nb.append((inst['code'], "code"))
+
+    return nb
+
+def filter_data_as_mapping(data: List[dict], use_filename: bool=True, 
+                           use_path_as_key: bool=False) -> List[dict]:
     path_wise_nbs = defaultdict(lambda:[])
     for id, inst in enumerate(data):
         path = inst["metadata"]["path"]
-        if use_full_path: 
+        if use_filename: 
             path = pathlib.Path(path).stem
         path_wise_nbs[path].append((inst, id))
     longest_nbs = {}
     for path, nbs_and_ids in path_wise_nbs.items():
         i = np.argmax([len(nb["context"]) for nb, id in nbs_and_ids])
         nb, id = nbs_and_ids[i]
+        if use_path_as_key:
+            if use_filename:
+                id = pathlib.Path(nb["metadata"]["path"]).stem
+            else: id = nb["metadata"]["path"]
         longest_nbs[id] = nb
 
     return longest_nbs 
@@ -132,6 +152,41 @@ def fit_bop_model(path: str, keyphrase_path: str):
 
     return data, phrase_vecs
 
+# bag of phrases model.
+class BOPModel:
+    def __init__(self, kp_extractor):
+        self.kp_extractor = kp_extractor
+        
+# way to model 
+class DenseNBModel:
+    """class to model NBs using dense transformer representations."""
+    def __init__(self, path: str="microsoft/codebert-base"):
+        from transformers import RobertaModel, RobertaTokenizer
+        self.tokenizer = RobertaTokenizer.from_pretrained(path)
+        self.transformer = RobertaModel.from_pretrained(path)
+
+    def to(self, device: str):
+        self.transformer.to(device)
+
+    def encode(self, inst: dict):
+        cell_seq = extract_notebook(inst)
+        proc_seq = []
+        for content, cell_type in cell_seq:
+            if cell_type == "markdown":
+                proc_seq.append(process_markdown(content))
+            else: 
+                proc_seq.append(remove_comments_and_docstrings(content, lang="python"))
+        tokenized_input = self.tokenizer(proc_seq, return_tensors="pt", truncation=True, 
+                                         padding="max_length", max_length=200)
+
+        return self.transformer(**tokenized_input).pooler_output
+
+def test_dense_nb_model():
+    model = DenseNBModel()
+    val_insts = read_jsonl("./data/juice-dataset/dev.jsonl")
+    reps = model.encode(val_insts[0])
+    print(reps.shape)
+
 def get_nb_clusters(path: str, keyphrase_path: str, **kmeans_params):
     data, X_bop = fit_bop_model(path, keyphrase_path)
     kmeans = KMeans(**kmeans_params).fit(normalize(X_bop))
@@ -140,19 +195,6 @@ def get_nb_clusters(path: str, keyphrase_path: str, **kmeans_params):
         nb_clusters[label].append(nb)
     # kmeans = create_cluster(X_bop, n_clust)
     return nb_clusters, kmeans
-
-def extract_notebook(inst: dict) -> List[Tuple[str, str]]:
-    nb = []
-    context = inst["context"][::-1]
-    for cell in context:
-        cell_type = cell["cell_type"]
-        if cell_type == "markdown": 
-            content = cell["nl_original"]
-        else: content = cell["code"]
-        nb.append((content, cell_type))
-    nb.append((inst['code'], "code"))
-
-    return nb
 
 def get_interesting_topics(nb_clusters: Dict[str, dict]) -> Dict[str, dict]:
     filt_nbs = defaultdict(lambda:[])
