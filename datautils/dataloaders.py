@@ -1,3 +1,4 @@
+import os
 import json
 import torch
 from typing import *
@@ -202,3 +203,37 @@ class InCoderInFillDataset(Dataset):
     #     return [tok_dict["input_ids"][0], 
     #             tok_dict["attention_mask"][0], 
     #             cell_type]
+
+# dataset class for CoNaLa code search.
+class CoNaLaCodeBERTCodeSearchDataset(Dataset):
+    """load CoNaLa data for code-search training."""
+    def __init__(self, folder: str="./data/CoNaLa", 
+                 split: str="train", tokenizer=None, **tok_args):
+        self.split = split
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        if self.split == "train":
+            self.data = read_jsonl(os.path.join(
+                folder, "train.jsonl"
+            ))
+        else:
+            self.data = json.load(open(
+                os.path.join(
+                    folder, f"{split}.json"
+                )
+            ))
+    
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, i):
+        q = self.data[i]["intent"] # query
+        c = self.data[i]["snippet"] # document/code
+        q_tok_dict = self.tokenizer(q, **self.tok_args)
+        c_tok_dict = self.tokenizer(c, **self.tok_args)
+        
+        return [
+            q_tok_dict["input_ids"][0], q_tok_dict["attention_mask"][0],
+            c_tok_dict["input_ids"][0], c_tok_dict["attention_mask"][0],
+        ]
