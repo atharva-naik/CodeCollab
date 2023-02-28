@@ -182,7 +182,7 @@ class DenseModelDataset(Dataset):
         
         return [tokenized_input["input_ids"][0], tokenized_input["attention_mask"][0]]
         
-# way to model 
+# way to model NB cells with dense representations.
 class DenseNBModel:
     """class to model NBs using dense transformer representations."""
     def __init__(self, path: str="microsoft/codebert-base"):
@@ -198,9 +198,9 @@ class DenseNBModel:
     def encode(self, inst: dict):
         cell_seq = extract_notebook(inst)
         dataset = DenseModelDataset(cell_seq, tokenizer=self.tokenizer)
-        dataloader = DataLoader(dataset, batch_size=16)
+        dataloader = DataLoader(dataset, batch_size=8)
         op = []
-        for batch in dataloader:
+        for batch in tqdm(dataloader):
             for i in range(len(batch)):
                 batch[i] = batch[i].to(self.device)
             mini_batch_op = self.transformer(batch[0], batch[1]).pooler_output
@@ -208,6 +208,16 @@ class DenseNBModel:
                 op.append(cell_rep)
 
         return torch.stack(op)
+
+# compute pair-wise similarity between NB cell sequences
+def compute_nb_cell_seq_sim(nb1: torch.Tensor, nb2: torch.Tensor):
+    """compute the similarity between Jupyter NB (sequence of cell representations)"""
+    nb1 /= ((nb1**2).sum(dim=-1)**0.5).unsqueeze(dim=-1)
+    nb2 /= ((nb2**2).sum(dim=-1)**0.5).unsqueeze(dim=-1)
+    s1 = (nb1 @ nb2.T).max(dim=0).values.mean()
+    s2 = (nb1 @ nb2.T).max(dim=-1).values.mean()
+    
+    return s1+s2
 
 def test_dense_nb_model():
     model = DenseNBModel()
