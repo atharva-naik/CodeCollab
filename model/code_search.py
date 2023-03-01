@@ -166,10 +166,9 @@ def codebert_codesearch_finetune(args):
                 # save the best model.
                 if val_acc > best_val_acc:
                     save_dict = {
-                        "step": step, 
-                        "epoch": epoch+1,
-                        "state_dict": codesearch_biencoder.state_dict(),
-                        "val_acc": best_val_acc,
+                        "step": step, "epoch": epoch+1, "val_acc": best_val_acc,
+                        "model_state_dict": codesearch_biencoder.state_dict(),
+                        "optimizer_state_dict": optimizer.state_dict(),
                     }
                     model_save_path = os.path.join(
                         exp_folder, "best_model.pt"

@@ -133,3 +133,4 @@ data/juice-dataset/*.json
 data/juice-dataset/sampled_juice_nbs/
 *.pt
 *.ckpt
+experiments/CoNaLa_CodeBERT_CodeSearch/logs
