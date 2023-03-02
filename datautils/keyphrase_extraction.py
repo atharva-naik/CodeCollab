@@ -9,6 +9,7 @@ from transformers import (
     AutoTokenizer,
 )
 import matplotlib.pyplot as plt
+from datautils import read_jsonl
 from collections import defaultdict
 from transformers.pipelines import AggregationStrategy
 from datautils.markdown_cell_analysis import process_markdown, get_title_hierarchy_and_stripped_title
@@ -75,7 +76,7 @@ class EnsembleKeyPhraseExtractor:
         if self.yake_strategy == "non_red": # get non redundant keyphrases.
             return self._get_non_redundant_yake_keyphrases(markdown)
         elif self.yake_strategy == "topk":
-            return 
+            return self._get_topk_yake_keyphrases(markdown)
 
     def _get_from_cache(self, markdown: str):
         unproc_md_kps = self.cached_kps.get(markdown)
@@ -99,6 +100,7 @@ class EnsembleKeyPhraseExtractor:
             return self._generate_keyphrases(markdown)
         elif cached_kps == []:
             return self._get_yake_keyphrases(markdown)
+        return cached_kps
 
 def load_keyphrases(path: str) -> Dict[str, List[dict]]:
     nb_wise_kps = defaultdict(lambda:[])
