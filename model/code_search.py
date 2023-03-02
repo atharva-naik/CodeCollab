@@ -119,10 +119,6 @@ def codebert_codesearch_finetune(args):
         json.dump(config, f, indent=4)
     print_args(args)
 
-    pbar = tqdm(
-        enumerate(trainloader),
-        total=len(trainloader),
-    )
     # create directory for logging stats.
     best_val_acc = 0
     logs_dir = os.path.join(exp_folder, "logs")
@@ -130,6 +126,10 @@ def codebert_codesearch_finetune(args):
     for epoch in range(args.epochs):
         train_log_file = os.path.join(logs_dir, f"train_epoch_{epoch+1}.jsonl")
         tot, matches, batch_losses = 0, 0, []
+        pbar = tqdm(
+            enumerate(trainloader),
+            total=len(trainloader),
+        )
         for step, batch in pbar:
             codesearch_biencoder.train()
             codesearch_biencoder.zero_grad()
@@ -151,6 +151,7 @@ def codebert_codesearch_finetune(args):
             pbar.set_description(
                 f"T: {epoch+1}/{args.epochs}: bl: {batch_losses[-1]:.3f} l: {np.mean(batch_losses):.3f} ba: {(100*batch_matches/batch_tot):.2f} a: {(100*matches/tot):.2f}"
             )
+            # if step == 10: break
             if step%args.log_steps == 0 or (step+1) == len(trainloader): 
                 with open(train_log_file, "a") as f:
                     f.write(json.dumps({
