@@ -1,4 +1,5 @@
 import json
+import yake
 import numpy as np
 from typing import *
 from tqdm import tqdm
@@ -28,6 +29,76 @@ class KeyphraseExtractionPipeline(TokenClassificationPipeline):
             aggregation_strategy=AggregationStrategy.SIMPLE,
         )
         return np.unique([result.get("word").strip() for result in results])
+
+class EnsembleKeyPhraseExtractor:
+    """ensembled keyphrase extractor between YAKE and KBIR."""
+    def __init__(self, cache_path: str="./analysis/dev_keyphrases.jsonl",
+                 model_name: str="ml6team/keyphrase-extraction-kbir-inspec",
+                 yake_strategy: str="topk", yake_k: int=3, **yake_args):
+        self.cache_path = cache_path
+        self.cached_kps = {rec["markdown"]: rec["keyphrases"] for rec in json.load(open(cache_path))}
+        self.model_name = model_name
+        self.kbir_pipeline = KeyphraseExtractionPipeline(model=model_name)
+        self.yake_pipeline = yake.KeywordExtractor(**yake_args)
+        self.yake_strategy = yake_strategy
+        self.yake_k = yake_k
+
+    def _get_non_redundant_yake_keyphrases(self, markdown: str) -> List[str]:
+        proc_markdown = process_markdown(markdown)
+        # the returned keywords are ordered in order of decreasing relevance.
+        keyphrases = self.yake_pipeline.extract_keywords(proc_markdown)
+        # the lower score, the more relevant it is.
+        non_redundant_kps = []
+        words_seen_till_now = set()
+        for phrase, score in keyphrases:
+            words = set(phrase.strip().split())
+            if len(words.difference(words_seen_till_now)) > 0:
+                non_redundant_kps.append(phrase.lower())
+            for word in words: words_seen_till_now.add(word.lower())
+
+        return non_redundant_kps
+
+    def _get_topk_yake_keyphrases(self, markdown: str) -> List[str]:
+        """get topk yake keyphrases (after lowering the text)"""
+        proc_markdown = process_markdown(markdown)
+        # the returned keywords are ordered in order of decreasing relevance.
+        keyphrases = self.yake_pipeline.extract_keywords(proc_markdown)
+        kps = set()
+        for phrase, score in keyphrases:
+            kps.add(phrase.lower())
+            if len(kps) == self.yake_k:
+                return sorted(list(kps))
+        
+        return sorted(list(kps))
+
+    def _get_yake_keyphrases(self, markdown: str) -> List[str]:
+        if self.yake_strategy == "non_red": # get non redundant keyphrases.
+            return self._get_non_redundant_yake_keyphrases(markdown)
+        elif self.yake_strategy == "topk":
+            return 
+
+    def _get_from_cache(self, markdown: str):
+        unproc_md_kps = self.cached_kps.get(markdown)
+        if unproc_md_kps is None:
+            proc_md = process_markdown(markdown)
+            proc_md_kps = self.cached_kps.get(proc_md)
+            return proc_md_kps
+
+        return unproc_md_kps
+
+    def _generate_keyphrases(self, markdown: str) -> List[str]:
+        """generate keyphrases for markdown"""
+        kbir_kps = self.kbir_pipeline(process_markdown(markdown))
+        if kbir_kps == []:
+            return self._get_yake_keyphrases(markdown)
+        return kbir_kps
+
+    def __call__(self, markdown: str):
+        cached_kps = self._get_from_cache(markdown)
+        if cached_kps is None:
+            return self._generate_keyphrases(markdown)
+        elif cached_kps == []:
+            return self._get_yake_keyphrases(markdown)
 
 def load_keyphrases(path: str) -> Dict[str, List[dict]]:
     nb_wise_kps = defaultdict(lambda:[])
