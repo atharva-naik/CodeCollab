@@ -36,7 +36,7 @@ class EnsembleKeyPhraseExtractor:
                  model_name: str="ml6team/keyphrase-extraction-kbir-inspec",
                  yake_strategy: str="topk", yake_k: int=3, **yake_args):
         self.cache_path = cache_path
-        self.cached_kps = {rec["markdown"]: rec["keyphrases"] for rec in json.load(open(cache_path))}
+        self.cached_kps = {rec["markdown"]: rec["keyphrases"] for rec in read_jsonl(cache_path)}
         self.model_name = model_name
         self.kbir_pipeline = KeyphraseExtractionPipeline(model=model_name)
         self.yake_pipeline = yake.KeywordExtractor(**yake_args)
