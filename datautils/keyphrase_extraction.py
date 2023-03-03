@@ -1,5 +1,7 @@
 import json
 import yake
+import spacy
+import fuzzywuzzy
 import numpy as np
 from typing import *
 from tqdm import tqdm
@@ -8,11 +10,12 @@ from transformers import (
     AutoModelForTokenClassification,
     AutoTokenizer,
 )
+from fuzzywuzzy import fuzz
 import matplotlib.pyplot as plt
 from datautils import read_jsonl
 from collections import defaultdict
 from transformers.pipelines import AggregationStrategy
-from datautils.markdown_cell_analysis import process_markdown, get_title_hierarchy_and_stripped_title
+from datautils.markdown_cell_analysis import process_markdown, get_title_hierarchy_and_stripped_title, extract_notebook_hierarchy
 
 # Define keyphrase extraction pipeline
 class KeyphraseExtractionPipeline(TokenClassificationPipeline):
@@ -221,6 +224,87 @@ def plot_total_kps_per_hier(rank_wise_kp_dist: Dict[int, Dict[str, int]],
     # plt.xticks(x, labels=list(dist.keys())[:topk], rotation=90)
     plt.tight_layout()
     plt.savefig(path)
+
+def analyze_markdown_using_kps(nlp, markdown: str, kps: List[str]) -> List[str]:
+    proc_md = process_markdown(markdown)
+    kps = [kp.lower() for kp in kps]
+    sents = list(nlp(proc_md).sents)
+    insts = []
+    for i, sent in enumerate(sents):
+        sent = sent.as_doc()
+        # print(f"sent-{i}: {sent}\n")
+        root_to_nc = {nc.root.text: nc.text for nc in sent.noun_chunks}
+        for nc in sent.noun_chunks:
+            not_matched_with_kp = True
+            for kp in kps:
+                if fuzz.partial_ratio(nc.text.lower(), kp) >= 90:
+                    not_matched_with_kp = False
+                    break
+            if not_matched_with_kp: continue
+            # print(f"\tkp: {kp}({nc.text})")
+            func_call = " ".join([a.text.lower() if a.pos_ != "NOUN" else " ".join(root_to_nc[a.text].lower().split()) for a in list(nc.root.ancestors)[::-1]])
+            # insts.append("\x1b[34m"+func_call+f"\x1b[0m\x1b[1m(\x1b[0m\x1b[32m{kp}\x1b[0m[\"{nc.text}\"]\x1b[1m)\x1b[0m")
+            # insts.append(func_call+f"({kp}[\"{nc.text}\"])")
+            insts.append(func_call+f" {kp}(\"{nc.text}\")")
+            # for a in nc.root.ancestors:
+            #     a_text = a.text if a.pos_ != "NOUN" else root_to_nc[a.text]
+            #     print(f"\t\t{a.pos_}: {a_text}")
+    return insts
+
+def print_plan(node: dict, ext: EnsembleKeyPhraseExtractor, path_from_root: str, nlp):
+    value = node['value']
+    print("")
+    print(path_from_root+f"{value['id']}")
+    if value['type'] == "root":
+        print("ROOT(0):")
+    elif value["type"] == "markdown":
+        content = value["content"]
+        kps = ext(content)
+        insts = analyze_markdown_using_kps(nlp, content, kps)
+        print("\n".join(insts))
+    elif value["type"] == "code":
+        print(value['content'])
+    print("")
+    for child in node['children']:
+        print_plan(child, ext, path_from_root+f"{node['value']['id']}->", nlp)
+
+def accum_keyphrases_v3(nb_kps_with_hier: Dict[str, Any], 
+                        rel_rank: bool=True, trunc_rank: int=5) -> Dict[int, Dict[str, int]]:
+    accum_kps = defaultdict(lambda: defaultdict(lambda:0))
+    very_common_phrases = None
+    key = "rank" if rel_rank else "hier"
+    for nb in nb_kps_with_hier.values():
+        for cell in nb:
+            for kp in cell["keyphrases"]:
+                accum_kps[cell[key]][kp] += 1
+    for rank, kp_dist in accum_kps.items():
+        if rank > trunc_rank: continue
+        rank_kps = set(k for k in kp_dist)
+        if very_common_phrases is None:
+            very_common_phrases = rank_kps
+        else:
+            very_common_phrases = very_common_phrases.intersection(rank_kps)
+    print(f"{len(very_common_phrases)} very common keyphrases (upto rank {trunc_rank})")
+    # for key, kp_dist in accum_kps.items():
+    #     accum_kps[key] = {k:v for k,v in sorted(kp_dist.items(), reverse=True, key=lambda x:x[1]) if k not in very_common_phrases}
+    pair_counts = defaultdict(lambda: defaultdict(lambda:0))
+    for nb in nb_kps_with_hier.values():
+        for i in range(len(nb)-1):
+            for j in range(i+1, len(nb)):
+                kps1 = nb[i]["keyphrases"]
+                kps2 = nb[j]["keyphrases"]
+                # if kp1 in very_common_phrases: continue
+                # if kp2 in very_common_phrases: continue
+                # if cell[i][key] < cell[j][key]:
+                #     pair_counts[kp1][kp2] += 1
+
+    return pair_counts
+
+def present_plan_for_inst(inst: dict, ext: EnsembleKeyPhraseExtractor, nlp):
+    # id_to_kps = {rec["md_id"]: rec[""] for rec in kps_dict}
+    root, nodes = extract_notebook_hierarchy(inst)
+    root = root.serialize()
+    print_plan(root, ext, "", nlp)
 
 # main
 if __name__ == "__main__":
