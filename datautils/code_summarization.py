@@ -22,7 +22,7 @@ class CodeSummarizer:
 # main
 if __name__ == "__main__":
     code_summarizer = CodeSummarizer()
-    val_data = read_jsonl("./data/juice-data/dev.jsonl")
+    val_data = read_jsonl("./data/juice-dataset/dev.jsonl")
     code = val_data[0]["code"]
     intent = code_summarizer(code)
     print(code)
