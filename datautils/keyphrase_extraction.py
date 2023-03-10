@@ -1,6 +1,7 @@
 import json
 import yake
 import spacy
+import textwrap
 import fuzzywuzzy
 import numpy as np
 from typing import *
@@ -293,12 +294,37 @@ def accum_keyphrases_v3(nb_kps_with_hier: Dict[str, Any],
             for j in range(i+1, len(nb)):
                 kps1 = nb[i]["keyphrases"]
                 kps2 = nb[j]["keyphrases"]
-                # if kp1 in very_common_phrases: continue
-                # if kp2 in very_common_phrases: continue
-                # if cell[i][key] < cell[j][key]:
-                #     pair_counts[kp1][kp2] += 1
+                for kp1 in kps1:
+                    for kp2 in kps2:
+                        if kp1 in very_common_phrases: continue
+                        if kp2 in very_common_phrases: continue
+                        if nb[i][key] < nb[j][key]:
+                            pair_counts[kp1][kp2] += 1
+    for parent in pair_counts:
+        pair_counts[parent] = {
+            k: v for k,v in sorted(
+                pair_counts[parent].items(), 
+                reverse=True, key=lambda x: x[1]
+            )}
+    pair_counts = {k: v for k,v in sorted(pair_counts.items(), reverse=True, key=lambda x: sum(x[1].values()))}
 
     return pair_counts
+
+def plot_child_dist(parent: str, pair_counts: Dict[str, int], topk: int=8, color: str="red"):
+    dist = pair_counts[parent]
+    plt.clf()
+    plt.title(f"Most frequent keyphrase children of {parent}")
+    xlabels = ["\n".join(textwrap.wrap(k, width=12)) for k in list(dist.keys())[:topk]]
+    y = list(dist.values())[:topk]
+    x = range(1, topk+1)
+    bar = plt.bar(x, y, color=color)
+    for rect in bar:
+        height = rect.get_height()
+        plt.text(rect.get_x() + rect.get_width() / 2.0, height, 
+                 f'{height:.0f}', ha='center', va='bottom')
+    plt.xticks(x, labels=xlabels, rotation=90)
+    plt.tight_layout()
+    plt.savefig(f"./plots/{parent}_child_counts.png")
 
 def present_plan_for_inst(inst: dict, ext: EnsembleKeyPhraseExtractor, nlp):
     # id_to_kps = {rec["md_id"]: rec[""] for rec in kps_dict}
