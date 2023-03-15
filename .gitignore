@@ -138,3 +138,5 @@ data/KaggleNB/data.pkl
 *.pt
 *.ckpt
 experiments/CoNaLa_CodeBERT_CodeSearch/logs
+data/KaggleNB/
+HAConvGNN/dataset_notebook.pkl
