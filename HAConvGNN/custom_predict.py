@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jun 10 13:16:41 2020
-
-@author: Xuye Liu
+@original_author: Xuye Liu
+@author: Atharva Naik
 """
 # from .models.codegnngru import CodeGNNGRU
 import argparse
