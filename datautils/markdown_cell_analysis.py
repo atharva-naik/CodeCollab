@@ -20,8 +20,10 @@ def get_title_hierarchy_and_stripped_title(title: str):
     ctr = 0
     for char in title:
         if char == "#": ctr += 1
+        else: break
     if ctr == 0: ctr = 1000 # base level is taken as 1000 randomly.
-    return ctr, title[ctr:].strip()
+    else: title = title[ctr:].strip()
+    return ctr, title
 
 # node type object.
 class NBTreeNode:
@@ -98,6 +100,40 @@ class NBNodeTriple:
 
     def __str__(self):
         return json.dumps((self.id, self[0], self[1], self[2]))
+
+def extract_notebook_hierarchy_from_seq(cell_seq: List[dict]):
+    triples = []
+    id = 1
+    for cell in cell_seq:
+        cell_type = cell["cell_type"]
+        if cell_type == "markdown":
+            title = cell["nl_original"] # the title/original NL of the markdown cell
+            level, stripped_title = get_title_hierarchy_and_stripped_title(title)
+            triples.append(
+                NBNodeTriple(id, level, stripped_title, cell_type)
+            )
+        else: 
+            content = cell["code"]
+            triples.append(
+                NBNodeTriple(id, 1000, content, cell_type)
+            )
+        id += 1
+    root = NBTreeNode(NBNodeTriple())
+    curr_top_g = root
+    for triple in triples:
+        node = NBTreeNode(triple)
+        if curr_top_g.triple.level < triple.level: 
+            # if current top_g (lowest most senior node) is more senior (less level).
+            curr_top_g.add_child(node)
+            curr_top_g = node
+        elif curr_top_g.triple.level >= triple.level:
+            # if current top_g (lowest most senior node) is less senior or equally (more level)
+            while curr_top_g.triple.level >= triple.level: # keep moving to parent till more senior node is found.
+                curr_top_g = curr_top_g.parent
+            curr_top_g.add_child(node)
+            curr_top_g =  node
+
+    return root, triples
 
 def extract_notebook_hierarchy(inst: dict):
     ctxt = inst["context"][::-1]

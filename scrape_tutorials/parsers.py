@@ -26,7 +26,7 @@ def simplify_soup(soup, target: str="seaborn"):
     for li in soup.select('li'): li.unwrap()
     for table in soup.select('table'): table.extract()
     for style in soup.select('style'): style.extract()
-    # for a in soup.select('a'): a.unwrap()
+    for a in soup.select('a'): a.extract()
     for p in soup.select("p"): 
         del p.attrs
     # for section in soup.select("section"): section.unwrap()
@@ -129,7 +129,7 @@ class SeabornParser:
         sections = [section for section in self.base_soup.find_all("section")]
         self.topic_urls = {}
         for section in sections:
-            base_urls = set()
+            base_urls = {}
             name = section.find("h1")
             if name is None: name = section.find("h2")
             name = name.text.strip("#")
@@ -137,9 +137,9 @@ class SeabornParser:
                 base_host = "https://seaborn.pydata.org/"
                 base_url = os.path.join(base_host, url.attrs['href'])
                 base_url = urldefrag(base_url).url
-                base_urls.add(base_url)
-            self.topic_urls[name] = sorted(list(base_urls))
-        self.topic_pages = defaultdict(lambda:[])
+                base_urls[base_url] = url.text
+            self.topic_urls[name] = base_urls
+        self.topic_pages = defaultdict(lambda:{})
 
     def download(self):
         for name, urls in self.topic_urls.items():
@@ -171,13 +171,13 @@ class SeabornParser:
                 # simplified_json = simplify_html_to_json(html_to_json_dict)
                 # simplified_json = collapse_list_of_strings(simplified_json)
                 # self.topic_pages[name].append(simplified_json)
-                try: self.topic_pages[name].append(ast.literal_eval("["+simplified_soup+"]"))
+                try: self.topic_pages[name][urls[url]] = ast.literal_eval("["+simplified_soup+"]")
                 except SyntaxError:
                     simplified_soup = re.sub("<a.*?>.*?</a>", "", simplified_soup)
-                    try: self.topic_pages[name].append(ast.literal_eval("["+simplified_soup+"]"))
+                    try: self.topic_pages[name][urls[url]] = ast.literal_eval("["+simplified_soup+"]")
                     except SyntaxError: 
                         print("ERROR:", name, i, url)
-                        self.topic_pages[name].append(simplified_soup)
+                        self.topic_pages[name][urls[url]] = simplified_soup
                 # self.topic_pages[name].append(
                 #     simplify_bs2_json(
                 #         BS2Json(
@@ -191,8 +191,11 @@ def scrape_seaborn():
     seaborn_parser = SeabornParser()
     seaborn_parser.download()
     os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
+    final_KG_json = {}
+    for topic, page in seaborn_parser.topic_pages.items():
+        final_KG_json[topic] = page
     with open("./scrape_tutorials/KGs/seaborn.json", "w") as f:
-        json.dump()
+        json.dump(final_KG_json, f, indent=4)
 
 # main.
 if __name__ == "__main__":
