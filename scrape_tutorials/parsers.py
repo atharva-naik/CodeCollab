@@ -3,9 +3,13 @@
 
 # parsers for various libraries/modules.
 import os
+import re
+import ast
 import bs4
+import json
 import bs2json
 import requests
+import html_to_json
 from typing import *
 from tqdm import tqdm
 from bs2json import BS2Json
@@ -13,20 +17,73 @@ from urllib.parse import urldefrag
 from collections import defaultdict
 from scrape_tutorials import SOURCE_TO_BASE_URLS
 
-def simplify_soup(soup):
-    for span in soup.select('span'):
-        span.unwrap()
-    for span in soup.select('code'):
-        span.unwrap()
-    for span in soup.select('div'):
-        span.unwrap()
-    for span in soup.select("p"):
-        span.unwrap()
+def simplify_soup(soup, target: str="seaborn"):
+    for span in soup.select('span'): span.unwrap()
+    for code in soup.select('code'): code.unwrap()
+    for div in soup.select('div'): div.unwrap()
+    for ol in soup.select('ol'): ol.unwrap()
+    for ul in soup.select('ul'): ul.unwrap()
+    for li in soup.select('li'): li.unwrap()
+    for table in soup.select('table'): table.extract()
+    for style in soup.select('style'): style.extract()
+    # for a in soup.select('a'): a.unwrap()
+    for p in soup.select("p"): 
+        del p.attrs
+    # for section in soup.select("section"): section.unwrap()
 
-    article = soup.html.body.find("article", {"class": "bd-article"})
-    for ele in article.select("article"): ele.unwrap()
+    if target == "seaborn": 
+        article = soup.html.body.find("article", {"class": "bd-article"})
+        for content in article.contents:
+            if content != "\n":
+                final = content
+                break
 
-    return article
+    return final
+
+def collapse_list_of_strings(d: Union[dict, str, list]):
+    if isinstance(d, str): return d
+    elif isinstance(d, list):
+        all_ele_are_str = True
+        for v in d:
+            if not isinstance(v, str):
+                all_ele_are_str = False
+                break
+        if all_ele_are_str: new_d = "\n".join(d)
+        else:
+            new_d = []
+            for v in d: new_d.append(collapse_list_of_strings(v))
+        return new_d
+    elif isinstance(d, dict):
+        for k, v in d.items():
+            d[k] = collapse_list_of_strings(v)
+
+    return d
+
+def simplify_html_to_json(html_to_json_dict: dict):
+    simple_json = {}
+    # print("simplifying JSON")
+    if isinstance(html_to_json_dict, dict):
+        if len(html_to_json_dict) == 1 and isinstance(list(html_to_json_dict.values())[0], str):
+            return list(html_to_json_dict.values())[0]
+        for key, value in html_to_json_dict.items():
+            if key == "_value": key = "content"
+            elif key == "h1": key = "markdown1"
+            elif key == "h2": key = "markdown2"
+            elif key == "h3": key = "markdown3"
+            elif key == "_values": key = "contents"
+            elif key == 'pre': key = "code"
+            # print(key)
+            if isinstance(value, (dict, list)):
+                simple_json[key] = simplify_html_to_json(value)
+            else: simple_json[key] = value
+    elif isinstance(html_to_json_dict, list):
+        simple_json = []
+        for value in html_to_json_dict:
+            simple_json.append(simplify_html_to_json(value))
+        return simple_json
+    else: return html_to_json_dict
+
+    return simple_json
 
 def simplify_bs2_json(html_json: str, filt_keys: List[str]=[
                       'script', 'style', 'role', 'br', 'class']):
@@ -86,13 +143,41 @@ class SeabornParser:
 
     def download(self):
         for name, urls in self.topic_urls.items():
-            for url in tqdm(urls):
-                self.topic_pages[name].append(
-                    simplify_soup(bs4.BeautifulSoup(
-                        requests.get(url).text,
-                        features="lxml",
-                    ))
-                )
+            for i, url in tqdm(enumerate(urls), total=len(urls)):
+                simple_soup =  simplify_soup(bs4.BeautifulSoup(
+                    requests.get(url).text,
+                    features="lxml",
+                ))
+                simplified_soup = str(simple_soup).replace("<pre>", '''{"cell_type": "code", "code":\'\'\'''').replace("</pre>", '\'\'\'},')
+                # for j in range(1, 12):
+                    # simplified_soup = simplified_soup.replace(f"<h{j}>",  '{"cell_type": "markdown", "nl_original":\'\'\''+'#'*j+' ').replace(f"</h{j}>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<h1>",  '{"cell_type": "markdown", "nl_original":\'\'\'# ').replace("</h1>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<h2>",  '{"cell_type": "markdown", "nl_original":\'\'\'## ').replace("</h2>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<h3>",  '{"cell_type": "markdown", "nl_original":\'\'\'### ').replace("</h3>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<h4>",  '{"cell_type": "markdown", "nl_original":\'\'\'#### ').replace("</h4>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<h5>",  '{"cell_type": "markdown", "nl_original":\'\'\'##### ').replace("</h5>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<h6>",  '{"cell_type": "markdown", "nl_original":\'\'\'###### ').replace("</h6>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<h7>",  '{"cell_type": "markdown", "nl_original":\'\'\'####### ').replace("</h7>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<h8>",  '{"cell_type": "markdown", "nl_original":\'\'\'######## ').replace("</h8>", '\'\'\'},')
+                simplified_soup = simplified_soup.replace("<p>",  '{"cell_type": "markdown", "nl_original":\'\'\'').replace("</p>", '\'\'\'},')
+                simplified_soup = re.sub("<section.*?>", "", simplified_soup)
+                simplified_soup = simplified_soup.replace("</section>", "")
+                # remove svgs, images, tables and style tags.
+                simplified_soup = re.sub("<svg.*?>.*?</svg>", "", simplified_soup, flags=re.MULTILINE)
+                # simplified_soup = re.sub("<style.*?>.*?</style>", "", simplified_soup, flags=re.MULTILINE)
+                # simplified_soup = re.sub("<table.*?>.*?</table>", "", simplified_soup, flags=re.MULTILINE)
+                simplified_soup = re.sub("<img.*?/>", "", simplified_soup)
+                # html_to_json_dict = html_to_json.convert(str(simplified_soup))
+                # simplified_json = simplify_html_to_json(html_to_json_dict)
+                # simplified_json = collapse_list_of_strings(simplified_json)
+                # self.topic_pages[name].append(simplified_json)
+                try: self.topic_pages[name].append(ast.literal_eval("["+simplified_soup+"]"))
+                except SyntaxError:
+                    simplified_soup = re.sub("<a.*?>.*?</a>", "", simplified_soup)
+                    try: self.topic_pages[name].append(ast.literal_eval("["+simplified_soup+"]"))
+                    except SyntaxError: 
+                        print("ERROR:", name, i, url)
+                        self.topic_pages[name].append(simplified_soup)
                 # self.topic_pages[name].append(
                 #     simplify_bs2_json(
                 #         BS2Json(
@@ -102,7 +187,13 @@ class SeabornParser:
                 # )
         self.topic_pages = dict(self.topic_pages)
 
+def scrape_seaborn():
+    seaborn_parser = SeabornParser()
+    seaborn_parser.download()
+    os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
+    with open("./scrape_tutorials/KGs/seaborn.json", "w") as f:
+        json.dump()
+
 # main.
 if __name__ == "__main__":
-    seaborn_parser = SeabornParser()
-    seaborn_parser
+    scrape_seaborn()        
