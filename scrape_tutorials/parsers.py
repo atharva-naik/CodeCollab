@@ -16,6 +16,7 @@ from bs2json import BS2Json
 from urllib.parse import urldefrag
 from collections import defaultdict
 from scrape_tutorials import SOURCE_TO_BASE_URLS
+from datautils.markdown_cell_analysis import extract_notebook_hierarchy_from_seq
 
 def simplify_soup(soup, target: str="seaborn"):
     for span in soup.select('span'): span.unwrap()
@@ -171,10 +172,14 @@ class SeabornParser:
                 # simplified_json = simplify_html_to_json(html_to_json_dict)
                 # simplified_json = collapse_list_of_strings(simplified_json)
                 # self.topic_pages[name].append(simplified_json)
-                try: self.topic_pages[name][urls[url]] = ast.literal_eval("["+simplified_soup+"]")
+                try: self.topic_pages[name][urls[url]] = extract_notebook_hierarchy_from_seq(
+                    ast.literal_eval("["+simplified_soup+"]")
+                )[0].serialize()
                 except SyntaxError:
                     simplified_soup = re.sub("<a.*?>.*?</a>", "", simplified_soup)
-                    try: self.topic_pages[name][urls[url]] = ast.literal_eval("["+simplified_soup+"]")
+                    try: self.topic_pages[name][urls[url]] = extract_notebook_hierarchy_from_seq(
+                        ast.literal_eval("["+simplified_soup+"]")
+                    )[0].serialize()
                     except SyntaxError: 
                         print("ERROR:", name, i, url)
                         self.topic_pages[name][urls[url]] = simplified_soup
