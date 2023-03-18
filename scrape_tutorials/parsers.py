@@ -119,7 +119,10 @@ def simplify_bs2_json(html_json: str, filt_keys: List[str]=[
 
     return new_json
 
+# gather seaborn tutorials: https://seaborn.pydata.org/tutorial
+
 class SeabornParser:
+    """Parser/scraper for seaborn tutorials."""
     def __init__(self, base_url: str=SOURCE_TO_BASE_URLS["seaborn"]):
         self.base_url = base_url
         self.base_page = requests.get(base_url)
@@ -138,7 +141,8 @@ class SeabornParser:
                 base_host = "https://seaborn.pydata.org/"
                 base_url = os.path.join(base_host, url.attrs['href'])
                 base_url = urldefrag(base_url).url
-                base_urls[base_url] = url.text
+                if base_url not in base_urls:
+                    base_urls[base_url] = url.text
             self.topic_urls[name] = base_urls
         self.topic_pages = defaultdict(lambda:{})
 
@@ -172,17 +176,33 @@ class SeabornParser:
                 # simplified_json = simplify_html_to_json(html_to_json_dict)
                 # simplified_json = collapse_list_of_strings(simplified_json)
                 # self.topic_pages[name].append(simplified_json)
-                try: self.topic_pages[name][urls[url]] = extract_notebook_hierarchy_from_seq(
-                    ast.literal_eval("["+simplified_soup+"]")
-                )[0].serialize()
-                except SyntaxError:
-                    simplified_soup = re.sub("<a.*?>.*?</a>", "", simplified_soup)
-                    try: self.topic_pages[name][urls[url]] = extract_notebook_hierarchy_from_seq(
+                
+                try: 
+                    nb_json = extract_notebook_hierarchy_from_seq(
                         ast.literal_eval("["+simplified_soup+"]")
-                    )[0].serialize()
-                    except SyntaxError: 
-                        print("ERROR:", name, i, url)
-                        self.topic_pages[name][urls[url]] = simplified_soup
+                    )[0].serialize2()[""][0]
+                    # print(nb_json)
+                    assert len(nb_json.keys()) == 1
+                    key = list(nb_json.keys())[0]
+                    value = list(nb_json.values())[0] 
+                    self.topic_pages[name][key] = value
+                except SyntaxError:
+                    # simplified_soup = re.sub("<a.*?>.*?</a>", "", simplified_soup)
+                    # nb_json = extract_notebook_hierarchy_from_seq(
+                    #     ast.literal_eval("["+simplified_soup+"]")
+                    # )[0].serialize2()[""]
+                    # assert len(nb_json.keys()) == 1
+                    # key = list(nb_json.keys())
+                    # value = list(nb_json.values()) 
+                    # self.topic_pages[name][key] = value
+
+                    
+                    # try: self.topic_pages[name].append(extract_notebook_hierarchy_from_seq(
+                    #     ast.literal_eval("["+simplified_soup+"]")
+                    # )[0].serialize2()[""])
+                    # except SyntaxError: 
+                    print("ERROR:", name, i, url)
+                        
                 # self.topic_pages[name].append(
                 #     simplify_bs2_json(
                 #         BS2Json(

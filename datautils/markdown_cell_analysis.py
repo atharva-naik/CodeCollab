@@ -48,6 +48,16 @@ class NBTreeNode:
             "value": self.triple.to_dict(),
             "children": [child.serialize() for child in self.children]
         }
+
+    def serialize2(self):
+        if len(self.children) == 0:
+            if self.triple.cell_type == "code": 
+                return (self.triple.content, "code")
+            else: return (self.triple.content, "markdown")
+        else:
+            return {
+                self.triple.content : [child.serialize2() for child in self.children]
+            }
         
     def to_json(self):
         return json.dumps(self.serialize())
