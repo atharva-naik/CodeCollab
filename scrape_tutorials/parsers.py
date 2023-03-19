@@ -164,31 +164,10 @@ def parse_soup_stream(soup_str: str, tag_mapping: Dict[str, Tuple[str, str]]={
         del cell["content"]
     
     return cells
-# def unenclosed_dict_error_correction(data_stream: str):
-#     bracket_stack = []
-#     i = 0
-#     new_stream = ""
-#     while i < len(data_stream):
-#         char = data_stream[i]
-#         if char == "{":
-#             bracket_stack.append("{")
-#             new_stream += char
-#         elif char == "}":
-#             if len(bracket_stack) > 0:
-#                 bracket_stack.pop()
-#                 new_stream += char
-#                 i += 1
-#                 char = data_stream[i]
-#                 if char == ",": new_stream += char
-#                 else: new_stream += (","+char)
-#             else: pass
-#         i += 1
-
-#     return new_stream
 
 # gather PyTorch tutorials.
 class PyTorchTutorialsParser:
-    def __init__(self, blog_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["pytorch"]):
+    def __init__(self, blog_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["torch"]):
         self.blog_urls = blog_urls
         self.blog_pages = {}
 
@@ -199,7 +178,7 @@ class PyTorchTutorialsParser:
                 simple_soup = simplify_soup(bs4.BeautifulSoup(
                     requests.get(url).text,
                     features="lxml",
-                ), target="numpy")
+                ), target="torch")
 
                 simplified_soup = str(simple_soup)
                 simplified_soup = re.sub("<div.*?>", "", simplified_soup)
@@ -238,8 +217,10 @@ class NumPyTutorialsParser:
                 try: 
                     nb_json = extract_notebook_hierarchy_from_seq(
                         parse_soup_stream(simplified_soup)
-                    )[0].serialize2()[""]
-                    self.blog_pages[name][sub_blog_name] = nb_json
+                    )[0].serialize2()[""][0]
+                    assert len(nb_json) == 1
+                    value = list(nb_json.values())[0]
+                    self.blog_pages[name][sub_blog_name] = value
                 except IndexError:
                     print(f"ERROR[{name}][{sub_blog_name}]")
                     self.blog_pages[name][sub_blog_name] = simplified_soup

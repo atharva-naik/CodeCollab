@@ -1,5 +1,5 @@
 {
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Prerequisites": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Prerequisites": [
         [
             "Before reading this tutorial, you should know a bit of Python. If you would like to refresh your memory, take a look at the .",
             "markdown"
@@ -9,13 +9,13 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Learner profile": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Learner profile": [
         [
             "This tutorial is for people who have a basic understanding of linear algebra and arrays in NumPy and want to understand how n-dimensional (\\(n&gt;=2\\)) arrays are represented and can be manipulated. In particular, if you don\u2019t know how to apply common functions to n-dimensional arrays (without using for-loops), or if you want to understand axis and shape properties for n-dimensional arrays, this tutorial might be of help.",
             "markdown"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Learning Objectives": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Learning Objectives": [
         [
             "After this tutorial, you should be able to:",
             "markdown"
@@ -33,7 +33,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Content": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Content": [
         [
             "In this tutorial, we will use a  from linear algebra, the Singular Value Decomposition, to generate a compressed approximation of an image. We\u2019ll use the face image from the  module:",
             "markdown"
@@ -75,7 +75,7 @@
             "code"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Content->Shape, axis and array properties": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Content->Shape, axis and array properties": [
         [
             "Note that, in linear algebra, the dimension of a vector refers to the number of entries in an array. In NumPy, it instead defines the number of axes. For example, a 1D array is a vector such as [1, 2, 3], a 2D array is a matrix, and so forth.",
             "markdown"
@@ -181,7 +181,7 @@
             "code"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Content->Operations on an axis": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Content->Operations on an axis": [
         [
             "It is possible to use methods from linear algebra to approximate an existing set of data. Here, we will use the  to try to rebuild an image that uses less singular value information than the original one, while still retaining some of its features.",
             "markdown"
@@ -287,7 +287,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Approximation": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Approximation": [
         [
             "The  module includes a norm function, which computes the norm of a vector or matrix represented in a NumPy array. For example, from the SVD explanation above, we would expect the norm of the difference between img_gray and the reconstructed SVD product to be small. As expected, you should see something like",
             "markdown"
@@ -361,7 +361,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Approximation->Applying to all colors": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Approximation->Applying to all colors": [
         [
             "Now we want to do the same kind of operation, but to all three colors. Our first instinct might be to repeat the same operation we did above to each color matrix individually. However, NumPy\u2019s <em>broadcasting</em> takes care of this\nfor us.",
             "markdown"
@@ -431,7 +431,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Approximation->Products with n-dimensional arrays": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Approximation->Products with n-dimensional arrays": [
         [
             "If you have worked before with only one- or two-dimensional arrays in NumPy, you might use  and  (or the @ operator) interchangeably. However, for n-dimensional arrays, they work in very different ways. For more details, check the documentation on .",
             "markdown"
@@ -529,13 +529,13 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Approximation->Final words": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Approximation->Final words": [
         [
             "Of course, this is not the best method to <em>approximate</em> an image. However, there is, in fact, a result in linear algebra that says that the approximation we built above is the best we can get to the original matrix in\nterms of the norm of the difference. For more information, see <em>G. H. Golub and C. F. Van Loan, Matrix Computations, Baltimore, MD, Johns Hopkins University Press, 1985</em>.",
             "markdown"
         ]
     ],
-    "NumPy Features->Linear algebra on n-dimensional arrays->Linear algebra on n-dimensional arrays->Further reading": [
+    "NumPy Features->Linear algebra on n-dimensional arrays->Further reading": [
         [
             "",
             "markdown"
@@ -557,13 +557,13 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->What you\u2019ll learn": [
+    "NumPy Features->Saving and sharing your NumPy arrays->What you\u2019ll learn": [
         [
             "You\u2019ll save your NumPy arrays as zipped files and human-readable\ncomma-delimited files i.e. *.csv. You will also learn to load both of these\nfile types back into NumPy workspaces.",
             "markdown"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->What you\u2019ll do": [
+    "NumPy Features->Saving and sharing your NumPy arrays->What you\u2019ll do": [
         [
             "You\u2019ll learn two ways of saving and reading files\u2013as compressed and as\ntext files\u2013that will serve most of your storage needs in NumPy.",
             "markdown"
@@ -593,7 +593,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->What you\u2019ll need": [
+    "NumPy Features->Saving and sharing your NumPy arrays->What you\u2019ll need": [
         [
             "NumPy",
             "markdown"
@@ -651,7 +651,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Create your arrays": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Create your arrays": [
         [
             "Now that you have imported the NumPy library, you can make a couple of\narrays; let\u2019s start with two 1D arrays, x and y, where y = x**2.You\nwill assign x to the integers from 0 to 9 using\n.",
             "markdown"
@@ -665,7 +665,7 @@
             "code"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Save your arrays with NumPy\u2019s": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Save your arrays with NumPy\u2019s": [
         [
             "Now you have two arrays in your workspace,",
             "markdown"
@@ -695,7 +695,7 @@
             "code"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Remove the saved arrays and load them back with NumPy\u2019s": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Remove the saved arrays and load them back with NumPy\u2019s": [
         [
             "In your current working directory, you should have a new file with the\nname x_y-squared.npz. This file is a zipped binary of the two arrays,\nx and y. Let\u2019s clear the workspace and load the values back in. This\nx_y-squared.npz file contains two \nfiles. The NPY format is a . You cannot read\nthe numbers in a standard text editor or spreadsheet.",
             "markdown"
@@ -741,7 +741,7 @@
             "code"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Reassign the NpzFile arrays to x and y": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Reassign the NpzFile arrays to x and y": [
         [
             "You\u2019ve now created the dictionary with an NpzFile-type. The\nincluded files are x_axis and y_axis that you defined in your\nsavez command. You can reassign x and y to the load_xy files.",
             "markdown"
@@ -755,19 +755,19 @@
             "code"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Success": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Success": [
         [
             "You have created, saved, deleted, and loaded the variables x and y using savez and load. Nice work.",
             "markdown"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Another option: saving to human-readable csv": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Another option: saving to human-readable csv": [
         [
             "Let\u2019s consider another scenario, you want to share x and y with\nother people or other programs. You may need human-readable text file\nthat is easier to share. Next, you use the\n\nto save x and y in a comma separated value file, x_y-squared.csv.\nThe resulting csv is composed of ASCII characters. You can load the file\nback into NumPy or read it with other programs.",
             "markdown"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Rearrange the data into a single 2D array": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Rearrange the data into a single 2D array": [
         [
             "First, you have to create a single 2D array from your two 1D arrays. The\ncsv-filetype is a spreadsheet-style dataset. The csv arranges numbers in\nrows\u2013separated by new lines\u2013and columns\u2013separated by commas. If the\ndata is more complex e.g. multiple 2D arrays or higher dimensional\narrays, it is better to use savez. Here, you use\ntwo NumPy functions to format the data:",
             "markdown"
@@ -789,7 +789,7 @@
             "code"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Save the data to csv file using": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Save the data to csv file using": [
         [
             "You use savetxt with a three options to make your file easier to read:",
             "markdown"
@@ -819,7 +819,7 @@
             "code"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Our arrays as a csv file": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Our arrays as a csv file": [
         [
             "There are two features that you shoud notice here:",
             "markdown"
@@ -861,13 +861,13 @@
             "code"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Success, but remember your types": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Success, but remember your types": [
         [
             "When you saved the arrays to the csv file, you did not preserve the\nint type. When loading the arrays back into your workspace the default process will be to load the csv file as a 2D floating point array e.g. load_xy.dtype == 'float64' and load_xy.shape == (10, 2).",
             "markdown"
         ]
     ],
-    "NumPy Features->Saving and sharing your NumPy arrays->Saving and sharing your NumPy arrays->Wrapping up": [
+    "NumPy Features->Saving and sharing your NumPy arrays->Wrapping up": [
         [
             "In conclusion, you can create, save, and load arrays in NumPy. Saving arrays makes sharing your work and collaboration much easier. There are other ways Python can save data to files, such as , but savez and savetxt will serve most of your storage needs for future NumPy work and sharing with other people, respectively.",
             "markdown"
@@ -877,13 +877,13 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->What you\u2019ll do": [
+    "NumPy Features->Masked Arrays->What you\u2019ll do": [
         [
             "Use the masked arrays module from NumPy to analyze COVID-19 data and deal with missing values.",
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->What you\u2019ll learn": [
+    "NumPy Features->Masked Arrays->What you\u2019ll learn": [
         [
             "You\u2019ll understand what are masked arrays and how they can be created",
             "markdown"
@@ -897,7 +897,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->What you\u2019ll need": [
+    "NumPy Features->Masked Arrays->What you\u2019ll need": [
         [
             "Basic familiarity with Python. If you would like to refresh your memory, take a look at the .",
             "markdown"
@@ -911,7 +911,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->What are masked arrays?": [
+    "NumPy Features->Masked Arrays->What are masked arrays?": [
         [
             "Consider the following problem. You have a dataset with missing or invalid entries. If you\u2019re doing any kind of processing on this data, and want to <em>skip</em> or flag these unwanted entries without just deleting them, you may have to use conditionals or filter your data somehow. The  module provides some of the same functionality of  with added structure to ensure invalid entries are not used in computation.",
             "markdown"
@@ -941,7 +941,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->When can they be useful?": [
+    "NumPy Features->Masked Arrays->When can they be useful?": [
         [
             "There are a few situations where masked arrays can be more useful than just eliminating the invalid entries of an array:",
             "markdown"
@@ -967,7 +967,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->Using masked arrays to see COVID-19 data": [
+    "NumPy Features->Masked Arrays->Using masked arrays to see COVID-19 data": [
         [
             "From  it is possible to download a dataset with initial data about the COVID-19 outbreak in the beginning of 2020. We are going to look at a small subset of this data, contained in the file who_covid_19_sit_rep_time_series.csv. <em>(Note that this file has been replaced with a version without missing data sometime in late 2020.)</em>",
             "markdown"
@@ -1005,7 +1005,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->Exploring the data": [
+    "NumPy Features->Masked Arrays->Exploring the data": [
         [
             "First of all, we can plot the whole set of data we have and see what it looks like. In order to get a readable plot, we select only a few of the dates to show in our . Note also that in our plot command, we use nbcases.T (the transpose of the nbcases array) since this means we will plot each row of the file as a separate line. We choose to plot a dashed line (using the '--' line style). See the  documentation for more info on this.",
             "markdown"
@@ -1035,7 +1035,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->Missing data": [
+    "NumPy Features->Masked Arrays->Missing data": [
         [
             "Looking at the data, here\u2019s what we find: there is a period with <strong>missing data</strong>:",
             "markdown"
@@ -1161,7 +1161,7 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->Fitting Data": [
+    "NumPy Features->Masked Arrays->Fitting Data": [
         [
             "One possibility we can think of is to interpolate the missing data to estimate the number of cases in late January. Observe that we can select the masked elements using the .mask attribute:",
             "markdown"
@@ -1223,13 +1223,13 @@
             "code"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->In practice": [
+    "NumPy Features->Masked Arrays->In practice": [
         [
             "Adding -1 to missing data is not a problem with numpy.genfromtxt; in this particular case, substituting the missing value with 0 might have been fine, but we\u2019ll see later that this is far from a general solution. Also, it is possible to call the numpy.genfromtxt function using the usemask parameter. If usemask=True, numpy.genfromtxt automatically returns a masked array.",
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->Further reading": [
+    "NumPy Features->Masked Arrays->Further reading": [
         [
             "Topics not covered in this tutorial can be found in the documentation:",
             "markdown"
@@ -1243,13 +1243,13 @@
             "markdown"
         ]
     ],
-    "NumPy Features->Masked Arrays->Masked Arrays->Further reading->Reference": [
+    "NumPy Features->Masked Arrays->Further reading->Reference": [
         [
             "Ensheng Dong, Hongru Du, Lauren Gardner, <em>An interactive web-based dashboard to track COVID-19 in real time</em>, The Lancet Infectious Diseases, Volume 20, Issue 5, 2020, Pages 533-534, ISSN 1473-3099, .",
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy": [
         [
             "<img alt=\"Scatter plot of MOS transistor count per microprocessor every two years as a demonstration of Moore's Law.\" src=\"../_images/01-mooreslaw-tutorial-intro.png\"/>",
             "markdown"
@@ -1259,13 +1259,13 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->What you\u2019ll do": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->What you\u2019ll do": [
         [
             "In 1965, engineer Gordon Moore\n that\ntransistors on a chip would double every two years in the coming decade\n[,\n].\nYou\u2019ll compare Moore\u2019s prediction against actual transistor counts in\nthe 53 years following his prediction. You will determine the best-fit constants to describe the exponential growth of transistors on semiconductors compared to Moore\u2019s Law.",
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->Skills you\u2019ll learn": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Skills you\u2019ll learn": [
         [
             "Load data from a  file",
             "markdown"
@@ -1295,7 +1295,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->What you\u2019ll need": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->What you\u2019ll need": [
         [
             "<strong>1.</strong> These packages:",
             "markdown"
@@ -1373,7 +1373,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->Building Moore\u2019s law as an exponential function": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Building Moore\u2019s law as an exponential function": [
         [
             "Your empirical model assumes that the number of transistors per\nsemiconductor follows an exponential growth,",
             "markdown"
@@ -1451,7 +1451,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->Loading historical manufacturing data to your workspace": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Loading historical manufacturing data to your workspace": [
         [
             "Now, make a prediction based upon the historical data for\nsemiconductors per chip. The \neach year is in the transistor_data.csv file. Before loading a *.csv\nfile into a NumPy array, its a good idea to inspect the structure of the\nfile first. Then, locate the columns of interest and save them to a\nvariable. Save two columns of the file to the array, data.",
             "markdown"
@@ -1529,7 +1529,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->Calculating the historical growth curve for transistors": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Calculating the historical growth curve for transistors": [
         [
             "Your model assume that yi is a function of year. Now, find the best-fit model that minimizes the difference between \\(y_i\\) and \\(A\\cdot \\text{year} +B, \\) as such",
             "markdown"
@@ -1715,7 +1715,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->Sharing your results as zipped arrays and a csv": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Sharing your results as zipped arrays and a csv": [
         [
             "The last step, is to share your findings. You created\nnew arrays that represent a linear regression model and Gordon Moore\u2019s\nprediction. You started this process by importing a csv file into a NumPy\narray using np.loadtxt, to save your model use two approaches",
             "markdown"
@@ -1729,7 +1729,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->Sharing your results as zipped arrays and a csv->Zipping the arrays into a file": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Sharing your results as zipped arrays and a csv->Zipping the arrays into a file": [
         [
             "Using np.savez, you can save thousands of arrays and give them names. The\nfunction np.load will load the arrays back into the workspace as a\ndictionary. You\u2019ll save a five arrays so the next user will have the year,\ntransistor count, predicted transistor count,  Gordon Moore\u2019s\npredicted count, and fitting constants. Add one more variable that other users can use to\nunderstand the model, notes.",
             "markdown"
@@ -1771,7 +1771,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->Sharing your results as zipped arrays and a csv->Creating your own comma separated value file": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Sharing your results as zipped arrays and a csv->Creating your own comma separated value file": [
         [
             "If you want to share data and view the results in a table, then you have to\ncreate a text file. Save the data using np.savetxt. This\nfunction is more limited than np.savez. Delimited files, like csv\u2019s,\nneed 2D arrays.",
             "markdown"
@@ -1833,13 +1833,13 @@
             "code"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->Wrapping up": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Wrapping up": [
         [
             "In conclusion, you have compared historical data for semiconductor\nmanufacturers to Moore\u2019s law and created a linear regression model to\nfind the average number of transistors added to each microprocessor\nevery two years. Gordon Moore predicted the number of transistors would\ndouble every two years from 1965 through 1975, but the average growth\nhas maintained a consistent increase of \\(\\times 1.98 \\pm 0.01\\) every two\nyears from 1971 through 2019.  In 2015, Moore revised his prediction to\nsay Moore\u2019s law should hold until 2025.\n[].\nYou can share these results as a zipped NumPy array file,\nmooreslaw_regression.npz, or as another csv,\nmooreslaw_regression.csv.  The amazing progress in semiconductor\nmanufacturing has enabled new industries and computational power. This\nanalysis should give you a small insight into how incredible this growth\nhas been over the last half-century.",
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->Determining Moore\u2019s Law with real data in NumPy->References": [
+    "NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->References": [
         [
             "",
             "markdown"
@@ -1857,7 +1857,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST": [
+    "NumPy Applications->Deep learning on MNIST": [
         [
             "This tutorial demonstrates how to build a simple  (with one hidden layer) and train it from scratch with NumPy to recognize handwritten digit images.",
             "markdown"
@@ -1879,7 +1879,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->Prerequisites": [
+    "NumPy Applications->Deep learning on MNIST->Prerequisites": [
         [
             "The reader should have some knowledge of Python, NumPy array manipulation, and linear algebra. In addition, you should be familiar with main concepts of .",
             "markdown"
@@ -1925,7 +1925,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->Table of contents": [
+    "NumPy Applications->Deep learning on MNIST->Table of contents": [
         [
             "Load the MNIST dataset",
             "markdown"
@@ -1943,7 +1943,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->1. Load the MNIST dataset": [
+    "NumPy Applications->Deep learning on MNIST->1. Load the MNIST dataset": [
         [
             "In this section, you will download the zipped MNIST dataset files originally stored in . Then, you will transform them into 4 files of NumPy array type using built-in Python modules. Finally, you will split the arrays into training and test sets.",
             "markdown"
@@ -2041,7 +2041,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->2. Preprocess the data": [
+    "NumPy Applications->Deep learning on MNIST->2. Preprocess the data": [
         [
             "Neural networks can work with inputs that are in a form of tensors (multidimensional arrays) of floating-point type. When preprocessing the data, you should consider the following processes:  and .",
             "markdown"
@@ -2063,7 +2063,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->2. Preprocess the data->Convert the image data to the floating-point format": [
+    "NumPy Applications->Deep learning on MNIST->2. Preprocess the data->Convert the image data to the floating-point format": [
         [
             "The images data contain 8-bit integers encoded in the [0, 255] interval with color values between 0 and 255.",
             "markdown"
@@ -2113,7 +2113,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->2. Preprocess the data->Convert the labels to floating point through categorical/one-hot encoding": [
+    "NumPy Applications->Deep learning on MNIST->2. Preprocess the data->Convert the labels to floating point through categorical/one-hot encoding": [
         [
             "You will use one-hot encoding to embed each digit label as an all-zero vector with np.zeros() and place 1 for a label index. As a result, your label data will be arrays with 1.0 (or 1.) in the position of each image label.",
             "markdown"
@@ -2195,7 +2195,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->3. Build and train a small neural network from scratch": [
+    "NumPy Applications->Deep learning on MNIST->3. Build and train a small neural network from scratch": [
         [
             "In this section you will familiarize yourself with some high-level concepts of the basic building blocks of a deep learning model. You can refer to the original  research publication for more information.",
             "markdown"
@@ -2205,7 +2205,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->3. Build and train a small neural network from scratch->Neural network building blocks with NumPy": [
+    "NumPy Applications->Deep learning on MNIST->3. Build and train a small neural network from scratch->Neural network building blocks with NumPy": [
         [
             "<em>Layers</em>: These building blocks work as data filters \u2014 they process data and learn representations from inputs to better predict the target outputs.",
             "markdown"
@@ -2259,7 +2259,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->3. Build and train a small neural network from scratch->Model architecture and training summary": [
+    "NumPy Applications->Deep learning on MNIST->3. Build and train a small neural network from scratch->Model architecture and training summary": [
         [
             "Here is a summary of the neural network model architecture and the training process:",
             "markdown"
@@ -2337,7 +2337,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->3. Build and train a small neural network from scratch->Compose the model and begin training and testing it": [
+    "NumPy Applications->Deep learning on MNIST->3. Build and train a small neural network from scratch->Compose the model and begin training and testing it": [
         [
             "Having covered the main deep learning concepts and the neural network architecture, let\u2019s write the code.",
             "markdown"
@@ -2511,7 +2511,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Deep learning on MNIST->Deep learning on MNIST->Next steps": [
+    "NumPy Applications->Deep learning on MNIST->Next steps": [
         [
             "You have learned how to build and train a simple feed-forward neural network from scratch using just NumPy to classify handwritten MNIST digits.",
             "markdown"
@@ -2585,7 +2585,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing": [
+    "NumPy Applications->X-ray image processing": [
         [
             "This tutorial demonstrates how to read and process X-ray images with NumPy,\nimageio, Matplotlib and SciPy. You will learn how to load medical images, focus\non certain parts, and visually compare them using the\n,\n,\n, and\n filters for edge\ndetection.",
             "markdown"
@@ -2607,7 +2607,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Prerequisites": [
+    "NumPy Applications->X-ray image processing->Prerequisites": [
         [
             "The reader should have some knowledge of Python, NumPy arrays, and Matplotlib.\nTo refresh the memory, you can take the\n and Matplotlib\n tutorials,\nand the NumPy .",
             "markdown"
@@ -2633,7 +2633,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Table of contents": [
+    "NumPy Applications->X-ray image processing->Table of contents": [
         [
             "Examine an X-ray with imageio",
             "markdown"
@@ -2655,7 +2655,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Examine an X-ray with imageio": [
+    "NumPy Applications->X-ray image processing->Examine an X-ray with imageio": [
         [
             "Let\u2019s begin with a simple example using just one X-ray image from the\nChestX-ray8 dataset.",
             "markdown"
@@ -2693,7 +2693,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Combine images into a multidimensional array to demonstrate progression": [
+    "NumPy Applications->X-ray image processing->Combine images into a multidimensional array to demonstrate progression": [
         [
             "In the next example, instead of 1 image you\u2019ll use 9 X-ray 1024x1024-pixel\nimages from the ChestX-ray8 dataset that have been downloaded and extracted\nfrom one of the dataset files. They are numbered from ...000.png to\n...008.png and let\u2019s assume they belong to the same patient.",
             "markdown"
@@ -2743,13 +2743,13 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters": [
+    "NumPy Applications->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters": [
         [
             "When processing biomedical data, it can be useful to emphasize the 2D\n to focus on particular\nfeatures in an image. To do that, using\n can be\nparticularly helpful when detecting the change of color pixel intensity.",
             "markdown"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters->The Laplace filter with Gaussian second derivatives": [
+    "NumPy Applications->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters->The Laplace filter with Gaussian second derivatives": [
         [
             "Let\u2019s start with an n-dimensional\n filter\n(\u201cLaplacian-Gaussian\u201d) that uses\n second\nderivatives. This Laplacian method focuses on pixels with rapid intensity change\nin values and is combined with Gaussian smoothing to\n. Let\u2019s examine\nhow it can be useful in analyzing 2D X-ray images.",
             "markdown"
@@ -2771,7 +2771,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters->The Gaussian gradient magnitude method": [
+    "NumPy Applications->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters->The Gaussian gradient magnitude method": [
         [
             "Another method for edge detection that can be useful is the\n (gradient) filter.\nIt computes the multidimensional gradient magnitude with Gaussian derivatives\nand helps by remove\n\nimage components.",
             "markdown"
@@ -2793,7 +2793,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters->The Sobel-Feldman operator (the Sobel filter)": [
+    "NumPy Applications->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters->The Sobel-Feldman operator (the Sobel filter)": [
         [
             "To find regions of high spatial frequency (the edges or the edge maps) along the\nhorizontal and vertical axes of a 2D X-ray image, you can use the\n\ntechnique. The Sobel filter applies two 3x3 kernel matrices \u2014 one for each axis\n\u2014 onto the X-ray through a .\nThen, these two points (gradients) are combined using the\n to\nproduce a gradient magnitude.",
             "markdown"
@@ -2831,7 +2831,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters->The Canny filter": [
+    "NumPy Applications->X-ray image processing->Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters->The Canny filter": [
         [
             "You can also consider using another well-known filter for edge detection called\nthe .",
             "markdown"
@@ -2861,7 +2861,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Apply masks to X-rays with np.where()": [
+    "NumPy Applications->X-ray image processing->Apply masks to X-rays with np.where()": [
         [
             "To screen out only certain pixels in X-ray images to help detect particular\nfeatures, you can apply masks with NumPy\u2019s\n\nthat returns x when True and y when False.",
             "markdown"
@@ -2907,7 +2907,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Compare the results": [
+    "NumPy Applications->X-ray image processing->Compare the results": [
         [
             "Let\u2019s display some of the results of processed X-ray images you\u2019ve worked with\nso far:",
             "markdown"
@@ -2917,7 +2917,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->X-ray image processing->X-ray image processing->Next steps": [
+    "NumPy Applications->X-ray image processing->Next steps": [
         [
             "If you want to use your own samples, you can use\n\nor search for various other ones on the \ndatabase. Openi contains many biomedical images and it can be especially helpful\nif you have low bandwidth and/or are restricted by the amount of data you can\ndownload.",
             "markdown"
@@ -2963,13 +2963,13 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy": [
         [
             "When analyzing physical structures, it is crucial to understand the mechanics keeping them stable. Applied forces on a floor, a beam, or any other structure, create reaction forces and moments. These reactions are the structure resisting movement without breaking. In cases where structures do not move despite having forces applied to them,  states that both the acceleration and sum of forces in all directions in the system must be zero. You can represent and solve this concept with NumPy arrays.",
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->What you\u2019ll do:": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->What you\u2019ll do:": [
         [
             "In this tutorial, you will use NumPy to create vectors and moments using NumPy arrays",
             "markdown"
@@ -2987,7 +2987,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->What you\u2019ll learn:": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->What you\u2019ll learn:": [
         [
             "How to represent points, vectors, and moments with NumPy.",
             "markdown"
@@ -3001,7 +3001,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->What you\u2019ll need:": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->What you\u2019ll need:": [
         [
             "NumPy",
             "markdown"
@@ -3031,7 +3031,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->Solving equilibrium with Newton\u2019s second law": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->Solving equilibrium with Newton\u2019s second law": [
         [
             "Your model consists of a beam under a sum of forces and moments. You can start analyzing this system with Newton\u2019s second law:\n\n\\[\\sum{\\text{force}} = \\text{mass} \\times \\text{acceleration}.\\]",
             "markdown"
@@ -3129,7 +3129,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->Solving Equilibrium as a sum of moments": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->Solving Equilibrium as a sum of moments": [
         [
             "Next let\u2019s move to a more complicated application.\nWhen forces are not all applied at the same point, moments are created.",
             "markdown"
@@ -3155,7 +3155,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->Finding values with physical properties": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->Finding values with physical properties": [
         [
             "Let\u2019s say that instead of a force acting perpendicularly to the beam, a force was applied to our pole through a wire that was also attached to the ground.\nGiven the tension in this cord, all you need to solve this problem are the physical locations of these objects.",
             "markdown"
@@ -3237,7 +3237,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->Finding values with physical properties->Another Example": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->Finding values with physical properties->Another Example": [
         [
             "Let\u2019s look at a slightly more complicated model.  In this example you will be observing a beam with two cables and an applied force.  This time you need to find both the tension in the cords and the reaction forces of the beam. <em>(Source: , Problem 4.106)</em>",
             "markdown"
@@ -3323,19 +3323,19 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->Wrapping up": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->Wrapping up": [
         [
             "You have learned how to use arrays to represent points, forces, and moments in three dimensional space. Each entry in an array can be used to represent a physical property broken into directional components. These can then be easily manipulated with NumPy functions.",
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->Wrapping up->Additional Applications": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->Wrapping up->Additional Applications": [
         [
             "This same process can be applied to kinetic problems or in any number of dimensions. The examples done in this tutorial assumed three dimensional problems in static equilibrium. These methods can easily be used in more varied problems. More or less dimensions require larger or smaller arrays to represent. In systems experiencing acceleration, velocity and acceleration can be similarly be represented as vectors as well.",
             "markdown"
         ]
     ],
-    "NumPy Applications->Determining Static Equilibrium in NumPy->Determining Static Equilibrium in NumPy->Wrapping up->References": [
+    "NumPy Applications->Determining Static Equilibrium in NumPy->Wrapping up->References": [
         [
             "",
             "markdown"
@@ -3345,7 +3345,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals": [
+    "NumPy Applications->Plotting Fractals": [
         [
             "<img alt=\"Fractal picture\" src=\"../_images/fractal.png\"/>",
             "markdown"
@@ -3359,7 +3359,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->What you\u2019ll do": [
+    "NumPy Applications->Plotting Fractals->What you\u2019ll do": [
         [
             "Write a function for plotting various Julia sets",
             "markdown"
@@ -3377,7 +3377,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->What you\u2019ll learn": [
+    "NumPy Applications->Plotting Fractals->What you\u2019ll learn": [
         [
             "A better intuition for how fractals work mathematically",
             "markdown"
@@ -3395,7 +3395,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->What you\u2019ll need": [
+    "NumPy Applications->Plotting Fractals->What you\u2019ll need": [
         [
             "",
             "markdown"
@@ -3429,7 +3429,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->Warmup": [
+    "NumPy Applications->Plotting Fractals->Warmup": [
         [
             "To gain some intuition for what fractals are, we will begin with an example.",
             "markdown"
@@ -3603,7 +3603,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->Julia set": [
+    "NumPy Applications->Plotting Fractals->Julia set": [
         [
             "What we just explored was an example of a fractal visualization of a specific Julia Set.",
             "markdown"
@@ -3661,7 +3661,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->Mandelbrot set": [
+    "NumPy Applications->Plotting Fractals->Mandelbrot set": [
         [
             "Closely related to the Julia set is the famous <strong>Mandelbrot set</strong>, which has a slightly different definition. Once again, we define \\(f(z) = z^2 + c\\) where \\(c\\) is a complex number, but this time our focus is on our choice of \\(c\\). We say that \\(c\\) is an element of the Mandelbrot set if f converges at \\(z = 0\\). An equivalent definition is to say that \\(c\\) is an element of the Mandelbrot set if \\(f(c)\\) can be iterated infinitely and not \u2018explode\u2019. We will tweak our Julia function slightly (and rename it appropriately) so that we can plot a visualization of the Mandelbrot set, which possesses an elegant fractal pattern.",
             "markdown"
@@ -3675,7 +3675,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->Generalizing the Julia set": [
+    "NumPy Applications->Plotting Fractals->Generalizing the Julia set": [
         [
             "We can generalize our Julia function even further by giving it a parameter for which universal function we would like to pass in. This would allow us to plot fractals of the form \\(f(z) = g(z) + c\\) where g is a universal function selected by us.",
             "markdown"
@@ -3697,7 +3697,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->Generalizing the Julia set->Newton Fractals": [
+    "NumPy Applications->Plotting Fractals->Generalizing the Julia set->Newton Fractals": [
         [
             "Newton fractals are a specific class of fractals, where iterations involve adding or subtracting the ratio of a function (often a polynomial) and its derivative to the input values. Mathematically, it can be expressed as:",
             "markdown"
@@ -3795,7 +3795,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->Creating your own fractals": [
+    "NumPy Applications->Plotting Fractals->Creating your own fractals": [
         [
             "What makes fractals more exciting is how much there is to explore once you become familiar with the basics. Now we will wrap up our tutorial by exploring some of the different ways one can experiment in creating unique fractals. I encourage you to try some things out on your own (if you have not done so already).",
             "markdown"
@@ -3873,7 +3873,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->In conclusion": [
+    "NumPy Applications->Plotting Fractals->In conclusion": [
         [
             "We learned a lot about generating fractals today. We saw how complicated fractals requiring many iterations could be computed efficiently using universal functions. We also took advantage of boolean indexing, which allowed for less computations to be made without having to individually verify each value. Finally, we learned a lot about fractals themselves. As a recap:",
             "markdown"
@@ -3907,7 +3907,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->On your own": [
+    "NumPy Applications->Plotting Fractals->On your own": [
         [
             "Play around with the parameters of the generalized Julia set function, try playing with the constant value, number of iterations, function choice, radius, and colour choice.",
             "markdown"
@@ -3917,7 +3917,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Plotting Fractals->Plotting Fractals->Further reading": [
+    "NumPy Applications->Plotting Fractals->Further reading": [
         [
             "",
             "markdown"
@@ -3939,19 +3939,19 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India": [
         [
             "<img alt=\"A grid showing the India Gate in smog above and clear air below\" src=\"../_images/11-delhi-aqi.jpg\"/>",
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->What you\u2019ll do": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->What you\u2019ll do": [
         [
             "Calculate Air Quality Indices (AQI) and perform paired Student\u2019s t-test on them.",
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->What you\u2019ll learn": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->What you\u2019ll learn": [
         [
             "You\u2019ll learn the concept of moving averages",
             "markdown"
@@ -3969,7 +3969,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->What you\u2019ll need": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->What you\u2019ll need": [
         [
             " installed in your environment",
             "markdown"
@@ -3979,7 +3979,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->The problem of air pollution": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->The problem of air pollution": [
         [
             "Air pollution is one of the most prominent types of pollution we face that has an immediate effect on our daily lives. The\nCOVID-19 pandemic resulted in lockdowns in different parts of the world; offering a rare opportunity to study the effect of\nhuman activity (or lack thereof) on air pollution. In this tutorial, we will study the air quality in Delhi, one of the\nworst affected cities by air pollution, before and during the lockdown from March to June 2020. For this, we will first compute\nthe Air Quality Index for each hour from the collected pollutant measurements. Next, we will sample these indices and perform\na  on them. It will statistically show us that the air quality improved due to the lockdown, supporting our intuition.",
             "markdown"
@@ -3993,7 +3993,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Building the dataset": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Building the dataset": [
         [
             "We will use a condensed version of the  dataset. This dataset contains air quality data and AQI (Air Quality Index) at hourly and daily level of various stations across multiple cities in India. The condensed version available with this tutorial contains hourly pollutant measurements for Delhi\nfrom May 31, 2019 to June 30, 2020. It has measurements of the standard pollutants that are required for Air Quality Index calculation and a few other important ones:\nParticulate Matter (PM 2.5 and PM 10), nitrogen dioxide (NO2), ammonia (NH3), sulfur dioxide (SO2), carbon monoxide (CO), ozone (O3), oxides of nitrogen (NOx), nitric oxide (NO), benzene, toluene, and xylene.",
             "markdown"
@@ -4039,7 +4039,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Calculating the Air Quality Index": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Calculating the Air Quality Index": [
         [
             "We will calculate the AQI using  adopted by the  of India.  To summarize the steps:",
             "markdown"
@@ -4081,7 +4081,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Calculating the Air Quality Index->Moving averages": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Calculating the Air Quality Index->Moving averages": [
         [
             "For the first step, we have to compute  for pollutants_A over a window of 24 hours and pollutants_B over a\nwindow of 8 hours. We will write a simple function moving_mean using  and  to achieve this.",
             "markdown"
@@ -4103,7 +4103,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Calculating the Air Quality Index->Sub-indices": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Calculating the Air Quality Index->Sub-indices": [
         [
             "The subindices for each pollutant are calculated according to the linear relationship between the AQI and standard breakpoint ranges with the formula as above:\n\n\\[\nIp = \\dfrac{\\text{IHi \u2013 ILo}}{\\text{BPHi \u2013 BPLo}}\\cdot{\\text{Cp \u2013 BPLo}} + \\text{ILo}\n\\]",
             "markdown"
@@ -4133,7 +4133,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Calculating the Air Quality Index->Air quality indices": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Calculating the Air Quality Index->Air quality indices": [
         [
             "Using , we find out the maximum sub-index for each period, which is our Air Quality Index!",
             "markdown"
@@ -4147,7 +4147,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Paired Student\u2019s t-test on the AQIs": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Paired Student\u2019s t-test on the AQIs": [
         [
             "Hypothesis testing is a form of descriptive statistics used to help us make decisions with the data. From the calculated AQI data, we want to find out if there was a statistically significant difference in average AQI before and after the lockdown was imposed. We will use the left-tailed,  to compute two test statistics- the  and the . We will then compare these with the corresponding critical values to make a decision.",
             "markdown"
@@ -4157,7 +4157,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Paired Student\u2019s t-test on the AQIs->Sampling": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Paired Student\u2019s t-test on the AQIs->Sampling": [
         [
             "We will now import the datetime column from our original dataset into a  array. We will use this array to index the AQI array and obtain subsets of the dataset.",
             "markdown"
@@ -4187,7 +4187,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Paired Student\u2019s t-test on the AQIs->Defining the hypothesis": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Paired Student\u2019s t-test on the AQIs->Defining the hypothesis": [
         [
             "Let us assume that there is no significant difference between the sample means before and after the lockdown. This will be the null hypothesis. The alternative hypothesis would be that there <em>is</em> a significant difference between the means and the AQI <em>improved</em>. Mathematically,",
             "markdown"
@@ -4197,7 +4197,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Paired Student\u2019s t-test on the AQIs->Calculating the test statistics": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Paired Student\u2019s t-test on the AQIs->Calculating the test statistics": [
         [
             "We will use the t statistic to evaluate our hypothesis and even calculate the p value from it. The formula for the t statistic is:\n\n\\[\nt = \\frac{\\mu_\\text{after-before}}{\\sqrt{\\sigma^{2}/n}}\n\\]",
             "markdown"
@@ -4227,7 +4227,7 @@
             "code"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->What do the t and p values mean?": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->What do the t and p values mean?": [
         [
             "We will now compare the calculated test statistics with the critical test statistics. The critical t value is calculated by looking up the .",
             "markdown"
@@ -4249,7 +4249,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->In practice\u2026": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->In practice\u2026": [
         [
             "The  library is preferable to use for time-series data analysis.",
             "markdown"
@@ -4263,7 +4263,7 @@
             "markdown"
         ]
     ],
-    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Analyzing the impact of the lockdown on air quality in Delhi, India->Further reading": [
+    "NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India->Further reading": [
         [
             "There are a host of statistical tests you can choose according to the characteristics of the given data. Read more about them at\n.",
             "markdown"
@@ -4273,7 +4273,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels": [
+    "Articles->Deep reinforcement learning with Pong from pixels": [
         [
             "Caution",
             "markdown"
@@ -4299,7 +4299,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Prerequisites": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Prerequisites": [
         [
             "<strong>OpenAI Gym</strong>: To help with the game environment, you will use  \u2014 an open-source Python interface  that helps perform RL tasks while supporting many simulation environments.",
             "markdown"
@@ -4325,7 +4325,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Table of contents": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Table of contents": [
         [
             "A note on RL and deep RL",
             "markdown"
@@ -4375,7 +4375,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Table of contents->A note on RL and deep RL": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Table of contents->A note on RL and deep RL": [
         [
             "In , your agent learns from trial and error by interacting with an environment using a so-called policy to gain experience. After taking one action, the agent receives information about its reward (which it may or may not get) and the next observation of the environment. It can then proceed to take another action. This happens over a number of episodes and/or until the task is deemed to be complete.",
             "markdown"
@@ -4393,7 +4393,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Table of contents->Deep RL glossary": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Table of contents->Deep RL glossary": [
         [
             "Below is a concise glossary of deep RL terms you may find useful for the remaining part of the tutorial:",
             "markdown"
@@ -4435,7 +4435,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Set up Pong": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Set up Pong": [
         [
             "<strong>1.</strong> First, you should install OpenAI Gym (using pip install gym[atari] - this package is currently not available on conda), and import NumPy, Gym and the necessary modules:",
             "markdown"
@@ -4493,7 +4493,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Preprocess frames (the observation)": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Preprocess frames (the observation)": [
         [
             "In this section you will set up a function to preprocess the input data (game observation) to make it digestible for the neural network, which can only work with inputs that are in a form of tensors (multidimensional arrays) of floating-point type.",
             "markdown"
@@ -4555,7 +4555,7 @@
             "code"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Create the policy (the neural network) and the forward pass": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Create the policy (the neural network) and the forward pass": [
         [
             "Next, you will define the policy as a simple feedforward network that uses a game observation as an input and outputs an action log probability:",
             "markdown"
@@ -4657,7 +4657,7 @@
             "code"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Set up the update step (backpropagation)": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Set up the update step (backpropagation)": [
         [
             "During learning in your deep RL algorithm, you use the action log probabilities (given an observation) and the discounted returns (for example, +1 or -1 in Pong) and perform the <em>backward pass</em> or <em>backpropagation</em> to update the parameters \u2014 the policy network\u2019s weights.",
             "markdown"
@@ -4715,7 +4715,7 @@
             "code"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Define the discounted rewards (expected return) function": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Define the discounted rewards (expected return) function": [
         [
             "In this section, you will set up a function for computing discounted rewards (discount_rewards()) \u2014 the expected return from an observation \u2014 that uses a 1D array of rewards as inputs (with the help of NumPy\u2019s ) function.",
             "markdown"
@@ -4729,7 +4729,7 @@
             "code"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Train the agent for a number of episodes": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Train the agent for a number of episodes": [
         [
             "This section covers how to set up the training process during which your agent will be learning to play Pong using its policy.",
             "markdown"
@@ -4891,7 +4891,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Next steps": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Next steps": [
         [
             "You may notice that training an RL agent takes a long time if you increase the number of episodes from 100 to 500 or 1,000+, depending on the hardware \u2014 CPUs and GPUs \u2014 you are using for this task.",
             "markdown"
@@ -4933,7 +4933,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Appendix->Notes on RL and deep RL": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Appendix->Notes on RL and deep RL": [
         [
             "In  deep learning for tasks, such as image recognition, language translation, or text classification, you\u2019re more likely to use a lot of labeled data. However, in RL, agents typically don\u2019t receive direct explicit feedback indicating correct or wrong actions \u2014 they rely on other signals, such as rewards.",
             "markdown"
@@ -4963,7 +4963,7 @@
             "markdown"
         ]
     ],
-    "Articles->Deep reinforcement learning with Pong from pixels->Deep reinforcement learning with Pong from pixels->Appendix->How to set up video playback in your Jupyter notebook": [
+    "Articles->Deep reinforcement learning with Pong from pixels->Appendix->How to set up video playback in your Jupyter notebook": [
         [
             "If you\u2019re using  \u2014 a free Jupyter notebook-based tool \u2014 you can set up the Docker image and add freeglut3-dev, xvfb, and x11-utils to the apt.txt configuration file to install the initial dependencies. Then, to binder/environment.yml under channels, add gym, pyvirtualdisplay and anything else you may need, such as python=3.7, pip, and jupyterlab. Check the following  for more information.",
             "markdown"
@@ -5001,7 +5001,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade": [
         [
             "Caution",
             "markdown"
@@ -5023,7 +5023,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->Prerequisites": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->Prerequisites": [
         [
             "You are expected to be familiar with the Python programming language and array manipulation with NumPy. In addition, some understanding of Linear Algebra and Calculus is recommended. You should also be familiar with how Neural Networks work. For reference, you can visit the ,  and  tutorials.",
             "markdown"
@@ -5053,7 +5053,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->Table of contents": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->Table of contents": [
         [
             "Data Collection",
             "markdown"
@@ -5075,7 +5075,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->1. Data Collection": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->1. Data Collection": [
         [
             "Before you begin there are a few pointers you should always keep in mind before choosing the data you wish to train your model on:",
             "markdown"
@@ -5145,7 +5145,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->1. Data Collection->Collecting the IMDb reviews dataset": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->1. Data Collection->Collecting the IMDb reviews dataset": [
         [
             "IMDb Reviews Dataset is a large movie review dataset collected and prepared by Andrew L. Maas from the popular movie rating service, IMDb. The IMDb Reviews dataset is used for binary sentiment classification, whether a review is positive or negative. It contains 25,000 movie reviews for training and 25,000 for testing. All these 50,000 reviews are labeled data that may be used for supervised deep learning. For ease of reproducibility, we\u2019ll be sourcing  the data from .\n<blockquote>",
             "markdown"
@@ -5155,13 +5155,13 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->1. Data Collection->Collecting and loading the speech transcripts": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->1. Data Collection->Collecting and loading the speech transcripts": [
         [
             "We have chosen speeches by activists around the globe talking about issues like climate change, feminism, lgbtqa+ rights and racism. These were sourced from newspapers, the official website of the United Nations and the archives of established universities as cited in the table below. A CSV file was created containing the transcribed speeches, their speaker and the source the speeches were obtained from.\nWe made sure to include different demographics in our data and included a range of different topics, most of which focus on social and/or ethical issues.\n\n<!-- #region -->",
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->2. Preprocess the datasets\n": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->2. Preprocess the datasets\n": [
         [
             "Preprocessing data is an extremely crucial step before building any Deep learning model, however in an attempt to keep the tutorial focused on building the model, we will not dive deep into the code for preprocessing. Given below is a brief overview of all the steps we undertake to clean our data and convert it to its numeric representation.\n</blockquote>",
             "markdown"
@@ -5255,7 +5255,7 @@
             "code"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6": [
         [
             "It is time to start implementing our LSTM! You will have to first familiarize yourself with some high-level concepts of the basic building blocks of a deep learning model. You can refer to the  for the same.",
             "markdown"
@@ -5265,7 +5265,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Introduction to a Long Short Term Memory Network": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Introduction to a Long Short Term Memory Network": [
         [
             "In a  (MLP), the information only moves in one direction \u2014 from the input layer, through the hidden layers, to the output layer. The information moves straight through the network and never takes the previous nodes into account at a later stage. Because it only considers the current input, the features learned are not shared across different positions of the sequence. Moreover, it cannot process sequences with varying lengths.",
             "markdown"
@@ -5279,7 +5279,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Overview of the Model Architecture": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Overview of the Model Architecture": [
         [
             "<img alt=\"Overview of the model architecture, showing a series of animated boxes. There are five identical boxes labeled A and receiving as input one of the words in the phrase &quot;life's a box of chocolates&quot;. Each box is highlighted in turn, representing the memory blocks of the LSTM network as information passes through them, ultimately reaching a &quot;Positive&quot; output value.\" src=\"../_images/lstm.gif\"/>",
             "markdown"
@@ -5297,7 +5297,7 @@
             "code"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Forward Propagation": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Forward Propagation": [
         [
             "Now that you have your initialized parameters, you can pass the input data in a forward direction through the network. Each layer accepts the input data, processes it and passes it to the successive layer. This process is called Forward Propagation. You will undertake the following mechanism to implement it:",
             "markdown"
@@ -5367,7 +5367,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->But how do you obtain sentiment from the LSTM\u2019s output?": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->But how do you obtain sentiment from the LSTM\u2019s output?": [
         [
             "The hidden state you obtain from the output gate of the last memory block in a sequence is considered to be a representation of all the information contained in a sequence. To classify this information into various classes (2 in our case, positive and negative) we use a <strong>Fully Connected layer</strong> which firstly maps this information to a predefined output size (1 in our case). Then, an activation function such as the sigmoid converts this output to a value between 0 and 1. We\u2019ll consider values greater than 0.5 to be indicative of a positive sentiment.",
             "markdown"
@@ -5385,7 +5385,7 @@
             "code"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Backpropagation": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Backpropagation": [
         [
             "After each forward pass through the network, you will implement the backpropagation through time algorithm to accumulate gradients of each parameter over the time steps. Backpropagation through a LSTM is not as straightforward as through other common Deep Learning architectures, due to the special way its underlying layers interact. Nonetheless, the approach is largely the same; identifying dependencies and applying the chain rule.",
             "markdown"
@@ -5443,7 +5443,7 @@
             "code"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Updating the Parameters": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Updating the Parameters": [
         [
             "We update the parameters through an optimization algorithm called  which is an extension to stochastic gradient descent that has recently seen broader adoption for deep learning applications in computer vision and natural language processing. Specifically, the algorithm calculates an exponential moving average of the gradient and the squared gradient, and the parameters beta1 and beta2 control the decay rates of these moving averages. Adam has shown increased convergence and robustness over other gradient descent algorithms and is often recommended as the default optimizer for training.",
             "markdown"
@@ -5465,7 +5465,7 @@
             "code"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Training the Network": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Training the Network": [
         [
             "You will start by initializing all the parameters and hyperparameters being used in your network",
             "markdown"
@@ -5503,7 +5503,7 @@
             "code"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Sentiment Analysis on the Speech Data": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->3. Build the Deep Learning Model\u00b6->Sentiment Analysis on the Speech Data": [
         [
             "Once your model is trained, you can use the updated parameters to start making our predictions. You can break each speech into paragraphs of uniform size before passing them to the Deep Learning model and predicting the sentiment of each paragraph",
             "markdown"
@@ -5525,7 +5525,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->Looking at our Neural Network from an ethical perspective\n<!-- #region -->": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->Looking at our Neural Network from an ethical perspective\n<!-- #region -->": [
         [
             "It\u2019s crucial to understand that accurately identifying a text\u2019s sentiment is not easy primarily because of the complex ways in which humans express sentiment, using irony, sarcasm, humor, or, in social media, abbreviation. Moreover neatly placing text into two categories: \u2018positive\u2019 and \u2018negative\u2019 can be problematic because it is being done without any context. Words or abbreviations can convey very different sentiments depending on age and location, none of which we took into account while building our model.",
             "markdown"
@@ -5539,7 +5539,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Sentiment Analysis on notable speeches of the last decade->Next Steps": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->Next Steps": [
         [
             "You have learned how to build and train a simple Long Short Term Memory network from scratch using just NumPy to perform sentiment analysis.",
             "markdown"
