@@ -1403,7 +1403,7 @@
             "markdown"
         ]
     ],
-    "Tidy Data->Reshaping &amp; Tidy Data<blockquote>": [
+    "Tidy Data->Reshaping & Tidy Data": [
         [
             "Structuring datasets to facilitate analysis </blockquote>",
             "markdown"
@@ -1429,7 +1429,7 @@
             "code"
         ]
     ],
-    "Tidy Data->Reshaping &amp; Tidy Data<blockquote>->NBA Data": [
+    "Tidy Data->Reshaping & Tidy Data->NBA Data": [
         [
             " StackOverflow question asked about calculating the number of days of rest NBA teams have between games.\nThe answer would have been difficult to compute with the raw data.\nAfter transforming the dataset to be tidy, we\u2019re able to quickly get the answer.",
             "markdown"
@@ -1563,7 +1563,7 @@
             "markdown"
         ]
     ],
-    "Tidy Data->Reshaping &amp; Tidy Data<blockquote>->Stack / Unstack": [
+    "Tidy Data->Reshaping & Tidy Data->Stack / Unstack": [
         [
             "Pandas has two useful methods for quickly converting from wide to long format (stack) and long to wide (unstack).",
             "markdown"
@@ -1613,13 +1613,13 @@
             "markdown"
         ]
     ],
-    "Tidy Data->Reshaping &amp; Tidy Data<blockquote>->Mini Project: Home Court Advantage?": [
+    "Tidy Data->Reshaping & Tidy Data->Mini Project: Home Court Advantage?": [
         [
             "We\u2019ve gone to all that work tidying our dataset, let\u2019s put it to use.\nWhat\u2019s the effect (in terms of probability to win) of being\nthe home team?",
             "markdown"
         ]
     ],
-    "Tidy Data->Reshaping &amp; Tidy Data<blockquote>->Mini Project: Home Court Advantage?->Step 1: Create an outcome variable": [
+    "Tidy Data->Reshaping & Tidy Data->Mini Project: Home Court Advantage?->Step 1: Create an outcome variable": [
         [
             "We need to create an indicator for whether the home team won.\nAdd it as a column called home_win in games.",
             "markdown"
@@ -1629,7 +1629,7 @@
             "code"
         ]
     ],
-    "Tidy Data->Reshaping &amp; Tidy Data<blockquote>->Mini Project: Home Court Advantage?->Step 2: Find the win percent for each team": [
+    "Tidy Data->Reshaping & Tidy Data->Mini Project: Home Court Advantage?->Step 2: Find the win percent for each team": [
         [
             "In the 10-minute literature review I did on the topic, it seems like people include a team-strength variable in their regressions.\nI suppose that makes sense; if stronger teams happened to play against weaker teams at home more often than away, it\u2019d look like the home-effect is stronger than it actually is.\nWe\u2019ll do a terrible job of controlling for team strength by calculating each team\u2019s win percent and using that as a predictor.\nIt\u2019d be better to use some kind of independent measure of team strength, but this will do for now.",
             "markdown"
