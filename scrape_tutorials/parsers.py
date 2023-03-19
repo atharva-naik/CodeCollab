@@ -197,7 +197,10 @@ class PyTorchTutorialsParser:
                     nb_json = extract_notebook_hierarchy_from_seq(
                         parse_soup_stream(simplified_soup)
                     )[0].serialize2()[""]
-                    self.tut_pages[name][sub_blog_name] = nb_json
+                    assert len(nb_json) == 3
+                    assert len(nb_json[2]) == 1
+                    value = list(nb_json[2].values())[0]
+                    self.tut_pages[name][sub_blog_name] = value
                 except IndexError:
                     print(f"ERROR[{name}][{sub_blog_name}]")
                     self.tut_pages[name][sub_blog_name] = simplified_soup
