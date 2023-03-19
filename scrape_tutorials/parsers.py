@@ -339,7 +339,7 @@ def scrape_toms_blog_pandas():
     pandas_parser.download()
     os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
     final_KG_json = {}
-    for topic, page in pandas_parser.topic_pages.items():
+    for topic, page in pandas_parser.blog_pages.items():
         final_KG_json[topic] = page
     with open("./scrape_tutorials/KGs/pandas_toms_blog.json", "w") as f:
         json.dump(final_KG_json, f, indent=4)
