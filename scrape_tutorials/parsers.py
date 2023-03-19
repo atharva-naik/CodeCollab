@@ -137,15 +137,18 @@ def parse_soup_stream(soup_str: str, tag_mapping: Dict[str, Tuple[str, str]]={
         "h7": ("markdown", 7), "h8": ("markdown", 8), "h9": ("markdown", 9),
         "h10": ("markdown", 10), "h11": ("markdown", 11), "h12": ("markdown", 12),
         "p": ("markdown", 0), "pre": ("code", 0), "img": ("markdown", 0),
+        "a": ("markdown", 0),
     }, default_cell: Tuple[str, str]=("markdown", 0)) -> List[dict]:
     i = 0
     cells = []
     for tag in tag_mapping: soup_str = soup_str.replace("</"+tag+">", "") # print(soup_str)
+    soup_str = soup_str.strip()
     while i < len(soup_str):
         char = soup_str[i]
         found_tag = False
         for tag, tag_props in tag_mapping.items():
             if char == "<" and soup_str[i:i+len(tag)+2] == "<"+tag+">":
+                # if tag == "a": cells.append({"cell_type": "markdown", "content": })
                 cells.append({"cell_type": tag_props[0], "content": "#"*tag_props[1]})
                 i += (len(tag)+1)
                 found_tag = True
@@ -203,10 +206,14 @@ class NumPyTutorialsParser:
                 simplified_soup = re.sub("</div>", "", simplified_soup)
                 simplified_soup = re.sub("<article.*?>", "", simplified_soup)
                 simplified_soup = re.sub("</article>", "", simplified_soup)
-                nb_json = extract_notebook_hierarchy_from_seq(
-                    parse_soup_stream(simplified_soup)
-                )[0].serialize2()[""]
-                self.blog_pages[name][sub_blog_name] = nb_json
+                try: 
+                    nb_json = extract_notebook_hierarchy_from_seq(
+                        parse_soup_stream(simplified_soup)
+                    )[0].serialize2()[""]
+                    self.blog_pages[name][sub_blog_name] = nb_json
+                except IndexError:
+                    print(f"ERROR[{name}][{sub_blog_name}]")
+                    self.blog_pages[name][sub_blog_name] = simplified_soup
 
 # gather pandas tutorials from Tom's Blog.
 class PandasTomsBlogParser:
@@ -345,7 +352,19 @@ def scrape_toms_blog_pandas():
     with open("./scrape_tutorials/KGs/pandas_toms_blog.json", "w") as f:
         json.dump(final_KG_json, f, indent=4)
 
+def scrape_numpy():
+    """scrape NumPy tutorials"""
+    numpy_parser = NumPyTutorialsParser()
+    numpy_parser.download()
+    os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
+    final_KG_json = {}
+    for topic, page in numpy_parser.blog_pages.items():
+        final_KG_json[topic] = page
+    with open("./scrape_tutorials/KGs/numpy.json", "w") as f:
+        json.dump(final_KG_json, f, indent=4)
+
 # main.
 if __name__ == "__main__":
     # scrape_seaborn()        
-    scrape_toms_blog_pandas()
+    # scrape_toms_blog_pandas()
+    scrape_numpy()
