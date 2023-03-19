@@ -39,7 +39,7 @@ SOURCE_TO_BASE_URLS = {
     },
     "torch": {
         "PyTorch Recipes": {
-            "Loading Data in PyTorch": "https://pytorch.org/tutorials/recipes/recipes/loading_data_recipe.html",
+            "Loading data in PyTorch": "https://pytorch.org/tutorials/recipes/recipes/loading_data_recipe.html",
             "Defining a Neural Network in PyTorch": "https://pytorch.org/tutorials/recipes/recipes/defining_a_neural_network.html",
             "What is a state_dict in PyTorch": "https://pytorch.org/tutorials/recipes/recipes/what_is_state_dict.html",
             "Developing Custom PyTorch Dataloaders": "https://pytorch.org/tutorials/recipes/recipes/custom_dataset_transforms_loader.html",
@@ -49,9 +49,9 @@ SOURCE_TO_BASE_URLS = {
             "Saving and loading a general checkpoint in PyTorch": "https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_a_general_checkpoint.html",
             "Saving and loading models for inference in PyTorch": "https://pytorch.org/tutorials/recipes/recipes/saving_and_loading_models_for_inference.html",
             "Saving and loading multiple models in one file using PyTorch": "https://pytorch.org/tutorials/recipes/recipes/saving_multiple_models_in_one_file.html",
-            "Warmstarting models using parameters from different model": "https://pytorch.org/tutorials/recipes/recipes/warmstarting_model_using_parameters_from_a_different_model.html",
-            "Zeroing out gradients": "https://pytorch.org/tutorials/recipes/recipes/zeroing_out_gradients.html",
-            "PyTorch Mobile Performance Recipes": "https://pytorch.org/tutorials/recipes/mobile_perf.html",
+            "Warmstarting model using parameters from a different model in PyTorch": "https://pytorch.org/tutorials/recipes/recipes/warmstarting_model_using_parameters_from_a_different_model.html",
+            "Zeroing out gradients in PyTorch": "https://pytorch.org/tutorials/recipes/recipes/zeroing_out_gradients.html",
+            "Pytorch Mobile Performance Recipes": "https://pytorch.org/tutorials/recipes/mobile_perf.html",
             "Automatic Mixed Precision": "https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html",
             "Changing default device": "https://pytorch.org/tutorials/recipes/recipes/changing_default_device.html",   
             "How to use TensorBoard with PyTorch": "https://pytorch.org/tutorials/recipes/recipes/tensorboard_with_pytorch.html",

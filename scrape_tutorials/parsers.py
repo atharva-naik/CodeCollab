@@ -173,6 +173,14 @@ def parse_soup_stream(soup_str: str, tag_mapping: Dict[str, Tuple[str, str]]={
     
     return cells
 
+def process_text(text: str):
+    """remove residual html tags, &amp; etc. 
+    e.g.: `Reshaping &amp; Tidy Data<blockquote>` to `Reshaping & Tidy Data`"""
+    text = text.replace("&amp;", "&").replace("<blockquote>", "").replace("<cite>","").replace("</cite>","").replace("<em>","").replace("</em>","").replace("<dt>","").replace("</dt>","").replace("<dd>","").replace("</dd>","")
+    text = re.sub("<dl.*?>", "", text).split("\n")[0].strip()
+    
+    return text
+
 # gather PyTorch tutorials.
 class PyTorchTutorialsParser:
     def __init__(self, tut_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["torch"]):
@@ -197,10 +205,18 @@ class PyTorchTutorialsParser:
                     nb_json = extract_notebook_hierarchy_from_seq(
                         parse_soup_stream(simplified_soup)
                     )[0].serialize2()[""]
-                    assert len(nb_json) == 3
-                    assert len(nb_json[2]) == 1
-                    value = list(nb_json[2].values())[0]
-                    self.tut_pages[name][sub_blog_name] = value
+                    actual_content = None
+                    found_keys = []
+                    for ele in nb_json:
+                        if isinstance(ele, dict):
+                            key = process_text(list(ele.keys())[0].strip())
+                            found_keys.append(key)
+                            if key == sub_blog_name:
+                                actual_content = list(ele.values())[0]
+                                break
+                            else: print(key, sub_blog_name)
+                    assert actual_content is not None, f"{sub_blog_name} not found in {found_keys}"
+                    self.tut_pages[name][sub_blog_name] = actual_content
                 except IndexError:
                     print(f"ERROR[{name}][{sub_blog_name}]")
                     self.tut_pages[name][sub_blog_name] = simplified_soup
