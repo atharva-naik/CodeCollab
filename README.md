@@ -1,2 +1,3 @@
 # CodeCollab
-Collaborative code generation
+Collaborative code generation.
+Renamed master to main.
