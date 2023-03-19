@@ -53,7 +53,7 @@ class KGPathsIndex:
 
 # main
 if __name__ == "__main__":
-    target_module = "pandas_toms_blog" # "seaborn"
+    target_module = "numpy" # "pandas_toms_blog" # "seaborn"
     os.makedirs("./scrape_tutorials/KG_paths", exist_ok=True)
     kg_paths = KGPathsIndex(f"./scrape_tutorials/KGs/{target_module}.json")
     kg_paths_save_path = f"./scrape_tutorials/KG_paths/{target_module}.json"
