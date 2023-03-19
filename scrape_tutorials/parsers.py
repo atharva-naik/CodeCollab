@@ -19,17 +19,25 @@ from scrape_tutorials import SOURCE_TO_BASE_URLS
 from datautils.markdown_cell_analysis import extract_notebook_hierarchy_from_seq
 
 def simplify_soup(soup, target: str="seaborn"):
+    if target == "pandas":
+        soup = soup.html.body.find("div", {"class": "post-content"})
+    for hr in soup.select("hr"): hr.unwrap()
     for span in soup.select('span'): span.unwrap()
     for code in soup.select('code'): code.unwrap()
     for div in soup.select('div'): div.unwrap()
+    for li in soup.select('li'): li.unwrap()
     for ol in soup.select('ol'): ol.unwrap()
     for ul in soup.select('ul'): ul.unwrap()
-    for li in soup.select('li'): li.unwrap()
     for table in soup.select('table'): table.extract()
     for style in soup.select('style'): style.extract()
     for a in soup.select('a'): a.extract()
+    for pre in soup.select("pre"):
+        del pre.attrs
     for p in soup.select("p"): 
         del p.attrs
+    for i in range(1, 12):
+        for hi in soup.select(f"h{i}"):
+            del hi.attrs
     # for section in soup.select("section"): section.unwrap()
 
     if target == "seaborn": 
@@ -38,6 +46,7 @@ def simplify_soup(soup, target: str="seaborn"):
             if content != "\n":
                 final = content
                 break
+    elif target == "pandas": final = soup
 
     return final
 
@@ -119,8 +128,79 @@ def simplify_bs2_json(html_json: str, filt_keys: List[str]=[
 
     return new_json
 
-# gather seaborn tutorials: https://seaborn.pydata.org/tutorial
+# def unenclosed_dict_error_correction(data_stream: str):
+#     bracket_stack = []
+#     i = 0
+#     new_stream = ""
+#     while i < len(data_stream):
+#         char = data_stream[i]
+#         if char == "{":
+#             bracket_stack.append("{")
+#             new_stream += char
+#         elif char == "}":
+#             if len(bracket_stack) > 0:
+#                 bracket_stack.pop()
+#                 new_stream += char
+#                 i += 1
+#                 char = data_stream[i]
+#                 if char == ",": new_stream += char
+#                 else: new_stream += (","+char)
+#             else: pass
+#         i += 1
 
+#     return new_stream
+
+# gather pandas tutorials from Tom's Blog.
+class PandasTomsBlogParser:
+    """Parser/scraper for Tom's blog tutorials for Pandas"""
+    def __init__(self, blog_urls: Dict[str, str]=SOURCE_TO_BASE_URLS["pandas"]):
+        self.blog_urls = blog_urls
+        self.blog_pages = {}
+        
+    def download(self):
+        for name, url in tqdm(self.blog_urls.items()):
+            self.blog_pages[name] = {}
+            simple_soup = simplify_soup(bs4.BeautifulSoup(
+                requests.get(url).text,
+                features="lxml",
+            ), target="pandas")
+            simplified_soup = str(simple_soup).replace("<pre>", '''{"cell_type": "code", "code":\'\'\'''').replace("</pre>", '\'\'\'},')
+            # for j in range(1, 12):
+                # simplified_soup = simplified_soup.replace(f"<h{j}>",  '{"cell_type": "markdown", "nl_original":\'\'\''+'#'*j+' ').replace(f"</h{j}>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<h1>",  '{"cell_type": "markdown", "nl_original":\'\'\'# ').replace("</h1>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<h2>",  '{"cell_type": "markdown", "nl_original":\'\'\'## ').replace("</h2>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<h3>",  '{"cell_type": "markdown", "nl_original":\'\'\'### ').replace("</h3>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<h4>",  '{"cell_type": "markdown", "nl_original":\'\'\'#### ').replace("</h4>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<h5>",  '{"cell_type": "markdown", "nl_original":\'\'\'##### ').replace("</h5>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<h6>",  '{"cell_type": "markdown", "nl_original":\'\'\'###### ').replace("</h6>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<h7>",  '{"cell_type": "markdown", "nl_original":\'\'\'####### ').replace("</h7>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<h8>",  '{"cell_type": "markdown", "nl_original":\'\'\'######## ').replace("</h8>", '\'\'\'},')
+            simplified_soup = simplified_soup.replace("<p>",  '{"cell_type": "markdown", "nl_original":\'\'\'').replace("</p>", '\'\'\'},')
+            simplified_soup = re.sub("<section.*?>", "", simplified_soup)
+            simplified_soup = simplified_soup.replace("</section>", "")
+            # remove svgs, images, tables and style tags.
+            simplified_soup = re.sub("<svg.*?>.*?</svg>", "", simplified_soup, flags=re.MULTILINE)
+            # remove any remaining div tags.
+            simplified_soup = re.sub("<div.*?>", "", simplified_soup)
+            simplified_soup = re.sub("</div>", "", simplified_soup)
+            # simplified_soup = re.sub("<style.*?>.*?</style>", "", simplified_soup, flags=re.MULTILINE)
+            # simplified_soup = re.sub("<table.*?>.*?</table>", "", simplified_soup, flags=re.MULTILINE)
+            simplified_soup = re.sub("<img.*?/>", "", simplified_soup)
+
+            try: 
+                nb_json = extract_notebook_hierarchy_from_seq(
+                    ast.literal_eval("["+simplified_soup+"]")
+                )[0].serialize2()[""][0]
+                # print(nb_json)
+                assert len(nb_json.keys()) == 1
+                key = list(nb_json.keys())[0]
+                value = list(nb_json.values())[0] 
+                self.blog_pages[name][key] = value 
+            except SyntaxError:
+                print(f"ERROR: {name}({url})")
+                self.blog_pages[name] = simplified_soup
+
+# gather seaborn tutorials: https://seaborn.pydata.org/tutorial
 class SeabornParser:
     """Parser/scraper for seaborn tutorials."""
     def __init__(self, base_url: str=SOURCE_TO_BASE_URLS["seaborn"]):
