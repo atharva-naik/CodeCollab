@@ -186,6 +186,35 @@ def parse_soup_stream(soup_str: str, tag_mapping: Dict[str, Tuple[str, str]]={
 
 #     return new_stream
 
+# gather PyTorch tutorials.
+class PyTorchTutorialsParser:
+    def __init__(self, blog_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["pytorch"]):
+        self.blog_urls = blog_urls
+        self.blog_pages = {}
+
+    def download(self):
+        for name, sub_blogs in tqdm(self.blog_urls.items()):
+            self.blog_pages[name] = {}
+            for sub_blog_name, url in tqdm(sub_blogs.items(), desc=name):
+                simple_soup = simplify_soup(bs4.BeautifulSoup(
+                    requests.get(url).text,
+                    features="lxml",
+                ), target="numpy")
+
+                simplified_soup = str(simple_soup)
+                simplified_soup = re.sub("<div.*?>", "", simplified_soup)
+                simplified_soup = re.sub("</div>", "", simplified_soup)
+                simplified_soup = re.sub("<article.*?>", "", simplified_soup)
+                simplified_soup = re.sub("</article>", "", simplified_soup)
+                try: 
+                    nb_json = extract_notebook_hierarchy_from_seq(
+                        parse_soup_stream(simplified_soup)
+                    )[0].serialize2()[""]
+                    self.blog_pages[name][sub_blog_name] = nb_json
+                except IndexError:
+                    print(f"ERROR[{name}][{sub_blog_name}]")
+                    self.blog_pages[name][sub_blog_name] = simplified_soup
+
 # gather NumPy tutorials.
 class NumPyTutorialsParser:
     def __init__(self, blog_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["numpy"]):
