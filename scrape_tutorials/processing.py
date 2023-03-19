@@ -4,12 +4,13 @@
 import os
 import json
 from typing import *
+from tqdm import tqdm
 from collections import defaultdict
-
-def process_text(text: str):
-    """remove residual html tags, &amp; etc. 
-    e.g.: `Reshaping &amp; Tidy Data<blockquote>` to `Reshaping & Tidy Data`"""
-    return text.replace("&amp;", "&").replace("<blockquote>", "")
+from scrape_tutorials.parsers import process_text
+# def process_text(text: str):
+#     """remove residual html tags, &amp; etc. 
+#     e.g.: `Reshaping &amp; Tidy Data<blockquote>` to `Reshaping & Tidy Data`"""
+#     return text.replace("&amp;", "&").replace("<blockquote>", "")
 
 # code for various kinds of processing on the KG.
 class KGPathsIndex:
@@ -60,7 +61,7 @@ class KGPathsIndex:
 if __name__ == "__main__":
     # target_module = "numpy" # "pandas_toms_blog" # "seaborn"
     os.makedirs("./scrape_tutorials/KG_paths", exist_ok=True)
-    for target_module in ["numpy", "pandas_toms_blog", "seaborn"]:
+    for target_module in tqdm(["numpy", "pandas_toms_blog", "seaborn", "torch"]_:
         kg_paths = KGPathsIndex(f"./scrape_tutorials/KGs/{target_module}.json")
         kg_paths_save_path = f"./scrape_tutorials/KG_paths/{target_module}.json"
         kg_paths.save(kg_paths_save_path)

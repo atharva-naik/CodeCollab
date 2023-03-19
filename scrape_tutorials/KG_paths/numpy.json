@@ -5161,7 +5161,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->2. Preprocess the datasets\n": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->2. Preprocess the datasets": [
         [
             "Preprocessing data is an extremely crucial step before building any Deep learning model, however in an attempt to keep the tutorial focused on building the model, we will not dive deep into the code for preprocessing. Given below is a brief overview of all the steps we undertake to clean our data and convert it to its numeric representation.\n</blockquote>",
             "markdown"
@@ -5525,7 +5525,7 @@
             "markdown"
         ]
     ],
-    "Articles->Sentiment Analysis on notable speeches of the last decade->Looking at our Neural Network from an ethical perspective\n<!-- #region -->": [
+    "Articles->Sentiment Analysis on notable speeches of the last decade->Looking at our Neural Network from an ethical perspective": [
         [
             "It\u2019s crucial to understand that accurately identifying a text\u2019s sentiment is not easy primarily because of the complex ways in which humans express sentiment, using irony, sarcasm, humor, or, in social media, abbreviation. Moreover neatly placing text into two categories: \u2018positive\u2019 and \u2018negative\u2019 can be problematic because it is being done without any context. Words or abbreviations can convey very different sentiments depending on age and location, none of which we took into account while building our model.",
             "markdown"
