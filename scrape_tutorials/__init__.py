@@ -52,7 +52,7 @@ SOURCE_TO_BASE_URLS = {
             "Warmstarting models using parameters from different model": "https://pytorch.org/tutorials/recipes/recipes/warmstarting_model_using_parameters_from_a_different_model.html",
             "Zeroing out gradients": "https://pytorch.org/tutorials/recipes/recipes/zeroing_out_gradients.html",
             "PyTorch Mobile Performance Recipes": "https://pytorch.org/tutorials/recipes/mobile_perf.html",
-            "Automatic Mixed Precision": "https://pytorch.org/tutorials/recipes/amp_recipe.html",
+            "Automatic Mixed Precision": "https://pytorch.org/tutorials/recipes/recipes/amp_recipe.html",
             "Changing default device": "https://pytorch.org/tutorials/recipes/recipes/changing_default_device.html",   
             "How to use TensorBoard with PyTorch": "https://pytorch.org/tutorials/recipes/recipes/tensorboard_with_pytorch.html",
             "Performance Tuning Guide": "https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html",
@@ -80,8 +80,9 @@ SOURCE_TO_BASE_URLS = {
         "Image and Video": {
             "TorchVision Object Detection Finetuning Tutorial": "https://pytorch.org/tutorials/intermediate/torchvision_tutorial.html",
             "Transfer Learning for Computer Vision Tutorial": "https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html",
-            "Adversarial Example Generation": "https://pytorch.org/tutorials/beginner/fgsm_tutorial.html",
-            "DCGAN Tutorial": "https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html",
+            "Adversarial Example Generation": "https://pytorch.org/tutorials/beginner/fgsm_tutorial.html", 
+            # "DCGAN Tutorial": "https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html", # there is some issue with this for some reason.
+            # code get's stuck for DCGAN tutorial.
             "Spatial Transformer Networks Tutorial": "https://pytorch.org/tutorials/intermediate/spatial_transformer_tutorial.html",
             "Optimizing Vision Transformer Model for Deployment": "https://pytorch.org/tutorials/beginner/vt_tutorial.html",
         },

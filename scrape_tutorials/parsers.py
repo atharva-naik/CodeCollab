@@ -21,6 +21,12 @@ from datautils.markdown_cell_analysis import extract_notebook_hierarchy_from_seq
 def simplify_soup(soup, target: str="seaborn"):
     if target == "pandas":
         soup = soup.html.body.find("div", {"class": "post-content"})
+    elif target == "torch":
+        soup = soup.html.body.find("div", {"class": "main-content"})
+        # if not try_soup:
+            # try_soup = soup.html.body.find("div", {"class": ""})
+        # soup = try_soup
+        # assert soup is not None, f"\x1b[32;1mmain-content\x1b[0m not found"
     for hr in soup.select("hr"): hr.unwrap()
     for span in soup.select('span'): span.unwrap()
     for code in soup.select('code'): code.unwrap()
@@ -50,6 +56,8 @@ def simplify_soup(soup, target: str="seaborn"):
     elif target == "pandas": final = soup
     elif target == "numpy":
         final = soup.html.body.find("article", {"class": "bd-article"})
+    elif target == "torch":
+        final = soup
 
     return final
 
@@ -167,13 +175,13 @@ def parse_soup_stream(soup_str: str, tag_mapping: Dict[str, Tuple[str, str]]={
 
 # gather PyTorch tutorials.
 class PyTorchTutorialsParser:
-    def __init__(self, blog_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["torch"]):
-        self.blog_urls = blog_urls
-        self.blog_pages = {}
+    def __init__(self, tut_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["torch"]):
+        self.tut_urls = tut_urls
+        self.tut_pages = {}
 
     def download(self):
-        for name, sub_blogs in tqdm(self.blog_urls.items()):
-            self.blog_pages[name] = {}
+        for name, sub_blogs in tqdm(self.tut_urls.items()):
+            self.tut_pages[name] = {}
             for sub_blog_name, url in tqdm(sub_blogs.items(), desc=name):
                 simple_soup = simplify_soup(bs4.BeautifulSoup(
                     requests.get(url).text,
@@ -189,10 +197,10 @@ class PyTorchTutorialsParser:
                     nb_json = extract_notebook_hierarchy_from_seq(
                         parse_soup_stream(simplified_soup)
                     )[0].serialize2()[""]
-                    self.blog_pages[name][sub_blog_name] = nb_json
+                    self.tut_pages[name][sub_blog_name] = nb_json
                 except IndexError:
                     print(f"ERROR[{name}][{sub_blog_name}]")
-                    self.blog_pages[name][sub_blog_name] = simplified_soup
+                    self.tut_pages[name][sub_blog_name] = simplified_soup
 
 # gather NumPy tutorials.
 class NumPyTutorialsParser:
@@ -373,8 +381,19 @@ def scrape_numpy():
     with open("./scrape_tutorials/KGs/numpy.json", "w") as f:
         json.dump(final_KG_json, f, indent=4)
 
+def scrape_torch():
+    """scrape PyTorch tutorials"""
+    torch_parser = PyTorchTutorialsParser()
+    torch_parser.download()
+    os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
+    final_KG_json = {}
+    for topic, page in torch_parser.tut_pages.items():
+        final_KG_json[topic] = page
+    with open("./scrape_tutorials/KGs/torch.json", "w") as f:
+        json.dump(final_KG_json, f, indent=4)
+
 # main.
 if __name__ == "__main__":
     # scrape_seaborn()        
     # scrape_toms_blog_pandas()
-    scrape_numpy()
+    scrape_torch()
