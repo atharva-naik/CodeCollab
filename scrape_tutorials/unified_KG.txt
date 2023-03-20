@@ -1,0 +1,1461 @@
+root
+├── numpy
+│   ├── Articles
+│   │   ├── Deep reinforcement learning with Pong from pixels
+│   │   │   ├── Appendix
+│   │   │   │   ├── How to set up video playback in your Jupyter notebook
+│   │   │   │   └── Notes on RL and deep RL
+│   │   │   ├── Create the policy (the neural network) and the forward pass
+│   │   │   ├── Define the discounted rewards (expected return) function
+│   │   │   ├── Next steps
+│   │   │   ├── Preprocess frames (the observation)
+│   │   │   ├── Prerequisites
+│   │   │   ├── Set up Pong
+│   │   │   ├── Set up the update step (backpropagation)
+│   │   │   ├── Table of contents
+│   │   │   │   ├── A note on RL and deep RL
+│   │   │   │   └── Deep RL glossary
+│   │   │   └── Train the agent for a number of episodes
+│   │   └── Sentiment Analysis on notable speeches of the last decade
+│   │       ├── 1. Data Collection
+│   │       │   ├── Collecting and loading the speech transcripts
+│   │       │   └── Collecting the IMDb reviews dataset
+│   │       ├── 2. Preprocess the datasets
+│   │       ├── 3. Build the Deep Learning Model¶
+│   │       │   ├── Backpropagation
+│   │       │   ├── But how do you obtain sentiment from the LSTM’s output?
+│   │       │   ├── Forward Propagation
+│   │       │   ├── Introduction to a Long Short Term Memory Network
+│   │       │   ├── Overview of the Model Architecture
+│   │       │   ├── Sentiment Analysis on the Speech Data
+│   │       │   ├── Training the Network
+│   │       │   └── Updating the Parameters
+│   │       ├── Looking at our Neural Network from an ethical perspective
+│   │       ├── Next Steps
+│   │       ├── Prerequisites
+│   │       └── Table of contents
+│   ├── NumPy Applications
+│   │   ├── Analyzing the impact of the lockdown on air quality in Delhi, India
+│   │   │   ├── Building the dataset
+│   │   │   ├── Calculating the Air Quality Index
+│   │   │   │   ├── Air quality indices
+│   │   │   │   ├── Moving averages
+│   │   │   │   └── Sub-indices
+│   │   │   ├── Further reading
+│   │   │   ├── In practice…
+│   │   │   ├── Paired Student’s t-test on the AQIs
+│   │   │   │   ├── Calculating the test statistics
+│   │   │   │   ├── Defining the hypothesis
+│   │   │   │   └── Sampling
+│   │   │   ├── The problem of air pollution
+│   │   │   ├── What do the t and p values mean?
+│   │   │   ├── What you’ll do
+│   │   │   ├── What you’ll learn
+│   │   │   └── What you’ll need
+│   │   ├── Deep learning on MNIST
+│   │   │   ├── 1. Load the MNIST dataset
+│   │   │   ├── 2. Preprocess the data
+│   │   │   │   ├── Convert the image data to the floating-point format
+│   │   │   │   └── Convert the labels to floating point through categorical/one-hot encoding
+│   │   │   ├── 3. Build and train a small neural network from scratch
+│   │   │   │   ├── Compose the model and begin training and testing it
+│   │   │   │   ├── Model architecture and training summary
+│   │   │   │   └── Neural network building blocks with NumPy
+│   │   │   ├── Next steps
+│   │   │   ├── Prerequisites
+│   │   │   └── Table of contents
+│   │   ├── Determining Moore’s Law with real data in NumPy
+│   │   │   ├── Building Moore’s law as an exponential function
+│   │   │   ├── Calculating the historical growth curve for transistors
+│   │   │   ├── Loading historical manufacturing data to your workspace
+│   │   │   ├── References
+│   │   │   ├── Sharing your results as zipped arrays and a csv
+│   │   │   │   ├── Creating your own comma separated value file
+│   │   │   │   └── Zipping the arrays into a file
+│   │   │   ├── Skills you’ll learn
+│   │   │   ├── What you’ll do
+│   │   │   ├── What you’ll need
+│   │   │   └── Wrapping up
+│   │   ├── Determining Static Equilibrium in NumPy
+│   │   │   ├── Finding values with physical properties
+│   │   │   │   └── Another Example
+│   │   │   ├── Solving Equilibrium as a sum of moments
+│   │   │   ├── Solving equilibrium with Newton’s second law
+│   │   │   ├── What you’ll do:
+│   │   │   ├── What you’ll learn:
+│   │   │   ├── What you’ll need:
+│   │   │   └── Wrapping up
+│   │   │       ├── Additional Applications
+│   │   │       └── References
+│   │   ├── Plotting Fractals
+│   │   │   ├── Creating your own fractals
+│   │   │   ├── Further reading
+│   │   │   ├── Generalizing the Julia set
+│   │   │   │   └── Newton Fractals
+│   │   │   ├── In conclusion
+│   │   │   ├── Julia set
+│   │   │   ├── Mandelbrot set
+│   │   │   ├── On your own
+│   │   │   ├── Warmup
+│   │   │   ├── What you’ll do
+│   │   │   ├── What you’ll learn
+│   │   │   └── What you’ll need
+│   │   └── X-ray image processing
+│   │       ├── Apply masks to X-rays with np.where()
+│   │       ├── Combine images into a multidimensional array to demonstrate progression
+│   │       ├── Compare the results
+│   │       ├── Edge detection using the Laplacian-Gaussian, Gaussian gradient, Sobel, and Canny filters
+│   │       │   ├── The Canny filter
+│   │       │   ├── The Gaussian gradient magnitude method
+│   │       │   ├── The Laplace filter with Gaussian second derivatives
+│   │       │   └── The Sobel-Feldman operator (the Sobel filter)
+│   │       ├── Examine an X-ray with imageio
+│   │       ├── Next steps
+│   │       ├── Prerequisites
+│   │       └── Table of contents
+│   └── NumPy Features
+│       ├── Linear algebra on n-dimensional arrays
+│       │   ├── Approximation
+│       │   │   ├── Applying to all colors
+│       │   │   ├── Final words
+│       │   │   └── Products with n-dimensional arrays
+│       │   ├── Content
+│       │   │   ├── Operations on an axis
+│       │   │   └── Shape, axis and array properties
+│       │   ├── Further reading
+│       │   ├── Learner profile
+│       │   ├── Learning Objectives
+│       │   └── Prerequisites
+│       ├── Masked Arrays
+│       │   ├── Exploring the data
+│       │   ├── Fitting Data
+│       │   ├── Further reading
+│       │   │   └── Reference
+│       │   ├── In practice
+│       │   ├── Missing data
+│       │   ├── Using masked arrays to see COVID-19 data
+│       │   ├── What are masked arrays?
+│       │   ├── What you’ll do
+│       │   ├── What you’ll learn
+│       │   ├── What you’ll need
+│       │   └── When can they be useful?
+│       └── Saving and sharing your NumPy arrays
+│           ├── Another option: saving to human-readable csv
+│           ├── Create your arrays
+│           ├── Our arrays as a csv file
+│           ├── Rearrange the data into a single 2D array
+│           ├── Reassign the NpzFile arrays to x and y
+│           ├── Remove the saved arrays and load them back with NumPy’s
+│           ├── Save the data to csv file using
+│           ├── Save your arrays with NumPy’s
+│           ├── Success
+│           ├── Success, but remember your types
+│           ├── What you’ll do
+│           ├── What you’ll learn
+│           ├── What you’ll need
+│           └── Wrapping up
+├── pandas_toms_blog
+│   ├── Fast Pandas
+│   │   ├── Categoricals
+│   │   ├── Constructors
+│   │   ├── Datatypes
+│   │   ├── Going Further
+│   │   ├── Iteration, Apply, And Vectorization
+│   │   └── Summary
+│   ├── Indexes
+│   │   ├── Flavors
+│   │   │   ├── Indexes for Alignment
+│   │   │   ├── Indexes for Easier Arithmetic, Analysis
+│   │   │   └── Row Slicing
+│   │   ├── Merging
+│   │   │   ├── Concat Version
+│   │   │   ├── Merge Version
+│   │   │   └── The merge version
+│   │   └── Set Operations
+│   ├── Method Chaining
+│   │   └── Method Chaining
+│   │       ├── Application
+│   │       ├── Costs
+│   │       └── Inplace?
+│   ├── Modern Pandas
+│   │   └── Effective Pandas
+│   │       ├── Get the Data
+│   │       ├── Indexing
+│   │       ├── Introduction
+│   │       ├── Multidimensional Indexing
+│   │       ├── Prior Art
+│   │       ├── SettingWithCopy
+│   │       ├── Slicing
+│   │       └── WrapUp
+│   ├── Scaling
+│   │   ├── Dask
+│   │   ├── Joining
+│   │   ├── Try It Out!
+│   │   ├── Using Dask
+│   │   └── Using Iteration
+│   ├── Tidy Data
+│   │   └── Reshaping & Tidy Data
+│   │       ├── Mini Project: Home Court Advantage?
+│   │       │   ├── Step 1: Create an outcome variable
+│   │       │   └── Step 2: Find the win percent for each team
+│   │       ├── NBA Data
+│   │       └── Stack / Unstack
+│   ├── Time Series
+│   │   └── Timeseries
+│   │       ├── ARIMA
+│   │       │   ├── 
+│   │       │   ├── Combining
+│   │       │   └── Integrated
+│   │       ├── Conclusion
+│   │       ├── Forecasting
+│   │       ├── Grab Bag
+│   │       │   ├── Holiday Calendars
+│   │       │   ├── Offsets
+│   │       │   └── Timezones
+│   │       ├── Modeling Time Series
+│   │       │   └── Autocorrelation
+│   │       ├── Resources
+│   │       ├── Seasonality
+│   │       ├── Special Methods
+│   │       │   ├── Resampling
+│   │       │   └── Rolling / Expanding / EW
+│   │       └── Special Slicing
+│   └── Visualization
+│       └── Visualization and Exploratory Analysis
+│           ├── 
+│           ├── Examples
+│           ├── Matplotlib
+│           ├── Other Libraries
+│           ├── Overview
+│           ├── Pandas Built-in Plotting
+│           └── Seaborn
+├── seaborn
+│   ├── API Overview
+│   │   ├── Data structures accepted by seaborn
+│   │   │   ├── Long-form vs. wide-form data
+│   │   │   │   ├── Further reading and take-home points
+│   │   │   │   ├── Long-form data
+│   │   │   │   ├── Messy data
+│   │   │   │   └── Wide-form data
+│   │   │   ├── Options for visualizing long-form data
+│   │   │   └── Options for visualizing wide-form data
+│   │   └── Overview of seaborn plotting functions
+│   │       ├── Combining multiple views on the data
+│   │       ├── Figure-level vs. axes-level functions
+│   │       │   ├── Axes-level functions make self-contained plots
+│   │       │   ├── Customizing plots from a figure-level function
+│   │       │   ├── Figure-level functions own their figure
+│   │       │   ├── Relative merits of figure-level functions
+│   │       │   └── Specifying figure sizes
+│   │       └── Similar functions for similar tasks
+│   ├── Figure aesthetics
+│   │   ├── Choosing color palettes
+│   │   │   ├── Diverging color palettes
+│   │   │   │   ├── Custom diverging palettes
+│   │   │   │   ├── Other diverging palettes
+│   │   │   │   └── Perceptually uniform diverging palettes
+│   │   │   ├── General principles for using color in plots
+│   │   │   │   ├── Components of color
+│   │   │   │   ├── Vary hue to distinguish categories
+│   │   │   │   └── Vary luminance to represent numbers
+│   │   │   ├── Qualitative color palettes
+│   │   │   │   ├── Using categorical Color Brewer palettes
+│   │   │   │   └── Using circular color systems
+│   │   │   ├── Sequential color palettes
+│   │   │   │   ├── Custom sequential palettes
+│   │   │   │   ├── Discrete vs. continuous mapping
+│   │   │   │   ├── Perceptually uniform palettes
+│   │   │   │   ├── Sequential Color Brewer palettes
+│   │   │   │   └── Sequential “cubehelix” palettes
+│   │   │   └── Tools for choosing color palettes
+│   │   └── Controlling figure aesthetics
+│   │       ├── Overriding elements of the seaborn styles
+│   │       ├── Removing axes spines
+│   │       ├── Scaling plot elements
+│   │       ├── Seaborn figure styles
+│   │       └── Temporarily setting figure style
+│   ├── Multi-plot grids
+│   │   └── Building structured multi-plot grids
+│   │       ├── Conditional small multiples
+│   │       ├── Plotting pairwise data relationships
+│   │       └── Using custom functions
+│   ├── Objects interface
+│   │   ├── Properties of Mark objects
+│   │   │   ├── Color properties
+│   │   │   │   ├── alpha, fillalpha, edgealpha
+│   │   │   │   └── color, fillcolor, edgecolor
+│   │   │   ├── Coordinate properties
+│   │   │   │   └── x, y, xmin, xmax, ymin, ymax
+│   │   │   ├── Other properties
+│   │   │   │   ├── group
+│   │   │   │   └── text
+│   │   │   ├── Size properties
+│   │   │   │   ├── edgewidth
+│   │   │   │   ├── linewidth
+│   │   │   │   ├── pointsize
+│   │   │   │   └── stroke
+│   │   │   ├── Style properties
+│   │   │   │   ├── fill
+│   │   │   │   ├── linestyle, edgestyle
+│   │   │   │   └── marker
+│   │   │   └── Text properties
+│   │   │       ├── fontsize
+│   │   │       ├── halign, valign
+│   │   │       └── offset
+│   │   └── The seaborn.objects interface
+│   │       ├── Building and displaying the plot
+│   │       │   ├── Adding multiple layers
+│   │       │   ├── Building and displaying the plot
+│   │       │   ├── Faceting and pairing subplots
+│   │       │   ├── Integrating with matplotlib
+│   │       │   └── Layer-specific mappings
+│   │       ├── Customizing the appearance
+│   │       │   ├── Customizing legends and ticks
+│   │       │   ├── Customizing limits, labels, and titles
+│   │       │   ├── Parameterizing scales
+│   │       │   └── Theme customization
+│   │       ├── Specifying a plot and mapping data
+│   │       │   ├── Defining groups
+│   │       │   ├── Mapping properties
+│   │       │   └── Setting properties
+│   │       └── Transforming data before plotting
+│   │           ├── Creating variables through transformation
+│   │           ├── Orienting marks and transforms
+│   │           ├── Resolving overplotting
+│   │           └── Statistical transformation
+│   ├── Plotting functions
+│   │   ├── Visualizing categorical data
+│   │   │   ├── Categorical scatterplots
+│   │   │   ├── Comparing distributions
+│   │   │   │   ├── Boxplots
+│   │   │   │   └── Violinplots
+│   │   │   ├── Estimating central tendency
+│   │   │   │   ├── Bar plots
+│   │   │   │   └── Point plots
+│   │   │   └── Showing additional dimensions
+│   │   ├── Visualizing distributions of data
+│   │   │   ├── Distribution visualization in other settings
+│   │   │   │   ├── Plotting joint and marginal distributions
+│   │   │   │   └── Plotting many distributions
+│   │   │   ├── Empirical cumulative distributions
+│   │   │   ├── Kernel density estimation
+│   │   │   │   ├── Choosing the smoothing bandwidth
+│   │   │   │   ├── Conditioning on other variables
+│   │   │   │   └── Kernel density estimation pitfalls
+│   │   │   ├── Plotting univariate histograms
+│   │   │   │   ├── Choosing the bin size
+│   │   │   │   ├── Conditioning on other variables
+│   │   │   │   └── Normalized histogram statistics
+│   │   │   └── Visualizing bivariate distributions
+│   │   └── Visualizing statistical relationships
+│   │       ├── Emphasizing continuity with line plots
+│   │       │   ├── Aggregation and representing uncertainty
+│   │       │   ├── Controlling sorting and orientation
+│   │       │   └── Plotting subsets of data with semantic mappings
+│   │       ├── Relating variables with scatter plots
+│   │       └── Showing multiple relationships with facets
+│   ├── Statistical operations
+│   │   ├── Estimating regression fits
+│   │   │   ├── Conditioning on other variables
+│   │   │   ├── Fitting different kinds of models
+│   │   │   ├── Functions for drawing linear regression models
+│   │   │   └── Plotting a regression in other contexts
+│   │   └── Statistical estimation and error bars
+│   │       ├── Are error bars enough?
+│   │       ├── Error bars on regression fits
+│   │       ├── Measures of data spread
+│   │       │   ├── Percentile interval error bars
+│   │       │   └── Standard deviation error bars
+│   │       └── Measures of estimate uncertainty
+│   │           ├── Confidence interval error bars
+│   │           ├── Custom error bars
+│   │           └── Standard error bars
+│   └── User guide and tutorial
+│       ├── An introduction to seaborn
+│       │   ├── A high-level API for statistical graphics
+│       │   │   ├── Distributional representations
+│       │   │   ├── Plots for categorical data
+│       │   │   └── Statistical estimation
+│       │   ├── Multivariate views on complex datasets
+│       │   │   └── Lower-level tools for building figures
+│       │   └── Opinionated defaults and flexible customization
+│       │       ├── Next steps
+│       │       └── Relationship to matplotlib
+│       ├── Building structured multi-plot grids
+│       │   ├── Conditional small multiples
+│       │   ├── Plotting pairwise data relationships
+│       │   └── Using custom functions
+│       ├── Choosing color palettes
+│       │   ├── Diverging color palettes
+│       │   │   ├── Custom diverging palettes
+│       │   │   ├── Other diverging palettes
+│       │   │   └── Perceptually uniform diverging palettes
+│       │   ├── General principles for using color in plots
+│       │   │   ├── Components of color
+│       │   │   ├── Vary hue to distinguish categories
+│       │   │   └── Vary luminance to represent numbers
+│       │   ├── Qualitative color palettes
+│       │   │   ├── Using categorical Color Brewer palettes
+│       │   │   └── Using circular color systems
+│       │   ├── Sequential color palettes
+│       │   │   ├── Custom sequential palettes
+│       │   │   ├── Discrete vs. continuous mapping
+│       │   │   ├── Perceptually uniform palettes
+│       │   │   ├── Sequential Color Brewer palettes
+│       │   │   └── Sequential “cubehelix” palettes
+│       │   └── Tools for choosing color palettes
+│       ├── Controlling figure aesthetics
+│       │   ├── Overriding elements of the seaborn styles
+│       │   ├── Removing axes spines
+│       │   ├── Scaling plot elements
+│       │   ├── Seaborn figure styles
+│       │   └── Temporarily setting figure style
+│       ├── Data structures accepted by seaborn
+│       │   ├── Long-form vs. wide-form data
+│       │   │   ├── Further reading and take-home points
+│       │   │   ├── Long-form data
+│       │   │   ├── Messy data
+│       │   │   └── Wide-form data
+│       │   ├── Options for visualizing long-form data
+│       │   └── Options for visualizing wide-form data
+│       ├── Estimating regression fits
+│       │   ├── Conditioning on other variables
+│       │   ├── Fitting different kinds of models
+│       │   ├── Functions for drawing linear regression models
+│       │   └── Plotting a regression in other contexts
+│       ├── Overview of seaborn plotting functions
+│       │   ├── Combining multiple views on the data
+│       │   ├── Figure-level vs. axes-level functions
+│       │   │   ├── Axes-level functions make self-contained plots
+│       │   │   ├── Customizing plots from a figure-level function
+│       │   │   ├── Figure-level functions own their figure
+│       │   │   ├── Relative merits of figure-level functions
+│       │   │   └── Specifying figure sizes
+│       │   └── Similar functions for similar tasks
+│       ├── Properties of Mark objects
+│       │   ├── Color properties
+│       │   │   ├── alpha, fillalpha, edgealpha
+│       │   │   └── color, fillcolor, edgecolor
+│       │   ├── Coordinate properties
+│       │   │   └── x, y, xmin, xmax, ymin, ymax
+│       │   ├── Other properties
+│       │   │   ├── group
+│       │   │   └── text
+│       │   ├── Size properties
+│       │   │   ├── edgewidth
+│       │   │   ├── linewidth
+│       │   │   ├── pointsize
+│       │   │   └── stroke
+│       │   ├── Style properties
+│       │   │   ├── fill
+│       │   │   ├── linestyle, edgestyle
+│       │   │   └── marker
+│       │   └── Text properties
+│       │       ├── fontsize
+│       │       ├── halign, valign
+│       │       └── offset
+│       ├── Statistical estimation and error bars
+│       │   ├── Are error bars enough?
+│       │   ├── Error bars on regression fits
+│       │   ├── Measures of data spread
+│       │   │   ├── Percentile interval error bars
+│       │   │   └── Standard deviation error bars
+│       │   └── Measures of estimate uncertainty
+│       │       ├── Confidence interval error bars
+│       │       ├── Custom error bars
+│       │       └── Standard error bars
+│       ├── The seaborn.objects interface
+│       │   ├── Building and displaying the plot
+│       │   │   ├── Adding multiple layers
+│       │   │   ├── Building and displaying the plot
+│       │   │   ├── Faceting and pairing subplots
+│       │   │   ├── Integrating with matplotlib
+│       │   │   └── Layer-specific mappings
+│       │   ├── Customizing the appearance
+│       │   │   ├── Customizing legends and ticks
+│       │   │   ├── Customizing limits, labels, and titles
+│       │   │   ├── Parameterizing scales
+│       │   │   └── Theme customization
+│       │   ├── Specifying a plot and mapping data
+│       │   │   ├── Defining groups
+│       │   │   ├── Mapping properties
+│       │   │   └── Setting properties
+│       │   └── Transforming data before plotting
+│       │       ├── Creating variables through transformation
+│       │       ├── Orienting marks and transforms
+│       │       ├── Resolving overplotting
+│       │       └── Statistical transformation
+│       ├── Visualizing categorical data
+│       │   ├── Categorical scatterplots
+│       │   ├── Comparing distributions
+│       │   │   ├── Boxplots
+│       │   │   └── Violinplots
+│       │   ├── Estimating central tendency
+│       │   │   ├── Bar plots
+│       │   │   └── Point plots
+│       │   └── Showing additional dimensions
+│       ├── Visualizing distributions of data
+│       │   ├── Distribution visualization in other settings
+│       │   │   ├── Plotting joint and marginal distributions
+│       │   │   └── Plotting many distributions
+│       │   ├── Empirical cumulative distributions
+│       │   ├── Kernel density estimation
+│       │   │   ├── Choosing the smoothing bandwidth
+│       │   │   ├── Conditioning on other variables
+│       │   │   └── Kernel density estimation pitfalls
+│       │   ├── Plotting univariate histograms
+│       │   │   ├── Choosing the bin size
+│       │   │   ├── Conditioning on other variables
+│       │   │   └── Normalized histogram statistics
+│       │   └── Visualizing bivariate distributions
+│       └── Visualizing statistical relationships
+│           ├── Emphasizing continuity with line plots
+│           │   ├── Aggregation and representing uncertainty
+│           │   ├── Controlling sorting and orientation
+│           │   └── Plotting subsets of data with semantic mappings
+│           ├── Relating variables with scatter plots
+│           └── Showing multiple relationships with facets
+└── torch
+    ├── Audio
+    │   ├── Audio Data Augmentation
+    │   ├── Audio Datasets
+    │   ├── Audio Feature Augmentation
+    │   ├── Audio Feature Extractions
+    │   ├── Audio I/O
+    │   ├── Audio Resampling
+    │   ├── Forced Alignment with Wav2Vec2
+    │   ├── Speech Recognition with Wav2Vec2
+    │   └── Text-to-speech with Tacotron2
+    ├── Code Transforms with FX
+    │   ├── (beta) Building a Convolution/Batch Norm fuser in FX
+    │   │   ├── Benchmarking our Fusion on ResNet18
+    │   │   ├── FX Fusion Pass
+    │   │   ├── Fusing Convolution with Batch Norm
+    │   │   └── Testing out our Fusion Pass
+    │   └── (beta) Building a Simple CPU Performance Profiler with FX
+    │       ├── Capturing the Model with Symbolic Tracing
+    │       ├── Conclusion
+    │       ├── Creating a Profiling Interpreter
+    │       └── Investigating the Performance of ResNet18
+    ├── Deploying PyTorch Models in Production
+    │   ├── (optional) Exporting a Model from PyTorch to ONNX and Running it using ONNX Runtime
+    │   │   └── Running the model on an image using ONNX Runtime
+    │   ├── Deploying PyTorch in Python via a REST API with Flask
+    │   │   ├── API Definition
+    │   │   ├── Dependencies
+    │   │   ├── Inference
+    │   │   │   ├── Prediction
+    │   │   │   └── Preparing the image
+    │   │   ├── Integrating the model in our API Server
+    │   │   ├── Next steps
+    │   │   └── Simple Web Server
+    │   ├── Introduction to TorchScript
+    │   │   ├── Basics of PyTorch Model Authoring
+    │   │   ├── Basics of TorchScript
+    │   │   │   └── Tracing Modules
+    │   │   ├── Saving and Loading models
+    │   │   │   └── Further Reading
+    │   │   └── Using Scripting to Convert Modules
+    │   │       └── Mixing Scripting and Tracing
+    │   ├── Loading a TorchScript Model in C++
+    │   │   ├── Step 1: Converting Your PyTorch Model to Torch Script
+    │   │   │   ├── Converting to Torch Script via Annotation
+    │   │   │   └── Converting to Torch Script via Tracing
+    │   │   ├── Step 2: Serializing Your Script Module to a File
+    │   │   ├── Step 3: Loading Your Script Module in C++
+    │   │   │   ├── A Minimal C++ Application
+    │   │   │   └── Depending on LibTorch and Building the Application
+    │   │   ├── Step 4: Executing the Script Module in C++
+    │   │   └── Step 5: Getting Help and Exploring the API
+    │   └── Real Time Inference on Raspberry Pi 4 (30 fps!)
+    │       ├── Image Preprocessing
+    │       ├── Installing PyTorch and OpenCV
+    │       ├── MobileNetV2: Quantization and JIT
+    │       ├── Model Choices
+    │       ├── Next Steps
+    │       ├── Prerequisites
+    │       ├── Putting It Together
+    │       ├── Raspberry Pi 4 Setup
+    │       ├── Troubleshooting: Performance
+    │       └── Video Capture
+    ├── Extending PyTorch
+    │   ├── Custom C++ and CUDA Extensions
+    │   │   ├── Conclusion
+    │   │   ├── Motivation and Example
+    │   │   ├── Writing a C++ Extension
+    │   │   │   ├── Binding to Python
+    │   │   │   ├── Building with setuptools
+    │   │   │   ├── JIT Compiling Extensions
+    │   │   │   ├── Using Your Extension
+    │   │   │   │   ├── Performance Comparison
+    │   │   │   │   └── Performance on GPU Devices
+    │   │   │   └── Writing the C++ Op
+    │   │   │       ├── Backward Pass
+    │   │   │       └── Forward Pass
+    │   │   └── Writing a Mixed C++/CUDA extension
+    │   │       ├── Integrating a C++/CUDA Operation with PyTorch
+    │   │       │   └── Performance Comparison
+    │   │       └── Using accessors
+    │   ├── Double Backward with Custom Functions
+    │   │   ├── Saving Intermediate Results
+    │   │   ├── Saving Intermediate Results: What not to do
+    │   │   ├── Saving the Inputs
+    │   │   ├── Saving the Outputs
+    │   │   └── When Backward is not Tracked
+    │   ├── Extending TorchScript with Custom C++ Operators
+    │   │   ├── Appendix A: More Ways of Building Custom Operators
+    │   │   │   ├── Building with JIT compilation
+    │   │   │   └── Building with Setuptools
+    │   │   ├── Building the Custom Operator
+    │   │   │   ├── Building with CMake
+    │   │   │   └── Environment setup
+    │   │   ├── Conclusion
+    │   │   ├── Implementing the Custom Operator in C++
+    │   │   ├── Registering the Custom Operator with TorchScript
+    │   │   ├── Using the TorchScript Custom Operator in C++
+    │   │   └── Using the TorchScript Custom Operator in Python
+    │   │       ├── Using the Custom Operator with Script
+    │   │       └── Using the Custom Operator with Tracing
+    │   ├── Extending dispatcher for a new backend in C++
+    │   │   ├── Autograd support for the new backend
+    │   │   ├── Backward Compatibility
+    │   │   ├── Build an extension
+    │   │   ├── Custom operator support
+    │   │   ├── Future Work
+    │   │   ├── Get a dispatch key for your backend
+    │   │   ├── Get the full list of PyTorch operators
+    │   │   ├── JIT support
+    │   │   ├── Known issues & additional notes
+    │   │   ├── Register kernels for the new backend
+    │   │   ├── Stay in touch
+    │   │   ├── Testing your backend against native PyTorch backends
+    │   │   └── What’s a new backend?
+    │   ├── Fusing Convolution and Batch Norm using Custom Function
+    │   │   ├── A Comparison of Memory Usage
+    │   │   ├── Backward Formula Implementation for Batch Norm
+    │   │   ├── Backward Formula Implementation for Convolution
+    │   │   ├── Fusing Convolution and BatchNorm
+    │   │   └── Testing out our new Layer
+    │   └── Registering a Dispatched Operator in C++
+    │       ├── Adding autograd support
+    │       ├── Defining schema and backend implementations
+    │       ├── For operators that do not need autograd
+    │       │   └── In-place or view ops
+    │       └── Going beyond autograd
+    │           ├── Autocast
+    │           ├── Batched
+    │           └── Tracer
+    ├── Frontend APIs
+    │   ├── (beta) Channels Last Memory Format in PyTorch
+    │   │   ├── Converting existing models
+    │   │   ├── Memory Format API
+    │   │   ├── Performance Gains
+    │   │   ├── What is Channels Last
+    │   │   └── Work to do
+    │   ├── Autograd in C++ Frontend
+    │   │   ├── Basic autograd operations
+    │   │   ├── Computing higher-order gradients in C++
+    │   │   ├── Conclusion
+    │   │   ├── Translating autograd code from Python to C++
+    │   │   └── Using custom autograd function in C++
+    │   ├── Dynamic Parallelism in TorchScript
+    │   │   ├── Applied Example: Ensemble of Bidirectional LSTMs
+    │   │   ├── Aside: Visualizing Parallelism
+    │   │   ├── Basic Syntax
+    │   │   ├── Conclusion
+    │   │   ├── Parallelizing Forward and Backward Layers
+    │   │   └── Parallelizing Models in the Ensemble
+    │   ├── Forward-mode Automatic Differentiation (Beta)
+    │   │   ├── Basic Usage
+    │   │   ├── Custom autograd Function
+    │   │   ├── Functional API (beta)
+    │   │   ├── Usage with Modules
+    │   │   ├── Using the functional API with Modules
+    │   │   └── Using the functional Module API (beta)
+    │   ├── Jacobians, Hessians, hvp, vhp, and more: composing function transforms
+    │   │   ├── Batch Jacobian and Batch Hessian
+    │   │   ├── Computing Hessian-vector products
+    │   │   ├── Computing the Jacobian
+    │   │   ├── Hessian computation with functorch.hessian
+    │   │   └── reverse-mode Jacobian (jacrev) vs forward-mode Jacobian (jacfwd)
+    │   ├── Model ensembling
+    │   │   ├── Performance
+    │   │   ├── Using vmap to vectorize the ensemble
+    │   │   └── What is model ensembling?
+    │   ├── Per-sample-gradients
+    │   │   ├── Per-sample-grads, the efficient way, using function transforms
+    │   │   ├── Performance comparison
+    │   │   └── What is it?
+    │   └── Using the PyTorch C++ Frontend
+    │       ├── Checkpointing and Recovering the Training State
+    │       ├── Conclusion
+    │       ├── Defining the Neural Network Models
+    │       │   ├── Defining the DCGAN Modules
+    │       │   │   ├── The Discriminator Module
+    │       │   │   ├── The Generator Module
+    │       │   │   └── What was a GAN aGAN?
+    │       │   └── Module API Basics
+    │       │       ├── Defining a Module and Registering Parameters
+    │       │       ├── Module Ownership
+    │       │       ├── Registering Submodules and Traversing the Module Hierarchy
+    │       │       └── Running the Network in Forward Mode
+    │       ├── Inspecting Generated Images
+    │       ├── Loading Data
+    │       ├── Motivation
+    │       ├── Moving to the GPU
+    │       ├── Writing a Basic Application
+    │       └── Writing the Training Loop
+    ├── Image and Video
+    │   ├── Adversarial Example Generation
+    │   │   ├── Fast Gradient Sign Attack
+    │   │   ├── Implementation
+    │   │   │   ├── FGSM Attack
+    │   │   │   ├── Inputs
+    │   │   │   ├── Model Under Attack
+    │   │   │   ├── Run Attack
+    │   │   │   └── Testing Function
+    │   │   ├── Results
+    │   │   │   ├── Accuracy vs Epsilon
+    │   │   │   └── Sample Adversarial Examples
+    │   │   ├── Threat Model
+    │   │   └── Where to go next?
+    │   ├── Optimizing Vision Transformer Model for Deployment
+    │   │   ├── Classifying Images with DeiT
+    │   │   ├── Comparing Inference Speed
+    │   │   │   └── Learn More
+    │   │   ├── Optimizing DeiT
+    │   │   ├── Quantizing DeiT
+    │   │   ├── Scripting DeiT
+    │   │   ├── Using Lite Interpreter
+    │   │   └── What is DeiT
+    │   ├── Spatial Transformer Networks Tutorial
+    │   │   ├── Depicting spatial transformer networks
+    │   │   ├── Loading the data
+    │   │   ├── Training the model
+    │   │   └── Visualizing the STN results
+    │   ├── TorchVision Object Detection Finetuning Tutorial
+    │   │   ├── Defining the Dataset
+    │   │   │   └── Writing a custom dataset for PennFudan
+    │   │   ├── Defining your model
+    │   │   │   ├── 1 - Finetuning from a pretrained model
+    │   │   │   ├── 2 - Modifying the model to add a different backbone
+    │   │   │   └── An Instance segmentation model for PennFudan Dataset
+    │   │   ├── Putting everything together
+    │   │   ├── Testing forward() method (Optional)
+    │   │   └── Wrapping up
+    │   └── Transfer Learning for Computer Vision Tutorial
+    │       ├── ConvNet as fixed feature extractor
+    │       │   └── Train and evaluate
+    │       ├── Finetuning the convnet
+    │       │   └── Train and evaluate
+    │       ├── Further Learning
+    │       ├── Load Data
+    │       │   └── Visualize a few images
+    │       └── Training the model
+    │           └── Visualizing the model predictions
+    ├── Introduction to PyTorch
+    │   ├── Automatic Differentiation with torch.autograd
+    │   │   ├── Computing Gradients
+    │   │   ├── Disabling Gradient Tracking
+    │   │   ├── More on Computational Graphs
+    │   │   ├── Optional Reading: Tensor Gradients and Jacobian Products
+    │   │   │   └── Further Reading
+    │   │   └── Tensors, Functions and Computational graph
+    │   ├── Build the Neural Network
+    │   │   ├── Define the Class
+    │   │   ├── Further Reading
+    │   │   ├── Get Device for Training
+    │   │   ├── Model Layers
+    │   │   │   ├── nn.Flatten
+    │   │   │   ├── nn.Linear
+    │   │   │   ├── nn.ReLU
+    │   │   │   ├── nn.Sequential
+    │   │   │   └── nn.Softmax
+    │   │   └── Model Parameters
+    │   ├── Datasets & DataLoaders
+    │   │   ├── Creating a Custom Dataset for your files
+    │   │   │   ├── __getitem__
+    │   │   │   ├── __init__
+    │   │   │   └── __len__
+    │   │   ├── Further Reading
+    │   │   ├── Iterate through the DataLoader
+    │   │   ├── Iterating and Visualizing the Dataset
+    │   │   ├── Loading a Dataset
+    │   │   └── Preparing your data for training with DataLoaders
+    │   ├── Learn the Basics
+    │   │   ├── How to Use this Guide
+    │   │   └── Running the Tutorial Code
+    │   ├── Optimizing Model Parameters
+    │   │   ├── Full Implementation
+    │   │   ├── Further Reading
+    │   │   ├── Hyperparameters
+    │   │   ├── Optimization Loop
+    │   │   │   ├── Loss Function
+    │   │   │   └── Optimizer
+    │   │   └── Prerequisite Code
+    │   ├── Quickstart
+    │   │   ├── Creating Models
+    │   │   ├── Loading Models
+    │   │   ├── Optimizing the Model Parameters
+    │   │   ├── Saving Models
+    │   │   └── Working with data
+    │   ├── Save and Load the Model
+    │   │   ├── Related Tutorials
+    │   │   ├── Saving and Loading Model Weights
+    │   │   └── Saving and Loading Models with Shapes
+    │   ├── Tensors
+    │   │   ├── Attributes of a Tensor
+    │   │   ├── Bridge with NumPy
+    │   │   │   ├── NumPy array to Tensor
+    │   │   │   └── Tensor to NumPy array
+    │   │   ├── Initializing a Tensor
+    │   │   └── Operations on Tensors
+    │   └── Transforms
+    │       ├── Lambda Transforms
+    │       │   └── Further Reading
+    │       └── ToTensor()
+    ├── Learning PyTorch
+    │   ├── Deep Learning with PyTorch: A 60 Minute Blitz
+    │   │   ├── Goal of this tutorial:
+    │   │   └── What is PyTorch?
+    │   ├── Learning PyTorch with Examples
+    │   │   └── 
+    │   │       └── 
+    │   ├── Visualizing Models, Data, and Training with TensorBoard
+    │   │   ├── 1. TensorBoard setup
+    │   │   ├── 2. Writing to TensorBoard
+    │   │   ├── 3. Inspect the model using TensorBoard
+    │   │   ├── 4. Adding a “Projector” to TensorBoard
+    │   │   ├── 5. Tracking model training with TensorBoard
+    │   │   └── 6. Assessing trained models with TensorBoard
+    │   └── What is torch.nn really?
+    │       ├── Add validation
+    │       ├── Closing thoughts
+    │       ├── Create fit() and get_data()
+    │       ├── MNIST data setup
+    │       ├── Neural net from scratch (no torch.nn)
+    │       ├── Refactor using DataLoader
+    │       ├── Refactor using Dataset
+    │       ├── Refactor using nn.Linear
+    │       ├── Refactor using nn.Module
+    │       ├── Refactor using optim
+    │       ├── Switch to CNN
+    │       ├── Using torch.nn.functional
+    │       ├── Using your GPU
+    │       ├── Wrapping DataLoader
+    │       └── nn.Sequential
+    ├── Mobile
+    │   ├── Image Segmentation DeepLabV3 on Android
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Learning Objectives
+    │   │   ├── Pre-requisites
+    │   │   ├── Recap
+    │   │   └── Steps
+    │   │       ├── 1. Convert the DeepLabV3 model for Android deployment
+    │   │       ├── 2. Get example input and output of the model in Python
+    │   │       ├── 3. Build a new Android app or reuse an example app and load the model
+    │   │       ├── 4. Process the model input and output for model inference
+    │   │       └── 5. Complete the UI, refactor, build and run the app
+    │   └── Image Segmentation DeepLabV3 on iOS
+    │       ├── Introduction
+    │       ├── Learn More
+    │       ├── Learning Objectives
+    │       ├── Pre-requisites
+    │       ├── Recap
+    │       └── Steps
+    │           ├── 1. Convert the DeepLabV3 model for iOS deployment
+    │           ├── 2. Get example input and output of the model in Python
+    │           ├── 3. Build a new iOS app or reuse an example app and load the model
+    │           ├── 4. Process the model input and output for model inference
+    │           └── 5. Complete the UI, refactor, build and run the app
+    ├── Model Optimization
+    │   ├── (Beta) Implementing High-Performance Transformers with Scaled Dot Product Attention (SDPA)
+    │   │   ├── Causal Self Attention
+    │   │   │   └── NestedTensor and Dense tensor support
+    │   │   ├── Explicit Dispatcher Control
+    │   │   ├── Fused implementations
+    │   │   ├── Hardware dependence
+    │   │   ├── Overview
+    │   │   └── Summary
+    │   ├── (beta) Dynamic Quantization on BERT
+    │   │   ├── 1. Setup
+    │   │   │   ├── 1.1 Install PyTorch and HuggingFace Transformers
+    │   │   │   ├── 1.2 Import the necessary modules
+    │   │   │   ├── 1.3 Learn about helper functions
+    │   │   │   └── 1.4 Download the dataset
+    │   │   ├── 2. Fine-tune the BERT model
+    │   │   │   ├── 2.1 Set global configurations
+    │   │   │   ├── 2.2 Load the fine-tuned BERT model
+    │   │   │   └── 2.3 Define the tokenize and evaluation function
+    │   │   ├── 3. Apply the dynamic quantization
+    │   │   │   ├── 3.1 Check the model size
+    │   │   │   ├── 3.2 Evaluate the inference accuracy and time
+    │   │   │   └── 3.3 Serialize the quantized model
+    │   │   ├── Conclusion
+    │   │   ├── Introduction
+    │   │   └── References
+    │   ├── (beta) Dynamic Quantization on an LSTM Word Language Model
+    │   │   ├── 1. Define the model
+    │   │   ├── 2. Load in the text data
+    │   │   ├── 3. Load the pre-trained model
+    │   │   ├── 4. Test dynamic quantization
+    │   │   ├── Conclusion
+    │   │   └── Introduction
+    │   ├── (beta) Quantized Transfer Learning for Computer Vision Tutorial
+    │   │   ├── Part 0. Prerequisites
+    │   │   │   ├── Installing the Nightly Build
+    │   │   │   ├── Load Data
+    │   │   │   ├── Support Function for Model Training
+    │   │   │   ├── Support Function for Visualizing the Model Predictions
+    │   │   │   └── Visualize a few images
+    │   │   ├── Part 1. Training a Custom Classifier based on a Quantized Feature Extractor
+    │   │   │   └── Train and evaluate
+    │   │   └── Part 2. Finetuning the Quantizable Model
+    │   │       └── Finetuning the model
+    │   ├── (beta) Static Quantization with Eager Mode in PyTorch
+    │   │   ├── 1. Model architecture
+    │   │   ├── 2. Helper functions
+    │   │   ├── 3. Define dataset and data loaders
+    │   │   │   └── ImageNet Data
+    │   │   ├── 4. Post-training static quantization
+    │   │   ├── 5. Quantization-aware training
+    │   │   │   └── Speedup from quantization
+    │   │   └── Conclusion
+    │   ├── Conclusion
+    │   ├── Getting Started - Accelerate Your Scripts with nvFuser
+    │   │   ├── Defining novel operations with nvFuser and FuncTorch
+    │   │   ├── Importing Packages and Selecting a Device
+    │   │   ├── Introduction
+    │   │   ├── Setup and Performance Metrics
+    │   │   ├── The Transformer Block
+    │   │   ├── TorchScript & nvFuser
+    │   │   ├── Transformer Block With a Novel Normalization
+    │   │   └── nvFuser & Dynamic Shapes
+    │   ├── Grokking PyTorch Intel CPU performance from first principles
+    │   │   ├── 1. Default TorchServe setting (no core pinning)
+    │   │   ├── 2. torch.set_num_threads = number of physical cores / number of workers (no core pinning)
+    │   │   ├── 3. launcher core pinning
+    │   │   ├── Acknowledgement
+    │   │   ├── Avoid logical cores for deep learning
+    │   │   ├── Conclusion
+    │   │   ├── Efficient CPU usage with core pinning for multi-worker inference
+    │   │   └── Local memory access is always faster than remote memory access
+    │   ├── Grokking PyTorch Intel CPU performance from first principles (Part 2)
+    │   │   ├── Acknowledgement
+    │   │   ├── Conclusion
+    │   │   ├── Prerequisites
+    │   │   │   ├── Intel® VTune™ Profiler’s Instrumentation and Tracing Technology (ITT)
+    │   │   │   └── Top-down Microarchitecture Analysis Method (TMA)
+    │   │   │       └── Tune for the Back End Bound
+    │   │   ├── Related Readings
+    │   │   └── TorchServe with Intel® Extension for PyTorch*
+    │   │       ├── Exercise with TorchServe
+    │   │       ├── Intel® Extension for PyTorch*
+    │   │       │   ├── Channels Last Memory Format
+    │   │       │   │   └── Exercise
+    │   │       │   ├── Graph Optimization
+    │   │       │   │   └── Exercise
+    │   │       │   └── Operator Optimization
+    │   │       │       └── Exercise
+    │   │       ├── Leveraging Advanced Launcher Configuration: Memory Allocator
+    │   │       │   └── TCMalloc, JeMalloc, PTMalloc
+    │   │       │       ├── Exercise
+    │   │       │       └── Exercise with TorchServe
+    │   │       └── Performance Boost with Intel® Extension for PyTorch*
+    │   ├── Hyperparameter tuning with Ray Tune
+    │   │   ├── Configurable neural network
+    │   │   ├── Configuring the search space
+    │   │   ├── Data loaders
+    │   │   ├── Setup / Imports
+    │   │   ├── Test set accuracy
+    │   │   └── The train function
+    │   │       ├── Adding (multi) GPU support with DataParallel
+    │   │       ├── Communicating with Ray Tune
+    │   │       └── Full training function
+    │   ├── Multi-Objective NAS with Ax
+    │   │   ├── Acknowledgements
+    │   │   ├── Choosing the GenerationStrategy
+    │   │   ├── Configuring the Scheduler
+    │   │   ├── Creating the Ax Experiment
+    │   │   ├── Defining the TorchX App
+    │   │   ├── Evaluating the results
+    │   │   ├── Running the optimization
+    │   │   ├── Setting up Metrics
+    │   │   ├── Setting up the OptimizationConfig
+    │   │   ├── Setting up the Runner
+    │   │   └── Setting up the SearchSpace
+    │   ├── Optimizing Vision Transformer Model for Deployment
+    │   │   ├── Classifying Images with DeiT
+    │   │   ├── Comparing Inference Speed
+    │   │   │   └── Learn More
+    │   │   ├── Optimizing DeiT
+    │   │   ├── Quantizing DeiT
+    │   │   ├── Scripting DeiT
+    │   │   ├── Using Lite Interpreter
+    │   │   └── What is DeiT
+    │   ├── Parametrizations Tutorial
+    │   │   ├── Caching the value of a parametrization
+    │   │   ├── Concatenating parametrizations
+    │   │   ├── Implementing parametrizations by hand
+    │   │   ├── Inspecting a parametrized module
+    │   │   ├── Intializing parametrizations
+    │   │   ├── Introduction to parametrizations
+    │   │   ├── Parametrizations are first-class citizens
+    │   │   └── Removing parametrizations
+    │   ├── Profiling your PyTorch Module
+    │   │   ├── Further Reading
+    │   │   ├── Improve memory performance
+    │   │   ├── Improve time performance
+    │   │   ├── Performance debugging using Profiler
+    │   │   ├── Print profiler results
+    │   │   └── Profile the forward pass
+    │   ├── Pruning Tutorial
+    │   │   ├── Create a model
+    │   │   ├── Extending torch.nn.utils.prune with custom pruning functions
+    │   │   ├── Global pruning
+    │   │   ├── Inspect a Module
+    │   │   ├── Iterative Pruning
+    │   │   ├── Pruning a Module
+    │   │   ├── Pruning multiple parameters in a model
+    │   │   ├── Remove pruning re-parametrization
+    │   │   ├── Requirements
+    │   │   └── Serializing a pruned model
+    │   ├── PyTorch Profiler With TensorBoard
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Prepare the data and model
+    │   │       ├── 2. Use profiler to record execution events
+    │   │       ├── 3. Run the profiler
+    │   │       ├── 4. Use TensorBoard to view results and analyze model performance
+    │   │       ├── 5. Improve performance with the help of profiler
+    │   │       └── 6. Analyze performance with other advanced features
+    │   ├── Using SDPA with torch.compile
+    │   └── torch.compile Tutorial
+    │       ├── Basic Usage
+    │       ├── Comparison to TorchScript and FX Tracing
+    │       ├── Conclusion
+    │       ├── Demonstrating Speedups
+    │       └── TorchDynamo and FX Graphs
+    ├── Multimodality
+    │   └── TorchMultimodal Tutorial: Finetuning FLAVA
+    │       ├── Conclusion
+    │       ├── Installation
+    │       └── Steps
+    ├── Parallel and Distributed Training
+    │   ├── Advanced Model Training with Fully Sharded Data Parallel (FSDP)
+    │   │   ├── Backward Prefetch
+    │   │   ├── FSDP Features in This Tutorial
+    │   │   ├── Fine-tuning HF T5
+    │   │   ├── Intializing FSDP Model on Device
+    │   │   ├── Mixed Precision
+    │   │   ├── Model Checkpoint Saving, by streaming to the Rank0 CPU
+    │   │   ├── Recap on How FSDP Works
+    │   │   ├── Sharding Strategy
+    │   │   ├── Summary
+    │   │   └── Transformer Wrapping Policy
+    │   ├── Combining Distributed DataParallel with Distributed RPC Framework
+    │   ├── Customize Process Group Backends Using Cpp Extensions
+    │   │   ├── Basics
+    │   │   ├── Step 1: Implement a Subclass of ProcessGroup
+    │   │   ├── Step 2: Expose The Extension Python APIs
+    │   │   ├── Step 3: Build The Custom Extension
+    │   │   └── Step 4: Use The Extension in Application
+    │   ├── Distributed Pipeline Parallelism Using RPC
+    │   │   ├── Basics
+    │   │   ├── Step 1: Partition ResNet50 Model
+    │   │   ├── Step 2: Stitch ResNet50 Model Shards Into One Module
+    │   │   ├── Step 3: Define The Training Loop
+    │   │   └── Step 4: Launch RPC Processes
+    │   ├── Distributed Training with Uneven Inputs Using the Join Context Manager
+    │   │   ├── How Does Join Work?
+    │   │   │   ├── Join
+    │   │   │   ├── JoinHook
+    │   │   │   └── Joinable
+    │   │   ├── Making a Toy Class Work with Join
+    │   │   ├── Passing Keyword Arguments
+    │   │   ├── Requirements
+    │   │   ├── Using Join with DistributedDataParallel
+    │   │   ├── Using Join with DistributedDataParallel and ZeroRedundancyOptimizer
+    │   │   └── What is Join?
+    │   ├── Distributed and Parallel Training Tutorials
+    │   │   ├── Custom Extensions
+    │   │   ├── Learn DDP
+    │   │   ├── Learn FSDP
+    │   │   └── Learn RPC
+    │   ├── Getting Started with Distributed Data Parallel
+    │   │   ├── Basic Use Case
+    │   │   ├── Combining DDP with Model Parallelism
+    │   │   ├── Comparison between DataParallel and DistributedDataParallel
+    │   │   ├── Initialize DDP with torch.distributed.run/torchrun
+    │   │   ├── Save and Load Checkpoints
+    │   │   └── Skewed Processing Speeds
+    │   ├── Getting Started with Distributed RPC Framework
+    │   │   ├── Distributed RNN using Distributed Autograd and Distributed Optimizer
+    │   │   └── Distributed Reinforcement Learning using RPC and RRef
+    │   ├── Getting Started with Fully Sharded Data Parallel(FSDP)
+    │   │   ├── How FSDP works
+    │   │   └── How to use FSDP
+    │   ├── Implementing Batch RPC Processing Using Asynchronous Executions
+    │   │   ├── Basics
+    │   │   ├── Batch-Processing CartPole Solver
+    │   │   ├── Batch-Updating Parameter Server
+    │   │   └── Learn More
+    │   ├── Implementing a Parameter Server Using Distributed RPC Framework
+    │   ├── PyTorch Distributed Overview
+    │   │   ├── Data Parallel Training
+    │   │   │   ├── torch.distributed.elastic
+    │   │   │   ├── torch.nn.DataParallel
+    │   │   │   └── torch.nn.parallel.DistributedDataParallel
+    │   │   ├── Introduction
+    │   │   ├── PyTorch Distributed Developers
+    │   │   └── RPC-Based Distributed Training
+    │   ├── Single-Machine Model Parallel Best Practices
+    │   │   ├── Apply Model Parallel to Existing Modules
+    │   │   ├── Basic Usage
+    │   │   └── Speed Up by Pipelining Inputs
+    │   ├── Training Transformer models using Distributed Data Parallel and Pipeline Parallelism
+    │   │   ├── Define the model
+    │   │   ├── Evaluate the model with the test dataset
+    │   │   ├── Load and batch data
+    │   │   │   └── Functions to generate input and target sequence
+    │   │   ├── Model scale and Pipe initialization
+    │   │   ├── Output
+    │   │   ├── Run the model
+    │   │   └── Start multiple processes for training
+    │   ├── Training Transformer models using Pipeline Parallelism
+    │   │   ├── Define the model
+    │   │   ├── Evaluate the model with the test dataset
+    │   │   ├── Load and batch data
+    │   │   │   └── Functions to generate input and target sequence
+    │   │   ├── Model scale and Pipe initialization
+    │   │   └── Run the model
+    │   └── Writing Distributed Applications with PyTorch
+    │       ├── Advanced Topics
+    │       │   ├── Communication Backends
+    │       │   └── Initialization Methods
+    │       ├── Collective Communication
+    │       ├── Distributed Training
+    │       │   └── Our Own Ring-Allreduce
+    │       ├── Point-to-Point Communication
+    │       └── Setup
+    ├── PyTorch Recipes
+    │   ├── Automatic Mixed Precision
+    │   │   ├── A simple network
+    │   │   ├── Adding GradScaler
+    │   │   ├── Adding autocast
+    │   │   ├── Advanced topics
+    │   │   ├── All together: “Automatic Mixed Precision”
+    │   │   ├── Default Precision
+    │   │   ├── Inference/Evaluation
+    │   │   ├── Inspecting/modifying gradients (e.g., clipping)
+    │   │   ├── Saving/Resuming
+    │   │   └── Troubleshooting
+    │   │       ├── Loss is inf/NaN
+    │   │       ├── Speedup with Amp is minor
+    │   │       └── Type mismatch error (may manifest as CUDNN_STATUS_BAD_PARAM)
+    │   ├── Changing default device
+    │   ├── Defining a Neural Network in PyTorch
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Import necessary libraries for loading our data
+    │   │       ├── 2. Define and intialize the neural network
+    │   │       ├── 3. Specify how data will pass through your model
+    │   │       └── 4. [Optional] Pass data through your model to test
+    │   ├── Developing Custom PyTorch Dataloaders
+    │   │   ├── Part 1: The Dataset
+    │   │   │   ├── 1.1 Write a simple helper function to show an image
+    │   │   │   ├── 1.2 Create a dataset class
+    │   │   │   └── 1.3 Iterate through data samples
+    │   │   ├── Part 2: Data Tranformations
+    │   │   │   ├── 2.1 Create callable classes
+    │   │   │   ├── 2.2 Compose transforms and apply to a sample
+    │   │   │   └── 2.3 Iterate through the dataset
+    │   │   ├── Part 3: The Dataloader
+    │   │   └── Setup
+    │   ├── Dynamic Quantization
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Steps
+    │   │   │   ├── 1: Set Up
+    │   │   │   ├── 2: Do the Quantization
+    │   │   │   ├── 3. Look at Model Size
+    │   │   │   ├── 4. Look at Latency
+    │   │   │   └── 5: Look at Accuracy
+    │   │   └── What is dynamic quantization?
+    │   ├── How to use TensorBoard with PyTorch
+    │   │   ├── Installation
+    │   │   ├── Learn More
+    │   │   ├── Log scalars
+    │   │   ├── Run TensorBoard
+    │   │   ├── Share TensorBoard dashboards
+    │   │   └── Using TensorBoard in PyTorch
+    │   ├── Loading data in PyTorch
+    │   │   ├── 1. Import necessary libraries for loading our data
+    │   │   ├── 2. Access the data in the dataset
+    │   │   ├── 3. Loading the data
+    │   │   ├── 4. Iterate over the data
+    │   │   ├── 5. [Optional] Visualize the data
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   ├── Model Interpretability using Captum
+    │   │   ├── Before you begin
+    │   │   ├── Computing Attribution
+    │   │   ├── Final Notes
+    │   │   └── Visualizing the Results
+    │   ├── Performance Tuning Guide
+    │   │   ├── CPU specific optimizations
+    │   │   │   ├── Intel OpenMP Runtime Library (libiomp)
+    │   │   │   ├── Switch Memory allocator
+    │   │   │   ├── Train a model on CPU with PyTorch DistributedDataParallel(DDP) functionality
+    │   │   │   ├── Use oneDNN Graph with TorchScript for inference
+    │   │   │   ├── Utilize Non-Uniform Memory Access (NUMA) Controls
+    │   │   │   └── Utilize OpenMP
+    │   │   ├── Distributed optimizations
+    │   │   │   ├── Load-balance workload in a distributed setting
+    │   │   │   ├── Match the order of layers in constructors and during the execution if using DistributedDataParallel(find_unused_parameters=True)
+    │   │   │   ├── Skip unnecessary all-reduce if training with DistributedDataParallel and gradient accumulation
+    │   │   │   └── Use efficient data-parallel backend
+    │   │   ├── GPU specific optimizations
+    │   │   │   ├── Avoid unnecessary CPU-GPU synchronization
+    │   │   │   ├── Create tensors directly on the target device
+    │   │   │   ├── Enable cuDNN auto-tuner
+    │   │   │   ├── Pre-allocate memory in case of variable input length
+    │   │   │   └── Use mixed precision and AMP
+    │   │   └── General optimizations
+    │   │       ├── Checkpoint intermediate buffers
+    │   │       ├── Disable bias for convolutions directly followed by a batch norm
+    │   │       ├── Disable debugging APIs
+    │   │       ├── Disable gradient calculation for validation or inference
+    │   │       ├── Enable async data loading and augmentation
+    │   │       ├── Enable channels_last memory format for computer vision models
+    │   │       ├── Fuse pointwise operations
+    │   │       └── Use parameter.grad = None instead of model.zero_grad() or optimizer.zero_grad()
+    │   ├── PyTorch Benchmark
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Defining functions to benchmark
+    │   │       ├── 2. Benchmarking with timeit.Timer
+    │   │       ├── 3. Benchmarking with torch.utils.benchmark.Timer
+    │   │       ├── 4. Benchmarking with Blocked Autorange
+    │   │       ├── 5. Comparing benchmark results
+    │   │       ├── 6. Saving/Loading benchmark results
+    │   │       ├── 7. Generating inputs with Fuzzed Parameters
+    │   │       └── 8. Collecting instruction counts with Callgrind
+    │   ├── PyTorch Profiler
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Import all necessary libraries
+    │   │       ├── 2. Instantiate a simple Resnet model
+    │   │       ├── 3. Using profiler to analyze execution time
+    │   │       ├── 4. Using profiler to analyze memory consumption
+    │   │       ├── 5. Using tracing functionality
+    │   │       ├── 6. Examining stack traces
+    │   │       ├── 7. Visualizing data as a flamegraph
+    │   │       └── 8. Using profiler to analyze long-running jobs
+    │   ├── Pytorch Mobile Performance Recipes
+    │   │   ├── Benchmarking
+    │   │   │   ├── Android - Benchmarking Setup
+    │   │   │   └── iOS - Benchmarking Setup
+    │   │   ├── Introduction
+    │   │   └── Model preparation
+    │   │       ├── 1. Fuse operators using torch.quantization.fuse_modules
+    │   │       ├── 2. Quantize your model
+    │   │       ├── 3. Use torch.utils.mobile_optimizer
+    │   │       ├── 4. Prefer Using Channels Last Tensor memory format
+    │   │       ├── 5. Android - Reusing tensors for forward
+    │   │       └── Setup
+    │   ├── Saving and loading a general checkpoint in PyTorch
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Import necessary libraries for loading our data
+    │   │       ├── 2. Define and initialize the neural network
+    │   │       ├── 3. Initialize the optimizer
+    │   │       ├── 4. Save the general checkpoint
+    │   │       └── 5. Load the general checkpoint
+    │   ├── Saving and loading models across devices in PyTorch
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Import necessary libraries for loading our data
+    │   │       ├── 2. Define and intialize the neural network
+    │   │       ├── 3. Save on GPU, Load on CPU
+    │   │       ├── 4. Save on GPU, Load on GPU
+    │   │       ├── 5. Save on CPU, Load on GPU
+    │   │       └── 6. Saving torch.nn.DataParallel Models
+    │   ├── Saving and loading models for inference in PyTorch
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Import necessary libraries for loading our data
+    │   │       ├── 2. Define and intialize the neural network
+    │   │       ├── 3. Initialize the optimizer
+    │   │       ├── 4. Save and load the model via state_dict
+    │   │       └── 5. Save and load entire model
+    │   ├── Saving and loading multiple models in one file using PyTorch
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Import necessary libraries for loading our data
+    │   │       ├── 2. Define and initialize the neural network
+    │   │       ├── 3. Initialize the optimizer
+    │   │       ├── 4. Load multiple models
+    │   │       └── 4. Save multiple models
+    │   ├── Timer quick start
+    │   │   ├── 1. Defining a Timer
+    │   │   ├── 2. Wall time: Timer.blocked_autorange(…)
+    │   │   ├── 3. C++ snippets
+    │   │   ├── 4. Instruction counts: Timer.collect_callgrind(…)
+    │   │   ├── 5. Instruction counts: Delving deeper
+    │   │   ├── 6. A/B testing with Callgrind
+    │   │   ├── 7. Wrapping up
+    │   │   └── 8. Footnotes
+    │   ├── Warmstarting model using parameters from a different model in PyTorch
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Import necessary libraries for loading our data
+    │   │       ├── 2. Define and intialize the neural network A and B
+    │   │       ├── 3. Save model A
+    │   │       └── 4. Load into model B
+    │   ├── What is a state_dict in PyTorch
+    │   │   ├── Introduction
+    │   │   ├── Learn More
+    │   │   ├── Setup
+    │   │   └── Steps
+    │   │       ├── 1. Import necessary libraries for loading our data
+    │   │       ├── 2. Define and intialize the neural network
+    │   │       ├── 3. Initialize the optimizer
+    │   │       └── 4. Access the model and optimizer state_dict
+    │   └── Zeroing out gradients in PyTorch
+    │       ├── Introduction
+    │       ├── Learn More
+    │       ├── Setup
+    │       └── Steps
+    │           ├── 1. Import necessary libraries for loading our data
+    │           ├── 2. Load and normalize the dataset
+    │           ├── 3. Build the neural network
+    │           ├── 4. Define a Loss function and optimizer
+    │           └── 5. Zero the gradients while training the network
+    ├── Recommendation Systems
+    │   ├── Exploring TorchRec sharding
+    │   │   ├── Constructing our embedding model
+    │   │   ├── Distributed Setup
+    │   │   ├── DistributedModelParallel in multiprocessing
+    │   │   │   ├── Explore other sharding modes
+    │   │   │   ├── Multiprocessing Execution
+    │   │   │   └── Table Wise Sharding
+    │   │   └── Installation
+    │   └── Introduction to TorchRec
+    │       ├── Installation
+    │       ├── More resources
+    │       └── Overview
+    │           ├── Distributed Setup
+    │           ├── DistributedModelParallel
+    │           ├── From EmbeddingBag to EmbeddingBagCollection
+    │           ├── Putting it all together, querying our distributed model with a KJT minibatch
+    │           ├── Query vanilla nn.EmbeddingBag with input and offsets
+    │           └── Representing minibatches with KeyedJaggedTensor
+    ├── Reinforcement Learning
+    │   ├── Reinforcement Learning (DQN) Tutorial
+    │   │   ├── DQN algorithm
+    │   │   │   └── Q-network
+    │   │   ├── Replay Memory
+    │   │   └── Training
+    │   │       ├── Hyperparameters and utilities
+    │   │       └── Training loop
+    │   ├── Reinforcement Learning (PPO) with TorchRL Tutorial
+    │   │   ├── Conclusion and next steps
+    │   │   ├── Data collector
+    │   │   ├── Define Hyperparameters
+    │   │   │   ├── Data collection parameters
+    │   │   │   └── PPO parameters
+    │   │   ├── Define an environment
+    │   │   │   ├── Normalization
+    │   │   │   └── Transforms
+    │   │   ├── Loss function
+    │   │   ├── Policy
+    │   │   ├── Replay buffer
+    │   │   ├── Results
+    │   │   ├── Training loop
+    │   │   └── Value network
+    │   └── Train a Mario-playing RL Agent
+    │       ├── Agent
+    │       │   ├── Act
+    │       │   ├── Cache and Recall
+    │       │   ├── Learn
+    │       │   │   ├── Neural Network
+    │       │   │   ├── Putting it all together
+    │       │   │   ├── Save checkpoint
+    │       │   │   ├── TD Estimate & TD Target
+    │       │   │   └── Updating the model
+    │       │   └── Logging
+    │       ├── Conclusion
+    │       ├── Environment
+    │       │   ├── Initialize Environment
+    │       │   └── Preprocess Environment
+    │       ├── Let’s play!
+    │       └── RL Definitions
+    └── Text
+        ├── Fast Transformer Inference with Better Transformer
+        │   ├── Additional Information
+        │   ├── Better Transformer Features in This Tutorial
+        │   └── Summary
+        ├── Language Modeling with nn.Transformer and TorchText
+        │   ├── Define the model
+        │   ├── Evaluate the best model on the test dataset
+        │   ├── Initiate an instance
+        │   ├── Load and batch data
+        │   │   └── Functions to generate input and target sequence
+        │   └── Run the model
+        ├── Language Translation with nn.Transformer and torchtext
+        │   ├── Collation
+        │   ├── Data Sourcing and Processing
+        │   ├── References
+        │   └── Seq2Seq Network using Transformer
+        ├── NLP From Scratch: Classifying Names with a Character-Level RNN
+        │   ├── Creating the Network
+        │   ├── Evaluating the Results
+        │   │   └── Running on User Input
+        │   ├── Exercises
+        │   ├── Preparing the Data
+        │   │   └── Turning Names into Tensors
+        │   └── Training
+        │       ├── Plotting the Results
+        │       ├── Preparing for Training
+        │       └── Training the Network
+        ├── NLP From Scratch: Generating Names with a Character-Level RNN
+        │   ├── Creating the Network
+        │   ├── Exercises
+        │   ├── Preparing the Data
+        │   ├── Sampling the Network
+        │   └── Training
+        │       ├── Plotting the Losses
+        │       ├── Preparing for Training
+        │       └── Training the Network
+        └── Text classification with the torchtext library
+            ├── Access to the raw dataset iterators
+            ├── Define functions to train the model and evaluate results.
+            ├── Define the model
+            ├── Evaluate the model with test dataset
+            ├── Generate data batch and iterator
+            ├── Initiate an instance
+            ├── Prepare data processing pipelines
+            ├── Split the dataset and run the model
+            └── Test on a random news

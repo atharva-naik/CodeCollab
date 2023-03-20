@@ -61,7 +61,8 @@ class KGPathsIndex:
 if __name__ == "__main__":
     # target_module = "numpy" # "pandas_toms_blog" # "seaborn"
     os.makedirs("./scrape_tutorials/KG_paths", exist_ok=True)
-    for target_module in tqdm(["numpy", "pandas_toms_blog", "seaborn", "torch"]_:
+    module_list = ["numpy", "pandas_toms_blog", "seaborn", "torch"]
+    for target_module in tqdm(module_list):
         kg_paths = KGPathsIndex(f"./scrape_tutorials/KGs/{target_module}.json")
         kg_paths_save_path = f"./scrape_tutorials/KG_paths/{target_module}.json"
         kg_paths.save(kg_paths_save_path)
