@@ -195,6 +195,18 @@ def process_text(text: str, cell_type: str="markdown"):
 
     return text.strip()
 
+def process_cell_text(text: str, cell_type: str="markdown"):
+    """remove residual html tags, &amp; etc. 
+    e.g.: `Reshaping &amp; Tidy Data<blockquote>` to `Reshaping & Tidy Data`"""
+    text = text.replace("&amp;", "&").replace("<blockquote>", "").replace("<cite>","").replace("</cite>","").replace("<em>","").replace("</em>","").replace("<dt>","").replace("</dt>","").replace("<dd>","").replace("</dd>","")
+    text = re.sub("<dl.*?>", "", text)#.split("\n")[0].strip()
+    if cell_type == "markdown":
+        text = text.replace("&gt;", ">")
+    elif cell_type == "code":
+        text = text.replace("&gt;", "")
+
+    return text.strip()
+
 # parse SciPy tutorials.
 class SciPyParser:
     def __init__(self, base_urls: Dict[str, str]=SOURCE_TO_BASE_URLS['scipy']):
@@ -219,8 +231,10 @@ class SciPyParser:
             try: 
                 nb_json = extract_notebook_hierarchy_from_seq(
                     parse_soup_stream(simplified_soup)
-                )[0].serialize2()[""]
-                self.base_pages[name] = nb_json
+                )[0].serialize2()[""][0]
+                assert len(nb_json) == 1 and isinstance(nb_json, dict)
+                for key, value in nb_json.items(): break
+                self.base_pages[key] = value
             except Exception as e:
                 print(e)
 

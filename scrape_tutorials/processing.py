@@ -6,7 +6,7 @@ import json
 from typing import *
 from tqdm import tqdm
 from collections import defaultdict
-from scrape_tutorials.parsers import process_text
+from scrape_tutorials.parsers import process_text, process_cell_text
 # def process_text(text: str):
 #     """remove residual html tags, &amp; etc. 
 #     e.g.: `Reshaping &amp; Tidy Data<blockquote>` to `Reshaping & Tidy Data`"""
@@ -52,7 +52,12 @@ class KGPathsIndex:
         for path in self.KG_paths:
             leaf = path[-1]
             task_decomp = "->".join([process_text(ele) for ele in path[:-1]])
-            task_decomp_keyed_dict[task_decomp].append(leaf)
+            cell_type = leaf[1]
+            content = process_cell_text(leaf[0], cell_type)
+            # content = leaf[0]
+            task_decomp_keyed_dict[task_decomp].append((
+                content, cell_type,
+            ))
         task_decomp_keyed_dict = dict(task_decomp_keyed_dict)
         with open(save_path, "w") as f:
             json.dump(task_decomp_keyed_dict, f, indent=4)
@@ -61,7 +66,7 @@ class KGPathsIndex:
 if __name__ == "__main__":
     # target_module = "numpy" # "pandas_toms_blog" # "seaborn"
     os.makedirs("./scrape_tutorials/KG_paths", exist_ok=True)
-    module_list = ["numpy", "pandas_toms_blog", "seaborn", "torch"]
+    module_list = ["scipy"] #["numpy", "pandas_toms_blog", "seaborn", "torch", "scipy"]
     for target_module in tqdm(module_list):
         kg_paths = KGPathsIndex(f"./scrape_tutorials/KGs/{target_module}.json")
         kg_paths_save_path = f"./scrape_tutorials/KG_paths/{target_module}.json"
