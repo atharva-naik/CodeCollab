@@ -11,18 +11,6 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "with more to come.\nUsing the Yesno dataset from torchaudio.datasets.YESNO, we will\ndemonstrate how to effectively and efficiently load data from a PyTorch\nDataset into a PyTorch DataLoader.",
             "markdown"
         ]
@@ -147,27 +135,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -285,27 +253,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -403,27 +351,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -611,10 +539,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->PyTorch Recipes->Model Interpretability using Captum": [
@@ -704,18 +628,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -1071,18 +983,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->PyTorch Recipes->Saving and loading a general checkpoint in PyTorch": [
@@ -1211,18 +1111,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->PyTorch Recipes->Saving and loading models for inference in PyTorch": [
@@ -1345,27 +1233,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -1491,18 +1359,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->PyTorch Recipes->Warmstarting model using parameters from a different model in PyTorch": [
@@ -1595,27 +1451,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -1743,27 +1579,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -2273,18 +2089,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->PyTorch Recipes->Changing default device": [
@@ -2338,18 +2142,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  1.718 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -2500,18 +2292,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -2901,14 +2681,6 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "DistributedDataParallel offers much better performance and scaling to\nmultiple-GPUs. For more information refer to the\n\nfrom PyTorch documentation.",
             "markdown"
         ]
@@ -2949,18 +2721,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->PyTorch Recipes->Timer quick start": [
@@ -2974,34 +2734,6 @@
         ],
         [
             "</blockquote>\n<dl class=\"simple\">\n<dt><strong>Contents:</strong></dt><dd>",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -3178,18 +2910,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -3515,10 +3235,6 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
             " tutorial",
             "markdown"
         ],
@@ -3528,18 +3244,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -3833,23 +3537,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -3896,18 +3584,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -4064,18 +3740,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  51.560 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -4307,18 +3971,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.052 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Introduction to PyTorch->Datasets & DataLoaders": [
@@ -4457,23 +4109,7 @@
     ],
     "torch->Introduction to PyTorch->Datasets & DataLoaders->Further Reading": [
         [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  6.518 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -4517,23 +4153,7 @@
     ],
     "torch->Introduction to PyTorch->Transforms->Lambda Transforms->Further Reading": [
         [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  5.203 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -4703,23 +4323,7 @@
     ],
     "torch->Introduction to PyTorch->Build the Neural Network->Further Reading": [
         [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.053 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -4909,23 +4513,7 @@
     ],
     "torch->Introduction to PyTorch->Automatic Differentiation with torch.autograd->Optional Reading: Tensor Gradients and Jacobian Products->Further Reading": [
         [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.054 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -5057,31 +4645,7 @@
     ],
     "torch->Introduction to PyTorch->Optimizing Model Parameters->Further Reading": [
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 1 minutes  43.533 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -5157,23 +4721,7 @@
     ],
     "torch->Introduction to PyTorch->Save and Load the Model->Related Tutorials": [
         [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  20.151 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -5286,66 +4834,6 @@
         ],
         [
             "Table of Contents",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -5485,38 +4973,6 @@
         [
             "# -*- coding: utf-8 -*-\nimport random\nimport torch\nimport math\n\n\nclass DynamicNet(torch.nn.Module):\n    def __init__(self):\n        \"\"\"\n        In the constructor we instantiate five parameters and assign them as members.\n        \"\"\"\n        super().__init__()\n        self.a = torch.nn.Parameter(torch.randn(()))\n        self.b = torch.nn.Parameter(torch.randn(()))\n        self.c = torch.nn.Parameter(torch.randn(()))\n        self.d = torch.nn.Parameter(torch.randn(()))\n        self.e = torch.nn.Parameter(torch.randn(()))\n\n    def forward(self, x):\n        \"\"\"\n        For the forward pass of the model, we randomly choose either 4, 5\n        and reuse the e parameter to compute the contribution of these orders.\n\n        Since each forward pass builds a dynamic computation graph, we can use normal\n        Python control-flow operators like loops or conditional statements when\n        defining the forward pass of the model.\n\n        Here we also see that it is perfectly safe to reuse the same parameter many\n        times when defining a computational graph.\n        \"\"\"\n        y = self.a + self.b * x + self.c * x ** 2 + self.d * x ** 3\n        for exp in range(4, random.randint(4, 6)):\n            y = y + self.e * x ** exp\n        return y\n\n    def string(self):\n        \"\"\"\n        Just like any class in Python, you can also define custom method on PyTorch modules\n        \"\"\"\n        return f'y = {self.a.item()} + {self.b.item()} x + {self.c.item()} x^2 + {self.d.item()} x^3 + {self.e.item()} x^4 ? + {self.e.item()} x^5 ?'\n\n\n# Create Tensors to hold input and outputs.\nx = torch.linspace(-math.pi, math.pi, 2000)\ny = torch.sin(x)\n\n# Construct our model by instantiating the class defined above\nmodel = DynamicNet()\n\n# Construct our loss function and an Optimizer. Training this strange model with\n# vanilla stochastic gradient descent is tough, so we use momentum\ncriterion = torch.nn.MSELoss(reduction='sum')\noptimizer = torch.optim.SGD(model.parameters(), lr=1e-8, momentum=0.9)\nfor t in range(30000):\n    # Forward pass: Compute predicted y by passing x to the model\n    y_pred = model(x)\n\n    # Compute and print loss\n    loss = criterion(y_pred, y)\n    if t % 2000 == 1999:\n        print(t, loss.item())\n\n    # Zero gradients, perform a backward pass, and update the weights.\n    optimizer.zero_grad()\n    loss.backward()\n    optimizer.step()\n\nprint(f'Result: {model.string()}')",
             "code"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Learning PyTorch->Learning PyTorch with Examples->": [
@@ -6263,18 +5719,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  39.874 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Learning PyTorch->Visualizing Models, Data, and Training with TensorBoard": [
@@ -6897,18 +6341,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 2 minutes  0.817 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Image and Video->Adversarial Example Generation": [
@@ -7069,18 +6501,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 2 minutes  38.625 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Image and Video->Spatial Transformer Networks Tutorial": [
@@ -7182,18 +6602,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 3 minutes  27.639 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -7391,31 +6799,7 @@
     ],
     "torch->Image and Video->Optimizing Vision Transformer Model for Deployment->Comparing Inference Speed->Learn More": [
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  26.562 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -7616,18 +7000,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 3 minutes  41.329 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -8213,18 +7585,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 2 minutes  6.017 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Text->NLP From Scratch: Generating Names with a Character-Level RNN": [
@@ -8497,18 +7857,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 4 minutes  35.803 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Text->Text classification with the torchtext library": [
@@ -8689,18 +8037,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 2 minutes  1.494 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Text->Language Translation with nn.Transformer and torchtext": [
@@ -8794,18 +8130,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -8995,18 +8319,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 9 minutes  58.307 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Reinforcement Learning->Reinforcement Learning (PPO) with TorchRL Tutorial": [
@@ -9052,30 +8364,6 @@
         ],
         [
             "We will cover six crucial components of TorchRL:",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -9521,18 +8809,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 5 minutes  59.034 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Reinforcement Learning->Train a Mario-playing RL Agent": [
@@ -9785,18 +9061,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  31.286 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Deploying PyTorch Models in Production->Deploying PyTorch in Python via a REST API with Flask": [
@@ -10038,18 +9302,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -10406,18 +9658,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  1.120 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -10815,18 +10055,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Deploying PyTorch Models in Production->Real Time Inference on Raspberry Pi 4 (30 fps!)": [
@@ -10846,14 +10074,6 @@
     "torch->Deploying PyTorch Models in Production->Real Time Inference on Raspberry Pi 4 (30 fps!)->Prerequisites": [
         [
             "To follow this tutorial you\u2019ll need a Raspberry Pi 4, a camera for it and all\nthe other standard accessories.",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -11191,18 +10411,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Code Transforms with FX->(beta) Building a Simple CPU Performance Profiler with FX": [
@@ -11348,18 +10556,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.687 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -11661,18 +10857,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  1.886 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Frontend APIs->Forward-mode Automatic Differentiation (Beta)": [
@@ -11778,18 +10962,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.161 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -12095,18 +11267,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  11.558 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Frontend APIs->Model ensembling": [
@@ -12246,18 +11406,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.843 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -12416,18 +11564,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  8.425 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -13888,18 +13024,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  38.242 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -15697,31 +14821,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -16091,27 +15191,7 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -16357,18 +15437,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 9 minutes  25.490 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Model Optimization->Optimizing Vision Transformer Model for Deployment": [
@@ -16565,31 +15633,7 @@
     ],
     "torch->Model Optimization->Optimizing Vision Transformer Model for Deployment->Comparing Inference Speed->Learn More": [
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "<strong>Total running time of the script:</strong> ( 0 minutes  26.562 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -16884,18 +15928,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -17239,18 +16271,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  2.603 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Model Optimization->(beta) Dynamic Quantization on an LSTM Word Language Model": [
@@ -17400,18 +16420,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 5 minutes  23.575 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -18611,38 +17619,6 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "And stay tuned for a follow-up posts on optimized kernels on CPU via  and advanced launcher configurations such as memory allocator.",
             "markdown"
         ]
@@ -19037,20 +18013,7 @@
             "markdown"
         ]
     ],
-    "torch->Model Optimization->Grokking PyTorch Intel CPU performance from first principles (Part 2)->Related Readings": [
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ]
-    ],
+    "torch->Model Optimization->Grokking PyTorch Intel CPU performance from first principles (Part 2)->Related Readings": [],
     "torch->Model Optimization->Grokking PyTorch Intel CPU performance from first principles (Part 2)->Acknowledgement": [
         [
             "We would like to thank Ashok Emani (Intel) and Jiong Gong (Intel) for their immense guidance and support, and thorough feedback and reviews throughout many steps of this tutorial. We would also like to thank Hamid Shojanazeri (Meta) and Li Ning (AWS) for their helpful feedback in code review and the tutorial.",
@@ -19345,18 +18308,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  19.393 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Model Optimization->Multi-Objective NAS with Ax": [
@@ -19584,18 +18535,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -20025,18 +18964,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 1 minutes  2.322 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Model Optimization->(Beta) Implementing High-Performance Transformers with Scaled Dot Product Attention (SDPA)": [
@@ -20060,14 +18987,6 @@
     "torch->Model Optimization->(Beta) Implementing High-Performance Transformers with Scaled Dot Product Attention (SDPA)->Fused implementations": [
         [
             "For CUDA tensor inputs, the function will dispatch into one of the following\nimplementations:",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -20181,18 +19100,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  18.529 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Parallel and Distributed Training->Distributed and Parallel Training Tutorials": [
@@ -20202,22 +19109,6 @@
         ],
         [
             "There are a few ways you can perform distributed training in\nPyTorch with each method having their advantages in certain use cases:",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -20591,18 +19482,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 3 minutes  50.597 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Parallel and Distributed Training->Getting Started with Distributed Data Parallel": [
@@ -20624,18 +19503,6 @@
         ],
         [
             "Prerequisites:",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -20786,10 +19653,6 @@
         ],
         [
             "Prerequisites:",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -21803,22 +20666,6 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "This tutorial demonstrates how to implement a custom ProcessGroup\nbackend and plug that into\n using\n. This is helpful when you need a specialized software\nstack for your hardware, or when you would like to experiment with new\ncollective communication algorithms.",
             "markdown"
         ]
@@ -21900,14 +20747,6 @@
         ],
         [
             "Prerequisites:",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -22078,14 +20917,6 @@
         ],
         [
             "Prerequisites:",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -22263,18 +21094,6 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             "RRef helper functions:\n,\n, and",
             "markdown"
         ],
@@ -22372,22 +21191,6 @@
         ],
         [
             "Prerequisites:",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -22525,24 +21328,7 @@
             "markdown"
         ]
     ],
-    "torch->Parallel and Distributed Training->Implementing Batch RPC Processing Using Asynchronous Executions->Learn More": [
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ]
-    ],
+    "torch->Parallel and Distributed Training->Implementing Batch RPC Processing Using Asynchronous Executions->Learn More": [],
     "torch->Parallel and Distributed Training->Combining Distributed DataParallel with Distributed RPC Framework": [
         [
             "<strong>Authors</strong>:  and ",
@@ -22723,10 +21509,6 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
             "</blockquote>",
             "markdown"
         ]
@@ -22849,18 +21631,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 5 minutes  11.429 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Parallel and Distributed Training->Training Transformer models using Distributed Data Parallel and Pipeline Parallelism": [
@@ -22874,14 +21644,6 @@
         ],
         [
             "Prerequisites:\n<blockquote>",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -23003,18 +21765,6 @@
         [
             "<strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "torch->Parallel and Distributed Training->Distributed Training with Uneven Inputs Using the Join Context Manager": [
@@ -23070,14 +21820,6 @@
     "torch->Parallel and Distributed Training->Distributed Training with Uneven Inputs Using the Join Context Manager->Requirements": [
         [
             "PyTorch 1.10+",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -23503,20 +22245,7 @@
             "markdown"
         ]
     ],
-    "torch->Mobile->Image Segmentation DeepLabV3 on iOS->Learn More": [
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ]
-    ],
+    "torch->Mobile->Image Segmentation DeepLabV3 on iOS->Learn More": [],
     "torch->Mobile->Image Segmentation DeepLabV3 on Android": [
         [
             "<strong>Author</strong>: ",
@@ -23733,20 +22462,7 @@
             "markdown"
         ]
     ],
-    "torch->Mobile->Image Segmentation DeepLabV3 on Android->Learn More": [
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ]
-    ],
+    "torch->Mobile->Image Segmentation DeepLabV3 on Android->Learn More": [],
     "torch->Recommendation Systems->Introduction to TorchRec": [
         [
             "Tip",
@@ -24200,18 +22916,6 @@
         ],
         [
             "<strong>Total running time of the script:</strong> ( 4 minutes  12.837 seconds)",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -24751,28 +23455,7 @@
             "markdown"
         ]
     ],
-    "numpy->NumPy Features->Linear algebra on n-dimensional arrays->Further reading": [
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ]
-    ],
+    "numpy->NumPy Features->Linear algebra on n-dimensional arrays->Further reading": [],
     "numpy->NumPy Features->Saving and sharing your NumPy arrays->What you\u2019ll learn": [
         [
             "You\u2019ll save your NumPy arrays as zipped files and human-readable\ncomma-delimited files i.e. *.csv. You will also learn to load both of these\nfile types back into NumPy workspaces.",
@@ -24828,42 +23511,6 @@
         ],
         [
             "In this tutorial, you will use the following Python, IPython magic, and NumPy functions:",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -25453,10 +24100,6 @@
         [
             " vs. ",
             "markdown"
-        ],
-        [
-            "",
-            "markdown"
         ]
     ],
     "numpy->NumPy Features->Masked Arrays->Further reading->Reference": [
@@ -25518,10 +24161,6 @@
         ],
         [
             "NumPy",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ],
         [
@@ -26057,19 +24696,7 @@
     ],
     "numpy->NumPy Applications->Determining Moore\u2019s Law with real data in NumPy->References": [
         [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
             ".",
-            "markdown"
-        ],
-        [
-            "",
             "markdown"
         ]
     ],
@@ -27223,10 +25850,6 @@
             "markdown"
         ],
         [
-            "",
-            "markdown"
-        ],
-        [
             "imported with the following comands:",
             "markdown"
         ],
@@ -27551,16 +26174,7 @@
             "markdown"
         ]
     ],
-    "numpy->NumPy Applications->Determining Static Equilibrium in NumPy->Wrapping up->References": [
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ]
-    ],
+    "numpy->NumPy Applications->Determining Static Equilibrium in NumPy->Wrapping up->References": [],
     "numpy->NumPy Applications->Plotting Fractals": [
         [
             "<img alt=\"Fractal picture\" src=\"../_images/fractal.png\"/>",
@@ -27612,10 +26226,6 @@
         ]
     ],
     "numpy->NumPy Applications->Plotting Fractals->What you\u2019ll need": [
-        [
-            "",
-            "markdown"
-        ],
         [
             "make_axis_locatable function from mpl_toolkits API",
             "markdown"
@@ -28133,28 +26743,7 @@
             "markdown"
         ]
     ],
-    "numpy->NumPy Applications->Plotting Fractals->Further reading": [
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ],
-        [
-            "",
-            "markdown"
-        ]
-    ],
+    "numpy->NumPy Applications->Plotting Fractals->Further reading": [],
     "numpy->NumPy Applications->Analyzing the impact of the lockdown on air quality in Delhi, India": [
         [
             "<img alt=\"A grid showing the India Gate in smog above and clear air below\" src=\"../_images/11-delhi-aqi.jpg\"/>",
@@ -30713,10 +29302,6 @@
             "code"
         ],
         [
-            "",
-            "code"
-        ],
-        [
             "weather.loc['DSM']",
             "code"
         ],
@@ -32569,10 +31154,6 @@
         [
             "As always, .",
             "markdown"
-        ],
-        [
-            "",
-            "code"
         ]
     ],
     "pandas_toms_blog->Scaling": [

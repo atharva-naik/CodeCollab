@@ -82,13 +82,24 @@ class ModuleJoiner:
                 data[module+"->"+key] = value
         self.data = data
 
+def prune_empty_nodes(KG: dict):
+    pruned_KG = {}
+    for path_key, cells in KG.items():
+        pruned_KG[path_key] = []
+        for cell in cells:
+            if cell[0].strip() != "":
+                pruned_KG[path_key].append(cell)
+    
+    return pruned_KG
+
 # main
 if __name__ == "__main__":
-    data = ModuleJoiner().data
+    data = ModuleJoiner().data # this is basically the unified, unpruned KG.
     with open("./scrape_tutorials/unified_KG_paths.json", "w") as f:
         json.dump(list(data.keys()), f, indent=4)
     with open("./scrape_tutorials/unified_KG.json", "w") as f:
-        json.dump(data, f, indent=4)
+        pruned_KG = prune_empty_nodes(data)
+        json.dump(pruned_KG, f, indent=4)
     # print(data)
     visualizer = TreeLibTreeBuilderFromData(data)
     visualizer.build()
