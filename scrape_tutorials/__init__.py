@@ -215,5 +215,21 @@ SOURCE_TO_BASE_URLS = {
             "Test Your Python Apps": "https://realpython.com/learning-paths/test-your-python-apps/",
             "Write More Pythonic Code": "https://realpython.com/learning-paths/writing-pythonic-code/"
         }
-    }
+    },
+    "scipy": {
+        "Introduction": "https://docs.scipy.org/doc/scipy/tutorial/general.html",
+        "Special functions (scipy.special)": "https://docs.scipy.org/doc/scipy/tutorial/special.html",
+        "Integration (scipy.integrate)": "https://docs.scipy.org/doc/scipy/tutorial/integrate.html",
+        "Optimization (scipy.optimize)": "https://docs.scipy.org/doc/scipy/tutorial/optimize.html",
+        "Interpolation (scipy.interpolate)": "https://docs.scipy.org/doc/scipy/tutorial/interpolate.html",
+        "Fourier Transforms (scipy.fft)": "https://docs.scipy.org/doc/scipy/tutorial/fft.html",
+        "Signal Processing (scipy.signal)": "https://docs.scipy.org/doc/scipy/tutorial/signal.html",
+        "Linear Algebra (scipy.linalg)": "https://docs.scipy.org/doc/scipy/tutorial/linalg.html",
+        "Sparse eigenvalue problems with ARPACK": "https://docs.scipy.org/doc/scipy/tutorial/arpack.html",
+        "Compressed Sparse Graph Routines (scipy.sparse.csgraph)": "https://docs.scipy.org/doc/scipy/tutorial/csgraph.html",
+        "Spatial data structures and algorithms (scipy.spatial)": "https://docs.scipy.org/doc/scipy/tutorial/spatial.html",
+        "Statistics (scipy.stats)": "https://docs.scipy.org/doc/scipy/tutorial/stats.html",
+        "Multidimensional image processing (scipy.ndimage)": "https://docs.scipy.org/doc/scipy/tutorial/ndimage.html",
+        "File IO (scipy.io)": "https://docs.scipy.org/doc/scipy/tutorial/io.html"
+    } 
 }

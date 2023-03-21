@@ -23,11 +23,16 @@ def simplify_soup(soup, target: str="seaborn"):
         soup = soup.html.body.find("div", {"class": "post-content"})
     elif target == "torch":
         soup = soup.html.body.find("div", {"class": "main-content"})
+    elif target == "realpython":
+        pass
+    elif target == "scipy":
+        soup = soup.html.body.select("article.bd-article")[0]
         # if not try_soup:
             # try_soup = soup.html.body.find("div", {"class": ""})
         # soup = try_soup
         # assert soup is not None, f"\x1b[32;1mmain-content\x1b[0m not found"
     for hr in soup.select("hr"): hr.unwrap()
+    for nav in soup.select("nav"): nav.unwrap()
     for span in soup.select('span'): span.unwrap()
     for code in soup.select('code'): code.unwrap()
     for div in soup.select('div'): div.unwrap()
@@ -37,7 +42,10 @@ def simplify_soup(soup, target: str="seaborn"):
     for table in soup.select('table'): table.extract()
     for style in soup.select('style'): style.extract()
     for section in soup.select("section"): section.unwrap()
-    for a in soup.select('a'): a.extract()
+    if target != "scipy":
+        for a in soup.select('a'): a.extract()
+    else:
+        for a in soup.select('a'): a.unwrap()
     for pre in soup.select("pre"):
         del pre.attrs
     for p in soup.select("p"): 
@@ -56,8 +64,9 @@ def simplify_soup(soup, target: str="seaborn"):
     elif target == "pandas": final = soup
     elif target == "numpy":
         final = soup.html.body.find("article", {"class": "bd-article"})
-    elif target == "torch":
-        final = soup
+    elif target == "torch": final = soup
+    elif target == "realpython": final = soup
+    elif target == "scipy": final = soup
 
     return final
 
@@ -173,13 +182,47 @@ def parse_soup_stream(soup_str: str, tag_mapping: Dict[str, Tuple[str, str]]={
     
     return cells
 
-def process_text(text: str):
+def process_text(text: str, cell_type: str="markdown"):
     """remove residual html tags, &amp; etc. 
     e.g.: `Reshaping &amp; Tidy Data<blockquote>` to `Reshaping & Tidy Data`"""
     text = text.replace("&amp;", "&").replace("<blockquote>", "").replace("<cite>","").replace("</cite>","").replace("<em>","").replace("</em>","").replace("<dt>","").replace("</dt>","").replace("<dd>","").replace("</dd>","")
     text = re.sub("<dl.*?>", "", text).split("\n")[0].strip()
-    
-    return text
+    if cell_type == "markdown":
+        text = text.replace("&gt;", ">")
+    elif cell_type == "code":
+        text = text.replace("&gt;", "")
+    text = text.strip("#") # remove trailing (or beginning # signs).
+
+    return text.strip()
+
+# parse SciPy tutorials.
+class SciPyParser:
+    def __init__(self, base_urls: Dict[str, str]=SOURCE_TO_BASE_URLS['scipy']):
+        self.base_urls = base_urls
+        self.base_soups = {}
+        self.base_pages = {}
+
+    def download(self):
+        for name, url in tqdm(self.base_urls.items()):
+            self.base_soups[name] = simplify_soup(
+                bs4.BeautifulSoup(
+                    requests.get(url).text,
+                    features="lxml",
+                ),
+                target="scipy",
+            )
+            simplified_soup = str(self.base_soups[name])
+            simplified_soup = re.sub("<div.*?>", "", simplified_soup)
+            simplified_soup = re.sub("</div>", "", simplified_soup)
+            simplified_soup = re.sub("<article.*?>", "", simplified_soup)
+            simplified_soup = re.sub("</article>", "", simplified_soup)
+            try: 
+                nb_json = extract_notebook_hierarchy_from_seq(
+                    parse_soup_stream(simplified_soup)
+                )[0].serialize2()[""]
+                self.base_pages[name] = nb_json
+            except Exception as e:
+                print(e)
 
 # gather RealPython resources:
 class RealPythonScraper:
@@ -191,6 +234,7 @@ class RealPythonScraper:
         # scrape learning path base pages/topic urls.
         self.learning_paths_save_path = "./scrape_tutorials/realpython_learning_paths.json"
         self.learning_paths_with_courses_path = "./scrape_tutorials/realpython_learning_paths_with_courses.json"
+        self.learning_paths_all_path = "./scrape_tutorials/realpython_learning_paths_all.json" # excludes interactive quizzes.
         if os.path.exists(self.learning_paths_save_path):
             self.learning_paths_graph = json.load(open(self.learning_paths_save_path))
         else:
@@ -218,17 +262,52 @@ class RealPythonScraper:
         if os.path.exists(self.learning_paths_with_courses_path):
             self.learning_paths_graph = json.load(open(self.learning_paths_with_courses_path))
         else:
-            # iterate over the resource blocks.
+            # iterate over learning paths.
             for name, lp_resources in self.learning_paths_graph.items():
                 # iterate over resource blocks:
                 for i, rblock in tqdm(enumerate(lp_resources["resources"]), 
                                       total=len(lp_resources["resources"]), 
                                       desc=f"lpath:{name}"):
+                    # download and parse course decompositions.
                     if rblock["type"] == "Course":
                         course_url = rblock["url"]
                         self.learning_paths_graph[name]["resources"][i]["decomposition"] = self.scrape_course(course_url)
             with open(self.learning_paths_with_courses_path, "w") as f:
                 json.dump(self.learning_paths_graph, f, indent=4)
+        if os.path.exists(self.learning_paths_all_path):
+            self.learning_paths_graph = json.load(open(self.learning_paths_all_path))
+        else:
+            # iterate over learning paths.
+            for name, lp_resources in self.learning_paths_graph.items():
+                # iterate over resource blocks:
+                for i, rblock in tqdm(enumerate(lp_resources["resources"]), 
+                                      total=len(lp_resources["resources"]), 
+                                      desc=f"lpath:{name}"):
+                    if rblock["type"] == "Tutorial":
+                        tut_url = rblock["url"]
+                        self.learning_paths_graph[name]["resources"][i]["content"] = self.scrape_tutorial(tut_url)
+            with open(self.learning_paths_all_path, "w") as f:
+                json.dump(self.learning_paths_graph, f, indent=4)
+                
+    def scrape_tutorial(self, url: str):
+        simple_soup = simplify_soup(bs4.BeautifulSoup(
+            requests.get(url).text,
+            features="lxml",
+        ), target="torch")
+
+        simplified_soup = str(simple_soup)
+        simplified_soup = re.sub("<div.*?>", "", simplified_soup)
+        simplified_soup = re.sub("</div>", "", simplified_soup)
+        simplified_soup = re.sub("<article.*?>", "", simplified_soup)
+        simplified_soup = re.sub("</article>", "", simplified_soup)
+        try: 
+            nb_json = extract_notebook_hierarchy_from_seq(
+                parse_soup_stream(simplified_soup)
+            )[0].serialize2()[""]
+            return nb_json
+        except Exception as e:
+            print(e)
+            return {}
 
     def scrape_course(self, url: str):
         course_decomp = {}
@@ -474,8 +553,21 @@ def scrape_torch():
     with open("./scrape_tutorials/KGs/torch.json", "w") as f:
         json.dump(final_KG_json, f, indent=4)
 
+def scrape_scipy():
+    """scrape SciPy tutorials"""
+    scipy_parser = SciPyParser()
+    scipy_parser.download()
+    os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
+    final_KG_json = {}
+    for topic, page in scipy_parser.base_pages.items():
+        final_KG_json[topic] = page
+    with open("./scrape_tutorials/KGs/scipy.json", "w") as f:
+        json.dump(final_KG_json, f, indent=4)
+
 # main.
 if __name__ == "__main__":
     # scrape_seaborn()        
     # scrape_toms_blog_pandas()
-    scrape_torch()
+    # scrape_torch()
+    # scrape_scipy()
+    pass
