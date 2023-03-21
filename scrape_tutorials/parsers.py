@@ -181,6 +181,40 @@ def process_text(text: str):
     
     return text
 
+# gather RealPython resources:
+class RealPythonScraper:
+    def __init__(self, base_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["realpython"]):
+        self.base_urls = base_urls
+        self.learning_paths = base_urls["Python Learning Paths"]
+        self.learning_paths_graph = {}
+        self.learning_path_soups = {}
+        # scrape learning path base pages/topic urls.
+        self.learning_paths_save_path = "./scrape_tutorials/realpython_learning_paths.json"
+        if os.path.exists(self.learning_paths_save_path):
+            self.learning_paths_graph = json.load(open(self.learning_paths_save_path))
+        else:
+            for name, url in tqdm(self.learning_paths.items()):
+                soup = bs4.BeautifulSoup(requests.get(url).text, features="lxml")
+                # body = soup.find("p", {"class": "article-body page-body"})
+                self.learning_path_soups[name] = soup 
+                skills = soup.select("p", class_="text-center.text-muted.mt-0.mb-3")[0].text
+                skills = skills.split("Skills:")[-1].strip()
+                skills = [skill.strip() for skill in skills.split(",")]
+                resource_divs = soup.select("div.container.border.rounded")
+                resources = [
+                    {
+                        "title": div.select("a.stretched-link")[1].text,
+                        "type": div.select("p.small.text-muted.mb-0")[0].text, 
+                        "description": div.select("p.small.text-muted.mb-0")[1].text,
+                        "url": os.path.join("https://realpython.com/", div.select("a.stretched-link")[0].attrs['href']),
+                    } for div in resource_divs]
+                self.learning_paths_graph[name] = {
+                    "skills": skills,
+                    "resources": resources,
+                } 
+            with open(self.learning_paths_save_path, "w") as f:
+                json.dump(self.learning_paths_graph, f, indent=4)
+
 # gather PyTorch tutorials.
 class PyTorchTutorialsParser:
     def __init__(self, tut_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["torch"]):

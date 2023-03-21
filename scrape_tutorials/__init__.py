@@ -189,4 +189,31 @@ SOURCE_TO_BASE_URLS = {
             "TorchMultimodal Tutorial: Finetuning FLAVA": "https://pytorch.org/tutorials/beginner/flava_finetuning_tutorial.html",
         }
     },
+    "realpython": {
+        "Python Learning Paths": {
+            "Ace Your Python Coding Interview": "https://realpython.com/learning-paths/python-interview/",
+            "Become a Python Web Developer": "https://realpython.com/learning-paths/become-python-web-developer/",
+            "Data Collection & Storage": "https://realpython.com/learning-paths/data-collection-storage/",
+            "Data Science With Python Core Skills": "https://realpython.com/learning-paths/data-science-python-core-skills/",
+            "Data Visualization With Python": "https://realpython.com/learning-paths/data-visualization-python/",
+            "DevOps With Python": "https://realpython.com/learning-paths/python-devops/",
+            "Django for Web Development": "https://realpython.com/learning-paths/django-web-development/",
+            "Flask by Example": "https://realpython.com/learning-paths/flask-by-example/",
+            "Functional Programming With Python": "https://realpython.com/learning-paths/functional-programming/",
+            "GUI Programming With PyQt": "https://realpython.com/learning-paths/pyqt-gui-programming/",
+            "Introduction to Python": "https://realpython.com/learning-paths/python3-introduction/",
+            "Machine Learning With Python": "https://realpython.com/learning-paths/machine-learning-python/",
+            "Math for Data Science": "https://realpython.com/learning-paths/math-data-science/",
+            "Object-Oriented Programming (OOP) With Python": "https://realpython.com/learning-paths/object-oriented-programming-oop-python/",
+            "Pandas for Data Science": "https://realpython.com/learning-paths/pandas-data-science/",
+            "Perfect Your Python Development Setup": "https://realpython.com/learning-paths/perfect-your-python-development-setup/",
+            "Python Basics Book": "https://realpython.com/learning-paths/python-basics-book/",
+            "Python Basics: Introduction to Python": "https://realpython.com/learning-paths/python-basics/",
+            "Python Concurrency & Parallel Programming": "https://realpython.com/learning-paths/python-concurrency-parallel-programming/",
+            "Python GUI Programming": "https://realpython.com/learning-paths/python-gui-programming/",
+            "Python Web Scraping": "https://realpython.com/learning-paths/python-web-scraping/",
+            "Test Your Python Apps": "https://realpython.com/learning-paths/test-your-python-apps/",
+            "Write More Pythonic Code": "https://realpython.com/learning-paths/writing-pythonic-code/"
+        }
+    }
 }

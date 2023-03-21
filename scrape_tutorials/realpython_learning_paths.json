@@ -1,0 +1,2111 @@
+{
+    "Ace Your Python Coding Interview": {
+        "skills": [
+            "Python",
+            "Coding Problems",
+            "Algorithms"
+        ],
+        "resources": [
+            {
+                "title": "Python Coding Interviews: Tips & Best Practices",
+                "type": "Course",
+                "description": "Learn how to take your Python coding interview skills to the next level and use Python's built-in functions and modules to solve problems faster and more easily.",
+                "url": "/courses/python-coding-interviews-tips-best-practices/"
+            },
+            {
+                "title": "Introduction to Sorting Algorithms in Python",
+                "type": "Course",
+                "description": "Learn all about five different sorting algorithms in Python from both a theoretical and a practical standpoint. You'll also learn several related and important concepts, including Big O notation and recursion.",
+                "url": "/courses/intro-sorting-algorithms/"
+            },
+            {
+                "title": "Creating a Binary Search in Python",
+                "type": "Course",
+                "description": "Binary search is a classic algorithm in computer science. In this step-by-step course, you'll learn how to implement this algorithm in Python. You'll learn how to leverage existing libraries as well as craft your own binary search Python implementation.",
+                "url": "/courses/creating-binary-search-python/"
+            },
+            {
+                "title": "Python Practice Problems: Get Ready for Your Next Interview",
+                "type": "Tutorial",
+                "description": "In this tutorial, you'll prepare for future interviews by working through a set of Python practice problems that commonly appear in coding tests. You'll work through the problems yourself and then compare your results with solutions developed by the Real Python team.",
+                "url": "/python-practice-problems/"
+            },
+            {
+                "title": "Data Engineer Interview Questions With Python",
+                "type": "Tutorial",
+                "description": "This tutorial will prepare you for some common questions you'll encounter during your data engineer interview. You'll learn how to answer questions about databases, ETL pipelines, and big data workflows. You'll also take a look at SQL, NoSQL, and Redis use cases and query examples.",
+                "url": "/data-engineer-interview-questions-python/"
+            },
+            {
+                "title": "Python Tricks: A Buffet of Awesome Python Features",
+                "type": "Book",
+                "description": "Discover Python\u2019s best practices with simple examples so you can write beautiful & Pythonic code in your next coding interview.",
+                "url": "/courses/python-tricks-book/"
+            },
+            {
+                "title": "CPython Internals: Your Guide to the Python 3 Interpreter",
+                "type": "Book",
+                "description": "Impress your interviewers with your in-depth knowledge of the inner workings of the Python language, the CPython interpreter, and Python memory management.",
+                "url": "/courses/cpython-internals-book/"
+            },
+            {
+                "title": "Office Hours Archive",
+                "type": "Course",
+                "description": "The Real Python Office Hours is a weekly hangout where members of Real Python get the chance to interact with each other as well as Real Python authors and video course instructors. Join us live on Wednesday mornings!",
+                "url": "/courses/office-hours/"
+            }
+        ]
+    },
+    "Become a Python Web Developer": {
+        "skills": [
+            "Web Development",
+            "Django",
+            "Flask",
+            "APIs"
+        ],
+        "resources": [
+            {
+                "title": "Get Started With Django: Build a Portfolio App",
+                "type": "Course",
+                "description": "Learn the basics of creating powerful web applications with Django, a Python web framework. You'll build a portfolio website to showcase your web development projects, complete with a fully functioning blog.",
+                "url": "/courses/django-portfolio-project/"
+            },
+            {
+                "title": "Django Migrations 101",
+                "type": "Course",
+                "description": "With this course you\u2019ll get comfortable with Django migrations and learn how to create database tables without writing any SQL, how to automatically modify your database after you changed your models, and how to revert changes made to your database.",
+                "url": "/courses/django-migrations-101/"
+            },
+            {
+                "title": "Digging Deeper Into Django Migrations",
+                "type": "Tutorial",
+                "description": "In this step-by-step Python tutorial, you'll not only take a closer look at the new Django migrations system that is integrated into Django but also walk through the migration files themselves.",
+                "url": "/digging-deeper-into-migrations/"
+            },
+            {
+                "title": "Make a Location-Based Web App With Django and GeoDjango",
+                "type": "Course",
+                "description": "Learn how to use Django and GeoDjango to build a location-based web application from scratch. You\u2019ll be building a simple nearby shops application that lists the shops closest to a user\u2019s location.",
+                "url": "/courses/make-location-based-web-app-django-and-geodjango/"
+            },
+            {
+                "title": "Django Redirects",
+                "type": "Course",
+                "description": "Learn everything you need to know about HTTP redirects in Django. All the way from the low-level details of the HTTP protocol to the high-level way of dealing with them in Django.",
+                "url": "/courses/django-redirects/"
+            },
+            {
+                "title": "Working With JSON Data in Python",
+                "type": "Course",
+                "description": "Learn how to work with Python's built-in \"json\" module to serialize the data in your programs into JSON format. Then, you'll deserialize some JSON from an online API and convert it into Python objects.",
+                "url": "/courses/working-json-data-python/"
+            },
+            {
+                "title": "Building HTTP APIs With Django REST Framework",
+                "type": "Course",
+                "description": "This course will get you ready to build HTTP APIs with Django REST Framework. The Django REST framework (DRF) is a toolkit built on top of the Django web framework that reduces the amount of code you need to write to create REST interfaces.",
+                "url": "/courses/django-rest-framework/"
+            },
+            {
+                "title": "Python REST APIs With Flask, Connexion, and SQLAlchemy \u2013 Part 1",
+                "type": "Tutorial",
+                "description": "In this three-part tutorial series, you'll create a RESTful API from scratch to keep track of people and notes using the Flask web framework. You'll also test your API with Swagger UI API documentation. In part one, you'll build the foundation of your note-keeping app.",
+                "url": "/flask-connexion-rest-api/"
+            },
+            {
+                "title": "Python REST APIs With Flask, Connexion, and SQLAlchemy \u2013 Part 2",
+                "type": "Tutorial",
+                "description": "In this three-part tutorial series, you'll create a RESTful API from scratch to keep track of people and notes using the Flask web framework. You'll also test your API with Swagger UI API documentation. In part two, you'll implement a SQLite database to store your data permanently.",
+                "url": "/flask-connexion-rest-api-part-2/"
+            },
+            {
+                "title": "Python REST APIs With Flask, Connexion, and SQLAlchemy \u2013 Part 3",
+                "type": "Tutorial",
+                "description": "In this three-part tutorial series, you'll create a RESTful API from scratch to keep track of people and notes using the Flask web framework. You'll also test your API with Swagger UI API documentation. In part three, you'll use SQLAlchemy to provide the functionality to add notes to a person.",
+                "url": "/flask-connexion-rest-api-part-3/"
+            },
+            {
+                "title": "Sending Emails With Python",
+                "type": "Course",
+                "description": "Learn how to send emails using Python. Find out how to send plain-text and HTML messages, add files as attachments, and send personalized emails to multiple people. Later on you'll build a CSV-powered email sending script from scratch.",
+                "url": "/courses/sending-emails-python/"
+            },
+            {
+                "title": "What You Need to Know to Manage Users in Django Admin",
+                "type": "Tutorial",
+                "description": "Learn what you need to know to manage users in Django admin. Out of the box, Django admin doesn't enforce special restrictions on the user admin. This can lead to dangerous scenarios that might compromise your system.",
+                "url": "/manage-users-in-django-admin/"
+            },
+            {
+                "title": "Django Admin Customization",
+                "type": "Course",
+                "description": "Learn how to customize Django's admin with Python. You'll use AdminModel objects to add display columns, calculate values, link to referring objects, and search and filter results. You'll also use template overriding to gain full control over the admin's HTML.",
+                "url": "/courses/django-admin-customization/"
+            }
+        ]
+    },
+    "Data Collection & Storage": {
+        "skills": [
+            "Data Science",
+            "Databases"
+        ],
+        "resources": [
+            {
+                "title": "Reading and Writing CSV Files",
+                "type": "Course",
+                "description": "This short course covers how to read and write data to CSV files using Python's built in \"csv\" module and the \"pandas\" library. You'll learn how to handle standard and non-standard data such as CSV files without headers, or files containing delimeters in the data.",
+                "url": "/courses/reading-and-writing-csv-files/"
+            },
+            {
+                "title": "Reading and Writing CSV Files in Python",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-csv/"
+            },
+            {
+                "title": "Reading and Writing Files With Pandas",
+                "type": "Course",
+                "description": "Learn about the Pandas IO tools API and how you can use it to read and write files. You'll use the Pandas read_csv() function to work with CSV files. You'll also cover similar methods for efficiently working with Excel, CSV, JSON, HTML, SQL, pickle, and big data files.",
+                "url": "/courses/reading-writing-files-pandas/"
+            },
+            {
+                "title": "Editing Excel Spreadsheets in Python With openpyxl",
+                "type": "Course",
+                "description": "Learn how to handle spreadsheets in Python using the openpyxl package. You'll learn how to manipulate Excel spreadsheets, extract information from spreadsheets, create simple or more complex spreadsheets, including adding styles, charts, and so on.",
+                "url": "/courses/editing-excel-python-openpyxl/"
+            },
+            {
+                "title": "Introduction to Python SQL Libraries",
+                "type": "Tutorial",
+                "description": "Learn how to connect to different database management systems by using various Python SQL libraries. You'll interact with SQLite, MySQL, and PostgreSQL databases and perform common database queries using a Python application.",
+                "url": "/python-sql-libraries/"
+            },
+            {
+                "title": "SQLite and SQLAlchemy in Python: Moving Your Data Beyond Flat Files",
+                "type": "Course",
+                "description": "Learn how to store and retrieve data using Python, SQLite, and SQLAlchemy as well as with flat files. Using SQLite with Python brings with it the additional benefit of accessing data with SQL. By adding SQLAlchemy, you can work with data in terms of objects and methods.",
+                "url": "/courses/sqlite-sqlalchemy-python/"
+            },
+            {
+                "title": "Python, Boto3, and AWS S3: Demystified",
+                "type": "Course",
+                "description": "Get started working with Python, Boto3, and AWS S3. Learn how to create objects, upload them to S3, download their contents, and change their attributes directly from your script, all while avoiding common pitfalls.",
+                "url": "/courses/python-boto3-aws-s3/"
+            },
+            {
+                "title": "Three Ways of Storing and Accessing Lots of Images in Python",
+                "type": "Tutorial",
+                "description": "In this tutorial, you'll cover three ways of storing and accessing lots of images in Python. You'll also see  experimental evidence for the performance benefits and drawbacks of each one.",
+                "url": "/storing-images-in-python/"
+            },
+            {
+                "title": "First Steps With PySpark and Big Data Processing",
+                "type": "Tutorial",
+                "description": "Take your first steps with Spark, PySpark, and Big Data processing concepts using intermediate Python concepts.",
+                "url": "/pyspark-intro/"
+            },
+            {
+                "title": "Data Version Control With Python and DVC",
+                "type": "Tutorial",
+                "description": "Learn to use DVC, a powerful tool that solves many problems encountered in machine learning and data science. You'll find out how data version control helps you to track your data, share development machines with your team, and create easily reproducible experiments!",
+                "url": "/python-data-version-control/"
+            }
+        ]
+    },
+    "Data Science With Python Core Skills": {
+        "skills": [
+            "Pandas",
+            "NumPy",
+            "Data Cleaning",
+            "Data Visualization"
+        ],
+        "resources": [
+            {
+                "title": "Using Jupyter Notebooks",
+                "type": "Course",
+                "description": "Learn how to get started with the Jupyter Notebook, an open source web application that you can use to create and share documents that contain live code, equations, visualizations, and text.",
+                "url": "/courses/using-jupyter-notebooks/"
+            },
+            {
+                "title": "Explore Your Dataset With Pandas",
+                "type": "Course",
+                "description": "Learn how to start exploring a dataset with Pandas and Python. You'll learn how to access specific rows and columns to answer questions about your data. You'll also see how to handle missing values and prepare to visualize your dataset in a Jupyter Notebook.",
+                "url": "/courses/explore-dataset-with-pandas/"
+            },
+            {
+                "title": "Reading and Writing CSV Files",
+                "type": "Course",
+                "description": "This short course covers how to read and write data to CSV files using Python's built in \"csv\" module and the \"pandas\" library. You'll learn how to handle standard and non-standard data such as CSV files without headers, or files containing delimeters in the data.",
+                "url": "/courses/reading-and-writing-csv-files/"
+            },
+            {
+                "title": "Working With JSON Data in Python",
+                "type": "Course",
+                "description": "Learn how to work with Python's built-in \"json\" module to serialize the data in your programs into JSON format. Then, you'll deserialize some JSON from an online API and convert it into Python objects.",
+                "url": "/courses/working-json-data-python/"
+            },
+            {
+                "title": "Pandas DataFrames 101",
+                "type": "Course",
+                "description": "Learn the basics of working with the Data Frame data structure in Pandas. We will touch on how to create new columns from existing data, delete unneeded data, how to import data from a CSV file, and more.",
+                "url": "/courses/pandas-dataframes-101/"
+            },
+            {
+                "title": "Python Plotting With Matplotlib",
+                "type": "Course",
+                "description": "In this beginner-friendly course, you'll learn about plotting in Python with matplotlib by looking at the theory and following along with practical examples.",
+                "url": "/courses/python-plotting-matplotlib/"
+            },
+            {
+                "title": "Data Cleaning With pandas and NumPy",
+                "type": "Course",
+                "description": "Learn how to clean up messy data using pandas and NumPy. You'll become equipped to deal with a range of problems, such as missing values, inconsistent formatting, malformed records, and nonsensical outliers.",
+                "url": "/courses/data-cleaning-with-pandas-and-numpy/"
+            },
+            {
+                "title": "Idiomatic Pandas: Tricks & Features You May Not Know",
+                "type": "Course",
+                "description": "In this course you'll see how to use some lesser-used but idiomatic Pandas capabilities that lend your code better readability, versatility, and speed.",
+                "url": "/courses/idiomatic-pandas-tricks-features-you-may-not-know/"
+            },
+            {
+                "title": "Interactive Data Visualization in Python With Bokeh",
+                "type": "Course",
+                "description": "This course will get you up and running with Bokeh, using examples and a real-world dataset. You'll learn how to visualize your data, customize and organize your visualizations, and add interactivity.",
+                "url": "/courses/interactive-data-visualization-python-bokeh/"
+            },
+            {
+                "title": "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn",
+                "type": "Course",
+                "description": "In this course, you'll be equipped to make production-quality, presentation-ready Python histogram plots with a range of choices and features. It's your one-stop shop for constructing and manipulating histograms with Python's scientific stack.",
+                "url": "/courses/python-histograms/"
+            },
+            {
+                "title": "Python Statistics Fundamentals: How to Describe Your Data",
+                "type": "Tutorial",
+                "description": "Learn the fundamentals of descriptive statistics and how to calculate them in Python. You'll find out how to describe, summarize, and represent your data visually using NumPy, SciPy, pandas, Matplotlib, and the built-in Python statistics library.",
+                "url": "/python-statistics/"
+            },
+            {
+                "title": "Generating Random Data in Python",
+                "type": "Course",
+                "description": "See several options for generating random data in Python, and then build up to a comparison of each in terms of its level of security, versatility, purpose, and speed.",
+                "url": "/courses/generating-random-data-python/"
+            },
+            {
+                "title": "NumPy, SciPy, and pandas: Correlation With Python",
+                "type": "Tutorial",
+                "description": "Learn what correlation is and how you can calculate it with Python. You'll use SciPy, NumPy, and pandas correlation methods to calculate three different correlation coefficients. You'll also see how to visualize data, regression lines, and correlation matrices with Matplotlib.",
+                "url": "/numpy-scipy-pandas-correlation-python/"
+            },
+            {
+                "title": "Data Engineer Interview Questions With Python",
+                "type": "Tutorial",
+                "description": "This tutorial will prepare you for some common questions you'll encounter during your data engineer interview. You'll learn how to answer questions about databases, ETL pipelines, and big data workflows. You'll also take a look at SQL, NoSQL, and Redis use cases and query examples.",
+                "url": "/data-engineer-interview-questions-python/"
+            },
+            {
+                "title": "Look Ma, No For-Loops: Array Programming With NumPy",
+                "type": "Tutorial",
+                "description": "How to take advantage of vectorization and broadcasting so you can use NumPy to its full capacity. In this tutorial you'll see step-by-step how these advanced features in NumPy help you writer faster code.",
+                "url": "/numpy-array-programming/"
+            }
+        ]
+    },
+    "Data Visualization With Python": {
+        "skills": [
+            "NumPy",
+            "Matplotlib",
+            "Bokeh",
+            "Seaborn",
+            "pandas"
+        ],
+        "resources": [
+            {
+                "title": "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn",
+                "type": "Course",
+                "description": "Learn how to make production-quality, presentation-ready Python histogram plots with a range of choices and features. It's your one-stop shop for constructing and manipulating histograms with Python's scientific stack.",
+                "url": "/courses/python-histograms/"
+            },
+            {
+                "title": "Plot With Pandas: Python Data Visualization Basics",
+                "type": "Course",
+                "description": "Get to know the basic plotting possibilities that Python provides in the popular data analysis library pandas. You'll learn about the different kinds of plots that pandas offers, how to use them for data exploration, and which types of plots are best for certain use cases.",
+                "url": "/courses/plot-pandas-data-visualization/"
+            },
+            {
+                "title": "Python Plotting With Matplotlib",
+                "type": "Course",
+                "description": "Learn about plotting in Python with Matplotlib by looking at the theory and following along with practical examples in this beginner-friendly course.",
+                "url": "/courses/python-plotting-matplotlib/"
+            },
+            {
+                "title": "Interactive Data Visualization in Python With Bokeh",
+                "type": "Course",
+                "description": "Get you up and running with Bokeh, using examples and a real-world dataset. You'll learn how to visualize your data, customize and organize your visualizations, and add interactivity.",
+                "url": "/courses/interactive-data-visualization-python-bokeh/"
+            },
+            {
+                "title": "Graph Your Data With Python and ggplot",
+                "type": "Course",
+                "description": "Learn how to use ggplot in Python to build data visualizations with plotnine. You'll discover what a grammar of graphics is and how it can help you create plots in a very concise and consistent way.",
+                "url": "/courses/graph-data-with-python-and-ggplot/"
+            },
+            {
+                "title": "Data Visualization Interfaces in Python With Dash",
+                "type": "Course",
+                "description": "Learn how to build a dashboard using Python and Dash. Dash is a framework for building data visualization interfaces. It helps data scientists build fully interactive web applications quickly.",
+                "url": "/courses/data-viz-with-dash/"
+            }
+        ]
+    },
+    "DevOps With Python": {
+        "skills": [
+            "Packaging & Deployment",
+            "AWS",
+            "Docker"
+        ],
+        "resources": [
+            {
+                "title": "Running Python Scripts",
+                "type": "Course",
+                "description": "This step-by-step course will guide you through a series of ways to run Python scripts, depending on your environment, platform, needs, and skills as a programmer.",
+                "url": "/courses/running-python-scripts/"
+            },
+            {
+                "title": "A Beginner's Guide to Pip",
+                "type": "Course",
+                "description": "What is pip? In this beginner-friendly course, you'll learn how to use pip, the standard package manager for Python, so that you can install and manage additional packages that are not part of the Python standard library.",
+                "url": "/courses/what-is-pip/"
+            },
+            {
+                "title": "How to Publish Your Own Python Package to PyPI",
+                "type": "Course",
+                "description": "Learn how to create a Python package for your project and how to publish it to PyPI, the Python Package Repository with this step-by-step course. Quickly get up to speed on everything from naming your package to configuring it using setup.py.",
+                "url": "/courses/how-to-publish-your-own-python-package-pypi/"
+            },
+            {
+                "title": "Continuous Integration With Python",
+                "type": "Course",
+                "description": "Learn the core concepts behind Continuous Integration (CI) and why they are essential for modern software engineering teams. Find out how to how set up Continuous Integration for your Python project to automatically create environments, install dependencies, and run tests.",
+                "url": "/courses/python-continuous-integration/"
+            },
+            {
+                "title": "Docker in Action \u2013 Fitter, Happier, More Productive",
+                "type": "Tutorial",
+                "description": "Let's look at how to set up your local development environment with Docker as well as continuous integration, step by step.",
+                "url": "/docker-in-action-fitter-happier-more-productive/"
+            },
+            {
+                "title": "Python, Boto3, and AWS S3: Demystified",
+                "type": "Course",
+                "description": "Get started working with Python, Boto3, and AWS S3. Learn how to create objects, upload them to S3, download their contents, and change their attributes directly from your script, all while avoiding common pitfalls.",
+                "url": "/courses/python-boto3-aws-s3/"
+            },
+            {
+                "title": "Logging in Python",
+                "type": "Course",
+                "description": "Learn why and how to get started with Python's powerful logging module to meet the needs of beginners and enterprise teams alike.",
+                "url": "/courses/logging-python/"
+            }
+        ]
+    },
+    "Django for Web Development": {
+        "skills": [
+            "Django",
+            "Web Development",
+            "Projects"
+        ],
+        "resources": [
+            {
+                "title": "Get Started With Django: Build a Portfolio App",
+                "type": "Course",
+                "description": "Learn the basics of creating powerful web applications with Django, a Python web framework. You'll build a portfolio website to showcase your web development projects, complete with a fully functioning blog.",
+                "url": "/courses/django-portfolio-project/"
+            },
+            {
+                "title": "Building a Django User Management System",
+                "type": "Course",
+                "description": "Learn how to extend your Django application with a user management system, complete with email sending and third-party authentication.",
+                "url": "/courses/building-a-django-user-management-system/"
+            },
+            {
+                "title": "Django View Authorization: Restricting Access",
+                "type": "Course",
+                "description": "This course covers how to restrict your web pages to users with different roles through Django view authorization. You'll learn about HttpRequest.user objects, decorators that authenticate views, and ways to notify your users with the Django messages framework.",
+                "url": "/courses/django-view-authorization/"
+            },
+            {
+                "title": "Structuring a Python Application",
+                "type": "Course",
+                "description": "This course is a reference guide to common Python application layouts and project structures for command-line applications, web applications, and more.",
+                "url": "/courses/structuring-python-application/"
+            },
+            {
+                "title": "Django Migrations 101",
+                "type": "Course",
+                "description": "With this course you\u2019ll get comfortable with Django migrations and learn how to create database tables without writing any SQL, how to automatically modify your database after you changed your models, and how to revert changes made to your database.",
+                "url": "/courses/django-migrations-101/"
+            },
+            {
+                "title": "Digging Deeper Into Django Migrations",
+                "type": "Tutorial",
+                "description": "In this step-by-step Python tutorial, you'll not only take a closer look at the new Django migrations system that is integrated into Django but also walk through the migration files themselves.",
+                "url": "/digging-deeper-into-migrations/"
+            },
+            {
+                "title": "Make a Location-Based Web App With Django and GeoDjango",
+                "type": "Course",
+                "description": "Learn how to use Django and GeoDjango to build a location-based web application from scratch. You\u2019ll be building a simple nearby shops application that lists the shops closest to a user\u2019s location.",
+                "url": "/courses/make-location-based-web-app-django-and-geodjango/"
+            },
+            {
+                "title": "How to Provide Test Fixtures for Django Models in Pytest",
+                "type": "Tutorial",
+                "description": "Learn how to use fixtures to simplify your testing in pytest. If you use Django, pytest fixtures can help you write tests that are painless to update and maintain even as you make changes to your models.",
+                "url": "/django-pytest-fixtures/"
+            },
+            {
+                "title": "Django Redirects",
+                "type": "Course",
+                "description": "Learn everything you need to know about HTTP redirects in Django. All the way from the low-level details of the HTTP protocol to the high-level way of dealing with them in Django.",
+                "url": "/courses/django-redirects/"
+            },
+            {
+                "title": "Modeling Polymorphism in Django With Python",
+                "type": "Tutorial",
+                "description": "Modeling polymorphism in relational databases can be a challenging task, but in this article, you'll learn several modeling techniques to represent polymorphic objects in a relational database using the Django object-relational mapping (ORM).",
+                "url": "/modeling-polymorphism-django-python/"
+            },
+            {
+                "title": "What You Need to Know to Manage Users in Django Admin",
+                "type": "Tutorial",
+                "description": "Learn what you need to know to manage users in Django admin. Out of the box, Django admin doesn't enforce special restrictions on the user admin. This can lead to dangerous scenarios that might compromise your system.",
+                "url": "/manage-users-in-django-admin/"
+            },
+            {
+                "title": "Django Admin Customization",
+                "type": "Course",
+                "description": "Learn how to customize Django's admin with Python. You'll use AdminModel objects to add display columns, calculate values, link to referring objects, and search and filter results. You'll also use template overriding to gain full control over the admin's HTML.",
+                "url": "/courses/django-admin-customization/"
+            },
+            {
+                "title": "How to Create an Index in Django Without Downtime",
+                "type": "Tutorial",
+                "description": "Get a solid understanding of the limitations of Django migrations by tackling a well known problem: creating an index in Django with no downtime.",
+                "url": "/create-django-index-without-downtime/"
+            },
+            {
+                "title": "How to Write an Installable Django App",
+                "type": "Tutorial",
+                "description": "Learn how to create an installable Django app. You'll cover everything you need to know, from extracting your app from a Django project to turning it into a package that's available on PyPI and installable through pip.",
+                "url": "/installable-django-app/"
+            },
+            {
+                "title": "How to Move a Django Model to Another App",
+                "type": "Tutorial",
+                "description": "Learn how to move a Django model from one app to another using Django migrations. You'll explore three different techniques and learn some helpful guidelines for choosing the best approach for your situation and needs.",
+                "url": "/move-django-model/"
+            },
+            {
+                "title": "Building HTTP APIs With Django REST Framework",
+                "type": "Course",
+                "description": "This course will get you ready to build HTTP APIs with Django REST Framework. The Django REST framework (DRF) is a toolkit built on top of the Django web framework that reduces the amount of code you need to write to create REST interfaces.",
+                "url": "/courses/django-rest-framework/"
+            }
+        ]
+    },
+    "Flask by Example": {
+        "skills": [
+            "Web Development",
+            "Flask Framework"
+        ],
+        "resources": [
+            {
+                "title": "Project Setup",
+                "type": "Course",
+                "description": "Learn how to create a Python Flask example web application and deploy it using Heroku. You\u2019ll also use Git to track changes to the code, and you\u2019ll configure a deployment workflow with different environments for staging and production.",
+                "url": "/courses/deploying-a-flask-application-using-heroku/"
+            },
+            {
+                "title": "Setting up Postgres, SQLAlchemy, and Alembic",
+                "type": "Tutorial",
+                "description": "This tutorial shows you how to process text and then setup a task queue with Flask. In part two, we'll set up our PostgreSQL database along with SQLAlchemy and Alembic to handle migrations.",
+                "url": "/flask-by-example-part-2-postgres-sqlalchemy-and-alembic/"
+            },
+            {
+                "title": "Text Processing with Requests, BeautifulSoup, and NLTK",
+                "type": "Tutorial",
+                "description": "In part three of this series, we're going scrape the contents of a webpage and then process the text to display word counts.",
+                "url": "/flask-by-example-part-3-text-processing-with-requests-beautifulsoup-nltk/"
+            },
+            {
+                "title": "Implementing a Redis Task Queue",
+                "type": "Tutorial",
+                "description": "This part of the tutorial details how to implement a Redis task queue to handle text processing.",
+                "url": "/flask-by-example-implementing-a-redis-task-queue/"
+            },
+            {
+                "title": "Integrating Flask and Angular",
+                "type": "Tutorial",
+                "description": "This tutorial details how to utilize to create a polling service with Angular.",
+                "url": "/flask-by-example-integrating-flask-and-angularjs/"
+            },
+            {
+                "title": "Updating the Staging Environment",
+                "type": "Tutorial",
+                "description": "In this part of the Flask By Example series, we'll set up Redis on Heroku and look at how to run both a web and worker process on a single dyno",
+                "url": "/updating-the-staging-environment/"
+            },
+            {
+                "title": "Updating the UI",
+                "type": "Tutorial",
+                "description": "In this part of the Flask by Example series, we'll update the user interface to make it more user friendly.",
+                "url": "/flask-by-example-updating-the-ui/"
+            },
+            {
+                "title": "Custom Angular Directive with D3",
+                "type": "Tutorial",
+                "description": "In the final part of the Flask by Example series, we'll create a custom Angular Directive to display a frequency distribution chart using JavaScript and D3.",
+                "url": "/flask-by-example-custom-angular-directive-with-d3/"
+            }
+        ]
+    },
+    "Functional Programming With Python": {
+        "skills": [
+            "Functional Programming Fundamentals"
+        ],
+        "resources": [
+            {
+                "title": "Functional Programming in Python: When and How to Use It",
+                "type": "Tutorial",
+                "description": "Learn about functional programming in Python.  You'll see what functional programming is, how it's supported in Python, and how you can use it in your Python code.",
+                "url": "/python-functional-programming/"
+            },
+            {
+                "title": "Functional Programming in Python",
+                "type": "Course",
+                "description": "Learn how to approach functional programming in Python. You'll cover what functional programming is, how you can use immutable data structures to represent your data, as well as how to use filter(), map(), and reduce().",
+                "url": "/courses/functional-programming-python/"
+            },
+            {
+                "title": "How to Use Python Lambda Functions",
+                "type": "Course",
+                "description": "Learn about Python lambda functions. You'll see how they compare with regular functions and how you can use them in accordance with best practices.",
+                "url": "/courses/python-lambda-functions/"
+            },
+            {
+                "title": "Python Inner Functions",
+                "type": "Course",
+                "description": "Learn what inner functions are in Python, how to define them, and what their main use cases are.",
+                "url": "/courses/python-inner-functions/"
+            },
+            {
+                "title": "Python's map() Function: Transforming Iterables",
+                "type": "Course",
+                "description": "Learn how Python's map() works and how to use it effectively in your programs. You'll also learn how to use list comprehension and generator expressions to replace map() in a Pythonic and efficient way.",
+                "url": "/courses/map-function-transform-iterables/"
+            },
+            {
+                "title": "Python's filter(): Extract Values From Iterables",
+                "type": "Tutorial",
+                "description": "Learn how Python's filter() works and how to use it effectively in your programs. You'll also learn how to use list comprehension and generator expressions to replace filter() and make your code more Pythonic.",
+                "url": "/python-filter-function/"
+            },
+            {
+                "title": "Python's reduce(): From Functional to Pythonic Style",
+                "type": "Tutorial",
+                "description": "Learn how Python's reduce() works and how to use it effectively in your programs. You'll also learn some more modern, efficient, and Pythonic ways to gently replace reduce() in your programs.",
+                "url": "/python-reduce-function/"
+            },
+            {
+                "title": "Recursion in Python: An Introduction",
+                "type": "Tutorial",
+                "description": "Learn about recursion in Python. You'll see what recursion is, how it works in Python, and under what circumstances you should use it. You'll finish by exploring several examples of problems that can be solved both recursively and non-recursively.",
+                "url": "/python-recursion/"
+            },
+            {
+                "title": "Thinking Recursively in Python",
+                "type": "Course",
+                "description": "Learn how to work with recursion in your Python programs by mastering concepts such as recursive functions and recursive data structures.",
+                "url": "/courses/thinking-recursively-python/"
+            }
+        ]
+    },
+    "GUI Programming With PyQt": {
+        "skills": [
+            "Graphical User Interfaces (GUIs)",
+            "Databases"
+        ],
+        "resources": [
+            {
+                "title": "Python and PyQt: Building a GUI Desktop Calculator",
+                "type": "Tutorial",
+                "description": "Learn how to create graphical user interface (GUI) applications with Python and PyQt. Once you've covered the basics, you'll build a fully functional desktop calculator that can respond to user events with concrete actions.",
+                "url": "/python-pyqt-gui-calculator/"
+            },
+            {
+                "title": "Python and PyQt: Creating Menus, Toolbars, and Status Bars",
+                "type": "Tutorial",
+                "description": "Create, customize, and use Python menus, toolbars, and status bars to create GUI applications using PyQt.",
+                "url": "/python-menus-toolbars/"
+            },
+            {
+                "title": "Creating PyQt Layouts for GUI Applications",
+                "type": "Course",
+                "description": "Learn how to use PyQt layouts to arrange and manage the graphical components on your GUI applications. With the help of PyQt's layout managers, you'll be able to create polished and professional GUIs with minimal effort.",
+                "url": "/courses/creating-pyqt-layouts-gui-applications/"
+            },
+            {
+                "title": "Qt Designer and Python: Build Your GUI Applications Faster",
+                "type": "Tutorial",
+                "description": "Learn how to use Qt Designer to create GUIs from your windows and dialogs and use them in your Python applications.",
+                "url": "/qt-designer-python/"
+            },
+            {
+                "title": "Handling SQL Databases With PyQt: The Basics",
+                "type": "Tutorial",
+                "description": "Use PyQt's built-in SQL support to create GUI applications that effectively manage SQL databases.",
+                "url": "/python-pyqt-database/"
+            },
+            {
+                "title": "Use PyQt's QThread to Prevent Freezing GUIs",
+                "type": "Tutorial",
+                "description": "Learn how to prevent freezing GUIs by offloading long-running tasks to worker QThreads in PyQt.",
+                "url": "/python-pyqt-qthread/"
+            },
+            {
+                "title": "Build a Contact Book With Python, PyQt, and SQLite",
+                "type": "Tutorial",
+                "description": "Build a minimal contact book application using Python, with PyQt to build the application's GUI and SQLite to handle the database.",
+                "url": "/python-contact-book/"
+            },
+            {
+                "title": "Build a Bulk File Rename Tool With Python and PyQt",
+                "type": "Tutorial",
+                "description": "In this step-by-step project, you'll build a bulk file rename tool using Python and pathlib to manage the file renaming process and PyQt to provide the application's GUI.",
+                "url": "/bulk-file-rename-tool-python/"
+            }
+        ]
+    },
+    "Introduction to Python": {
+        "skills": [
+            "Core Python 3",
+            "Python Syntax"
+        ],
+        "resources": [
+            {
+                "title": "Why Choose Python 3",
+                "type": "Tutorial",
+                "description": "An overview of the Python programming language, including a brief history of the development of Python\r\nand reasons why you might select Python as your language of choice.",
+                "url": "/python-introduction/"
+            },
+            {
+                "title": "Installing Python 3",
+                "type": "Course",
+                "description": "To get started working with Python, you'll need to have access to the Python interpreter. There are several common ways to accomplish this and in this course, you will learn how to install the latest version of Python on your computer.",
+                "url": "/courses/installing-python-windows-macos-linux/"
+            },
+            {
+                "title": "Interacting With Python",
+                "type": "Tutorial",
+                "description": "How to actually execute Python code and run Python programs using the CPython REPL, executing script files, and integrated development environments.",
+                "url": "/interacting-with-python/"
+            },
+            {
+                "title": "11 Beginner Tips for Learning Python",
+                "type": "Course",
+                "description": "See several learning strategies and tips that will help you jumpstart your journey towards becoming a rockstar Python programmer!",
+                "url": "/courses/python-beginner-tips/"
+            },
+            {
+                "title": "Basic Data Types in Python",
+                "type": "Course",
+                "description": "Learn the basic data types that are built into Python, like numbers, strings, and Booleans. You'll also get an overview of Python's built-in functions.",
+                "url": "/courses/python-data-types/"
+            },
+            {
+                "title": "Basic Data Types Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-data-types/"
+            },
+            {
+                "title": "Variables in Python",
+                "type": "Course",
+                "description": "Learn how every item of data in a Python program can be described by the abstract term \"object,\" and how to manipulate objects using symbolic names called \"variables.\"",
+                "url": "/courses/variables-python/"
+            },
+            {
+                "title": "Python Variables Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-variables/"
+            },
+            {
+                "title": "\"Python Tricks\" Email Series",
+                "type": "Free Email Class",
+                "description": "Get a short & sweet Python Trick delivered to your inbox every couple of days.",
+                "url": "https://realpython.com/https://realpython.com/python-tricks/"
+            },
+            {
+                "title": "Operators and Expressions in Python",
+                "type": "Tutorial",
+                "description": "You'll see how calculations can be performed on objects in Python. By the end of this tutorial, you will be able to create complex expressions by combining Python objects and operators.",
+                "url": "/python-operators-expressions/"
+            },
+            {
+                "title": "Python Operators and Expressions Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-operators-expressions/"
+            },
+            {
+                "title": "Strings and Character Data in Python",
+                "type": "Course",
+                "description": "Learn how to use Python's rich set of operators, functions, and methods for working with strings. You'll learn how to access and extract portions of strings, and also become familiar with the methods that are available to manipulate and modify string data in Python 3.",
+                "url": "/courses/python-strings/"
+            },
+            {
+                "title": "Python Strings Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-strings/"
+            },
+            {
+                "title": "Lists and Tuples in Python",
+                "type": "Course",
+                "description": "See the important characteristics of lists and tuples in Python 3. You'll learn how to define them and how to manipulate them. When you're finished, you'll have a good feel for when and how to use these object types in a Python program.",
+                "url": "/courses/lists-tuples-python/"
+            },
+            {
+                "title": "Lists & Tuples Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-lists-tuples/"
+            },
+            {
+                "title": "Dictionaries in Python",
+                "type": "Course",
+                "description": "In this course on Python dictionaries, you'll cover the basic characteristics of dictionaries and learn how to access and manage dictionary data. Once you've finished this course, you'll have a good sense of when a dictionary is the appropriate data type to use and know how to use it.",
+                "url": "/courses/dictionaries-python/"
+            },
+            {
+                "title": "Dictionaries Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-dicts/"
+            },
+            {
+                "title": "Sets in Python",
+                "type": "Course",
+                "description": "Learn how to work with Python's set data type. You'll see how to define set objects in Python and discover the operations that they support. By the end of this course, you'll have a good feel for when a set is an appropriate choice in your own programs.",
+                "url": "/courses/sets-python/"
+            },
+            {
+                "title": "Sets Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-sets/"
+            },
+            {
+                "title": "Python Program Lexical Structure",
+                "type": "Tutorial",
+                "description": "In this tutorial you'll dig deeper into Python's lexical structure and start arranging code into more complex groupings. You'll learn about the syntactic elements that comprise statements, the basic units that make up a Python program.",
+                "url": "/python-program-structure/"
+            },
+            {
+                "title": "Python Program Structure Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-program-structure/"
+            },
+            {
+                "title": "Conditional Statements in Python (if/elif/else)",
+                "type": "Course",
+                "description": "Learn how to work with conditional (\"if\") statements in Python. Master if-statements step-by-step and see how to write complex decision making code in your programs.",
+                "url": "/courses/python-conditional-statements/"
+            },
+            {
+                "title": "Conditional Statements Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-conditional-statements/"
+            },
+            {
+                "title": "\"while\" Loops in Python (Indefinite Iteration)",
+                "type": "Course",
+                "description": "Master indefinite iteration using the Python \"while\" loop. You\u2019ll be able to construct basic and complex while loops, interrupt loop execution with break and continue, use the else clause with a while loop, and deal with infinite loops.",
+                "url": "/courses/mastering-while-loops/"
+            },
+            {
+                "title": "While Loops Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-while-loop/"
+            },
+            {
+                "title": "\"for\" Loops in Python (Definite Iteration)",
+                "type": "Course",
+                "description": "Learn all about how to perform definite iteration with Python \"for\" loops. You\u2019ll see how other programming languages implement definite iteration, learn about iterables and iterators, and tie it all together to learn about Python\u2019s for loop.",
+                "url": "/courses/python-for-loop/"
+            },
+            {
+                "title": "Understanding Python List Comprehensions",
+                "type": "Course",
+                "description": "Python list comprehensions make it easy to create lists while performing sophisticated filtering, mapping, and conditional logic on their members. In this course, you'll learn when to use a list comprehension in Python and how to create them effectively.",
+                "url": "/courses/understand-list-comprehensions/"
+            },
+            {
+                "title": "Python Booleans: Leveraging the Values of Truth",
+                "type": "Course",
+                "description": "Learn about the built-in Python Boolean data type, which is used to represent the truth value of an expression. You'll see how to use Booleans to compare values, check for identity and membership, and control the flow of your programs with conditionals.",
+                "url": "/courses/booleans-leveraging-truth/"
+            },
+            {
+                "title": "Reading Input and Writing Output in Python",
+                "type": "Course",
+                "description": "In this introductory Python course, you'll learn how to take user input from the keyboard with the built-in function input() and how to display output to the console with the built-in function print().",
+                "url": "/courses/reading-input-writing-output-python/"
+            },
+            {
+                "title": "The Python print() Function: Go Beyond the Basics",
+                "type": "Course",
+                "description": "Learn about the print() function in Python and discover some of its lesser-known features. Avoid common mistakes, take your \"hello world\" to the next level, and know when to use a better alternative.",
+                "url": "/courses/python-print/"
+            },
+            {
+                "title": "Formatting Python Strings",
+                "type": "Course",
+                "description": "See two items to add to your Python string formatting toolkit. You'll learn about Python's string format method and the formatted string literal, or f-string. You'll learn about these formatting techniques in detail and add them to your Python string formatting toolkit.",
+                "url": "/courses/formatting-python-strings/"
+            },
+            {
+                "title": "Defining and Calling Python Functions",
+                "type": "Course",
+                "description": "Learn how to define and call your own Python function.  You'll also learn about passing data to your function and returning data from your function back to its calling environment.",
+                "url": "/courses/defining-and-calling-functions/"
+            },
+            {
+                "title": "Using the Python return Statement Effectively",
+                "type": "Course",
+                "description": "Learn how to use the Python return statement when writing functions. Additionally, you'll cover some good programming practices related to the use of return. With this knowledge, you'll be able to write readable, robust, and maintainable functions in Python.",
+                "url": "/courses/effective-python-return-statement/"
+            },
+            {
+                "title": "Regular Expressions (Part 1)",
+                "type": "Course",
+                "description": "Learn how to perform more complex string pattern matching using regular expressions, or regexes, in Python. You'll also explore more advanced regex tools and techniques that are available in Python.",
+                "url": "/courses/building-regexes-python/"
+            },
+            {
+                "title": "Regular Expressions (Part 2)",
+                "type": "Tutorial",
+                "description": "In the previous tutorial in this series, you learned how to perform sophisticated pattern matching using regular expressions, or regexes, in Python.  This tutorial explores more regex tools and techniques that are available in Python.",
+                "url": "/regex-python-part-2/"
+            },
+            {
+                "title": "Navigating Namespaces and Scope in Python",
+                "type": "Course",
+                "description": "Learn about Python namespaces, the structures used to store and organize the symbolic names created during execution of a Python program. You'll learn when namespaces are created, how they are implemented, and how they define variable scope.",
+                "url": "/courses/navigate-namespaces-scope/"
+            },
+            {
+                "title": "Reading and Writing Files in Python",
+                "type": "Course",
+                "description": "Learn about reading and writing files in Python. You'll cover everything from what a file is made up of to which libraries can help you along that way. You'll also take a look at some basic scenarios of file usage as well as some advanced techniques.",
+                "url": "/courses/reading-and-writing-files-python/"
+            },
+            {
+                "title": "Getting the Most Out of a Python Traceback",
+                "type": "Course",
+                "description": "Learn how to read and understand the information you can get from a Python stack traceback. You'll walk through several examples and see some of the most common tracebacks in Python.",
+                "url": "/courses/python-traceback/"
+            },
+            {
+                "title": "A Beginner's Guide to Pip",
+                "type": "Course",
+                "description": "What is pip? In this beginner-friendly course, you'll learn how to use pip, the standard package manager for Python, so that you can install and manage additional packages that are not part of the Python standard library.",
+                "url": "/courses/what-is-pip/"
+            },
+            {
+                "title": "Continue Your Python Journey With \"Python Basics\"",
+                "type": "Learning Path",
+                "description": "Your complete Python curriculum\u2014with exercises, interactive quizzes, and sample projects.",
+                "url": "https://realpython.com/https://realpython.com/learning-paths/python-basics-book/"
+            }
+        ]
+    },
+    "Machine Learning With Python": {
+        "skills": [
+            "Image Processing",
+            "Text Classification",
+            "Speech Recognition"
+        ],
+        "resources": [
+            {
+                "title": "Setting Up Python for Machine Learning on Windows",
+                "type": "Tutorial",
+                "description": "In this step-by-step tutorial, you\u2019ll cover the basics of setting up a Python numerical computation environment for machine learning on a Windows machine using the Anaconda Python distribution.",
+                "url": "/python-windows-machine-learning-setup/"
+            },
+            {
+                "title": "Building a Neural Network & Making Predictions With Python AI",
+                "type": "Course",
+                "description": "In this step-by-step course, you'll build a neural network from scratch as an introduction to the world of artificial intelligence (AI) in Python. You'll learn how to train your neural network and make accurate predictions based on a given dataset.",
+                "url": "/courses/build-neural-network-python-ai/"
+            },
+            {
+                "title": "Traditional Face Detection With Python",
+                "type": "Course",
+                "description": "In this course on face detection with Python, you'll learn about a historically important algorithm for object detection that can be successfully applied to finding the location of a human face within an image.",
+                "url": "/courses/traditional-face-detection-python/"
+            },
+            {
+                "title": "ChatterBot: Build a Chatbot With Python",
+                "type": "Tutorial",
+                "description": "Chatbots can help to provide real-time customer support and are a valuable asset in many industries. When you understand the basics of the ChatterBot library, you can build and train a self-learning chatbot with just a few lines of Python code.",
+                "url": "/build-a-chatbot-python-chatterbot/"
+            },
+            {
+                "title": "Image Segmentation Using Color Spaces in OpenCV + Python",
+                "type": "Tutorial",
+                "description": "In this introductory tutorial, you'll learn how to simply segment an object from an image based on color in Python using OpenCV. A popular computer vision library written in C/C++ with bindings for Python, OpenCV provides easy ways of manipulating color spaces.",
+                "url": "/python-opencv-color-spaces/"
+            },
+            {
+                "title": "Starting With Linear Regression in Python",
+                "type": "Course",
+                "description": "In this video course, you'll get started with linear regression in Python. Linear regression is one of the fundamental statistical and machine learning techniques, and Python is a popular choice for machine learning.",
+                "url": "/courses/python-linear-regression/"
+            },
+            {
+                "title": "Learn Text Classification With Python and Keras",
+                "type": "Course",
+                "description": "In this course, you\u2019ll learn about Python text classification with Keras, working your way from a bag-of-words model with logistic regression to more advanced methods, such as convolutional neural networks. You\u2019ll also see how you can use pretrained word embeddings and hyperparameter optimization.",
+                "url": "/courses/text-classification-with-keras/"
+            },
+            {
+                "title": "Splitting Datasets With scikit-learn and train_test_split()",
+                "type": "Course",
+                "description": "Learn why it's important to split your dataset in supervised machine learning and how to do that with train_test_split() from scikit-learn.",
+                "url": "/courses/splitting-datasets-scikit-learn-train-test-split/"
+            },
+            {
+                "title": "Speech Recognition With Python",
+                "type": "Course",
+                "description": "See the fundamentals of speech recognition with Python. You'll learn which speech recognition library gives the best results and build a full-featured \"Guess The Word\" game with it.",
+                "url": "/courses/speech-recognition-python/"
+            },
+            {
+                "title": "PyTorch vs TensorFlow for Your Python Deep Learning Project",
+                "type": "Tutorial",
+                "description": "PyTorch vs Tensorflow: Which one should you use? Learn about these two popular deep learning libraries and how to choose the best one for your project.",
+                "url": "/pytorch-vs-tensorflow/"
+            },
+            {
+                "title": "Generative Adversarial Networks: Build Your First Models",
+                "type": "Tutorial",
+                "description": "Learn all about one of the most exciting areas of research in the field of machine learning: generative adversarial networks. You'll learn the basics of how GANs are structured and trained before implementing your own generative model using PyTorch.",
+                "url": "/generative-adversarial-networks/"
+            },
+            {
+                "title": "The k-Nearest Neighbors (kNN) Algorithm in Python",
+                "type": "Tutorial",
+                "description": "Learn all about the k-Nearest Neighbors (kNN) algorithm in Python, including how to implement kNN from scratch, kNN hyperparameter tuning, and improving kNN performance using bagging.",
+                "url": "/knn-python/"
+            },
+            {
+                "title": "K-Means Clustering in Python: A Practical Guide",
+                "type": "Tutorial",
+                "description": "Learn how to perform k-means clustering in Python. You'll review evaluation metrics for choosing an appropriate number of clusters and build an end-to-end k-means clustering pipeline in scikit-learn.",
+                "url": "/k-means-clustering-python/"
+            }
+        ]
+    },
+    "Math for Data Science": {
+        "skills": [
+            "Statistics",
+            "Correlation",
+            "Linear Regression",
+            "Logistic Regression"
+        ],
+        "resources": [
+            {
+                "title": "Python Statistics Fundamentals: How to Describe Your Data",
+                "type": "Tutorial",
+                "description": "Learn the fundamentals of descriptive statistics and how to calculate them in Python. You'll find out how to describe, summarize, and represent your data visually using NumPy, SciPy, pandas, Matplotlib, and the built-in Python statistics library.",
+                "url": "/python-statistics/"
+            },
+            {
+                "title": "NumPy, SciPy, and pandas: Correlation With Python",
+                "type": "Tutorial",
+                "description": "Learn what correlation is and how you can calculate it with Python. You'll use SciPy, NumPy, and pandas correlation methods to calculate three different correlation coefficients. You'll also see how to visualize data, regression lines, and correlation matrices with Matplotlib.",
+                "url": "/numpy-scipy-pandas-correlation-python/"
+            },
+            {
+                "title": "Starting With Linear Regression in Python",
+                "type": "Course",
+                "description": "In this video course, you'll get started with linear regression in Python. Linear regression is one of the fundamental statistical and machine learning techniques, and Python is a popular choice for machine learning.",
+                "url": "/courses/python-linear-regression/"
+            },
+            {
+                "title": "Logistic Regression in Python",
+                "type": "Tutorial",
+                "description": "Get started with logistic regression in Python. Classification is one of the most important areas of machine learning, and logistic regression is one of its basic methods. You'll learn how to create, evaluate, and apply a model to make predictions.",
+                "url": "/logistic-regression-python/"
+            },
+            {
+                "title": "Stochastic Gradient Descent Algorithm With Python and NumPy",
+                "type": "Tutorial",
+                "description": "Learn what the stochastic gradient descent algorithm is, how it works, and how to implement it with Python and NumPy.",
+                "url": "/gradient-descent-algorithm-python/"
+            }
+        ]
+    },
+    "Object-Oriented Programming (OOP) With Python": {
+        "skills": [
+            "OOP Fundamentals",
+            "Classes & Objects",
+            "Methods"
+        ],
+        "resources": [
+            {
+                "title": "Intro to Object-Oriented Programming (OOP) in Python",
+                "type": "Course",
+                "description": "Learn the fundamentals of object-oriented programming (OOP) in Python and how to work with classes, objects, and constructors.",
+                "url": "/courses/intro-object-oriented-programming-oop-python/"
+            },
+            {
+                "title": "Using Python Class Constructors",
+                "type": "Course",
+                "description": "Learn how class constructors work in Python. You'll also explore Python's instantiation process, which has two main steps: instance creation and instance initialization.",
+                "url": "/courses/using-python-class-constructors/"
+            },
+            {
+                "title": "Providing Multiple Constructors in Your Python Classes",
+                "type": "Course",
+                "description": "Learn how to provide multiple constructors in your Python classes. To this end, you'll learn different techniques, such as checking argument types, using default argument values, writing class methods, and implementing single-dispatch methods.",
+                "url": "/courses/multiple-constructors-python/"
+            },
+            {
+                "title": "Supercharge Your Classes With Python super()",
+                "type": "Course",
+                "description": "Learn how to leverage single and multiple inheritance in your object-oriented application to supercharge your classes with Python super().",
+                "url": "/courses/python-super/"
+            },
+            {
+                "title": "Inheritance and Composition: A Python OOP Guide",
+                "type": "Course",
+                "description": "Learn about inheritance and composition in Python. You'll improve your object-oriented programming (OOP) skills by understanding how to use inheritance and composition and how to leverage them in their design.",
+                "url": "/courses/inheritance-composition-python/"
+            },
+            {
+                "title": "Managing Attributes With Python's property()",
+                "type": "Course",
+                "description": "Learn how to create managed attributes, also known as properties, using Python's property() in your custom classes.",
+                "url": "/courses/property-python/"
+            },
+            {
+                "title": "Python Descriptors: An Introduction",
+                "type": "Tutorial",
+                "description": "Learn what Python descriptors are and how they're used in Python's internals. You'll learn about the descriptor protocol and how the lookup chain works when you access an attribute. You'll also see a few practical examples where Python descriptors can come in handy.",
+                "url": "/python-descriptors/"
+            },
+            {
+                "title": "Pythonic OOP String Conversion: __repr__ vs __str__",
+                "type": "Course",
+                "description": "In this tutorial series you'll do a deep dive on how Python's to-string conversion using the __repr__ and __str__ \"magic methods\" works and how you can add implement them in your own classes and objects.",
+                "url": "/courses/pythonic-oop-string-conversion-repr-vs-str/"
+            },
+            {
+                "title": "OOP Method Types in Python: @classmethod vs @staticmethod vs Instance Methods",
+                "type": "Course",
+                "description": "What's the difference between @classmethod, @staticmethod, and \"plain/regular\" instance methods in Python? You'll know the answer after watching this video course.",
+                "url": "/courses/python-method-types/"
+            },
+            {
+                "title": "Operator and Function Overloading in Custom Python Classes",
+                "type": "Tutorial",
+                "description": "How to overload built-in functions and operators in your custom Python classes in order to make your code more Pythonic.",
+                "url": "/operator-function-overloading/"
+            },
+            {
+                "title": "Using Data Classes in Python",
+                "type": "Course",
+                "description": "Data classes are one of the new features introduced in Python 3.7. When using data classes, you don't have to write boilerplate code to get proper initialization, representation, and comparisons for your objects.",
+                "url": "/courses/python-data-classes/"
+            },
+            {
+                "title": "Python Metaclasses",
+                "type": "Tutorial",
+                "description": "How Python's metaclasses work as an OOP concept, what they are good for\u2014and why you might want to avoid them in your own programs.",
+                "url": "/python-metaclasses/"
+            }
+        ]
+    },
+    "Pandas for Data Science": {
+        "skills": [
+            "Pandas",
+            "Data Science",
+            "Data Visualization"
+        ],
+        "resources": [
+            {
+                "title": "Explore Your Dataset With Pandas",
+                "type": "Course",
+                "description": "Learn how to start exploring a dataset with Pandas and Python. You'll learn how to access specific rows and columns to answer questions about your data. You'll also see how to handle missing values and prepare to visualize your dataset in a Jupyter Notebook.",
+                "url": "/courses/explore-dataset-with-pandas/"
+            },
+            {
+                "title": "The Pandas DataFrame: Working With Data Efficiently",
+                "type": "Course",
+                "description": "In this course, you'll get started with Pandas DataFrames, which are powerful and widely used two-dimensional data structures. You'll learn how to perform basic operations with data, handle missing values, work with time-series data, and visualize data from a Pandas DataFrame.",
+                "url": "/courses/pandas-dataframe-working-with-data/"
+            },
+            {
+                "title": "Sorting Data in Python With Pandas",
+                "type": "Course",
+                "description": "Learn how to sort data in a pandas DataFrame using the pandas sort functions sort_values() and sort_index(). You'll learn how to sort by one or more columns and by index in ascending or descending order.",
+                "url": "/courses/sorting-data-python-pandas/"
+            },
+            {
+                "title": "Data Cleaning With pandas and NumPy",
+                "type": "Course",
+                "description": "Learn how to clean up messy data using pandas and NumPy. You'll become equipped to deal with a range of problems, such as missing values, inconsistent formatting, malformed records, and nonsensical outliers.",
+                "url": "/courses/data-cleaning-with-pandas-and-numpy/"
+            },
+            {
+                "title": "Reading and Writing Files With Pandas",
+                "type": "Course",
+                "description": "Learn about the Pandas IO tools API and how you can use it to read and write files. You'll use the Pandas read_csv() function to work with CSV files. You'll also cover similar methods for efficiently working with Excel, CSV, JSON, HTML, SQL, pickle, and big data files.",
+                "url": "/courses/reading-writing-files-pandas/"
+            },
+            {
+                "title": "SettingWithCopyWarning in pandas: Views vs Copies",
+                "type": "Tutorial",
+                "description": "Learn about views and copies in NumPy and pandas. You'll see why the SettingWithCopyWarning occurs in pandas and how to properly write code that avoids it.",
+                "url": "/pandas-settingwithcopywarning/"
+            },
+            {
+                "title": "Plot With Pandas: Python Data Visualization Basics",
+                "type": "Course",
+                "description": "In this course, you'll get to know the basic plotting possibilities that Python provides in the popular data analysis library pandas. You'll learn about the different kinds of plots that pandas offers, how to use them for data exploration, and which types of plots are best for certain use cases.",
+                "url": "/courses/plot-pandas-data-visualization/"
+            },
+            {
+                "title": "Fast, Flexible, Easy and Intuitive: How to Speed Up Your pandas Projects",
+                "type": "Tutorial",
+                "description": "What is it about pandas that has data scientists, analysts, and engineers raving? This is a guide to using pandas Pythonically to get the most out of its powerful and easy-to-use built-in features. Additionally, you will learn a couple of practical time-saving tips.",
+                "url": "/fast-flexible-pandas/"
+            },
+            {
+                "title": "pandas GroupBy: Your Guide to Grouping Data in Python",
+                "type": "Tutorial",
+                "description": "Learn how to work adeptly with the pandas GroupBy facility while mastering ways to manipulate, transform, and summarize data. You'll work with real-world datasets and chain GroupBy methods together to get data in an output that suits your purpose.",
+                "url": "/pandas-groupby/"
+            },
+            {
+                "title": "Combining Data in pandas With concat() and merge()",
+                "type": "Course",
+                "description": "Learn two techniques for combining data in pandas: merge() and concat(). Combining Series and DataFrame objects in pandas is a powerful way to gain new insights into your data.",
+                "url": "/courses/data-pandas-concat-and-merge/"
+            },
+            {
+                "title": "NumPy, SciPy, and pandas: Correlation With Python",
+                "type": "Tutorial",
+                "description": "Learn what correlation is and how you can calculate it with Python. You'll use SciPy, NumPy, and pandas correlation methods to calculate three different correlation coefficients. You'll also see how to visualize data, regression lines, and correlation matrices with Matplotlib.",
+                "url": "/numpy-scipy-pandas-correlation-python/"
+            },
+            {
+                "title": "Idiomatic Pandas: Tricks & Features You May Not Know",
+                "type": "Course",
+                "description": "In this course you'll see how to use some lesser-used but idiomatic Pandas capabilities that lend your code better readability, versatility, and speed.",
+                "url": "/courses/idiomatic-pandas-tricks-features-you-may-not-know/"
+            },
+            {
+                "title": "Using Pandas to Make a Gradebook in Python",
+                "type": "Course",
+                "description": "With this course and Python project, you'll build a script to calculate grades for a class using pandas. The script will quickly and accurately calculate grades from a variety of data sources. You'll see examples of loading, merging, and saving data with pandas, as well as plotting some summary statistics.",
+                "url": "/courses/gradebook-using-pandas-python/"
+            }
+        ]
+    },
+    "Perfect Your Python Development Setup": {
+        "skills": [
+            "Python Setup",
+            "Code Editors & IDEs",
+            "Running Apps"
+        ],
+        "resources": [
+            {
+                "title": "Installing Python on Windows, macOS, and Linux",
+                "type": "Course",
+                "description": "To get started working with Python, you'll need to have access to the Python interpreter. There are several common ways to accomplish this and in this course, you will learn how to install the latest version of Python on your computer.",
+                "url": "/courses/installing-python-windows-macos-linux/"
+            },
+            {
+                "title": "Finding the Perfect Python Code Editor",
+                "type": "Course",
+                "description": "Find your perfect Python development setup with this review of Python IDEs and code editors. Writing Python using IDLE or the Python REPL is great for simple things, but not ideal for larger programming projects. With this course you'll get an overview of the most common Python coding environments to help you make an informed decision.",
+                "url": "/courses/finding-perfect-python-code-editor/"
+            },
+            {
+                "title": "Setup Guide: Visual Studio Code + Python",
+                "type": "Course",
+                "description": "\u2800",
+                "url": "/courses/python-development-visual-studio-code-setup-guide/"
+            },
+            {
+                "title": "Setup Guide: Thonny, the Beginner-Friendly Python IDE",
+                "type": "Course",
+                "description": "\u2800",
+                "url": "/courses/python-thonny/"
+            },
+            {
+                "title": "Setup Guide: Jupyter Notebooks + Python",
+                "type": "Course",
+                "description": "\u2800",
+                "url": "/courses/using-jupyter-notebooks/"
+            },
+            {
+                "title": "Setup Guide: Sublime Text + Python",
+                "type": "Tutorial",
+                "description": "\u2800",
+                "url": "/setting-up-sublime-text-3-for-full-stack-python-development/"
+            },
+            {
+                "title": "Setup Guide: PyCharm + Python",
+                "type": "Tutorial",
+                "description": "\u2800",
+                "url": "/pycharm-guide/"
+            },
+            {
+                "title": "Setup Guide: Emacs + Python",
+                "type": "Tutorial",
+                "description": "\u2800",
+                "url": "/emacs-the-best-python-editor/"
+            },
+            {
+                "title": "Setup Guide: VIM + Python",
+                "type": "Tutorial",
+                "description": "\u2800",
+                "url": "/vim-and-python-a-match-made-in-heaven/"
+            },
+            {
+                "title": "An Effective Python Environment: Making Yourself at Home",
+                "type": "Tutorial",
+                "description": "This guide will walk you through the decisions you need to make when customizing your development environment for working with Python.",
+                "url": "/effective-python-environment/"
+            },
+            {
+                "title": "Running Python Scripts",
+                "type": "Course",
+                "description": "This step-by-step course will guide you through a series of ways to run Python scripts, depending on your environment, platform, needs, and skills as a programmer.",
+                "url": "/courses/running-python-scripts/"
+            },
+            {
+                "title": "A Beginner's Guide to Pip",
+                "type": "Course",
+                "description": "What is pip? In this beginner-friendly course, you'll learn how to use pip, the standard package manager for Python, so that you can install and manage additional packages that are not part of the Python standard library.",
+                "url": "/courses/what-is-pip/"
+            },
+            {
+                "title": "Working With Python Virtual Environments",
+                "type": "Course",
+                "description": "This course demonstrates how Python's virtual environments work as a \"sandbox\" and you get a quick walkthrough on how to set up a new environment (or virtualenv, as they're called for short) and how to install third-party packages into it using the pip command.",
+                "url": "/courses/working-python-virtual-environments/"
+            },
+            {
+                "title": "Start Managing Multiple Python Versions With pyenv",
+                "type": "Course",
+                "description": "Learn how to install multiple Python versions and switch between them with ease, including project-specific virtual environments, with pyenv.",
+                "url": "/courses/start-with-pyenv/"
+            },
+            {
+                "title": "Working With Pipenv",
+                "type": "Course",
+                "description": "Pipenv is a packaging tool for Python that solves some common problems associated with the typical workflow using pip, virtualenv, and requirements.txt. In this course, you'll go over what problems Pipenv solves and how to manage your Python dependencies with it.",
+                "url": "/courses/working-with-pipenv/"
+            },
+            {
+                "title": "Running Python Tests With PyTest",
+                "type": "Course",
+                "description": "In this hands-on course, you\u2019ll see how to create\u00a0Python unit tests, execute them, and find the bugs before your users do.\u00a0You\u2019ll learn about the tools available to write and execute tests, check your application\u2019s performance, and even look for security issues.",
+                "url": "/courses/test-driven-development-pytest/"
+            },
+            {
+                "title": "Introduction to Git and GitHub for Python Developers",
+                "type": "Course",
+                "description": "What is Git,  what is GitHub, and what's the difference? Learn the basics of Git and GitHub from the perspective of a Pythonista in this step-by-step video course.",
+                "url": "/courses/python-git-github-intro/"
+            },
+            {
+                "title": "Run Python Versions in Docker: How to Try the Latest Python Release",
+                "type": "Tutorial",
+                "description": "Learn how to run different Python versions in Docker. By following the examples, you'll see how you can play with the latest development version of Python, and how to use Dockerfiles to set up Python environments and package your own scripts.",
+                "url": "/python-versions-docker/"
+            },
+            {
+                "title": "Managing Python Dependencies",
+                "type": "Course",
+                "description": "Get up to speed with Python dependency management quickly and go from \u201cwriting scripts\u201d to \u201cbuilding applications\u201d with this complete course.",
+                "url": "https://realpython.com/https://realpython.com/products/managing-python-dependencies/"
+            }
+        ]
+    },
+    "Python Basics Book": {
+        "skills": [
+            "Python 3 Fundamentals",
+            "Real-World Projects"
+        ],
+        "resources": [
+            {
+                "title": "Python Basics",
+                "type": "Book",
+                "description": "This learning path requires that you own a copy of our book \"Python Basics: A Practical Introduction to Python 3\". Click the link below to learn more & purchase your copy.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Chapter 2: Setting Up Python",
+                "type": "Book Chapter",
+                "description": "See step-by-step how to install a Python development environment on Windows, macOS, and Linux.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Python Basics: Setting Up Python",
+                "type": "Course",
+                "description": "The first step to getting started with Python is to set it up on your machine. In this course, you'll learn how to download Python for Windows, macOS, and Ubuntu Linux and how to open Python's Integrated Development and Learning Environment, IDLE.",
+                "url": "/courses/setting-up-python/"
+            },
+            {
+                "title": "Installing Python 3",
+                "type": "Course",
+                "description": "Bonus tutorial that goes into more detail on how to install Python 3 on your computer.",
+                "url": "https://realpython.com/https://realpython.com/installing-python/"
+            },
+            {
+                "title": "Chapter 3: Your First Python Program",
+                "type": "Book Chapter",
+                "description": "Now that you have the latest version of Python installed on your computer, it\u2019s time to start coding. You'll write your first Python script, learn what happens when you run a script with an error, learn how to declare a variable and inspect its value, and learn how to write comments.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Python Basics: Code Your First Python Program",
+                "type": "Course",
+                "description": "In this video course, you'll write your first Python program. Along the way, you'll learn about errors, declare variables and inspect their values, and try your hand at writing comments.",
+                "url": "/courses/python-basics-first-program/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch03-first-python-program"
+            },
+            {
+                "title": "Chapter 4: Strings and Methods",
+                "type": "Book Chapter",
+                "description": "Learn how to work with strings and the fundamentals of using Python methods.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch04-strings-and-string-methods"
+            },
+            {
+                "title": "Chapter 5: Numbers and Math",
+                "type": "Book Chapter",
+                "description": "How to work with Python's built-in number types, how to round numbers in Python, and how to format and display numbers.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-5/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch05-numbers-in-python"
+            },
+            {
+                "title": "Chapter 6: Functions and Loops",
+                "type": "Book Chapter",
+                "description": "In this chapter, you will learn how to define and use your own custom functions as the core building blocks of your programs. You will also learn another fundamental aspect of programming: how to loop over data.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-6/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch06-functions-and-loops"
+            },
+            {
+                "title": "Chapter 7: Finding and Fixing Code Bugs",
+                "type": "Book Chapter",
+                "description": "A debugger is a program you can use to better understand where bugs are located in your code. In this chapter, you'll learn how to use IDLE's built-in debugger.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-7/"
+            },
+            {
+                "title": "Chapter 8: Conditional Logic and Control Flow",
+                "type": "Book Chapter",
+                "description": "Learn the mechanics of writing programs that do different things based on different conditions.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-8/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch08-conditional-logic"
+            },
+            {
+                "title": "Chapter 9: Tuples, Lists, and Dictionaries",
+                "type": "Book Chapter",
+                "description": "In this chapter, you will meet three new and important data structures: Lists, Tuples, and Dictionaries.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-9/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch09-lists-tuples-and-dictionaries"
+            },
+            {
+                "title": "Chapter 10: Object-Oriented Programming (OOP)",
+                "type": "Book Chapter",
+                "description": "In this chapter you will learn how to declare your own custom objects in Python and then use those objects to structure your program according to the principles of object-oriented programming (OOP).",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-10/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch10-primer-on-oop"
+            },
+            {
+                "title": "Chapter 11: Modules and Packages",
+                "type": "Book Chapter",
+                "description": "In this chapter you\u2019ll learn how to create your own modules, use modules in another file via the \u201cimport\u201d statement, and organize several modules into a package.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch11-modules-and-packages"
+            },
+            {
+                "title": "Chapter 12: File Input and Output",
+                "type": "Book Chapter",
+                "description": "Learn how to work with files in Python. Working with files is an essential skill that is used by Python programmers working in any discipline, including web development, business automation, and data science.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-11/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch12-file-input-and-output"
+            },
+            {
+                "title": "Chapter 13: Installing Packages With Pip",
+                "type": "Book Chapter",
+                "description": "In this chapter you will learn the basics of working with Pip and will use it to install your first package.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-12/"
+            },
+            {
+                "title": "Chapter 14: Creating and Modifying PDF Files",
+                "type": "Book Chapter",
+                "description": "In this chapter, you will learn how to read from, write to, and modify PDF files with Python.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-13/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch14-interact-with-pdf-files"
+            },
+            {
+                "title": "Chapter 15: Working With Databases",
+                "type": "Book Chapter",
+                "description": "In this chapter, you will learn about a SQL database, called SQLite, that comes with every Python installation.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-14/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Tutorial",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch15-sql-database-connections"
+            },
+            {
+                "title": "Chapter 16: Interacting With the Web",
+                "type": "Book Chapter",
+                "description": "Web scraping is the process of collecting and parsing raw data from the web.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-15/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch16-interacting-with-the-web"
+            },
+            {
+                "title": "Chapter 17: Scientific Computing and Graphing",
+                "type": "Book Chapter",
+                "description": "In this chapter, you will get an introduction to two of the most powerful Python packages for scientific computing and data science: NumPy and Matplotlib.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-16/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch17-scientific-computing-and-graphing"
+            },
+            {
+                "title": "Chapter 18: Graphical User Interfaces",
+                "type": "Book Chapter",
+                "description": "In this chapter you will focus on learning the basics of creating a GUI with Python.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "Check Your Learning Progress",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "https://realpython.com/https://realpython.com/quizzes/python-basics-17/"
+            },
+            {
+                "title": "Exercises & Challenges",
+                "type": "Coding Exercise",
+                "description": "",
+                "url": "https://realpython.com/https://github.com/realpython/python-basics-exercises/tree/master/ch18-graphical-user-interfaces"
+            },
+            {
+                "title": "Chapter 19: Final Thoughts and Next Steps",
+                "type": "Book Chapter",
+                "description": "Congratulations! You've made it to all the way to the end of this book. You already know enough to do a lot of amazing things with Python, but now the real fun starts: it's time to explore on your own.",
+                "url": "https://realpython.com/https://realpython.com/products/python-basics-book/"
+            },
+            {
+                "title": "\"Python Tricks\" Email Series",
+                "type": "Free Email Class",
+                "description": "Get a short & sweet Python Trick delivered to your inbox every couple of days.",
+                "url": "https://realpython.com/https://realpython.com/python-tricks/"
+            },
+            {
+                "title": "Real Python Membership",
+                "type": "",
+                "description": "Master real-world Python skills with unlimited access to Real Python's video courses and expert community.",
+                "url": "https://realpython.com/https://realpython.com/account/join/"
+            },
+            {
+                "title": "Real Python Office Hours",
+                "type": "",
+                "description": "Join the next \"Office Hours\" Live Q&A Session with an expert from the Real Python Team.",
+                "url": "https://realpython.com/https://realpython.com/office-hours/"
+            },
+            {
+                "title": "Real Python Community Chat",
+                "type": "",
+                "description": "Discuss your coding and career questions, celebrate your progress, vote on upcoming tutorial topics, or just hang out with us at this virtual water cooler.",
+                "url": "https://realpython.com/https://realpython.com/community/"
+            },
+            {
+                "title": "PythonistaCafe",
+                "type": "",
+                "description": "A Peer-to-Peer Learning Community for Python Enthusiasts\u2026Just Like You",
+                "url": "https://realpython.com/https://www.pythonistacafe.com"
+            },
+            {
+                "title": "Python Tricks: The Book",
+                "type": "Book",
+                "description": "Discover Python\u2019s best practices with simple examples and start writing even more beautiful + Pythonic code.",
+                "url": "https://realpython.com/https://realpython.com/products/python-tricks-book/"
+            }
+        ]
+    },
+    "Python Basics: Introduction to Python": {
+        "skills": [
+            "Python 3 Fundamentals",
+            "Real-World Projects"
+        ],
+        "resources": [
+            {
+                "title": "Python Basics: Setting Up Python",
+                "type": "Course",
+                "description": "The first step to getting started with Python is to set it up on your machine. In this course, you'll learn how to download Python for Windows, macOS, and Ubuntu Linux and how to open Python's Integrated Development and Learning Environment, IDLE.",
+                "url": "/courses/setting-up-python/"
+            },
+            {
+                "title": "Python Basics: Code Your First Python Program",
+                "type": "Course",
+                "description": "In this video course, you'll write your first Python program. Along the way, you'll learn about errors, declare variables and inspect their values, and try your hand at writing comments.",
+                "url": "/courses/python-basics-first-program/"
+            },
+            {
+                "title": "Python Basics: Code Your First Python Program",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-basics-first-program/"
+            },
+            {
+                "title": "Python Basics: Strings and String Methods",
+                "type": "Course",
+                "description": "In Python, collections of text are called strings. In this course, you'll learn about this fundamental data type and the string methods that you can use to manipulate strings. Along the way, you'll learn ways to work with strings of numbers, and how to format strings for printing.",
+                "url": "/courses/python-basics-strings-string-methods/"
+            },
+            {
+                "title": "Python Basics: Strings and String Methods",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-basics-strings-and-string-methods/"
+            },
+            {
+                "title": "Python Basics: Numbers and Math",
+                "type": "Course",
+                "description": "Learn the math that you'll need for your Python programming journey. This includes integers and floating-point numbers, arithmetic operators, and string formatting for numbers.",
+                "url": "/courses/python-basics-numbers-and-math/"
+            },
+            {
+                "title": "Python Basics: Numbers and Math",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-basics-numbers-and-math/"
+            },
+            {
+                "title": "Python Basics: Functions and Loops",
+                "type": "Course",
+                "description": "In this Python Basics video course, you'll learn how to create user-defined functions that you can execute several times throughout your code. You'll also try your hand at repeating code with for and while loops.",
+                "url": "/courses/python-basics-functions-loops/"
+            },
+            {
+                "title": "Python Basics: Functions and Loops",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-basics-functions-and-loops/"
+            },
+            {
+                "title": "Python Basics: Scopes",
+                "type": "Course",
+                "description": "Learn what scope is and why it's important to coding functions and loops in Python. You'll also get to know the LEGB rule.",
+                "url": "/courses/python-basics-scopes/"
+            },
+            {
+                "title": "Python Basics: Scopes",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-basics-scopes/"
+            },
+            {
+                "title": "Python Basics: Finding and Fixing Code Bugs",
+                "type": "Course",
+                "description": "In this Python Basics video course, you'll learn how to identify and fix logic errors, or bugs, in your Python code. You'll use the built-in debugging tools in Python's Integrated Development and Learning Environment to practice locating and resolving bugs in an example function.",
+                "url": "/courses/python-basics-code-bugs/"
+            },
+            {
+                "title": "Python Basics: Finding and Fixing Code Bugs",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-basics-find-fix-code-bugs/"
+            },
+            {
+                "title": "Python Basics: Conditional Logic and Control Flow",
+                "type": "Course",
+                "description": "In this Python Basics video course, you'll learn how use conditional logic to write programs that perform different actions based on different conditions. Paired with functions and loops, conditional logic allows you to write complex programs that can handle many different situations.",
+                "url": "/courses/basics-conditional-logic-control-flow/"
+            },
+            {
+                "title": "Python Basics: Conditional Logic and Control Flow",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-basics-conditional-logic-and-control-flow/"
+            },
+            {
+                "title": "Python Basics: Dictionaries",
+                "type": "Course",
+                "description": "One of the most useful data structures in Python is the dictionary. In this video course, you\u2019ll learn what a dictionary is, how dictionaries differ from lists and tuples, and how to define and use dictionaries in your own code.",
+                "url": "/courses/python-basics-dictionaries/"
+            },
+            {
+                "title": "Python Basics: Dictionaries",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-basics-dictionaries/"
+            },
+            {
+                "title": "Python Basics: Object-Oriented Programming",
+                "type": "Course",
+                "description": "In this video course, you'll get to know OOP, or object-oriented programming. You'll learn how to create a class, use classes to create new objects, and instantiate classes with attributes.",
+                "url": "/courses/python-basics-oop/"
+            },
+            {
+                "title": "Python Basics: Building Systems With Classes",
+                "type": "Course",
+                "description": "Learn how to work with classes to build complex systems in Python. By composing classes, inheriting from other classes, and overriding class behavior, you'll harness the power of object-oriented programming (OOP).",
+                "url": "/courses/python-basics-class/"
+            },
+            {
+                "title": "Python Basics: File System Operations",
+                "type": "Course",
+                "description": "Learn how to use the pathlib module to carry out file path operations with Python. These operations include creating, iterating over, searching for, moving, and deleting files and folders.",
+                "url": "/courses/python-basics-file-system-operations/"
+            },
+            {
+                "title": "Python Basics Exercises: File System Operations",
+                "type": "Course",
+                "description": "In this Python Basics Exercises course, you'll review how to use Python to work with your computer's file system. Then, you'll tackle a coding challenge to further develop your skills.",
+                "url": "/courses/python-file-system-exercises/"
+            }
+        ]
+    },
+    "Python Concurrency & Parallel Programming": {
+        "skills": [
+            "Multithreading",
+            "Multiprocessing",
+            "Async IO"
+        ],
+        "resources": [
+            {
+                "title": "Speed Up Python With Concurrency",
+                "type": "Course",
+                "description": "Learn what concurrency means in Python and why you might want to use it. You'll see a simple, non-concurrent approach and then look into why you'd want threading, asyncio, or multiprocessing.",
+                "url": "/courses/speed-python-concurrency/"
+            },
+            {
+                "title": "Python Concurrency Quiz",
+                "type": "Interactive Quiz",
+                "description": "",
+                "url": "/quizzes/python-concurrency/"
+            },
+            {
+                "title": "Hands-On Python 3 Concurrency With the asyncio Module",
+                "type": "Course",
+                "description": "Learn how to speed up your Python 3 programs using concurrency and the asyncio module in the standard library. See step-by-step how to leverage concurrency and parallelism in your own programs, all the way to building a complete HTTP downloader example app using asyncio and aiohttp.",
+                "url": "/courses/python-3-concurrency-asyncio-module/"
+            },
+            {
+                "title": "Threading in Python",
+                "type": "Course",
+                "description": "In this intermediate-level course, you'll learn how to use threading in your Python programs. You'll see how to create threads, how to coordinate and synchronize them, and how to handle common problems that arise in threading.",
+                "url": "/courses/threading-python/"
+            },
+            {
+                "title": "Getting Started With Async Features in Python",
+                "type": "Tutorial",
+                "description": "This step-by-step tutorial gives you the tools you need to start making asynchronous programming techniques a part of your repertoire. You'll learn how to use Python async features to take advantage of IO processes and free up your CPU.",
+                "url": "/python-async-features/"
+            },
+            {
+                "title": "What Is the Python Global Interpreter Lock (GIL)?",
+                "type": "Tutorial",
+                "description": "Python's Global Interpreter Lock or GIL, in simple words, is a mutex (or a lock) that allows only one thread to hold the control of the Python interpreter at any one time. In this article you'll learn how the GIL affects the performance of your Python programs.",
+                "url": "/python-gil/"
+            },
+            {
+                "title": "Parallel Map Reduce in Python",
+                "type": "Course",
+                "description": "How to do parallel processing with multiprocessing and concurrent.futures using a functional programming map-reduce approach.",
+                "url": "/courses/functional-programming-python/"
+            },
+            {
+                "title": "First Steps With PySpark and Big Data Processing",
+                "type": "Tutorial",
+                "description": "Take your first steps with Spark, PySpark, and Big Data processing concepts using intermediate Python concepts.",
+                "url": "/pyspark-intro/"
+            },
+            {
+                "title": "NumPy Vectorization & Array Programming",
+                "type": "Tutorial",
+                "description": "How to take advantage of vectorization and broadcasting so you can use NumPy to its full capacity. In this tutorial you'll see step-by-step how these advanced features in NumPy help you writer faster code.",
+                "url": "/numpy-array-programming/"
+            }
+        ]
+    },
+    "Python GUI Programming": {
+        "skills": [
+            "Graphical User Interfaces (GUIs)"
+        ],
+        "resources": [
+            {
+                "title": "Python GUI Programming With Tkinter",
+                "type": "Tutorial",
+                "description": "Learn the basics of GUI programming with Tkinter, the de facto Python GUI framework. Master GUI programming concepts such as widgets, geometry managers, and event handlers. Then, put it all together by building two applications: a temperature converter and a text editor.",
+                "url": "/python-gui-tkinter/"
+            },
+            {
+                "title": "Simplify Python GUI Development With PySimpleGUI",
+                "type": "Course",
+                "description": "Learn how to create a cross-platform graphical user interface (GUI) using Python and PySimpleGUI. A graphical user interface is an application that has buttons, windows, and lots of other elements that the user can use to interact with your application.",
+                "url": "/courses/simplify-gui-dev-pysimplegui/"
+            },
+            {
+                "title": "Python and PyQt: Building a GUI Desktop Calculator",
+                "type": "Tutorial",
+                "description": "Learn how to create graphical user interface (GUI) applications with Python and PyQt. Once you've covered the basics, you'll build a fully functional desktop calculator that can respond to user events with concrete actions.",
+                "url": "/python-pyqt-gui-calculator/"
+            },
+            {
+                "title": "How to Build a Python GUI Application With wxPython",
+                "type": "Tutorial",
+                "description": "Learn how to create a cross-platform graphical user interface (GUI) using Python and the wxPython toolkit. A graphical user interface is an application that has buttons, windows, and lots of other widgets that the user can use to interact with your application.",
+                "url": "/python-gui-with-wxpython/"
+            },
+            {
+                "title": "Build Cross-Platform GUI Apps With Kivy",
+                "type": "Course",
+                "description": "Learn how to build a cross-platform mobile application with Python and the Kivy GUI framework. You'll discover how to develop an application that can run on your desktop as well as your phone. Then, you'll package your app for Windows, Linux, and macOS.",
+                "url": "/courses/cross-platform-gui-apps-kivy/"
+            }
+        ]
+    },
+    "Python Web Scraping": {
+        "skills": [
+            "Web Scraping",
+            "HTTP Requests",
+            "Data Parsing"
+        ],
+        "resources": [
+            {
+                "title": "Making HTTP Requests With Python",
+                "type": "Course",
+                "description": "The \"requests\" library is the de facto standard for making HTTP requests in Python. It abstracts the complexities of making requests behind a beautiful, simple API so that you can focus on interacting with services and consuming data in your application. This course shows you how to work effectively with \"requests\", from start to finish.",
+                "url": "/courses/python-requests/"
+            },
+            {
+                "title": "Web Scraping With Beautiful Soup and Python",
+                "type": "Course",
+                "description": "In this course, you'll walk through the main steps of the web scraping process. You'll learn how to write a script that uses Python's requests library to scrape data from a website. You'll also use Beautiful Soup to extract the specific pieces of information that you're interested in.",
+                "url": "/courses/web-scraping-beautiful-soup/"
+            },
+            {
+                "title": "A Practical Introduction to Web Scraping in Python",
+                "type": "Tutorial",
+                "description": "Learn all about web scraping in Python. You'll see how to parse data from websites and interact with HTML forms using tools such as Beautiful Soup and MechanicalSoup.",
+                "url": "/python-web-scraping-practical-introduction/"
+            },
+            {
+                "title": "Working With JSON Data in Python",
+                "type": "Course",
+                "description": "Learn how to work with Python's built-in \"json\" module to serialize the data in your programs into JSON format. Then, you'll deserialize some JSON from an online API and convert it into Python objects.",
+                "url": "/courses/working-json-data-python/"
+            },
+            {
+                "title": "Reading and Writing CSV Files",
+                "type": "Course",
+                "description": "This short course covers how to read and write data to CSV files using Python's built in \"csv\" module and the \"pandas\" library. You'll learn how to handle standard and non-standard data such as CSV files without headers, or files containing delimeters in the data.",
+                "url": "/courses/reading-and-writing-csv-files/"
+            },
+            {
+                "title": "Modern Web Automation With Python and Selenium",
+                "type": "Tutorial",
+                "description": "Your guide to learning advanced Python web automation techniques: Selenium, headless browsing, exporting scraped data to CSV, and wrapping your scraping code in a Python class.",
+                "url": "/modern-web-automation-with-python-and-selenium/"
+            }
+        ]
+    },
+    "Test Your Python Apps": {
+        "skills": [
+            "Testing Python Code",
+            "PyTest",
+            "Mocking"
+        ],
+        "resources": [
+            {
+                "title": "Test-Driven Development With PyTest",
+                "type": "Course",
+                "description": "In this hands-on course, you\u2019ll see how to create\u00a0Python unit tests, execute them, and find the bugs before your users do.\u00a0You\u2019ll learn about the tools available to write and execute tests, check your application\u2019s performance, and even look for security issues.",
+                "url": "/courses/test-driven-development-pytest/"
+            },
+            {
+                "title": "Testing Your Code With pytest",
+                "type": "Course",
+                "description": "Learn how to take your testing to the next level with pytest. You'll cover intermediate and advanced pytest features such as fixtures, marks, parameters, and plugins. With pytest, you can make your test suites fast, effective, and less painful to maintain.",
+                "url": "/courses/testing-your-code-with-pytest/"
+            },
+            {
+                "title": "4 Techniques for Testing Python Command-Line (CLI) Apps",
+                "type": "Tutorial",
+                "description": "Learn 4 essential testing techniques for Python command-line applications: \"lo-fi\" print debugging, using a visual debugger, unit testing with pytest and mocks, and integration testing.",
+                "url": "/python-cli-testing/"
+            },
+            {
+                "title": "Python Debugging With pdb",
+                "type": "Course",
+                "description": "Learn the basics of using pdb, Python's interactive source code debugger. pdb is a great tool for tracking down hard-to-find bugs, and it allows you to fix faulty code more quickly.",
+                "url": "/courses/python-debugging-pdb/"
+            },
+            {
+                "title": "Continuous Integration With Python",
+                "type": "Course",
+                "description": "Learn the core concepts behind Continuous Integration (CI) and why they are essential for modern software engineering teams. Find out how to how set up Continuous Integration for your Python project to automatically create environments, install dependencies, and run tests.",
+                "url": "/courses/python-continuous-integration/"
+            },
+            {
+                "title": "Improve Your Tests With the Python Mock Object Library",
+                "type": "Course",
+                "description": "Learn how to use the Python mock object library, unittest.mock, to create and use mock objects to improve your tests. Obstacles like complex logic and unpredictable dependencies make writing valuable tests difficult, but unittest.mock can help you overcome these obstacles.",
+                "url": "/courses/python-mock-object-library/"
+            }
+        ]
+    },
+    "Write More Pythonic Code": {
+        "skills": [
+            "Best Practices",
+            "Writing Idiomatic Python"
+        ],
+        "resources": [
+            {
+                "title": "Writing Comments in Python",
+                "type": "Course",
+                "description": "Learn how to write Python comments that are clean, concise, and useful. Quickly get up to speed on what the best practices are, which types of comments it's best to avoid, and how you can practice writing cleaner comments.",
+                "url": "/courses/writing-comments-python/"
+            },
+            {
+                "title": "Writing Beautiful Pythonic Code With PEP 8",
+                "type": "Course",
+                "description": "Learn how to write high-quality, readable code by using the Python style guidelines laid out in PEP 8. Following these guidelines helps you make a great impression when sharing your work with potential employers and collaborators. This course outlines the key guidelines laid out in PEP 8. It's aimed at beginner to intermediate programmers.",
+                "url": "/courses/writing-beautiful-python-code-pep-8/"
+            },
+            {
+                "title": "How to Write Pythonic Loops",
+                "type": "Course",
+                "description": "See how you can make your loops more Pythonic if you're coming to Python from a C-style language. You'll learn how you can get the most out of using range(), xrange(), and enumerate(). You'll also see how you can avoid having to keep track of loop indexes manually.",
+                "url": "/courses/how-to-write-pythonic-loops/"
+            },
+            {
+                "title": "Using List Comprehensions Effectively",
+                "type": "Course",
+                "description": "This short course breaks down Python list comprehensions for you step by step. See how Python's comprehensions can be transformed from and to equivalent \"for\"-loops so you'll know exactly what's going on behind the scenes.",
+                "url": "/courses/using-list-comprehensions-effectively/"
+            },
+            {
+                "title": "How to Use Python Lambda Functions",
+                "type": "Course",
+                "description": "Learn about Python lambda functions. You'll see how they compare with regular functions and how you can use them in accordance with best practices.",
+                "url": "/courses/python-lambda-functions/"
+            },
+            {
+                "title": "Writing Idiomatic Python",
+                "type": "Course",
+                "description": "What are the programming idioms unique to Python? This course is a short overview for people coming from other languages and an introduction for beginners to the idiomatic practices within Python. You'll cover truth values, looping, DRY principles, and the Zen of Python.",
+                "url": "/courses/writing-idiomatic-python/"
+            },
+            {
+                "title": "Python 3's f-Strings: An Improved String Formatting Syntax",
+                "type": "Course",
+                "description": "As of Python 3.6, f-strings are a great new way to format strings. Not only are they more readable, more concise, and less prone to error than other ways of formatting, but they are also faster! By the end of this course, you'll know how and why to start using f-strings today.",
+                "url": "/courses/python-3-f-strings-improved-string-formatting-syntax/"
+            },
+            {
+                "title": "Documenting Python Code: A Complete Guide",
+                "type": "Course",
+                "description": "Whether you're documenting a small script or a large project, whether you're a beginner or seasoned Pythonista, this guide will cover everything you need to know.",
+                "url": "/courses/documenting-python-code/"
+            },
+            {
+                "title": "Refactoring Python Applications for Simplicity",
+                "type": "Tutorial",
+                "description": "Learn how to refactor your Python application to be simpler and more maintainable and have fewer bugs. You'll cover code metrics, refactoring tools, and common anti-patterns.",
+                "url": "/python-refactoring/"
+            },
+            {
+                "title": "Structuring a Python Application",
+                "type": "Course",
+                "description": "This course is a reference guide to common Python application layouts and project structures for command-line applications, web applications, and more.",
+                "url": "/courses/structuring-python-application/"
+            },
+            {
+                "title": "How to Stand Out in a Python Coding Interview",
+                "type": "Course",
+                "description": "Learn how to take your Python coding interview skills to the next level and use Python's built-in functions and modules to solve problems faster and more easily.",
+                "url": "/courses/python-coding-interviews-tips-best-practices/"
+            },
+            {
+                "title": "Python Code Quality: Tools & Best Practices",
+                "type": "Tutorial",
+                "description": "See how to improve the quality of your Python code. We'll analyze and compare tools you can use to take your code to the next level and make it more Pythonic. Whether you've been using Python for a while, or just beginning, you can benefit from the practices and tools talked about here.",
+                "url": "/python-code-quality/"
+            },
+            {
+                "title": "Writing Cleaner Python Code With PyLint",
+                "type": "Course",
+                "description": "See how to install and set up the PyLint code linter tool. You'll learn why you should use code linters like PyLint, Flake8, PyFlakes, or other static analysis tools\u2014and how they can help you write cleaner and more Pythonic code.",
+                "url": "/courses/writing-cleaner-python-code-pylint/"
+            },
+            {
+                "title": "Python Type Checking",
+                "type": "Course",
+                "description": "In this course, you'll look at Python type checking. Traditionally, types have been handled by the Python interpreter in a flexible but implicit way. Recent versions of Python allow you to specify explicit type hints that can be used by different tools to help you develop your code more efficiently.",
+                "url": "/courses/python-type-checking/"
+            }
+        ]
+    }
+}
