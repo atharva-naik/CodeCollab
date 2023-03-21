@@ -10,19 +10,76 @@
                 "title": "Python Coding Interviews: Tips & Best Practices",
                 "type": "Course",
                 "description": "Learn how to take your Python coding interview skills to the next level and use Python's built-in functions and modules to solve problems faster and more easily.",
-                "url": "https://realpython.com/courses/python-coding-interviews-tips-best-practices/"
+                "url": "https://realpython.com/courses/python-coding-interviews-tips-best-practices/",
+                "decomposition": {
+                    "Part 1: Introduction & Pythonic Built-Ins": [
+                        "1. How to Stand Out in a Python Coding Interview (Overview) 03:27",
+                        "2. range() vs enumerate() 05:20",
+                        "3. List Comprehensions and Built-In Functions on Lists 08:02",
+                        "4. print() and breakpoint() 05:00",
+                        "5. f-Strings 03:22",
+                        "6. Sorting 02:33"
+                    ],
+                    "Part 2: Leveraging Core Data Structures": [
+                        "1. Sets 06:40",
+                        "2. Generators 04:08",
+                        "3. Dictionaries and collections.defaultdict 08:12",
+                        "4. collections.Counter 05:52",
+                        "5. collections.deque 03:48",
+                        "6. collections.namedtuple 03:17"
+                    ],
+                    "Part 3: Using Python's Standard Library": [
+                        "1. string Module 05:48",
+                        "2. itertools Module 03:48",
+                        "3. functools Module 05:20",
+                        "4. doctest Module and assert Statements 07:42"
+                    ],
+                    "Part 4: Real-World Interview Questions": [
+                        "1. Easier Interview Question 09:31",
+                        "2. Medium Interview Question 17:58",
+                        "3. Hard Interview Question (Brute Force) 08:10",
+                        "4. Hard Interview Question (Suboptimal Solution) 09:01",
+                        "5. Hard Interview Question (Optimal Solution & PriorityQueue) 11:37",
+                        "6. How to Stand Out in a Python Coding Interview (Summary) 02:25"
+                    ]
+                }
             },
             {
                 "title": "Introduction to Sorting Algorithms in Python",
                 "type": "Course",
                 "description": "Learn all about five different sorting algorithms in Python from both a theoretical and a practical standpoint. You'll also learn several related and important concepts, including Big O notation and recursion.",
-                "url": "https://realpython.com/courses/intro-sorting-algorithms/"
+                "url": "https://realpython.com/courses/intro-sorting-algorithms/",
+                "decomposition": {
+                    "Introduction to Sorting Algorithms in Python": [
+                        "1. Introduction to Sorting Algorithms in Python (Overview) 00:58",
+                        "2. Why Sorting Matters? 05:31",
+                        "3. Time Complexity Overview 05:09",
+                        "4. Bubble Sort 08:59",
+                        "5. Insertion Sort 08:17",
+                        "6. Merge Sort 11:28",
+                        "7. Quicksort Algorithm 08:07",
+                        "8. Timsort Algorithm 13:50",
+                        "9. Introduction to Sorting Algorithms in Python (Summary) 01:07"
+                    ]
+                }
             },
             {
                 "title": "Creating a Binary Search in Python",
                 "type": "Course",
                 "description": "Binary search is a classic algorithm in computer science. In this step-by-step course, you'll learn how to implement this algorithm in Python. You'll learn how to leverage existing libraries as well as craft your own binary search Python implementation.",
-                "url": "https://realpython.com/courses/creating-binary-search-python/"
+                "url": "https://realpython.com/courses/creating-binary-search-python/",
+                "decomposition": {
+                    "Creating a Binary Search in Python": [
+                        "1. Creating a Binary Search in Python (Overview) 02:14",
+                        "2. Introducing the Dataset and Benchmarking 03:33",
+                        "3. Understanding Search Algorithms 10:27",
+                        "4. Using the bisect Module 05:22",
+                        "5. Implementing Binary Search 10:59",
+                        "6. Covering Tricky Details 06:10",
+                        "7. Analyzing the Time-Space Complexity 06:07",
+                        "8. Creating a Binary Search in Python (Summary) 00:44"
+                    ]
+                }
             },
             {
                 "title": "Python Practice Problems: Get Ready for Your Next Interview",
@@ -52,7 +109,66 @@
                 "title": "Office Hours Archive",
                 "type": "Course",
                 "description": "The Real Python Office Hours is a weekly hangout where members of Real Python get the chance to interact with each other as well as Real Python authors and video course instructors. Join us live on Wednesday mornings!",
-                "url": "https://realpython.com/courses/office-hours/"
+                "url": "https://realpython.com/courses/office-hours/",
+                "decomposition": {
+                    "Introduction": [
+                        "1. Welcome to Office Hours 04:17"
+                    ],
+                    "Office Hours Meetings (2021)": [
+                        "1. August 25, 2021 63:27",
+                        "2. August 18, 2021 73:45",
+                        "3. August 11, 2021 64:18",
+                        "4. August 4, 2021 64:02",
+                        "5. July 28, 2021 63:33",
+                        "6. July 21, 2021 61:03",
+                        "7. July 14, 2021 62:49",
+                        "8. July 7, 2021 66:46",
+                        "9. June 30, 2021 58:42",
+                        "10. June 23, 2021 63:54",
+                        "11. June 16, 2021 68:22",
+                        "12. June 9, 2021 71:19",
+                        "13. June 2, 2021 72:07",
+                        "14. May 19, 2021 59:01",
+                        "15. May 12, 2021 76:58",
+                        "16. May 5, 2021 70:20",
+                        "17. April 28, 2021 67:05",
+                        "18. April 21, 2021 62:05",
+                        "19. April 14, 2021 64:36",
+                        "20. April 7, 2021 56:55",
+                        "21. March 31, 2021 73:43",
+                        "22. March 24, 2021 67:10",
+                        "23. March 17, 2021 94:40",
+                        "24. March 10, 2021 61:25",
+                        "25. March 3, 2021 61:47",
+                        "26. February 24, 2021 58:49",
+                        "27. February 17, 2021 64:30",
+                        "28. February 3, 2021 81:56",
+                        "29. January 27, 2021 82:19",
+                        "30. January 20, 2021 76:32"
+                    ],
+                    "Office Hours Meetings (2020)": [
+                        "1. December 30, 2020 67:47",
+                        "2. December 16, 2020 66:53",
+                        "3. December 9, 2020 73:15",
+                        "4. December 2, 2020 75:44",
+                        "5. November 18, 2020 62:51",
+                        "6. November 11, 2020 69:23",
+                        "7. November 4, 2020 65:28",
+                        "8. October 28, 2020 59:56",
+                        "9. October 21, 2020 62:11",
+                        "10. October 7, 2020 61:37",
+                        "11. September 30, 2020 67:52",
+                        "12. September 23, 2020 59:46",
+                        "13. September 16, 2020 62:34",
+                        "14. September 9, 2020 59:09",
+                        "15. September 2, 2020 59:16",
+                        "16. August 26, 2020 64:46",
+                        "17. August 19, 2020 59:53",
+                        "18. August 12, 2020 72:53",
+                        "19. August 5, 2020 62:32",
+                        "20. July 29, 2020 66:48"
+                    ]
+                }
             }
         ]
     },
@@ -68,13 +184,82 @@
                 "title": "Get Started With Django: Build a Portfolio App",
                 "type": "Course",
                 "description": "Learn the basics of creating powerful web applications with Django, a Python web framework. You'll build a portfolio website to showcase your web development projects, complete with a fully functioning blog.",
-                "url": "https://realpython.com/courses/django-portfolio-project/"
+                "url": "https://realpython.com/courses/django-portfolio-project/",
+                "decomposition": {
+                    "Get Started With Django": [
+                        "1. Get Started With Django: Overview 01:31",
+                        "2. Web Frameworks and Django 03:51",
+                        "3. What You'll Build and Learn 04:42",
+                        "4. Django Apps 02:25",
+                        "5. Django Files 02:18",
+                        "6. Django Flow 02:01",
+                        "7. Get Started With Django: Recap 01:02"
+                    ],
+                    "Set Up Your Development Environment": [
+                        "1. Set Up Your Development Environment: Overview 01:21",
+                        "2. Start Setting Up Your Development Environment 09:40",
+                        "3. Create a Django Project 03:19",
+                        "4. Set Up Your Development Environment: Recap 02:07"
+                    ],
+                    "Build a Django Application": [
+                        "1. Build a Django Application: Overview 01:33",
+                        "2. Django by Error Messages 03:45",
+                        "3. Create the App 03:35",
+                        "4. Register the App 02:25",
+                        "5. Build Your Routes 07:51",
+                        "6. Create a View 08:05",
+                        "7. Create a Template 07:28",
+                        "8. Django's Double Folder Structure 03:41",
+                        "9. Style With Bootstrap 04:30",
+                        "10. Build a Django Application: Recap 04:29"
+                    ],
+                    "Showcase Your Projects": [
+                        "1. Showcase Your Projects: Overview 02:20",
+                        "2. Projects App Preview 01:24",
+                        "3. Django Models 08:09",
+                        "4. Migrations: SQLite 09:46",
+                        "5. Static Files 06:57",
+                        "6. Django Shell 05:08",
+                        "7. Build Routes 04:12",
+                        "8. Build Views 06:19",
+                        "9. Create Your Templates: Part 1 06:03",
+                        "10. Create Your Templates: Part 2 03:27",
+                        "11. Debugging: Part 1 10:06",
+                        "12. Debugging: Part 2 07:12",
+                        "13. Styling 04:02",
+                        "14. Showcase Your Projects: Recap 03:29"
+                    ],
+                    "Display a Single Project": [
+                        "1. Display a Single Project: Overview 02:11",
+                        "2. Django ORM: Accessing a Single Project 04:42",
+                        "3. Variable Arguments From URLs: Routing and Views 11:28",
+                        "4. URL Linking: app_name, Path Names, and Arguments 09:58",
+                        "5. NoReverseMatch Debugging 03:00",
+                        "6. Template Inheritance 08:22",
+                        "7. More Styling 06:52",
+                        "8. Using the Django Admin Interface 07:40",
+                        "9. Display a Single Project: Recap 06:57",
+                        "10. Next Steps: Make a Blog 03:19"
+                    ]
+                }
             },
             {
                 "title": "Django Migrations 101",
                 "type": "Course",
                 "description": "With this course you\u2019ll get comfortable with Django migrations and learn how to create database tables without writing any SQL, how to automatically modify your database after you changed your models, and how to revert changes made to your database.",
-                "url": "https://realpython.com/courses/django-migrations-101/"
+                "url": "https://realpython.com/courses/django-migrations-101/",
+                "decomposition": {
+                    "Django Migrations 101": [
+                        "1. What Django Migrations Are and the Problems They Solve 01:54",
+                        "2. Creating Django Migrations 03:53",
+                        "3. Applying Django Migrations 01:39",
+                        "4. Changing Django Models 01:29",
+                        "5. Listing Django Migrations 00:37",
+                        "6. Unapplying Django Migrations 01:41",
+                        "7. Tips for Naming Django Migrations 01:03",
+                        "8. Django Migrations 101: Course Summary 01:09"
+                    ]
+                }
             },
             {
                 "title": "Digging Deeper Into Django Migrations",
@@ -86,25 +271,79 @@
                 "title": "Make a Location-Based Web App With Django and GeoDjango",
                 "type": "Course",
                 "description": "Learn how to use Django and GeoDjango to build a location-based web application from scratch. You\u2019ll be building a simple nearby shops application that lists the shops closest to a user\u2019s location.",
-                "url": "https://realpython.com/courses/make-location-based-web-app-django-and-geodjango/"
+                "url": "https://realpython.com/courses/make-location-based-web-app-django-and-geodjango/",
+                "decomposition": {
+                    "Make a Location-Based Web App With Django and GeoDjango": [
+                        "1. Making a GeoDjango App: Introduction & Overview 03:28",
+                        "2. Set Up the PostgreSQL Database 08:59",
+                        "3. Set Up QGIS 04:04",
+                        "4. Set Up Your Venv, Django, and GeoDjango 05:19",
+                        "5. Connect Django to the Shops Database 04:42",
+                        "6. Create the \"nearbyshops\" App 02:39",
+                        "7. Create the Django Data Model 05:17",
+                        "8. Create the Django Superuser Account 02:58",
+                        "9. Add \"shop\" Table to Django Admin 05:00",
+                        "10. Create the \"nearbyshops\" View 06:35",
+                        "11. Bonus Video: Intro to Leaflet 07:41"
+                    ]
+                }
             },
             {
                 "title": "Django Redirects",
                 "type": "Course",
                 "description": "Learn everything you need to know about HTTP redirects in Django. All the way from the low-level details of the HTTP protocol to the high-level way of dealing with them in Django.",
-                "url": "https://realpython.com/courses/django-redirects/"
+                "url": "https://realpython.com/courses/django-redirects/",
+                "decomposition": {
+                    "Django Redirects": [
+                        "1. Django Redirects (Overview) 01:13",
+                        "2. Course Prologue 07:25",
+                        "3. Introduction to HTTP Redirects 07:08",
+                        "4. Django's Redirect Shortcut 06:37",
+                        "5. RedirectView Class Helper 05:17",
+                        "6. Parameters and Redirects 04:23",
+                        "7. Django Redirects (Summary) 05:30"
+                    ]
+                }
             },
             {
                 "title": "Working With JSON Data in Python",
                 "type": "Course",
                 "description": "Learn how to work with Python's built-in \"json\" module to serialize the data in your programs into JSON format. Then, you'll deserialize some JSON from an online API and convert it into Python objects.",
-                "url": "https://realpython.com/courses/working-json-data-python/"
+                "url": "https://realpython.com/courses/working-json-data-python/",
+                "decomposition": {
+                    "Working With JSON Data in Python": [
+                        "1. What Is JSON? 04:48",
+                        "2. Serializing JSON Data 04:39",
+                        "3. Deserializing JSON Data 03:04",
+                        "4. Working With JSON Data in Python 10:34",
+                        "5. JSON for Custom Python Objects 04:18",
+                        "6. Encoding Custom Types to JSON 04:02",
+                        "7. Decoding Custom Types From JSON 04:59"
+                    ]
+                }
             },
             {
                 "title": "Building HTTP APIs With Django REST Framework",
                 "type": "Course",
                 "description": "This course will get you ready to build HTTP APIs with Django REST Framework. The Django REST framework (DRF) is a toolkit built on top of the Django web framework that reduces the amount of code you need to write to create REST interfaces.",
-                "url": "https://realpython.com/courses/django-rest-framework/"
+                "url": "https://realpython.com/courses/django-rest-framework/",
+                "decomposition": {
+                    "Building HTTP APIs With Django REST Framework": [
+                        "1. Building With Django REST Framework (Overview) 04:20",
+                        "2. What Is REST? 10:19",
+                        "3. DRF Serialization and Views 13:51",
+                        "4. DRF ViewSets 12:30",
+                        "5. Web Interface and Renderers 08:07",
+                        "6. Django Authentication 06:03",
+                        "7. DRF Permissions 13:49",
+                        "8. Alternative Serializers 07:56",
+                        "9. Nested Serialization 09:25",
+                        "10. ViewSet Actions 12:34",
+                        "11. Single Page Application (SPA) Architecture 08:57",
+                        "12. SPA Code Walk Through 19:09",
+                        "13. Building With Django REST Framework (Summary) 03:12"
+                    ]
+                }
             },
             {
                 "title": "Python REST APIs With Flask, Connexion, and SQLAlchemy \u2013 Part 1",
@@ -128,7 +367,19 @@
                 "title": "Sending Emails With Python",
                 "type": "Course",
                 "description": "Learn how to send emails using Python. Find out how to send plain-text and HTML messages, add files as attachments, and send personalized emails to multiple people. Later on you'll build a CSV-powered email sending script from scratch.",
-                "url": "https://realpython.com/courses/sending-emails-python/"
+                "url": "https://realpython.com/courses/sending-emails-python/",
+                "decomposition": {
+                    "Sending Emails With Python": [
+                        "1. Sending Emails: Intro and Account Configuration 01:58",
+                        "2. Connecting to the Mail Server With smtplib 04:21",
+                        "3. Opportunistic Encryption With starttls() 03:41",
+                        "4. Sending Plaintext Emails With Python 05:01",
+                        "5. Sending HTML Emails With Python 05:56",
+                        "6. Adding Email Attachments With smtplib 04:26",
+                        "7. Sending Multiple Emails From a CSV File 05:34",
+                        "8. Sending Emails With Yagmail 04:58"
+                    ]
+                }
             },
             {
                 "title": "What You Need to Know to Manage Users in Django Admin",
@@ -140,7 +391,22 @@
                 "title": "Django Admin Customization",
                 "type": "Course",
                 "description": "Learn how to customize Django's admin with Python. You'll use AdminModel objects to add display columns, calculate values, link to referring objects, and search and filter results. You'll also use template overriding to gain full control over the admin's HTML.",
-                "url": "https://realpython.com/courses/django-admin-customization/"
+                "url": "https://realpython.com/courses/django-admin-customization/",
+                "decomposition": {
+                    "Django Admin Customization": [
+                        "1. Django Admin Customization (Overview) 00:45",
+                        "2. Course Prerequisites 01:21",
+                        "3. Setting Up the Django Admin 07:35",
+                        "4. Customizing the Django Admin 01:59",
+                        "5. Modifying a Change List 04:18",
+                        "6. Providing Links to Other Objects 03:09",
+                        "7. Adding Filters to the List Screen 01:26",
+                        "8. Adding Search to the List Screen 01:42",
+                        "9. Changing How Models Are Edited 02:53",
+                        "10. Overriding Templates 03:09",
+                        "11. Django Admin Customization (Summary) 01:16"
+                    ]
+                }
             }
         ]
     },
@@ -154,7 +420,17 @@
                 "title": "Reading and Writing CSV Files",
                 "type": "Course",
                 "description": "This short course covers how to read and write data to CSV files using Python's built in \"csv\" module and the \"pandas\" library. You'll learn how to handle standard and non-standard data such as CSV files without headers, or files containing delimeters in the data.",
-                "url": "https://realpython.com/courses/reading-and-writing-csv-files/"
+                "url": "https://realpython.com/courses/reading-and-writing-csv-files/",
+                "decomposition": {
+                    "Reading and Writing CSV Files": [
+                        "1. What Are CSV Files? 01:37",
+                        "2. Reading CSVs With Python's \"csv\" Module 04:13",
+                        "3. Advanced CSV Reader Parameters 03:51",
+                        "4. Writing CSVs With Python's \"csv\" Module 05:33",
+                        "5. Reading CSVs With Pandas 04:30",
+                        "6. Writing CSVs With Pandas 02:12"
+                    ]
+                }
             },
             {
                 "title": "Reading and Writing CSV Files in Python",
@@ -166,13 +442,60 @@
                 "title": "Reading and Writing Files With Pandas",
                 "type": "Course",
                 "description": "Learn about the Pandas IO tools API and how you can use it to read and write files. You'll use the Pandas read_csv() function to work with CSV files. You'll also cover similar methods for efficiently working with Excel, CSV, JSON, HTML, SQL, pickle, and big data files.",
-                "url": "https://realpython.com/courses/reading-writing-files-pandas/"
+                "url": "https://realpython.com/courses/reading-writing-files-pandas/",
+                "decomposition": {
+                    "Reading and Writing Files With Pandas": [
+                        "1. Reading and Writing Files With Pandas (Overview) 01:01",
+                        "2. Installing Pandas and Preparing Data 04:00",
+                        "3. Reading and Writing CSV Files 02:21",
+                        "4. Reading and Writing Excel Files 02:59"
+                    ],
+                    "Working With Different File Types": [
+                        "1. Working With Different File Types Introduction 00:32",
+                        "2. Understanding the Pandas IO API 02:09",
+                        "3. Working With CSV Files 06:42",
+                        "4. Working With JSON Files 05:35",
+                        "5. Working With HTML Files 02:40",
+                        "6. Working With Excel Files 02:32",
+                        "7. Working With SQL 04:38",
+                        "8. Working With Pickle Files 01:42"
+                    ],
+                    "Working With Big Data": [
+                        "1. Working With Big Data Introduction 00:33",
+                        "2. Using Compression 02:00",
+                        "3. Choosing Columns 01:47",
+                        "4. Omitting Rows 01:54",
+                        "5. Forcing Lower Precision 03:13",
+                        "6. Using Chunks 02:02",
+                        "7. Reading and Writing Files With Pandas (Summary) 01:16"
+                    ]
+                }
             },
             {
                 "title": "Editing Excel Spreadsheets in Python With openpyxl",
                 "type": "Course",
                 "description": "Learn how to handle spreadsheets in Python using the openpyxl package. You'll learn how to manipulate Excel spreadsheets, extract information from spreadsheets, create simple or more complex spreadsheets, including adding styles, charts, and so on.",
-                "url": "https://realpython.com/courses/editing-excel-python-openpyxl/"
+                "url": "https://realpython.com/courses/editing-excel-python-openpyxl/",
+                "decomposition": {
+                    "Editing Excel Spreadsheets in Python With openpyxl": [
+                        "1. Excel Spreadsheets in Python With openpyxl (Overview) 01:08",
+                        "2. Starting With \"Hello World\" 02:33",
+                        "3. Reading Excel Spreadsheets 04:35",
+                        "4. Iterating Through the Data 05:06",
+                        "5. Manipulating the Data 06:42",
+                        "6. Appending Data to Spreadsheets 04:50",
+                        "7. Managing Rows and Columns 03:09",
+                        "8. Managing Sheets 04:31",
+                        "9. Adding Filters and Formulas 05:35",
+                        "10. Styling Cells 05:49",
+                        "11. Adding Conditional Formatting 05:53",
+                        "12. Adding Images 02:30",
+                        "13. Adding Charts 09:42",
+                        "14. Making a Mapping File 02:47",
+                        "15. Working With Pandas 07:05",
+                        "16. Excel Spreadsheets in Python With openpyxl (Summary) 01:36"
+                    ]
+                }
             },
             {
                 "title": "Introduction to Python SQL Libraries",
@@ -184,13 +507,45 @@
                 "title": "SQLite and SQLAlchemy in Python: Moving Your Data Beyond Flat Files",
                 "type": "Course",
                 "description": "Learn how to store and retrieve data using Python, SQLite, and SQLAlchemy as well as with flat files. Using SQLite with Python brings with it the additional benefit of accessing data with SQL. By adding SQLAlchemy, you can work with data in terms of objects and methods.",
-                "url": "https://realpython.com/courses/sqlite-sqlalchemy-python/"
+                "url": "https://realpython.com/courses/sqlite-sqlalchemy-python/",
+                "decomposition": {
+                    "SQLite and SQLAlchemy in Python: Moving Your Data Beyond Flat Files": [
+                        "1. SQLite and SQLAlchemy in Python (Overview) 02:49",
+                        "2. Flat CSV Files 04:28",
+                        "3. Relational Databases 13:53",
+                        "4. SQLAlchemy: Core Text 14:13",
+                        "5. SQLAlchemy: Core Statements 10:17",
+                        "6. SQLAlchemy: ORM 09:02",
+                        "7. Many-to-Many Relationships 12:40",
+                        "8. SQLite and SQLAlchemy in Python (Summary) 03:54"
+                    ]
+                }
             },
             {
                 "title": "Python, Boto3, and AWS S3: Demystified",
                 "type": "Course",
                 "description": "Get started working with Python, Boto3, and AWS S3. Learn how to create objects, upload them to S3, download their contents, and change their attributes directly from your script, all while avoiding common pitfalls.",
-                "url": "https://realpython.com/courses/python-boto3-aws-s3/"
+                "url": "https://realpython.com/courses/python-boto3-aws-s3/",
+                "decomposition": {
+                    "Python, Boto3, and AWS S3: Demystified": [
+                        "1. Python, Boto3, and AWS S3: Demystified (Overview) 01:00",
+                        "2. Installation and Setup 05:29",
+                        "3. Clients and Resources 02:33",
+                        "4. Creating a Bucket 09:55",
+                        "5. Naming Files 03:41",
+                        "6. Creating Bucket and Object Instances 03:30",
+                        "7. Uploading and Downloading Files 04:13",
+                        "8. Moving and Deleting Objects 04:43",
+                        "9. Access Control Lists 06:20",
+                        "10. Encryption 02:57",
+                        "11. Storage 03:50",
+                        "12. Versioning 06:03",
+                        "13. Bucket and Object Traversals 02:59",
+                        "14. Deleting Buckets 08:07",
+                        "15. Infrastructure as Code 02:28",
+                        "16. Python, Boto3, and AWS S3: Demystified (Summary) 01:53"
+                    ]
+                }
             },
             {
                 "title": "Three Ways of Storing and Accessing Lots of Images in Python",
@@ -224,61 +579,227 @@
                 "title": "Using Jupyter Notebooks",
                 "type": "Course",
                 "description": "Learn how to get started with the Jupyter Notebook, an open source web application that you can use to create and share documents that contain live code, equations, visualizations, and text.",
-                "url": "https://realpython.com/courses/using-jupyter-notebooks/"
+                "url": "https://realpython.com/courses/using-jupyter-notebooks/",
+                "decomposition": {
+                    "Using Jupyter Notebooks": [
+                        "1. Why Use Jupyter Notebooks? 04:16",
+                        "2. Installing and Launching Jupyter 01:51",
+                        "3. Edit Mode vs Command Mode 00:45",
+                        "4. Basic Functionality of Jupyter Notebooks 04:00",
+                        "5. Jupyter Notebook Menu Items 07:47",
+                        "6. Jupyter Terminals and More 02:10",
+                        "7. Markdown Formatting in Jupyter Notebooks 05:05",
+                        "8. Exporting Jupyter Notebooks 04:06",
+                        "9. Jupyter Notebooks Extensions 06:23"
+                    ]
+                }
             },
             {
                 "title": "Explore Your Dataset With Pandas",
                 "type": "Course",
                 "description": "Learn how to start exploring a dataset with Pandas and Python. You'll learn how to access specific rows and columns to answer questions about your data. You'll also see how to handle missing values and prepare to visualize your dataset in a Jupyter Notebook.",
-                "url": "https://realpython.com/courses/explore-dataset-with-pandas/"
+                "url": "https://realpython.com/courses/explore-dataset-with-pandas/",
+                "decomposition": {
+                    "Explore Your Dataset With Pandas": [
+                        "1. Explore Your Dataset With Pandas (Overview) 03:22",
+                        "2. Loading Your Dataset 04:25",
+                        "3. Getting to Know DataFrame Objects 07:55",
+                        "4. Exploring DataFrame and Series Objects 03:43",
+                        "5. Accessing Data in a Series 03:29",
+                        "6. Accessing Data in a DataFrame 03:09",
+                        "7. Querying Your Dataset 03:25",
+                        "8. Grouping and Aggregating Your Data",
+                        "9. Changing Columns in a DataFrame 02:49",
+                        "10. Specifying Data Types 03:06",
+                        "11. Cleaning Your Data 04:28",
+                        "12. Combining Multiple Datasets 03:10",
+                        "13. Visualizing Your Pandas DataFrame 03:37",
+                        "14. Explore Your Dataset With Pandas (Summary) 01:11"
+                    ]
+                }
             },
             {
                 "title": "Reading and Writing CSV Files",
                 "type": "Course",
                 "description": "This short course covers how to read and write data to CSV files using Python's built in \"csv\" module and the \"pandas\" library. You'll learn how to handle standard and non-standard data such as CSV files without headers, or files containing delimeters in the data.",
-                "url": "https://realpython.com/courses/reading-and-writing-csv-files/"
+                "url": "https://realpython.com/courses/reading-and-writing-csv-files/",
+                "decomposition": {
+                    "Reading and Writing CSV Files": [
+                        "1. What Are CSV Files? 01:37",
+                        "2. Reading CSVs With Python's \"csv\" Module 04:13",
+                        "3. Advanced CSV Reader Parameters 03:51",
+                        "4. Writing CSVs With Python's \"csv\" Module 05:33",
+                        "5. Reading CSVs With Pandas 04:30",
+                        "6. Writing CSVs With Pandas 02:12"
+                    ]
+                }
             },
             {
                 "title": "Working With JSON Data in Python",
                 "type": "Course",
                 "description": "Learn how to work with Python's built-in \"json\" module to serialize the data in your programs into JSON format. Then, you'll deserialize some JSON from an online API and convert it into Python objects.",
-                "url": "https://realpython.com/courses/working-json-data-python/"
+                "url": "https://realpython.com/courses/working-json-data-python/",
+                "decomposition": {
+                    "Working With JSON Data in Python": [
+                        "1. What Is JSON? 04:48",
+                        "2. Serializing JSON Data 04:39",
+                        "3. Deserializing JSON Data 03:04",
+                        "4. Working With JSON Data in Python 10:34",
+                        "5. JSON for Custom Python Objects 04:18",
+                        "6. Encoding Custom Types to JSON 04:02",
+                        "7. Decoding Custom Types From JSON 04:59"
+                    ]
+                }
             },
             {
                 "title": "Pandas DataFrames 101",
                 "type": "Course",
                 "description": "Learn the basics of working with the Data Frame data structure in Pandas. We will touch on how to create new columns from existing data, delete unneeded data, how to import data from a CSV file, and more.",
-                "url": "https://realpython.com/courses/pandas-dataframes-101/"
+                "url": "https://realpython.com/courses/pandas-dataframes-101/",
+                "decomposition": {
+                    "Pandas DataFrames 101": [
+                        "1. Importing CSV Data Into a Pandas DataFrame 02:16",
+                        "2. Slicing and Dicing a Pandas DataFrame 01:15",
+                        "3. Mapping and Analyzing a Data Set in Pandas 08:20",
+                        "4. Working With groupby() in Pandas 04:47",
+                        "5. Plotting a DataFrame 01:58"
+                    ]
+                }
             },
             {
                 "title": "Python Plotting With Matplotlib",
                 "type": "Course",
                 "description": "In this beginner-friendly course, you'll learn about plotting in Python with matplotlib by looking at the theory and following along with practical examples.",
-                "url": "https://realpython.com/courses/python-plotting-matplotlib/"
+                "url": "https://realpython.com/courses/python-plotting-matplotlib/",
+                "decomposition": {
+                    "Python Plotting With Matplotlib": [
+                        "1. Python Plotting With Matplotlib (Overview) 03:01",
+                        "2. NumPy Review (Optional) 07:57",
+                        "3. Pyplot and PyLab 03:52",
+                        "4. Object Hierarchy 02:00",
+                        "5. Stateful vs Stateless Approach 05:37",
+                        "6. Your First Plot 09:25",
+                        "7. Working With Multiple Subplots 11:09",
+                        "8. Advanced Plotting 08:03",
+                        "9. The Figures Behind the Scenes 02:56",
+                        "10. Creating a Colored Matrix 06:57",
+                        "11. Plotting With Pandas 07:36",
+                        "12. Configuring Styles 02:46",
+                        "13. Interactive Mode 01:29",
+                        "14. Python Plotting With Matplotlib (Summary) 01:27"
+                    ]
+                }
             },
             {
                 "title": "Data Cleaning With pandas and NumPy",
                 "type": "Course",
                 "description": "Learn how to clean up messy data using pandas and NumPy. You'll become equipped to deal with a range of problems, such as missing values, inconsistent formatting, malformed records, and nonsensical outliers.",
-                "url": "https://realpython.com/courses/data-cleaning-with-pandas-and-numpy/"
+                "url": "https://realpython.com/courses/data-cleaning-with-pandas-and-numpy/",
+                "decomposition": {
+                    "Setting Up Your Work Environment": [
+                        "1. Data Cleaning With pandas and NumPy (Overview) 02:44",
+                        "2. Setting Up Your Work Environment 08:00"
+                    ],
+                    "Exploring the Olympic Data": [
+                        "1. Exploring the Olympic Data 02:11",
+                        "2. Setting Up for Cleaning 07:49",
+                        "3. Renaming Headers 07:01",
+                        "4. Slicing and Dicing With .loc[] 09:38"
+                    ],
+                    "Exploring the University Towns Dataset": [
+                        "1. Exploring the University Towns Dataset 02:22",
+                        "2. Processing Data Before Loading a DataFrame 06:22",
+                        "3. Cleaning University Towns Data 03:56",
+                        "4. Using .assign() 07:35"
+                    ],
+                    "Exploring the Books Dataset": [
+                        "1. Exploring the Books Dataset 05:08",
+                        "2. Dropping Columns 02:28",
+                        "3. Using Indices 02:38",
+                        "4. Cleaning the Date Column 09:32",
+                        "5. Cleaning Text Based on Rules 09:33",
+                        "6. Data Cleaning With pandas and NumPy (Summary) 01:28"
+                    ]
+                }
             },
             {
                 "title": "Idiomatic Pandas: Tricks & Features You May Not Know",
                 "type": "Course",
                 "description": "In this course you'll see how to use some lesser-used but idiomatic Pandas capabilities that lend your code better readability, versatility, and speed.",
-                "url": "https://realpython.com/courses/idiomatic-pandas-tricks-features-you-may-not-know/"
+                "url": "https://realpython.com/courses/idiomatic-pandas-tricks-features-you-may-not-know/",
+                "decomposition": {
+                    "Pandas Tricks & Features You May Not Know": [
+                        "1. Pandas Tricks: Course Overview 01:29",
+                        "2. Configure Options and Settings at Interpreter Startup 07:11",
+                        "3. Make Toy Data Structures With Pandas' Testing Module 03:07",
+                        "4. Take Advantage of Accessor Methods 05:51",
+                        "5. Create a DatetimeIndex From Component Columns 04:14",
+                        "6. Use Categorical Data to Save Time and Space 05:39",
+                        "7. Introspect Groupby Objects via Iteration 05:35",
+                        "8. Mapping Trick for Membership Binning 04:10",
+                        "9. How Pandas Uses Boolean Operators 05:54",
+                        "10. Load Data From the Clipboard 02:16",
+                        "11. Write Pandas Objects Directly to Compressed Formats 02:29"
+                    ]
+                }
             },
             {
                 "title": "Interactive Data Visualization in Python With Bokeh",
                 "type": "Course",
                 "description": "This course will get you up and running with Bokeh, using examples and a real-world dataset. You'll learn how to visualize your data, customize and organize your visualizations, and add interactivity.",
-                "url": "https://realpython.com/courses/interactive-data-visualization-python-bokeh/"
+                "url": "https://realpython.com/courses/interactive-data-visualization-python-bokeh/",
+                "decomposition": {
+                    "Welcome to Bokeh": [
+                        "1. Intro and Bokeh Course Overview 03:49",
+                        "2. From Data to Visualization 02:48",
+                        "3. Setting Up Your Bokeh Environment 02:55",
+                        "4. Generating Your First Figure to a Static HTML File 03:15",
+                        "5. Generating Your First Figure to a Jupyter Notebook 01:59",
+                        "6. Getting Your Figure Ready for Data 04:46",
+                        "7. Drawing Data With Glyphs 04:16",
+                        "8. Multiple Glyphs and Adding a Legend 06:45",
+                        "9. Bokeh Course: Section 1 Review 01:21"
+                    ],
+                    "Working With Data and Layouts": [
+                        "1. Bokeh Course: Section 2 Overview 01:09",
+                        "2. A Quick Aside About Data 03:59",
+                        "3. Using the ColumnDataSource Object 09:53",
+                        "4. Using GroupFilter and CDSView 04:22",
+                        "5. Multiple Visualizations Using Column Layout 07:59",
+                        "6. GridPlot Layout 05:23",
+                        "7. Tabbed Layout With Panels 04:10",
+                        "8. Bokeh Course: Section 2 Review 01:09"
+                    ],
+                    "Adding Interaction": [
+                        "1. Bokeh Course: Section 3 Overview 01:08",
+                        "2. Configuring the Toolbar 03:19",
+                        "3. Selecting Data Points 10:45",
+                        "4. Adding Hover Actions 03:24",
+                        "5. Emphasizing With Hover Inspections 02:53",
+                        "6. Linking Axes 12:56",
+                        "7. Linking Selections 10:45",
+                        "8. Highlighting Data Using the Legend 08:14",
+                        "9. Bokeh Course: Recap and Review 03:59"
+                    ]
+                }
             },
             {
                 "title": "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn",
                 "type": "Course",
                 "description": "In this course, you'll be equipped to make production-quality, presentation-ready Python histogram plots with a range of choices and features. It's your one-stop shop for constructing and manipulating histograms with Python's scientific stack.",
-                "url": "https://realpython.com/courses/python-histograms/"
+                "url": "https://realpython.com/courses/python-histograms/",
+                "decomposition": {
+                    "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn": [
+                        "1. Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn (Overview) 01:14",
+                        "2. Pure Python Histograms 06:24",
+                        "3. NumPy Histograms 04:23",
+                        "4. Matplotlib and Pandas 08:52",
+                        "5. Kernel Density Estimates 06:00",
+                        "6. Plotting With Seaborn 03:55",
+                        "7. Pandas Tools 05:59",
+                        "8. Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn (Conclusion) 02:22"
+                    ]
+                }
             },
             {
                 "title": "Python Statistics Fundamentals: How to Describe Your Data",
@@ -290,7 +811,15 @@
                 "title": "Generating Random Data in Python",
                 "type": "Course",
                 "description": "See several options for generating random data in Python, and then build up to a comparison of each in terms of its level of security, versatility, purpose, and speed.",
-                "url": "https://realpython.com/courses/generating-random-data-python/"
+                "url": "https://realpython.com/courses/generating-random-data-python/",
+                "decomposition": {
+                    "Generating Random Data in Python": [
+                        "1. Random Data Generation in Python 04:53",
+                        "2. Randomness for Modeling and Simulation 08:42",
+                        "3. Why Security Needs Randomness 06:58",
+                        "4. Cryptographically Secure Random Data in Python 06:23"
+                    ]
+                }
             },
             {
                 "title": "NumPy, SciPy, and pandas: Correlation With Python",
@@ -325,37 +854,66 @@
                 "title": "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn",
                 "type": "Course",
                 "description": "Learn how to make production-quality, presentation-ready Python histogram plots with a range of choices and features. It's your one-stop shop for constructing and manipulating histograms with Python's scientific stack.",
-                "url": "https://realpython.com/courses/python-histograms/"
+                "url": "https://realpython.com/courses/python-histograms/",
+                "decomposition": {
+                    "Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn": [
+                        "1. Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn (Overview) 01:14",
+                        "2. Pure Python Histograms 06:24",
+                        "3. NumPy Histograms 04:23",
+                        "4. Matplotlib and Pandas 08:52",
+                        "5. Kernel Density Estimates 06:00",
+                        "6. Plotting With Seaborn 03:55",
+                        "7. Pandas Tools 05:59",
+                        "8. Python Histogram Plotting: NumPy, Matplotlib, Pandas & Seaborn (Conclusion) 02:22"
+                    ]
+                }
             },
             {
                 "title": "Plot With Pandas: Python Data Visualization Basics",
                 "type": "Course",
                 "description": "Get to know the basic plotting possibilities that Python provides in the popular data analysis library pandas. You'll learn about the different kinds of plots that pandas offers, how to use them for data exploration, and which types of plots are best for certain use cases.",
-                "url": "https://realpython.com/courses/plot-pandas-data-visualization/"
+                "url": "https://realpython.com/courses/plot-pandas-data-visualization/",
+                "decomposition": {
+                    "Plot With Pandas: Python Data Visualization Basics": [
+                        "1. Plot With Pandas: Python Data Visualization Basics (Overview) 00:52",
+                        "2. Setting Up Your Environment 06:12",
+                        "3. Create Your First Pandas Plot 05:20",
+                        "4. Under the Hood: Matplotlib 02:03",
+                        "5. Survey Your Data 06:42",
+                        "6. Check for Correlation 01:24",
+                        "7. Analyze Categorical Data 01:43",
+                        "8. Determining Ratios 02:49",
+                        "9. Plot With Pandas: Python Data Visualization Basics (Summary) 01:03"
+                    ]
+                }
             },
             {
                 "title": "Python Plotting With Matplotlib",
                 "type": "Course",
                 "description": "Learn about plotting in Python with Matplotlib by looking at the theory and following along with practical examples in this beginner-friendly course.",
-                "url": "https://realpython.com/courses/python-plotting-matplotlib/"
+                "url": "https://realpython.com/courses/python-plotting-matplotlib/",
+                "decomposition": {}
             },
             {
                 "title": "Interactive Data Visualization in Python With Bokeh",
                 "type": "Course",
                 "description": "Get you up and running with Bokeh, using examples and a real-world dataset. You'll learn how to visualize your data, customize and organize your visualizations, and add interactivity.",
-                "url": "https://realpython.com/courses/interactive-data-visualization-python-bokeh/"
+                "url": "https://realpython.com/courses/interactive-data-visualization-python-bokeh/",
+                "decomposition": {}
             },
             {
                 "title": "Graph Your Data With Python and ggplot",
                 "type": "Course",
                 "description": "Learn how to use ggplot in Python to build data visualizations with plotnine. You'll discover what a grammar of graphics is and how it can help you create plots in a very concise and consistent way.",
-                "url": "https://realpython.com/courses/graph-data-with-python-and-ggplot/"
+                "url": "https://realpython.com/courses/graph-data-with-python-and-ggplot/",
+                "decomposition": {}
             },
             {
                 "title": "Data Visualization Interfaces in Python With Dash",
                 "type": "Course",
                 "description": "Learn how to build a dashboard using Python and Dash. Dash is a framework for building data visualization interfaces. It helps data scientists build fully interactive web applications quickly.",
-                "url": "https://realpython.com/courses/data-viz-with-dash/"
+                "url": "https://realpython.com/courses/data-viz-with-dash/",
+                "decomposition": {}
             }
         ]
     },
@@ -370,25 +928,29 @@
                 "title": "Running Python Scripts",
                 "type": "Course",
                 "description": "This step-by-step course will guide you through a series of ways to run Python scripts, depending on your environment, platform, needs, and skills as a programmer.",
-                "url": "https://realpython.com/courses/running-python-scripts/"
+                "url": "https://realpython.com/courses/running-python-scripts/",
+                "decomposition": {}
             },
             {
                 "title": "A Beginner's Guide to Pip",
                 "type": "Course",
                 "description": "What is pip? In this beginner-friendly course, you'll learn how to use pip, the standard package manager for Python, so that you can install and manage additional packages that are not part of the Python standard library.",
-                "url": "https://realpython.com/courses/what-is-pip/"
+                "url": "https://realpython.com/courses/what-is-pip/",
+                "decomposition": {}
             },
             {
                 "title": "How to Publish Your Own Python Package to PyPI",
                 "type": "Course",
                 "description": "Learn how to create a Python package for your project and how to publish it to PyPI, the Python Package Repository with this step-by-step course. Quickly get up to speed on everything from naming your package to configuring it using setup.py.",
-                "url": "https://realpython.com/courses/how-to-publish-your-own-python-package-pypi/"
+                "url": "https://realpython.com/courses/how-to-publish-your-own-python-package-pypi/",
+                "decomposition": {}
             },
             {
                 "title": "Continuous Integration With Python",
                 "type": "Course",
                 "description": "Learn the core concepts behind Continuous Integration (CI) and why they are essential for modern software engineering teams. Find out how to how set up Continuous Integration for your Python project to automatically create environments, install dependencies, and run tests.",
-                "url": "https://realpython.com/courses/python-continuous-integration/"
+                "url": "https://realpython.com/courses/python-continuous-integration/",
+                "decomposition": {}
             },
             {
                 "title": "Docker in Action \u2013 Fitter, Happier, More Productive",
@@ -400,13 +962,15 @@
                 "title": "Python, Boto3, and AWS S3: Demystified",
                 "type": "Course",
                 "description": "Get started working with Python, Boto3, and AWS S3. Learn how to create objects, upload them to S3, download their contents, and change their attributes directly from your script, all while avoiding common pitfalls.",
-                "url": "https://realpython.com/courses/python-boto3-aws-s3/"
+                "url": "https://realpython.com/courses/python-boto3-aws-s3/",
+                "decomposition": {}
             },
             {
                 "title": "Logging in Python",
                 "type": "Course",
                 "description": "Learn why and how to get started with Python's powerful logging module to meet the needs of beginners and enterprise teams alike.",
-                "url": "https://realpython.com/courses/logging-python/"
+                "url": "https://realpython.com/courses/logging-python/",
+                "decomposition": {}
             }
         ]
     },
@@ -421,31 +985,36 @@
                 "title": "Get Started With Django: Build a Portfolio App",
                 "type": "Course",
                 "description": "Learn the basics of creating powerful web applications with Django, a Python web framework. You'll build a portfolio website to showcase your web development projects, complete with a fully functioning blog.",
-                "url": "https://realpython.com/courses/django-portfolio-project/"
+                "url": "https://realpython.com/courses/django-portfolio-project/",
+                "decomposition": {}
             },
             {
                 "title": "Building a Django User Management System",
                 "type": "Course",
                 "description": "Learn how to extend your Django application with a user management system, complete with email sending and third-party authentication.",
-                "url": "https://realpython.com/courses/building-a-django-user-management-system/"
+                "url": "https://realpython.com/courses/building-a-django-user-management-system/",
+                "decomposition": {}
             },
             {
                 "title": "Django View Authorization: Restricting Access",
                 "type": "Course",
                 "description": "This course covers how to restrict your web pages to users with different roles through Django view authorization. You'll learn about HttpRequest.user objects, decorators that authenticate views, and ways to notify your users with the Django messages framework.",
-                "url": "https://realpython.com/courses/django-view-authorization/"
+                "url": "https://realpython.com/courses/django-view-authorization/",
+                "decomposition": {}
             },
             {
                 "title": "Structuring a Python Application",
                 "type": "Course",
                 "description": "This course is a reference guide to common Python application layouts and project structures for command-line applications, web applications, and more.",
-                "url": "https://realpython.com/courses/structuring-python-application/"
+                "url": "https://realpython.com/courses/structuring-python-application/",
+                "decomposition": {}
             },
             {
                 "title": "Django Migrations 101",
                 "type": "Course",
                 "description": "With this course you\u2019ll get comfortable with Django migrations and learn how to create database tables without writing any SQL, how to automatically modify your database after you changed your models, and how to revert changes made to your database.",
-                "url": "https://realpython.com/courses/django-migrations-101/"
+                "url": "https://realpython.com/courses/django-migrations-101/",
+                "decomposition": {}
             },
             {
                 "title": "Digging Deeper Into Django Migrations",
@@ -457,7 +1026,8 @@
                 "title": "Make a Location-Based Web App With Django and GeoDjango",
                 "type": "Course",
                 "description": "Learn how to use Django and GeoDjango to build a location-based web application from scratch. You\u2019ll be building a simple nearby shops application that lists the shops closest to a user\u2019s location.",
-                "url": "https://realpython.com/courses/make-location-based-web-app-django-and-geodjango/"
+                "url": "https://realpython.com/courses/make-location-based-web-app-django-and-geodjango/",
+                "decomposition": {}
             },
             {
                 "title": "How to Provide Test Fixtures for Django Models in Pytest",
@@ -469,7 +1039,8 @@
                 "title": "Django Redirects",
                 "type": "Course",
                 "description": "Learn everything you need to know about HTTP redirects in Django. All the way from the low-level details of the HTTP protocol to the high-level way of dealing with them in Django.",
-                "url": "https://realpython.com/courses/django-redirects/"
+                "url": "https://realpython.com/courses/django-redirects/",
+                "decomposition": {}
             },
             {
                 "title": "Modeling Polymorphism in Django With Python",
@@ -487,7 +1058,8 @@
                 "title": "Django Admin Customization",
                 "type": "Course",
                 "description": "Learn how to customize Django's admin with Python. You'll use AdminModel objects to add display columns, calculate values, link to referring objects, and search and filter results. You'll also use template overriding to gain full control over the admin's HTML.",
-                "url": "https://realpython.com/courses/django-admin-customization/"
+                "url": "https://realpython.com/courses/django-admin-customization/",
+                "decomposition": {}
             },
             {
                 "title": "How to Create an Index in Django Without Downtime",
@@ -511,7 +1083,8 @@
                 "title": "Building HTTP APIs With Django REST Framework",
                 "type": "Course",
                 "description": "This course will get you ready to build HTTP APIs with Django REST Framework. The Django REST framework (DRF) is a toolkit built on top of the Django web framework that reduces the amount of code you need to write to create REST interfaces.",
-                "url": "https://realpython.com/courses/django-rest-framework/"
+                "url": "https://realpython.com/courses/django-rest-framework/",
+                "decomposition": {}
             }
         ]
     },
@@ -525,7 +1098,8 @@
                 "title": "Project Setup",
                 "type": "Course",
                 "description": "Learn how to create a Python Flask example web application and deploy it using Heroku. You\u2019ll also use Git to track changes to the code, and you\u2019ll configure a deployment workflow with different environments for staging and production.",
-                "url": "https://realpython.com/courses/deploying-a-flask-application-using-heroku/"
+                "url": "https://realpython.com/courses/deploying-a-flask-application-using-heroku/",
+                "decomposition": {}
             },
             {
                 "title": "Setting up Postgres, SQLAlchemy, and Alembic",
@@ -586,25 +1160,29 @@
                 "title": "Functional Programming in Python",
                 "type": "Course",
                 "description": "Learn how to approach functional programming in Python. You'll cover what functional programming is, how you can use immutable data structures to represent your data, as well as how to use filter(), map(), and reduce().",
-                "url": "https://realpython.com/courses/functional-programming-python/"
+                "url": "https://realpython.com/courses/functional-programming-python/",
+                "decomposition": {}
             },
             {
                 "title": "How to Use Python Lambda Functions",
                 "type": "Course",
                 "description": "Learn about Python lambda functions. You'll see how they compare with regular functions and how you can use them in accordance with best practices.",
-                "url": "https://realpython.com/courses/python-lambda-functions/"
+                "url": "https://realpython.com/courses/python-lambda-functions/",
+                "decomposition": {}
             },
             {
                 "title": "Python Inner Functions",
                 "type": "Course",
                 "description": "Learn what inner functions are in Python, how to define them, and what their main use cases are.",
-                "url": "https://realpython.com/courses/python-inner-functions/"
+                "url": "https://realpython.com/courses/python-inner-functions/",
+                "decomposition": {}
             },
             {
                 "title": "Python's map() Function: Transforming Iterables",
                 "type": "Course",
                 "description": "Learn how Python's map() works and how to use it effectively in your programs. You'll also learn how to use list comprehension and generator expressions to replace map() in a Pythonic and efficient way.",
-                "url": "https://realpython.com/courses/map-function-transform-iterables/"
+                "url": "https://realpython.com/courses/map-function-transform-iterables/",
+                "decomposition": {}
             },
             {
                 "title": "Python's filter(): Extract Values From Iterables",
@@ -628,7 +1206,8 @@
                 "title": "Thinking Recursively in Python",
                 "type": "Course",
                 "description": "Learn how to work with recursion in your Python programs by mastering concepts such as recursive functions and recursive data structures.",
-                "url": "https://realpython.com/courses/thinking-recursively-python/"
+                "url": "https://realpython.com/courses/thinking-recursively-python/",
+                "decomposition": {}
             }
         ]
     },
@@ -654,7 +1233,8 @@
                 "title": "Creating PyQt Layouts for GUI Applications",
                 "type": "Course",
                 "description": "Learn how to use PyQt layouts to arrange and manage the graphical components on your GUI applications. With the help of PyQt's layout managers, you'll be able to create polished and professional GUIs with minimal effort.",
-                "url": "https://realpython.com/courses/creating-pyqt-layouts-gui-applications/"
+                "url": "https://realpython.com/courses/creating-pyqt-layouts-gui-applications/",
+                "decomposition": {}
             },
             {
                 "title": "Qt Designer and Python: Build Your GUI Applications Faster",
@@ -704,7 +1284,8 @@
                 "title": "Installing Python 3",
                 "type": "Course",
                 "description": "To get started working with Python, you'll need to have access to the Python interpreter. There are several common ways to accomplish this and in this course, you will learn how to install the latest version of Python on your computer.",
-                "url": "https://realpython.com/courses/installing-python-windows-macos-linux/"
+                "url": "https://realpython.com/courses/installing-python-windows-macos-linux/",
+                "decomposition": {}
             },
             {
                 "title": "Interacting With Python",
@@ -716,13 +1297,15 @@
                 "title": "11 Beginner Tips for Learning Python",
                 "type": "Course",
                 "description": "See several learning strategies and tips that will help you jumpstart your journey towards becoming a rockstar Python programmer!",
-                "url": "https://realpython.com/courses/python-beginner-tips/"
+                "url": "https://realpython.com/courses/python-beginner-tips/",
+                "decomposition": {}
             },
             {
                 "title": "Basic Data Types in Python",
                 "type": "Course",
                 "description": "Learn the basic data types that are built into Python, like numbers, strings, and Booleans. You'll also get an overview of Python's built-in functions.",
-                "url": "https://realpython.com/courses/python-data-types/"
+                "url": "https://realpython.com/courses/python-data-types/",
+                "decomposition": {}
             },
             {
                 "title": "Basic Data Types Quiz",
@@ -734,7 +1317,8 @@
                 "title": "Variables in Python",
                 "type": "Course",
                 "description": "Learn how every item of data in a Python program can be described by the abstract term \"object,\" and how to manipulate objects using symbolic names called \"variables.\"",
-                "url": "https://realpython.com/courses/variables-python/"
+                "url": "https://realpython.com/courses/variables-python/",
+                "decomposition": {}
             },
             {
                 "title": "Python Variables Quiz",
@@ -764,7 +1348,8 @@
                 "title": "Strings and Character Data in Python",
                 "type": "Course",
                 "description": "Learn how to use Python's rich set of operators, functions, and methods for working with strings. You'll learn how to access and extract portions of strings, and also become familiar with the methods that are available to manipulate and modify string data in Python 3.",
-                "url": "https://realpython.com/courses/python-strings/"
+                "url": "https://realpython.com/courses/python-strings/",
+                "decomposition": {}
             },
             {
                 "title": "Python Strings Quiz",
@@ -776,7 +1361,8 @@
                 "title": "Lists and Tuples in Python",
                 "type": "Course",
                 "description": "See the important characteristics of lists and tuples in Python 3. You'll learn how to define them and how to manipulate them. When you're finished, you'll have a good feel for when and how to use these object types in a Python program.",
-                "url": "https://realpython.com/courses/lists-tuples-python/"
+                "url": "https://realpython.com/courses/lists-tuples-python/",
+                "decomposition": {}
             },
             {
                 "title": "Lists & Tuples Quiz",
@@ -788,7 +1374,8 @@
                 "title": "Dictionaries in Python",
                 "type": "Course",
                 "description": "In this course on Python dictionaries, you'll cover the basic characteristics of dictionaries and learn how to access and manage dictionary data. Once you've finished this course, you'll have a good sense of when a dictionary is the appropriate data type to use and know how to use it.",
-                "url": "https://realpython.com/courses/dictionaries-python/"
+                "url": "https://realpython.com/courses/dictionaries-python/",
+                "decomposition": {}
             },
             {
                 "title": "Dictionaries Quiz",
@@ -800,7 +1387,8 @@
                 "title": "Sets in Python",
                 "type": "Course",
                 "description": "Learn how to work with Python's set data type. You'll see how to define set objects in Python and discover the operations that they support. By the end of this course, you'll have a good feel for when a set is an appropriate choice in your own programs.",
-                "url": "https://realpython.com/courses/sets-python/"
+                "url": "https://realpython.com/courses/sets-python/",
+                "decomposition": {}
             },
             {
                 "title": "Sets Quiz",
@@ -824,7 +1412,8 @@
                 "title": "Conditional Statements in Python (if/elif/else)",
                 "type": "Course",
                 "description": "Learn how to work with conditional (\"if\") statements in Python. Master if-statements step-by-step and see how to write complex decision making code in your programs.",
-                "url": "https://realpython.com/courses/python-conditional-statements/"
+                "url": "https://realpython.com/courses/python-conditional-statements/",
+                "decomposition": {}
             },
             {
                 "title": "Conditional Statements Quiz",
@@ -836,7 +1425,8 @@
                 "title": "\"while\" Loops in Python (Indefinite Iteration)",
                 "type": "Course",
                 "description": "Master indefinite iteration using the Python \"while\" loop. You\u2019ll be able to construct basic and complex while loops, interrupt loop execution with break and continue, use the else clause with a while loop, and deal with infinite loops.",
-                "url": "https://realpython.com/courses/mastering-while-loops/"
+                "url": "https://realpython.com/courses/mastering-while-loops/",
+                "decomposition": {}
             },
             {
                 "title": "While Loops Quiz",
@@ -848,55 +1438,64 @@
                 "title": "\"for\" Loops in Python (Definite Iteration)",
                 "type": "Course",
                 "description": "Learn all about how to perform definite iteration with Python \"for\" loops. You\u2019ll see how other programming languages implement definite iteration, learn about iterables and iterators, and tie it all together to learn about Python\u2019s for loop.",
-                "url": "https://realpython.com/courses/python-for-loop/"
+                "url": "https://realpython.com/courses/python-for-loop/",
+                "decomposition": {}
             },
             {
                 "title": "Understanding Python List Comprehensions",
                 "type": "Course",
                 "description": "Python list comprehensions make it easy to create lists while performing sophisticated filtering, mapping, and conditional logic on their members. In this course, you'll learn when to use a list comprehension in Python and how to create them effectively.",
-                "url": "https://realpython.com/courses/understand-list-comprehensions/"
+                "url": "https://realpython.com/courses/understand-list-comprehensions/",
+                "decomposition": {}
             },
             {
                 "title": "Python Booleans: Leveraging the Values of Truth",
                 "type": "Course",
                 "description": "Learn about the built-in Python Boolean data type, which is used to represent the truth value of an expression. You'll see how to use Booleans to compare values, check for identity and membership, and control the flow of your programs with conditionals.",
-                "url": "https://realpython.com/courses/booleans-leveraging-truth/"
+                "url": "https://realpython.com/courses/booleans-leveraging-truth/",
+                "decomposition": {}
             },
             {
                 "title": "Reading Input and Writing Output in Python",
                 "type": "Course",
                 "description": "In this introductory Python course, you'll learn how to take user input from the keyboard with the built-in function input() and how to display output to the console with the built-in function print().",
-                "url": "https://realpython.com/courses/reading-input-writing-output-python/"
+                "url": "https://realpython.com/courses/reading-input-writing-output-python/",
+                "decomposition": {}
             },
             {
                 "title": "The Python print() Function: Go Beyond the Basics",
                 "type": "Course",
                 "description": "Learn about the print() function in Python and discover some of its lesser-known features. Avoid common mistakes, take your \"hello world\" to the next level, and know when to use a better alternative.",
-                "url": "https://realpython.com/courses/python-print/"
+                "url": "https://realpython.com/courses/python-print/",
+                "decomposition": {}
             },
             {
                 "title": "Formatting Python Strings",
                 "type": "Course",
                 "description": "See two items to add to your Python string formatting toolkit. You'll learn about Python's string format method and the formatted string literal, or f-string. You'll learn about these formatting techniques in detail and add them to your Python string formatting toolkit.",
-                "url": "https://realpython.com/courses/formatting-python-strings/"
+                "url": "https://realpython.com/courses/formatting-python-strings/",
+                "decomposition": {}
             },
             {
                 "title": "Defining and Calling Python Functions",
                 "type": "Course",
                 "description": "Learn how to define and call your own Python function.  You'll also learn about passing data to your function and returning data from your function back to its calling environment.",
-                "url": "https://realpython.com/courses/defining-and-calling-functions/"
+                "url": "https://realpython.com/courses/defining-and-calling-functions/",
+                "decomposition": {}
             },
             {
                 "title": "Using the Python return Statement Effectively",
                 "type": "Course",
                 "description": "Learn how to use the Python return statement when writing functions. Additionally, you'll cover some good programming practices related to the use of return. With this knowledge, you'll be able to write readable, robust, and maintainable functions in Python.",
-                "url": "https://realpython.com/courses/effective-python-return-statement/"
+                "url": "https://realpython.com/courses/effective-python-return-statement/",
+                "decomposition": {}
             },
             {
                 "title": "Regular Expressions (Part 1)",
                 "type": "Course",
                 "description": "Learn how to perform more complex string pattern matching using regular expressions, or regexes, in Python. You'll also explore more advanced regex tools and techniques that are available in Python.",
-                "url": "https://realpython.com/courses/building-regexes-python/"
+                "url": "https://realpython.com/courses/building-regexes-python/",
+                "decomposition": {}
             },
             {
                 "title": "Regular Expressions (Part 2)",
@@ -908,25 +1507,29 @@
                 "title": "Navigating Namespaces and Scope in Python",
                 "type": "Course",
                 "description": "Learn about Python namespaces, the structures used to store and organize the symbolic names created during execution of a Python program. You'll learn when namespaces are created, how they are implemented, and how they define variable scope.",
-                "url": "https://realpython.com/courses/navigate-namespaces-scope/"
+                "url": "https://realpython.com/courses/navigate-namespaces-scope/",
+                "decomposition": {}
             },
             {
                 "title": "Reading and Writing Files in Python",
                 "type": "Course",
                 "description": "Learn about reading and writing files in Python. You'll cover everything from what a file is made up of to which libraries can help you along that way. You'll also take a look at some basic scenarios of file usage as well as some advanced techniques.",
-                "url": "https://realpython.com/courses/reading-and-writing-files-python/"
+                "url": "https://realpython.com/courses/reading-and-writing-files-python/",
+                "decomposition": {}
             },
             {
                 "title": "Getting the Most Out of a Python Traceback",
                 "type": "Course",
                 "description": "Learn how to read and understand the information you can get from a Python stack traceback. You'll walk through several examples and see some of the most common tracebacks in Python.",
-                "url": "https://realpython.com/courses/python-traceback/"
+                "url": "https://realpython.com/courses/python-traceback/",
+                "decomposition": {}
             },
             {
                 "title": "A Beginner's Guide to Pip",
                 "type": "Course",
                 "description": "What is pip? In this beginner-friendly course, you'll learn how to use pip, the standard package manager for Python, so that you can install and manage additional packages that are not part of the Python standard library.",
-                "url": "https://realpython.com/courses/what-is-pip/"
+                "url": "https://realpython.com/courses/what-is-pip/",
+                "decomposition": {}
             },
             {
                 "title": "Continue Your Python Journey With \"Python Basics\"",
@@ -953,13 +1556,15 @@
                 "title": "Building a Neural Network & Making Predictions With Python AI",
                 "type": "Course",
                 "description": "In this step-by-step course, you'll build a neural network from scratch as an introduction to the world of artificial intelligence (AI) in Python. You'll learn how to train your neural network and make accurate predictions based on a given dataset.",
-                "url": "https://realpython.com/courses/build-neural-network-python-ai/"
+                "url": "https://realpython.com/courses/build-neural-network-python-ai/",
+                "decomposition": {}
             },
             {
                 "title": "Traditional Face Detection With Python",
                 "type": "Course",
                 "description": "In this course on face detection with Python, you'll learn about a historically important algorithm for object detection that can be successfully applied to finding the location of a human face within an image.",
-                "url": "https://realpython.com/courses/traditional-face-detection-python/"
+                "url": "https://realpython.com/courses/traditional-face-detection-python/",
+                "decomposition": {}
             },
             {
                 "title": "ChatterBot: Build a Chatbot With Python",
@@ -977,25 +1582,29 @@
                 "title": "Starting With Linear Regression in Python",
                 "type": "Course",
                 "description": "In this video course, you'll get started with linear regression in Python. Linear regression is one of the fundamental statistical and machine learning techniques, and Python is a popular choice for machine learning.",
-                "url": "https://realpython.com/courses/python-linear-regression/"
+                "url": "https://realpython.com/courses/python-linear-regression/",
+                "decomposition": {}
             },
             {
                 "title": "Learn Text Classification With Python and Keras",
                 "type": "Course",
                 "description": "In this course, you\u2019ll learn about Python text classification with Keras, working your way from a bag-of-words model with logistic regression to more advanced methods, such as convolutional neural networks. You\u2019ll also see how you can use pretrained word embeddings and hyperparameter optimization.",
-                "url": "https://realpython.com/courses/text-classification-with-keras/"
+                "url": "https://realpython.com/courses/text-classification-with-keras/",
+                "decomposition": {}
             },
             {
                 "title": "Splitting Datasets With scikit-learn and train_test_split()",
                 "type": "Course",
                 "description": "Learn why it's important to split your dataset in supervised machine learning and how to do that with train_test_split() from scikit-learn.",
-                "url": "https://realpython.com/courses/splitting-datasets-scikit-learn-train-test-split/"
+                "url": "https://realpython.com/courses/splitting-datasets-scikit-learn-train-test-split/",
+                "decomposition": {}
             },
             {
                 "title": "Speech Recognition With Python",
                 "type": "Course",
                 "description": "See the fundamentals of speech recognition with Python. You'll learn which speech recognition library gives the best results and build a full-featured \"Guess The Word\" game with it.",
-                "url": "https://realpython.com/courses/speech-recognition-python/"
+                "url": "https://realpython.com/courses/speech-recognition-python/",
+                "decomposition": {}
             },
             {
                 "title": "PyTorch vs TensorFlow for Your Python Deep Learning Project",
@@ -1047,7 +1656,8 @@
                 "title": "Starting With Linear Regression in Python",
                 "type": "Course",
                 "description": "In this video course, you'll get started with linear regression in Python. Linear regression is one of the fundamental statistical and machine learning techniques, and Python is a popular choice for machine learning.",
-                "url": "https://realpython.com/courses/python-linear-regression/"
+                "url": "https://realpython.com/courses/python-linear-regression/",
+                "decomposition": {}
             },
             {
                 "title": "Logistic Regression in Python",
@@ -1074,37 +1684,43 @@
                 "title": "Intro to Object-Oriented Programming (OOP) in Python",
                 "type": "Course",
                 "description": "Learn the fundamentals of object-oriented programming (OOP) in Python and how to work with classes, objects, and constructors.",
-                "url": "https://realpython.com/courses/intro-object-oriented-programming-oop-python/"
+                "url": "https://realpython.com/courses/intro-object-oriented-programming-oop-python/",
+                "decomposition": {}
             },
             {
                 "title": "Using Python Class Constructors",
                 "type": "Course",
                 "description": "Learn how class constructors work in Python. You'll also explore Python's instantiation process, which has two main steps: instance creation and instance initialization.",
-                "url": "https://realpython.com/courses/using-python-class-constructors/"
+                "url": "https://realpython.com/courses/using-python-class-constructors/",
+                "decomposition": {}
             },
             {
                 "title": "Providing Multiple Constructors in Your Python Classes",
                 "type": "Course",
                 "description": "Learn how to provide multiple constructors in your Python classes. To this end, you'll learn different techniques, such as checking argument types, using default argument values, writing class methods, and implementing single-dispatch methods.",
-                "url": "https://realpython.com/courses/multiple-constructors-python/"
+                "url": "https://realpython.com/courses/multiple-constructors-python/",
+                "decomposition": {}
             },
             {
                 "title": "Supercharge Your Classes With Python super()",
                 "type": "Course",
                 "description": "Learn how to leverage single and multiple inheritance in your object-oriented application to supercharge your classes with Python super().",
-                "url": "https://realpython.com/courses/python-super/"
+                "url": "https://realpython.com/courses/python-super/",
+                "decomposition": {}
             },
             {
                 "title": "Inheritance and Composition: A Python OOP Guide",
                 "type": "Course",
                 "description": "Learn about inheritance and composition in Python. You'll improve your object-oriented programming (OOP) skills by understanding how to use inheritance and composition and how to leverage them in their design.",
-                "url": "https://realpython.com/courses/inheritance-composition-python/"
+                "url": "https://realpython.com/courses/inheritance-composition-python/",
+                "decomposition": {}
             },
             {
                 "title": "Managing Attributes With Python's property()",
                 "type": "Course",
                 "description": "Learn how to create managed attributes, also known as properties, using Python's property() in your custom classes.",
-                "url": "https://realpython.com/courses/property-python/"
+                "url": "https://realpython.com/courses/property-python/",
+                "decomposition": {}
             },
             {
                 "title": "Python Descriptors: An Introduction",
@@ -1116,13 +1732,15 @@
                 "title": "Pythonic OOP String Conversion: __repr__ vs __str__",
                 "type": "Course",
                 "description": "In this tutorial series you'll do a deep dive on how Python's to-string conversion using the __repr__ and __str__ \"magic methods\" works and how you can add implement them in your own classes and objects.",
-                "url": "https://realpython.com/courses/pythonic-oop-string-conversion-repr-vs-str/"
+                "url": "https://realpython.com/courses/pythonic-oop-string-conversion-repr-vs-str/",
+                "decomposition": {}
             },
             {
                 "title": "OOP Method Types in Python: @classmethod vs @staticmethod vs Instance Methods",
                 "type": "Course",
                 "description": "What's the difference between @classmethod, @staticmethod, and \"plain/regular\" instance methods in Python? You'll know the answer after watching this video course.",
-                "url": "https://realpython.com/courses/python-method-types/"
+                "url": "https://realpython.com/courses/python-method-types/",
+                "decomposition": {}
             },
             {
                 "title": "Operator and Function Overloading in Custom Python Classes",
@@ -1134,7 +1752,8 @@
                 "title": "Using Data Classes in Python",
                 "type": "Course",
                 "description": "Data classes are one of the new features introduced in Python 3.7. When using data classes, you don't have to write boilerplate code to get proper initialization, representation, and comparisons for your objects.",
-                "url": "https://realpython.com/courses/python-data-classes/"
+                "url": "https://realpython.com/courses/python-data-classes/",
+                "decomposition": {}
             },
             {
                 "title": "Python Metaclasses",
@@ -1155,31 +1774,36 @@
                 "title": "Explore Your Dataset With Pandas",
                 "type": "Course",
                 "description": "Learn how to start exploring a dataset with Pandas and Python. You'll learn how to access specific rows and columns to answer questions about your data. You'll also see how to handle missing values and prepare to visualize your dataset in a Jupyter Notebook.",
-                "url": "https://realpython.com/courses/explore-dataset-with-pandas/"
+                "url": "https://realpython.com/courses/explore-dataset-with-pandas/",
+                "decomposition": {}
             },
             {
                 "title": "The Pandas DataFrame: Working With Data Efficiently",
                 "type": "Course",
                 "description": "In this course, you'll get started with Pandas DataFrames, which are powerful and widely used two-dimensional data structures. You'll learn how to perform basic operations with data, handle missing values, work with time-series data, and visualize data from a Pandas DataFrame.",
-                "url": "https://realpython.com/courses/pandas-dataframe-working-with-data/"
+                "url": "https://realpython.com/courses/pandas-dataframe-working-with-data/",
+                "decomposition": {}
             },
             {
                 "title": "Sorting Data in Python With Pandas",
                 "type": "Course",
                 "description": "Learn how to sort data in a pandas DataFrame using the pandas sort functions sort_values() and sort_index(). You'll learn how to sort by one or more columns and by index in ascending or descending order.",
-                "url": "https://realpython.com/courses/sorting-data-python-pandas/"
+                "url": "https://realpython.com/courses/sorting-data-python-pandas/",
+                "decomposition": {}
             },
             {
                 "title": "Data Cleaning With pandas and NumPy",
                 "type": "Course",
                 "description": "Learn how to clean up messy data using pandas and NumPy. You'll become equipped to deal with a range of problems, such as missing values, inconsistent formatting, malformed records, and nonsensical outliers.",
-                "url": "https://realpython.com/courses/data-cleaning-with-pandas-and-numpy/"
+                "url": "https://realpython.com/courses/data-cleaning-with-pandas-and-numpy/",
+                "decomposition": {}
             },
             {
                 "title": "Reading and Writing Files With Pandas",
                 "type": "Course",
                 "description": "Learn about the Pandas IO tools API and how you can use it to read and write files. You'll use the Pandas read_csv() function to work with CSV files. You'll also cover similar methods for efficiently working with Excel, CSV, JSON, HTML, SQL, pickle, and big data files.",
-                "url": "https://realpython.com/courses/reading-writing-files-pandas/"
+                "url": "https://realpython.com/courses/reading-writing-files-pandas/",
+                "decomposition": {}
             },
             {
                 "title": "SettingWithCopyWarning in pandas: Views vs Copies",
@@ -1191,7 +1815,8 @@
                 "title": "Plot With Pandas: Python Data Visualization Basics",
                 "type": "Course",
                 "description": "In this course, you'll get to know the basic plotting possibilities that Python provides in the popular data analysis library pandas. You'll learn about the different kinds of plots that pandas offers, how to use them for data exploration, and which types of plots are best for certain use cases.",
-                "url": "https://realpython.com/courses/plot-pandas-data-visualization/"
+                "url": "https://realpython.com/courses/plot-pandas-data-visualization/",
+                "decomposition": {}
             },
             {
                 "title": "Fast, Flexible, Easy and Intuitive: How to Speed Up Your pandas Projects",
@@ -1209,7 +1834,8 @@
                 "title": "Combining Data in pandas With concat() and merge()",
                 "type": "Course",
                 "description": "Learn two techniques for combining data in pandas: merge() and concat(). Combining Series and DataFrame objects in pandas is a powerful way to gain new insights into your data.",
-                "url": "https://realpython.com/courses/data-pandas-concat-and-merge/"
+                "url": "https://realpython.com/courses/data-pandas-concat-and-merge/",
+                "decomposition": {}
             },
             {
                 "title": "NumPy, SciPy, and pandas: Correlation With Python",
@@ -1221,13 +1847,15 @@
                 "title": "Idiomatic Pandas: Tricks & Features You May Not Know",
                 "type": "Course",
                 "description": "In this course you'll see how to use some lesser-used but idiomatic Pandas capabilities that lend your code better readability, versatility, and speed.",
-                "url": "https://realpython.com/courses/idiomatic-pandas-tricks-features-you-may-not-know/"
+                "url": "https://realpython.com/courses/idiomatic-pandas-tricks-features-you-may-not-know/",
+                "decomposition": {}
             },
             {
                 "title": "Using Pandas to Make a Gradebook in Python",
                 "type": "Course",
                 "description": "With this course and Python project, you'll build a script to calculate grades for a class using pandas. The script will quickly and accurately calculate grades from a variety of data sources. You'll see examples of loading, merging, and saving data with pandas, as well as plotting some summary statistics.",
-                "url": "https://realpython.com/courses/gradebook-using-pandas-python/"
+                "url": "https://realpython.com/courses/gradebook-using-pandas-python/",
+                "decomposition": {}
             }
         ]
     },
@@ -1242,31 +1870,36 @@
                 "title": "Installing Python on Windows, macOS, and Linux",
                 "type": "Course",
                 "description": "To get started working with Python, you'll need to have access to the Python interpreter. There are several common ways to accomplish this and in this course, you will learn how to install the latest version of Python on your computer.",
-                "url": "https://realpython.com/courses/installing-python-windows-macos-linux/"
+                "url": "https://realpython.com/courses/installing-python-windows-macos-linux/",
+                "decomposition": {}
             },
             {
                 "title": "Finding the Perfect Python Code Editor",
                 "type": "Course",
                 "description": "Find your perfect Python development setup with this review of Python IDEs and code editors. Writing Python using IDLE or the Python REPL is great for simple things, but not ideal for larger programming projects. With this course you'll get an overview of the most common Python coding environments to help you make an informed decision.",
-                "url": "https://realpython.com/courses/finding-perfect-python-code-editor/"
+                "url": "https://realpython.com/courses/finding-perfect-python-code-editor/",
+                "decomposition": {}
             },
             {
                 "title": "Setup Guide: Visual Studio Code + Python",
                 "type": "Course",
                 "description": "\u2800",
-                "url": "https://realpython.com/courses/python-development-visual-studio-code-setup-guide/"
+                "url": "https://realpython.com/courses/python-development-visual-studio-code-setup-guide/",
+                "decomposition": {}
             },
             {
                 "title": "Setup Guide: Thonny, the Beginner-Friendly Python IDE",
                 "type": "Course",
                 "description": "\u2800",
-                "url": "https://realpython.com/courses/python-thonny/"
+                "url": "https://realpython.com/courses/python-thonny/",
+                "decomposition": {}
             },
             {
                 "title": "Setup Guide: Jupyter Notebooks + Python",
                 "type": "Course",
                 "description": "\u2800",
-                "url": "https://realpython.com/courses/using-jupyter-notebooks/"
+                "url": "https://realpython.com/courses/using-jupyter-notebooks/",
+                "decomposition": {}
             },
             {
                 "title": "Setup Guide: Sublime Text + Python",
@@ -1302,43 +1935,50 @@
                 "title": "Running Python Scripts",
                 "type": "Course",
                 "description": "This step-by-step course will guide you through a series of ways to run Python scripts, depending on your environment, platform, needs, and skills as a programmer.",
-                "url": "https://realpython.com/courses/running-python-scripts/"
+                "url": "https://realpython.com/courses/running-python-scripts/",
+                "decomposition": {}
             },
             {
                 "title": "A Beginner's Guide to Pip",
                 "type": "Course",
                 "description": "What is pip? In this beginner-friendly course, you'll learn how to use pip, the standard package manager for Python, so that you can install and manage additional packages that are not part of the Python standard library.",
-                "url": "https://realpython.com/courses/what-is-pip/"
+                "url": "https://realpython.com/courses/what-is-pip/",
+                "decomposition": {}
             },
             {
                 "title": "Working With Python Virtual Environments",
                 "type": "Course",
                 "description": "This course demonstrates how Python's virtual environments work as a \"sandbox\" and you get a quick walkthrough on how to set up a new environment (or virtualenv, as they're called for short) and how to install third-party packages into it using the pip command.",
-                "url": "https://realpython.com/courses/working-python-virtual-environments/"
+                "url": "https://realpython.com/courses/working-python-virtual-environments/",
+                "decomposition": {}
             },
             {
                 "title": "Start Managing Multiple Python Versions With pyenv",
                 "type": "Course",
                 "description": "Learn how to install multiple Python versions and switch between them with ease, including project-specific virtual environments, with pyenv.",
-                "url": "https://realpython.com/courses/start-with-pyenv/"
+                "url": "https://realpython.com/courses/start-with-pyenv/",
+                "decomposition": {}
             },
             {
                 "title": "Working With Pipenv",
                 "type": "Course",
                 "description": "Pipenv is a packaging tool for Python that solves some common problems associated with the typical workflow using pip, virtualenv, and requirements.txt. In this course, you'll go over what problems Pipenv solves and how to manage your Python dependencies with it.",
-                "url": "https://realpython.com/courses/working-with-pipenv/"
+                "url": "https://realpython.com/courses/working-with-pipenv/",
+                "decomposition": {}
             },
             {
                 "title": "Running Python Tests With PyTest",
                 "type": "Course",
                 "description": "In this hands-on course, you\u2019ll see how to create\u00a0Python unit tests, execute them, and find the bugs before your users do.\u00a0You\u2019ll learn about the tools available to write and execute tests, check your application\u2019s performance, and even look for security issues.",
-                "url": "https://realpython.com/courses/test-driven-development-pytest/"
+                "url": "https://realpython.com/courses/test-driven-development-pytest/",
+                "decomposition": {}
             },
             {
                 "title": "Introduction to Git and GitHub for Python Developers",
                 "type": "Course",
                 "description": "What is Git,  what is GitHub, and what's the difference? Learn the basics of Git and GitHub from the perspective of a Pythonista in this step-by-step video course.",
-                "url": "https://realpython.com/courses/python-git-github-intro/"
+                "url": "https://realpython.com/courses/python-git-github-intro/",
+                "decomposition": {}
             },
             {
                 "title": "Run Python Versions in Docker: How to Try the Latest Python Release",
@@ -1350,7 +1990,8 @@
                 "title": "Managing Python Dependencies",
                 "type": "Course",
                 "description": "Get up to speed with Python dependency management quickly and go from \u201cwriting scripts\u201d to \u201cbuilding applications\u201d with this complete course.",
-                "url": "https://realpython.com/products/managing-python-dependencies/"
+                "url": "https://realpython.com/products/managing-python-dependencies/",
+                "decomposition": {}
             }
         ]
     },
@@ -1376,13 +2017,15 @@
                 "title": "Python Basics: Setting Up Python",
                 "type": "Course",
                 "description": "The first step to getting started with Python is to set it up on your machine. In this course, you'll learn how to download Python for Windows, macOS, and Ubuntu Linux and how to open Python's Integrated Development and Learning Environment, IDLE.",
-                "url": "https://realpython.com/courses/setting-up-python/"
+                "url": "https://realpython.com/courses/setting-up-python/",
+                "decomposition": {}
             },
             {
                 "title": "Installing Python 3",
                 "type": "Course",
                 "description": "Bonus tutorial that goes into more detail on how to install Python 3 on your computer.",
-                "url": "https://realpython.com/installing-python/"
+                "url": "https://realpython.com/installing-python/",
+                "decomposition": {}
             },
             {
                 "title": "Chapter 3: Your First Python Program",
@@ -1394,7 +2037,8 @@
                 "title": "Python Basics: Code Your First Python Program",
                 "type": "Course",
                 "description": "In this video course, you'll write your first Python program. Along the way, you'll learn about errors, declare variables and inspect their values, and try your hand at writing comments.",
-                "url": "https://realpython.com/courses/python-basics-first-program/"
+                "url": "https://realpython.com/courses/python-basics-first-program/",
+                "decomposition": {}
             },
             {
                 "title": "Exercises & Challenges",
@@ -1702,13 +2346,15 @@
                 "title": "Python Basics: Setting Up Python",
                 "type": "Course",
                 "description": "The first step to getting started with Python is to set it up on your machine. In this course, you'll learn how to download Python for Windows, macOS, and Ubuntu Linux and how to open Python's Integrated Development and Learning Environment, IDLE.",
-                "url": "https://realpython.com/courses/setting-up-python/"
+                "url": "https://realpython.com/courses/setting-up-python/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Code Your First Python Program",
                 "type": "Course",
                 "description": "In this video course, you'll write your first Python program. Along the way, you'll learn about errors, declare variables and inspect their values, and try your hand at writing comments.",
-                "url": "https://realpython.com/courses/python-basics-first-program/"
+                "url": "https://realpython.com/courses/python-basics-first-program/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Code Your First Python Program",
@@ -1720,7 +2366,8 @@
                 "title": "Python Basics: Strings and String Methods",
                 "type": "Course",
                 "description": "In Python, collections of text are called strings. In this course, you'll learn about this fundamental data type and the string methods that you can use to manipulate strings. Along the way, you'll learn ways to work with strings of numbers, and how to format strings for printing.",
-                "url": "https://realpython.com/courses/python-basics-strings-string-methods/"
+                "url": "https://realpython.com/courses/python-basics-strings-string-methods/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Strings and String Methods",
@@ -1732,7 +2379,8 @@
                 "title": "Python Basics: Numbers and Math",
                 "type": "Course",
                 "description": "Learn the math that you'll need for your Python programming journey. This includes integers and floating-point numbers, arithmetic operators, and string formatting for numbers.",
-                "url": "https://realpython.com/courses/python-basics-numbers-and-math/"
+                "url": "https://realpython.com/courses/python-basics-numbers-and-math/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Numbers and Math",
@@ -1744,7 +2392,8 @@
                 "title": "Python Basics: Functions and Loops",
                 "type": "Course",
                 "description": "In this Python Basics video course, you'll learn how to create user-defined functions that you can execute several times throughout your code. You'll also try your hand at repeating code with for and while loops.",
-                "url": "https://realpython.com/courses/python-basics-functions-loops/"
+                "url": "https://realpython.com/courses/python-basics-functions-loops/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Functions and Loops",
@@ -1756,7 +2405,8 @@
                 "title": "Python Basics: Scopes",
                 "type": "Course",
                 "description": "Learn what scope is and why it's important to coding functions and loops in Python. You'll also get to know the LEGB rule.",
-                "url": "https://realpython.com/courses/python-basics-scopes/"
+                "url": "https://realpython.com/courses/python-basics-scopes/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Scopes",
@@ -1768,7 +2418,8 @@
                 "title": "Python Basics: Finding and Fixing Code Bugs",
                 "type": "Course",
                 "description": "In this Python Basics video course, you'll learn how to identify and fix logic errors, or bugs, in your Python code. You'll use the built-in debugging tools in Python's Integrated Development and Learning Environment to practice locating and resolving bugs in an example function.",
-                "url": "https://realpython.com/courses/python-basics-code-bugs/"
+                "url": "https://realpython.com/courses/python-basics-code-bugs/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Finding and Fixing Code Bugs",
@@ -1780,7 +2431,8 @@
                 "title": "Python Basics: Conditional Logic and Control Flow",
                 "type": "Course",
                 "description": "In this Python Basics video course, you'll learn how use conditional logic to write programs that perform different actions based on different conditions. Paired with functions and loops, conditional logic allows you to write complex programs that can handle many different situations.",
-                "url": "https://realpython.com/courses/basics-conditional-logic-control-flow/"
+                "url": "https://realpython.com/courses/basics-conditional-logic-control-flow/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Conditional Logic and Control Flow",
@@ -1792,7 +2444,8 @@
                 "title": "Python Basics: Dictionaries",
                 "type": "Course",
                 "description": "One of the most useful data structures in Python is the dictionary. In this video course, you\u2019ll learn what a dictionary is, how dictionaries differ from lists and tuples, and how to define and use dictionaries in your own code.",
-                "url": "https://realpython.com/courses/python-basics-dictionaries/"
+                "url": "https://realpython.com/courses/python-basics-dictionaries/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Dictionaries",
@@ -1804,25 +2457,29 @@
                 "title": "Python Basics: Object-Oriented Programming",
                 "type": "Course",
                 "description": "In this video course, you'll get to know OOP, or object-oriented programming. You'll learn how to create a class, use classes to create new objects, and instantiate classes with attributes.",
-                "url": "https://realpython.com/courses/python-basics-oop/"
+                "url": "https://realpython.com/courses/python-basics-oop/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: Building Systems With Classes",
                 "type": "Course",
                 "description": "Learn how to work with classes to build complex systems in Python. By composing classes, inheriting from other classes, and overriding class behavior, you'll harness the power of object-oriented programming (OOP).",
-                "url": "https://realpython.com/courses/python-basics-class/"
+                "url": "https://realpython.com/courses/python-basics-class/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics: File System Operations",
                 "type": "Course",
                 "description": "Learn how to use the pathlib module to carry out file path operations with Python. These operations include creating, iterating over, searching for, moving, and deleting files and folders.",
-                "url": "https://realpython.com/courses/python-basics-file-system-operations/"
+                "url": "https://realpython.com/courses/python-basics-file-system-operations/",
+                "decomposition": {}
             },
             {
                 "title": "Python Basics Exercises: File System Operations",
                 "type": "Course",
                 "description": "In this Python Basics Exercises course, you'll review how to use Python to work with your computer's file system. Then, you'll tackle a coding challenge to further develop your skills.",
-                "url": "https://realpython.com/courses/python-file-system-exercises/"
+                "url": "https://realpython.com/courses/python-file-system-exercises/",
+                "decomposition": {}
             }
         ]
     },
@@ -1837,7 +2494,8 @@
                 "title": "Speed Up Python With Concurrency",
                 "type": "Course",
                 "description": "Learn what concurrency means in Python and why you might want to use it. You'll see a simple, non-concurrent approach and then look into why you'd want threading, asyncio, or multiprocessing.",
-                "url": "https://realpython.com/courses/speed-python-concurrency/"
+                "url": "https://realpython.com/courses/speed-python-concurrency/",
+                "decomposition": {}
             },
             {
                 "title": "Python Concurrency Quiz",
@@ -1849,13 +2507,15 @@
                 "title": "Hands-On Python 3 Concurrency With the asyncio Module",
                 "type": "Course",
                 "description": "Learn how to speed up your Python 3 programs using concurrency and the asyncio module in the standard library. See step-by-step how to leverage concurrency and parallelism in your own programs, all the way to building a complete HTTP downloader example app using asyncio and aiohttp.",
-                "url": "https://realpython.com/courses/python-3-concurrency-asyncio-module/"
+                "url": "https://realpython.com/courses/python-3-concurrency-asyncio-module/",
+                "decomposition": {}
             },
             {
                 "title": "Threading in Python",
                 "type": "Course",
                 "description": "In this intermediate-level course, you'll learn how to use threading in your Python programs. You'll see how to create threads, how to coordinate and synchronize them, and how to handle common problems that arise in threading.",
-                "url": "https://realpython.com/courses/threading-python/"
+                "url": "https://realpython.com/courses/threading-python/",
+                "decomposition": {}
             },
             {
                 "title": "Getting Started With Async Features in Python",
@@ -1873,7 +2533,8 @@
                 "title": "Parallel Map Reduce in Python",
                 "type": "Course",
                 "description": "How to do parallel processing with multiprocessing and concurrent.futures using a functional programming map-reduce approach.",
-                "url": "https://realpython.com/courses/functional-programming-python/"
+                "url": "https://realpython.com/courses/functional-programming-python/",
+                "decomposition": {}
             },
             {
                 "title": "First Steps With PySpark and Big Data Processing",
@@ -1904,7 +2565,8 @@
                 "title": "Simplify Python GUI Development With PySimpleGUI",
                 "type": "Course",
                 "description": "Learn how to create a cross-platform graphical user interface (GUI) using Python and PySimpleGUI. A graphical user interface is an application that has buttons, windows, and lots of other elements that the user can use to interact with your application.",
-                "url": "https://realpython.com/courses/simplify-gui-dev-pysimplegui/"
+                "url": "https://realpython.com/courses/simplify-gui-dev-pysimplegui/",
+                "decomposition": {}
             },
             {
                 "title": "Python and PyQt: Building a GUI Desktop Calculator",
@@ -1922,7 +2584,8 @@
                 "title": "Build Cross-Platform GUI Apps With Kivy",
                 "type": "Course",
                 "description": "Learn how to build a cross-platform mobile application with Python and the Kivy GUI framework. You'll discover how to develop an application that can run on your desktop as well as your phone. Then, you'll package your app for Windows, Linux, and macOS.",
-                "url": "https://realpython.com/courses/cross-platform-gui-apps-kivy/"
+                "url": "https://realpython.com/courses/cross-platform-gui-apps-kivy/",
+                "decomposition": {}
             }
         ]
     },
@@ -1937,13 +2600,15 @@
                 "title": "Making HTTP Requests With Python",
                 "type": "Course",
                 "description": "The \"requests\" library is the de facto standard for making HTTP requests in Python. It abstracts the complexities of making requests behind a beautiful, simple API so that you can focus on interacting with services and consuming data in your application. This course shows you how to work effectively with \"requests\", from start to finish.",
-                "url": "https://realpython.com/courses/python-requests/"
+                "url": "https://realpython.com/courses/python-requests/",
+                "decomposition": {}
             },
             {
                 "title": "Web Scraping With Beautiful Soup and Python",
                 "type": "Course",
                 "description": "In this course, you'll walk through the main steps of the web scraping process. You'll learn how to write a script that uses Python's requests library to scrape data from a website. You'll also use Beautiful Soup to extract the specific pieces of information that you're interested in.",
-                "url": "https://realpython.com/courses/web-scraping-beautiful-soup/"
+                "url": "https://realpython.com/courses/web-scraping-beautiful-soup/",
+                "decomposition": {}
             },
             {
                 "title": "A Practical Introduction to Web Scraping in Python",
@@ -1955,13 +2620,15 @@
                 "title": "Working With JSON Data in Python",
                 "type": "Course",
                 "description": "Learn how to work with Python's built-in \"json\" module to serialize the data in your programs into JSON format. Then, you'll deserialize some JSON from an online API and convert it into Python objects.",
-                "url": "https://realpython.com/courses/working-json-data-python/"
+                "url": "https://realpython.com/courses/working-json-data-python/",
+                "decomposition": {}
             },
             {
                 "title": "Reading and Writing CSV Files",
                 "type": "Course",
                 "description": "This short course covers how to read and write data to CSV files using Python's built in \"csv\" module and the \"pandas\" library. You'll learn how to handle standard and non-standard data such as CSV files without headers, or files containing delimeters in the data.",
-                "url": "https://realpython.com/courses/reading-and-writing-csv-files/"
+                "url": "https://realpython.com/courses/reading-and-writing-csv-files/",
+                "decomposition": {}
             },
             {
                 "title": "Modern Web Automation With Python and Selenium",
@@ -1982,13 +2649,15 @@
                 "title": "Test-Driven Development With PyTest",
                 "type": "Course",
                 "description": "In this hands-on course, you\u2019ll see how to create\u00a0Python unit tests, execute them, and find the bugs before your users do.\u00a0You\u2019ll learn about the tools available to write and execute tests, check your application\u2019s performance, and even look for security issues.",
-                "url": "https://realpython.com/courses/test-driven-development-pytest/"
+                "url": "https://realpython.com/courses/test-driven-development-pytest/",
+                "decomposition": {}
             },
             {
                 "title": "Testing Your Code With pytest",
                 "type": "Course",
                 "description": "Learn how to take your testing to the next level with pytest. You'll cover intermediate and advanced pytest features such as fixtures, marks, parameters, and plugins. With pytest, you can make your test suites fast, effective, and less painful to maintain.",
-                "url": "https://realpython.com/courses/testing-your-code-with-pytest/"
+                "url": "https://realpython.com/courses/testing-your-code-with-pytest/",
+                "decomposition": {}
             },
             {
                 "title": "4 Techniques for Testing Python Command-Line (CLI) Apps",
@@ -2000,19 +2669,22 @@
                 "title": "Python Debugging With pdb",
                 "type": "Course",
                 "description": "Learn the basics of using pdb, Python's interactive source code debugger. pdb is a great tool for tracking down hard-to-find bugs, and it allows you to fix faulty code more quickly.",
-                "url": "https://realpython.com/courses/python-debugging-pdb/"
+                "url": "https://realpython.com/courses/python-debugging-pdb/",
+                "decomposition": {}
             },
             {
                 "title": "Continuous Integration With Python",
                 "type": "Course",
                 "description": "Learn the core concepts behind Continuous Integration (CI) and why they are essential for modern software engineering teams. Find out how to how set up Continuous Integration for your Python project to automatically create environments, install dependencies, and run tests.",
-                "url": "https://realpython.com/courses/python-continuous-integration/"
+                "url": "https://realpython.com/courses/python-continuous-integration/",
+                "decomposition": {}
             },
             {
                 "title": "Improve Your Tests With the Python Mock Object Library",
                 "type": "Course",
                 "description": "Learn how to use the Python mock object library, unittest.mock, to create and use mock objects to improve your tests. Obstacles like complex logic and unpredictable dependencies make writing valuable tests difficult, but unittest.mock can help you overcome these obstacles.",
-                "url": "https://realpython.com/courses/python-mock-object-library/"
+                "url": "https://realpython.com/courses/python-mock-object-library/",
+                "decomposition": {}
             }
         ]
     },
@@ -2026,49 +2698,57 @@
                 "title": "Writing Comments in Python",
                 "type": "Course",
                 "description": "Learn how to write Python comments that are clean, concise, and useful. Quickly get up to speed on what the best practices are, which types of comments it's best to avoid, and how you can practice writing cleaner comments.",
-                "url": "https://realpython.com/courses/writing-comments-python/"
+                "url": "https://realpython.com/courses/writing-comments-python/",
+                "decomposition": {}
             },
             {
                 "title": "Writing Beautiful Pythonic Code With PEP 8",
                 "type": "Course",
                 "description": "Learn how to write high-quality, readable code by using the Python style guidelines laid out in PEP 8. Following these guidelines helps you make a great impression when sharing your work with potential employers and collaborators. This course outlines the key guidelines laid out in PEP 8. It's aimed at beginner to intermediate programmers.",
-                "url": "https://realpython.com/courses/writing-beautiful-python-code-pep-8/"
+                "url": "https://realpython.com/courses/writing-beautiful-python-code-pep-8/",
+                "decomposition": {}
             },
             {
                 "title": "How to Write Pythonic Loops",
                 "type": "Course",
                 "description": "See how you can make your loops more Pythonic if you're coming to Python from a C-style language. You'll learn how you can get the most out of using range(), xrange(), and enumerate(). You'll also see how you can avoid having to keep track of loop indexes manually.",
-                "url": "https://realpython.com/courses/how-to-write-pythonic-loops/"
+                "url": "https://realpython.com/courses/how-to-write-pythonic-loops/",
+                "decomposition": {}
             },
             {
                 "title": "Using List Comprehensions Effectively",
                 "type": "Course",
                 "description": "This short course breaks down Python list comprehensions for you step by step. See how Python's comprehensions can be transformed from and to equivalent \"for\"-loops so you'll know exactly what's going on behind the scenes.",
-                "url": "https://realpython.com/courses/using-list-comprehensions-effectively/"
+                "url": "https://realpython.com/courses/using-list-comprehensions-effectively/",
+                "decomposition": {}
             },
             {
                 "title": "How to Use Python Lambda Functions",
                 "type": "Course",
                 "description": "Learn about Python lambda functions. You'll see how they compare with regular functions and how you can use them in accordance with best practices.",
-                "url": "https://realpython.com/courses/python-lambda-functions/"
+                "url": "https://realpython.com/courses/python-lambda-functions/",
+                "decomposition": {}
             },
             {
                 "title": "Writing Idiomatic Python",
                 "type": "Course",
                 "description": "What are the programming idioms unique to Python? This course is a short overview for people coming from other languages and an introduction for beginners to the idiomatic practices within Python. You'll cover truth values, looping, DRY principles, and the Zen of Python.",
-                "url": "https://realpython.com/courses/writing-idiomatic-python/"
+                "url": "https://realpython.com/courses/writing-idiomatic-python/",
+                "decomposition": {}
             },
             {
                 "title": "Python 3's f-Strings: An Improved String Formatting Syntax",
                 "type": "Course",
                 "description": "As of Python 3.6, f-strings are a great new way to format strings. Not only are they more readable, more concise, and less prone to error than other ways of formatting, but they are also faster! By the end of this course, you'll know how and why to start using f-strings today.",
-                "url": "https://realpython.com/courses/python-3-f-strings-improved-string-formatting-syntax/"
+                "url": "https://realpython.com/courses/python-3-f-strings-improved-string-formatting-syntax/",
+                "decomposition": {}
             },
             {
                 "title": "Documenting Python Code: A Complete Guide",
                 "type": "Course",
                 "description": "Whether you're documenting a small script or a large project, whether you're a beginner or seasoned Pythonista, this guide will cover everything you need to know.",
-                "url": "https://realpython.com/courses/documenting-python-code/"
+                "url": "https://realpython.com/courses/documenting-python-code/",
+                "decomposition": {}
             },
             {
                 "title": "Refactoring Python Applications for Simplicity",
@@ -2080,13 +2760,15 @@
                 "title": "Structuring a Python Application",
                 "type": "Course",
                 "description": "This course is a reference guide to common Python application layouts and project structures for command-line applications, web applications, and more.",
-                "url": "https://realpython.com/courses/structuring-python-application/"
+                "url": "https://realpython.com/courses/structuring-python-application/",
+                "decomposition": {}
             },
             {
                 "title": "How to Stand Out in a Python Coding Interview",
                 "type": "Course",
                 "description": "Learn how to take your Python coding interview skills to the next level and use Python's built-in functions and modules to solve problems faster and more easily.",
-                "url": "https://realpython.com/courses/python-coding-interviews-tips-best-practices/"
+                "url": "https://realpython.com/courses/python-coding-interviews-tips-best-practices/",
+                "decomposition": {}
             },
             {
                 "title": "Python Code Quality: Tools & Best Practices",
@@ -2098,13 +2780,15 @@
                 "title": "Writing Cleaner Python Code With PyLint",
                 "type": "Course",
                 "description": "See how to install and set up the PyLint code linter tool. You'll learn why you should use code linters like PyLint, Flake8, PyFlakes, or other static analysis tools\u2014and how they can help you write cleaner and more Pythonic code.",
-                "url": "https://realpython.com/courses/writing-cleaner-python-code-pylint/"
+                "url": "https://realpython.com/courses/writing-cleaner-python-code-pylint/",
+                "decomposition": {}
             },
             {
                 "title": "Python Type Checking",
                 "type": "Course",
                 "description": "In this course, you'll look at Python type checking. Traditionally, types have been handled by the Python interpreter in a flexible but implicit way. Recent versions of Python allow you to specify explicit type hints that can be used by different tools to help you develop your code more efficiently.",
-                "url": "https://realpython.com/courses/python-type-checking/"
+                "url": "https://realpython.com/courses/python-type-checking/",
+                "decomposition": {}
             }
         ]
     }

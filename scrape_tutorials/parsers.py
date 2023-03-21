@@ -190,6 +190,7 @@ class RealPythonScraper:
         self.learning_path_soups = {}
         # scrape learning path base pages/topic urls.
         self.learning_paths_save_path = "./scrape_tutorials/realpython_learning_paths.json"
+        self.learning_paths_with_courses_path = "./scrape_tutorials/realpython_learning_paths_with_courses.json"
         if os.path.exists(self.learning_paths_save_path):
             self.learning_paths_graph = json.load(open(self.learning_paths_save_path))
         else:
@@ -214,6 +215,34 @@ class RealPythonScraper:
                 } 
             with open(self.learning_paths_save_path, "w") as f:
                 json.dump(self.learning_paths_graph, f, indent=4)
+        if os.path.exists(self.learning_paths_with_courses_path):
+            self.learning_paths_graph = json.load(open(self.learning_paths_with_courses_path))
+        else:
+            # iterate over the resource blocks.
+            for name, lp_resources in self.learning_paths_graph.items():
+                # iterate over resource blocks:
+                for i, rblock in tqdm(enumerate(lp_resources["resources"]), 
+                                      total=len(lp_resources["resources"]), 
+                                      desc=f"lpath:{name}"):
+                    if rblock["type"] == "Course":
+                        course_url = rblock["url"]
+                        self.learning_paths_graph[name]["resources"][i]["decomposition"] = self.scrape_course(course_url)
+            with open(self.learning_paths_with_courses_path, "w") as f:
+                json.dump(self.learning_paths_graph, f, indent=4)
+
+    def scrape_course(self, url: str):
+        course_decomp = {}
+        try: course_soup = bs4.BeautifulSoup(requests.get(url).text, features="lxml")
+        except ConnectionError:
+            print("\x1b[31;1mERROR for:\x1b[0m", url)
+            return {}
+        # iterate over course blocks:
+        for cblock in course_soup.select("div.mb-5.p-3.bg-white.rounded.border.shadow-sm"):
+            key = cblock.select("h2.border-bottom.border-gray.pb-2.mb-0.h3.mt-0.pt-0")[0].text
+            value = [p.text.strip() for p in cblock.select("p.h5.mb-0")]
+            course_decomp[key] = value
+
+        return course_decomp
 
 # gather PyTorch tutorials.
 class PyTorchTutorialsParser:
