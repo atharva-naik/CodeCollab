@@ -229,6 +229,214 @@ root
 │           ├── Overview
 │           ├── Pandas Built-in Plotting
 │           └── Seaborn
+├── scipy
+│   ├── Compressed Sparse Graph Routines (scipy.sparse.csgraph)
+│   │   └── Example: Word Ladders
+│   ├── File IO (scipy.io)
+│   │   ├── MATLAB files
+│   │   │   ├── How do I start?
+│   │   │   ├── MATLAB cell arrays
+│   │   │   ├── MATLAB structs
+│   │   │   └── The basic functions
+│   │   └── Netcdf
+│   ├── Fourier Transforms (scipy.fft)
+│   │   ├── Discrete Cosine Transforms
+│   │   │   ├── DCT and IDCT
+│   │   │   ├── Example
+│   │   │   ├── Type I DCT
+│   │   │   ├── Type II DCT
+│   │   │   ├── Type III DCT
+│   │   │   └── Type IV DCT
+│   │   ├── Discrete Sine Transforms
+│   │   │   ├── DST and IDST
+│   │   │   ├── Type I DST
+│   │   │   ├── Type II DST
+│   │   │   ├── Type III DST
+│   │   │   └── Type IV DST
+│   │   ├── Fast Fourier transforms
+│   │   │   ├── 1-D discrete Fourier transforms
+│   │   │   └── 2- and N-D discrete Fourier transforms
+│   │   ├── Fast Hankel Transform
+│   │   └── References
+│   ├── Integration (scipy.integrate)
+│   │   ├── Faster integration using low-level callback functions
+│   │   ├── Gaussian quadrature
+│   │   ├── General integration (quad)
+│   │   ├── General multiple integration (dblquad, tplquad, nquad)
+│   │   ├── Integrating using Samples
+│   │   ├── Ordinary differential equations (solve_ivp)
+│   │   │   ├── References
+│   │   │   └── Solving a system with a banded Jacobian matrix
+│   │   └── Romberg Integration
+│   ├── Interpolation (scipy.interpolate)
+│   ├── Introduction
+│   │   ├── Finding Documentation
+│   │   └── SciPy Organization
+│   ├── Linear Algebra (scipy.linalg)
+│   │   ├── Basic routines
+│   │   │   ├── Computing norms
+│   │   │   ├── Finding the determinant
+│   │   │   ├── Finding the inverse
+│   │   │   ├── Generalized inverse
+│   │   │   ├── Solving a linear system
+│   │   │   └── Solving linear least-squares problems and pseudo-inverses
+│   │   ├── Decompositions
+│   │   │   ├── Cholesky decomposition
+│   │   │   ├── Eigenvalues and eigenvectors
+│   │   │   ├── Interpolative decomposition
+│   │   │   ├── LU decomposition
+│   │   │   ├── QR decomposition
+│   │   │   ├── Schur decomposition
+│   │   │   └── Singular value decomposition
+│   │   ├── Matrix functions
+│   │   │   ├── Arbitrary function
+│   │   │   ├── Exponential and logarithm functions
+│   │   │   ├── Hyperbolic trigonometric functions
+│   │   │   └── Trigonometric functions
+│   │   ├── Special matrices
+│   │   ├── numpy.matrix vs 2-D numpy.ndarray
+│   │   └── scipy.linalg vs numpy.linalg
+│   ├── Multidimensional image processing (scipy.ndimage)
+│   │   ├── Distance transforms
+│   │   ├── Extending scipy.ndimage in C
+│   │   ├── Filter functions
+│   │   │   ├── Correlation and convolution
+│   │   │   ├── Derivatives
+│   │   │   ├── Filters based on order statistics
+│   │   │   ├── Fourier domain filters
+│   │   │   ├── Generic filter functions
+│   │   │   └── Smoothing filters
+│   │   ├── Interpolation functions
+│   │   │   ├── Interpolation boundary handling
+│   │   │   ├── Interpolation functions
+│   │   │   └── Spline pre-filters
+│   │   ├── Introduction
+│   │   ├── Morphology
+│   │   │   ├── Binary morphology
+│   │   │   └── Grey-scale morphology
+│   │   ├── Object measurements
+│   │   ├── Properties shared by all functions
+│   │   ├── References
+│   │   └── Segmentation and labeling
+│   ├── Optimization (scipy.optimize)
+│   │   ├── Assignment problems
+│   │   │   └── Linear sum assignment problem example
+│   │   ├── Constrained minimization of multivariate scalar functions (minimize)
+│   │   │   ├── Sequential Least SQuares Programming (SLSQP) Algorithm (method='SLSQP')
+│   │   │   └── Trust-Region Constrained Algorithm (method='trust-constr')
+│   │   │       ├── Defining Bounds Constraints:
+│   │   │       ├── Defining Linear Constraints:
+│   │   │       ├── Defining Nonlinear Constraints:
+│   │   │       └── Solving the Optimization Problem:
+│   │   ├── Custom minimizers
+│   │   ├── Global optimization
+│   │   ├── Least-squares minimization (least_squares)
+│   │   │   ├── Example of solving a fitting problem
+│   │   │   └── Further examples
+│   │   ├── Linear programming (linprog)
+│   │   │   └── Linear programming example
+│   │   ├── Mixed integer linear programming
+│   │   │   └── Knapsack problem example
+│   │   ├── Root finding
+│   │   │   ├── Fixed-point solving
+│   │   │   ├── Root finding for large problems
+│   │   │   ├── Scalar functions
+│   │   │   ├── Sets of equations
+│   │   │   └── Still too slow? Preconditioning.
+│   │   ├── Unconstrained minimization of multivariate scalar functions (minimize)
+│   │   │   ├── Broyden-Fletcher-Goldfarb-Shanno algorithm (method='BFGS')
+│   │   │   ├── Nelder-Mead Simplex algorithm (method='Nelder-Mead')
+│   │   │   ├── Newton-Conjugate-Gradient algorithm (method='Newton-CG')
+│   │   │   │   ├── Full Hessian example:
+│   │   │   │   └── Hessian product example:
+│   │   │   ├── Trust-Region Nearly Exact Algorithm (method='trust-exact')
+│   │   │   ├── Trust-Region Newton-Conjugate-Gradient Algorithm (method='trust-ncg')
+│   │   │   │   ├── Full Hessian example:
+│   │   │   │   └── Hessian product example:
+│   │   │   └── Trust-Region Truncated Generalized Lanczos / Conjugate Gradient Algorithm (method='trust-krylov')
+│   │   │       ├── Full Hessian example:
+│   │   │       └── Hessian product example:
+│   │   └── Univariate function minimizers (minimize_scalar)
+│   │       ├── Bounded minimization (method='bounded')
+│   │       └── Unconstrained minimization (method='brent')
+│   ├── Signal Processing (scipy.signal)
+│   │   ├── B-splines
+│   │   ├── Detrend
+│   │   ├── Filtering
+│   │   │   ├── Analog Filter Design
+│   │   │   ├── Convolution/Correlation
+│   │   │   ├── Difference-equation filtering
+│   │   │   │   └── Analysis of Linear Systems
+│   │   │   ├── Filter Design
+│   │   │   │   ├── FIR Filter
+│   │   │   │   ├── Filter Coefficients
+│   │   │   │   │   ├── Second-order sections representation
+│   │   │   │   │   ├── State-space system representation
+│   │   │   │   │   ├── Transfer function representation
+│   │   │   │   │   └── Zeros and poles representation
+│   │   │   │   ├── Filter transformations
+│   │   │   │   └── IIR Filter
+│   │   │   └── Other filters
+│   │   │       ├── Hilbert filter
+│   │   │       ├── Median Filter
+│   │   │       ├── Order Filter
+│   │   │       └── Wiener filter
+│   │   └── Spectral Analysis
+│   │       ├── Lomb-Scargle Periodograms (lombscargle)
+│   │       ├── Periodogram Measurements
+│   │       └── Spectral Analysis using Welchâs Method
+│   ├── Sparse eigenvalue problems with ARPACK
+│   │   ├── Basic functionality
+│   │   ├── Examples
+│   │   ├── Introduction
+│   │   ├── References
+│   │   ├── Shift-invert mode
+│   │   └── Use of LinearOperator
+│   ├── Spatial data structures and algorithms (scipy.spatial)
+│   │   ├── Convex hulls
+│   │   ├── Delaunay triangulations
+│   │   │   └── Coplanar points
+│   │   └── Voronoi diagrams
+│   ├── Special functions (scipy.special)
+│   │   ├── Bessel functions of real order(jv, jn_zeros)
+│   │   ├── Cython Bindings for Special Functions (scipy.special.cython_special)
+│   │   │   ├── Avoiding Python Function Overhead
+│   │   │   └── Releasing the GIL
+│   │   └── Functions not in scipy.special
+│   └── Statistics (scipy.stats)
+│       ├── Analysing one sample
+│       │   ├── Descriptive statistics
+│       │   ├── Special tests for normal distributions
+│       │   ├── T-test and KS-test
+│       │   └── Tails of the distribution
+│       ├── Building specific distributions
+│       │   ├── Making a continuous distribution, i.e., subclassing rv_continuous
+│       │   └── Subclassing rv_discrete
+│       ├── Comparing two samples
+│       │   ├── Comparing means
+│       │   └── Kolmogorov-Smirnov test for two samples ks_2samp
+│       ├── Introduction
+│       ├── Kernel density estimation
+│       │   ├── Multiscale Graph Correlation (MGC)
+│       │   ├── Multivariate estimation
+│       │   └── Univariate estimation
+│       ├── Quasi-Monte Carlo
+│       │   ├── Calculate the discrepancy
+│       │   ├── Guidelines on using QMC
+│       │   ├── Making a QMC engine, i.e., subclassing QMCEngine
+│       │   └── Using a QMC engine
+│       └── Random variables
+│           ├── Broadcasting
+│           ├── Common methods
+│           ├── Fitting distributions
+│           ├── Freezing a distribution
+│           ├── Getting help
+│           ├── Performance issues and cautionary remarks
+│           ├── Random number generation
+│           ├── Remaining issues
+│           ├── Shape parameters
+│           ├── Shifting and scaling
+│           └── Specific points for discrete distributions
 ├── seaborn
 │   ├── API Overview
 │   │   ├── Data structures accepted by seaborn
