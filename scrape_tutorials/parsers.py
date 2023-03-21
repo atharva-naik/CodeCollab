@@ -206,7 +206,7 @@ class RealPythonScraper:
                         "title": div.select("a.stretched-link")[1].text,
                         "type": div.select("p.small.text-muted.mb-0")[0].text, 
                         "description": div.select("p.small.text-muted.mb-0")[1].text,
-                        "url": os.path.join("https://realpython.com/", div.select("a.stretched-link")[0].attrs['href']),
+                        "url": f'https://realpython.com{div.select("a.stretched-link")[0].attrs["href"]}',
                     } for div in resource_divs]
                 self.learning_paths_graph[name] = {
                     "skills": skills,
