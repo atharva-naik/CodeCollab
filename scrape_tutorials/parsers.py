@@ -88,66 +88,64 @@ def collapse_list_of_strings(d: Union[dict, str, list]):
             d[k] = collapse_list_of_strings(v)
 
     return d
+# def simplify_html_to_json(html_to_json_dict: dict):
+#     simple_json = {}
+#     # print("simplifying JSON")
+#     if isinstance(html_to_json_dict, dict):
+#         if len(html_to_json_dict) == 1 and isinstance(list(html_to_json_dict.values())[0], str):
+#             return list(html_to_json_dict.values())[0]
+#         for key, value in html_to_json_dict.items():
+#             if key == "_value": key = "content"
+#             elif key == "h1": key = "markdown1"
+#             elif key == "h2": key = "markdown2"
+#             elif key == "h3": key = "markdown3"
+#             elif key == "_values": key = "contents"
+#             elif key == 'pre': key = "code"
+#             # print(key)
+#             if isinstance(value, (dict, list)):
+#                 simple_json[key] = simplify_html_to_json(value)
+#             else: simple_json[key] = value
+#     elif isinstance(html_to_json_dict, list):
+#         simple_json = []
+#         for value in html_to_json_dict:
+#             simple_json.append(simplify_html_to_json(value))
+#         return simple_json
+#     else: return html_to_json_dict
 
-def simplify_html_to_json(html_to_json_dict: dict):
-    simple_json = {}
-    # print("simplifying JSON")
-    if isinstance(html_to_json_dict, dict):
-        if len(html_to_json_dict) == 1 and isinstance(list(html_to_json_dict.values())[0], str):
-            return list(html_to_json_dict.values())[0]
-        for key, value in html_to_json_dict.items():
-            if key == "_value": key = "content"
-            elif key == "h1": key = "markdown1"
-            elif key == "h2": key = "markdown2"
-            elif key == "h3": key = "markdown3"
-            elif key == "_values": key = "contents"
-            elif key == 'pre': key = "code"
-            # print(key)
-            if isinstance(value, (dict, list)):
-                simple_json[key] = simplify_html_to_json(value)
-            else: simple_json[key] = value
-    elif isinstance(html_to_json_dict, list):
-        simple_json = []
-        for value in html_to_json_dict:
-            simple_json.append(simplify_html_to_json(value))
-        return simple_json
-    else: return html_to_json_dict
+#     return simple_json
 
-    return simple_json
+# def simplify_bs2_json(html_json: str, filt_keys: List[str]=[
+#                       'script', 'style', 'role', 'br', 'class']):
+#     if isinstance(html_json, dict):
+#         if [k for k in html_json.keys() if k not in filt_keys] == ["text"]:
+#             if isinstance(html_json["text"], list):
+#                 return " ".join(html_json["text"])    
+#             return html_json["text"]
+#         new_json = {}
+#         for key, value in html_json.items():
+#             if key in filt_keys: 
+#                 # print(key)
+#                 pass
+#             elif key == "attrs":
+#                 for k,v in html_json["attrs"].items():
+#                     if k in filt_keys: continue
+#                     new_json[k] = simplify_bs2_json(v)
+#             elif isinstance(value, (dict, list)):
+#                 new_json[key] = simplify_bs2_json(value, filt_keys)
+#             elif key == "p" and isinstance(value, list):
+#                 new_json[key] = "\n".join(value)
+#             elif key == "text" and isinstance(value, list):
+#                 new_json[key] = " ".join(value)
+#             else: new_json[key] = value
+#     elif isinstance(html_json, list):
+#         new_json = []
+#         for value in html_json:
+#             new_json.append(simplify_bs2_json(value, filt_keys))
+#     else:
+#         # print(type(html_json))
+#         new_json = html_json
 
-def simplify_bs2_json(html_json: str, filt_keys: List[str]=[
-                      'script', 'style', 'role', 'br', 'class']):
-    if isinstance(html_json, dict):
-        if [k for k in html_json.keys() if k not in filt_keys] == ["text"]:
-            if isinstance(html_json["text"], list):
-                return " ".join(html_json["text"])    
-            return html_json["text"]
-        new_json = {}
-        for key, value in html_json.items():
-            if key in filt_keys: 
-                # print(key)
-                pass
-            elif key == "attrs":
-                for k,v in html_json["attrs"].items():
-                    if k in filt_keys: continue
-                    new_json[k] = simplify_bs2_json(v)
-            elif isinstance(value, (dict, list)):
-                new_json[key] = simplify_bs2_json(value, filt_keys)
-            elif key == "p" and isinstance(value, list):
-                new_json[key] = "\n".join(value)
-            elif key == "text" and isinstance(value, list):
-                new_json[key] = " ".join(value)
-            else: new_json[key] = value
-    elif isinstance(html_json, list):
-        new_json = []
-        for value in html_json:
-            new_json.append(simplify_bs2_json(value, filt_keys))
-    else:
-        # print(type(html_json))
-        new_json = html_json
-
-    return new_json
-
+#     return new_json
 def parse_soup_stream(soup_str: str, tag_mapping: Dict[str, Tuple[str, str]]={
         "h1": ("markdown", 1), "h2": ("markdown", 2), "h3": ("markdown", 3),
         "h4": ("markdown", 4), "h5": ("markdown", 5), "h6": ("markdown", 6),
@@ -206,6 +204,38 @@ def process_cell_text(text: str, cell_type: str="markdown"):
         text = text.replace("&gt;", "")
 
     return text.strip()
+
+# parse scikit tutorials.
+class SciKitLearnParser:
+    def __init__(self, base_urls: Dict[str, Dict[str, str]]=SOURCE_TO_BASE_URLS["scikit"]) -> None:
+        self.base_urls = base_urls
+        assert "Examples" in self.base_urls
+        assert "Tutorials" in self.base_urls
+        self.examples_page_url = self.base_urls["Examples"]
+        self.examples_page_save_path = "./scrape_tutorials/scikit_examples.json"
+        self.example_urls = {}
+        if os.path.exists(self.examples_page_save_path):
+            self.example_urls = json.load(open(self.examples_page_save_path))
+        else:
+            domain_dir = "https://scikit-learn.org/stable/auto_examples/"
+            self.examples_page_soup = bs4.BeautifulSoup(
+                requests.get(self.examples_page_url).text,
+                features="lxml",
+            )
+            examples_section = self.examples_page_soup.find("section", id="examples")
+            for section in tqdm(examples_section.select("section")):
+                h2 = section.select("h2")[0].text.replace("¶","")
+                p = section.select("p")[0].text
+                self.example_urls[h2] = {
+                    "description": p,
+                    "urls": {},
+                }
+                for div in section.select("div.sphx-glr-thumbcontainer"):
+                    key = div.select("div.sphx-glr-thumbnail-title")[0].text
+                    value = div.select("a.reference.internal")[0].attrs["href"]
+                    self.example_urls[h2]["urls"][key] = os.path.join(domain_dir, value)
+            with open(self.examples_page_save_path, "w", encoding="utf-8") as f:
+                json.dump(self.example_urls, f, indent=4, ensure_ascii=False)
 
 # parse SciPy tutorials.
 class SciPyParser:

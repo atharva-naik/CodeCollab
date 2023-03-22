@@ -231,5 +231,15 @@ SOURCE_TO_BASE_URLS = {
         "Statistics (scipy.stats)": "https://docs.scipy.org/doc/scipy/tutorial/stats.html",
         "Multidimensional image processing (scipy.ndimage)": "https://docs.scipy.org/doc/scipy/tutorial/ndimage.html",
         "File IO (scipy.io)": "https://docs.scipy.org/doc/scipy/tutorial/io.html"
-    } 
+    },
+    "scikit": {
+        "Examples": "https://scikit-learn.org/stable/auto_examples/index.html",
+        "Tutorials": {
+            "An introduction to machine learning with scikit-learn": "https://scikit-learn.org/stable/tutorial/basic/tutorial.html",
+            "A tutorial on statistical-learning for scientific data processing": "https://scikit-learn.org/stable/tutorial/statistical_inference/index.html",
+            "Working With Text Data": "https://scikit-learn.org/stable/tutorial/text_analytics/working_with_text_data.html",
+            "Choosing the right estimator": "https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html",
+            "External Resources, Videos and Talks": "https://scikit-learn.org/stable/presentations.html",
+        }
+    }
 }

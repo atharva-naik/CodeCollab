@@ -1,0 +1,442 @@
+{
+    "Release Highlights": {
+        "description": "These examples illustrate the main features of the releases of scikit-learn.",
+        "urls": {
+            "Release Highlights for scikit-learn 1.2": "https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_1_2_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-1-2-0-py",
+            "Release Highlights for scikit-learn 1.1": "https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_1_1_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-1-1-0-py",
+            "Release Highlights for scikit-learn 1.0": "https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_1_0_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-1-0-0-py",
+            "Release Highlights for scikit-learn 0.24": "https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_0_24_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-0-24-0-py",
+            "Release Highlights for scikit-learn 0.23": "https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_0_23_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-0-23-0-py",
+            "Release Highlights for scikit-learn 0.22": "https://scikit-learn.org/stable/auto_examples/release_highlights/plot_release_highlights_0_22_0.html#sphx-glr-auto-examples-release-highlights-plot-release-highlights-0-22-0-py"
+        }
+    },
+    "Biclustering": {
+        "description": "Examples concerning the sklearn.cluster.bicluster module.",
+        "urls": {
+            "A demo of the Spectral Biclustering algorithm": "https://scikit-learn.org/stable/auto_examples/bicluster/plot_spectral_biclustering.html#sphx-glr-auto-examples-bicluster-plot-spectral-biclustering-py",
+            "A demo of the Spectral Co-Clustering algorithm": "https://scikit-learn.org/stable/auto_examples/bicluster/plot_spectral_coclustering.html#sphx-glr-auto-examples-bicluster-plot-spectral-coclustering-py",
+            "Biclustering documents with the Spectral Co-clustering algorithm": "https://scikit-learn.org/stable/auto_examples/bicluster/plot_bicluster_newsgroups.html#sphx-glr-auto-examples-bicluster-plot-bicluster-newsgroups-py"
+        }
+    },
+    "Calibration": {
+        "description": "Examples illustrating the calibration of predicted probabilities of classifiers.",
+        "urls": {
+            "Comparison of Calibration of Classifiers": "https://scikit-learn.org/stable/auto_examples/calibration/plot_compare_calibration.html#sphx-glr-auto-examples-calibration-plot-compare-calibration-py",
+            "Probability Calibration curves": "https://scikit-learn.org/stable/auto_examples/calibration/plot_calibration_curve.html#sphx-glr-auto-examples-calibration-plot-calibration-curve-py",
+            "Probability Calibration for 3-class classification": "https://scikit-learn.org/stable/auto_examples/calibration/plot_calibration_multiclass.html#sphx-glr-auto-examples-calibration-plot-calibration-multiclass-py",
+            "Probability calibration of classifiers": "https://scikit-learn.org/stable/auto_examples/calibration/plot_calibration.html#sphx-glr-auto-examples-calibration-plot-calibration-py"
+        }
+    },
+    "Classification": {
+        "description": "General examples about classification algorithms.",
+        "urls": {
+            "Classifier comparison": "https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html#sphx-glr-auto-examples-classification-plot-classifier-comparison-py",
+            "Linear and Quadratic Discriminant Analysis with covariance ellipsoid": "https://scikit-learn.org/stable/auto_examples/classification/plot_lda_qda.html#sphx-glr-auto-examples-classification-plot-lda-qda-py",
+            "Normal, Ledoit-Wolf and OAS Linear Discriminant Analysis for classification": "https://scikit-learn.org/stable/auto_examples/classification/plot_lda.html#sphx-glr-auto-examples-classification-plot-lda-py",
+            "Plot classification probability": "https://scikit-learn.org/stable/auto_examples/classification/plot_classification_probability.html#sphx-glr-auto-examples-classification-plot-classification-probability-py",
+            "Recognizing hand-written digits": "https://scikit-learn.org/stable/auto_examples/classification/plot_digits_classification.html#sphx-glr-auto-examples-classification-plot-digits-classification-py"
+        }
+    },
+    "Clustering": {
+        "description": "Examples concerning the sklearn.cluster module.",
+        "urls": {
+            "A demo of K-Means clustering on the handwritten digits data": "https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html#sphx-glr-auto-examples-cluster-plot-kmeans-digits-py",
+            "A demo of structured Ward hierarchical clustering on an image of coins": "https://scikit-learn.org/stable/auto_examples/cluster/plot_coin_ward_segmentation.html#sphx-glr-auto-examples-cluster-plot-coin-ward-segmentation-py",
+            "A demo of the mean-shift clustering algorithm": "https://scikit-learn.org/stable/auto_examples/cluster/plot_mean_shift.html#sphx-glr-auto-examples-cluster-plot-mean-shift-py",
+            "Adjustment for chance in clustering performance evaluation": "https://scikit-learn.org/stable/auto_examples/cluster/plot_adjusted_for_chance_measures.html#sphx-glr-auto-examples-cluster-plot-adjusted-for-chance-measures-py",
+            "Agglomerative clustering with and without structure": "https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_clustering.html#sphx-glr-auto-examples-cluster-plot-agglomerative-clustering-py",
+            "Agglomerative clustering with different metrics": "https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_clustering_metrics.html#sphx-glr-auto-examples-cluster-plot-agglomerative-clustering-metrics-py",
+            "An example of K-Means++ initialization": "https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_plusplus.html#sphx-glr-auto-examples-cluster-plot-kmeans-plusplus-py",
+            "Bisecting K-Means and Regular K-Means Performance Comparison": "https://scikit-learn.org/stable/auto_examples/cluster/plot_bisect_kmeans.html#sphx-glr-auto-examples-cluster-plot-bisect-kmeans-py",
+            "Color Quantization using K-Means": "https://scikit-learn.org/stable/auto_examples/cluster/plot_color_quantization.html#sphx-glr-auto-examples-cluster-plot-color-quantization-py",
+            "Compare BIRCH and MiniBatchKMeans": "https://scikit-learn.org/stable/auto_examples/cluster/plot_birch_vs_minibatchkmeans.html#sphx-glr-auto-examples-cluster-plot-birch-vs-minibatchkmeans-py",
+            "Comparing different clustering algorithms on toy datasets": "https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_comparison.html#sphx-glr-auto-examples-cluster-plot-cluster-comparison-py",
+            "Comparing different hierarchical linkage methods on toy datasets": "https://scikit-learn.org/stable/auto_examples/cluster/plot_linkage_comparison.html#sphx-glr-auto-examples-cluster-plot-linkage-comparison-py",
+            "Comparison of the K-Means and MiniBatchKMeans clustering algorithms": "https://scikit-learn.org/stable/auto_examples/cluster/plot_mini_batch_kmeans.html#sphx-glr-auto-examples-cluster-plot-mini-batch-kmeans-py",
+            "Demo of DBSCAN clustering algorithm": "https://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html#sphx-glr-auto-examples-cluster-plot-dbscan-py",
+            "Demo of OPTICS clustering algorithm": "https://scikit-learn.org/stable/auto_examples/cluster/plot_optics.html#sphx-glr-auto-examples-cluster-plot-optics-py",
+            "Demo of affinity propagation clustering algorithm": "https://scikit-learn.org/stable/auto_examples/cluster/plot_affinity_propagation.html#sphx-glr-auto-examples-cluster-plot-affinity-propagation-py",
+            "Demonstration of k-means assumptions": "https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_assumptions.html#sphx-glr-auto-examples-cluster-plot-kmeans-assumptions-py",
+            "Empirical evaluation of the impact of k-means initialization": "https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_stability_low_dim_dense.html#sphx-glr-auto-examples-cluster-plot-kmeans-stability-low-dim-dense-py",
+            "Feature agglomeration": "https://scikit-learn.org/stable/auto_examples/cluster/plot_digits_agglomeration.html#sphx-glr-auto-examples-cluster-plot-digits-agglomeration-py",
+            "Feature agglomeration vs. univariate selection": "https://scikit-learn.org/stable/auto_examples/cluster/plot_feature_agglomeration_vs_univariate_selection.html#sphx-glr-auto-examples-cluster-plot-feature-agglomeration-vs-univariate-selection-py",
+            "Hierarchical clustering: structured vs unstructured ward": "https://scikit-learn.org/stable/auto_examples/cluster/plot_ward_structured_vs_unstructured.html#sphx-glr-auto-examples-cluster-plot-ward-structured-vs-unstructured-py",
+            "Inductive Clustering": "https://scikit-learn.org/stable/auto_examples/cluster/plot_inductive_clustering.html#sphx-glr-auto-examples-cluster-plot-inductive-clustering-py",
+            "K-means Clustering": "https://scikit-learn.org/stable/auto_examples/cluster/plot_cluster_iris.html#sphx-glr-auto-examples-cluster-plot-cluster-iris-py",
+            "Online learning of a dictionary of parts of faces": "https://scikit-learn.org/stable/auto_examples/cluster/plot_dict_face_patches.html#sphx-glr-auto-examples-cluster-plot-dict-face-patches-py",
+            "Plot Hierarchical Clustering Dendrogram": "https://scikit-learn.org/stable/auto_examples/cluster/plot_agglomerative_dendrogram.html#sphx-glr-auto-examples-cluster-plot-agglomerative-dendrogram-py",
+            "Segmenting the picture of greek coins in regions": "https://scikit-learn.org/stable/auto_examples/cluster/plot_coin_segmentation.html#sphx-glr-auto-examples-cluster-plot-coin-segmentation-py",
+            "Selecting the number of clusters with silhouette analysis on KMeans clustering": "https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_silhouette_analysis.html#sphx-glr-auto-examples-cluster-plot-kmeans-silhouette-analysis-py",
+            "Spectral clustering for image segmentation": "https://scikit-learn.org/stable/auto_examples/cluster/plot_segmentation_toy.html#sphx-glr-auto-examples-cluster-plot-segmentation-toy-py",
+            "Various Agglomerative Clustering on a 2D embedding of digits": "https://scikit-learn.org/stable/auto_examples/cluster/plot_digits_linkage.html#sphx-glr-auto-examples-cluster-plot-digits-linkage-py",
+            "Vector Quantization Example": "https://scikit-learn.org/stable/auto_examples/cluster/plot_face_compress.html#sphx-glr-auto-examples-cluster-plot-face-compress-py"
+        }
+    },
+    "Covariance estimation": {
+        "description": "Examples concerning the sklearn.covariance module.",
+        "urls": {
+            "Ledoit-Wolf vs OAS estimation": "https://scikit-learn.org/stable/auto_examples/covariance/plot_lw_vs_oas.html#sphx-glr-auto-examples-covariance-plot-lw-vs-oas-py",
+            "Robust covariance estimation and Mahalanobis distances relevance": "https://scikit-learn.org/stable/auto_examples/covariance/plot_mahalanobis_distances.html#sphx-glr-auto-examples-covariance-plot-mahalanobis-distances-py",
+            "Robust vs Empirical covariance estimate": "https://scikit-learn.org/stable/auto_examples/covariance/plot_robust_vs_empirical_covariance.html#sphx-glr-auto-examples-covariance-plot-robust-vs-empirical-covariance-py",
+            "Shrinkage covariance estimation: LedoitWolf vs OAS and max-likelihood": "https://scikit-learn.org/stable/auto_examples/covariance/plot_covariance_estimation.html#sphx-glr-auto-examples-covariance-plot-covariance-estimation-py",
+            "Sparse inverse covariance estimation": "https://scikit-learn.org/stable/auto_examples/covariance/plot_sparse_cov.html#sphx-glr-auto-examples-covariance-plot-sparse-cov-py"
+        }
+    },
+    "Cross decomposition": {
+        "description": "Examples concerning the sklearn.cross_decomposition module.",
+        "urls": {
+            "Compare cross decomposition methods": "https://scikit-learn.org/stable/auto_examples/cross_decomposition/plot_compare_cross_decomposition.html#sphx-glr-auto-examples-cross-decomposition-plot-compare-cross-decomposition-py",
+            "Principal Component Regression vs Partial Least Squares Regression": "https://scikit-learn.org/stable/auto_examples/cross_decomposition/plot_pcr_vs_pls.html#sphx-glr-auto-examples-cross-decomposition-plot-pcr-vs-pls-py"
+        }
+    },
+    "Dataset examples": {
+        "description": "Examples concerning the sklearn.datasets module.",
+        "urls": {
+            "Plot randomly generated classification dataset": "https://scikit-learn.org/stable/auto_examples/datasets/plot_random_dataset.html#sphx-glr-auto-examples-datasets-plot-random-dataset-py",
+            "Plot randomly generated multilabel dataset": "https://scikit-learn.org/stable/auto_examples/datasets/plot_random_multilabel_dataset.html#sphx-glr-auto-examples-datasets-plot-random-multilabel-dataset-py",
+            "The Digit Dataset": "https://scikit-learn.org/stable/auto_examples/datasets/plot_digits_last_image.html#sphx-glr-auto-examples-datasets-plot-digits-last-image-py",
+            "The Iris Dataset": "https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html#sphx-glr-auto-examples-datasets-plot-iris-dataset-py"
+        }
+    },
+    "Decision Trees": {
+        "description": "Examples concerning the sklearn.tree module.",
+        "urls": {
+            "Decision Tree Regression": "https://scikit-learn.org/stable/auto_examples/tree/plot_tree_regression.html#sphx-glr-auto-examples-tree-plot-tree-regression-py",
+            "Multi-output Decision Tree Regression": "https://scikit-learn.org/stable/auto_examples/tree/plot_tree_regression_multioutput.html#sphx-glr-auto-examples-tree-plot-tree-regression-multioutput-py",
+            "Plot the decision surface of decision trees trained on the iris dataset": "https://scikit-learn.org/stable/auto_examples/tree/plot_iris_dtc.html#sphx-glr-auto-examples-tree-plot-iris-dtc-py",
+            "Post pruning decision trees with cost complexity pruning": "https://scikit-learn.org/stable/auto_examples/tree/plot_cost_complexity_pruning.html#sphx-glr-auto-examples-tree-plot-cost-complexity-pruning-py",
+            "Understanding the decision tree structure": "https://scikit-learn.org/stable/auto_examples/tree/plot_unveil_tree_structure.html#sphx-glr-auto-examples-tree-plot-unveil-tree-structure-py"
+        }
+    },
+    "Decomposition": {
+        "description": "Examples concerning the sklearn.decomposition module.",
+        "urls": {
+            "Beta-divergence loss functions": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_beta_divergence.html#sphx-glr-auto-examples-decomposition-plot-beta-divergence-py",
+            "Blind source separation using FastICA": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_ica_blind_source_separation.html#sphx-glr-auto-examples-decomposition-plot-ica-blind-source-separation-py",
+            "Comparison of LDA and PCA 2D projection of Iris dataset": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_vs_lda.html#sphx-glr-auto-examples-decomposition-plot-pca-vs-lda-py",
+            "Faces dataset decompositions": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_faces_decomposition.html#sphx-glr-auto-examples-decomposition-plot-faces-decomposition-py",
+            "Factor Analysis (with rotation) to visualize patterns": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_varimax_fa.html#sphx-glr-auto-examples-decomposition-plot-varimax-fa-py",
+            "FastICA on 2D point clouds": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_ica_vs_pca.html#sphx-glr-auto-examples-decomposition-plot-ica-vs-pca-py",
+            "Image denoising using dictionary learning": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_image_denoising.html#sphx-glr-auto-examples-decomposition-plot-image-denoising-py",
+            "Incremental PCA": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_incremental_pca.html#sphx-glr-auto-examples-decomposition-plot-incremental-pca-py",
+            "Kernel PCA": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_kernel_pca.html#sphx-glr-auto-examples-decomposition-plot-kernel-pca-py",
+            "Model selection with Probabilistic PCA and Factor Analysis (FA)": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_vs_fa_model_selection.html#sphx-glr-auto-examples-decomposition-plot-pca-vs-fa-model-selection-py",
+            "PCA example with Iris Data-set": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_iris.html#sphx-glr-auto-examples-decomposition-plot-pca-iris-py",
+            "Principal components analysis (PCA)": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_3d.html#sphx-glr-auto-examples-decomposition-plot-pca-3d-py",
+            "Sparse coding with a precomputed dictionary": "https://scikit-learn.org/stable/auto_examples/decomposition/plot_sparse_coding.html#sphx-glr-auto-examples-decomposition-plot-sparse-coding-py"
+        }
+    },
+    "Ensemble methods": {
+        "description": "Examples concerning the sklearn.ensemble module.",
+        "urls": {
+            "Categorical Feature Support in Gradient Boosting": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_categorical.html#sphx-glr-auto-examples-ensemble-plot-gradient-boosting-categorical-py",
+            "Combine predictors using stacking": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_stack_predictors.html#sphx-glr-auto-examples-ensemble-plot-stack-predictors-py",
+            "Comparing random forests and the multi-output meta estimator": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_random_forest_regression_multioutput.html#sphx-glr-auto-examples-ensemble-plot-random-forest-regression-multioutput-py",
+            "Decision Tree Regression with AdaBoost": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_adaboost_regression.html#sphx-glr-auto-examples-ensemble-plot-adaboost-regression-py",
+            "Discrete versus Real AdaBoost": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_adaboost_hastie_10_2.html#sphx-glr-auto-examples-ensemble-plot-adaboost-hastie-10-2-py",
+            "Early stopping of Gradient Boosting": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_early_stopping.html#sphx-glr-auto-examples-ensemble-plot-gradient-boosting-early-stopping-py",
+            "Feature importances with a forest of trees": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html#sphx-glr-auto-examples-ensemble-plot-forest-importances-py",
+            "Feature transformations with ensembles of trees": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_feature_transformation.html#sphx-glr-auto-examples-ensemble-plot-feature-transformation-py",
+            "Gradient Boosting Out-of-Bag estimates": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_oob.html#sphx-glr-auto-examples-ensemble-plot-gradient-boosting-oob-py",
+            "Gradient Boosting regression": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regression.html#sphx-glr-auto-examples-ensemble-plot-gradient-boosting-regression-py",
+            "Gradient Boosting regularization": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_regularization.html#sphx-glr-auto-examples-ensemble-plot-gradient-boosting-regularization-py",
+            "Hashing feature transformation using Totally Random Trees": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_random_forest_embedding.html#sphx-glr-auto-examples-ensemble-plot-random-forest-embedding-py",
+            "IsolationForest example": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_isolation_forest.html#sphx-glr-auto-examples-ensemble-plot-isolation-forest-py",
+            "Monotonic Constraints": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_monotonic_constraints.html#sphx-glr-auto-examples-ensemble-plot-monotonic-constraints-py",
+            "Multi-class AdaBoosted Decision Trees": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_adaboost_multiclass.html#sphx-glr-auto-examples-ensemble-plot-adaboost-multiclass-py",
+            "OOB Errors for Random Forests": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_ensemble_oob.html#sphx-glr-auto-examples-ensemble-plot-ensemble-oob-py",
+            "Pixel importances with a parallel forest of trees": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances_faces.html#sphx-glr-auto-examples-ensemble-plot-forest-importances-faces-py",
+            "Plot class probabilities calculated by the VotingClassifier": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_voting_probas.html#sphx-glr-auto-examples-ensemble-plot-voting-probas-py",
+            "Plot individual and voting regression predictions": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_voting_regressor.html#sphx-glr-auto-examples-ensemble-plot-voting-regressor-py",
+            "Plot the decision boundaries of a VotingClassifier": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_voting_decision_regions.html#sphx-glr-auto-examples-ensemble-plot-voting-decision-regions-py",
+            "Plot the decision surfaces of ensembles of trees on the iris dataset": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_iris.html#sphx-glr-auto-examples-ensemble-plot-forest-iris-py",
+            "Prediction Intervals for Gradient Boosting Regression": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_quantile.html#sphx-glr-auto-examples-ensemble-plot-gradient-boosting-quantile-py",
+            "Single estimator versus bagging: bias-variance decomposition": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_bias_variance.html#sphx-glr-auto-examples-ensemble-plot-bias-variance-py",
+            "Two-class AdaBoost": "https://scikit-learn.org/stable/auto_examples/ensemble/plot_adaboost_twoclass.html#sphx-glr-auto-examples-ensemble-plot-adaboost-twoclass-py"
+        }
+    },
+    "Examples based on real world datasets": {
+        "description": "Applications to real world problems with some medium sized datasets or\ninteractive user interface.",
+        "urls": {
+            "Compressive sensing: tomography reconstruction with L1 prior (Lasso)": "https://scikit-learn.org/stable/auto_examples/applications/plot_tomography_l1_reconstruction.html#sphx-glr-auto-examples-applications-plot-tomography-l1-reconstruction-py",
+            "Faces recognition example using eigenfaces and SVMs": "https://scikit-learn.org/stable/auto_examples/applications/plot_face_recognition.html#sphx-glr-auto-examples-applications-plot-face-recognition-py",
+            "Image denoising using kernel PCA": "https://scikit-learn.org/stable/auto_examples/applications/plot_digits_denoising.html#sphx-glr-auto-examples-applications-plot-digits-denoising-py",
+            "Libsvm GUI": "https://scikit-learn.org/stable/auto_examples/applications/svm_gui.html#sphx-glr-auto-examples-applications-svm-gui-py",
+            "Model Complexity Influence": "https://scikit-learn.org/stable/auto_examples/applications/plot_model_complexity_influence.html#sphx-glr-auto-examples-applications-plot-model-complexity-influence-py",
+            "Out-of-core classification of text documents": "https://scikit-learn.org/stable/auto_examples/applications/plot_out_of_core_classification.html#sphx-glr-auto-examples-applications-plot-out-of-core-classification-py",
+            "Outlier detection on a real data set": "https://scikit-learn.org/stable/auto_examples/applications/plot_outlier_detection_wine.html#sphx-glr-auto-examples-applications-plot-outlier-detection-wine-py",
+            "Prediction Latency": "https://scikit-learn.org/stable/auto_examples/applications/plot_prediction_latency.html#sphx-glr-auto-examples-applications-plot-prediction-latency-py",
+            "Species distribution modeling": "https://scikit-learn.org/stable/auto_examples/applications/plot_species_distribution_modeling.html#sphx-glr-auto-examples-applications-plot-species-distribution-modeling-py",
+            "Time-related feature engineering": "https://scikit-learn.org/stable/auto_examples/applications/plot_cyclical_feature_engineering.html#sphx-glr-auto-examples-applications-plot-cyclical-feature-engineering-py",
+            "Topic extraction with Non-negative Matrix Factorization and Latent Dirichlet Allocation": "https://scikit-learn.org/stable/auto_examples/applications/plot_topics_extraction_with_nmf_lda.html#sphx-glr-auto-examples-applications-plot-topics-extraction-with-nmf-lda-py",
+            "Visualizing the stock market structure": "https://scikit-learn.org/stable/auto_examples/applications/plot_stock_market.html#sphx-glr-auto-examples-applications-plot-stock-market-py",
+            "Wikipedia principal eigenvector": "https://scikit-learn.org/stable/auto_examples/applications/wikipedia_principal_eigenvector.html#sphx-glr-auto-examples-applications-wikipedia-principal-eigenvector-py"
+        }
+    },
+    "Feature Selection": {
+        "description": "Examples concerning the sklearn.feature_selection module.",
+        "urls": {
+            "Comparison of F-test and mutual information": "https://scikit-learn.org/stable/auto_examples/feature_selection/plot_f_test_vs_mi.html#sphx-glr-auto-examples-feature-selection-plot-f-test-vs-mi-py",
+            "Model-based and sequential feature selection": "https://scikit-learn.org/stable/auto_examples/feature_selection/plot_select_from_model_diabetes.html#sphx-glr-auto-examples-feature-selection-plot-select-from-model-diabetes-py",
+            "Pipeline ANOVA SVM": "https://scikit-learn.org/stable/auto_examples/feature_selection/plot_feature_selection_pipeline.html#sphx-glr-auto-examples-feature-selection-plot-feature-selection-pipeline-py",
+            "Recursive feature elimination": "https://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_digits.html#sphx-glr-auto-examples-feature-selection-plot-rfe-digits-py",
+            "Recursive feature elimination with cross-validation": "https://scikit-learn.org/stable/auto_examples/feature_selection/plot_rfe_with_cross_validation.html#sphx-glr-auto-examples-feature-selection-plot-rfe-with-cross-validation-py",
+            "Univariate Feature Selection": "https://scikit-learn.org/stable/auto_examples/feature_selection/plot_feature_selection.html#sphx-glr-auto-examples-feature-selection-plot-feature-selection-py"
+        }
+    },
+    "Gaussian Mixture Models": {
+        "description": "Examples concerning the sklearn.mixture module.",
+        "urls": {
+            "Concentration Prior Type Analysis of Variation Bayesian Gaussian Mixture": "https://scikit-learn.org/stable/auto_examples/mixture/plot_concentration_prior.html#sphx-glr-auto-examples-mixture-plot-concentration-prior-py",
+            "Density Estimation for a Gaussian mixture": "https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_pdf.html#sphx-glr-auto-examples-mixture-plot-gmm-pdf-py",
+            "GMM Initialization Methods": "https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_init.html#sphx-glr-auto-examples-mixture-plot-gmm-init-py",
+            "GMM covariances": "https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_covariances.html#sphx-glr-auto-examples-mixture-plot-gmm-covariances-py",
+            "Gaussian Mixture Model Ellipsoids": "https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm.html#sphx-glr-auto-examples-mixture-plot-gmm-py",
+            "Gaussian Mixture Model Selection": "https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_selection.html#sphx-glr-auto-examples-mixture-plot-gmm-selection-py",
+            "Gaussian Mixture Model Sine Curve": "https://scikit-learn.org/stable/auto_examples/mixture/plot_gmm_sin.html#sphx-glr-auto-examples-mixture-plot-gmm-sin-py"
+        }
+    },
+    "Gaussian Process for Machine Learning": {
+        "description": "Examples concerning the sklearn.gaussian_process module.",
+        "urls": {
+            "Comparison of kernel ridge and Gaussian process regression": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_compare_gpr_krr.html#sphx-glr-auto-examples-gaussian-process-plot-compare-gpr-krr-py",
+            "Gaussian Processes regression: basic introductory example": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpr_noisy_targets.html#sphx-glr-auto-examples-gaussian-process-plot-gpr-noisy-targets-py",
+            "Gaussian process classification (GPC) on iris dataset": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpc_iris.html#sphx-glr-auto-examples-gaussian-process-plot-gpc-iris-py",
+            "Gaussian process regression (GPR) on Mauna Loa CO2 data": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpr_co2.html#sphx-glr-auto-examples-gaussian-process-plot-gpr-co2-py",
+            "Gaussian process regression (GPR) with noise-level estimation": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpr_noisy.html#sphx-glr-auto-examples-gaussian-process-plot-gpr-noisy-py",
+            "Gaussian processes on discrete data structures": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpr_on_structured_data.html#sphx-glr-auto-examples-gaussian-process-plot-gpr-on-structured-data-py",
+            "Illustration of Gaussian process classification (GPC) on the XOR dataset": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpc_xor.html#sphx-glr-auto-examples-gaussian-process-plot-gpc-xor-py",
+            "Illustration of prior and posterior Gaussian process for different kernels": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpr_prior_posterior.html#sphx-glr-auto-examples-gaussian-process-plot-gpr-prior-posterior-py",
+            "Iso-probability lines for Gaussian Processes classification (GPC)": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpc_isoprobability.html#sphx-glr-auto-examples-gaussian-process-plot-gpc-isoprobability-py",
+            "Probabilistic predictions with Gaussian process classification (GPC)": "https://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpc.html#sphx-glr-auto-examples-gaussian-process-plot-gpc-py"
+        }
+    },
+    "Generalized Linear Models": {
+        "description": "Examples concerning the sklearn.linear_model module.",
+        "urls": {
+            "Comparing Linear Bayesian Regressors": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_ard.html#sphx-glr-auto-examples-linear-model-plot-ard-py",
+            "Comparing various online solvers": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_comparison.html#sphx-glr-auto-examples-linear-model-plot-sgd-comparison-py",
+            "Curve Fitting with Bayesian Ridge Regression": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_bayesian_ridge_curvefit.html#sphx-glr-auto-examples-linear-model-plot-bayesian-ridge-curvefit-py",
+            "Early stopping of Stochastic Gradient Descent": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_early_stopping.html#sphx-glr-auto-examples-linear-model-plot-sgd-early-stopping-py",
+            "Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_elastic_net_precomputed_gram_matrix_with_weighted_samples.html#sphx-glr-auto-examples-linear-model-plot-elastic-net-precomputed-gram-matrix-with-weighted-samples-py",
+            "HuberRegressor vs Ridge on dataset with strong outliers": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_huber_vs_ridge.html#sphx-glr-auto-examples-linear-model-plot-huber-vs-ridge-py",
+            "Joint feature selection with multi-task Lasso": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_multi_task_lasso_support.html#sphx-glr-auto-examples-linear-model-plot-multi-task-lasso-support-py",
+            "L1 Penalty and Sparsity in Logistic Regression": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_logistic_l1_l2_sparsity.html#sphx-glr-auto-examples-linear-model-plot-logistic-l1-l2-sparsity-py",
+            "Lasso and Elastic Net": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_lasso_coordinate_descent_path.html#sphx-glr-auto-examples-linear-model-plot-lasso-coordinate-descent-path-py",
+            "Lasso and Elastic Net for Sparse Signals": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_lasso_and_elasticnet.html#sphx-glr-auto-examples-linear-model-plot-lasso-and-elasticnet-py",
+            "Lasso model selection via information criteria": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_lasso_lars_ic.html#sphx-glr-auto-examples-linear-model-plot-lasso-lars-ic-py",
+            "Lasso model selection: AIC-BIC / cross-validation": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_lasso_model_selection.html#sphx-glr-auto-examples-linear-model-plot-lasso-model-selection-py",
+            "Lasso on dense and sparse data": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_lasso_dense_vs_sparse_data.html#sphx-glr-auto-examples-linear-model-plot-lasso-dense-vs-sparse-data-py",
+            "Lasso path using LARS": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_lasso_lars.html#sphx-glr-auto-examples-linear-model-plot-lasso-lars-py",
+            "Linear Regression Example": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html#sphx-glr-auto-examples-linear-model-plot-ols-py",
+            "Logistic Regression 3-class Classifier": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_iris_logistic.html#sphx-glr-auto-examples-linear-model-plot-iris-logistic-py",
+            "Logistic function": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_logistic.html#sphx-glr-auto-examples-linear-model-plot-logistic-py",
+            "MNIST classification using multinomial logistic + L1": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sparse_logistic_regression_mnist.html#sphx-glr-auto-examples-linear-model-plot-sparse-logistic-regression-mnist-py",
+            "Multiclass sparse logistic regression on 20newgroups": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sparse_logistic_regression_20newsgroups.html#sphx-glr-auto-examples-linear-model-plot-sparse-logistic-regression-20newsgroups-py",
+            "Non-negative least squares": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_nnls.html#sphx-glr-auto-examples-linear-model-plot-nnls-py",
+            "One-Class SVM versus One-Class SVM using Stochastic Gradient Descent": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sgdocsvm_vs_ocsvm.html#sphx-glr-auto-examples-linear-model-plot-sgdocsvm-vs-ocsvm-py",
+            "Ordinary Least Squares and Ridge Regression Variance": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols_ridge_variance.html#sphx-glr-auto-examples-linear-model-plot-ols-ridge-variance-py",
+            "Orthogonal Matching Pursuit": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_omp.html#sphx-glr-auto-examples-linear-model-plot-omp-py",
+            "Plot Ridge coefficients as a function of the L2 regularization": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_ridge_coeffs.html#sphx-glr-auto-examples-linear-model-plot-ridge-coeffs-py",
+            "Plot Ridge coefficients as a function of the regularization": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_ridge_path.html#sphx-glr-auto-examples-linear-model-plot-ridge-path-py",
+            "Plot multi-class SGD on the iris dataset": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_iris.html#sphx-glr-auto-examples-linear-model-plot-sgd-iris-py",
+            "Plot multinomial and One-vs-Rest Logistic Regression": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_logistic_multinomial.html#sphx-glr-auto-examples-linear-model-plot-logistic-multinomial-py",
+            "Poisson regression and non-normal loss": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_poisson_regression_non_normal_loss.html#sphx-glr-auto-examples-linear-model-plot-poisson-regression-non-normal-loss-py",
+            "Polynomial and Spline interpolation": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_polynomial_interpolation.html#sphx-glr-auto-examples-linear-model-plot-polynomial-interpolation-py",
+            "Quantile regression": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_quantile_regression.html#sphx-glr-auto-examples-linear-model-plot-quantile-regression-py",
+            "Regularization path of L1- Logistic Regression": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_logistic_path.html#sphx-glr-auto-examples-linear-model-plot-logistic-path-py",
+            "Robust linear estimator fitting": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_robust_fit.html#sphx-glr-auto-examples-linear-model-plot-robust-fit-py",
+            "Robust linear model estimation using RANSAC": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html#sphx-glr-auto-examples-linear-model-plot-ransac-py",
+            "SGD: Maximum margin separating hyperplane": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_separating_hyperplane.html#sphx-glr-auto-examples-linear-model-plot-sgd-separating-hyperplane-py",
+            "SGD: Penalties": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_penalties.html#sphx-glr-auto-examples-linear-model-plot-sgd-penalties-py",
+            "SGD: Weighted samples": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_weighted_samples.html#sphx-glr-auto-examples-linear-model-plot-sgd-weighted-samples-py",
+            "SGD: convex loss functions": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_sgd_loss_functions.html#sphx-glr-auto-examples-linear-model-plot-sgd-loss-functions-py",
+            "Sparsity Example: Fitting only features 1  and 2": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols_3d.html#sphx-glr-auto-examples-linear-model-plot-ols-3d-py",
+            "Theil-Sen Regression": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_theilsen.html#sphx-glr-auto-examples-linear-model-plot-theilsen-py",
+            "Tweedie regression on insurance claims": "https://scikit-learn.org/stable/auto_examples/linear_model/plot_tweedie_regression_insurance_claims.html#sphx-glr-auto-examples-linear-model-plot-tweedie-regression-insurance-claims-py"
+        }
+    },
+    "Inspection": {
+        "description": "Examples related to the sklearn.inspection module.",
+        "urls": {
+            "Common pitfalls in the interpretation of coefficients of linear models": "https://scikit-learn.org/stable/auto_examples/inspection/plot_linear_model_coefficient_interpretation.html#sphx-glr-auto-examples-inspection-plot-linear-model-coefficient-interpretation-py",
+            "Failure of Machine Learning to infer causal effects": "https://scikit-learn.org/stable/auto_examples/inspection/plot_causal_interpretation.html#sphx-glr-auto-examples-inspection-plot-causal-interpretation-py",
+            "Partial Dependence and Individual Conditional Expectation Plots": "https://scikit-learn.org/stable/auto_examples/inspection/plot_partial_dependence.html#sphx-glr-auto-examples-inspection-plot-partial-dependence-py",
+            "Permutation Importance vs Random Forest Feature Importance (MDI)": "https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance.html#sphx-glr-auto-examples-inspection-plot-permutation-importance-py",
+            "Permutation Importance with Multicollinear or Correlated Features": "https://scikit-learn.org/stable/auto_examples/inspection/plot_permutation_importance_multicollinear.html#sphx-glr-auto-examples-inspection-plot-permutation-importance-multicollinear-py"
+        }
+    },
+    "Kernel Approximation": {
+        "description": "Examples concerning the sklearn.kernel_approximation module.",
+        "urls": {
+            "Scalable learning with polynomial kernel approximation": "https://scikit-learn.org/stable/auto_examples/kernel_approximation/plot_scalable_poly_kernels.html#sphx-glr-auto-examples-kernel-approximation-plot-scalable-poly-kernels-py"
+        }
+    },
+    "Manifold learning": {
+        "description": "Examples concerning the sklearn.manifold module.",
+        "urls": {
+            "Comparison of Manifold Learning methods": "https://scikit-learn.org/stable/auto_examples/manifold/plot_compare_methods.html#sphx-glr-auto-examples-manifold-plot-compare-methods-py",
+            "Manifold Learning methods on a severed sphere": "https://scikit-learn.org/stable/auto_examples/manifold/plot_manifold_sphere.html#sphx-glr-auto-examples-manifold-plot-manifold-sphere-py",
+            "Manifold learning on handwritten digits: Locally Linear Embedding, Isomap...": "https://scikit-learn.org/stable/auto_examples/manifold/plot_lle_digits.html#sphx-glr-auto-examples-manifold-plot-lle-digits-py",
+            "Multi-dimensional scaling": "https://scikit-learn.org/stable/auto_examples/manifold/plot_mds.html#sphx-glr-auto-examples-manifold-plot-mds-py",
+            "Swiss Roll And Swiss-Hole Reduction": "https://scikit-learn.org/stable/auto_examples/manifold/plot_swissroll.html#sphx-glr-auto-examples-manifold-plot-swissroll-py",
+            "t-SNE: The effect of various perplexity values on the shape": "https://scikit-learn.org/stable/auto_examples/manifold/plot_t_sne_perplexity.html#sphx-glr-auto-examples-manifold-plot-t-sne-perplexity-py"
+        }
+    },
+    "Miscellaneous": {
+        "description": "Miscellaneous and introductory examples for scikit-learn.",
+        "urls": {
+            "Advanced Plotting With Partial Dependence": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_partial_dependence_visualization_api.html#sphx-glr-auto-examples-miscellaneous-plot-partial-dependence-visualization-api-py",
+            "Comparing anomaly detection algorithms for outlier detection on toy datasets": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_anomaly_comparison.html#sphx-glr-auto-examples-miscellaneous-plot-anomaly-comparison-py",
+            "Comparison of kernel ridge regression and SVR": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_kernel_ridge_regression.html#sphx-glr-auto-examples-miscellaneous-plot-kernel-ridge-regression-py",
+            "Displaying Pipelines": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_pipeline_display.html#sphx-glr-auto-examples-miscellaneous-plot-pipeline-display-py",
+            "Displaying estimators and complex pipelines": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_estimator_representation.html#sphx-glr-auto-examples-miscellaneous-plot-estimator-representation-py",
+            "Evaluation of outlier detection estimators": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_outlier_detection_bench.html#sphx-glr-auto-examples-miscellaneous-plot-outlier-detection-bench-py",
+            "Explicit feature map approximation for RBF kernels": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_kernel_approximation.html#sphx-glr-auto-examples-miscellaneous-plot-kernel-approximation-py",
+            "Face completion with a multi-output estimators": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_multioutput_face_completion.html#sphx-glr-auto-examples-miscellaneous-plot-multioutput-face-completion-py",
+            "Introducing the `set_output` API": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_set_output.html#sphx-glr-auto-examples-miscellaneous-plot-set-output-py",
+            "Isotonic Regression": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_isotonic_regression.html#sphx-glr-auto-examples-miscellaneous-plot-isotonic-regression-py",
+            "Multilabel classification": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_multilabel.html#sphx-glr-auto-examples-miscellaneous-plot-multilabel-py",
+            "ROC Curve with Visualization API": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_roc_curve_visualization_api.html#sphx-glr-auto-examples-miscellaneous-plot-roc-curve-visualization-api-py",
+            "The Johnson-Lindenstrauss bound for embedding with random projections": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_johnson_lindenstrauss_bound.html#sphx-glr-auto-examples-miscellaneous-plot-johnson-lindenstrauss-bound-py",
+            "Visualizations with Display Objects": "https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_display_object_visualization.html#sphx-glr-auto-examples-miscellaneous-plot-display-object-visualization-py"
+        }
+    },
+    "Missing Value Imputation": {
+        "description": "Examples concerning the sklearn.impute module.",
+        "urls": {
+            "Imputing missing values before building an estimator": "https://scikit-learn.org/stable/auto_examples/impute/plot_missing_values.html#sphx-glr-auto-examples-impute-plot-missing-values-py",
+            "Imputing missing values with variants of IterativeImputer": "https://scikit-learn.org/stable/auto_examples/impute/plot_iterative_imputer_variants_comparison.html#sphx-glr-auto-examples-impute-plot-iterative-imputer-variants-comparison-py"
+        }
+    },
+    "Model Selection": {
+        "description": "Examples related to the sklearn.model_selection module.",
+        "urls": {
+            "Balance model complexity and cross-validated score": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_refit_callable.html#sphx-glr-auto-examples-model-selection-plot-grid-search-refit-callable-py",
+            "Class Likelihood Ratios to measure classification performance": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_likelihood_ratios.html#sphx-glr-auto-examples-model-selection-plot-likelihood-ratios-py",
+            "Comparing randomized search and grid search for hyperparameter estimation": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_randomized_search.html#sphx-glr-auto-examples-model-selection-plot-randomized-search-py",
+            "Comparison between grid search and successive halving": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_successive_halving_heatmap.html#sphx-glr-auto-examples-model-selection-plot-successive-halving-heatmap-py",
+            "Confusion matrix": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_confusion_matrix.html#sphx-glr-auto-examples-model-selection-plot-confusion-matrix-py",
+            "Custom refit strategy of a grid search with cross-validation": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_digits.html#sphx-glr-auto-examples-model-selection-plot-grid-search-digits-py",
+            "Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_multi_metric_evaluation.html#sphx-glr-auto-examples-model-selection-plot-multi-metric-evaluation-py",
+            "Detection error tradeoff (DET) curve": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_det.html#sphx-glr-auto-examples-model-selection-plot-det-py",
+            "Multiclass Receiver Operating Characteristic (ROC)": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc.html#sphx-glr-auto-examples-model-selection-plot-roc-py",
+            "Nested versus non-nested cross-validation": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html#sphx-glr-auto-examples-model-selection-plot-nested-cross-validation-iris-py",
+            "Plotting Cross-Validated Predictions": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_cv_predict.html#sphx-glr-auto-examples-model-selection-plot-cv-predict-py",
+            "Plotting Learning Curves and Checking Models' Scalability": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_learning_curve.html#sphx-glr-auto-examples-model-selection-plot-learning-curve-py",
+            "Plotting Validation Curves": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_validation_curve.html#sphx-glr-auto-examples-model-selection-plot-validation-curve-py",
+            "Precision-Recall": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html#sphx-glr-auto-examples-model-selection-plot-precision-recall-py",
+            "Receiver Operating Characteristic (ROC) with cross validation": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_roc_crossval.html#sphx-glr-auto-examples-model-selection-plot-roc-crossval-py",
+            "Sample pipeline for text feature extraction and evaluation": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_text_feature_extraction.html#sphx-glr-auto-examples-model-selection-plot-grid-search-text-feature-extraction-py",
+            "Statistical comparison of models using grid search": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_stats.html#sphx-glr-auto-examples-model-selection-plot-grid-search-stats-py",
+            "Successive Halving Iterations": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_successive_halving_iterations.html#sphx-glr-auto-examples-model-selection-plot-successive-halving-iterations-py",
+            "Test with permutations the significance of a classification score": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_permutation_tests_for_classification.html#sphx-glr-auto-examples-model-selection-plot-permutation-tests-for-classification-py",
+            "Train error vs Test error": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_train_error_vs_test_error.html#sphx-glr-auto-examples-model-selection-plot-train-error-vs-test-error-py",
+            "Underfitting vs. Overfitting": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_underfitting_overfitting.html#sphx-glr-auto-examples-model-selection-plot-underfitting-overfitting-py",
+            "Visualizing cross-validation behavior in scikit-learn": "https://scikit-learn.org/stable/auto_examples/model_selection/plot_cv_indices.html#sphx-glr-auto-examples-model-selection-plot-cv-indices-py"
+        }
+    },
+    "Multioutput methods": {
+        "description": "Examples concerning the sklearn.multioutput module.",
+        "urls": {
+            "Classifier Chain": "https://scikit-learn.org/stable/auto_examples/multioutput/plot_classifier_chain_yeast.html#sphx-glr-auto-examples-multioutput-plot-classifier-chain-yeast-py"
+        }
+    },
+    "Nearest Neighbors": {
+        "description": "Examples concerning the sklearn.neighbors module.",
+        "urls": {
+            "Approximate nearest neighbors in TSNE": "https://scikit-learn.org/stable/auto_examples/neighbors/approximate_nearest_neighbors.html#sphx-glr-auto-examples-neighbors-approximate-nearest-neighbors-py",
+            "Caching nearest neighbors": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_caching_nearest_neighbors.html#sphx-glr-auto-examples-neighbors-plot-caching-nearest-neighbors-py",
+            "Comparing Nearest Neighbors with and without Neighborhood Components Analysis": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_nca_classification.html#sphx-glr-auto-examples-neighbors-plot-nca-classification-py",
+            "Dimensionality Reduction with Neighborhood Components Analysis": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_nca_dim_reduction.html#sphx-glr-auto-examples-neighbors-plot-nca-dim-reduction-py",
+            "Kernel Density Estimate of Species Distributions": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_species_kde.html#sphx-glr-auto-examples-neighbors-plot-species-kde-py",
+            "Kernel Density Estimation": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_digits_kde_sampling.html#sphx-glr-auto-examples-neighbors-plot-digits-kde-sampling-py",
+            "Nearest Centroid Classification": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_nearest_centroid.html#sphx-glr-auto-examples-neighbors-plot-nearest-centroid-py",
+            "Nearest Neighbors Classification": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_classification.html#sphx-glr-auto-examples-neighbors-plot-classification-py",
+            "Nearest Neighbors regression": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_regression.html#sphx-glr-auto-examples-neighbors-plot-regression-py",
+            "Neighborhood Components Analysis Illustration": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_nca_illustration.html#sphx-glr-auto-examples-neighbors-plot-nca-illustration-py",
+            "Novelty detection with Local Outlier Factor (LOF)": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_lof_novelty_detection.html#sphx-glr-auto-examples-neighbors-plot-lof-novelty-detection-py",
+            "Outlier detection with Local Outlier Factor (LOF)": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_lof_outlier_detection.html#sphx-glr-auto-examples-neighbors-plot-lof-outlier-detection-py",
+            "Simple 1D Kernel Density Estimation": "https://scikit-learn.org/stable/auto_examples/neighbors/plot_kde_1d.html#sphx-glr-auto-examples-neighbors-plot-kde-1d-py"
+        }
+    },
+    "Neural Networks": {
+        "description": "Examples concerning the sklearn.neural_network module.",
+        "urls": {
+            "Compare Stochastic learning strategies for MLPClassifier": "https://scikit-learn.org/stable/auto_examples/neural_networks/plot_mlp_training_curves.html#sphx-glr-auto-examples-neural-networks-plot-mlp-training-curves-py",
+            "Restricted Boltzmann Machine features for digit classification": "https://scikit-learn.org/stable/auto_examples/neural_networks/plot_rbm_logistic_classification.html#sphx-glr-auto-examples-neural-networks-plot-rbm-logistic-classification-py",
+            "Varying regularization in Multi-layer Perceptron": "https://scikit-learn.org/stable/auto_examples/neural_networks/plot_mlp_alpha.html#sphx-glr-auto-examples-neural-networks-plot-mlp-alpha-py",
+            "Visualization of MLP weights on MNIST": "https://scikit-learn.org/stable/auto_examples/neural_networks/plot_mnist_filters.html#sphx-glr-auto-examples-neural-networks-plot-mnist-filters-py"
+        }
+    },
+    "Pipelines and composite estimators": {
+        "description": "Examples of how to compose transformers and pipelines from other estimators. See the User Guide.",
+        "urls": {
+            "Column Transformer with Heterogeneous Data Sources": "https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer.html#sphx-glr-auto-examples-compose-plot-column-transformer-py",
+            "Column Transformer with Mixed Types": "https://scikit-learn.org/stable/auto_examples/compose/plot_column_transformer_mixed_types.html#sphx-glr-auto-examples-compose-plot-column-transformer-mixed-types-py",
+            "Concatenating multiple feature extraction methods": "https://scikit-learn.org/stable/auto_examples/compose/plot_feature_union.html#sphx-glr-auto-examples-compose-plot-feature-union-py",
+            "Effect of transforming the targets in regression model": "https://scikit-learn.org/stable/auto_examples/compose/plot_transformed_target.html#sphx-glr-auto-examples-compose-plot-transformed-target-py",
+            "Pipelining: chaining a PCA and a logistic regression": "https://scikit-learn.org/stable/auto_examples/compose/plot_digits_pipe.html#sphx-glr-auto-examples-compose-plot-digits-pipe-py",
+            "Selecting dimensionality reduction with Pipeline and GridSearchCV": "https://scikit-learn.org/stable/auto_examples/compose/plot_compare_reduction.html#sphx-glr-auto-examples-compose-plot-compare-reduction-py"
+        }
+    },
+    "Preprocessing": {
+        "description": "Examples concerning the sklearn.preprocessing module.",
+        "urls": {
+            "Compare the effect of different scalers on data with outliers": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_all_scaling.html#sphx-glr-auto-examples-preprocessing-plot-all-scaling-py",
+            "Demonstrating the different strategies of KBinsDiscretizer": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_discretization_strategies.html#sphx-glr-auto-examples-preprocessing-plot-discretization-strategies-py",
+            "Feature discretization": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_discretization_classification.html#sphx-glr-auto-examples-preprocessing-plot-discretization-classification-py",
+            "Importance of Feature Scaling": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html#sphx-glr-auto-examples-preprocessing-plot-scaling-importance-py",
+            "Map data to a normal distribution": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_map_data_to_normal.html#sphx-glr-auto-examples-preprocessing-plot-map-data-to-normal-py",
+            "Using KBinsDiscretizer to discretize continuous features": "https://scikit-learn.org/stable/auto_examples/preprocessing/plot_discretization.html#sphx-glr-auto-examples-preprocessing-plot-discretization-py"
+        }
+    },
+    "Semi Supervised Classification": {
+        "description": "Examples concerning the sklearn.semi_supervised module.",
+        "urls": {
+            "Decision boundary of semi-supervised classifiers versus SVM on the Iris dataset": "https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_semi_supervised_versus_svm_iris.html#sphx-glr-auto-examples-semi-supervised-plot-semi-supervised-versus-svm-iris-py",
+            "Effect of varying threshold for self-training": "https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_self_training_varying_threshold.html#sphx-glr-auto-examples-semi-supervised-plot-self-training-varying-threshold-py",
+            "Label Propagation digits active learning": "https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_label_propagation_digits_active_learning.html#sphx-glr-auto-examples-semi-supervised-plot-label-propagation-digits-active-learning-py",
+            "Label Propagation digits: Demonstrating performance": "https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_label_propagation_digits.html#sphx-glr-auto-examples-semi-supervised-plot-label-propagation-digits-py",
+            "Label Propagation learning a complex structure": "https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_label_propagation_structure.html#sphx-glr-auto-examples-semi-supervised-plot-label-propagation-structure-py",
+            "Semi-supervised Classification on a Text Dataset": "https://scikit-learn.org/stable/auto_examples/semi_supervised/plot_semi_supervised_newsgroups.html#sphx-glr-auto-examples-semi-supervised-plot-semi-supervised-newsgroups-py"
+        }
+    },
+    "Support Vector Machines": {
+        "description": "Examples concerning the sklearn.svm module.",
+        "urls": {
+            "Non-linear SVM": "https://scikit-learn.org/stable/auto_examples/svm/plot_svm_nonlinear.html#sphx-glr-auto-examples-svm-plot-svm-nonlinear-py",
+            "One-class SVM with non-linear kernel (RBF)": "https://scikit-learn.org/stable/auto_examples/svm/plot_oneclass.html#sphx-glr-auto-examples-svm-plot-oneclass-py",
+            "Plot different SVM classifiers in the iris dataset": "https://scikit-learn.org/stable/auto_examples/svm/plot_iris_svc.html#sphx-glr-auto-examples-svm-plot-iris-svc-py",
+            "Plot the support vectors in LinearSVC": "https://scikit-learn.org/stable/auto_examples/svm/plot_linearsvc_support_vectors.html#sphx-glr-auto-examples-svm-plot-linearsvc-support-vectors-py",
+            "RBF SVM parameters": "https://scikit-learn.org/stable/auto_examples/svm/plot_rbf_parameters.html#sphx-glr-auto-examples-svm-plot-rbf-parameters-py",
+            "SVM Margins Example": "https://scikit-learn.org/stable/auto_examples/svm/plot_svm_margin.html#sphx-glr-auto-examples-svm-plot-svm-margin-py",
+            "SVM Tie Breaking Example": "https://scikit-learn.org/stable/auto_examples/svm/plot_svm_tie_breaking.html#sphx-glr-auto-examples-svm-plot-svm-tie-breaking-py",
+            "SVM with custom kernel": "https://scikit-learn.org/stable/auto_examples/svm/plot_custom_kernel.html#sphx-glr-auto-examples-svm-plot-custom-kernel-py",
+            "SVM-Anova: SVM with univariate feature selection": "https://scikit-learn.org/stable/auto_examples/svm/plot_svm_anova.html#sphx-glr-auto-examples-svm-plot-svm-anova-py",
+            "SVM-Kernels": "https://scikit-learn.org/stable/auto_examples/svm/plot_svm_kernels.html#sphx-glr-auto-examples-svm-plot-svm-kernels-py",
+            "SVM: Maximum margin separating hyperplane": "https://scikit-learn.org/stable/auto_examples/svm/plot_separating_hyperplane.html#sphx-glr-auto-examples-svm-plot-separating-hyperplane-py",
+            "SVM: Separating hyperplane for unbalanced classes": "https://scikit-learn.org/stable/auto_examples/svm/plot_separating_hyperplane_unbalanced.html#sphx-glr-auto-examples-svm-plot-separating-hyperplane-unbalanced-py",
+            "SVM: Weighted samples": "https://scikit-learn.org/stable/auto_examples/svm/plot_weighted_samples.html#sphx-glr-auto-examples-svm-plot-weighted-samples-py",
+            "Scaling the regularization parameter for SVCs": "https://scikit-learn.org/stable/auto_examples/svm/plot_svm_scale_c.html#sphx-glr-auto-examples-svm-plot-svm-scale-c-py",
+            "Support Vector Regression (SVR) using linear and non-linear kernels": "https://scikit-learn.org/stable/auto_examples/svm/plot_svm_regression.html#sphx-glr-auto-examples-svm-plot-svm-regression-py"
+        }
+    },
+    "Tutorial exercises": {
+        "description": "Exercises for the tutorials",
+        "urls": {
+            "Cross-validation on Digits Dataset Exercise": "https://scikit-learn.org/stable/auto_examples/exercises/plot_cv_digits.html#sphx-glr-auto-examples-exercises-plot-cv-digits-py",
+            "Cross-validation on diabetes Dataset Exercise": "https://scikit-learn.org/stable/auto_examples/exercises/plot_cv_diabetes.html#sphx-glr-auto-examples-exercises-plot-cv-diabetes-py",
+            "Digits Classification Exercise": "https://scikit-learn.org/stable/auto_examples/exercises/plot_digits_classification_exercise.html#sphx-glr-auto-examples-exercises-plot-digits-classification-exercise-py",
+            "SVM Exercise": "https://scikit-learn.org/stable/auto_examples/exercises/plot_iris_exercise.html#sphx-glr-auto-examples-exercises-plot-iris-exercise-py"
+        }
+    },
+    "Working with text documents": {
+        "description": "Examples concerning the sklearn.feature_extraction.text module.",
+        "urls": {
+            "Classification of text documents using sparse features": "https://scikit-learn.org/stable/auto_examples/text/plot_document_classification_20newsgroups.html#sphx-glr-auto-examples-text-plot-document-classification-20newsgroups-py",
+            "Clustering text documents using k-means": "https://scikit-learn.org/stable/auto_examples/text/plot_document_clustering.html#sphx-glr-auto-examples-text-plot-document-clustering-py",
+            "FeatureHasher and DictVectorizer Comparison": "https://scikit-learn.org/stable/auto_examples/text/plot_hashing_vs_dict_vectorizer.html#sphx-glr-auto-examples-text-plot-hashing-vs-dict-vectorizer-py"
+        }
+    }
+}
