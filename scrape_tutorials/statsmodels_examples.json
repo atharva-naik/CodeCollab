@@ -1,0 +1,387 @@
+{
+    "Examples": [
+        [
+            "This page provides a series of examples, tutorials and recipes to help you get\nstarted with statsmodels. Each of the examples shown here is made available\nas an IPython Notebook and as a plain python script on the statsmodels github\nrepository.",
+            "markdown"
+        ],
+        [
+            "We also encourage users to submit their own examples, tutorials or cool\nstatsmodels trick to the Examples wiki page",
+            "markdown"
+        ],
+        [
+            "Ordinary Least Squares",
+            "markdown"
+        ],
+        [
+            "Generalized Least Squares",
+            "markdown"
+        ],
+        [
+            "Quantile Regression",
+            "markdown"
+        ],
+        [
+            "Recursive Least Squares",
+            "markdown"
+        ],
+        [
+            "Rolling Least Squares",
+            "markdown"
+        ],
+        [
+            "Regression Diagnostics",
+            "markdown"
+        ],
+        [
+            "Weighted Least Squares",
+            "markdown"
+        ],
+        [
+            "Linear Mixed-Effects",
+            "markdown"
+        ],
+        [
+            "Variance Component Analysis",
+            "markdown"
+        ],
+        [
+            "Regression Plots",
+            "markdown"
+        ],
+        [
+            "Categorical Interactions",
+            "markdown"
+        ],
+        [
+            "Box Plots",
+            "markdown"
+        ],
+        [
+            "Getting Started",
+            "markdown"
+        ],
+        [
+            "Fair\u2019s Affairs Data",
+            "markdown"
+        ],
+        [
+            "Ordinal Regression",
+            "markdown"
+        ],
+        [
+            "Univariate Kernel Density Estimator",
+            "markdown"
+        ],
+        [
+            "Lowess Regression",
+            "markdown"
+        ],
+        [
+            "Generalized Linear Models Overview",
+            "markdown"
+        ],
+        [
+            "Using Formulas with GLMs",
+            "markdown"
+        ],
+        [
+            "Weighting Observations with GLMs",
+            "markdown"
+        ],
+        [
+            "Influence Measures for GLMs",
+            "markdown"
+        ],
+        [
+            "Quasi-binomial regression",
+            "markdown"
+        ],
+        [
+            "M-estimators for Robust Regression",
+            "markdown"
+        ],
+        [
+            "Comparing OLS and RLM",
+            "markdown"
+        ],
+        [
+            "GEE Nested Covariance Structure",
+            "markdown"
+        ],
+        [
+            "GEE Score Tests",
+            "markdown"
+        ],
+        [
+            "ANOVA",
+            "markdown"
+        ],
+        [
+            "Meta-Analysis in statsmodels",
+            "markdown"
+        ],
+        [
+            "Mediation analysis with duration data",
+            "markdown"
+        ],
+        [
+            "Copulas",
+            "markdown"
+        ],
+        [
+            "Autoregressions",
+            "markdown"
+        ],
+        [
+            "Autoregressive Distributed Lag Models",
+            "markdown"
+        ],
+        [
+            "Deterministic Terms",
+            "markdown"
+        ],
+        [
+            "ARMA: Sunspots Data",
+            "markdown"
+        ],
+        [
+            "ARMA: Artificial Data",
+            "markdown"
+        ],
+        [
+            "Time Series Filters",
+            "markdown"
+        ],
+        [
+            "Markov switching dynamic regression",
+            "markdown"
+        ],
+        [
+            "Markov switching autoregression",
+            "markdown"
+        ],
+        [
+            "Exponential Smoothing",
+            "markdown"
+        ],
+        [
+            "Seasonal Decomposition",
+            "markdown"
+        ],
+        [
+            "Stationarity and detrending (ADF/KPSS)",
+            "markdown"
+        ],
+        [
+            "SARIMAX: Introduction",
+            "markdown"
+        ],
+        [
+            "SARIMAX: Model selection, missing data",
+            "markdown"
+        ],
+        [
+            "SARIMAX: Frequently Asked Questions (FAQ)",
+            "markdown"
+        ],
+        [
+            "VARMAX: Introduction",
+            "markdown"
+        ],
+        [
+            "Dynamic Factor Models: Application",
+            "markdown"
+        ],
+        [
+            "Unobserved Components: Application",
+            "markdown"
+        ],
+        [
+            "Trends and cycles in unemployment",
+            "markdown"
+        ],
+        [
+            "State space modeling: Local Linear Trends",
+            "markdown"
+        ],
+        [
+            "Statespace ARMA: Sunspots Data",
+            "markdown"
+        ],
+        [
+            "Seasonality in Time Series Data",
+            "markdown"
+        ],
+        [
+            "Fixed / constrained parameters in state space models",
+            "markdown"
+        ],
+        [
+            "TVP-VAR, MCMC, and sparse simulation smoothing",
+            "markdown"
+        ],
+        [
+            "SARIMAX estimation with Bayesian methods",
+            "markdown"
+        ],
+        [
+            "Forecasting, updating datasets, and the \u201cnews\u201d",
+            "markdown"
+        ],
+        [
+            "Statespace: Custom Models",
+            "markdown"
+        ],
+        [
+            "ETS models",
+            "markdown"
+        ],
+        [
+            "State space models: concentrating out the scale",
+            "markdown"
+        ],
+        [
+            "State space models: Chandrasekhar recursions",
+            "markdown"
+        ],
+        [
+            "Forecasting using the Theta Model",
+            "markdown"
+        ],
+        [
+            "Principal Component Analysis",
+            "markdown"
+        ],
+        [
+            "Contrasts",
+            "markdown"
+        ],
+        [
+            "Formulas",
+            "markdown"
+        ],
+        [
+            "Prediction",
+            "markdown"
+        ],
+        [
+            "Forecasting in statsmodels",
+            "markdown"
+        ],
+        [
+            "Generic Maximum Likelihood",
+            "markdown"
+        ],
+        [
+            "Dates in Time-Series Models",
+            "markdown"
+        ],
+        [
+            "Least squares fitting of models to data",
+            "markdown"
+        ],
+        [
+            "Distributed Estimations",
+            "markdown"
+        ],
+        {
+            "Linear Regression Models": {
+                "Ordinary Least Squares": "https://www.statsmodels.org/stable/notebooks/generated/ols.html",
+                "Generalized Least Squares": "https://www.statsmodels.org/stable/notebooks/generated/gls.html",
+                "Quantile Regression": "https://www.statsmodels.org/stable/notebooks/generated/quantile_regression.html",
+                "Recursive Least Squares": "https://www.statsmodels.org/stable/notebooks/generated/recursive_ls.html",
+                "Rolling Least Squares": "https://www.statsmodels.org/stable/notebooks/generated/rolling_ls.html",
+                "Regression Diagnostics": "https://www.statsmodels.org/stable/notebooks/generated/regression_diagnostics.html",
+                "Weighted Least Squares": "https://www.statsmodels.org/stable/notebooks/generated/wls.html",
+                "Linear Mixed-Effects": "https://www.statsmodels.org/stable/notebooks/generated/mixed_lm_example.html",
+                "Variance Component Analysis": "https://www.statsmodels.org/stable/notebooks/generated/variance_components.html"
+            },
+            "Plotting": {
+                "Regression Plots": "https://www.statsmodels.org/stable/notebooks/generated/regression_plots.html",
+                "Categorical Interactions": "https://www.statsmodels.org/stable/notebooks/generated/categorical_interaction_plot.html",
+                "Box Plots": "https://www.statsmodels.org/stable/notebooks/generated/plots_boxplots.html"
+            },
+            "Discrete Choice Models": {
+                "Getting Started": "https://www.statsmodels.org/stable/notebooks/generated/discrete_choice_overview.html",
+                "Fair\u2019s Affairs Data": "https://www.statsmodels.org/stable/notebooks/generated/discrete_choice_example.html",
+                "Ordinal Regression": "https://www.statsmodels.org/stable/notebooks/generated/ordinal_regression.html"
+            },
+            "Nonparametric Statistics": {
+                "Univariate Kernel Density Estimator": "https://www.statsmodels.org/stable/notebooks/generated/kernel_density.html",
+                "Lowess Regression": "https://www.statsmodels.org/stable/notebooks/generated/lowess.html"
+            },
+            "Generalized Linear Models": {
+                "Generalized Linear Models Overview": "https://www.statsmodels.org/stable/notebooks/generated/glm.html",
+                "Using Formulas with GLMs": "https://www.statsmodels.org/stable/notebooks/generated/glm_formula.html",
+                "Weighting Observations with GLMs": "https://www.statsmodels.org/stable/notebooks/generated/glm_weights.html",
+                "Influence Measures for GLMs": "https://www.statsmodels.org/stable/notebooks/generated/influence_glm_logit.html",
+                "Quasi-binomial regression": "https://www.statsmodels.org/stable/notebooks/generated/quasibinomial.html"
+            },
+            "Robust Regression": {
+                "M-estimators for Robust Regression": "https://www.statsmodels.org/stable/notebooks/generated/robust_models_1.html",
+                "Comparing OLS and RLM": "https://www.statsmodels.org/stable/notebooks/generated/robust_models_0.html"
+            },
+            "Generalized Estimating Equations": {
+                "GEE Nested Covariance Structure": "https://www.statsmodels.org/stable/notebooks/generated/gee_nested_simulation.html",
+                "GEE Score Tests": "https://www.statsmodels.org/stable/notebooks/generated/gee_score_test_simulation.html"
+            },
+            "Statistics": {
+                "ANOVA": "https://www.statsmodels.org/stable/notebooks/generated/interactions_anova.html",
+                "Meta-Analysis in statsmodels": "https://www.statsmodels.org/stable/notebooks/generated/metaanalysis1.html",
+                "Mediation analysis with duration data": "https://www.statsmodels.org/stable/notebooks/generated/mediation_survival.html",
+                "Copulas": "https://www.statsmodels.org/stable/notebooks/generated/copula.html"
+            },
+            "Time Series Analysis": {
+                "Autoregressions": "https://www.statsmodels.org/stable/notebooks/generated/autoregressions.html",
+                "Autoregressive Distributed Lag Models": "https://www.statsmodels.org/stable/notebooks/generated/autoregressive_distributed_lag.html",
+                "Deterministic Terms": "https://www.statsmodels.org/stable/notebooks/generated/deterministics.html",
+                "ARMA: Sunspots Data": "https://www.statsmodels.org/stable/notebooks/generated/tsa_arma_0.html",
+                "ARMA: Artificial Data": "https://www.statsmodels.org/stable/notebooks/generated/tsa_arma_1.html",
+                "Time Series Filters": "https://www.statsmodels.org/stable/notebooks/generated/tsa_filters.html",
+                "Markov switching dynamic regression": "https://www.statsmodels.org/stable/notebooks/generated/markov_regression.html",
+                "Markov switching autoregression": "https://www.statsmodels.org/stable/notebooks/generated/markov_autoregression.html",
+                "Exponential Smoothing": "https://www.statsmodels.org/stable/notebooks/generated/exponential_smoothing.html",
+                "Seasonal Decomposition": "https://www.statsmodels.org/stable/notebooks/generated/stl_decomposition.html",
+                "Stationarity and detrending (ADF/KPSS)": "https://www.statsmodels.org/stable/notebooks/generated/stationarity_detrending_adf_kpss.html"
+            },
+            "State space models": {
+                "SARIMAX: Introduction": "https://www.statsmodels.org/stable/notebooks/generated/statespace_sarimax_stata.html",
+                "SARIMAX: Model selection, missing data": "https://www.statsmodels.org/stable/notebooks/generated/statespace_sarimax_internet.html",
+                "SARIMAX: Frequently Asked Questions (FAQ)": "https://www.statsmodels.org/stable/notebooks/generated/statespace_sarimax_faq.html",
+                "VARMAX: Introduction": "https://www.statsmodels.org/stable/notebooks/generated/statespace_varmax.html",
+                "Dynamic Factor Models: Application": "https://www.statsmodels.org/stable/notebooks/generated/statespace_dfm_coincident.html",
+                "Unobserved Components: Application": "https://www.statsmodels.org/stable/notebooks/generated/statespace_structural_harvey_jaeger.html",
+                "Trends and cycles in unemployment": "https://www.statsmodels.org/stable/notebooks/generated/statespace_cycles.html",
+                "State space modeling: Local Linear Trends": "https://www.statsmodels.org/stable/notebooks/generated/statespace_local_linear_trend.html",
+                "Statespace ARMA: Sunspots Data": "https://www.statsmodels.org/stable/notebooks/generated/statespace_arma_0.html",
+                "Seasonality in Time Series Data": "https://www.statsmodels.org/stable/notebooks/generated/statespace_seasonal.html",
+                "Fixed / constrained parameters in state space models": "https://www.statsmodels.org/stable/notebooks/generated/statespace_fixed_params.html",
+                "TVP-VAR, MCMC, and sparse simulation smoothing": "https://www.statsmodels.org/stable/notebooks/generated/statespace_tvpvar_mcmc_cfa.html",
+                "SARIMAX estimation with Bayesian methods": "https://www.statsmodels.org/stable/notebooks/generated/statespace_sarimax_pymc3.html",
+                "Forecasting, updating datasets, and the \u201cnews\u201d": "https://www.statsmodels.org/stable/notebooks/generated/statespace_news.html",
+                "Statespace: Custom Models": "https://www.statsmodels.org/stable/notebooks/generated/statespace_custom_models.html",
+                "ETS models": "https://www.statsmodels.org/stable/notebooks/generated/ets.html"
+            },
+            "State space models - Technical notes": {
+                "State space models: concentrating out the scale": "https://www.statsmodels.org/stable/notebooks/generated/statespace_concentrated_scale.html",
+                "State space models: Chandrasekhar recursions": "https://www.statsmodels.org/stable/notebooks/generated/statespace_chandrasekhar.html"
+            },
+            "Forecasting": {
+                "Forecasting using the Theta Model": "https://www.statsmodels.org/stable/notebooks/generated/theta-model.html"
+            },
+            "Multivariate Methods": {
+                "Principal Component Analysis": "https://www.statsmodels.org/stable/notebooks/generated/pca_fertility_factors.html"
+            },
+            "User Notes": {
+                "Contrasts": "https://www.statsmodels.org/stable/notebooks/generated/contrasts.html",
+                "Formulas": "https://www.statsmodels.org/stable/notebooks/generated/formulas.html",
+                "Prediction": "https://www.statsmodels.org/stable/notebooks/generated/predict.html",
+                "Forecasting in statsmodels": "https://www.statsmodels.org/stable/notebooks/generated/statespace_forecasting.html",
+                "Generic Maximum Likelihood": "https://www.statsmodels.org/stable/notebooks/generated/generic_mle.html",
+                "Dates in Time-Series Models": "https://www.statsmodels.org/stable/notebooks/generated/tsa_dates.html",
+                "Least squares fitting of models to data": "https://www.statsmodels.org/stable/notebooks/generated/chi2_fitting.html",
+                "Distributed Estimations": "https://www.statsmodels.org/stable/notebooks/generated/distributed_estimation.html"
+            }
+        }
+    ]
+}

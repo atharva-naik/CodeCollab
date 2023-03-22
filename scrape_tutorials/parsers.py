@@ -562,6 +562,103 @@ class MatPlotLibParser:
                     print(e)
                     self.graph["Tutorials"][-1][h2][-1][key] = (simple_soup, simplified_soup)
 
+# gather statsmodels: getting started, user guide and examples.
+class StatsModelsParser:
+    """Parser/scraper for statsmodels resources."""
+    def __init__(self, base_urls: dict=SOURCE_TO_BASE_URLS["statsmodels"]):
+        self.base_urls = base_urls
+        self.user_guide_path = "./scrape_tutorials/statsmodels_user_guide.json"
+        self.examples_path = "./scrape_tutorials/statsmodels_examples.json"
+        self.graph = {}
+        if os.path.exists(self.user_guide_path):
+            self.user_guide_urls = json.load(open(self.user_guide_path))
+        else:
+            url = self.base_urls["User Guide"]
+            self.user_guide_urls = self.scrape_user_guide_urls(url)
+            with open(self.user_guide_path, "w") as f:
+                json.dump(self.user_guide_urls, f, indent=4)
+        if os.path.exists(self.examples_path):
+            self.examples_urls = json.load(open(self.examples_path))
+        else:
+            url = self.base_urls["Examples"]
+            self.examples_urls = self.scrape_examples_urls(url)
+            with open(self.examples_path, "w") as f:
+                json.dump(self.examples_urls, f, indent=4)
+        self.graph.update(self.user_guide_urls)
+        self.graph.update(self.examples_urls)
+        self.graph["Getting Started"] = self.base_urls["Getting Started"]
+
+    def download(self):
+        self.graph["Getting Started"] = self.scrape_page(self.graph["Getting Started"])
+
+    def scrape_page(self, url: str) -> dict:
+        simple_soup = simplify_soup(bs4.BeautifulSoup(
+            requests.get(url).text,
+            features="lxml",
+        ), target="statsmodels")
+        simplified_soup = str(simple_soup)
+        simplified_soup = re.sub("<div.*?>", "", simplified_soup)
+        simplified_soup = re.sub("</div>", "", simplified_soup)
+        simplified_soup = re.sub("<article.*?>", "", simplified_soup)
+        simplified_soup = re.sub("</article>", "", simplified_soup)
+        simplified_soup = re.sub("<section.*?>", "", simplified_soup)
+        simplified_soup = re.sub("</section>", "", simplified_soup)
+
+        nb_json = extract_notebook_hierarchy_from_seq(
+                parse_soup_stream(simplified_soup)
+            )[0].serialize2()[""]
+
+        return nb_json
+        # try:
+        #     nb_json = extract_notebook_hierarchy_from_seq(
+        #         parse_soup_stream(simplified_soup)
+        #     )[0].serialize2()[""][0]
+        #     assert len(nb_json) == 1 and isinstance(nb_json, dict)
+        #     value = list(nb_json.values())[0]
+        #     self.graph["Tutorials"][-1][h2][-1][key] = value
+    def scrape_examples_urls(self, url: str):
+        example_urls = {"Examples": []}
+        soup = bs4.BeautifulSoup(
+            requests.get(url).text,
+            features="lxml",
+        )
+        domain_dir = "https://www.statsmodels.org/stable/"
+        examples_section = soup.find("section", id="examples")
+        for p in examples_section.select("p"):
+            example_urls["Examples"].append((
+                p.text,
+                "markdown"
+            ))
+        example_urls["Examples"].append({})
+        for section in examples_section.select("section"):
+            h2 = section.select("h2")[0].text.replace("¶","")
+            example_urls["Examples"][-1][h2] = {}
+            for div in section.select("div.example.docutils.container"):
+                p = div.select("p")[0]
+                a = p.select('a.reference.external')[0]
+                key = p.text.replace("¶","")
+                example_urls["Examples"][-1][h2][key] = os.path.join(domain_dir, a.attrs["href"])
+
+        return example_urls
+
+    def scrape_user_guide_urls(self, url: str):
+        user_guide_urls = {"User Guide": {}}
+        soup = bs4.BeautifulSoup(
+            requests.get(url).text,
+            features="lxml",
+        )
+        domain_dir = "https://www.statsmodels.org/stable/"
+        user_guide_section = soup.find("section", id="user-guide")
+        for section in user_guide_section.select("section"):
+            h2 = section.select("h2")[0].text.replace("¶","")
+            user_guide_urls[h2] = {}
+            for a in section.select("a.reference.internal"):
+                key = a.text.replace("¶","")
+                value = os.path.join(domain_dir, a.attrs["href"])
+                user_guide_urls[h2][key] = value
+
+        return user_guide_urls
+
 # gather pandas tutorials from Tom's Blog.
 class PandasTomsBlogParser:
     """Parser/scraper for Tom's blog tutorials for Pandas"""
@@ -737,6 +834,14 @@ def scrape_matplotlib():
     os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
     with open("./scrape_tutorials/KGs/matplotlib.json", "w") as f:
         json.dump(mplib_parser.graph, f, indent=4)
+
+def scrape_statsmodels():
+    """scrape statsmodels examples, user guide and getting started guide"""
+    sm_parser = MatPlotLibParser()
+    sm_parser.download()
+    os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
+    with open("./scrape_tutorials/KGs/statsmodels.json", "w") as f:
+        json.dump(sm_parser.graph, f, indent=4)
     
 def scrape_scipy():
     """scrape SciPy tutorials"""
@@ -757,4 +862,5 @@ if __name__ == "__main__":
     # scrape_scipy()
     # scrape_sklearn()
     # scrape_matplotlib()
-    pass
+    scrape_statsmodels()
+    # pass

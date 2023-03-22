@@ -243,4 +243,9 @@ SOURCE_TO_BASE_URLS = {
         }
     },
     "matplotlib": "https://matplotlib.org/stable/tutorials/index.html",
+    "statsmodels": {
+        "Getting Started": "https://www.statsmodels.org/stable/gettingstarted.html",
+        "User Guide": "https://www.statsmodels.org/stable/user-guide.html",
+        "Examples": "https://www.statsmodels.org/stable/examples/index.html",
+    }
 }
