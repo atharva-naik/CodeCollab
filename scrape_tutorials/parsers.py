@@ -27,10 +27,13 @@ def simplify_soup(soup, target: str="seaborn"):
         pass
     elif target == "scipy":
         soup = soup.html.body.select("article.bd-article")[0]
+    elif target == "scikit":
+        soup = soup.html.body.select("div.sk-page-content.container-fluid.body.px-md-3")[0]
         # if not try_soup:
             # try_soup = soup.html.body.find("div", {"class": ""})
         # soup = try_soup
         # assert soup is not None, f"\x1b[32;1mmain-content\x1b[0m not found"
+    for aside in soup.select("aside"): aside.unwrap()
     for hr in soup.select("hr"): hr.unwrap()
     for nav in soup.select("nav"): nav.unwrap()
     for span in soup.select('span'): span.unwrap()
@@ -67,6 +70,7 @@ def simplify_soup(soup, target: str="seaborn"):
     elif target == "torch": final = soup
     elif target == "realpython": final = soup
     elif target == "scipy": final = soup
+    elif target == "scikit": final = soup
 
     return final
 
@@ -214,6 +218,7 @@ class SciKitLearnParser:
         self.examples_page_url = self.base_urls["Examples"]
         self.examples_page_save_path = "./scrape_tutorials/scikit_examples.json"
         self.example_urls = {}
+        self.graph = {"Examples": {}, "Tutorials": {}}
         if os.path.exists(self.examples_page_save_path):
             self.example_urls = json.load(open(self.examples_page_save_path))
         else:
@@ -236,6 +241,54 @@ class SciKitLearnParser:
                     self.example_urls[h2]["urls"][key] = os.path.join(domain_dir, value)
             with open(self.examples_page_save_path, "w", encoding="utf-8") as f:
                 json.dump(self.example_urls, f, indent=4, ensure_ascii=False)
+        for eg_name, eg_urls in self.example_urls.items():
+            self.graph["Examples"][eg_name] = []
+            self.graph["Examples"][eg_name].append(eg_urls["description"])
+            self.graph["Examples"][eg_name].append({})
+            for name, url in eg_urls["urls"].items():
+                self.graph["Examples"][eg_name][1][name] = {} 
+        for name, url in self.base_urls["Tutorials"].items():
+            self.graph["Tutorials"][name] = {}
+
+    def download_tutorials(self):
+        for name, url in tqdm(self.base_urls["Tutorials"].items()):
+            simple_soup = simplify_soup(
+                bs4.BeautifulSoup(
+                    requests.get(url).text,
+                    features="lxml",
+                ), target="scikit",
+            )
+            simplified_soup = str(simple_soup)
+            simplified_soup = re.sub("<div.*?>", "", simplified_soup)
+            simplified_soup = re.sub("</div>", "", simplified_soup)
+            simplified_soup = re.sub("<article.*?>", "", simplified_soup)
+            simplified_soup = re.sub("</article>", "", simplified_soup)
+            nb_json = extract_notebook_hierarchy_from_seq(
+                parse_soup_stream(simplified_soup)
+            )[0].serialize2()[""]
+            self.graph["Tutorials"][name] = nb_json
+
+    def download_examples(self):
+        for eg_name, eg_urls in self.example_urls.items():
+            for name, url in tqdm(eg_urls["urls"].items()):
+                simple_soup = simplify_soup(
+                    bs4.BeautifulSoup(
+                        requests.get(url).text,
+                        features="lxml",
+                    ), target="scikit",
+                )
+                simplified_soup = str(simple_soup)
+                simplified_soup = re.sub("<div.*?>", "", simplified_soup)
+                simplified_soup = re.sub("</div>", "", simplified_soup)
+                simplified_soup = re.sub("<article.*?>", "", simplified_soup)
+                simplified_soup = re.sub("</article>", "", simplified_soup)
+                # print(simplified_soup)
+                try:
+                    nb_json = extract_notebook_hierarchy_from_seq(
+                        parse_soup_stream(simplified_soup)
+                    )[0].serialize2()[""]
+                    self.graph["Examples"][eg_name][1][name] = nb_json
+                except Exception as e: print(e)
 
 # parse SciPy tutorials.
 class SciPyParser:
@@ -597,6 +650,15 @@ def scrape_torch():
     with open("./scrape_tutorials/KGs/torch.json", "w") as f:
         json.dump(final_KG_json, f, indent=4)
 
+def scrape_sklearn():
+    """scrape SciKit learn exaples and tutorials"""
+    sklearn_parser = SciKitLearnParser()
+    sklearn_parser.download_examples()
+    sklearn_parser.download_tutorials()
+    os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
+    with open("./scrape_tutorials/KGs/sklearn.json", "w") as f:
+        json.dump(sklearn_parser.graph, f, indent=4)
+    
 def scrape_scipy():
     """scrape SciPy tutorials"""
     scipy_parser = SciPyParser()
@@ -614,4 +676,5 @@ if __name__ == "__main__":
     # scrape_toms_blog_pandas()
     # scrape_torch()
     # scrape_scipy()
-    pass
+    scrape_sklearn()
+    # pass
