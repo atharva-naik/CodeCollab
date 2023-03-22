@@ -263,10 +263,17 @@ class SciKitLearnParser:
             simplified_soup = re.sub("</div>", "", simplified_soup)
             simplified_soup = re.sub("<article.*?>", "", simplified_soup)
             simplified_soup = re.sub("</article>", "", simplified_soup)
-            nb_json = extract_notebook_hierarchy_from_seq(
-                parse_soup_stream(simplified_soup)
-            )[0].serialize2()[""]
-            self.graph["Tutorials"][name] = nb_json
+            try: 
+                nb_json = extract_notebook_hierarchy_from_seq(
+                    parse_soup_stream(simplified_soup)
+                )[0].serialize2()[""]
+                # self.graph["Tutorials"][name] = nb_json
+                for ele in nb_json:
+                    if isinstance(ele, dict) and len(ele) == 1:
+                        key = list(ele.keys())[0]
+                        if key == name: value = ele[key]; break
+                self.graph["Tutorials"][name] = value
+            except Exception as e: print(e)
 
     def download_examples(self):
         for eg_name, eg_urls in self.example_urls.items():
@@ -287,7 +294,11 @@ class SciKitLearnParser:
                     nb_json = extract_notebook_hierarchy_from_seq(
                         parse_soup_stream(simplified_soup)
                     )[0].serialize2()[""]
-                    self.graph["Examples"][eg_name][1][name] = nb_json
+                    for ele in nb_json:
+                        if isinstance(ele, dict) and len(ele) == 1:
+                            key = list(ele.keys())[0]
+                            if key == name: value = ele[key]; break
+                    self.graph["Examples"][eg_name][1][name] = value
                 except Exception as e: print(e)
 
 # parse SciPy tutorials.
@@ -676,5 +687,5 @@ if __name__ == "__main__":
     # scrape_toms_blog_pandas()
     # scrape_torch()
     # scrape_scipy()
-    scrape_sklearn()
-    # pass
+    # scrape_sklearn()
+    pass
