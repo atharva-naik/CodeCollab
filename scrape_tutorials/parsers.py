@@ -32,7 +32,9 @@ def simplify_soup(soup, target: str="seaborn"):
     elif target == "matplotlib":
         soup = soup.html.body.select("section.sphx-glr-example-title")[0]
     elif target == "statsmodels":
-        soup = soup.html.body.select("section")[0]
+        try: soup = soup.html.body.select("section")[0]
+        except IndexError:
+            soup = soup.html.body.select("div.container")[0]
         # if not try_soup:
             # try_soup = soup.html.body.find("div", {"class": ""})
         # soup = try_soup
@@ -586,7 +588,9 @@ class StatsModelsParser:
             url = self.base_urls["Examples"]
             self.examples_urls = self.scrape_examples_urls(url)
             # manual fix for from broken links on the website:
-            # https://www.statsmodels.org/v0.13.0/examples/notebooks/generated/autoregressive_distributed_lag.html
+            self.examples_urls["Examples"][-1]["Time Series Analysis"]["Autoregressive Distributed Lag Models"] = "https://www.statsmodels.org/v0.13.0/examples/notebooks/generated/autoregressive_distributed_lag.html"
+            self.examples_urls["Examples"][-1]["State space models"]["SARIMAX: Introduction"] = "https://www.statsmodels.org/v0.10.2/examples/notebooks/generated/statespace_sarimax_stata.html"
+            self.examples_urls["Examples"][-1]["State space models"]["SARIMAX: Model selection, missing data"] = "https://www.statsmodels.org/v0.12.2/examples/notebooks/generated/statespace_sarimax_internet.html"
             with open(self.examples_path, "w") as f:
                 json.dump(self.examples_urls, f, indent=4)
         self.graph.update(self.user_guide_urls)
@@ -598,12 +602,13 @@ class StatsModelsParser:
         self.graph["Getting Started"] = self.scrape_page(self.graph["Getting Started"])
         # download the examples.
         for h2 in self.graph["Examples"][-1]:
-            for key, url in self.graph["Examples"][-1][h2].items():
-                try: self.graph["Examples"][-1][h2][key] = self.scrape_page(url)
-                except Exception as e: print(f"\x1b[31mExamples: {h2}->{key}[{url}]: {e}\x1b[0m")
+            for key, url in tqdm(self.graph["Examples"][-1][h2].items(), desc="Examples"):
+                # try: 
+                self.graph["Examples"][-1][h2][key] = self.scrape_page(url)
+                # except Exception as e: print(f"\x1b[31mExamples: {h2}->{key}[{url}]: {e}\x1b[0m")
         # download the user guide.
         for h2 in self.graph["User Guide"]:
-            for key, url in self.graph["User Guide"][h2].items():
+            for key, url in tqdm(self.graph["User Guide"][h2].items(), desc="User Guide"):
                 try: self.graph["User Guide"][h2][key] = self.scrape_page(url)
                 except Exception as e: print(f"\x1b[31mUser Guide: {h2}->{key}[{url}]: {e}\x1b[0m")
 
@@ -622,10 +627,17 @@ class StatsModelsParser:
 
         nb_json = extract_notebook_hierarchy_from_seq(
                 parse_soup_stream(simplified_soup)
-            )[0].serialize2()[""][0]
-        assert isinstance(nb_json, dict) and len(nb_json) == 1
+            )[0].serialize2()[""]
+        value = []
+        for ele in nb_json:
+            if isinstance(ele, dict): # print(ele)
+                assert isinstance(ele, dict) and len(ele) == 1
+                value = list(ele.values())[0]
+                break
+        if len(value) == 0:
+            print(nb_json)
 
-        return list(nb_json.values())[0]
+        return value
         # try:
         #     nb_json = extract_notebook_hierarchy_from_seq(
         #         parse_soup_stream(simplified_soup)
@@ -879,5 +891,5 @@ if __name__ == "__main__":
     # scrape_scipy()
     # scrape_sklearn()
     # scrape_matplotlib()
-    scrape_statsmodels()
-    # pass
+    # scrape_statsmodels()
+    pass

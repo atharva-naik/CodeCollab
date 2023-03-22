@@ -333,7 +333,7 @@
             },
             "Time Series Analysis": {
                 "Autoregressions": "https://www.statsmodels.org/stable/examples/notebooks/generated/autoregressions.html",
-                "Autoregressive Distributed Lag Models": "https://www.statsmodels.org/stable/examples/notebooks/generated/autoregressive_distributed_lag.html",
+                "Autoregressive Distributed Lag Models": "https://www.statsmodels.org/v0.13.0/examples/notebooks/generated/autoregressive_distributed_lag.html",
                 "Deterministic Terms": "https://www.statsmodels.org/stable/examples/notebooks/generated/deterministics.html",
                 "ARMA: Sunspots Data": "https://www.statsmodels.org/stable/examples/notebooks/generated/tsa_arma_0.html",
                 "ARMA: Artificial Data": "https://www.statsmodels.org/stable/examples/notebooks/generated/tsa_arma_1.html",
@@ -345,8 +345,8 @@
                 "Stationarity and detrending (ADF/KPSS)": "https://www.statsmodels.org/stable/examples/notebooks/generated/stationarity_detrending_adf_kpss.html"
             },
             "State space models": {
-                "SARIMAX: Introduction": "https://www.statsmodels.org/stable/examples/notebooks/generated/statespace_sarimax_stata.html",
-                "SARIMAX: Model selection, missing data": "https://www.statsmodels.org/stable/examples/notebooks/generated/statespace_sarimax_internet.html",
+                "SARIMAX: Introduction": "https://www.statsmodels.org/v0.10.2/examples/notebooks/generated/statespace_sarimax_stata.html",
+                "SARIMAX: Model selection, missing data": "https://www.statsmodels.org/v0.12.2/examples/notebooks/generated/statespace_sarimax_internet.html",
                 "SARIMAX: Frequently Asked Questions (FAQ)": "https://www.statsmodels.org/stable/examples/notebooks/generated/statespace_sarimax_faq.html",
                 "VARMAX: Introduction": "https://www.statsmodels.org/stable/examples/notebooks/generated/statespace_varmax.html",
                 "Dynamic Factor Models: Application": "https://www.statsmodels.org/stable/examples/notebooks/generated/statespace_dfm_coincident.html",
