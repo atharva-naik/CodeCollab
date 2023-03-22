@@ -47,7 +47,7 @@ def simplify_soup(soup, target: str="seaborn"):
     for table in soup.select('table'): table.extract()
     for style in soup.select('style'): style.extract()
     for section in soup.select("section"): section.unwrap()
-    if target != "scipy":
+    if target not in ["scipy", "matplotlib"]:
         for a in soup.select('a'): a.extract()
     else:
         for a in soup.select('a'): a.unwrap()
@@ -522,15 +522,22 @@ class MatPlotLibParser:
         for section in tqdm(tut_section.select("section")):
             print(section.attrs["id"])
             h2 = section.select("h2")[0].text.strip("#")
-            self.graph["Tutorials"][-1][h2] = {}
+            self.graph["Tutorials"][-1][h2] = []
+            for p in section.select("p"):
+                self.graph["Tutorials"][-1][h2].append((
+                    p.text.strip(),
+                    "markdown",
+                ))
+            self.graph["Tutorials"][-1][h2].append({})
             for div in section.select("div.sphx-glr-thumbcontainer"):
                 key = div.select("div.sphx-glr-thumbnail-title")[0].text.strip("#")
-                value = div.select("a.reference.internal")[0].attrs["href"]
-                self.graph["Tutorials"][-1][h2][key] = os.path.join(domain_dir, value)
+                url = div.select("a.reference.internal")[0].attrs["href"]
+                url = os.path.join(domain_dir, url)
+                self.graph["Tutorials"][-1][h2][-1][key] = url 
 
     def download(self):
         for h2 in self.graph["Tutorials"][-1]:
-            for key, url in tqdm(self.graph["Tutorials"][-1][h2].items(), desc=h2):
+            for key, url in tqdm(self.graph["Tutorials"][-1][h2][-1].items(), desc=h2):
                 simple_soup = simplify_soup(
                     bs4.BeautifulSoup(
                         requests.get(url).text,
@@ -547,11 +554,13 @@ class MatPlotLibParser:
                 try:
                     nb_json = extract_notebook_hierarchy_from_seq(
                         parse_soup_stream(simplified_soup)
-                    )[0].serialize2()[""]
-                    self.graph["Tutorials"][-1][h2][key] = nb_json
+                    )[0].serialize2()[""][0]
+                    assert len(nb_json) == 1 and isinstance(nb_json, dict)
+                    value = list(nb_json.values())[0]
+                    self.graph["Tutorials"][-1][h2][-1][key] = value
                 except Exception as e:
                     print(e)
-                    self.graph["Tutorials"][-1][h2][key] = (simple_soup, simplified_soup)
+                    self.graph["Tutorials"][-1][h2][-1][key] = (simple_soup, simplified_soup)
 
 # gather pandas tutorials from Tom's Blog.
 class PandasTomsBlogParser:
@@ -724,8 +733,7 @@ def scrape_sklearn():
 def scrape_matplotlib():
     """scrape matplotlib tutorials"""
     mplib_parser = MatPlotLibParser()
-    mplib_parser.download_examples()
-    mplib_parser.download_tutorials()
+    mplib_parser.download()
     os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
     with open("./scrape_tutorials/KGs/matplotlib.json", "w") as f:
         json.dump(mplib_parser.graph, f, indent=4)
@@ -748,4 +756,5 @@ if __name__ == "__main__":
     # scrape_torch()
     # scrape_scipy()
     # scrape_sklearn()
-    pass
+    scrape_matplotlib()
+    # pass
