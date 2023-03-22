@@ -1,51 +1,52 @@
 {
-    "User Guide": {},
-    "Background": {
-        "endog, exog, what\u2019s that?": "https://www.statsmodels.org/stable/endog_exog.html",
-        "Import Paths and Structure": "https://www.statsmodels.org/stable/api-structure.html",
-        "Fitting models using R-style formulas": "https://www.statsmodels.org/stable/example_formulas.html",
-        "Pitfalls": "https://www.statsmodels.org/stable/pitfalls.html"
-    },
-    "Regression and Linear Models": {
-        "Linear Regression": "https://www.statsmodels.org/stable/regression.html",
-        "Generalized Linear Models": "https://www.statsmodels.org/stable/glm.html",
-        "Generalized Estimating Equations": "https://www.statsmodels.org/stable/gee.html",
-        "Generalized Additive Models (GAM)": "https://www.statsmodels.org/stable/gam.html",
-        "Robust Linear Models": "https://www.statsmodels.org/stable/rlm.html",
-        "Linear Mixed Effects Models": "https://www.statsmodels.org/stable/mixed_linear.html",
-        "Regression with Discrete Dependent Variable": "https://www.statsmodels.org/stable/discretemod.html",
-        "Generalized Linear Mixed Effects Models": "https://www.statsmodels.org/stable/mixed_glm.html",
-        "ANOVA": "https://www.statsmodels.org/stable/anova.html",
-        "Other Models othermod": "https://www.statsmodels.org/stable/other_models.html"
-    },
-    "Time Series Analysis": {
-        "Time Series analysis tsa": "https://www.statsmodels.org/stable/tsa.html",
-        "Time Series Analysis by State Space Methods statespace": "https://www.statsmodels.org/stable/statespace.html",
-        "Vector Autoregressions tsa.vector_ar": "https://www.statsmodels.org/stable/vector_ar.html"
-    },
-    "Other Models": {
-        "Methods for Survival and Duration Analysis": "https://www.statsmodels.org/stable/duration.html",
-        "Nonparametric Methods nonparametric": "https://www.statsmodels.org/stable/nonparametric.html",
-        "Generalized Method of Moments gmm": "https://www.statsmodels.org/stable/gmm.html",
-        "Other Models miscmodels": "https://www.statsmodels.org/stable/miscmodels.html",
-        "Multivariate Statistics multivariate": "https://www.statsmodels.org/stable/multivariate.html"
-    },
-    "Statistics and Tools": {
-        "Statistics stats": "https://www.statsmodels.org/stable/stats.html",
-        "Contingency tables": "https://www.statsmodels.org/stable/contingency_tables.html",
-        "Multiple Imputation with Chained Equations": "https://www.statsmodels.org/stable/imputation.html",
-        "Empirical Likelihood emplike": "https://www.statsmodels.org/stable/emplike.html",
-        "Distributions": "https://www.statsmodels.org/stable/distributions.html",
-        "Graphics": "https://www.statsmodels.org/stable/graphics.html",
-        "Input-Output iolib": "https://www.statsmodels.org/stable/iolib.html",
-        "Tools": "https://www.statsmodels.org/stable/tools.html",
-        "Working with Large Data Sets": "https://www.statsmodels.org/stable/large_data.html",
-        "Optimization": "https://www.statsmodels.org/stable/optimization.html"
-    },
-    "Data Sets": {
-        "The Datasets Package": "https://www.statsmodels.org/stable/datasets/index.html"
-    },
-    "Sandbox": {
-        "Sandbox": "https://www.statsmodels.org/stable/sandbox.html"
+    "User Guide": {
+        "Background": {
+            "endog, exog, what\u2019s that?": "https://www.statsmodels.org/stable/endog_exog.html",
+            "Import Paths and Structure": "https://www.statsmodels.org/stable/api-structure.html",
+            "Fitting models using R-style formulas": "https://www.statsmodels.org/stable/example_formulas.html",
+            "Pitfalls": "https://www.statsmodels.org/stable/pitfalls.html"
+        },
+        "Regression and Linear Models": {
+            "Linear Regression": "https://www.statsmodels.org/stable/regression.html",
+            "Generalized Linear Models": "https://www.statsmodels.org/stable/glm.html",
+            "Generalized Estimating Equations": "https://www.statsmodels.org/stable/gee.html",
+            "Generalized Additive Models (GAM)": "https://www.statsmodels.org/stable/gam.html",
+            "Robust Linear Models": "https://www.statsmodels.org/stable/rlm.html",
+            "Linear Mixed Effects Models": "https://www.statsmodels.org/stable/mixed_linear.html",
+            "Regression with Discrete Dependent Variable": "https://www.statsmodels.org/stable/discretemod.html",
+            "Generalized Linear Mixed Effects Models": "https://www.statsmodels.org/stable/mixed_glm.html",
+            "ANOVA": "https://www.statsmodels.org/stable/anova.html",
+            "Other Models othermod": "https://www.statsmodels.org/stable/other_models.html"
+        },
+        "Time Series Analysis": {
+            "Time Series analysis tsa": "https://www.statsmodels.org/stable/tsa.html",
+            "Time Series Analysis by State Space Methods statespace": "https://www.statsmodels.org/stable/statespace.html",
+            "Vector Autoregressions tsa.vector_ar": "https://www.statsmodels.org/stable/vector_ar.html"
+        },
+        "Other Models": {
+            "Methods for Survival and Duration Analysis": "https://www.statsmodels.org/stable/duration.html",
+            "Nonparametric Methods nonparametric": "https://www.statsmodels.org/stable/nonparametric.html",
+            "Generalized Method of Moments gmm": "https://www.statsmodels.org/stable/gmm.html",
+            "Other Models miscmodels": "https://www.statsmodels.org/stable/miscmodels.html",
+            "Multivariate Statistics multivariate": "https://www.statsmodels.org/stable/multivariate.html"
+        },
+        "Statistics and Tools": {
+            "Statistics stats": "https://www.statsmodels.org/stable/stats.html",
+            "Contingency tables": "https://www.statsmodels.org/stable/contingency_tables.html",
+            "Multiple Imputation with Chained Equations": "https://www.statsmodels.org/stable/imputation.html",
+            "Empirical Likelihood emplike": "https://www.statsmodels.org/stable/emplike.html",
+            "Distributions": "https://www.statsmodels.org/stable/distributions.html",
+            "Graphics": "https://www.statsmodels.org/stable/graphics.html",
+            "Input-Output iolib": "https://www.statsmodels.org/stable/iolib.html",
+            "Tools": "https://www.statsmodels.org/stable/tools.html",
+            "Working with Large Data Sets": "https://www.statsmodels.org/stable/large_data.html",
+            "Optimization": "https://www.statsmodels.org/stable/optimization.html"
+        },
+        "Data Sets": {
+            "The Datasets Package": "https://www.statsmodels.org/stable/datasets/index.html"
+        },
+        "Sandbox": {
+            "Sandbox": "https://www.statsmodels.org/stable/sandbox.html"
+        }
     }
 }

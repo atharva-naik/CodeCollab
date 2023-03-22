@@ -31,6 +31,8 @@ def simplify_soup(soup, target: str="seaborn"):
         soup = soup.html.body.select("div.sk-page-content.container-fluid.body.px-md-3")[0]
     elif target == "matplotlib":
         soup = soup.html.body.select("section.sphx-glr-example-title")[0]
+    elif target == "statsmodels":
+        soup = soup.html.body.select("section")[0]
         # if not try_soup:
             # try_soup = soup.html.body.find("div", {"class": ""})
         # soup = try_soup
@@ -70,6 +72,7 @@ def simplify_soup(soup, target: str="seaborn"):
     elif target == "scipy": final = soup
     elif target == "scikit": final = soup
     elif target == "matplotlib": final = soup
+    elif target == "statsmodels": final = soup
 
     return final
 
@@ -582,6 +585,8 @@ class StatsModelsParser:
         else:
             url = self.base_urls["Examples"]
             self.examples_urls = self.scrape_examples_urls(url)
+            # manual fix for from broken links on the website:
+            # https://www.statsmodels.org/v0.13.0/examples/notebooks/generated/autoregressive_distributed_lag.html
             with open(self.examples_path, "w") as f:
                 json.dump(self.examples_urls, f, indent=4)
         self.graph.update(self.user_guide_urls)
@@ -589,7 +594,18 @@ class StatsModelsParser:
         self.graph["Getting Started"] = self.base_urls["Getting Started"]
 
     def download(self):
+        # download the getting started page.
         self.graph["Getting Started"] = self.scrape_page(self.graph["Getting Started"])
+        # download the examples.
+        for h2 in self.graph["Examples"][-1]:
+            for key, url in self.graph["Examples"][-1][h2].items():
+                try: self.graph["Examples"][-1][h2][key] = self.scrape_page(url)
+                except Exception as e: print(f"\x1b[31mExamples: {h2}->{key}[{url}]: {e}\x1b[0m")
+        # download the user guide.
+        for h2 in self.graph["User Guide"]:
+            for key, url in self.graph["User Guide"][h2].items():
+                try: self.graph["User Guide"][h2][key] = self.scrape_page(url)
+                except Exception as e: print(f"\x1b[31mUser Guide: {h2}->{key}[{url}]: {e}\x1b[0m")
 
     def scrape_page(self, url: str) -> dict:
         simple_soup = simplify_soup(bs4.BeautifulSoup(
@@ -606,9 +622,10 @@ class StatsModelsParser:
 
         nb_json = extract_notebook_hierarchy_from_seq(
                 parse_soup_stream(simplified_soup)
-            )[0].serialize2()[""]
+            )[0].serialize2()[""][0]
+        assert isinstance(nb_json, dict) and len(nb_json) == 1
 
-        return nb_json
+        return list(nb_json.values())[0]
         # try:
         #     nb_json = extract_notebook_hierarchy_from_seq(
         #         parse_soup_stream(simplified_soup)
@@ -622,7 +639,7 @@ class StatsModelsParser:
             requests.get(url).text,
             features="lxml",
         )
-        domain_dir = "https://www.statsmodels.org/stable/"
+        domain_dir = "https://www.statsmodels.org/stable/examples"
         examples_section = soup.find("section", id="examples")
         for p in examples_section.select("p"):
             example_urls["Examples"].append((
@@ -651,11 +668,11 @@ class StatsModelsParser:
         user_guide_section = soup.find("section", id="user-guide")
         for section in user_guide_section.select("section"):
             h2 = section.select("h2")[0].text.replace("¶","")
-            user_guide_urls[h2] = {}
+            user_guide_urls["User Guide"][h2] = {}
             for a in section.select("a.reference.internal"):
                 key = a.text.replace("¶","")
                 value = os.path.join(domain_dir, a.attrs["href"])
-                user_guide_urls[h2][key] = value
+                user_guide_urls["User Guide"][h2][key] = value
 
         return user_guide_urls
 
@@ -837,7 +854,7 @@ def scrape_matplotlib():
 
 def scrape_statsmodels():
     """scrape statsmodels examples, user guide and getting started guide"""
-    sm_parser = MatPlotLibParser()
+    sm_parser = StatsModelsParser()
     sm_parser.download()
     os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
     with open("./scrape_tutorials/KGs/statsmodels.json", "w") as f:
