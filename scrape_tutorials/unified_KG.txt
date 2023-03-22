@@ -1,4 +1,304 @@
 root
+├── matplotlib
+│   └── Tutorials
+│       ├── Advanced
+│       │   ├── Faster rendering by using blitting
+│       │   │   ├── Class-based example
+│       │   │   └── Minimal example
+│       │   ├── Path Tutorial
+│       │   │   ├── Bézier example
+│       │   │   └── Compound paths
+│       │   ├── Path effects guide
+│       │   │   ├── Adding a shadow
+│       │   │   ├── Greater control of the path effect artist
+│       │   │   └── Making an artist stand out
+│       │   └── Transformations Tutorial
+│       │       ├── Axes coordinates
+│       │       ├── Blended transformations
+│       │       ├── Data coordinates
+│       │       ├── Plotting in physical coordinates
+│       │       ├── The transformation pipeline
+│       │       └── Using offset transforms to create a shadow effect
+│       ├── Colors
+│       │   ├── Choosing Colormaps in Matplotlib
+│       │   │   ├── Classes of colormaps
+│       │   │   │   ├── Cyclic
+│       │   │   │   ├── Diverging
+│       │   │   │   ├── Miscellaneous
+│       │   │   │   ├── Qualitative
+│       │   │   │   ├── Sequential
+│       │   │   │   └── Sequential2
+│       │   │   ├── Color vision deficiencies
+│       │   │   ├── Grayscale conversion
+│       │   │   ├── Lightness of Matplotlib colormaps
+│       │   │   ├── Overview
+│       │   │   └── References
+│       │   ├── Colormap Normalization
+│       │   │   ├── Centered
+│       │   │   ├── Custom normalization: Manually implement two linear ranges
+│       │   │   ├── Discrete bounds
+│       │   │   ├── FuncNorm: Arbitrary function normalization
+│       │   │   ├── Logarithmic
+│       │   │   ├── Power-law
+│       │   │   ├── Symmetric logarithmic
+│       │   │   └── TwoSlopeNorm: Different mapping on either side of a center
+│       │   ├── Creating Colormaps in Matplotlib
+│       │   │   ├── Creating linear segmented colormaps
+│       │   │   │   └── Directly creating a segmented colormap from a list
+│       │   │   ├── Creating listed colormaps
+│       │   │   ├── Getting colormaps and accessing their values
+│       │   │   │   ├── LinearSegmentedColormap
+│       │   │   │   └── ListedColormap
+│       │   │   ├── Registering a colormap
+│       │   │   └── Reversing a colormap
+│       │   ├── Customized Colorbars Tutorial
+│       │   │   └── Customized Colorbars
+│       │   │       ├── Basic continuous colorbar
+│       │   │       ├── Colorbar with custom extension lengths
+│       │   │       ├── Discrete intervals colorbar
+│       │   │       └── Extended colorbar with continuous colorscale
+│       │   └── Specifying colors
+│       │       ├── "CN" color selection
+│       │       ├── Color formats
+│       │       ├── Comparison between X11/CSS4 and xkcd colors
+│       │       └── Transparency
+│       ├── Intermediate
+│       │   ├── *origin* and *extent* in `~.Axes.imshow`
+│       │   │   ├── Default extent
+│       │   │   ├── Explicit extent
+│       │   │   └── Explicit extent and axes limits
+│       │   ├── Arranging multiple Axes in a Figure
+│       │   │   ├── High-level methods for making grids
+│       │   │   │   ├── Axes spanning rows or columns in a grid
+│       │   │   │   ├── Basic 2x2 grid
+│       │   │   │   ├── Grids of fixed-aspect ratio Axes
+│       │   │   │   ├── Nested Axes layouts
+│       │   │   │   └── Variable widths or heights in a grid
+│       │   │   ├── Low-level and advanced grid methods
+│       │   │   │   ├── Axes spanning rows or grids in a grid
+│       │   │   │   ├── Basic 2x2 grid
+│       │   │   │   ├── Manual adjustments to a GridSpec layout
+│       │   │   │   └── Nested layouts with SubplotSpec
+│       │   │   ├── More reading
+│       │   │   └── Overview
+│       │   │       ├── Adding single Axes at a time
+│       │   │       ├── Create grid-shaped combinations of Axes
+│       │   │       └── Underlying tools
+│       │   ├── Artist tutorial
+│       │   │   ├── Customizing your objects
+│       │   │   └── Object containers
+│       │   │       ├── Axes container
+│       │   │       ├── Axis containers
+│       │   │       ├── Figure container
+│       │   │       └── Tick containers
+│       │   ├── Autoscaling
+│       │   │   ├── Controlling autoscale
+│       │   │   ├── Margins
+│       │   │   ├── Sticky edges
+│       │   │   └── Working with collections
+│       │   ├── Constrained Layout Guide
+│       │   │   ├── Colorbars
+│       │   │   ├── Debugging
+│       │   │   ├── Grids of fixed aspect-ratio Axes: "compressed" layout
+│       │   │   ├── Legends
+│       │   │   ├── Limitations
+│       │   │   │   ├── Incompatible functions
+│       │   │   │   └── Other Caveats
+│       │   │   ├── Manually setting axes positions
+│       │   │   ├── Manually turning off constrained_layout
+│       │   │   ├── Notes on the algorithm
+│       │   │   │   ├── Colorbar associated with a Gridspec
+│       │   │   │   ├── Simple case: one Axes
+│       │   │   │   ├── Simple case: two Axes
+│       │   │   │   ├── Two Axes and colorbar
+│       │   │   │   └── Uneven sized Axes
+│       │   │   ├── Padding and Spacing
+│       │   │   │   └── Spacing with colorbars
+│       │   │   ├── Simple Example
+│       │   │   ├── Suptitle
+│       │   │   ├── Use with GridSpec
+│       │   │   └── rcParams
+│       │   ├── Legend guide
+│       │   │   ├── Controlling the legend entries
+│       │   │   ├── Creating artists specifically for adding to the legend (aka. Proxy artists)
+│       │   │   ├── Legend Handlers
+│       │   │   │   └── Implementing a custom legend handler
+│       │   │   ├── Legend location
+│       │   │   │   └── Figure legends
+│       │   │   └── Multiple legends on the same Axes
+│       │   ├── Styling with cycler
+│       │   │   ├── Cycling through multiple properties
+│       │   │   └── Setting prop_cycle in the matplotlibrc file or style files
+│       │   └── Tight Layout guide
+│       │       ├── Caveats
+│       │       ├── Colorbar
+│       │       ├── Legends and Annotations
+│       │       ├── Simple Example
+│       │       ├── Use with AxesGrid1
+│       │       └── Use with GridSpec
+│       ├── Introductory
+│       │   ├── Animations using Matplotlib
+│       │   │   ├── Animation Classes
+│       │   │   │   ├── ArtistAnimation
+│       │   │   │   └── FuncAnimation
+│       │   │   └── Animation Writers
+│       │   │       └── Saving Animations
+│       │   ├── Customizing Matplotlib with style sheets and rcParams
+│       │   │   ├── Runtime rc settings
+│       │   │   │   └── Temporary rc settings
+│       │   │   ├── The matplotlibrc file
+│       │   │   │   └── The default matplotlibrc file
+│       │   │   └── Using style sheets
+│       │   │       ├── Composing styles
+│       │   │       ├── Defining your own style
+│       │   │       ├── Distributing styles
+│       │   │       └── Temporary styling
+│       │   ├── Image tutorial
+│       │   │   ├── Importing image data into Numpy arrays
+│       │   │   ├── Plotting numpy arrays as images
+│       │   │   │   ├── Applying pseudocolor schemes to image plots
+│       │   │   │   ├── Array Interpolation schemes
+│       │   │   │   ├── Color scale reference
+│       │   │   │   └── Examining a specific data range
+│       │   │   └── Startup commands
+│       │   ├── Pyplot tutorial
+│       │   │   ├── Controlling line properties
+│       │   │   ├── Introduction to pyplot
+│       │   │   │   └── Formatting the style of your plot
+│       │   │   ├── Logarithmic and other nonlinear axes
+│       │   │   ├── Plotting with categorical variables
+│       │   │   ├── Plotting with keyword strings
+│       │   │   ├── Working with multiple figures and axes
+│       │   │   └── Working with text
+│       │   │       ├── Annotating text
+│       │   │       └── Using mathematical expressions in text
+│       │   ├── Quick start guide
+│       │   │   ├── A simple example
+│       │   │   ├── Axis scales and ticks
+│       │   │   │   ├── Additional Axis objects
+│       │   │   │   ├── Plotting dates and strings
+│       │   │   │   ├── Scales
+│       │   │   │   └── Tick locators and formatters
+│       │   │   ├── Coding styles
+│       │   │   │   ├── Making a helper functions
+│       │   │   │   └── The explicit and the implicit interfaces
+│       │   │   ├── Color mapped data
+│       │   │   │   ├── Colorbars
+│       │   │   │   ├── Colormaps
+│       │   │   │   └── Normalizations
+│       │   │   ├── Labelling plots
+│       │   │   │   ├── Annotations
+│       │   │   │   ├── Axes labels and text
+│       │   │   │   ├── Legends
+│       │   │   │   └── Using mathematical expressions in text
+│       │   │   ├── More reading
+│       │   │   ├── Parts of a Figure
+│       │   │   │   ├── Artist
+│       │   │   │   ├── Axes
+│       │   │   │   ├── Axis
+│       │   │   │   └── Figure
+│       │   │   ├── Styling Artists
+│       │   │   │   ├── Colors
+│       │   │   │   └── Linewidths, linestyles, and markersizes
+│       │   │   ├── Types of inputs to plotting functions
+│       │   │   └── Working with multiple Figures and Axes
+│       │   └── The Lifecycle of a Plot
+│       │       ├── A note on the explicit vs. implicit interfaces
+│       │       ├── Combining multiple visualizations
+│       │       ├── Controlling the style
+│       │       ├── Customizing the plot
+│       │       ├── Getting started
+│       │       ├── Our data
+│       │       └── Saving our plot
+│       ├── Provisional
+│       ├── Text
+│       │   ├── Annotations
+│       │   │   ├── Advanced annotation
+│       │   │   │   ├── Annotating with boxed text
+│       │   │   │   ├── Customizing annotation arrows
+│       │   │   │   ├── Defining custom box styles
+│       │   │   │   └── Placing Artist at anchored Axes locations
+│       │   │   ├── Basic annotation
+│       │   │   │   ├── Annotating data
+│       │   │   │   ├── Annotating with arrows
+│       │   │   │   └── Placing text annotations relative to data
+│       │   │   └── Coordinate systems for annotations
+│       │   │       ├── Using ConnectionPatch
+│       │   │       └── Zoom effect between Axes
+│       │   ├── Text in Matplotlib Plots
+│       │   │   ├── Basic text commands
+│       │   │   ├── Labels for x- and y-axis
+│       │   │   ├── Legends and Annotations
+│       │   │   ├── Ticks and ticklabels
+│       │   │   │   ├── Dateticks
+│       │   │   │   ├── Simple ticks
+│       │   │   │   ├── Terminology
+│       │   │   │   └── Tick Locators and Formatters
+│       │   │   └── Titles
+│       │   ├── Text properties and layout
+│       │   ├── Text rendering with LaTeX
+│       │   │   ├── Possible hangups
+│       │   │   ├── PostScript options
+│       │   │   └── Troubleshooting
+│       │   ├── Text rendering with XeLaTeX/LuaLaTeX via the ``pgf`` backend
+│       │   │   ├── Choosing the TeX system
+│       │   │   ├── Custom preamble
+│       │   │   ├── Font specification
+│       │   │   ├── Multi-Page PDF Files
+│       │   │   └── Troubleshooting
+│       │   └── Writing mathematical expressions
+│       │       ├── Accents
+│       │       ├── Example
+│       │       ├── Fonts
+│       │       │   └── Custom fonts
+│       │       ├── Fractions, binomials, and stacked numbers
+│       │       ├── Radicals
+│       │       ├── Subscripts and superscripts
+│       │       └── Symbols
+│       └── Toolkits
+│           ├── The axes_grid1 toolkit
+│           │   ├── AxesDivider
+│           │   └── axes_grid1
+│           │       ├── AnchoredArtists
+│           │       ├── AxesDivider Class
+│           │       ├── ImageGrid
+│           │       ├── InsetLocator
+│           │       ├── ParasiteAxes
+│           │       │   └── Example 2: twin
+│           │       ├── RGBAxes
+│           │       └── colorbar whose height (or width) is in sync with the main axes
+│           │           └── scatter_hist.py with AxesDivider
+│           ├── The axisartist toolkit
+│           │   ├── AxisArtist
+│           │   │   ├── axislabel
+│           │   │   ├── line
+│           │   │   ├── major_ticklabels, minor_ticklabels
+│           │   │   └── major_ticks, minor_ticks
+│           │   ├── Current Limitations and TODO's
+│           │   ├── Default AxisArtists
+│           │   ├── FloatingAxis
+│           │   ├── GridHelper
+│           │   ├── HowTo
+│           │   ├── Rotation and Alignment of TickLabels
+│           │   │   ├── Adjusting pad
+│           │   │   └── Adjusting ticklabels alignment
+│           │   ├── axisartist
+│           │   │   ├── Curvilinear Grid
+│           │   │   ├── Floating Axes
+│           │   │   └── axisartist with ParasiteAxes
+│           │   └── axisartist namespace
+│           └── The mplot3d toolkit
+│               ├── Bar plots
+│               ├── Contour plots
+│               ├── Filled contour plots
+│               ├── Line plots
+│               ├── Polygon plots
+│               ├── Quiver
+│               ├── Scatter plots
+│               ├── Surface plots
+│               ├── Text
+│               ├── Tri-Surface plots
+│               └── Wireframe plots
 ├── numpy
 │   ├── Articles
 │   │   ├── Deep reinforcement learning with Pong from pixels
