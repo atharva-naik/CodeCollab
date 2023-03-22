@@ -1902,6 +1902,657 @@ root
 │           ├── Training a classifier
 │           ├── Tutorial setup
 │           └── Where to from here
+├── statsmodels
+│   ├── Examples
+│   │   ├── Discrete Choice Models
+│   │   │   ├── Fair’s Affairs Data
+│   │   │   │   └── Fair’s Affair data
+│   │   │   │       ├── Exercise: Logit vs Probit
+│   │   │   │       └── Generalized Linear Model Example
+│   │   │   │           ├── Aside: Binomial distribution
+│   │   │   │           ├── Histogram of standardized deviance residuals with Kernel Density Estimate overlaid
+│   │   │   │           ├── Plot fitted values vs Pearson residuals
+│   │   │   │           └── QQ-plot of deviance residuals
+│   │   │   ├── Getting Started
+│   │   │   │   ├── Alternative solvers
+│   │   │   │   ├── Data
+│   │   │   │   ├── Linear Probability Model (OLS)
+│   │   │   │   ├── Logit Model
+│   │   │   │   ├── Multinomial Logit
+│   │   │   │   ├── Negative Binomial
+│   │   │   │   ├── Poisson
+│   │   │   │   └── Probit Model
+│   │   │   └── Ordinal Regression
+│   │   │       ├── Binary Model compared to Logit
+│   │   │       ├── Logit ordinal regression:
+│   │   │       ├── Ordinal regression with a custom cumulative cLogLog distribution:
+│   │   │       ├── Probit ordinal regression:
+│   │   │       ├── Using formulas - no constant in model
+│   │   │       └── Using formulas - treatment of endog
+│   │   ├── Forecasting
+│   │   │   └── Forecasting using the Theta Model
+│   │   │       ├── Imports
+│   │   │       ├── Load some Data
+│   │   │       └── Personal Consumption Expenditure
+│   │   ├── Generalized Estimating Equations
+│   │   │   ├── GEE Nested Covariance Structure
+│   │   │   └── GEE Score Tests
+│   │   ├── Generalized Linear Models
+│   │   │   ├── Generalized Linear Models Overview
+│   │   │   │   ├── GLM: Binomial response data
+│   │   │   │   │   ├── Fit and summary
+│   │   │   │   │   ├── Load Star98 data
+│   │   │   │   │   ├── Plots
+│   │   │   │   │   └── Quantities of interest
+│   │   │   │   ├── GLM: Gamma for proportional count response
+│   │   │   │   │   ├── Load Scottish Parliament Voting data
+│   │   │   │   │   └── Model Fit and summary
+│   │   │   │   └── GLM: Gaussian distribution with a noncanonical link
+│   │   │   │       ├── Artificial data
+│   │   │   │       └── Fit and summary (artificial data)
+│   │   │   ├── Influence Measures for GLMs
+│   │   │   │   └── get the influence measures
+│   │   │   ├── Quasi-binomial regression
+│   │   │   ├── Using Formulas with GLMs
+│   │   │   └── Weighting Observations with GLMs
+│   │   │       ├── Analysis
+│   │   │       │   ├── Comparison
+│   │   │       │   ├── Investigating Pearson chi-square statistic
+│   │   │       │   ├── Likelihood Ratio type tests
+│   │   │       │   │   ├── aggregated data: exposure and var_weights
+│   │   │       │   │   └── original observations and frequency weights
+│   │   │       │   ├── aggregated or averaged data (unique values of explanatory variables)
+│   │   │       │   │   ├── using exposure
+│   │   │       │   │   └── using var_weights
+│   │   │       │   ├── condensed data (unique observations with frequencies)
+│   │   │       │   ├── condensed using var_weights instead of freq_weights
+│   │   │       │   └── original data
+│   │   │       ├── Condensing and Aggregating observations
+│   │   │       │   ├── Dataset with unique explanatory variables (exog)
+│   │   │       │   └── Dataset with unique observations
+│   │   │       ├── Remainder
+│   │   │       └── Weighted GLM: Poisson response data
+│   │   │           └── Load data
+│   │   ├── Linear Regression Models
+│   │   │   ├── Generalized Least Squares
+│   │   │   ├── Linear Mixed-Effects
+│   │   │   ├── Ordinary Least Squares
+│   │   │   │   ├── Joint hypothesis test
+│   │   │   │   │   ├── F test
+│   │   │   │   │   ├── Multicollinearity
+│   │   │   │   │   │   ├── Condition number
+│   │   │   │   │   │   └── Dropping an observation
+│   │   │   │   │   └── Small group effects
+│   │   │   │   ├── OLS estimation
+│   │   │   │   ├── OLS non-linear curve but linear in parameters
+│   │   │   │   └── OLS with dummy variables
+│   │   │   ├── Quantile Regression
+│   │   │   │   ├── Least Absolute Deviation
+│   │   │   │   ├── Setup
+│   │   │   │   └── Visualizing the results
+│   │   │   │       ├── First plot
+│   │   │   │       ├── Prepare data for plotting
+│   │   │   │       └── Second plot
+│   │   │   ├── Recursive Least Squares
+│   │   │   │   ├── Example 1: Copper
+│   │   │   │   ├── Example 2: Quantity theory of money
+│   │   │   │   ├── Formula
+│   │   │   │   └── Linear restrictions
+│   │   │   ├── Regression Diagnostics
+│   │   │   │   ├── Estimate a regression model
+│   │   │   │   ├── Heteroskedasticity tests
+│   │   │   │   ├── Influence tests
+│   │   │   │   ├── Linearity
+│   │   │   │   ├── Multicollinearity
+│   │   │   │   └── Normality of the residuals
+│   │   │   ├── Rolling Least Squares
+│   │   │   │   ├── Expanding Sample
+│   │   │   │   ├── Fit Options
+│   │   │   │   ├── Formulas
+│   │   │   │   └── RollingWLS: Rolling Weighted Least Squares
+│   │   │   ├── Variance Component Analysis
+│   │   │   │   ├── Crossed analysis
+│   │   │   │   └── Nested analysis
+│   │   │   └── Weighted Least Squares
+│   │   │       ├── Feasible Weighted Least Squares (2-stage FWLS)
+│   │   │       ├── OLS vs. WLS
+│   │   │       └── WLS Estimation
+│   │   │           ├── Artificial data: Heteroscedasticity 2 groups
+│   │   │           └── WLS knowing the true variance ratio of heteroscedasticity
+│   │   ├── Multivariate Methods
+│   │   │   └── Principal Component Analysis
+│   │   ├── Nonparametric Statistics
+│   │   │   ├── Lowess Regression
+│   │   │   │   └── Confidence interval
+│   │   │   └── Univariate Kernel Density Estimator
+│   │   │       ├── A more difficult case
+│   │   │       ├── A univariate example
+│   │   │       ├── Comparing kernel functions
+│   │   │       │   ├── The available kernel functions
+│   │   │       │   └── The available kernel functions on three data points
+│   │   │       ├── Fitting with the default arguments
+│   │   │       ├── The KDE is a distribution
+│   │   │       │   ├── Cumulative distribution, it’s inverse, and the survival function
+│   │   │       │   └── The Cumulative Hazard Function
+│   │   │       └── Varying the bandwidth using the bw argument
+│   │   ├── Plotting
+│   │   │   ├── Box Plots
+│   │   │   │   ├── Advanced Box Plots
+│   │   │   │   └── Bean Plots
+│   │   │   ├── Categorical Interactions
+│   │   │   └── Regression Plots
+│   │   │       ├── Duncan’s Prestige Dataset
+│   │   │       │   ├── Component-Component plus Residual (CCPR) Plots
+│   │   │       │   ├── Fit Plot
+│   │   │       │   ├── Influence plots
+│   │   │       │   ├── Load the Data
+│   │   │       │   ├── Partial Regression Plots (Duncan)
+│   │   │       │   └── Single Variable Regression Diagnostics
+│   │   │       └── Statewide Crime 2009 Dataset
+│   │   │           ├── Influence Plot
+│   │   │           ├── Leverage-Resid2 Plot
+│   │   │           ├── Partial Regression Plots (Crime Data)
+│   │   │           └── Using robust regression to correct for outliers.
+│   │   ├── Robust Regression
+│   │   │   ├── Comparing OLS and RLM
+│   │   │   │   ├── Comparing OLS and RLM
+│   │   │   │   │   ├── Example 1: quadratic function with linear truth
+│   │   │   │   │   └── Example 2: linear function with linear truth
+│   │   │   │   └── Estimation
+│   │   │   └── M-estimators for Robust Regression
+│   │   │       ├── Andrew’s Wave
+│   │   │       ├── Duncan’s Occupational Prestige data - M-estimation for outliers
+│   │   │       ├── Exercise: Breakdown points of M-estimator
+│   │   │       │   └── Squared error loss
+│   │   │       ├── Hampel’s 17A
+│   │   │       ├── Hertzprung Russell data for Star Cluster CYG 0B1 - Leverage Points
+│   │   │       ├── Huber’s t
+│   │   │       ├── Least Squares
+│   │   │       ├── Ramsay’s Ea
+│   │   │       ├── Scale Estimators
+│   │   │       ├── Trimmed Mean
+│   │   │       └── Tukey’s Biweight
+│   │   ├── State space models
+│   │   │   ├── Dynamic Factor Models: Application
+│   │   │   │   ├── Appendix 1: Extending the dynamic factor model
+│   │   │   │   ├── Coincident Index
+│   │   │   │   ├── Dynamic factors
+│   │   │   │   ├── Estimates
+│   │   │   │   │   ├── Estimated factors
+│   │   │   │   │   └── Parameters
+│   │   │   │   ├── Macroeconomic data
+│   │   │   │   ├── Model specification
+│   │   │   │   ├── Parameter estimation
+│   │   │   │   └── Post-estimation
+│   │   │   ├── ETS models
+│   │   │   │   ├── Holt-Winters’ seasonal method
+│   │   │   │   ├── Predictions
+│   │   │   │   └── Simple exponential smoothing
+│   │   │   ├── Fixed / constrained parameters in state space models
+│   │   │   │   └── Adding a seasonal component
+│   │   │   ├── Forecasting, updating datasets, and the “news”
+│   │   │   │   ├── Bibliography
+│   │   │   │   ├── Multivariate example: dynamic factor
+│   │   │   │   └── Simple univariate example: AR(1)
+│   │   │   │       ├── Addendum: manually computing the news, weights, and impacts
+│   │   │   │       ├── Step 1: fitting the model on the available dataset
+│   │   │   │       └── Step 2: computing the “news” from a new observation
+│   │   │   ├── SARIMAX estimation with Bayesian methods
+│   │   │   │   ├── Appendix A. Application to UnobservedComponents models
+│   │   │   │   └── Introduction
+│   │   │   │       ├── 1. Import external dependencies
+│   │   │   │       ├── 2. Download and plot the data on US CPI
+│   │   │   │       ├── 3. Fit the model with maximum likelihood
+│   │   │   │       ├── 4. Helper functions to provide tensors to the library doing Bayesian estimation
+│   │   │   │       ├── 5. Bayesian estimation with NUTS
+│   │   │   │       ├── 6. Application of Bayesian estimates of parameters
+│   │   │   │       └── Technical Details
+│   │   │   │           └── Defining helper functions to translate models into a PyMC3 friendly form
+│   │   │   ├── SARIMAX: Frequently Asked Questions (FAQ)
+│   │   │   │   ├── Comparing trends and exogenous variables in SARIMAX, ARIMA and AutoReg
+│   │   │   │   │   ├── Differences between trend and exog in SARIMAX
+│   │   │   │   │   ├── Using exog in SARIMAX and ARIMA
+│   │   │   │   │   │   ├── ARIMA
+│   │   │   │   │   │   └── SARIMAX
+│   │   │   │   │   ├── Using the correct DGP with AutoReg
+│   │   │   │   │   │   └── AutoReg with correct DGP
+│   │   │   │   │   └── exog in AutoReg
+│   │   │   │   │       └── AutoReg
+│   │   │   │   ├── Initial residuals SARIMAX and ARIMA
+│   │   │   │   └── Reconstructing residuals, fitted values and forecasts in SARIMAX and ARIMA
+│   │   │   │       ├── Prediction differences in SARIMAX and ARIMA
+│   │   │   │       └── Prediction with MA components
+│   │   │   ├── SARIMAX: Introduction
+│   │   │   │   ├── ARIMA Example 1: Arima
+│   │   │   │   ├── ARIMA Example 2: Arima with additive seasonal effects
+│   │   │   │   ├── ARIMA Example 3: Airline Model
+│   │   │   │   ├── ARIMA Example 4: ARMAX (Friedman)
+│   │   │   │   └── ARIMA Postestimation: Example 1 - Dynamic Forecasting
+│   │   │   ├── Seasonality in Time Series Data
+│   │   │   │   ├── Comparison of filtered estimates
+│   │   │   │   │   └── Conclusions
+│   │   │   │   ├── Synthetic data creation
+│   │   │   │   ├── Unobserved components (frequency domain modeling)
+│   │   │   │   ├── Unobserved components (lazy frequency domain modeling)
+│   │   │   │   ├── Unobserved components (lazy time domain seasonal modeling)
+│   │   │   │   └── Unobserved components (mixed time and frequency domain modeling)
+│   │   │   ├── State space modeling: Local Linear Trends
+│   │   │   │   └── References
+│   │   │   ├── Statespace ARMA: Sunspots Data
+│   │   │   │   └── Sunspots Data
+│   │   │   ├── Statespace: Custom Models
+│   │   │   │   ├── Bonus: pymc3 for fast Bayesian estimation
+│   │   │   │   │   ├── Bayesian estimation
+│   │   │   │   │   └── How does the posterior distribution compare with the MLE estimation?
+│   │   │   │   ├── Model 1: time-varying coefficients
+│   │   │   │   │   └── And then estimate it with our custom model class
+│   │   │   │   ├── Model 2: time-varying parameters with non identity transition matrix
+│   │   │   │   │   └── 1) Change the starting parameters function
+│   │   │   │   └── Model 3: multiple observation and state equations
+│   │   │   │       ├── Matrix notation for the state space model
+│   │   │   │       ├── Observation equations
+│   │   │   │       └── What do we need to modify?
+│   │   │   │           ├── 1) The __init__ function changes from
+│   │   │   │           └── 2) The update() function
+│   │   │   ├── TVP-VAR, MCMC, and sparse simulation smoothing
+│   │   │   │   ├── Appendix: performance
+│   │   │   │   ├── Application: Bayesian analysis of a TVP-VAR model by MCMC
+│   │   │   │   │   ├── Bayesian estimation via MCMC
+│   │   │   │   │   ├── Preliminary investigation with ad-hoc parameters in H, Q
+│   │   │   │   │   ├── TVP-VAR model
+│   │   │   │   │   └── TVP-VAR model in Statsmodels
+│   │   │   │   ├── Background
+│   │   │   │   ├── Bibliography
+│   │   │   │   └── Implementation in Statsmodels
+│   │   │   │       ├── Local level model
+│   │   │   │       └── Updating the model’s parameters
+│   │   │   ├── Trends and cycles in unemployment
+│   │   │   │   ├── Graphical comparison
+│   │   │   │   ├── Hodrick-Prescott (HP) filter
+│   │   │   │   ├── Unobserved components and ARIMA model (UC-ARIMA)
+│   │   │   │   └── Unobserved components with stochastic cycle (UC)
+│   │   │   ├── Unobserved Components: Application
+│   │   │   │   ├── Data
+│   │   │   │   ├── Model
+│   │   │   │   └── Unobserved Components
+│   │   │   │       ├── Cycle
+│   │   │   │       ├── Irregular
+│   │   │   │       ├── Regression effects
+│   │   │   │       ├── Seasonal
+│   │   │   │       └── Trend
+│   │   │   └── VARMAX: Introduction
+│   │   │       ├── Caution: VARMA(p,q) specifications
+│   │   │       ├── Example 1: VAR
+│   │   │       ├── Example 2: VMA
+│   │   │       └── Model specification
+│   │   ├── State space models - Technical notes
+│   │   │   ├── State space models: Chandrasekhar recursions
+│   │   │   │   ├── Aside on multithreaded matrix algebra routines
+│   │   │   │   ├── Bibliography
+│   │   │   │   ├── Chandrasekhar recursions and the univariate filtering approach
+│   │   │   │   ├── Convergence
+│   │   │   │   ├── Example: seasonal autoregression
+│   │   │   │   ├── Practical example
+│   │   │   │   ├── State space models and the Chandrasekhar recursions
+│   │   │   │   └── State space models and the Kalman filter
+│   │   │   └── State space models: concentrating out the scale
+│   │   │       ├── Example: SARIMAX
+│   │   │       ├── Example: local level model
+│   │   │       │   ├── Comparing estimates
+│   │   │       │   ├── Concentrating out the scale
+│   │   │       │   └── Typical approach
+│   │   │       └── Introduction
+│   │   ├── Statistics
+│   │   │   ├── ANOVA
+│   │   │   │   ├── Minority Employment Data
+│   │   │   │   ├── One-way ANOVA
+│   │   │   │   ├── Sum of squares
+│   │   │   │   └── Two-way ANOVA
+│   │   │   ├── Copulas
+│   │   │   │   ├── Estimating copula parameters
+│   │   │   │   └── Sampling from a copula
+│   │   │   │       └── Reproducibility
+│   │   │   ├── Mediation analysis with duration data
+│   │   │   └── Meta-Analysis in statsmodels
+│   │   │       ├── Example
+│   │   │       │   ├── Using iterated, Paule-Mandel estimate for random effects variance tau
+│   │   │       │   ├── Using one-step chi2, DerSimonian-Laird estimate for random effects variance tau
+│   │   │       │   └── estimate effect size standardized mean difference
+│   │   │       ├── Example Kacker interlaboratory mean
+│   │   │       └── Meta-analysis of proportions
+│   │   │           ├── Mantel-Hanszel odds-ratio using contingency tables
+│   │   │           ├── Replicate fixed effect analysis using GLM with var_weights
+│   │   │           └── changing data to have positive random effects variance
+│   │   ├── Time Series Analysis
+│   │   │   ├── ARMA: Artificial Data
+│   │   │   ├── ARMA: Sunspots Data
+│   │   │   │   └── Sunspots Data
+│   │   │   │       ├── Exercise: How good of in-sample prediction can you do for another series, say, CPI
+│   │   │   │       │   └── Hint:
+│   │   │   │       └── Simulated ARMA(4,1): Model Identification is Difficult
+│   │   │   ├── Autoregressions
+│   │   │   │   ├── Industrial Production
+│   │   │   │   ├── Seasonal Dummies
+│   │   │   │   └── Seasonal Dynamics
+│   │   │   ├── Deterministic Terms
+│   │   │   │   ├── Advanced Construction
+│   │   │   │   ├── Basic Use
+│   │   │   │   │   └── Notes
+│   │   │   │   ├── Custom Deterministic Terms
+│   │   │   │   ├── Model Support
+│   │   │   │   │   └── Simulate Some Data
+│   │   │   │   ├── Using a Date-like Index
+│   │   │   │   └── Using with other models
+│   │   │   ├── Exponential Smoothing
+│   │   │   │   ├── Comparison
+│   │   │   │   ├── Holt’s Method
+│   │   │   │   │   ├── Plots of Seasonally Adjusted Data
+│   │   │   │   │   └── Seasonally adjusted data
+│   │   │   │   ├── Holt’s Winters Seasonal
+│   │   │   │   │   └── The Internals
+│   │   │   │   ├── Loading data
+│   │   │   │   └── Simple Exponential Smoothing
+│   │   │   ├── Markov switching autoregression
+│   │   │   │   ├── Filardo (1994) Time-Varying Transition Probabilities
+│   │   │   │   ├── Hamilton (1989) switching model of GNP
+│   │   │   │   └── Kim, Nelson, and Startz (1998) Three-state Variance Switching
+│   │   │   ├── Markov switching dynamic regression
+│   │   │   │   ├── Federal funds rate with switching intercept
+│   │   │   │   ├── Federal funds rate with switching intercept and lagged dependent variable
+│   │   │   │   ├── Switching variances
+│   │   │   │   └── Taylor rule with 2 or 3 regimes
+│   │   │   ├── Seasonal Decomposition
+│   │   │   │   ├── Atmospheric CO2
+│   │   │   │   ├── Forecasting with STL
+│   │   │   │   ├── LOESS degree
+│   │   │   │   ├── Performance
+│   │   │   │   └── Robust Fitting
+│   │   │   ├── Stationarity and detrending (ADF/KPSS)
+│   │   │   │   ├── ADF test
+│   │   │   │   ├── Conclusion
+│   │   │   │   ├── Detrending by Differencing
+│   │   │   │   └── KPSS test
+│   │   │   └── Time Series Filters
+│   │   │       ├── Baxter-King approximate band-pass filter: Inflation and Unemployment
+│   │   │       │   └── Explore the hypothesis that inflation and unemployment are counter-cyclical.
+│   │   │       ├── Christiano-Fitzgerald approximate band-pass filter: Inflation and Unemployment
+│   │   │       └── Hodrick-Prescott Filter
+│   │   └── User Notes
+│   │       ├── Contrasts
+│   │       │   ├── Example Data
+│   │       │   └── Treatment (Dummy) Coding
+│   │       │       ├── Backward Difference Coding
+│   │       │       ├── Helmert Coding
+│   │       │       ├── Orthogonal Polynomial Coding
+│   │       │       ├── Simple Coding
+│   │       │       └── Sum (Deviation) Coding
+│   │       ├── Dates in Time-Series Models
+│   │       │   ├── Getting started
+│   │       │   └── Using Pandas
+│   │       ├── Distributed Estimations
+│   │       ├── Forecasting in statsmodels
+│   │       │   ├── Basic example
+│   │       │   │   ├── Constructing and estimating the model
+│   │       │   │   ├── Forecasting
+│   │       │   │   ├── Note on what to expect from forecasts
+│   │       │   │   ├── Plotting the data, forecasts, and confidence intervals
+│   │       │   │   └── Specifying the number of forecasts
+│   │       │   ├── Cross validation
+│   │       │   │   └── Example
+│   │       │   │       └── Using extend
+│   │       │   ├── Indexes
+│   │       │   └── Prediction vs Forecasting
+│   │       ├── Formulas
+│   │       │   ├── Categorical variables
+│   │       │   ├── Functions
+│   │       │   ├── Loading modules and functions
+│   │       │   │   └── Import convention
+│   │       │   ├── Multiplicative interactions
+│   │       │   ├── OLS regression using formulas
+│   │       │   ├── Operators
+│   │       │   ├── Removing variables
+│   │       │   └── Using formulas with models that do not (yet) support them
+│   │       ├── Generic Maximum Likelihood
+│   │       │   ├── Example 1: Probit model
+│   │       │   └── Example 2: Negative Binomial Regression for Count Data
+│   │       │       ├── New Model Class
+│   │       │       ├── Numerical precision
+│   │       │       ├── Testing
+│   │       │       └── Usage Example
+│   │       ├── Least squares fitting of models to data
+│   │       │   ├── Linear models
+│   │       │   │   ├── Check against scipy.optimize.curve_fit
+│   │       │   │   └── Check against self-written cost function
+│   │       │   └── Non-linear models
+│   │       └── Prediction
+│   │           ├── Artificial data
+│   │           ├── Create a new sample of explanatory variables Xnew, predict and plot
+│   │           ├── Estimation
+│   │           ├── In-sample prediction
+│   │           ├── Plot comparison
+│   │           └── Predicting with Formulas
+│   ├── Getting Started
+│   │   ├── Data
+│   │   ├── Design matrices (endog & exog)
+│   │   ├── Diagnostics and specification tests
+│   │   ├── Documentation
+│   │   ├── Loading modules and functions
+│   │   ├── Model fit and summary
+│   │   ├── More
+│   │   └── Substantive motivation and model
+│   └── User Guide
+│       ├── Background
+│       │   ├── Fitting models using R-style formulas
+│       │   │   ├── Categorical variables
+│       │   │   ├── Functions
+│       │   │   ├── Loading modules and functions
+│       │   │   ├── Namespaces
+│       │   │   ├── OLS regression using formulas
+│       │   │   ├── Operators
+│       │   │   │   ├── Multiplicative interactions
+│       │   │   │   └── Removing variables
+│       │   │   └── Using formulas with models that do not (yet) support them
+│       │   ├── Import Paths and Structure
+│       │   │   ├── API Import for interactive use
+│       │   │   │   └── Notes
+│       │   │   └── Direct import for programs
+│       │   │       └── Import examples
+│       │   ├── Pitfalls
+│       │   │   ├── Other Problems
+│       │   │   │   └── Insufficient variation in the data
+│       │   │   ├── Repeated calls to fit with different parameters
+│       │   │   └── Unidentified Parameters
+│       │   │       ├── Incomplete convergence in maximum likelihood estimation
+│       │   │       └── Rank deficient exog, perfect multicollinearity
+│       │   └── endog, exog, what’s that?
+│       │       └── Background
+│       ├── Data Sets
+│       │   └── The Datasets Package
+│       │       ├── Additional information
+│       │       ├── Usage
+│       │       │   ├── Extra Information
+│       │       │   └── Loading data as pandas objects
+│       │       └── Using Datasets from R
+│       ├── Other Models
+│       │   ├── Generalized Method of Moments gmm
+│       │   ├── Methods for Survival and Duration Analysis
+│       │   │   ├── Module Reference
+│       │   │   ├── Regression methods
+│       │   │   │   └── References
+│       │   │   └── Survival function estimation and inference
+│       │   ├── Multivariate Statistics multivariate
+│       │   │   └── MultivariateOLS
+│       │   ├── Nonparametric Methods nonparametric
+│       │   │   ├── Asymmetric Kernels
+│       │   │   ├── Kernel density estimation
+│       │   │   ├── Kernel regression
+│       │   │   ├── Module Reference
+│       │   │   └── References
+│       │   └── Other Models miscmodels
+│       │       └── Linear Model with t-distributed errors
+│       ├── Regression and Linear Models
+│       │   ├── ANOVA
+│       │   │   └── Examples
+│       │   ├── Generalized Additive Models (GAM)
+│       │   │   ├── Examples
+│       │   │   │   └── References
+│       │   │   └── Module Reference
+│       │   │       ├── Families and Link Functions
+│       │   │       └── Smooth Basis Functions
+│       │   ├── Generalized Estimating Equations
+│       │   │   ├── Examples
+│       │   │   │   └── References
+│       │   │   └── Module Reference
+│       │   │       ├── Dependence Structures
+│       │   │       ├── Families
+│       │   │       └── Link Functions
+│       │   ├── Generalized Linear Mixed Effects Models
+│       │   │   ├── Module Reference
+│       │   │   └── Technical Documentation
+│       │   │       └── References
+│       │   ├── Generalized Linear Models
+│       │   │   ├── Examples
+│       │   │   ├── Module Reference
+│       │   │   │   ├── Families
+│       │   │   │   ├── Link Functions
+│       │   │   │   └── Variance Functions
+│       │   │   └── Technical Documentation
+│       │   │       └── References
+│       │   ├── Linear Mixed Effects Models
+│       │   │   ├── Examples
+│       │   │   ├── Module Reference
+│       │   │   └── Technical Documentation
+│       │   │       └── References
+│       │   ├── Linear Regression
+│       │   │   ├── Examples
+│       │   │   ├── Module Reference
+│       │   │   │   └── Results Classes
+│       │   │   └── Technical Documentation
+│       │   │       ├── Attributes
+│       │   │       └── References
+│       │   ├── Other Models othermod
+│       │   │   └── Interval Models betareg
+│       │   ├── Regression with Discrete Dependent Variable
+│       │   │   ├── Examples
+│       │   │   ├── Module Reference
+│       │   │   └── Technical Documentation
+│       │   │       └── References
+│       │   └── Robust Linear Models
+│       │       ├── Examples
+│       │       ├── Module Reference
+│       │       └── Technical Documentation
+│       │           └── References
+│       ├── Sandbox
+│       │   └── Sandbox
+│       │       ├── Examples
+│       │       └── Module Reference
+│       │           ├── Miscellaneous
+│       │           ├── Original stats.models
+│       │           ├── Regression and ANOVA
+│       │           ├── Systems of Regression Equations and Simultaneous Equations
+│       │           └── Time Series analysis tsa
+│       │               └── Moving Window Statistics
+│       ├── Statistics and Tools
+│       │   ├── Contingency tables
+│       │   │   ├── A single 2x2 table
+│       │   │   ├── Independence
+│       │   │   ├── See also
+│       │   │   ├── Stratified 2x2 tables
+│       │   │   └── Symmetry and homogeneity
+│       │   ├── Distributions
+│       │   │   ├── Copula
+│       │   │   ├── Count Distributions
+│       │   │   ├── Distribution Extras
+│       │   │   └── Univariate Distributions by non-linear Transformations
+│       │   ├── Empirical Likelihood emplike
+│       │   │   ├── Examples
+│       │   │   └── Introduction
+│       │   │       └── References
+│       │   ├── Graphics
+│       │   ├── Input-Output iolib
+│       │   │   ├── Examples
+│       │   │   └── Module Reference
+│       │   ├── Multiple Imputation with Chained Equations
+│       │   │   └── Implementation Details
+│       │   ├── Optimization
+│       │   │   └── Model Class
+│       │   ├── Statistics stats
+│       │   │   ├── Basic Statistics and t-Tests with frequency weights
+│       │   │   ├── Distance Dependence Measures
+│       │   │   ├── Goodness of Fit Tests and Measures
+│       │   │   ├── Interrater Reliability and Agreement
+│       │   │   ├── Mediation Analysis
+│       │   │   ├── Meta-Analysis
+│       │   │   ├── Moment Helpers
+│       │   │   ├── Multiple Tests and Multiple Comparison Procedures
+│       │   │   ├── Multivariate
+│       │   │   ├── Oaxaca-Blinder Decomposition
+│       │   │   ├── Oneway Anova
+│       │   │   ├── Power and Sample Size Calculations
+│       │   │   ├── Proportion
+│       │   │   ├── Rates
+│       │   │   ├── Residual Diagnostics and Specification Tests
+│       │   │   │   └── Outliers and influence measures
+│       │   │   ├── Robust, Trimmed Statistics
+│       │   │   └── Sandwich Robust Covariances
+│       │   ├── Tools
+│       │   │   └── Module Reference
+│       │   │       ├── Basic tools tools
+│       │   │       └── Measure for fit performance eval_measures
+│       │   └── Working with Large Data Sets
+│       │       ├── Divide and Conquer - Distributing Jobs
+│       │       └── Subsetting your data
+│       └── Time Series Analysis
+│           ├── Time Series Analysis by State Space Methods statespace
+│           │   ├── Additional options and tools
+│           │   │   ├── Holding some parameters fixed and estimating the rest
+│           │   │   └── Low memory options
+│           │   ├── Basic methods and attributes for estimation / filtering / smoothing
+│           │   ├── Low-level state space representation and Kalman filtering
+│           │   ├── Models and Estimation
+│           │   │   ├── Custom state space models
+│           │   │   ├── Dynamic Factor Models
+│           │   │   ├── Linear Exponential Smoothing Models
+│           │   │   ├── Seasonal Autoregressive Integrated Moving-Average with eXogenous regressors (SARIMAX)
+│           │   │   ├── Unobserved Components
+│           │   │   └── Vector Autoregressive Moving-Average with eXogenous regressors (VARMAX)
+│           │   ├── Output and postestimation methods and attributes
+│           │   │   ├── Applying estimated parameters to an updated or different dataset
+│           │   │   ├── Estimates and covariances of the unobserved state
+│           │   │   ├── Residual diagnostics
+│           │   │   └── Understanding the Impact of Data Revisions
+│           │   ├── Overview of usage
+│           │   └── Statespace Tools
+│           ├── Time Series analysis tsa
+│           │   ├── ARMA Process
+│           │   ├── Autoregressive Distributed Lag (ARDL) Models
+│           │   ├── Deterministic Processes
+│           │   ├── Error Correction Models (ECM)
+│           │   ├── Estimation
+│           │   │   ├── Autoregressive Moving-Average Processes (ARMA) and Kalman Filter
+│           │   │   ├── Exponential Smoothing
+│           │   │   └── Univariate Autoregressive Processes (AR)
+│           │   ├── Forecasting Models
+│           │   │   ├── Forecasting after STL Decomposition
+│           │   │   └── The Theta Model
+│           │   ├── Prediction Results
+│           │   ├── Statespace Models
+│           │   └── Vector ARs and Vector Error Correction Models
+│           └── Vector Autoregressions tsa.vector_ar
+│               ├── Forecast Error Variance Decomposition (FEVD)
+│               ├── Impulse Response Analysis
+│               ├── References
+│               ├── Statistical tests
+│               │   ├── Granger causality
+│               │   ├── Normality
+│               │   └── Whiteness of residuals
+│               ├── Structural Vector Autoregressions
+│               ├── VAR(p) processes
+│               │   ├── Forecasting
+│               │   ├── Lag order selection
+│               │   ├── Model fitting
+│               │   └── Post-estimation Analysis
+│               └── Vector Error Correction Models (VECM)
 └── torch
     ├── Audio
     │   ├── Audio Data Augmentation
