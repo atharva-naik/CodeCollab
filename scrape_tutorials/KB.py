@@ -5,6 +5,7 @@
 # and code to analyze KB statistics and properties.
 
 import json
+import numpy as np
 from typing import *
 from tqdm import tqdm
 from collections import defaultdict
@@ -60,17 +61,34 @@ class TutorialPathsKB:
 
 # main
 if __name__ == "__main__":
-    KB_path = [
+    KB_paths = [
         [
             step.strip() for step in task_decomp.split("->")
         ] for task_decomp in json.load(open("./scrape_tutorials/unified_KG_paths.json"))
     ]
-    # get general stats about the index:
-
+    # Get general stats about the index
     # num paths:
+    print("num paths:", len(KB_paths))
     # num modules:
+    module_ctr = defaultdict(lambda:0)
+    for path in KB_paths: module_ctr[path[0]] += 1
+    module_ctr = {k: v for k,v in sorted(module_ctr.items(), reverse=True, key=lambda x: x[1])}
+    print("num modules:", len(module_ctr))
     # num paths per module:
+    print("num paths per module:")
+    for module, num_paths in module_ctr.items():
+        print(module, num_paths)
     # num steps:
+    uniq_steps = set()
+    path_depths = []
+    for path in KB_paths:
+        path_depths.append(len(path))
+        for step in path.split("->"):
+            uniq_steps.add(step.strip())
+    print(f"num steps: {len(uniq_steps)}")
     # average path depth/decomp steps:
+    print("average path depth/decomp steps:", np.mean(path_depths))
     # max path depth:
+    print("max path depth:", np.max(path_depths))
     # min path depth:
+    print("min path depth:", np.min(path_depths))
