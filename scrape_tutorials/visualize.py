@@ -75,7 +75,7 @@ class TreeLibTreeBuilderFromData:
 
 # join KGs/KBs from various modules.
 class ModuleJoiner:
-    def __init__(self, list_of_modules: List[str]=["torch", "numpy", "pandas_toms_blog", "seaborn", "scipy"]):
+    def __init__(self, list_of_modules: List[str]=["torch", "numpy", "sklearn", "pandas_toms_blog", "seaborn", "scipy"]):
         data = {}
         for module in list_of_modules:
             for key, value in json.load(open(f"./scrape_tutorials/KG_paths/{module}.json")).items():

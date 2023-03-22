@@ -723,6 +723,885 @@ root
 │           │   └── Plotting subsets of data with semantic mappings
 │           ├── Relating variables with scatter plots
 │           └── Showing multiple relationships with facets
+├── sklearn
+│   ├── Examples
+│   │   ├── Biclustering
+│   │   │   ├── A demo of the Spectral Biclustering algorithm
+│   │   │   ├── A demo of the Spectral Co-Clustering algorithm
+│   │   │   └── Biclustering documents with the Spectral Co-clustering algorithm
+│   │   ├── Calibration
+│   │   │   ├── Comparison of Calibration of Classifiers
+│   │   │   │   ├── Calibration curves
+│   │   │   │   ├── Dataset
+│   │   │   │   └── References
+│   │   │   ├── Probability Calibration curves
+│   │   │   │   ├── Calibration curves
+│   │   │   │   │   ├── Gaussian Naive Bayes
+│   │   │   │   │   └── Linear support vector classifier
+│   │   │   │   ├── Dataset
+│   │   │   │   ├── References
+│   │   │   │   └── Summary
+│   │   │   ├── Probability Calibration for 3-class classification
+│   │   │   │   ├── Compare probabilities
+│   │   │   │   ├── Data
+│   │   │   │   └── Fitting and calibration
+│   │   │   └── Probability calibration of classifiers
+│   │   │       ├── Gaussian Naive-Bayes
+│   │   │       ├── Generate synthetic dataset
+│   │   │       └── Plot data and the predicted probabilities
+│   │   ├── Classification
+│   │   │   ├── Classifier comparison
+│   │   │   ├── Linear and Quadratic Discriminant Analysis with covariance ellipsoid
+│   │   │   │   ├── Colormap
+│   │   │   │   ├── Datasets generation functions
+│   │   │   │   ├── Plot
+│   │   │   │   └── Plot functions
+│   │   │   ├── Normal, Ledoit-Wolf and OAS Linear Discriminant Analysis for classification
+│   │   │   ├── Plot classification probability
+│   │   │   └── Recognizing hand-written digits
+│   │   │       ├── Classification
+│   │   │       └── Digits dataset
+│   │   ├── Clustering
+│   │   │   ├── A demo of K-Means clustering on the handwritten digits data
+│   │   │   │   ├── Define our evaluation benchmark
+│   │   │   │   ├── Load the dataset
+│   │   │   │   ├── Run the benchmark
+│   │   │   │   └── Visualize the results on PCA-reduced data
+│   │   │   ├── A demo of structured Ward hierarchical clustering on an image of coins
+│   │   │   │   ├── Compute clustering
+│   │   │   │   ├── Define structure of the data
+│   │   │   │   ├── Generate data
+│   │   │   │   └── Plot the results on an image
+│   │   │   ├── A demo of the mean-shift clustering algorithm
+│   │   │   │   ├── Compute clustering with MeanShift
+│   │   │   │   ├── Generate sample data
+│   │   │   │   └── Plot result
+│   │   │   ├── Adjustment for chance in clustering performance evaluation
+│   │   │   │   ├── Defining the list of metrics to evaluate
+│   │   │   │   ├── First experiment: fixed ground truth labels and growing number of clusters
+│   │   │   │   └── Second experiment: varying number of classes and clusters
+│   │   │   ├── Agglomerative clustering with and without structure
+│   │   │   ├── Agglomerative clustering with different metrics
+│   │   │   ├── An example of K-Means++ initialization
+│   │   │   ├── Bisecting K-Means and Regular K-Means Performance Comparison
+│   │   │   ├── Color Quantization using K-Means
+│   │   │   ├── Compare BIRCH and MiniBatchKMeans
+│   │   │   ├── Comparing different clustering algorithms on toy datasets
+│   │   │   ├── Comparing different hierarchical linkage methods on toy datasets
+│   │   │   ├── Comparison of the K-Means and MiniBatchKMeans clustering algorithms
+│   │   │   │   ├── Compute clustering with KMeans
+│   │   │   │   ├── Compute clustering with MiniBatchKMeans
+│   │   │   │   ├── Establishing parity between clusters
+│   │   │   │   ├── Generate the data
+│   │   │   │   └── Plotting the results
+│   │   │   ├── Demo of DBSCAN clustering algorithm
+│   │   │   │   ├── Compute DBSCAN
+│   │   │   │   ├── Data generation
+│   │   │   │   └── Plot results
+│   │   │   ├── Demo of OPTICS clustering algorithm
+│   │   │   ├── Demo of affinity propagation clustering algorithm
+│   │   │   │   ├── Compute Affinity Propagation
+│   │   │   │   ├── Generate sample data
+│   │   │   │   └── Plot result
+│   │   │   ├── Demonstration of k-means assumptions
+│   │   │   │   ├── Data generation
+│   │   │   │   ├── Final remarks
+│   │   │   │   ├── Fit models and plot results
+│   │   │   │   └── Possible solutions
+│   │   │   ├── Empirical evaluation of the impact of k-means initialization
+│   │   │   ├── Feature agglomeration
+│   │   │   ├── Feature agglomeration vs. univariate selection
+│   │   │   ├── Hierarchical clustering: structured vs unstructured ward
+│   │   │   │   ├── Compute clustering
+│   │   │   │   ├── Generate data
+│   │   │   │   ├── Plot result
+│   │   │   │   └── We are defining k-Nearest Neighbors with 10 neighbors
+│   │   │   ├── Inductive Clustering
+│   │   │   ├── K-means Clustering
+│   │   │   ├── Online learning of a dictionary of parts of faces
+│   │   │   │   ├── Learn the dictionary of images
+│   │   │   │   ├── Load the data
+│   │   │   │   └── Plot the results
+│   │   │   ├── Plot Hierarchical Clustering Dendrogram
+│   │   │   ├── Segmenting the picture of greek coins in regions
+│   │   │   ├── Selecting the number of clusters with silhouette analysis on KMeans clustering
+│   │   │   ├── Spectral clustering for image segmentation
+│   │   │   │   ├── Generate the data
+│   │   │   │   ├── Plotting four circles
+│   │   │   │   └── Plotting two circles
+│   │   │   ├── Various Agglomerative Clustering on a 2D embedding of digits
+│   │   │   └── Vector Quantization Example
+│   │   │       ├── Compression via vector quantization
+│   │   │       │   ├── Encoding strategy
+│   │   │       │   └── Memory footprint
+│   │   │       └── Original image
+│   │   ├── Covariance estimation
+│   │   │   ├── Ledoit-Wolf vs OAS estimation
+│   │   │   ├── Robust covariance estimation and Mahalanobis distances relevance
+│   │   │   │   ├── Comparison of results
+│   │   │   │   └── Generate data
+│   │   │   ├── Robust vs Empirical covariance estimate
+│   │   │   │   ├── Evaluation
+│   │   │   │   ├── Minimum Covariance Determinant Estimator
+│   │   │   │   └── References
+│   │   │   ├── Shrinkage covariance estimation: LedoitWolf vs OAS and max-likelihood
+│   │   │   │   ├── Compare different approaches to setting the regularization parameter
+│   │   │   │   ├── Compute the likelihood on test data
+│   │   │   │   ├── Generate sample data
+│   │   │   │   └── Plot results
+│   │   │   └── Sparse inverse covariance estimation
+│   │   │       ├── Estimate the covariance
+│   │   │       ├── Generate the data
+│   │   │       └── Plot the results
+│   │   ├── Cross decomposition
+│   │   │   ├── Compare cross decomposition methods
+│   │   │   │   ├── CCA (PLS mode B with symmetric deflation)
+│   │   │   │   ├── Canonical (symmetric) PLS
+│   │   │   │   │   ├── Scatter plot of scores
+│   │   │   │   │   └── Transform data
+│   │   │   │   ├── Dataset based latent variables model
+│   │   │   │   ├── PLS regression, with multivariate response, a.k.a. PLS2
+│   │   │   │   └── PLS regression, with univariate response, a.k.a. PLS1
+│   │   │   └── Principal Component Regression vs Partial Least Squares Regression
+│   │   │       ├── Projection on one component and predictive power
+│   │   │       └── The data
+│   │   ├── Dataset examples
+│   │   │   ├── Plot randomly generated classification dataset
+│   │   │   ├── Plot randomly generated multilabel dataset
+│   │   │   ├── The Digit Dataset
+│   │   │   └── The Iris Dataset
+│   │   ├── Decision Trees
+│   │   │   ├── Decision Tree Regression
+│   │   │   ├── Multi-output Decision Tree Regression
+│   │   │   ├── Plot the decision surface of decision trees trained on the iris dataset
+│   │   │   ├── Post pruning decision trees with cost complexity pruning
+│   │   │   │   ├── Accuracy vs alpha for training and testing sets
+│   │   │   │   └── Total impurity of leaves vs effective alphas of pruned tree
+│   │   │   └── Understanding the decision tree structure
+│   │   │       ├── Decision path
+│   │   │       ├── Train tree classifier
+│   │   │       └── Tree structure
+│   │   ├── Decomposition
+│   │   │   ├── Beta-divergence loss functions
+│   │   │   ├── Blind source separation using FastICA
+│   │   │   │   ├── Fit ICA and PCA models
+│   │   │   │   ├── Generate sample data
+│   │   │   │   └── Plot results
+│   │   │   ├── Comparison of LDA and PCA 2D projection of Iris dataset
+│   │   │   ├── Faces dataset decompositions
+│   │   │   │   ├── Dataset preparation
+│   │   │   │   ├── Decomposition
+│   │   │   │   │   ├── Cluster centers - MiniBatchKMeans
+│   │   │   │   │   ├── Dictionary learning
+│   │   │   │   │   ├── Eigenfaces - PCA using randomized SVD
+│   │   │   │   │   ├── Factor Analysis components - FA
+│   │   │   │   │   ├── Independent components - FastICA
+│   │   │   │   │   ├── Non-negative components - NMF
+│   │   │   │   │   └── Sparse components - MiniBatchSparsePCA
+│   │   │   │   └── Decomposition: Dictionary learning
+│   │   │   │       ├── Dictionary learning - positive code
+│   │   │   │       ├── Dictionary learning - positive dictionary
+│   │   │   │       └── Dictionary learning - positive dictionary & code
+│   │   │   ├── Factor Analysis (with rotation) to visualize patterns
+│   │   │   ├── FastICA on 2D point clouds
+│   │   │   │   ├── Generate sample data
+│   │   │   │   └── Plot results
+│   │   │   ├── Image denoising using dictionary learning
+│   │   │   │   ├── Display the distorted image
+│   │   │   │   ├── Extract noisy patches and reconstruct them using the dictionary
+│   │   │   │   ├── Extract reference patches
+│   │   │   │   ├── Generate distorted image
+│   │   │   │   └── Learn the dictionary from reference patches
+│   │   │   ├── Incremental PCA
+│   │   │   ├── Kernel PCA
+│   │   │   │   ├── Projecting data: PCA vs. KernelPCA
+│   │   │   │   └── Projecting into the original feature space
+│   │   │   ├── Model selection with Probabilistic PCA and Factor Analysis (FA)
+│   │   │   │   ├── Create the data
+│   │   │   │   └── Fit the models
+│   │   │   ├── PCA example with Iris Data-set
+│   │   │   ├── Principal components analysis (PCA)
+│   │   │   │   ├── Create the data
+│   │   │   │   └── Plot the figures
+│   │   │   └── Sparse coding with a precomputed dictionary
+│   │   ├── Ensemble methods
+│   │   │   ├── Categorical Feature Support in Gradient Boosting
+│   │   │   │   ├── Gradient boosting estimator with dropped categorical features
+│   │   │   │   ├── Gradient boosting estimator with native categorical support
+│   │   │   │   ├── Gradient boosting estimator with one-hot encoding
+│   │   │   │   ├── Gradient boosting estimator with ordinal encoding
+│   │   │   │   ├── Limiting the number of splits
+│   │   │   │   ├── Load Ames Housing dataset
+│   │   │   │   └── Model comparison
+│   │   │   ├── Combine predictors using stacking
+│   │   │   │   ├── Download the dataset
+│   │   │   │   ├── Make pipeline to preprocess the data
+│   │   │   │   ├── Measure and plot the results
+│   │   │   │   └── Stack of predictors on a single data set
+│   │   │   ├── Comparing random forests and the multi-output meta estimator
+│   │   │   ├── Decision Tree Regression with AdaBoost
+│   │   │   │   ├── Plotting the results
+│   │   │   │   ├── Preparing the data
+│   │   │   │   └── Training and prediction with DecisionTree and AdaBoost Regressors
+│   │   │   ├── Discrete versus Real AdaBoost
+│   │   │   │   ├── Adaboost with discrete SAMME and real SAMME.R
+│   │   │   │   ├── Concluding remarks
+│   │   │   │   ├── Plotting the results
+│   │   │   │   └── Preparing the data and baseline models
+│   │   │   ├── Early stopping of Gradient Boosting
+│   │   │   │   ├── Compare fit times with and without early stopping
+│   │   │   │   └── Compare scores with and without early stopping
+│   │   │   ├── Feature importances with a forest of trees
+│   │   │   │   ├── Data generation and model fitting
+│   │   │   │   ├── Feature importance based on feature permutation
+│   │   │   │   └── Feature importance based on mean decrease in impurity
+│   │   │   ├── Feature transformations with ensembles of trees
+│   │   │   ├── Gradient Boosting Out-of-Bag estimates
+│   │   │   ├── Gradient Boosting regression
+│   │   │   │   ├── Data preprocessing
+│   │   │   │   ├── Fit regression model
+│   │   │   │   ├── Load the data
+│   │   │   │   ├── Plot feature importance
+│   │   │   │   └── Plot training deviance
+│   │   │   ├── Gradient Boosting regularization
+│   │   │   ├── Hashing feature transformation using Totally Random Trees
+│   │   │   ├── IsolationForest example
+│   │   │   │   ├── Data generation
+│   │   │   │   ├── Plot discrete decision boundary
+│   │   │   │   ├── Plot path length decision boundary
+│   │   │   │   └── Training of the model
+│   │   │   ├── Monotonic Constraints
+│   │   │   │   └── Using feature names to specify monotonic constraints
+│   │   │   ├── Multi-class AdaBoosted Decision Trees
+│   │   │   ├── OOB Errors for Random Forests
+│   │   │   ├── Pixel importances with a parallel forest of trees
+│   │   │   │   ├── Feature importance based on mean decrease in impurity (MDI)
+│   │   │   │   └── Loading the data and model fitting
+│   │   │   ├── Plot class probabilities calculated by the VotingClassifier
+│   │   │   ├── Plot individual and voting regression predictions
+│   │   │   │   ├── Making predictions
+│   │   │   │   ├── Plot the results
+│   │   │   │   └── Training classifiers
+│   │   │   ├── Plot the decision boundaries of a VotingClassifier
+│   │   │   ├── Plot the decision surfaces of ensembles of trees on the iris dataset
+│   │   │   ├── Prediction Intervals for Gradient Boosting Regression
+│   │   │   │   ├── Analysis of the error metrics
+│   │   │   │   ├── Calibration of the confidence interval
+│   │   │   │   ├── Fitting non-linear quantile and least squares regressors
+│   │   │   │   └── Tuning the hyper-parameters of the quantile regressors
+│   │   │   ├── Single estimator versus bagging: bias-variance decomposition
+│   │   │   │   └── References
+│   │   │   └── Two-class AdaBoost
+│   │   ├── Examples based on real world datasets
+│   │   │   ├── Compressive sensing: tomography reconstruction with L1 prior (Lasso)
+│   │   │   ├── Faces recognition example using eigenfaces and SVMs
+│   │   │   ├── Image denoising using kernel PCA
+│   │   │   │   ├── Learn the PCA basis
+│   │   │   │   ├── Load the dataset via OpenML
+│   │   │   │   └── Reconstruct and denoise test images
+│   │   │   ├── Libsvm GUI
+│   │   │   ├── Model Complexity Influence
+│   │   │   │   ├── Benchmark influence
+│   │   │   │   ├── Choose parameters
+│   │   │   │   ├── Conclusion
+│   │   │   │   ├── Load the data
+│   │   │   │   └── Run the code and plot the results
+│   │   │   ├── Out-of-core classification of text documents
+│   │   │   │   ├── Main
+│   │   │   │   ├── Plot results
+│   │   │   │   └── Reuters Dataset related routines
+│   │   │   ├── Outlier detection on a real data set
+│   │   │   │   ├── First example
+│   │   │   │   └── Second example
+│   │   │   ├── Prediction Latency
+│   │   │   │   ├── Benchmark and plot helper functions
+│   │   │   │   ├── Benchmark bulk/atomic prediction speed for various regressors
+│   │   │   │   ├── Benchmark n_features influence on prediction speed
+│   │   │   │   └── Benchmark throughput
+│   │   │   ├── Species distribution modeling
+│   │   │   │   └── References
+│   │   │   ├── Time-related feature engineering
+│   │   │   │   ├── Concluding remarks
+│   │   │   │   ├── Data exploration on the Bike Sharing Demand dataset
+│   │   │   │   ├── Gradient Boosting
+│   │   │   │   ├── Modeling non-linear feature interactions with kernels
+│   │   │   │   ├── Modeling pairwise interactions with splines and polynomial features
+│   │   │   │   ├── Naive linear regression
+│   │   │   │   ├── Periodic spline features
+│   │   │   │   ├── Qualitative analysis of the impact of features on linear model predictions
+│   │   │   │   ├── Time-based cross-validation
+│   │   │   │   ├── Time-steps as categories
+│   │   │   │   └── Trigonometric features
+│   │   │   ├── Topic extraction with Non-negative Matrix Factorization and Latent Dirichlet Allocation
+│   │   │   ├── Visualizing the stock market structure
+│   │   │   │   ├── Clustering using affinity propagation
+│   │   │   │   ├── Embedding in 2D space
+│   │   │   │   ├── Learning a graph structure
+│   │   │   │   ├── Retrieve the data from Internet
+│   │   │   │   └── Visualization
+│   │   │   └── Wikipedia principal eigenvector
+│   │   │       ├── Computing Centrality scores
+│   │   │       ├── Computing Principal Singular Vector using Randomized SVD
+│   │   │       ├── Computing the Adjacency matrix
+│   │   │       ├── Download data, if not already on disk
+│   │   │       └── Loading the redirect files
+│   │   ├── Feature Selection
+│   │   │   ├── Comparison of F-test and mutual information
+│   │   │   ├── Model-based and sequential feature selection
+│   │   │   │   ├── Discussion
+│   │   │   │   ├── Feature importance from coefficients
+│   │   │   │   ├── Loading the data
+│   │   │   │   ├── Selecting features based on importance
+│   │   │   │   └── Selecting features with Sequential Feature Selection
+│   │   │   ├── Pipeline ANOVA SVM
+│   │   │   ├── Recursive feature elimination
+│   │   │   ├── Recursive feature elimination with cross-validation
+│   │   │   │   ├── Data generation
+│   │   │   │   ├── Model training and selection
+│   │   │   │   └── Plot number of features VS. cross-validation scores
+│   │   │   └── Univariate Feature Selection
+│   │   │       ├── Compare with SVMs
+│   │   │       ├── Generate sample data
+│   │   │       └── Univariate feature selection
+│   │   ├── Gaussian Mixture Models
+│   │   │   ├── Concentration Prior Type Analysis of Variation Bayesian Gaussian Mixture
+│   │   │   ├── Density Estimation for a Gaussian mixture
+│   │   │   ├── GMM Initialization Methods
+│   │   │   ├── GMM covariances
+│   │   │   ├── Gaussian Mixture Model Ellipsoids
+│   │   │   ├── Gaussian Mixture Model Selection
+│   │   │   │   ├── Data generation
+│   │   │   │   ├── Model training and selection
+│   │   │   │   ├── Plot the BIC scores
+│   │   │   │   └── Plot the best model
+│   │   │   └── Gaussian Mixture Model Sine Curve
+│   │   ├── Gaussian Process for Machine Learning
+│   │   │   ├── Comparison of kernel ridge and Gaussian process regression
+│   │   │   │   ├── Final conclusion
+│   │   │   │   ├── Generating a dataset
+│   │   │   │   ├── Kernel methods: kernel ridge and Gaussian process
+│   │   │   │   │   ├── Gaussian process regression
+│   │   │   │   │   └── Kernel ridge
+│   │   │   │   └── Limitations of a simple linear model
+│   │   │   ├── Gaussian Processes regression: basic introductory example
+│   │   │   │   ├── Dataset generation
+│   │   │   │   ├── Example with noise-free target
+│   │   │   │   └── Example with noisy targets
+│   │   │   ├── Gaussian process classification (GPC) on iris dataset
+│   │   │   ├── Gaussian process regression (GPR) on Mauna Loa CO2 data
+│   │   │   │   ├── Build the dataset
+│   │   │   │   ├── Design the proper kernel
+│   │   │   │   ├── Interpretation of kernel hyperparameters
+│   │   │   │   └── Model fitting and extrapolation
+│   │   │   ├── Gaussian process regression (GPR) with noise-level estimation
+│   │   │   │   ├── Data generation
+│   │   │   │   └── Optimisation of kernel hyperparameters in GPR
+│   │   │   ├── Gaussian processes on discrete data structures
+│   │   │   │   ├── Classification
+│   │   │   │   ├── Regression
+│   │   │   │   └── Sequence similarity matrix under the kernel
+│   │   │   ├── Illustration of Gaussian process classification (GPC) on the XOR dataset
+│   │   │   ├── Illustration of prior and posterior Gaussian process for different kernels
+│   │   │   │   ├── Dataset and Gaussian process generation
+│   │   │   │   ├── Helper function
+│   │   │   │   └── Kernel cookbook
+│   │   │   │       ├── Dot-product kernel
+│   │   │   │       ├── Exp-Sine-Squared kernel
+│   │   │   │       ├── Matérn kernel
+│   │   │   │       ├── Radial Basis Function kernel
+│   │   │   │       └── Rational Quadradtic kernel
+│   │   │   ├── Iso-probability lines for Gaussian Processes classification (GPC)
+│   │   │   └── Probabilistic predictions with Gaussian process classification (GPC)
+│   │   ├── Generalized Linear Models
+│   │   │   ├── Comparing Linear Bayesian Regressors
+│   │   │   │   ├── Bayesian regressions with polynomial feature expansion
+│   │   │   │   │   ├── Fit the regressors
+│   │   │   │   │   ├── Generate synthetic dataset
+│   │   │   │   │   └── Plotting polynomial regressions with std errors of the scores
+│   │   │   │   └── Models robustness to recover the ground truth weights
+│   │   │   │       ├── Fit the regressors
+│   │   │   │       ├── Generate synthetic dataset
+│   │   │   │       ├── Plot the marginal log-likelihood
+│   │   │   │       └── Plot the true and estimated coefficients
+│   │   │   ├── Comparing various online solvers
+│   │   │   ├── Curve Fitting with Bayesian Ridge Regression
+│   │   │   │   ├── Fit by cubic polynomial
+│   │   │   │   ├── Generate sinusoidal data with noise
+│   │   │   │   └── Plot the true and predicted curves with log marginal likelihood (L)
+│   │   │   ├── Early stopping of Stochastic Gradient Descent
+│   │   │   ├── Fitting an Elastic Net with a precomputed Gram Matrix and Weighted Samples
+│   │   │   ├── HuberRegressor vs Ridge on dataset with strong outliers
+│   │   │   ├── Joint feature selection with multi-task Lasso
+│   │   │   │   ├── Fit models
+│   │   │   │   ├── Generate data
+│   │   │   │   └── Plot support and time series
+│   │   │   ├── L1 Penalty and Sparsity in Logistic Regression
+│   │   │   ├── Lasso and Elastic Net
+│   │   │   ├── Lasso and Elastic Net for Sparse Signals
+│   │   │   │   ├── Data Generation
+│   │   │   │   ├── ElasticNet
+│   │   │   │   ├── Lasso
+│   │   │   │   └── Plot
+│   │   │   ├── Lasso model selection via information criteria
+│   │   │   ├── Lasso model selection: AIC-BIC / cross-validation
+│   │   │   │   ├── Conclusion
+│   │   │   │   ├── Dataset
+│   │   │   │   ├── Selecting Lasso via an information criterion
+│   │   │   │   └── Selecting Lasso via cross-validation
+│   │   │   │       ├── Lasso via coordinate descent
+│   │   │   │       ├── Lasso via least angle regression
+│   │   │   │       └── Summary of cross-validation approach
+│   │   │   ├── Lasso on dense and sparse data
+│   │   │   │   ├── Comparing the two Lasso implementations on Dense data
+│   │   │   │   └── Comparing the two Lasso implementations on Sparse data
+│   │   │   ├── Lasso path using LARS
+│   │   │   ├── Linear Regression Example
+│   │   │   ├── Logistic Regression 3-class Classifier
+│   │   │   ├── Logistic function
+│   │   │   ├── MNIST classification using multinomial logistic + L1
+│   │   │   ├── Multiclass sparse logistic regression on 20newgroups
+│   │   │   ├── Non-negative least squares
+│   │   │   ├── One-Class SVM versus One-Class SVM using Stochastic Gradient Descent
+│   │   │   ├── Ordinary Least Squares and Ridge Regression Variance
+│   │   │   ├── Orthogonal Matching Pursuit
+│   │   │   ├── Plot Ridge coefficients as a function of the L2 regularization
+│   │   │   ├── Plot Ridge coefficients as a function of the regularization
+│   │   │   │   ├── Compute paths
+│   │   │   │   └── Display results
+│   │   │   ├── Plot multi-class SGD on the iris dataset
+│   │   │   ├── Plot multinomial and One-vs-Rest Logistic Regression
+│   │   │   ├── Poisson regression and non-normal loss
+│   │   │   │   ├── (Generalized) linear models
+│   │   │   │   ├── A constant prediction baseline
+│   │   │   │   ├── Evaluation of the calibration of predictions
+│   │   │   │   ├── Evaluation of the ranking power
+│   │   │   │   ├── Gradient Boosting Regression Trees for Poisson regression
+│   │   │   │   ├── Main takeaways
+│   │   │   │   └── The French Motor Third-Party Liability Claims dataset
+│   │   │   ├── Polynomial and Spline interpolation
+│   │   │   │   └── Periodic Splines
+│   │   │   ├── Quantile regression
+│   │   │   │   ├── Comparing QuantileRegressor and LinearRegression
+│   │   │   │   ├── Dataset generation
+│   │   │   │   └── Fitting a QuantileRegressor
+│   │   │   ├── Regularization path of L1- Logistic Regression
+│   │   │   │   ├── Compute regularization path
+│   │   │   │   ├── Load data
+│   │   │   │   └── Plot regularization path
+│   │   │   ├── Robust linear estimator fitting
+│   │   │   ├── Robust linear model estimation using RANSAC
+│   │   │   ├── SGD: Maximum margin separating hyperplane
+│   │   │   ├── SGD: Penalties
+│   │   │   ├── SGD: Weighted samples
+│   │   │   ├── SGD: convex loss functions
+│   │   │   ├── Sparsity Example: Fitting only features 1  and 2
+│   │   │   ├── Theil-Sen Regression
+│   │   │   │   ├── Outliers in the X direction
+│   │   │   │   └── Outliers only in the y direction
+│   │   │   └── Tweedie regression on insurance claims
+│   │   │       ├── Frequency model – Poisson distribution
+│   │   │       ├── Loading datasets, basic feature extraction and target definitions
+│   │   │       ├── Pure Premium Modeling via a Product Model vs single TweedieRegressor
+│   │   │       └── Severity Model -  Gamma distribution
+│   │   ├── Inspection
+│   │   │   ├── Common pitfalls in the interpretation of coefficients of linear models
+│   │   │   │   └── 
+│   │   │   ├── Failure of Machine Learning to infer causal effects
+│   │   │   │   ├── Description of the simulated data
+│   │   │   │   ├── Income prediction with fully observed variables
+│   │   │   │   ├── Income prediction with partial observations
+│   │   │   │   ├── Lessons learned
+│   │   │   │   └── The dataset: simulated hourly wages
+│   │   │   ├── Partial Dependence and Individual Conditional Expectation Plots
+│   │   │   │   ├── 1-way partial dependence with different models
+│   │   │   │   ├── 2D interaction plots
+│   │   │   │   ├── Bike sharing dataset preprocessing
+│   │   │   │   └── Preprocessor for machine-learning models
+│   │   │   │       ├── Preprocessor for the gradient boosting model
+│   │   │   │       └── Preprocessor for the neural network model
+│   │   │   ├── Permutation Importance vs Random Forest Feature Importance (MDI)
+│   │   │   │   ├── Accuracy of the Model
+│   │   │   │   ├── Data Loading and Feature Engineering
+│   │   │   │   └── Tree’s Feature Importance from Mean Decrease in Impurity (MDI)
+│   │   │   └── Permutation Importance with Multicollinear or Correlated Features
+│   │   │       ├── Handling Multicollinear Features
+│   │   │       └── Random Forest Feature Importance on Breast Cancer Data
+│   │   ├── Kernel Approximation
+│   │   │   └── Scalable learning with polynomial kernel approximation
+│   │   │       ├── Comparing the results
+│   │   │       │   └── References
+│   │   │       ├── Establishing a baseline model
+│   │   │       ├── Establishing the kernel approximation model
+│   │   │       ├── Establishing the kernelized SVM model
+│   │   │       ├── Feature normalization
+│   │   │       ├── Partitioning the data
+│   │   │       └── Preparing the data
+│   │   ├── Manifold learning
+│   │   │   ├── Comparison of Manifold Learning methods
+│   │   │   │   ├── Dataset preparation
+│   │   │   │   └── Define algorithms for the manifold learning
+│   │   │   │       ├── Isomap Embedding
+│   │   │   │       ├── Locally Linear Embeddings
+│   │   │   │       ├── Multidimensional scaling
+│   │   │   │       ├── Spectral embedding for non-linear dimensionality reduction
+│   │   │   │       └── T-distributed Stochastic Neighbor Embedding
+│   │   │   ├── Manifold Learning methods on a severed sphere
+│   │   │   ├── Manifold learning on handwritten digits: Locally Linear Embedding, Isomap...
+│   │   │   ├── Multi-dimensional scaling
+│   │   │   ├── Swiss Roll And Swiss-Hole Reduction
+│   │   │   │   ├── Concluding remarks
+│   │   │   │   ├── Swiss Roll
+│   │   │   │   └── Swiss-Hole
+│   │   │   └── t-SNE: The effect of various perplexity values on the shape
+│   │   ├── Miscellaneous
+│   │   │   ├── Advanced Plotting With Partial Dependence
+│   │   │   │   ├── Plotting partial dependence for one feature
+│   │   │   │   ├── Plotting partial dependence for two features
+│   │   │   │   ├── Plotting partial dependence of the two models together
+│   │   │   │   └── Train models on the diabetes dataset
+│   │   │   ├── Comparing anomaly detection algorithms for outlier detection on toy datasets
+│   │   │   ├── Comparison of kernel ridge regression and SVR
+│   │   │   │   ├── Compare times of SVR and Kernel Ridge Regression
+│   │   │   │   ├── Construct the kernel-based regression models
+│   │   │   │   ├── Generate sample data
+│   │   │   │   ├── Look at the results
+│   │   │   │   ├── Visualize the learning curves
+│   │   │   │   └── Visualize training and prediction times
+│   │   │   ├── Displaying Pipelines
+│   │   │   │   ├── Displaying a Complex Pipeline Chaining a Column Transformer
+│   │   │   │   ├── Displaying a Grid Search over a Pipeline with a Classifier
+│   │   │   │   ├── Displaying a Pipeline Chaining Multiple Preprocessing Steps & Classifier
+│   │   │   │   ├── Displaying a Pipeline and Dimensionality Reduction and Classifier
+│   │   │   │   └── Displaying a Pipeline with a Preprocessing Step and Classifier
+│   │   │   ├── Displaying estimators and complex pipelines
+│   │   │   │   ├── Compact text representation
+│   │   │   │   └── Rich HTML representation
+│   │   │   ├── Evaluation of outlier detection estimators
+│   │   │   │   ├── Define a data preprocessing function
+│   │   │   │   ├── Define an outlier prediction function
+│   │   │   │   └── Plot and interpret results
+│   │   │   ├── Explicit feature map approximation for RBF kernels
+│   │   │   │   ├── Decision Surfaces of RBF Kernel SVM and Linear SVM
+│   │   │   │   ├── Python package and dataset imports, load dataset
+│   │   │   │   └── Timing and accuracy plots
+│   │   │   ├── Face completion with a multi-output estimators
+│   │   │   ├── Introducing the `set_output` API
+│   │   │   ├── Isotonic Regression
+│   │   │   ├── Multilabel classification
+│   │   │   ├── ROC Curve with Visualization API
+│   │   │   │   ├── Load Data and Train a SVC
+│   │   │   │   ├── Plotting the ROC Curve
+│   │   │   │   └── Training a Random Forest and Plotting the ROC Curve
+│   │   │   ├── The Johnson-Lindenstrauss bound for embedding with random projections
+│   │   │   │   ├── Empirical validation
+│   │   │   │   ├── Remarks
+│   │   │   │   └── Theoretical bounds
+│   │   │   └── Visualizations with Display Objects
+│   │   │       └── Load Data and train model
+│   │   │           ├── Combining the display objects into a single plot
+│   │   │           └── Create
+│   │   ├── Missing Value Imputation
+│   │   │   ├── Imputing missing values before building an estimator
+│   │   │   │   ├── Download the data and make missing values sets
+│   │   │   │   ├── Impute the missing data and score
+│   │   │   │   │   ├── Estimate the score
+│   │   │   │   │   ├── Impute missing values with mean
+│   │   │   │   │   ├── Iterative imputation of the missing values
+│   │   │   │   │   ├── Missing information
+│   │   │   │   │   ├── Replace missing values by 0
+│   │   │   │   │   └── kNN-imputation of the missing values
+│   │   │   │   └── Plot the results
+│   │   │   └── Imputing missing values with variants of IterativeImputer
+│   │   ├── Model Selection
+│   │   │   ├── Balance model complexity and cross-validated score
+│   │   │   ├── Class Likelihood Ratios to measure classification performance
+│   │   │   │   ├── Cross-validation of likelihood ratios
+│   │   │   │   ├── Invariance with respect to prevalence
+│   │   │   │   └── Pre-test vs. post-test analysis
+│   │   │   ├── Comparing randomized search and grid search for hyperparameter estimation
+│   │   │   ├── Comparison between grid search and successive halving
+│   │   │   ├── Confusion matrix
+│   │   │   ├── Custom refit strategy of a grid search with cross-validation
+│   │   │   │   ├── Define our grid-search strategy
+│   │   │   │   ├── The dataset
+│   │   │   │   └── Tuning hyper-parameters
+│   │   │   ├── Demonstration of multi-metric evaluation on cross_val_score and GridSearchCV
+│   │   │   │   ├── Plotting the result
+│   │   │   │   └── Running GridSearchCV using multiple evaluation metrics
+│   │   │   ├── Detection error tradeoff (DET) curve
+│   │   │   │   ├── Define the classifiers
+│   │   │   │   ├── Generate synthetic data
+│   │   │   │   └── Plot ROC and DET curves
+│   │   │   ├── Multiclass Receiver Operating Characteristic (ROC)
+│   │   │   │   ├── Load and prepare data
+│   │   │   │   ├── One-vs-One multiclass ROC
+│   │   │   │   │   ├── Plot all OvO ROC curves together
+│   │   │   │   │   └── ROC curve using the OvO macro-average
+│   │   │   │   └── One-vs-Rest multiclass ROC
+│   │   │   │       ├── Plot all OvR ROC curves together
+│   │   │   │       ├── ROC curve showing a specific class
+│   │   │   │       ├── ROC curve using micro-averaged OvR
+│   │   │   │       └── ROC curve using the OvR macro-average
+│   │   │   ├── Nested versus non-nested cross-validation
+│   │   │   ├── Plotting Cross-Validated Predictions
+│   │   │   ├── Plotting Learning Curves and Checking Models' Scalability
+│   │   │   ├── Plotting Validation Curves
+│   │   │   ├── Precision-Recall
+│   │   │   │   ├── In binary classification settings
+│   │   │   │   │   ├── Dataset and model
+│   │   │   │   │   └── Plot the Precision-Recall curve
+│   │   │   │   └── In multi-label settings
+│   │   │   │       ├── Create multi-label data, fit, and predict
+│   │   │   │       ├── Plot Precision-Recall curve for each class and iso-f1 curves
+│   │   │   │       ├── Plot the micro-averaged Precision-Recall curve
+│   │   │   │       └── The average precision score in multi-label settings
+│   │   │   ├── Receiver Operating Characteristic (ROC) with cross validation
+│   │   │   │   └── Load and prepare data
+│   │   │   │       └── Classification and ROC analysis
+│   │   │   ├── Sample pipeline for text feature extraction and evaluation
+│   │   │   │   ├── Data loading
+│   │   │   │   └── Pipeline with hyperparameter tuning
+│   │   │   ├── Statistical comparison of models using grid search
+│   │   │   │   ├── Comparing two models: Bayesian approach
+│   │   │   │   │   └── Region of Practical Equivalence
+│   │   │   │   ├── Comparing two models: frequentist approach
+│   │   │   │   ├── Pairwise comparison of all models: Bayesian approach
+│   │   │   │   ├── Pairwise comparison of all models: frequentist approach
+│   │   │   │   └── Take-home messages
+│   │   │   ├── Successive Halving Iterations
+│   │   │   │   └── Number of candidates and amount of resource at each iteration
+│   │   │   ├── Test with permutations the significance of a classification score
+│   │   │   │   ├── Dataset
+│   │   │   │   └── Permutation test score
+│   │   │   │       ├── Original data
+│   │   │   │       └── Random data
+│   │   │   ├── Train error vs Test error
+│   │   │   │   ├── Compute train and test errors
+│   │   │   │   ├── Generate sample data
+│   │   │   │   └── Plot results functions
+│   │   │   ├── Underfitting vs. Overfitting
+│   │   │   └── Visualizing cross-validation behavior in scikit-learn
+│   │   │       ├── Define a function to visualize cross-validation behavior
+│   │   │       ├── Visualize cross-validation indices for many CV objects
+│   │   │       └── Visualize our data
+│   │   ├── Multioutput methods
+│   │   │   └── Classifier Chain
+│   │   ├── Nearest Neighbors
+│   │   │   ├── Approximate nearest neighbors in TSNE
+│   │   │   ├── Caching nearest neighbors
+│   │   │   ├── Comparing Nearest Neighbors with and without Neighborhood Components Analysis
+│   │   │   ├── Dimensionality Reduction with Neighborhood Components Analysis
+│   │   │   ├── Kernel Density Estimate of Species Distributions
+│   │   │   │   └── References
+│   │   │   ├── Kernel Density Estimation
+│   │   │   ├── Nearest Centroid Classification
+│   │   │   ├── Nearest Neighbors Classification
+│   │   │   ├── Nearest Neighbors regression
+│   │   │   │   ├── Fit regression model
+│   │   │   │   └── Generate sample data
+│   │   │   ├── Neighborhood Components Analysis Illustration
+│   │   │   │   ├── Learning an embedding
+│   │   │   │   └── Original points
+│   │   │   ├── Novelty detection with Local Outlier Factor (LOF)
+│   │   │   ├── Outlier detection with Local Outlier Factor (LOF)
+│   │   │   └── Simple 1D Kernel Density Estimation
+│   │   ├── Neural Networks
+│   │   │   ├── Compare Stochastic learning strategies for MLPClassifier
+│   │   │   ├── Restricted Boltzmann Machine features for digit classification
+│   │   │   │   ├── Evaluation
+│   │   │   │   ├── Generate data
+│   │   │   │   ├── Models definition
+│   │   │   │   ├── Plotting
+│   │   │   │   └── Training
+│   │   │   ├── Varying regularization in Multi-layer Perceptron
+│   │   │   └── Visualization of MLP weights on MNIST
+│   │   ├── Pipelines and composite estimators
+│   │   │   ├── Column Transformer with Heterogeneous Data Sources
+│   │   │   │   ├── 20 newsgroups dataset
+│   │   │   │   ├── Classification pipeline
+│   │   │   │   └── Creating transformers
+│   │   │   ├── Column Transformer with Mixed Types
+│   │   │   ├── Concatenating multiple feature extraction methods
+│   │   │   ├── Effect of transforming the targets in regression model
+│   │   │   │   ├── Real-world data set
+│   │   │   │   └── Synthetic example
+│   │   │   ├── Pipelining: chaining a PCA and a logistic regression
+│   │   │   └── Selecting dimensionality reduction with Pipeline and GridSearchCV
+│   │   │       ├── Caching transformers within a Pipeline
+│   │   │       └── Illustration of Pipeline and GridSearchCV
+│   │   ├── Preprocessing
+│   │   │   ├── Compare the effect of different scalers on data with outliers
+│   │   │   │   ├── MaxAbsScaler
+│   │   │   │   ├── MinMaxScaler
+│   │   │   │   ├── Normalizer
+│   │   │   │   ├── Original data
+│   │   │   │   ├── PowerTransformer
+│   │   │   │   ├── QuantileTransformer (Gaussian output)
+│   │   │   │   ├── QuantileTransformer (uniform output)
+│   │   │   │   ├── RobustScaler
+│   │   │   │   └── StandardScaler
+│   │   │   ├── Demonstrating the different strategies of KBinsDiscretizer
+│   │   │   ├── Feature discretization
+│   │   │   ├── Importance of Feature Scaling
+│   │   │   │   ├── Effect of rescaling on a PCA dimensional reduction
+│   │   │   │   ├── Effect of rescaling on a k-neighbors models
+│   │   │   │   ├── Effect of rescaling on model’s performance
+│   │   │   │   └── Load and prepare data
+│   │   │   ├── Map data to a normal distribution
+│   │   │   └── Using KBinsDiscretizer to discretize continuous features
+│   │   ├── Release Highlights
+│   │   │   ├── Release Highlights for scikit-learn 0.22
+│   │   │   │   ├── Checking scikit-learn compatibility of an estimator
+│   │   │   │   ├── KNN Based Imputation
+│   │   │   │   ├── Native support for missing values for gradient boosting
+│   │   │   │   ├── New plotting API
+│   │   │   │   ├── Permutation-based feature importance
+│   │   │   │   ├── Precomputed sparse nearest neighbors graph
+│   │   │   │   ├── ROC AUC now supports multiclass classification
+│   │   │   │   ├── Retrieve dataframes from OpenML
+│   │   │   │   ├── Stacking Classifier and Regressor
+│   │   │   │   └── Tree pruning
+│   │   │   ├── Release Highlights for scikit-learn 0.23
+│   │   │   │   ├── Generalized Linear Models, and Poisson loss for gradient boosting
+│   │   │   │   ├── Improvements to the histogram-based Gradient Boosting estimators
+│   │   │   │   ├── Rich visual representation of estimators
+│   │   │   │   ├── Sample-weight support for Lasso and ElasticNet
+│   │   │   │   └── Scalability and stability improvements to KMeans
+│   │   │   ├── Release Highlights for scikit-learn 0.24
+│   │   │   │   ├── Improved performances of HistGradientBoosting estimators
+│   │   │   │   ├── Individual Conditional Expectation plots
+│   │   │   │   ├── Native support for categorical features in HistGradientBoosting estimators
+│   │   │   │   ├── New Poisson splitting criterion for DecisionTreeRegressor
+│   │   │   │   ├── New PolynomialCountSketch kernel approximation function
+│   │   │   │   ├── New SequentialFeatureSelector transformer
+│   │   │   │   ├── New documentation improvements
+│   │   │   │   ├── New self-training meta-estimator
+│   │   │   │   └── Successive Halving estimators for tuning hyper-parameters
+│   │   │   ├── Release Highlights for scikit-learn 1.0
+│   │   │   │   ├── A more flexible plotting API
+│   │   │   │   ├── Feature Names Support
+│   │   │   │   ├── Histogram-based Gradient Boosting Models are now stable
+│   │   │   │   ├── Keyword and positional arguments
+│   │   │   │   ├── New documentation improvements
+│   │   │   │   ├── Online One-Class SVM
+│   │   │   │   ├── Quantile Regressor
+│   │   │   │   └── Spline Transformers
+│   │   │   ├── Release Highlights for scikit-learn 1.1
+│   │   │   │   ├── BisectingKMeans: divide and cluster
+│   │   │   │   ├── Grouping infrequent categories in OneHotEncoder
+│   │   │   │   ├── MiniBatchNMF: an online version of NMF
+│   │   │   │   ├── Performance improvements
+│   │   │   │   ├── Quantile loss in
+│   │   │   │   └── get_feature_names_out Available in all Transformers
+│   │   │   └── Release Highlights for scikit-learn 1.2
+│   │   │       ├── Experimental Array API support in
+│   │   │       ├── Faster parser in
+│   │   │       ├── Improved efficiency of many estimators
+│   │   │       ├── Interaction constraints in Histogram-based Gradient Boosting Trees
+│   │   │       ├── New and enhanced displays
+│   │   │       └── Pandas output with set_output API
+│   │   ├── Semi Supervised Classification
+│   │   │   ├── Decision boundary of semi-supervised classifiers versus SVM on the Iris dataset
+│   │   │   ├── Effect of varying threshold for self-training
+│   │   │   ├── Label Propagation digits active learning
+│   │   │   ├── Label Propagation digits: Demonstrating performance
+│   │   │   │   ├── Data generation
+│   │   │   │   ├── Plot the most uncertain predictions
+│   │   │   │   └── Semi-supervised learning
+│   │   │   ├── Label Propagation learning a complex structure
+│   │   │   └── Semi-supervised Classification on a Text Dataset
+│   │   ├── Support Vector Machines
+│   │   │   ├── Non-linear SVM
+│   │   │   ├── One-class SVM with non-linear kernel (RBF)
+│   │   │   ├── Plot different SVM classifiers in the iris dataset
+│   │   │   ├── Plot the support vectors in LinearSVC
+│   │   │   ├── RBF SVM parameters
+│   │   │   │   ├── Load and prepare data set
+│   │   │   │   ├── Train classifiers
+│   │   │   │   └── Visualization
+│   │   │   ├── SVM Margins Example
+│   │   │   ├── SVM Tie Breaking Example
+│   │   │   ├── SVM with custom kernel
+│   │   │   ├── SVM-Anova: SVM with univariate feature selection
+│   │   │   │   ├── Create the pipeline
+│   │   │   │   ├── Load some data to play with
+│   │   │   │   └── Plot the cross-validation score as a function of percentile of features
+│   │   │   ├── SVM-Kernels
+│   │   │   ├── SVM: Maximum margin separating hyperplane
+│   │   │   ├── SVM: Separating hyperplane for unbalanced classes
+│   │   │   ├── SVM: Weighted samples
+│   │   │   ├── Scaling the regularization parameter for SVCs
+│   │   │   │   ├── L1-penalty case
+│   │   │   │   └── L2-penalty case
+│   │   │   └── Support Vector Regression (SVR) using linear and non-linear kernels
+│   │   │       ├── Fit regression model
+│   │   │       ├── Generate sample data
+│   │   │       └── Look at the results
+│   │   ├── Tutorial exercises
+│   │   │   ├── Cross-validation on Digits Dataset Exercise
+│   │   │   ├── Cross-validation on diabetes Dataset Exercise
+│   │   │   │   ├── Bonus: how much can you trust the selection of alpha?
+│   │   │   │   ├── Load dataset and apply GridSearchCV
+│   │   │   │   └── Plot error lines showing +/- std. errors of the scores
+│   │   │   ├── Digits Classification Exercise
+│   │   │   └── SVM Exercise
+│   │   └── Working with text documents
+│   │       ├── Classification of text documents using sparse features
+│   │       │   ├── Analysis of a bag-of-words document classifier
+│   │       │   │   ├── Model with metadata stripping
+│   │       │   │   └── Model without metadata stripping
+│   │       │   ├── Benchmarking classifiers
+│   │       │   ├── Loading and vectorizing the 20 newsgroups text dataset
+│   │       │   └── Plot accuracy, training and test time of each classifier
+│   │       ├── Clustering text documents using k-means
+│   │       │   ├── Clustering evaluation summary
+│   │       │   ├── K-means clustering on text features
+│   │       │   │   ├── Clustering sparse data with k-means
+│   │       │   │   ├── Feature Extraction using TfidfVectorizer
+│   │       │   │   ├── HashingVectorizer
+│   │       │   │   ├── Performing dimensionality reduction using LSA
+│   │       │   │   └── Top terms per cluster
+│   │       │   ├── Loading text data
+│   │       │   └── Quantifying the quality of clustering results
+│   │       └── FeatureHasher and DictVectorizer Comparison
+│   │           ├── Comparison with special purpose text vectorizers
+│   │           ├── Define preprocessing functions
+│   │           ├── DictVectorizer
+│   │           ├── FeatureHasher
+│   │           ├── Load Data
+│   │           ├── Summary
+│   │           └── TfidfVectorizer
+│   └── Tutorials
+│       ├── A tutorial on statistical-learning for scientific data processing
+│       ├── An introduction to machine learning with scikit-learn
+│       │   ├── Conventions
+│       │   │   ├── Multiclass vs. multilabel fitting
+│       │   │   ├── Refitting and updating parameters
+│       │   │   └── Type casting
+│       │   ├── Learning and predicting
+│       │   ├── Loading an example dataset
+│       │   └── Machine learning: the problem setting
+│       ├── Choosing the right estimator
+│       ├── External Resources, Videos and Talks
+│       │   ├── External Tutorials
+│       │   ├── New to Scientific Python?
+│       │   └── Videos
+│       └── Working With Text Data
+│           ├── Building a pipeline
+│           ├── Evaluation of the performance on the test set
+│           ├── Exercise 1: Language identification
+│           ├── Exercise 2: Sentiment Analysis on movie reviews
+│           ├── Exercise 3: CLI text classification utility
+│           ├── Extracting features from text files
+│           │   ├── Bags of words
+│           │   ├── From occurrences to frequencies
+│           │   └── Tokenizing text with scikit-learn
+│           ├── Loading the 20 newsgroups dataset
+│           ├── Parameter tuning using grid search
+│           │   └── Exercises
+│           ├── Training a classifier
+│           ├── Tutorial setup
+│           └── Where to from here
 └── torch
     ├── Audio
     │   ├── Audio Data Augmentation
