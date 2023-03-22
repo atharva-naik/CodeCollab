@@ -83,11 +83,11 @@ if __name__ == "__main__":
     path_depths = []
     for path in KB_paths:
         path_depths.append(len(path))
-        for step in path.split("->"):
+        for step in path:
             uniq_steps.add(step.strip())
     print(f"num steps: {len(uniq_steps)}")
     # average path depth/decomp steps:
-    print("average path depth/decomp steps:", np.mean(path_depths))
+    print("average path depth/decomp steps:", round(np.mean(path_depths), 3))
     # max path depth:
     print("max path depth:", np.max(path_depths))
     # min path depth:

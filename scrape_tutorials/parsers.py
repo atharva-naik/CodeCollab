@@ -29,6 +29,8 @@ def simplify_soup(soup, target: str="seaborn"):
         soup = soup.html.body.select("article.bd-article")[0]
     elif target == "scikit":
         soup = soup.html.body.select("div.sk-page-content.container-fluid.body.px-md-3")[0]
+    elif target == "matplotlib":
+        soup = soup.html.body.select("section.sphx-glr-example-title")[0]
         # if not try_soup:
             # try_soup = soup.html.body.find("div", {"class": ""})
         # soup = try_soup
@@ -49,15 +51,11 @@ def simplify_soup(soup, target: str="seaborn"):
         for a in soup.select('a'): a.extract()
     else:
         for a in soup.select('a'): a.unwrap()
-    for pre in soup.select("pre"):
-        del pre.attrs
-    for p in soup.select("p"): 
-        del p.attrs
+    for pre in soup.select("pre"): del pre.attrs
+    for p in soup.select("p"): del p.attrs
     for i in range(1, 12):
-        for hi in soup.select(f"h{i}"):
-            del hi.attrs
+        for hi in soup.select(f"h{i}"): del hi.attrs
     # for section in soup.select("section"): section.unwrap()
-
     if target == "seaborn": 
         article = soup.html.body.find("article", {"class": "bd-article"})
         for content in article.contents:
@@ -71,6 +69,7 @@ def simplify_soup(soup, target: str="seaborn"):
     elif target == "realpython": final = soup
     elif target == "scipy": final = soup
     elif target == "scikit": final = soup
+    elif target == "matplotlib": final = soup
 
     return final
 
@@ -502,6 +501,58 @@ class NumPyTutorialsParser:
                     print(f"ERROR[{name}][{sub_blog_name}]")
                     self.blog_pages[name][sub_blog_name] = simplified_soup
 
+# gather matplotlib tutorials.
+class MatPlotLibParser:
+    """Gather matplotlib tutorial guides:"""
+    def __init__(self, base_url: str=SOURCE_TO_BASE_URLS["matplotlib"]):
+        self.base_url = base_url
+        self.graph = {"Tutorials": []}
+        self.base_soup = bs4.BeautifulSoup(
+            requests.get(base_url).text,
+            features="lxml",
+        ) # return
+        article = self.base_soup.html.body.select("article.bd-article")[0]
+        tut_section = article.find("section", id="tutorials")
+        for p in tut_section.select("p")[:2]:
+            self.graph["Tutorials"].append((
+                p.text, "markdown",
+            ))
+        self.graph["Tutorials"].append({})
+        domain_dir = "https://matplotlib.org/stable/tutorials/"
+        for section in tqdm(tut_section.select("section")):
+            print(section.attrs["id"])
+            h2 = section.select("h2")[0].text.strip("#")
+            self.graph["Tutorials"][-1][h2] = {}
+            for div in section.select("div.sphx-glr-thumbcontainer"):
+                key = div.select("div.sphx-glr-thumbnail-title")[0].text.strip("#")
+                value = div.select("a.reference.internal")[0].attrs["href"]
+                self.graph["Tutorials"][-1][h2][key] = os.path.join(domain_dir, value)
+
+    def download(self):
+        for h2 in self.graph["Tutorials"][-1]:
+            for key, url in tqdm(self.graph["Tutorials"][-1][h2].items(), desc=h2):
+                simple_soup = simplify_soup(
+                    bs4.BeautifulSoup(
+                        requests.get(url).text,
+                        features="lxml",
+                    ), target="matplotlib",
+                )
+                simplified_soup = str(simple_soup)
+                simplified_soup = re.sub("<div.*?>", "", simplified_soup)
+                simplified_soup = re.sub("</div>", "", simplified_soup)
+                simplified_soup = re.sub("<article.*?>", "", simplified_soup)
+                simplified_soup = re.sub("</article>", "", simplified_soup)
+                simplified_soup = re.sub("<section.*?>", "", simplified_soup)
+                simplified_soup = re.sub("</section>", "", simplified_soup)
+                try:
+                    nb_json = extract_notebook_hierarchy_from_seq(
+                        parse_soup_stream(simplified_soup)
+                    )[0].serialize2()[""]
+                    self.graph["Tutorials"][-1][h2][key] = nb_json
+                except Exception as e:
+                    print(e)
+                    self.graph["Tutorials"][-1][h2][key] = (simple_soup, simplified_soup)
+
 # gather pandas tutorials from Tom's Blog.
 class PandasTomsBlogParser:
     """Parser/scraper for Tom's blog tutorials for Pandas"""
@@ -662,13 +713,22 @@ def scrape_torch():
         json.dump(final_KG_json, f, indent=4)
 
 def scrape_sklearn():
-    """scrape SciKit learn exaples and tutorials"""
+    """scrape SciKit learn examples and tutorials"""
     sklearn_parser = SciKitLearnParser()
     sklearn_parser.download_examples()
     sklearn_parser.download_tutorials()
     os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
     with open("./scrape_tutorials/KGs/sklearn.json", "w") as f:
         json.dump(sklearn_parser.graph, f, indent=4)
+
+def scrape_matplotlib():
+    """scrape matplotlib tutorials"""
+    mplib_parser = MatPlotLibParser()
+    mplib_parser.download_examples()
+    mplib_parser.download_tutorials()
+    os.makedirs("./scrape_tutorials/KGs", exist_ok=True)
+    with open("./scrape_tutorials/KGs/matplotlib.json", "w") as f:
+        json.dump(mplib_parser.graph, f, indent=4)
     
 def scrape_scipy():
     """scrape SciPy tutorials"""

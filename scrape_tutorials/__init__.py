@@ -241,5 +241,6 @@ SOURCE_TO_BASE_URLS = {
             "Choosing the right estimator": "https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html",
             "External Resources, Videos and Talks": "https://scikit-learn.org/stable/presentations.html",
         }
-    }
+    },
+    "matplotlib": "https://matplotlib.org/stable/tutorials/index.html",
 }
