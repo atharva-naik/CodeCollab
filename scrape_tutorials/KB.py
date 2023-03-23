@@ -5,15 +5,24 @@
 # and code to analyze KB statistics and properties.
 
 import json
+import torch
 import numpy as np
 from typing import *
 from tqdm import tqdm
 from collections import defaultdict
+from sentence_transformers import SentenceTransformer
 
 class TutorialPathsKB:
     def __init__(self, path: str="./scrape_tutorials/unified_KG.json"):
         self.data = json.load(open(path))
         self.path_index: Dict[str, List[dict]] = defaultdict(lambda:[]) # indexed by step names.
+        self.path_phrases = [", ".join(k.split("->")) for k in self.data]
+        self.path_dense_matrix = []
+        self.sbert = SentenceTransformer("multi-qa-mpnet-base-dot-v1")
+        if torch.cuda.is_available(): self.sbert.cuda()
+        for path in tqdm(self.path_phrases, desc="encoding path phrases"):
+            self.path_dense_matrix.append(self.sbert.encode(path))
+        self.path_dense_matrix = np.stack(self.path_dense_matrix)
         for path_decomp_key, value in tqdm(self.data.items()):
             sub_path = []
             full_decomp = path_decomp_key.split("->")
@@ -29,6 +38,23 @@ class TutorialPathsKB:
                     "depth": i+1, # essentialy the same as step index, just begins at 1.
                     "module": full_decomp[0] if i>0 else "",
                 })
+        self.step_dense_matrix = []                
+        for step in self.path_index:
+            self.step_dense_matrix.append(self.sbert.encode(step))
+        self.step_dense_matrix = np.stack(self.step_dense_matrix)
+
+    def semantic_search_for_step(self, kp: str):
+        pass
+
+    def semantic_search(self, kp: str, k: int=10) -> List[str]:
+        kp_enc = self.sbert.encode(kp)
+        scores = self.path_dense_matrix @ kp_enc.T
+        result = []
+        all_paths = list(self.data.keys())
+        for id in scores.argsort()[::-1][:k]:
+            result.append(all_paths[id])
+
+        return result
 
     def search(self, query, depth: int=1) -> List[Tuple[dict, float]]:
         """## Algorithm:
