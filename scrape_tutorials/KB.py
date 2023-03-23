@@ -17,12 +17,12 @@ class TutorialPathsKB:
         self.data = json.load(open(path))
         self.path_index: Dict[str, List[dict]] = defaultdict(lambda:[]) # indexed by step names.
         self.path_phrases = [", ".join(k.split("->")) for k in self.data]
-        self.path_dense_matrix = []
+        
         self.sbert = SentenceTransformer("multi-qa-mpnet-base-dot-v1")
         if torch.cuda.is_available(): self.sbert.cuda()
-        for path in tqdm(self.path_phrases, desc="encoding path phrases"):
-            self.path_dense_matrix.append(self.sbert.encode(path))
-        self.path_dense_matrix = np.stack(self.path_dense_matrix)
+        self.path_dense_matrix = []
+        self.step_dense_matrix = []
+
         for path_decomp_key, value in tqdm(self.data.items()):
             sub_path = []
             full_decomp = path_decomp_key.split("->")
@@ -38,15 +38,41 @@ class TutorialPathsKB:
                     "depth": i+1, # essentialy the same as step index, just begins at 1.
                     "module": full_decomp[0] if i>0 else "",
                 })
+
+    def build_semantic_step_index(self):
         self.step_dense_matrix = []                
-        for step in self.path_index:
+        for step in tqdm(self.path_index):
             self.step_dense_matrix.append(self.sbert.encode(step))
         self.step_dense_matrix = np.stack(self.step_dense_matrix)
 
-    def semantic_search_for_step(self, kp: str):
-        pass
+    def build_semantic_path_index(self):
+        self.path_dense_matrix = []
+        for path in tqdm(self.path_phrases, desc="encoding path phrases"):
+            self.path_dense_matrix.append(self.sbert.encode(path))
+        self.path_dense_matrix = np.stack(self.path_dense_matrix)
+
+    def semantic_search_for_step(self, kp: str, k: int=5):
+        if len(self.step_dense_matrix) == 0:
+            self.build_semantic_step_index()
+        kp_enc = self.sbert.encode(kp)
+        scores = self.step_dense_matrix @ kp_enc.T
+        result = []
+        simplified_result = defaultdict(lambda: set())
+        all_steps = list(self.path_index.keys())
+        for id in scores.argsort()[::-1][:k]:
+            step = all_steps[id]
+            rec = self.path_index[step]
+            result.append(rec)
+            for d in rec:
+                full_decomp = "->".join(d["full_decomp"])
+                simplified_result[step].add(full_decomp)
+        simplified_result = dict(simplified_result)
+
+        return result, simplified_result
 
     def semantic_search(self, kp: str, k: int=10) -> List[str]:
+        if len(self.path_dense_matrix) == 0:
+            self.build_semantic_path_index()
         kp_enc = self.sbert.encode(kp)
         scores = self.path_dense_matrix @ kp_enc.T
         result = []
