@@ -12,6 +12,22 @@ from tqdm import tqdm
 from collections import defaultdict
 from sentence_transformers import SentenceTransformer
 
+# code to paths KB.
+class CodeToPathsKB:
+    def __init__(self, path: str="./scrape_tutorials/unified_KG.json"):
+        self.data = json.load(open(path))
+        self.code_to_paths = defaultdict(lambda:[])
+        for key, values in self.data.items():
+            for content, cell_type in values:
+                if cell_type == "code":
+                    self.code_to_paths[content].append(key)
+
+    def save(self):
+        """save the code to paths graph."""
+        with open("./scrape_tutorials/unified_code_to_path_KG.json", "w") as f:
+            json.dump(self.code_to_paths, f, indent=4)
+
+# tutorial paths KB.
 class TutorialPathsKB:
     def __init__(self, path: str="./scrape_tutorials/unified_KG.json"):
         self.data = json.load(open(path))
