@@ -5,31 +5,32 @@
 @author: Atharva Naik
 """
 # from .models.codegnngru import CodeGNNGRU
-import argparse
+
 import os
+import sys
+import copy
+import time
+import torch
 import pickle
 import random
-import sys
-import time
+import argparse
 import traceback
 import numpy as np
 # import tensorflow as tf
-import torch
 # from torchsummary import summary
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.utils.data as Data
-import copy
+import torch.nn.functional as F
 # from torch_scatter import scatter_add
 # from torch_geometric.nn.conv import MessagePassing
 # from keras.callbacks import ModelCheckpoint, Callback
 # import keras.backend as K
-from models.GCNLayer_pytorch import GraphConvolution
+from utils.model import create_model
 from timeit import default_timer as timer
+from utils.myutils import batch_gen, init_tf
+from models.GCNLayer_pytorch import GraphConvolution
 from utils.myutils import batch_gen, init_tf, seq2sent
 from models.HAConvGNN import HAConvGNN, TimeDistributed, Flatten
-from utils.model import create_model
-from utils.myutils import batch_gen, init_tf
 
 def set_random_seed(seed = 10,deterministic=False,benchmark=False):
     torch.manual_seed(seed)
@@ -144,7 +145,6 @@ if __name__ == '__main__':
                         nodedata=seqdata['stest_nodes'], 
                         edgedata=seqdata['stest_edges'])
     print(model)
-
     # set up prediction string and output file
     comstart = np.zeros(comlen)
     stk = comstok.w2i['<s>']
@@ -153,18 +153,21 @@ if __name__ == '__main__':
     outf = open(outfn, 'w')
     print("writing to file: " + outfn)
     batch_sets = [allfids[i:i+batchsize] for i in range(0, len(allfids), batchsize)]
- 
-    #predict
+    # predict
     for c, fid_set in enumerate(batch_sets):
         st = timer()
         for fid in fid_set:
-            seqdata['ctest'][fid] = comstart #np.asarray([stk])
+            seqdata['ctest'][fid] = comstart # np.asarray([stk])
         batch = testgen.make_batch(fid_set)
-        batch_results = gen_pred(model, batch, device, comstok, comlen, batchsize, config, fid_set, strat='greedy')
+        batch_results = gen_pred(
+            model, batch, device, comstok, 
+            comlen, batchsize, config, 
+            fid_set, strat='greedy',
+        )
         for key, val in batch_results.items():
             outf.write("{}\t{}\n".format(key, val))
             outf.flush()
-        
-        end = timer ()
-        print("{} processed, {} per second this batch".format((c+1)*batchsize, int(batchsize/(end-st))), end='\r')
+        end = timer()
+        print("{} processed, {} per second this batch".format(
+              (c+1)*batchsize, int(batchsize/(end-st))), end='\r')
     outf.close()
