@@ -42,9 +42,7 @@ class ZeroShotCodeBERTRetriever(nn.Module):
         )
         dataloader = DataLoader(CodeDataset(enc_dict), batch_size, shuffle=False)
         embs = []
-        for batch in dataloader:
-            # print(batch)
-            # print(batch.keys())
+        for batch in tqdm(dataloader, disable=not(show_progress_bar)):
             # make sure the tensors are on the same device as the model.
             for k in batch: batch[k] = batch[k].to(self.model.device)
             with torch.no_grad():
