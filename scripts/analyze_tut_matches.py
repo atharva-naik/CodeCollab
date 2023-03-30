@@ -7,7 +7,11 @@ from sentence_transformers import util
 from model.code_similarity import ZeroShotCodeBERTRetriever
 from datautils.markdown_cell_analysis import extract_notebook_hierarchy
 
-def retrieve_tutorial_codes_for_target_cells():
+def retrieve_tutorial_codes_for_target_cells(context_size: int=2):
+    """
+    Params:
+    - context_size: number of code cells (including target one) to be included for matching (if present)
+    """
     dense_retriever = ZeroShotCodeBERTRetriever()
     # encode the tutorial code snippets.
     tutorial_to_codes = json.load(open("./scrape_tutorials/unified_code_to_path_KG.json"))
@@ -18,7 +22,18 @@ def retrieve_tutorial_codes_for_target_cells():
     )
     # encode the sampled NB codes (target cells only).
     sampled_nbs = json.load(open("./data/juice-dataset/sampled_juice_train.json"))
-    sampled_nb_code = {k: nb['code'] for k, nb in sampled_nbs.items()}
+    sampled_nb_code = {}
+    for k, nb in sampled_nb_code:
+        sampled_nb_code[k] = []
+        ctr = context_size-1
+        for cell in nb['context']:
+            if cell["cell_type"] == "code":
+                sampled_nb_code[k].append(cell["code"])
+                ctr -= 1
+            if ctr == 0: break
+        sampled_nb_code[k].append(nb['code'])
+        sampled_nb_code = "\n".join(sampled_nb_code)
+    {k: nb['code'] for k, nb in sampled_nbs.items()}
     sampled_nb_embs = dense_retriever.encode(
         list(sampled_nb_code.values()),
         show_progress_bar=True,
@@ -40,11 +55,11 @@ def retrieve_tutorial_codes_for_target_cells():
             "matched_tutorial_codes": [tut_codes[j] for j in ind_list],
             "matched_tutorial_paths": [tut_paths[j] for j in ind_list],
         }
-    with open("./scrape_tutorials/tut_codes_matched_with_sampled_NBs.json", "w") as f:
+    with open(f"./scrape_tutorials/tut_codes_matched_with_sampled_NBs_ctx_size_{context_size}.json", "w") as f:
         json.dump(matched_codes_and_paths, f, indent=4)
 
-def compare_tut_paths_with_GT_paths():
-    sampled_nb_matched_paths = json.load(open("./scrape_tutorials/tut_codes_matched_with_sampled_NBs.json"))
+def compare_tut_paths_with_GT_paths(tuts_path: str="./scrape_tutorials/tut_codes_matched_with_sampled_NBs.json"):
+    sampled_nb_matched_paths = json.load(open(tuts_path))
     sampled_nbs = json.load(open("./data/juice-dataset/sampled_juice_train.json"))
     fetched_tut_paths_and_GTs = []
     for id, nb in sampled_nbs.items():
