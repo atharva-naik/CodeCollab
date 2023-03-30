@@ -11,7 +11,7 @@ from sentence_transformers import util
 from model.code_similarity import ZeroShotCodeBERTRetriever
 from datautils.markdown_cell_analysis import extract_notebook_hierarchy
 
-FILT_LIST_STEPS = ['Effective Pandas','Articles','Introductory','Fast Pandas','PyTorch Recipes','NumPy Features','scipy','NumPy Applications','Data structures accepted by seaborn','User Notes','matplotlib','Tutorials','numpy','User guide and tutorial','torch','pandas_toms_blog','seaborn','sklearn','statsmodels', 'Examples']
+FILT_LIST_STEPS = ['Effective Pandas','Articles','Introductory','Fast Pandas','PyTorch Recipes','NumPy Features','scipy','NumPy Applications','Data structures accepted by seaborn','User Notes','matplotlib','Tutorials','numpy','User guide and tutorial','torch','pandas_toms_blog','seaborn','sklearn','statsmodels', 'Examples','','Intermediate','Examples based on real world datasets']
 
 def remove_comments_and_docstrings(source, lang='python'):
     if lang in ['python']:
@@ -122,10 +122,11 @@ def retrieve_tutorial_codes_for_target_cells(context_size: int=2):
     with open(f"./scrape_tutorials/tut_codes_matched_with_sampled_NBs_ctx_size_{context_size}.json", "w") as f:
         json.dump(matched_codes_and_paths, f, indent=4)
 
-def aggregate_path_weights(path: str="./scrape_tutorials/tut_codes_matched_with_sampled_NBs.json"):
+def aggregate_path_weights(path: str="./scrape_tutorials/tut_codes_matched_with_sampled_NBs_ctx_size_2.json"):
     ret_tut_paths = json.load(open(path))
     step_weights = defaultdict(lambda:0)
     path_weights = defaultdict(lambda:0)
+    hier_step_weights = defaultdict(lambda:defaultdict(lambda:0))
     num_codes_per_path = defaultdict(lambda:0)
     code_to_path_KG = json.load(open("./scrape_tutorials/unified_filt_code_to_path_KG.json"))
     for path_list in code_to_path_KG.values():
@@ -134,14 +135,16 @@ def aggregate_path_weights(path: str="./scrape_tutorials/tut_codes_matched_with_
         for path_list in v["matched_tutorial_paths"]:
             for path in path_list:
                 path_weights[path] += 1
-                for step in path.split("->"):
+                for depth, step in enumerate(path.split("->")):
                     step = step.strip()
                     step_weights[step] += 1
+                    hier_step_weights[depth][step] += 1
     path_weights = {k: v for k,v in sorted(path_weights.items(), key=lambda x: x[1])}
     step_weights = {k: v for k,v in sorted(step_weights.items(), key=lambda x: x[1])}
     num_codes_per_path = {k: v for k,v in sorted(num_codes_per_path.items(), key=lambda x: x[1])}
+    hier_step_weights = {depth: {k: v for k,v in sorted(hier_step_weights[depth].items(), key=lambda x: x[1]) if k not in FILT_LIST_STEPS} for depth in hier_step_weights}
 
-    return path_weights, step_weights, num_codes_per_path
+    return path_weights, step_weights, hier_step_weights, num_codes_per_path
 
 def compare_tut_paths_with_GT_paths(tuts_path: str="./scrape_tutorials/tut_codes_matched_with_sampled_NBs.json"):
     sampled_nb_matched_paths = json.load(open(tuts_path))
