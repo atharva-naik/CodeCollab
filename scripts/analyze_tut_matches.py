@@ -26,7 +26,7 @@ def retrieve_tutorial_codes_for_target_cells(context_size: int=2):
     # encode the sampled NB codes (target cells only).
     sampled_nbs = json.load(open("./data/juice-dataset/sampled_juice_train.json"))
     sampled_nb_code = {}
-    for k, nb in sampled_nb_code:
+    for k, nb in sampled_nbs.items():
         sampled_nb_code[k] = []
         ctr = context_size-1
         for cell in nb['context']:
@@ -35,8 +35,7 @@ def retrieve_tutorial_codes_for_target_cells(context_size: int=2):
                 ctr -= 1
             if ctr == 0: break
         sampled_nb_code[k].append(nb['code'])
-        sampled_nb_code = "\n".join(sampled_nb_code)
-    {k: nb['code'] for k, nb in sampled_nbs.items()}
+        sampled_nb_code[k] = "\n".join(sampled_nb_code[k])
     sampled_nb_embs = dense_retriever.encode(
         list(sampled_nb_code.values()),
         show_progress_bar=True,
