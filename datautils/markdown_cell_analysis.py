@@ -25,6 +25,34 @@ def get_title_hierarchy_and_stripped_title(title: str):
     else: title = title[ctr:].strip()
     return ctr, title
 
+# triple object.
+@dataclasses.dataclass
+class NBNodeTriple:
+    id: int=0 # unique integer id.
+    level: int=-1
+    content: str=""
+    cell_type: str="root"
+
+    def __getitem__(self, i: int):
+        if i == 0: return self.level
+        elif i == 1: return self.content
+        elif i == 2: return self.cell_type
+
+    def tuple(self):
+        return (self[0], self[1], self[2])
+
+    def to_dict(self):
+        return {
+            "id": self.id, "level": self.level, 
+            "content": self.content, "type": self.cell_type
+        }
+
+    def __repr__(self):
+        return f'{self.cell_type}({self.level})'
+
+    def __str__(self):
+        return json.dumps((self.id, self[0], self[1], self[2]))
+
 # node type object.
 class NBTreeNode:
     """The primitive node type for the notebook hierarchy tree."""
@@ -59,6 +87,21 @@ class NBTreeNode:
                 self.triple.content : [child.serialize2() for child in self.children]
             }
         
+    def get_paths_recursively(self, path_prefixes: List[List[NBNodeTriple]]) -> List[List[NBNodeTriple]]:
+        paths = []
+        # base-case:
+        if len(self.children) == 0: return path_prefixes
+        for child in self.children:
+            child_path_prefixes = []
+            for prefix in path_prefixes:
+                child_path_prefixes.append(prefix+[child.triple])
+            paths += child.get_paths_recursively(child_path_prefixes)
+        
+        return paths
+
+    def get_root_to_leaf_paths(self):
+        return self.get_paths_recursively([[self.triple]])
+
     def to_json(self):
         return json.dumps(self.serialize())
 
@@ -82,34 +125,6 @@ class NBTreeNode:
         print(dot.source)
         # render image and return the path to the rendered image.
         return dot.render(path+".gv", view=view).replace('\\', '/')
-
-# triple object.
-@dataclasses.dataclass
-class NBNodeTriple:
-    id: int=0 # unique integer id.
-    level: int=-1
-    content: str=""
-    cell_type: str="root"
-
-    def __getitem__(self, i: int):
-        if i == 0: return self.level
-        elif i == 1: return self.content
-        elif i == 2: return self.cell_type
-
-    def tuple(self):
-        return (self[0], self[1], self[2])
-
-    def to_dict(self):
-        return {
-            "id": self.id, "level": self.level, 
-            "content": self.content, "type": self.cell_type
-        }
-
-    def __repr__(self):
-        return f'{self.cell_type}({self.level})'
-
-    def __str__(self):
-        return json.dumps((self.id, self[0], self[1], self[2]))
 
 def extract_notebook_hierarchy_from_seq(cell_seq: List[dict]):
     triples = []
