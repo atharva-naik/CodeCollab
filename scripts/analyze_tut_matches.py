@@ -3,6 +3,7 @@ import os
 import json
 import torch
 # from tqdm import tqdm
+from collections import defaultdict
 from sentence_transformers import util
 from model.code_similarity import ZeroShotCodeBERTRetriever
 from datautils.markdown_cell_analysis import extract_notebook_hierarchy
@@ -14,7 +15,7 @@ def retrieve_tutorial_codes_for_target_cells(context_size: int=2):
     """
     dense_retriever = ZeroShotCodeBERTRetriever()
     # encode the tutorial code snippets.
-    tutorial_to_codes = json.load(open("./scrape_tutorials/unified_code_to_path_KG.json"))
+    tutorial_to_codes = json.load(open("./scrape_tutorials/unified_filt_code_to_path_KG.json"))
     tut_emb = dense_retriever.encode(
         list(tutorial_to_codes.keys()),
         show_progress_bar=True,
@@ -57,6 +58,27 @@ def retrieve_tutorial_codes_for_target_cells(context_size: int=2):
         }
     with open(f"./scrape_tutorials/tut_codes_matched_with_sampled_NBs_ctx_size_{context_size}.json", "w") as f:
         json.dump(matched_codes_and_paths, f, indent=4)
+
+def aggregate_path_weights(path: str="./scrape_tutorials/tut_codes_matched_with_sampled_NBs.json"):
+    ret_tut_paths = json.load(open(path))
+    step_weights = defaultdict(lambda:0)
+    path_weights = defaultdict(lambda:0)
+    num_codes_per_path = defaultdict(lambda:0)
+    code_to_path_KG = json.load(open("./scrape_tutorials/unified_filt_code_to_path_KG.json"))
+    for path_list in code_to_path_KG.values():
+        for path in path_list: num_codes_per_path[path] += 1
+    for k, v in ret_tut_paths.items():
+        for path_list in v["matched_tutorial_paths"]:
+            for path in path_list:
+                path_weights[path] += 1
+                for step in path.split("->"):
+                    step = step.strip()
+                    step_weights[step] += 1
+    path_weights = {k: v for k,v in sorted(path_weights.items(), key=lambda x: x[1])}
+    step_weights = {k: v for k,v in sorted(step_weights.items(), key=lambda x: x[1])}
+    num_codes_per_path = {k: v for k,v in sorted(num_codes_per_path.items(), key=lambda x: x[1])}
+
+    return path_weights, step_weights, num_codes_per_path
 
 def compare_tut_paths_with_GT_paths(tuts_path: str="./scrape_tutorials/tut_codes_matched_with_sampled_NBs.json"):
     sampled_nb_matched_paths = json.load(open(tuts_path))
