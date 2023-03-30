@@ -40,7 +40,11 @@ class ZeroShotCodeBERTRetriever(nn.Module):
             codes, return_tensors="pt", 
             padding=True, truncation=True,
         )
-        dataloader = DataLoader(CodeDataset(enc_dict), batch_size, shuffle=False)
+        dataloader = DataLoader(
+            CodeDataset(enc_dict),
+            batch_size=batch_size, 
+            shuffle=False,
+        )
         embs = []
         for batch in tqdm(dataloader, disable=not(show_progress_bar)):
             # make sure the tensors are on the same device as the model.
@@ -55,3 +59,11 @@ class ZeroShotCodeBERTRetriever(nn.Module):
         c2 = self.encode(c2)
 
         return util.cos_sim(c1, c2).cpu()
+
+# a sparse feature based retriever for matching up.
+class SparseRetriever:
+    def __init__(self):
+        self.inverted_index = {}
+
+    def build_inverted_index(self):
+        pass
