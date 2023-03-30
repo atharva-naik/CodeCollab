@@ -8,6 +8,8 @@ from sentence_transformers import util
 from model.code_similarity import ZeroShotCodeBERTRetriever
 from datautils.markdown_cell_analysis import extract_notebook_hierarchy
 
+FILT_LIST_STEPS = ['Effective Pandas','Articles','Introductory','Fast Pandas','PyTorch Recipes','NumPy Features','scipy','NumPy Applications','Data structures accepted by seaborn','User Notes','matplotlib','Tutorials','numpy','User guide and tutorial','torch','pandas_toms_blog','seaborn','sklearn','statsmodels', 'Examples']
+
 def retrieve_tutorial_codes_for_target_cells(context_size: int=2):
     """
     Params:
