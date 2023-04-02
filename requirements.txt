@@ -1,3 +1,3 @@
 torch
-tree_sitter
+tree-sitter
 transformers
