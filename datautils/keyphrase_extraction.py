@@ -1,6 +1,7 @@
 import json
 import yake
 import spacy
+import torch
 import textwrap
 import fuzzywuzzy
 import numpy as np
@@ -18,6 +19,10 @@ from collections import defaultdict
 from transformers.pipelines import AggregationStrategy
 from datautils.markdown_cell_analysis import process_markdown, get_title_hierarchy_and_stripped_title, extract_notebook_hierarchy
 
+import warnings
+with warnings.catch_warnings():
+    warnings.simplefilter(action='ignore', category=FutureWarning)
+    
 # Define keyphrase extraction pipeline
 class KeyphraseExtractionPipeline(TokenClassificationPipeline):
     def __init__(self, model, *args, **kwargs):
@@ -43,7 +48,10 @@ class EnsembleKeyPhraseExtractor:
         self.cache_path = cache_path
         self.cached_kps = {rec["markdown"]: rec["keyphrases"] for rec in read_jsonl(cache_path)}
         self.model_name = model_name
-        self.kbir_pipeline = KeyphraseExtractionPipeline(model=model_name)
+        # self.kbir_pipeline = KeyphraseExtractionPipeline(model=model_name)
+        # if torch.cuda.is_available():
+        self.kbir_pipeline = KeyphraseExtractionPipeline(model=model_name, device=0)
+        # else: self.kbir_pipeline = KeyphraseExtractionPipeline(model=model_name)
         self.yake_pipeline = yake.KeywordExtractor(**yake_args)
         self.yake_strategy = yake_strategy
         self.yake_k = yake_k
@@ -191,6 +199,24 @@ def extract_keyphrases_for_val_data(data: List[dict], extractor, path: str) -> L
         nb_id += 1
 
     return extracted_keyphrases
+
+def write_train_kps(md_path: str="./data/juice-dataset/train_uniq_mds.jsonl", save_path: str="./data/juice-dataset/train_uniq_mds_with_kps.jsonl"):
+    # avoid overwrite
+    import os
+    import json
+    from tqdm import tqdm
+
+    assert not os.path.exists(save_path)
+    ext = EnsembleKeyPhraseExtractor()
+
+    # reset/create file
+    open(save_path, "w")
+    with open(md_path) as f:
+        for line in tqdm(f):
+            rec = json.loads(line.strip())
+            rec["kps"] = list(set(kp.lower() for kp in ext(rec["md"])))
+            with open(save_path, "a") as g:
+                g.write(json.dumps(rec)+"\n")
 
 def plot_uniq_kps_per_hier(rank_wise_kp_dist: Dict[int, Dict[str, int]],
                            path: str="./plots/unique_keyphrases_vs_hier.png"):

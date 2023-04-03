@@ -307,15 +307,20 @@ def cluster_titles(data: List[dict], model, path: str):
     with open(path, "w") as f:
         json.dump(titles, f, indent=4)
 
-def strip_urls_from_markdown(markdown: str):
+def strip_urls_from_markdown(markdown: str) -> str: # -> Tuple[str, List[str]]:
     # import re
     # return re.sub(
     #     r'^https?:\/\/.*[\r\n]*', '', 
     #     markdown, flags=re.MULTILINE,
     # )
+    import re
     import pandas as pd
-    import texthero as hero
-    return hero.remove_urls(pd.Series(markdown))[0]
+    # import texthero as hero
+    pattern = r"http\S+"
+    urls = re.findall(pattern, markdown)
+    url_free_md = pd.Series(markdown).str.replace(pattern, " ")[0]
+
+    return url_free_md#, urls
 
 def replace_markdown_links_with_display_text(markdown: str):
     import re

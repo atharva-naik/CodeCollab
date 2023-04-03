@@ -94,14 +94,63 @@ def read_cell_content_and_type_seq(path: str, use_tqdm: bool=True):
     #     idx = all_idx[i:i+1]
     #     for rec in linecache.getlines(path, idx):
 def sample_from_trainset(path, idx: List[int]):
+    import linecache
+    from tqdm import tqdm
     """given a list of line numbers and a file, load the instances on those line numbers
     and return the resultant sampled set of the data"""
     sampled_data = {} # line number is the key and data JSON is the value
     lines = linecache.getlines(path, idx)
-    for lineno, line in zip(idx, lines):
+    for lineno, line in tqdm(zip(idx, lines)):
         sampled_data[lineno] = json.loads(line.strip())
 
     return sampled_data
+
+def load_train_inst(ind: int=0, path: str="./data/juice-dataset/train.jsonl"):
+    import linecache
+    return json.loads(linecache.getline(path, ind+1))
+
+def load_train_insts(idx: List[int]=[], path: str="./data/juice-dataset/train.jsonl"):
+    insts = []
+    for id in idx: insts.append(load_train_inst(id, path=path))
+
+    return insts
+
+def collapse_train_dups_by_metadata(path: str) -> Dict[str, List[Tuple[int, int]]]:
+    """return a list of dictonaries
+    keys: metadata paths
+    values: list of tuples of (int, int)"""
+    import linecache
+    from tqdm import tqdm
+    
+    path_to_ind = defaultdict(lambda:[])
+    for ind in tqdm(range(1518105)):
+        line = linecache.getline(path, ind+1)
+        rec = json.loads(line.strip())
+        key = rec["metadata"]["path"]
+        path_to_ind[key].append((ind, len(rec["context"])+1))
+    path_to_ind = dict(path_to_ind)
+
+    return path_to_ind
+
+def collect_mds_for_kp(path_to_ind) -> Dict[str, List[dict]]:
+    from tqdm import tqdm
+    from collections import defaultdict
+
+    uniq_mds = defaultdict(lambda:{"mentions": []})
+    for key, id_and_len_list in tqdm(path_to_ind.items()):
+        for id, _ in id_and_len_list:
+            inst = load_train_inst(id)
+            for md_id, cell in enumerate(inst["context"][::-1]):
+                if cell["cell_type"] != "markdown": continue
+                md = cell["nl_original"]
+                uniq_mds[md]["mentions"].append({
+                    "path": key, 
+                    "md_id": md_id,
+                    "id": id,
+                })
+    uniq_mds = dict(uniq_mds)
+
+    return uniq_mds
 
 def context_to_cell_seq(context: List[dict]) -> List[Tuple[str, int]]:
     """convert context attribute of JuICe data to list of cell content and type."""
@@ -119,6 +168,7 @@ def context_to_cell_seq(context: List[dict]) -> List[Tuple[str, int]]:
 
 def write_instance_as_nb(inst: dict, path):
     """programmatically create jupyter notebook from JuICe dataset instance."""
+    import nbformat as nbf
     nb = nbf.v4.new_notebook()
     nb["cells"] = []
     context = inst["context"][::-1]
