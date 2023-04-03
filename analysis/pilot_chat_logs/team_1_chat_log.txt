@@ -1,0 +1,238 @@
+Hi all 
+me says:Let's get started 
+me says:In the first exercise, Yiqing is the driver, Kelly is the navigator, and Luke is the researcher 
+me says:You have about 12 minutes to finish the first analysis 
+me says:No need to share screen, you will all see Yiqing's cursor 
+10:35
+Y
+Yiqing
+Yiqing says:Are we supposed to discuss in the chat? 
+10:39
+K
+Kelly
+Kelly says:I think so. 
+10:40
+me says:yes you should use this chat window for all of your communication 
+10:40
+K
+Kelly
+Kelly says:@yiqing can you execute the first cell? 
+10:40
+Y
+Yiqing
+Yiqing says:Cool. So I'm at the first TODO. What do you think the values should be? 
+Yiqing says:Yes I executed the first two cells 
+10:40
+L
+Luke
+Luke says:We're just all cooperating to fill out these to-dos, yes? I'm not sure I'm understanding the roles right. 
+10:42
+Y
+Yiqing
+Yiqing says:I think so? 
+10:42
+K
+Kelly
+Kelly says:I think @luke you are the researcher, I'm the navigator 
+Kelly says:yiqing fills out the missing part in the notebook 
+10:42
+L
+Luke
+Luke says:Okay so I think Column is genres (object) since that's what we're measuring, right? 
+10:44
+K
+Kelly
+Kelly says:we can just use df_movies.columns to get the columns 
+10:44
+L
+Luke
+Luke says:Yeah I'm just not clear on what I'm researching 
+10:44
+K
+Kelly
+Kelly says:yes 
+10:44
+Y
+Yiqing
+Yiqing says:and how about the plot_type? 
+10:44
+me says:you have about 5 minutes left for the first analysis 
+10:44
+K
+Kelly
+Kelly says:I think it should be bar chart 
+10:45
+Y
+Yiqing
+Yiqing says:I guess researcher means you can search for answers when the navigator is not sure? 
+10:45
+L
+Luke
+Luke says:Ah okay 
+10:45
+Y
+Yiqing
+Yiqing says:like in string? 
+10:45
+me says:correct researcher searches for answers on the web or from the primer 
+10:45
+K
+Kelly
+Kelly says:I'm not sure about the exact value, can you search online@luke? 
+10:45
+Y
+Yiqing
+Yiqing says:Yeah, like what the name of bar chart should be 
+10:46
+L
+Luke
+Luke says:Doing that now 
+10:46
+Y
+Yiqing
+Yiqing says:Cool! 
+10:46
+K
+Kelly
+Kelly says:Hey @luke, can you also search the function I highlighted? 
+10:48
+L
+Luke
+Luke says:Okay try just 'bar' 
+10:48
+Y
+Yiqing
+Yiqing says:Awesome! 
+Yiqing says:I think the column value is not correctt 
+10:49
+L
+Luke
+Luke says:I think we need a specific column for column_name 
+Luke says:You're just passing it all the columns 
+10:49
+Y
+Yiqing
+Yiqing says:It says we need the number of movies 
+10:49
+K
+Kelly
+Kelly says:we could pass in COLUMN_NAME[0]? 
+Kelly says:which cell are you referring to? 
+10:50
+L
+Luke
+Luke says:Also that's going to get very recursive quickly 
+Luke says:COLUMN_NAME should be defined once 
+10:50
+K
+Kelly
+Kelly says:I meant the argument in the last row in cell 7 
+10:51
+Y
+Yiqing
+Yiqing says:32860? 
+10:51
+L
+Luke
+Luke says:Is that what we're supposed to be editing for the visualization, though? 
+10:51
+K
+Kelly
+Kelly says:COLUMN_NAME is still defined as movie_df.columns 
+Kelly says:Yes, for visualization, we only need to pass in one column name 
+Kelly says:which could be the first element in COLUMN_NAME 
+10:52
+L
+Luke
+Luke says:Is that the correct column for analysis? 
+10:52
+K
+Kelly
+Kelly says:I think we need to feed the whole list to generate the bar plot? 
+Kelly says:Since we only fed in one column name, we are only seeing one bar 
+10:53
+L
+Luke
+Luke says:No the bar plot is acting on one column 
+Luke says:We just fed it a column with one value 
+10:53
+Y
+Yiqing
+Yiqing says:It says number of movies in each genre 
+10:53
+K
+Kelly
+Kelly says:oh I think we need to get the values in the genre 
+10:54
+L
+Luke
+Luke says:Yeah. 
+10:54
+Y
+Yiqing
+Yiqing says:so let's just use the column name of genre? 
+Yiqing says:cool 
+10:54
+K
+Kelly
+Kelly says:and we need to use value_count() to get the unique values and their counts 
+10:54
+Y
+Yiqing
+Yiqing says:It looks correct now 
+Yiqing says:Ok the next TODO 
+10:55
+K
+Kelly
+Kelly says:👍 
+Kelly says:@luke, can you find the helper function that splits the list and insert the elements as new rows? 
+10:56
+Y
+Yiqing
+Yiqing says:I guess we need to find what "HELPER_FUNCTION" should be 
+Yiqing says:it should be one of the built-in functions of dataframe 
+10:56
+L
+Luke
+Luke says:Looking for that 
+10:56
+K
+Kelly
+Kelly says:@yiqing, we can fill the two values in the next TODO 
+Kelly says:The COLUMN_NAME should be 'genre', 
+Kelly says:PLOT_TYPE is 'bar' 
+Kelly says:Let wait till the df is updated by the helper function 
+10:58
+Y
+Yiqing
+Yiqing says:but isn't the value of the following cells dependent on this one? 
+10:58
+L
+Luke
+Luke says:Wow okay I think we want to use the 'explode' function yes really 
+10:58
+K
+Kelly
+Kelly says:Yes 
+10:58
+Y
+Yiqing
+Yiqing says:Looks correct! 
+10:59
+me says:Grear job! 
+10:59
+K
+Kelly
+Kelly says:Yay! 
+10:59
+me says:There's no submission mechanism yet, you can simply save the dataframe and move on to the second analysis, but your roles are changing 
+me says:Now, Kelly is the driver, Yiqing is the navigator, and Luke is the driver 
+10:59
+L
+Luke
+Luke says:Uh. You listed driver twice. 
+11:00
+me says:ah sorry 
+me says:but I think we have to wrap up the exercise and collect feedback now 
+me says:since it's already 11am 
+me says:thank you all! 

@@ -1,0 +1,486 @@
+Atharva Naik
+Atharva Naik says:Hi 
+10:33
+avatar
+Sireesh
+Sireesh says:hello! 
+10:33
+me says:Great, let's get started 
+10:33
+J
+James
+James says:Hello 
+10:33
+me says:In the first exercise, Atharva is the driver, Sireesh is the navigator, and James is the researcher 
+10:33
+avatar
+Sireesh
+Sireesh says:ok! 
+10:33
+me says:you have about 12 minutes to finish the exercise 
+10:34
+J
+James
+James says:Okay 
+10:34
+AN
+Atharva Naik
+Atharva Naik says:do I need to share my screen if I'm the driver 
+Atharva Naik says:because I will be writing the code 
+10:34
+avatar
+Sireesh
+Sireesh says:or does the jupyter notebook auto-update? 
+10:34
+me says:No need to share 
+10:35
+AN
+Atharva Naik
+Atharva Naik says:cool 
+10:35
+me says:you will all see atharva's cursor 
+10:35
+AN
+Atharva Naik
+Atharva Naik says:thanks for clarifying 
+10:35
+J
+James
+James says:Also: what resources am I permitted to use? Anything on the web, or just the primers? 
+10:35
+AN
+Atharva Naik
+Atharva Naik says:should we get started folks? 
+Atharva Naik says:I think anything on the web 
+10:35
+avatar
+Sireesh
+Sireesh says:let's do it 
+10:35
+AN
+Atharva Naik
+Atharva Naik says:SO/Documentation was mentioned 
+10:35
+avatar
+Sireesh
+Sireesh says:yeah, I think web should be fine 
+10:35
+AN
+Atharva Naik
+Atharva Naik says:Except ChatGPT 😛 
+10:35
+avatar
+Sireesh
+Sireesh says:🕳 
+10:36
+J
+James
+James says:But ChatGPT can answer all of the questions XD 
+10:36
+avatar
+Sireesh
+Sireesh says:@atharva I still don't see your cursor? 
+10:36
+J
+James
+James says:Same 
+10:36
+AN
+Atharva Naik
+Atharva Naik says:now? 
+10:36
+J
+James
+James says:Yes, I can now 
+10:37
+avatar
+Sireesh
+Sireesh says:yeah! 
+Sireesh says:v cool stuff, this is a really swank interface 
+10:37
+AN
+Atharva Naik
+Atharva Naik says:indeed 
+10:37
+avatar
+Sireesh
+Sireesh says:I think the first thing we need to edit is further down 
+10:37
+AN
+Atharva Naik
+Atharva Naik says:gotcha 
+10:38
+avatar
+Sireesh
+Sireesh says:I think COLUMN_NAME is "genre" 
+Sireesh says:and PLOT_TYPE is "bar" 
+Sireesh says:did we run the cells above? 
+10:39
+AN
+Atharva Naik
+Atharva Naik says:yeah 
+10:39
+avatar
+Sireesh
+Sireesh says:ah, sorry, it's "genres (object)" 
+10:39
+AN
+Atharva Naik
+Atharva Naik says:It was genres I think 
+Atharva Naik says:it worked now 
+10:40
+J
+James
+James says:Did we lose Sireesh? 
+10:40
+AN
+Atharva Naik
+Atharva Naik says:do you guys see the plot? 
+Atharva Naik says:I think so 
+Atharva Naik says:this could be a potential issue with the real exercise 
+10:40
+J
+James
+James says:Yes, the plot showed up 
+10:40
+AN
+Atharva Naik
+Atharva Naik says:what if someone loses connection 
+10:41
+S
+Sireesh
+Sireesh says:hi, back now 
+10:41
+J
+James
+James says:Welcome back 
+10:41
+AN
+Atharva Naik
+Atharva Naik says:no worries 
+10:41
+me says:goos point @atharva 
+me says:the interface isn't very intuitive either 
+10:41
+AN
+Atharva Naik
+Atharva Naik says:first plot is done I think 
+10:41
+S
+Sireesh
+Sireesh says:yeah 
+Sireesh says:ok, I don't know what the helper function is 
+Sireesh says:I don't know that that's true!! AST.literal_eval is p dangerous in a lot of cases 
+10:42
+AN
+Atharva Naik
+Atharva Naik says:true 
+10:42
+S
+Sireesh
+Sireesh says:also, fwiw, braces will be a problem for literal eval, iirc 
+10:42
+AN
+Atharva Naik
+Atharva Naik says:it can execute malicious code 
+Atharva Naik says:yeah 
+Atharva Naik says:just realized that 
+10:43
+S
+Sireesh
+Sireesh says:but anyway, not sure what the helper function is 
+Sireesh says:@james? 
+Sireesh says:it seems like it should be something like "expand" 
+10:44
+AN
+Atharva Naik
+Atharva Naik says:I think we need some research here 😛 
+10:44
+J
+James
+James says:I'm Googling 
+10:44
+AN
+Atharva Naik
+Atharva Naik says:👍 
+Atharva Naik says:Another thing I was wondering was would everyone stick to their role in a real exercise? 
+10:45
+me says:you have about 5 minutes left for the first analysis 
+10:45
+S
+Sireesh
+Sireesh says:lol 
+10:45
+AN
+Atharva Naik
+Atharva Naik says:If time limits are concerned everyone might start googling 
+Atharva Naik says:I have a strong urge to do so right now 
+10:45
+me says:googling is allowed. that's what the researcher does 
+10:45
+S
+Sireesh
+Sireesh says:I'm just here, no thoughts, head empty 
+10:46
+J
+James
+James says:explode() 
+10:46
+AN
+Atharva Naik
+Atharva Naik says:Yeah I meant if the driver and navigator will also start doing it 
+10:46
+me says:right 
+10:46
+AN
+Atharva Naik
+Atharva Naik says:explode worked 
+Atharva Naik says:thanks 
+10:46
+S
+Sireesh
+Sireesh says:noice 
+Sireesh says:plot type is bar 
+10:46
+AN
+Atharva Naik
+Atharva Naik says:ok 
+Atharva Naik says:it worked 
+10:46
+S
+Sireesh
+Sireesh says:🎉 
+10:46
+AN
+Atharva Naik
+Atharva Naik says:how to submit? 
+10:47
+S
+Sireesh
+Sireesh says:go team 
+10:47
+me says:submission link doesn't exist yet 
+me says:so you're all set. great job! 
+me says:let's move on to analysis #2 
+10:47
+AN
+Atharva Naik
+Atharva Naik says:thanks 
+Atharva Naik says:ok 
+Atharva Naik says:what are the roles now? 
+10:47
+me says:now, Sireesh is the driver, Atharva is the researcher, and James is the navigator 
+10:47
+AN
+Atharva Naik
+Atharva Naik says:got it 
+10:47
+S
+Sireesh
+Sireesh says:alright folks, take the wheel 
+10:48
+AN
+Atharva Naik
+Atharva Naik says:@Sireesh we can see you now 
+10:48
+S
+Sireesh
+Sireesh says:cool, thta seems to work 
+10:49
+J
+James
+James says:Didn't realize we swapped roles 
+10:49
+S
+Sireesh
+Sireesh says:yeah, I am the driver now 
+10:49
+AN
+Atharva Naik
+Atharva Naik says:no worries 
+Atharva Naik says:@James you are the navigator 
+10:49
+S
+Sireesh
+Sireesh says:column name should be count, yes? 
+10:49
+J
+James
+James says:Cand count 
+James says:And* 
+James says:Maybe swap vote average and count 
+James says:Nvm 
+10:50
+S
+Sireesh
+Sireesh says:what's our helper function? 
+10:50
+AN
+Atharva Naik
+Atharva Naik says:yeah looking into it 
+10:50
+J
+James
+James says:We may need research 
+James says:It might be cut 
+10:51
+S
+Sireesh
+Sireesh says:yeah, cut seems to have worked 
+10:51
+AN
+Atharva Naik
+Atharva Naik says:yeah cut/qcut seems to be the one 
+10:52
+J
+James
+James says:Nice, that was what I was looking up when I thought I was still the researcher 
+10:52
+AN
+Atharva Naik
+Atharva Naik says:I think I will be the navigator now? 
+Atharva Naik says:And James will be the driver? 
+10:52
+S
+Sireesh
+Sireesh says:this...also doesn't seem like a great visualization? 
+10:53
+J
+James
+James says:Alright, Should we move on to the next one? I assume I am the driver 
+10:53
+AN
+Atharva Naik
+Atharva Naik says:yeah 
+Atharva Naik says:I think with some formatting of floats and adding a hyphen? 
+10:53
+S
+Sireesh
+Sireesh says:alright, let's research 
+10:53
+AN
+Atharva Naik
+Atharva Naik says:column name is genre again I think? 
+Atharva Naik says:vote_bins? 
+Atharva Naik says:wait sorry 
+10:54
+S
+Sireesh
+Sireesh says:we're using revenue, now, right 
+Sireesh says:? 
+10:54
+AN
+Atharva Naik
+Atharva Naik says:yeah 
+Atharva Naik says:total 
+Atharva Naik says:can you check the argument for agg? 
+10:55
+S
+Sireesh
+Sireesh says:huh, I didn't know you could use total, I thought it'd be sum 
+10:55
+AN
+Atharva Naik
+Atharva Naik says:@Sireesh 
+10:55
+S
+Sireesh
+Sireesh says:"sum" should work 
+10:55
+AN
+Atharva Naik
+Atharva Naik says:gotcha 
+Atharva Naik says:in quotes 
+10:55
+S
+Sireesh
+Sireesh says:string 
+10:55
+AN
+Atharva Naik
+Atharva Naik says:yeah 
+10:55
+S
+Sireesh
+Sireesh says:string "sum" 
+10:55
+J
+James
+James says:problem with genre 
+10:56
+AN
+Atharva Naik
+Atharva Naik says:it is genres 
+10:56
+S
+Sireesh
+Sireesh says:also "genres" 
+10:56
+AN
+Atharva Naik
+Atharva Naik says:yeah 
+10:56
+S
+Sireesh
+Sireesh says:noice 
+10:56
+AN
+Atharva Naik
+Atharva Naik says:"genre" again? 
+10:57
+S
+Sireesh
+Sireesh says:"genres" 
+10:57
+AN
+Atharva Naik
+Atharva Naik says:yeah "genres" 
+Atharva Naik says:my bad 
+10:57
+S
+Sireesh
+Sireesh says:here's an important research contribution: 
+https://www.youtube.com/watch?v=YmNK8R-YuEc
+ 
+Sireesh says:should that be capitalized? revenue, I mean 
+Sireesh says:nvm, sorry 
+10:58
+AN
+Atharva Naik
+Atharva Naik says:no 
+Atharva Naik says:yeah 
+10:58
+J
+James
+James says:I think we are done? 
+10:59
+AN
+Atharva Naik
+Atharva Naik says:Yeah 
+10:59
+S
+Sireesh
+Sireesh says:yeah, looks like it 
+10:59
+AN
+Atharva Naik
+Atharva Naik says:What are the polls for? 
+10:59
+S
+Sireesh
+Sireesh says:it's a jitsi feature, jitsi is like a zoom alternative 
+11:00
+AN
+Atharva Naik
+Atharva Naik says:gotcha 
+11:00
+me says:You can poll your collaborators I guess, but we're not using that feature for the exercise 
+11:00
+AN
+Atharva Naik
+Atharva Naik says:yeah 
+Atharva Naik says:Should we head back to the zoom? 
+11:00
+J
+James
+James says:Carolyn sent a message to go back to the main room 
