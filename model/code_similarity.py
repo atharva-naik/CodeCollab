@@ -25,17 +25,48 @@ class CodeDataset(Dataset):
         
         return out
 
+tokenizer = RobertaTokenizerFast.from_pretrained("neulab/codebert-python")
+
+LIST_OF_PUNCT_TOKENS = ["|","\\","/",",",")","(","!",";","`","|","{","}","'",'"',"[","]"]
+def is_punct_token(token: str, thresh: float=0.5):
+    global LIST_OF_PUNCT_TOKENS
+    ctr = 0
+    for c in token:
+        if c in LIST_OF_PUNCT_TOKENS:
+            ctr += 1
+    if ctr/len(token) >= thresh: return True
+    return False
+LIST_OF_PUNCT_TOKEN = [k for k in tokenizer.vocab if is_punct_token(k)]
+LIST_OF_PUNCT_TOKEN_IDS = [v for k,v in tokenizer.vocab.items() if is_punct_token(k)]
+# LIST_OF_PUNCT_TOKENS = ["(",")",",",'"',"'","\\","/",";","[","]","|",'("', '")', "('", "')", "['", "']", '["', '"]']
+# LIST_OF_PUNCT_TOKEN_IDS = [tokenizer.vocab[token] for token in LIST_OF_PUNCT_TOKENS] # [1640, 43, 6, 113, 108, 37457, 73, 131, 10975, 742, 15483
+
+
+# extend roberta model to skip punctuation while mean pooling.
+class NoPunctPoolRoberta(RobertaModel):
+    def no_punct_pool(self, **batch):
+        # emb_size is hard coded
+        global LIST_OF_PUNCT_TOKEN_IDS
+        punct_mask = torch.clone(batch["input_ids"]).cpu()
+        punct_mask.apply_(lambda x: x in LIST_OF_PUNCT_TOKEN_IDS)
+        punct_mask = punct_mask.unsqueeze(dim=-1).repeat(1,1,768)
+        enc = self(**batch).last_hidden_state # batch_size x seq_len x emb_siE
+        no_punct_pool_output = (punct_mask.to(enc.device) * enc).mean(dim=1)
+
+        return no_punct_pool_output
+
 class ZeroShotCodeBERTRetriever(nn.Module):
     """based on codebert-python, which is pre-trained further on python
     data to be used for computation of codebert score."""
     def __init__(self, model_path: str="neulab/codebert-python"):
         super().__init__()
-        self.model = RobertaModel.from_pretrained(model_path)
+        self.model = NoPunctPoolRoberta.from_pretrained(model_path)
         self.model.eval()
         self.tokenizer = RobertaTokenizerFast.from_pretrained(model_path)
         if torch.cuda.is_available(): self.model.cuda()
 
-    def encode(self, codes: List[str], batch_size: int=32, show_progress_bar: bool=False):
+    def encode(self, codes: List[str], batch_size: int=32, 
+               skip_punct: bool=True, show_progress_bar: bool=False):
         enc_dict = self.tokenizer.batch_encode_plus(
             codes, return_tensors="pt", 
             padding=True, truncation=True,
@@ -50,7 +81,9 @@ class ZeroShotCodeBERTRetriever(nn.Module):
             # make sure the tensors are on the same device as the model.
             for k in batch: batch[k] = batch[k].to(self.model.device)
             with torch.no_grad():
-                embs += self.model(**batch).pooler_output.detach().cpu().tolist()
+                if skip_punct:
+                    embs += self.model.no_punct_pool(**batch).detach().cpu().tolist()
+                else: embs += self.model(**batch).pooler_output.detach().cpu().tolist()
         
         return torch.as_tensor(embs)
 
