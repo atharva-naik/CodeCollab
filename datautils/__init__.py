@@ -46,6 +46,74 @@ def read_jsonl(path: str, use_tqdm: bool=True,
 
 #     return {"train": code_sim_pairs}
 
+class NBCompareBlock:
+    def __init__(self, inst: dict):
+        self.inst = inst
+        self.cell_seq = []
+        self.cell_content_to_cell_dict = {}
+        for cell in self.inst["context"][::-1]:
+            if cell["cell_type"] != "markdown":
+                content = cell["code"]
+            else: content = cell["nl_original"]
+            self.cell_seq.append(content)
+            self.cell_content_to_cell_dict[content] = cell 
+        self.cell_seq.append(inst["code"])
+        
+    @classmethod
+    def emptyBlock(cls):
+        inst = {"code":"", "context":[]}
+        obj = cls(inst)
+        obj.cell_seq = []
+        obj.cell_content_to_cell_dict = {}
+        
+        return obj
+
+    def __eq__(self, other):
+        return other.cell_seq == self.cell_seq
+
+    def __add__(self, other):
+        context = {}
+        for content, cell in self.cell_content_to_cell_dict.items(): 
+            context[content] = cell
+        for content, cell in other.cell_content_to_cell_dict.items(): 
+            context[content] = cell
+        other.cell_seq = list(context.keys())
+        other.cell_content_to_cell_dict = context
+        other.inst["context"] = list(context.values())[::-1]
+
+        return other
+
+    def __lt__(self, other):
+        if len(self.cell_seq) == 0:
+            return True
+        elif len(other.cell_seq) == 0:
+            return False
+        last_cell = self.cell_seq[-1]
+        try: 
+            index_of_last_cell_in_other = other.cell_seq.index(last_cell)
+            # definite true
+            if index_of_last_cell_in_other < len(other.cell_seq)-1:
+                # last cell in this NB is not the last cell of the other NB.
+                return True
+            else: return not(len(self.cell_seq) < len(other.cell_seq))
+        except ValueError:
+            try:
+                first_cell = self.cell_seq[-1]
+                index_of_first_cell_in_other = other.cell_seq.index(first_cell)
+                if index_of_first_cell_in_other > 0: return True
+                else: return (len(self.cell_seq) < len(other.cell_seq))
+            except ValueError:
+                return len(self.cell_seq) < len(other.cell_seq) 
+
+def write_dedup_train_data(path_to_ind, save_path: str="./data/juice-dataset/traindedup.jsonl"):
+    assert not os.path.exists(save_path)
+    open(save_path, "w")
+    for uniq_path, nb_ids_and_lens in tqdm(path_to_ind.items()):
+        insts = {id: NBCompareBlock(load_train_inst(id)) for id,_ in nb_ids_and_lens}    
+        combined = sum(sorted(list(insts.values())), start=NBCompareBlock.emptyBlock())
+        with open(save_path, "a") as f:
+            f.write(json.dumps(combined.inst)+"\n")
+
 def read_cell_seq(path: str, use_tqdm: bool=True): # block_size: int=1000, num_lines: int=1518104):
     cell_seqs = []
     cell_type_map = {
@@ -115,6 +183,21 @@ def load_train_insts(idx: List[int]=[], path: str="./data/juice-dataset/train.js
 
     return insts
 
+def sample_train_inst_by_stratified_difficulty(path: str, inst_per_bucket: int=200):
+    """Difficulty here refers to how much 
+    - "in the wild" a Jupyter NB appears (ratio of NL cells to MD cells)
+    - "in the wild" a Jupyter NB appears (how long/descriptive the MDs are)
+    - 
+    - how many libraries it requries (imports), how many function calls it contains, how long the context is,
+
+    
+    We creates buckets of difficulty of an instance from the train set based on
+    the following notions of diffculty:
+
+    1. 
+    2. 
+    """
+
 def collapse_train_dups_by_metadata(path: str) -> Dict[str, List[Tuple[int, int]]]:
     """return a list of dictonaries
     keys: metadata paths
@@ -178,7 +261,7 @@ def write_instance_as_nb(inst: dict, path):
         else: content = cell["code"]
         if cell_type == "markdown": nb["cells"].append(nbf.v4.new_markdown_cell(content))
         elif cell_type == "raw": nb["cells"].append(nbf.v4.new_raw_cell(content))
-        elif cell_type == "heading": nb["cells"].append(nbf.v4_new_heading_cell(content))
+        elif cell_type == "heading": nb["cells"]. append(nbf.v4_new_heading_cell(content))
         else: nb["cells"].append(nbf.v4.new_code_cell(content)) # code cell.
     with open(path, "w") as f: nbf.write(nb, f)
 
