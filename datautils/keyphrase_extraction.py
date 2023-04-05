@@ -102,7 +102,7 @@ class EnsembleKeyPhraseExtractor:
     def _generate_keyphrases(self, markdown: str) -> List[str]:
         """generate keyphrases for markdown"""
         kbir_kps = self.kbir_pipeline(process_markdown(markdown))
-        if kbir_kps == []:
+        if kbir_kps.size == 0:
             return self._get_yake_keyphrases(markdown)
         return kbir_kps
 
@@ -214,6 +214,7 @@ def write_train_kps(md_path: str="./data/juice-dataset/train_uniq_mds.jsonl", sa
     with open(md_path) as f:
         for line in tqdm(f):
             rec = json.loads(line.strip())
+            rec["mentions"] = rec["mentions"]["mentions"]
             rec["kps"] = list(set(kp.lower() for kp in ext(rec["md"])))
             with open(save_path, "a") as g:
                 g.write(json.dumps(rec)+"\n")
