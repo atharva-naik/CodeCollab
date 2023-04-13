@@ -7,12 +7,12 @@ import re
 import ast
 import bs4
 import json
-import bs2json
+# import bs2json
 import requests
-import html_to_json
+# import html_to_json
 from typing import *
 from tqdm import tqdm
-from bs2json import BS2Json
+# from bs2json import BS2Json
 from urllib.parse import urldefrag
 from collections import defaultdict
 from scrape_tutorials import SOURCE_TO_BASE_URLS

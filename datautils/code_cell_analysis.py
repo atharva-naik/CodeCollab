@@ -1,3 +1,4 @@
+import re
 import ast
 import copy
 import json
@@ -165,6 +166,24 @@ def extract_fn_name(func):
         return extract_fn_name(func.func)
     elif isinstance(func, ast.Name): return func.id
     elif isinstance(func, ast.Attribute): return func.attr
+
+def replace_python2_prints_with_python3(code: str) -> str:
+    # Define the regular expression
+    pattern = r'^(\s*)print\s+(.+)\s*$'
+    # Define the replacement string
+    replacement = r'\1print(\2)'
+    # Replace all occurrences of the pattern with the replacement string
+    return re.sub(pattern, replacement, code, flags=re.MULTILINE)
+
+def process_nb_cell(code: str):
+    code = code.strip()
+    code_lines = []
+    for line in code.split("\n"):
+        # strip nb-commands and inline magic:
+        if line.strip().startswith("!") or line.strip().startswith("%"): continue
+        code_lines.append(line)
+    
+    return replace_python2_prints_with_python3("\n".join(code_lines))
 
 def get_uniq_vars_and_funcs(cell_code_ast_root: ast.Module, 
                             imported_module_names: List[str]=[]) -> Dict[str, Dict[str, bool]]:

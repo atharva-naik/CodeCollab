@@ -1,16 +1,13 @@
 import copy
 import json
 import nltk
-import gensim
 import pprint
 import graphviz
 import numpy as np
 import dataclasses
 from typing import *
-import gensim.corpora as corpora
 from nltk.corpus import stopwords
 from collections import defaultdict
-from gensim.utils import simple_preprocess
 from datautils.plan_graph_extraction import get_noun_phrases, get_verb_phrases
 
 # download stopwords
@@ -270,6 +267,8 @@ def extract_title_phrases(data: List[dict], model, path: str):
         json.dump(titles, f, indent=4)
 
 def sent_to_words(sentences):    
+    import gensim
+    from gensim.utils import simple_preprocess
     for sentence in sentences:        
         # deacc=True removes punctuations        
         yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))
@@ -281,6 +280,8 @@ def remove_stopwords(texts):
              if word not in stop_words] for doc in texts]
 
 def get_lda_topics(data: List[str], num_topics: int=10):
+    import gensim
+    import gensim.corpora as corpora
     data_words = remove_stopwords(list(sent_to_words(data)))
     id2word = corpora.Dictionary(data_words)
     texts = data_words

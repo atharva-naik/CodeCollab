@@ -14,10 +14,19 @@ from scrape_tutorials.parsers import process_text, process_cell_text
 
 # code for various kinds of processing on the KG.
 class KGPathsIndex:
-    def __init__(self, kg_path: str):
+    def __init__(self, kg_path: Union[str, None]=None):
         self.kg_path = kg_path
-        self.KG_json = json.load(open(kg_path))
-        self.KG_paths = self.index_paths(self.KG_json, [[]])
+        if kg_path is not None:
+            self.KG_json = json.load(open(kg_path))
+            self.KG_paths = self.index_paths(self.KG_json, [[]])
+
+    @classmethod
+    def from_data(cls, KG_data):
+        obj = cls()
+        obj.KG_json = KG_data
+        obj.KG_paths = obj.index_paths(obj.KG_json, [[]])
+
+        return obj
 
     def index_paths(self, sub_KG: Union[dict, list], paths: List[Union[str, List[tuple]]]) -> List[Union[str, List[tuple]]]:
         """recursive function to uncover the task-decompositon paths from the nested JSON structure"""
@@ -28,7 +37,7 @@ class KGPathsIndex:
         #             exp_paths.append(path+[value])
             
         #     return exp_paths
-        if isinstance(sub_KG, list) and len(sub_KG) == 2 and (sub_KG[-1] in ["markdown", "code"]):
+        if isinstance(sub_KG, (list, tuple)) and len(sub_KG) == 2 and (sub_KG[-1] in ["markdown", "code"]):
             exp_paths = []
             for path in paths:
                 exp_paths.append(path+[sub_KG])
@@ -61,6 +70,8 @@ class KGPathsIndex:
         task_decomp_keyed_dict = dict(task_decomp_keyed_dict)
         with open(save_path, "w") as f:
             json.dump(task_decomp_keyed_dict, f, indent=4)
+
+        return task_decomp_keyed_dict
 
 # main
 if __name__ == "__main__":

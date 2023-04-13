@@ -140,3 +140,4 @@ data/KaggleNB/data.pkl
 experiments/CoNaLa_CodeBERT_CodeSearch/logs
 data/KaggleNB/
 HAConvGNN/dataset_notebook.pkl
+JuICe_train*
