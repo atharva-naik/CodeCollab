@@ -247,3 +247,19 @@ class BM25SparseRetriever(object):
 
         return results
 
+# main
+if __name__ == "__main__":
+    # find 10 NNs for each code in the code KB.
+    K = 10
+    code_KB = json.load(open("./JuICe_train_code_KB.json"))
+    codes = list(code_KB.keys())
+    searcher = EnsembleCodeBM25Searcher()
+    
+    save_path = "./analysis/codebm25_topic_and_struct_10nn.jsonl"
+    assert not os.path.exists(save_path)
+    open(save_path, "w")
+    for code in tqdm(codes):
+        results = searcher.search(code, k=K)
+        with open(save_path, "a") as f:
+            f.write(json.dumps(results)+"\n")
+

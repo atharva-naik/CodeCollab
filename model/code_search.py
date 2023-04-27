@@ -190,24 +190,19 @@ def recall_at_k_score(doc_ranks, doc_ids, k: int=5):
 def codesearch_create_index(model, dataset, args):
     """use MRR to validate and pick best model (instead of batch level -ve sample acc.)"""
     model.eval()
-    d_loader = dataset.get_docs_loader()
+    d_loader = dataset.get_docs_loader(batch_size=args.batch_size)
     dbar = tqdm(
         enumerate(d_loader), 
         total=len(d_loader),
     )
-    index_vecs = []
+    # create a Faiss CPU index for large scale NN search.
+    index = faiss.IndexFlatL2(768) # TODO: change hard coded vector dim
     for step, batch in dbar:
         model.zero_grad()
         with torch.no_grad():
             for j in range(len(batch)): batch[j] = batch[j].to(args.device)
-            q_enc = model.encode(*batch, dtype="text").cpu().detach().tolist()
-            index_vecs += q_enc
-    index_vecs = torch.as_tensor(index_vecs).to(args.device)
-    vector_dim = index_vecs.shape[1]
-    # create the Faiss GPU index
-    index = faiss.GpuIndexFlatL2(vector_dim)
-    # add the vectors to the index
-    index.add(index_vecs.numpy())
+            q_enc = model.encode(*batch, dtype="text").cpu().detach().numpy()
+            index.add(q_enc)
     # write the index to a file
     faiss.write_index(index, args.index_file_path)
     
