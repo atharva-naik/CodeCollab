@@ -7,6 +7,7 @@ import os
 import ast
 import json
 import torch
+import difflib
 import numpy as np
 from typing import *
 from tqdm import tqdm
@@ -47,6 +48,13 @@ ACCEPTABLE_CONSTRUCTS = {a:True for a in ACCEPTABLE_CONSTRUCTS}
 # @make_ast_parse_safe
 # def get_code_ast_seq(code: str):
 #     return " ".join([node.__class__.__name__ for node in ast.walk(ast.parse(code))][1:])
+class CustomDiffer(difflib.Differ):
+    def compare(self, code1: str, code2: str):
+        code1 = ast.unparse(ast.parse(process_nb_cell(code1)))
+        code2 = ast.unparse(ast.parse(process_nb_cell(code2)))
+        code1 = code1.split("\n")
+        code2 = code2.split("\n")
+        return super().compare(code1, code2)
 
 @make_ast_parse_safe
 def joint_get_code_topics_and_ast_seq(code: str) -> Tuple[str, str]:

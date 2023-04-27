@@ -640,6 +640,40 @@ class DocsUniXcoderInferenceDataset(Dataset):
             return [self.tokenizer(d_text, **self.tok_args)["input_ids"][0]]
 
 # training classes
+class JuICeKBNNCodeBERTCodeSearchDataset(Dataset):
+    """load JuICe Code KB data for NN search using CodeBERT dense representations"""
+    def __init__(self, folder: str="./JuICe_train_code_KB.json", 
+                 tokenizer=None, **tok_args):
+        super(JuICeKBNNCodeBERTCodeSearchDataset, self).__init__()
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        self.data = json.load(open(folder))
+        self.docs = []
+        for i, code in enumerate(self.data.values()):
+            self.docs.append(code)
+
+    def get_docs_loader(self, batch_size: int=100):
+        dset = DocsCodeBERTDataset(self.docs, self.tokenizer, **self.tok_args)
+        d_loader = DataLoader(dset, batch_size=batch_size, shuffle=False)
+        
+        return d_loader
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, i):
+        q = self.data[i]["intent"] # query
+        c = self.data[i]["snippet"] # document/code
+        q_tok_dict = self.tokenizer(q, **self.tok_args)
+        c_tok_dict = self.tokenizer(c, **self.tok_args)
+        
+        return [
+            q_tok_dict["input_ids"][0], q_tok_dict["attention_mask"][0],
+            c_tok_dict["input_ids"][0], c_tok_dict["attention_mask"][0],
+        ]
+
+# training classes
 class CodeSearchNetCodeBERTCodeSearchDataset(Dataset):
     """load CodeSearchNet data for code-search training."""
     def __init__(self, folder: str="./data/CoNaLa", 

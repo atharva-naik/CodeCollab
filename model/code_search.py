@@ -5,6 +5,7 @@
 import os
 import sys
 import json
+import faiss
 import torch
 import random
 import argparse
@@ -19,7 +20,7 @@ from transformers import RobertaModel, RobertaTokenizer
 
 # import the dataset classes needed for code search for various datasets.
 from sklearn.metrics import label_ranking_average_precision_score as MRR_score
-from model.code_search import UniXcoder
+from model.unixcoder import UniXcoder
 from model.datautils import *
 
 # seed
@@ -186,6 +187,37 @@ def recall_at_k_score(doc_ranks, doc_ids, k: int=5):
 
     return hits/tot
 
+def codesearch_create_index(model, dataset, args):
+    """use MRR to validate and pick best model (instead of batch level -ve sample acc.)"""
+    model.eval()
+    d_loader = dataset.get_docs_loader()
+    dbar = tqdm(
+        enumerate(d_loader), 
+        total=len(d_loader),
+    )
+    index_vecs = []
+    for step, batch in dbar:
+        model.zero_grad()
+        with torch.no_grad():
+            for j in range(len(batch)): batch[j] = batch[j].to(args.device)
+            q_enc = model.encode(*batch, dtype="text").cpu().detach().tolist()
+            index_vecs += q_enc
+    index_vecs = torch.as_tensor(index_vecs).to(args.device)
+    vector_dim = index_vecs.shape[1]
+    # create the Faiss GPU index
+    index = faiss.GpuIndexFlatL2(vector_dim)
+    # add the vectors to the index
+    index.add(index_vecs.numpy())
+    # write the index to a file
+    faiss.write_index(index, args.index_file_path)
+    
+    # # search over the index with a query
+    # query_vector = torch.randn(1, vector_dim)
+    # D, I = index.search(query_vector.numpy(), k=5)
+
+    # print("Query vector:\n", query_vector)
+    # print("D (distances):\n", D)
+    # print("I (indices):\n", I)
 def codesearch_val(model, dataset, args):
     """use MRR to validate and pick best model (instead of batch level -ve sample acc.)"""
     model.eval()
@@ -302,6 +334,57 @@ def codesearch_test_only(args):
     codesearch_val(codesearch_biencoder, valset, args)
     print("test metrics:")
     codesearch_val(codesearch_biencoder, testset, args)
+
+def create_juice_dense_index(args):
+    device = args.device
+    if args.model_type == "codebert":
+        codesearch_biencoder = CodeBERTSearchModel(
+            args.model_path, device=device,
+        )
+        tok_args = {
+            "return_tensors": "pt",
+            "padding": "max_length",
+            "truncation": True,
+            "max_length": 100,
+        }
+    elif args.model_type == "graphcodebert":
+        codesearch_biencoder = GraphCodeBERTSearchModel(
+            args.model_path, device=device,
+        )
+        tok_args = {
+            "nl_length": 100, 
+            "code_length": 100, 
+            "data_flow_length": 64
+        }
+    elif args.model_type == "unixcoder":
+        codesearch_biencoder = UniXcoderSearchModel(
+            args.model_path, device=device,
+        )
+        tok_args = {
+            "return_tensors": "pt",
+            "padding": "max_length",
+            "truncation": True,
+            "max_length": 100,
+            # "mode": "<encoder-only>",
+        }
+    if args.model_type in ["codebert", "graphcodebert", "unixcoder"]:
+        tokenizer = RobertaTokenizer.from_pretrained(args.model_path)
+    exp_folder = os.path.join(
+        "experiments", 
+        args.experiment_name,
+    )
+    ckpt_path = os.path.join(exp_folder, "best_model.pt")
+    ckpt_dict = torch.load(ckpt_path, map_location="cpu")
+    print(f"loaded model from: {ckpt_path}")
+    codesearch_biencoder.load_state_dict(ckpt_dict["model_state_dict"])
+
+    config = vars(args)
+    config["tokenizer_args"] = tok_args    
+
+    if args.model_type == "codebert":
+        dataset = JuICeKBNNCodeBERTCodeSearchDataset(tokenizer=tokenizer, **tok_args)
+    print_args(args)
+    codesearch_create_index(codesearch_biencoder, dataset, args)
 
 def codesearch_finetune(args):
     device = args.device
@@ -473,11 +556,11 @@ code search using a bi-encoder setup''')
                         help="do validation after these many steps")
     parser.add_argument("--retrieval_result_dump_path", type=str,
                         help="where to store the inferred data")
-    parser.add_argument("--data_dir", type=str, required=True,
+    parser.add_argument("--data_dir", type=str, required=False,
                         help="where to load the data")
     parser.add_argument("--mode", type=str, choices=['train', 'inference'], default='train',
                         help="should train or infer?")
-    
+    parser.add_argument("--index_file_path", type=str, default="./dense_indices/codebert.index")
     args = parser.parse_args()
 
     return args
@@ -487,8 +570,11 @@ if __name__ == "__main__":
     args = get_args()
     if args.mode == 'train':
         codesearch_finetune(args)
+    elif args.mode == "inference":
+        create_juice_dense_index(args)
 
 # python -m src.e_ret.code_search -exp CoNaLa_CodeBERT_CodeSearch
 # python -m src.e_ret.code_search -mt unixcoder -exp CoNaLa_UniXcoder_CodeSearch -bs 85 -mp microsoft/unixcoder-base
 # python -m src.e_ret.code_search -mt graphcodebert -exp CoNaLa_GraphCodeBERT_CodeSearch -bs 65 -mp microsoft/graphcodebert-base
-# python -m src.e_ret.code_search -mt codebert -exp CoNaLa_CodeBERT_Python_CodeSearch -bs 100 -mp neulab/codebert-python
+# python -m src.e_ret.code_search -mt codebert -exp CoNaLa_CodeBERT_Python_CodeSearch -bs 100 -mp neulab/codebert-python 
+# python -m src.e_ret.code_search -exp CoNaLa_CodeBERT_CodeSearch -bs 100 --mode inference
