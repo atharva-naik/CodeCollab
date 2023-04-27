@@ -26,6 +26,12 @@ def read_jsonl(path: str, use_tqdm: bool=True,
             if cutoff is not None and i == cutoff: break
             
     return data
+
+
+def write_jsonl(data: List[dict], path: str, use_tqdm: bool=True):
+    with open(path, "w") as f:
+        for inst in tqdm(data, disable=not(use_tqdm)):
+            f.write(json.dumps(inst)+"\n")
 # not a good idea.
 # def load_conala_data_for_code_sim(folder="./data/CoNaLa"):
 #     import os

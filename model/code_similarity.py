@@ -162,7 +162,11 @@ class BM25SparseRetriever(object):
     def transform(self, q, X):
         """ Calculate BM25 between query q and documents X """
         b, k1, avdl = self.b, self.k1, self.avdl
-        q = self.code2words[q]
+        try: q = self.code2words[q]
+        except KeyError:
+            new_q = self.transform_code_to_text(q)
+            if new_q == "": new_q = q
+            else: q = new_q
         X = [self.code2words[x] for x in tqdm(X)]
         # apply CountVectorizer
         X = super(TfidfVectorizer, self.vectorizer).transform(X)
@@ -179,6 +183,6 @@ class BM25SparseRetriever(object):
         numer = X.multiply(np.broadcast_to(idf, X.shape)) * (k1 + 1)                                                          
         scores = (numer / denom).sum(1).A1
         results = []
-        for i in scores.argsort()[::-1]: results.append(X[i])
+        for i in scores.argsort()[::-1]: results.append(i)
 
         return results

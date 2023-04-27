@@ -39,6 +39,15 @@ def get_path_depths(kg_paths: List[str]) -> List[int]:
     path_depths = []
     for path in kg_paths: path_depths.append(len(path.split("->")))
     return path_depths
+
+def build_code_to_path_graph(KB: Dict[str, List[Tuple[str, str]]]):
+    code_KG = defaultdict(lambda:[])
+    for key, cells in KB.items():
+        for content, cell_type in cells:
+            if cell_type != "code": continue
+            code_KG[content].append(key) # key is basically the path
+
+    return code_KG
 # # KB to path index converter class.
 # class KBToPathIndexConverter:
 #     def __init__(self, KB: dict):

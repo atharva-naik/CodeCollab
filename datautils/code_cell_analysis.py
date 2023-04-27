@@ -1,7 +1,9 @@
 import re
 import ast
+import sys
 import copy
 import json
+import traceback
 import numpy as np
 import pandas as pd
 from typing import *
@@ -167,6 +169,72 @@ def extract_fn_name(func):
     elif isinstance(func, ast.Name): return func.id
     elif isinstance(func, ast.Attribute): return func.attr
 
+def unsafe_transform_code_to_text(code: str):
+    """convert a piece of code to a stream of variable names and API calls.
+    Is unsafe in the sense that any AST parsing errors will cause exceptions"""
+    func_terms = []
+    var_and_alias_terms = set()
+    for node in ast.walk(ast.parse(code)):
+        if isinstance(node, ast.Name):
+            is_func_call = False
+            name = ast.unparse(node)
+        elif isinstance(node, ast.Call):
+            is_func_call = True
+            name = ast.unparse(node.func)
+        elif isinstance(node, ast.alias):
+            if node.asname is not None:
+                name = node.name + " " + node.asname
+            else: name = node.name
+            is_func_call = False
+        else: continue
+        for dot_split_term in name.split("."): # split by dots first.        
+            for underscore_split_term in dot_split_term.split("_"): # split by underscore second.
+                for term in camel_case_split(underscore_split_term): # split by camel case finally.
+                    term = term.lower()
+                    if is_func_call: func_terms.append(term)
+                    else: var_and_alias_terms.add(term)
+    
+    return " ".join(func_terms+list(var_and_alias_terms))
+
+def make_ast_parse_safe(func):
+    def function_wrapper(code: str):
+        proc_code = process_nb_cell(code, use_pass=False)
+        try: return func(proc_code)
+        except SyntaxError as e:
+            proc_code = process_nb_cell(code, use_pass=True)
+            # print(proc_code)
+            # line_number = sys.exc_info()[2].tb_lineno
+            # print(line_number, code.split("\n")[line_number])
+            try: return func(proc_code)
+            except SyntaxError as e: return ""        
+
+    return function_wrapper
+
+def transform_code_to_text(code: str):
+    """convert a piece of code to a stream of variable names and API calls."""
+    proc_code = process_nb_cell(code, use_pass=False)
+    try: return unsafe_transform_code_to_text(proc_code)
+    except SyntaxError as e:
+        proc_code = process_nb_cell(code, use_pass=True)
+        # print(proc_code)
+        # line_number = sys.exc_info()[2].tb_lineno
+        # print(line_number, code.split("\n")[line_number])
+        try: return unsafe_transform_code_to_text(proc_code)
+        except SyntaxError as e: return ""
+
+def create_code2words(codes: List[str]) -> Dict[str, str]:
+    code2words = {}
+    empty_string_ctr = 0
+    pbar = tqdm(codes)
+    for code in pbar:
+        op = transform_code_to_text(code)
+        if len(op) == 0: empty_string_ctr += 1
+        code2words[code] = op
+        pbar.set_description(f"{empty_string_ctr} errors")
+    print(empty_string_ctr)
+
+    return code2words
+
 def replace_python2_prints_with_python3(code: str) -> str:
     # Define the regular expression
     pattern = r'^(\s*)print\s+(.+)\s*$'
@@ -175,12 +243,18 @@ def replace_python2_prints_with_python3(code: str) -> str:
     # Replace all occurrences of the pattern with the replacement string
     return re.sub(pattern, replacement, code, flags=re.MULTILINE)
 
-def process_nb_cell(code: str):
+def process_nb_cell(code: str, use_pass: bool=False):
     code = code.strip()
     code_lines = []
     for line in code.split("\n"):
         # strip nb-commands and inline magic:
-        if line.strip().startswith("!") or line.strip().startswith("%"): continue
+        if use_pass:
+            if line.strip().startswith("!") or line.strip().startswith("%"):
+                indent = line.split("!")[0].split("%")[0]
+                code_lines.append(indent+"pass")
+                continue
+        else: 
+            if line.strip().startswith("!") or line.strip().startswith("%"): continue
         code_lines.append(line)
     
     return replace_python2_prints_with_python3("\n".join(code_lines))

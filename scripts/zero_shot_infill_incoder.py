@@ -59,7 +59,7 @@ def generate(model, tokenizer, input: str, max_to_generate: int=128,
     """
     Do standard left-to-right completion of the prefix `input` by sampling from the model
     """
-    input_ids = tokenizer(input, return_tensors="pt").input_ids
+    input_ids = tokenizer(input, return_tensors="pt", truncation=True).input_ids
     if device == "cuda": input_ids = input_ids.cuda()
     max_length = max_to_generate + input_ids.flatten().size(0)
     if max_length > 2048:
@@ -166,6 +166,7 @@ def remove_extra_code(input):
 
 # main
 if __name__ == "__main__":
+    model_path: str = ""
     dataset = InCoderInFillDataset("./data/juice-dataset/dev.jsonl")
     tokenizer = dataset.tokenizer
     model = AutoModelForCausalLM.from_pretrained("facebook/incoder-1B") # incoder-1B model.
