@@ -1,9 +1,0 @@
-{
-    "train_path": "./data/juice-dataset/train.jsonl",
-    "val_path": "./data/juice-dataset/dev.jsonl",
-    "exp": "experiments/cell_seq_lstm_1",
-    "lr": 0.0001,
-    "log_steps": 200,
-    "batch_size": 256,
-    "num_epochs": 100
-}

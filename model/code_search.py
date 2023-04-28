@@ -203,6 +203,7 @@ def codesearch_create_index(model, dataset, args):
             for j in range(len(batch)): batch[j] = batch[j].to(args.device)
             q_enc = model.encode(*batch, dtype="text").cpu().detach().numpy()
             index.add(q_enc)
+        if step == 500: break
     # write the index to a file
     faiss.write_index(index, args.index_file_path)
     
@@ -555,7 +556,7 @@ code search using a bi-encoder setup''')
                         help="where to load the data")
     parser.add_argument("--mode", type=str, choices=['train', 'inference'], default='train',
                         help="should train or infer?")
-    parser.add_argument("--index_file_path", type=str, default="./dense_indices/codebert.index")
+    parser.add_argument("--index_file_path", type=str, default="./dense_indices/codebert_partial.index")
     args = parser.parse_args()
 
     return args
@@ -572,4 +573,4 @@ if __name__ == "__main__":
 # python -m src.e_ret.code_search -mt unixcoder -exp CoNaLa_UniXcoder_CodeSearch -bs 85 -mp microsoft/unixcoder-base
 # python -m src.e_ret.code_search -mt graphcodebert -exp CoNaLa_GraphCodeBERT_CodeSearch -bs 65 -mp microsoft/graphcodebert-base
 # python -m src.e_ret.code_search -mt codebert -exp CoNaLa_CodeBERT_Python_CodeSearch -bs 100 -mp neulab/codebert-python 
-# python -m src.e_ret.code_search -exp CoNaLa_CodeBERT_CodeSearch -bs 100 --mode inference
+# python -m model.code_search -exp CoNaLa_CodeBERT_CodeSearch -bs 100 --mode inference

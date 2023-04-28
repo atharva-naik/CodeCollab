@@ -643,15 +643,18 @@ class DocsUniXcoderInferenceDataset(Dataset):
 class JuICeKBNNCodeBERTCodeSearchDataset(Dataset):
     """load JuICe Code KB data for NN search using CodeBERT dense representations"""
     def __init__(self, folder: str="./JuICe_train_code_KB.json", 
-                 tokenizer=None, **tok_args):
+                 queries=None, tokenizer=None, **tok_args):
         super(JuICeKBNNCodeBERTCodeSearchDataset, self).__init__()
         self.tok_args = tok_args
         self.tokenizer = tokenizer
         self.folder = folder
-        self.data = json.load(open(folder))
-        self.docs = []
-        for i, code in enumerate(self.data.values()):
-            self.docs.append(code)
+        if queries is not None:
+            self.docs = queries
+        else:
+            self.data = json.load(open(folder))
+            self.docs = []
+            for i, code in enumerate(self.data.values()):
+                self.docs.append(code)
 
     def get_docs_loader(self, batch_size: int=100):
         dset = DocsCodeBERTDataset(self.docs, self.tokenizer, **self.tok_args)

@@ -137,14 +137,17 @@ class CodeBM25SparseIndexer:
 class EnsembleCodeBM25Searcher:
     def __init__(self, ast_index_path: str="./codebm25_indices/JuICe_train/code_asts",
                  topics_index_path: str="./codebm25_indices/JuICe_train/code_topics",
-                 ast_high_recall_size: int=1000, topics_high_recall_size: int=1000):
+                 ast_high_recall_size: int=100, topics_high_recall_size: int=100):
         self.ast_searcher = LuceneSearcher(ast_index_path)
         self.topics_searcher = LuceneSearcher(topics_index_path)
         self.ast_high_recall_size = ast_high_recall_size
         self.topics_high_recall_size = topics_high_recall_size
 
     def search(self, query: str, k: int=10):
-        topics_query, ast_query = joint_get_code_topics_and_ast_seq(query)
+        try: topics_query, ast_query = joint_get_code_topics_and_ast_seq(query)
+        except ValueError: topics_query, ast_query = query, query
+        topics_query = " ".join(topics_query.split()[:1000])
+        ast_query = " ".join(ast_query.split()[:1000])
         ast_hits = {hit.docid: hit.score for hit in self.ast_searcher.search(ast_query, k=self.ast_high_recall_size)}
         topics_hits = {hit.docid: hit.score for hit in self.topics_searcher.search(topics_query, k=self.topics_high_recall_size)}
         # print(list(ast_hits.items())[:10])
@@ -255,11 +258,13 @@ if __name__ == "__main__":
     codes = list(code_KB.keys())
     searcher = EnsembleCodeBM25Searcher()
     
-    save_path = "./analysis/codebm25_topic_and_struct_10nn.jsonl"
+    save_path = "./analysis/codebm25_topic_and_struct_10nn1.jsonl"
     assert not os.path.exists(save_path)
     open(save_path, "w")
-    for code in tqdm(codes):
-        results = searcher.search(code, k=K)
+    for i, code in tqdm(enumerate(codes), total=len(codes)):
+        if i < 493445: continue
+        try: results = searcher.search(code, k=K)
+        except Exception as e: results = {"combined":[], "ast":[], "topics":[]}
         with open(save_path, "a") as f:
             f.write(json.dumps(results)+"\n")
 

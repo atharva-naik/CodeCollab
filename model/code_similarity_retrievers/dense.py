@@ -5,6 +5,7 @@
 import os
 import ast
 import json
+import faiss
 import torch
 import numpy as np
 from typing import *
@@ -14,6 +15,7 @@ from sentence_transformers import util
 from torch.utils.data import DataLoader
 from transformers import RobertaModel, RobertaTokenizerFast
 from model.code_similarity_retrievers.datautils import CodeDataset
+from model.code_search import CodeBERTSearchModel, RobertaTokenizer, JuICeKBNNCodeBERTCodeSearchDataset
 
 tokenizer = RobertaTokenizerFast.from_pretrained("neulab/codebert-python")
 LIST_OF_PUNCT_TOKENS = ["|","\\","/",",",")","(","!",";","`","|","{","}","'",'"',"[","]"]
@@ -77,3 +79,44 @@ class ZeroShotCodeBERTRetriever(nn.Module):
         c2 = self.encode(c2)
 
         return util.cos_sim(c1, c2).cpu()
+
+# dense retriever based on CodeBERT
+class CodeBERTDenseSearcher:
+    def __init__(self, path: str="microsoft/codebert-base", device: str="cuda:0",
+                 ckpt_path: str="./experiments/CoNaLa_CodeBERT_CodeSearch/best_model.pt", 
+                 tok_args: str = {
+                    "return_tensors": "pt", "padding": "max_length",
+                    "truncation": True, "max_length": 100,
+                }, faiss_index_path: str="./dense_indices/codebert_partial.index"):
+        self.tok_args = tok_args
+        self.tokenizer = RobertaTokenizer.from_pretrained(path)
+        self.model = CodeBERTSearchModel(
+            path, device=device,
+        )
+        self.device = device    
+        self.faiss_index_path = faiss_index_path
+        # ckpt_path = os.path.join(ckp, "best_model.pt")
+        ckpt_dict = torch.load(ckpt_path, map_location="cpu")
+        print(f"loaded model from: {ckpt_path}")
+        self.model.load_state_dict(ckpt_dict["model_state_dict"])
+        self.model.to(self.device)
+        self.dense_index = faiss.read_index(faiss_index_path)
+
+    def search(self, queries: List[str], k: int=100):
+        # inp = self.tokenizer(query, **self.tok_args)
+        dataset = JuICeKBNNCodeBERTCodeSearchDataset(
+            tokenizer=self.tokenizer,
+            **self.tok_args,
+        )
+        dataloader = dataset.get_docs_loader()
+        q_mat = []
+        for step, batch in dataloader:
+            self.model.zero_grad()
+            with torch.no_grad():
+                for j in range(len(batch)): batch[j] = batch[j].to(self.device)
+                q_enc = self.model.encode(*batch, dtype="text").cpu().detach().tolist()
+                q_mat += q_enc
+        q_mat = np.array(q_mat)
+        D, I = self.index.search(q_mat, k=k)
+
+        return D, I
