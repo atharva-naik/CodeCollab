@@ -201,7 +201,7 @@ def codesearch_create_index(model, dataset, args):
         model.zero_grad()
         with torch.no_grad():
             for j in range(len(batch)): batch[j] = batch[j].to(args.device)
-            q_enc = model.encode(*batch, dtype="text").cpu().detach().numpy()
+            q_enc = model.encode(*batch, dtype="code").cpu().detach().numpy()
             index.add(q_enc)
         if step == 500: break
     # write the index to a file

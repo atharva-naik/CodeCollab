@@ -106,17 +106,17 @@ class CodeBERTDenseSearcher:
         # inp = self.tokenizer(query, **self.tok_args)
         dataset = JuICeKBNNCodeBERTCodeSearchDataset(
             tokenizer=self.tokenizer,
+            queries=queries,
             **self.tok_args,
         )
         dataloader = dataset.get_docs_loader()
         q_mat = []
-        for step, batch in dataloader:
+        for step, batch in enumerate(dataloader):
             self.model.zero_grad()
             with torch.no_grad():
-                for j in range(len(batch)): batch[j] = batch[j].to(self.device)
-                q_enc = self.model.encode(*batch, dtype="text").cpu().detach().tolist()
+                for j in range(len(batch)): batch[j] = batch[j].to(self.device) # print(batch)
+                q_enc = self.model.encode(*batch, dtype="code").cpu().detach().tolist()
                 q_mat += q_enc
-        q_mat = np.array(q_mat)
-        D, I = self.index.search(q_mat, k=k)
-
-        return D, I
+        q_mat = torch.as_tensor(q_mat).numpy()
+        
+        return self.dense_index.search(q_mat, k=k)
