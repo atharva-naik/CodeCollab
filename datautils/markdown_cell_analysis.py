@@ -15,12 +15,21 @@ nltk.download('stopwords')
 
 def get_title_hierarchy_and_stripped_title(title: str):
     ctr = 0
-    for char in title:
+    for char in title.strip():
         if char == "#": ctr += 1
         else: break
     if ctr == 0: ctr = 1000 # base level is taken as 1000 randomly.
     else: title = title[ctr:].strip()
     return ctr, title
+
+def get_title_from_markdown(md: str) -> str:
+    ctr = 0
+    md = md.strip()
+    for char in md:
+        if char == "#": ctr += 1
+        else: break
+    
+    return md[ctr:].split("\n")[0].strip()
 
 # triple object.
 @dataclasses.dataclass
