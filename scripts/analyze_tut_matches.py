@@ -169,3 +169,6 @@ def compare_tut_paths_with_GT_paths(tuts_path: str="./scrape_tutorials/tut_codes
         })
 
     return fetched_tut_paths_and_GTs
+# java -DoutputDir=<output dir to store JSON representation of graph> -DquadFile=<file name to write quads to - this file gets appended to, so all analyzed scripts end up in a single file> -cp codebreaker3.jar util.RunTurtleSingleAnalysis <python script to run on> <graph prefix> <graph qualifier> 
+
+# java -DoutputDir="/home/atharva/CMU/sem2/Directed Study/CodeCollab/codegraphs" -cp codebreaker3.jar util.RunTurtleSingleAnalysis "/home/atharva/CMU/sem2/Directed Study/CodeCollab/scripts/infill_content_analysis.py" null null
