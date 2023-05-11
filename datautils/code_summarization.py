@@ -1,14 +1,64 @@
 # # code to summarize intents of code blocks.
 # from datautils import read_jsonl
 # from transformers import RobertaTokenizer, T5ForConditionalGeneration
+import os
+import json
+from typing import *
+from tqdm import tqdm
+from torch.utils.data import DataLoader
+from datautils.code_cell_analysis import process_nb_cell
+from transformers import RobertaTokenizer, T5ForConditionalGeneration
 
-# class CodeSummarizer:
-#     """summarize code to NL intent"""
-#     def __init__(self, model_path: str= "stmnk/codet5-small-code-summarization-python"):
-#         self.tokenizer = RobertaTokenizer.from_pretrained(model_path)
-#         self.model = T5ForConditionalGeneration.from_pretrained(model_path)
+def safe_process_nb_cell(code: str) -> str:
+    try:
+        proc_code = process_nb_cell(code)
+    except Exception as e: 
+        print(e)
+        proc_code = code
+    
+    return proc_code
 
-#     def __call__(self, text: str, max_length: int=40):
+class CodeCellSummDataset:
+    """Dataset to create code cells,
+    create a processed version of it and
+    wrap it in a function."""
+    def __init__(self, codes: List[str]):
+        self.codes = codes
+
+    def __getitem__(self, i: int):
+        code = self.codes[i]
+        proc_code = safe_process_nb_cell(self.codes[i])
+        func_code = "\n".join(["def func():"]+["\t"+d for d in proc_code.split("\n")])
+
+        return {"code": code, "proc_code": proc_code, "func_code": func_code}
+
+    def __len__(self):
+        return len(self.codes)
+
+class CodeSummarizer:
+    """summarize code to NL intent"""
+    def __init__(self, model_path: str="Salesforce/codet5-base-multi-sum"):# "stmnk/codet5-small-code-summarization-python"):
+        self.tokenizer = RobertaTokenizer.from_pretrained(model_path)
+        self.model = T5ForConditionalGeneration.from_pretrained(model_path)
+
+    def batched_call(self, codes: List[str], max_length: int=40, 
+                     skip_special_tokens: bool=True,
+                     clean_up_tokenization_spaces: bool=True):
+        input_ids = self.tokenizer(codes, return_tensors="pt", 
+                                   padding="longest", truncation=True).input_ids.cuda()
+        generated_ids = self.model.generate(input_ids, max_length=max_length)
+
+        return self.tokenizer.batch_decode(generated_ids.detach().cpu(), 
+               						       skip_special_tokens=skip_special_tokens,
+                                           clean_up_tokenization_spaces=clean_up_tokenization_spaces)
+
+    def __call__(self, code: str, max_length: int=40, 
+                 skip_special_tokens: bool=True):
+        input_ids = self.tokenizer(code, return_tensors="pt").input_ids.cuda()
+        generated_ids = self.model.generate(input_ids, max_length=max_length)
+
+        return self.tokenizer.decode(generated_ids[0].detach().cpu(), 
+               						 skip_special_tokens=skip_special_tokens)
 #         # text = "def greet(user): print(f'hello <extra_id_0>!')"
 #         input_ids = self.tokenizer(text, return_tensors="pt").input_ids
 #         # simply generate a single sequence
@@ -29,11 +79,10 @@
 #     print(code)
 #     print(intent)
 
-from transformers import RobertaTokenizer, T5ForConditionalGeneration
 
 if __name__ == '__main__':
-    tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base-multi-sum')
-    model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base-multi-sum')
+    # tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base-multi-sum')
+    # model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base-multi-sum')
     codes = [
         """
 for n_neighbors in [1, 5, 10, 20, 30]:
@@ -93,20 +142,34 @@ m = Map(center=center, zoom=4)
 g = GeoJSON(data=hi_bbox)
 m.add_layer(g)
 m"""]
-    codes = [code.strip("\n") for code in codes]
-    # text = """def svg_to_image(string, size=None):
-    # if isinstance(string, unicode):
-    #     string = string.encode('utf-8')
-    #     renderer = QtSvg.QSvgRenderer(QtCore.QByteArray(string))
-    # if not renderer.isValid():
-    #     raise ValueError('Invalid SVG data.')
-    # if size is None:
-    #     size = renderer.defaultSize()
-    #     image = QtGui.QImage(size, QtGui.QImage.Format_ARGB32)
-    #     painter = QtGui.QPainter(image)
-    #     renderer.render(painter)
-    # return image"""
-    for code in codes:
-        input_ids = tokenizer(code, return_tensors="pt").input_ids
-        generated_ids = model.generate(input_ids, max_length=20)
-        print(tokenizer.decode(generated_ids[0], skip_special_tokens=True))
+    code_summ_path = "./data/juice-dataset/train_KB_batched_summ.jsonl"
+    assert not os.path.exists(code_summ_path), "aborting to avoid overwrite issues"
+    open(code_summ_path, "w") # create the file
+    # codes = [code.strip("\n") for code in codes]
+    all_codes = list(json.load(open("./JuICe_train_code_KB.json")).keys())
+    csumm_dataset = CodeCellSummDataset(all_codes)
+    csumm_dataloader = DataLoader(csumm_dataset, batch_size=32, shuffle=False)
+    csumm = CodeSummarizer()
+    csumm.model.cuda()
+    id = 0
+    for batch in tqdm(csumm_dataloader):
+        # input_ids = tokenizer(code, return_tensors="pt").input_ids
+        # generated_ids = model.generate(input_ids, max_length=20)
+        batched_cell_summ = csumm.batched_call(batch["proc_code"])
+        batched_func_summ = csumm.batched_call(batch["func_code"])
+        for code, proc_code, func_code, cell_summ, func_summ in zip(
+            batch["code"], 
+            batch["proc_code"], 
+            batch["func_code"], 
+            batched_cell_summ, 
+            batched_func_summ,
+        ):
+            with open(code_summ_path, "a") as f:
+                f.write(json.dumps({
+                    "id": id, "code": code,
+                    "proc_code": proc_code,
+                    "cell_summ": cell_summ,
+                    "func_code": func_code,
+                    "func_summ": func_summ,
+                })+"\n")
+            id += 1

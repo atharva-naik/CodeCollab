@@ -1,17 +1,10 @@
-import copy
+import re
 import json
-import nltk
 import pprint
-import graphviz
 import numpy as np
 import dataclasses
 from typing import *
-from nltk.corpus import stopwords
 from collections import defaultdict
-from datautils.plan_graph_extraction import get_noun_phrases, get_verb_phrases
-
-# download stopwords
-nltk.download('stopwords')
 
 def get_title_hierarchy_and_stripped_title(title: str):
     ctr = 0
@@ -22,14 +15,28 @@ def get_title_hierarchy_and_stripped_title(title: str):
     else: title = title[ctr:].strip()
     return ctr, title
 
+def strip_html_tags(text):
+    clean = re.compile('<.*?>')
+    return re.sub(clean, '', text)
+
 def get_title_from_markdown(md: str) -> str:
     ctr = 0
     md = md.strip()
     for char in md:
         if char == "#": ctr += 1
         else: break
-    
+    if ctr == 0: return ""
+
     return md[ctr:].split("\n")[0].strip()
+
+def strip_q_tags(text):
+    return re.sub(r"Q\d+\.\d+", " ", text)
+
+def strip_problem_tags(text):
+    return re.sub(r"Problem \d+(?:\.\d+)+", " ", text)
+
+def strip_number_tags(text):
+    return re.sub(r"\d+(?:\.\d+)+", " ", text)
 
 # triple object.
 @dataclasses.dataclass
@@ -126,6 +133,7 @@ class NBTreeNode:
         return dot
 
     def plot(self, path: str, view=False) -> str:
+        import graphviz
         dot = graphviz.Digraph(comment='Notebook Hierarchy')
         dot = self.populate_digraph(dot)
         print(dot.source)
@@ -257,6 +265,7 @@ def extract_notebook_hierarchy(inst: dict):
             #     level=level, cell_type=cell_type
             # )
 def extract_title_phrases(data: List[dict], model, path: str):
+    from datautils.plan_graph_extraction import get_noun_phrases, get_verb_phrases
     titles = defaultdict(lambda:[])
     for rec in data.values():
         for cell in rec["context"]:
@@ -282,9 +291,15 @@ def sent_to_words(sentences):
         # deacc=True removes punctuations        
         yield(gensim.utils.simple_preprocess(str(sentence), deacc=True))
 
-stop_words = stopwords.words('english')
+stop_words = None
 def remove_stopwords(texts):
     global stop_words
+    from gensim.utils import simple_preprocess
+    if stop_words is None:
+        from nltk.corpus import stopwords
+        # download stopwords
+        nltk.download('stopwords')
+        stop_words = stopwords.words('english')
     return [[word for word in simple_preprocess(str(doc)) 
              if word not in stop_words] for doc in texts]
 
@@ -355,7 +370,7 @@ def strip_img_tags(markdown: str):
 
 def process_markdown(markdown: str):
     """strip formatting and syntax cues from markdown."""
-    markdown = markdown.replace("#", " ").replace("`", " ").replace("*", " ")
+    markdown = markdown.replace("#", " ").replace("`", " ").replace("*", " ").strip("!").replace("&nbsp;"," ")
     # replace markdown URLs with display text:
     markdown = replace_markdown_links_with_display_text(markdown)
     # strip out remaining URLs (without display text).

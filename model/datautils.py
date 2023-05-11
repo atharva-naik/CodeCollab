@@ -15,6 +15,7 @@ from model.parser import (remove_comments_and_docstrings,
                               tree_to_token_index,
                               index_to_code_token,
                               tree_to_variable_index)
+from datautils.code_cell_analysis import obfuscate_code
 
 # cell sequence prediction dataloaders:
 class SimpleCellSeqDataset(Dataset):
@@ -680,7 +681,8 @@ class JuICeKBNNCodeBERTCodeSearchDataset(Dataset):
 class CodeSearchNetCodeBERTCodeSearchDataset(Dataset):
     """load CodeSearchNet data for code-search training."""
     def __init__(self, folder: str="./data/CoNaLa", 
-                 split: str="train", tokenizer=None, **tok_args):
+                 split: str="train", tokenizer=None, 
+                 obf_code: bool=False, **tok_args):
         super(CodeSearchNetCodeBERTCodeSearchDataset, self).__init__()
         self.split = split
         self.tok_args = tok_args
@@ -690,12 +692,16 @@ class CodeSearchNetCodeBERTCodeSearchDataset(Dataset):
             self.data = read_jsonl(os.path.join(
                 folder, "train.jsonl"
             ))
+            if obf_code:
+                for rec in self.data: self.data["snippet"] = obfuscate_code(self.data["snippet"])
         else:
             self.data = json.load(open(
                 os.path.join(
                     folder, f"{split}.json"
                 )
             ))
+            if obf_code:
+                for rec in self.data: self.data["snippet"] = obfuscate_code(self.data["snippet"])
             self.queries = {}
             self.doc_ids = defaultdict(lambda:[])
             self.docs = {}

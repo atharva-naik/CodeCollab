@@ -163,6 +163,30 @@ builtins_set = set(['ArithmeticError',
  'type',
  'vars',
  'zip'])
+def replace_python2_prints_with_python3(code: str) -> str:
+    # Define the regular expression
+    pattern = r'^(\s*)print\s+(.+)\s*$'
+    # Define the replacement string
+    replacement = r'\1print(\2)'
+    # Replace all occurrences of the pattern with the replacement string
+    return re.sub(pattern, replacement, code, flags=re.MULTILINE)
+
+def process_nb_cell(code: str, use_pass: bool=False):
+    code = code.strip()
+    code_lines = []
+    for line in code.split("\n"):
+        # strip nb-commands and inline magic:
+        if use_pass:
+            if line.strip().startswith("!") or line.strip().startswith("%"):
+                indent = line.split("!")[0].split("%")[0]
+                code_lines.append(indent+"pass")
+                continue
+        else: 
+            if line.strip().startswith("!") or line.strip().startswith("%"): continue
+        code_lines.append(line)
+    
+    return replace_python2_prints_with_python3("\n".join(code_lines))
+
 def extract_fn_name(func):
     if isinstance(func, ast.Call): 
         return extract_fn_name(func.func)
@@ -222,6 +246,55 @@ def transform_code_to_text(code: str):
         try: return unsafe_transform_code_to_text(proc_code)
         except SyntaxError as e: return ""
 
+OBF_TEST_EG = """import os
+import matplotlib.pyplot as plt
+
+def data_plotter(dataframe: Union[str, Tuple[int, int]]="info"):
+    dataframe["data"].apply(lambda x: x[1])
+    x = [d["x"] for d in dataframe.to_dict("records")]
+    y = [d["y"] for d in dataframe.to_dict("records")]
+    plt.plot(x, y)
+    plt.show()"""
+def obfuscate_code(code: str):
+    """"""
+    import ast
+    try: 
+        code = process_nb_cell(code)
+        root = ast.parse(code)
+        rename_map = {}
+        skip_list = ["str", "int", "float", "Union", "List", "Tuple", "bool", "Set", "Dict"] # to avoid typing hints and stuff.
+        for node in ast.walk(root):
+            if isinstance(node, ast.FunctionDef):
+                if node.name.startswith("OBF_FUNC_"): continue
+                print(node.args)
+                new_func_name = rename_map.get(node.name)
+                if new_func_name is None:
+                    new_func_name = f"OBF_FUNC_{len(rename_map)}"
+                    rename_map[node.name] = new_func_name
+                # print(f"{node.name} to {new_func_name}")
+                node.name = new_func_name
+            elif isinstance(node, ast.Name):
+                if node.id.startswith("OBF_VAR_"): continue
+                if node.id in skip_list: continue
+                new_var_name = rename_map.get(node.id)
+                if new_var_name is None:
+                    new_var_name = f"OBF_VAR_{len(rename_map)}"
+                    rename_map[node.id] = new_var_name
+                # print(f"{node.id} to {new_var_name}")
+                node.id = new_var_name
+            elif isinstance(node, ast.arg):
+                if node.arg.startswith("OBF_VAR_"): continue
+                if node.arg in skip_list: continue
+                new_var_name = rename_map.get(node.arg)
+                if new_var_name is None:
+                    new_var_name = f"OBF_VAR_{len(rename_map)}"
+                    rename_map[node.arg] = new_var_name
+                # print(f"{node.arg} to {new_var_name}")
+                node.arg = new_var_name
+        code = ast.unparse(root)
+    except SyntaxError as e: pass
+    return code
+
 def create_code2words(codes: List[str]) -> Dict[str, str]:
     code2words = {}
     empty_string_ctr = 0
@@ -234,30 +307,6 @@ def create_code2words(codes: List[str]) -> Dict[str, str]:
     print(empty_string_ctr)
 
     return code2words
-
-def replace_python2_prints_with_python3(code: str) -> str:
-    # Define the regular expression
-    pattern = r'^(\s*)print\s+(.+)\s*$'
-    # Define the replacement string
-    replacement = r'\1print(\2)'
-    # Replace all occurrences of the pattern with the replacement string
-    return re.sub(pattern, replacement, code, flags=re.MULTILINE)
-
-def process_nb_cell(code: str, use_pass: bool=False):
-    code = code.strip()
-    code_lines = []
-    for line in code.split("\n"):
-        # strip nb-commands and inline magic:
-        if use_pass:
-            if line.strip().startswith("!") or line.strip().startswith("%"):
-                indent = line.split("!")[0].split("%")[0]
-                code_lines.append(indent+"pass")
-                continue
-        else: 
-            if line.strip().startswith("!") or line.strip().startswith("%"): continue
-        code_lines.append(line)
-    
-    return replace_python2_prints_with_python3("\n".join(code_lines))
 
 def get_uniq_vars_and_funcs(cell_code_ast_root: ast.Module, 
                             imported_module_names: List[str]=[]) -> Dict[str, Dict[str, bool]]:
