@@ -643,19 +643,35 @@ class DocsUniXcoderInferenceDataset(Dataset):
 # training classes
 class JuICeKBNNCodeBERTCodeSearchDataset(Dataset):
     """load JuICe Code KB data for NN search using CodeBERT dense representations"""
-    def __init__(self, folder: str="./JuICe_train_code_KB.json", 
-                 queries=None, tokenizer=None, **tok_args):
+    def __init__(self, folder: str="./JuICe_train_code_KB.json", queries=None, 
+                 obf_code: bool=False, tokenizer=None, **tok_args):
         super(JuICeKBNNCodeBERTCodeSearchDataset, self).__init__()
         self.tok_args = tok_args
         self.tokenizer = tokenizer
         self.folder = folder
+        self.obf_code = obf_code
+        folder_stem, ext = os.path.splitext(folder)
+        if obf_code:
+            folder_ = folder_stem + "_obf" + ext
+            if not os.path.exists(folder_):
+                codes = list(json.load(open(folder)).keys())
+                for ind in tqdm(range(len(codes))):
+                    try: codes[ind] = obfuscate_code(codes[ind])
+                    except RecursionError: pass
+                with open(folder_, "w") as f:
+                    json.dump(codes, f, indent=4)
+            folder = folder_
         if queries is not None:
             self.docs = queries
         else:
             self.data = json.load(open(folder))
             self.docs = []
-            for i, code in enumerate(self.data.values()):
-                self.docs.append(code)
+            if isinstance(self.data, dict):
+                for i, code in enumerate(self.data.keys()):
+                    self.docs.append(code)
+            elif isinstance(self.data, list):
+                for i, code in enumerate(self.data):
+                    self.docs.append(code)
 
     def get_docs_loader(self, batch_size: int=100):
         dset = DocsCodeBERTDataset(self.docs, self.tokenizer, **self.tok_args)
@@ -680,28 +696,57 @@ class JuICeKBNNCodeBERTCodeSearchDataset(Dataset):
 # training classes
 class CodeSearchNetCodeBERTCodeSearchDataset(Dataset):
     """load CodeSearchNet data for code-search training."""
-    def __init__(self, folder: str="./data/CoNaLa", 
-                 split: str="train", tokenizer=None, 
-                 obf_code: bool=False, **tok_args):
+    def __init__(self, folder: str="./data/CoNaLa", split: str="train", tokenizer=None, 
+                 obf_code: bool=False, csn_folder="./data/CodeSearchNet/", 
+                 filt_conala_top_k: bool=True, filt_k: int=100000, **tok_args):
         super(CodeSearchNetCodeBERTCodeSearchDataset, self).__init__()
         self.split = split
+        print(f"obf_code: {obf_code}")
         self.tok_args = tok_args
         self.tokenizer = tokenizer
         self.folder = folder
+        self.filt_k = filt_k
+        self.filt_conala_top_k = filt_conala_top_k
         if self.split == "train":
             self.data = read_jsonl(os.path.join(
                 folder, "train.jsonl"
             ))
-            if obf_code:
-                for rec in self.data: self.data["snippet"] = obfuscate_code(self.data["snippet"])
+            # filter CoNaLa instances based on decreasing order of relevance
+            # CoNaLa data is already organized in decreasing order of relevance.
+            if filt_conala_top_k:
+                self.data = self.data[:self.filt_k]
+            if obf_code: desc = "obfuscating CoNaLa"
+            else: desc = "loading CoNaLa"          
+            for i in tqdm(range(len(self.data)), desc=desc): 
+                # remove comments and docstrings.
+                self.data[i]["snippet"] = remove_comments_and_docstrings(self.data[i]["snippet"])
+                if obf_code: self.data[i]["snippet"] = obfuscate_code(self.data[i]["snippet"])
+            if csn_folder is not None:
+                print(f"\x1b[32;1madding CodeSearchNet data\x1b[0m")
+                all_csn_data = []
+                for idx in range(5):
+                    csn_data = read_jsonl(os.path.join(csn_folder, "train", f"python_train_{idx}.jsonl"))
+                    if obf_code: desc = "obfuscating CSN"
+                    else: desc = "loading CSN"
+                    for rec in tqdm(csn_data, desc=desc):
+                        code = remove_comments_and_docstrings(rec["code"])
+                        if obf_code: code = obfuscate_code(code)
+                        all_csn_data.append({
+                            "snippet": code,
+                            "intent": rec["docstring"]
+                        })
+                print(f"\x1b[32;1madded CodeSearchNet data\x1b[0m")
+                self.data += all_csn_data
         else:
             self.data = json.load(open(
                 os.path.join(
                     folder, f"{split}.json"
                 )
             ))
-            if obf_code:
-                for rec in self.data: self.data["snippet"] = obfuscate_code(self.data["snippet"])
+            for i in tqdm(range(len(self.data)), desc="obfuscating code"): 
+                # remove comments and docstrings.
+                self.data[i]["snippet"] = remove_comments_and_docstrings(self.data[i]["snippet"])
+                if obf_code: self.data[i]["snippet"] = obfuscate_code(self.data[i]["snippet"])
             self.queries = {}
             self.doc_ids = defaultdict(lambda:[])
             self.docs = {}
@@ -754,6 +799,14 @@ class CodeSearchNetCodeBERTCodeSearchDataset(Dataset):
             q_tok_dict["input_ids"][0], q_tok_dict["attention_mask"][0],
             c_tok_dict["input_ids"][0], c_tok_dict["attention_mask"][0],
         ]
+
+# class CodeBERTCodeSearchDataset(Dataset):
+#     """load CoNaLa and CodeSearchNet data for code-search training"""
+#     def __init__(self, conala_dir: str="./data/CoNaLa",
+#                  codesearchnet_dir: str="./data/CodeSearchNet",
+#                  ):
+#         self.conala_dir = conala_dir
+#         self.codesearchnet_dir = codesearchnet_dir
 
 class CoNaLaGraphCodeBERTCodeSearchDataset(Dataset):
     """load CoNaLa data for code-search training."""

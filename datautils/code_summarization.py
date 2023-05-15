@@ -84,8 +84,7 @@ if __name__ == '__main__':
     # tokenizer = RobertaTokenizer.from_pretrained('Salesforce/codet5-base-multi-sum')
     # model = T5ForConditionalGeneration.from_pretrained('Salesforce/codet5-base-multi-sum')
     codes = [
-        """
-for n_neighbors in [1, 5, 10, 20, 30]:
+        """for n_neighbors in [1, 5, 10, 20, 30]:
     knn = KNeighborsClassifier(n_neighbors)
     knn.fit(X_train, y_train)
     print(n_neighbors, knn.score(X_test, y_test))

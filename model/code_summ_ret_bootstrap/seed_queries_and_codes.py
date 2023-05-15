@@ -1,35 +1,58 @@
 import json
 from tqdm import tqdm
 from datautils import read_jsonl
+from collections import defaultdict
 from scripts.sample_data_for_annot_situated_steps import remove_step_numbers
 from datautils.markdown_cell_analysis import get_title_from_markdown, process_markdown, strip_html_tags, strip_q_tags, strip_problem_tags, strip_number_tags
+
+def process_query(q: str):
+    # remove html tags:
+    seed_query = strip_html_tags(q)
+    # print(f"11: {seed_query}")
+    seed_query = process_markdown(get_title_from_markdown(seed_query))
+    # print(f"13: {seed_query}")
+    seed_query = remove_step_numbers(seed_query)
+    # print(f"15: {seed_query}")
+    seed_query = seed_query.replace("(TODO)", " ")
+    # print(f"17: {seed_query}")
+    seed_query = seed_query.replace('"', " ").replace("'", ' ').strip()
+    # print(f"19: {seed_query}")
+    seed_query = seed_query.replace("(1.0 point)", " ")
+    # print(f"21: {seed_query}")
+    seed_query = seed_query.replace("-", " ")
+    # print(f"23: {seed_query}")
+    seed_query = strip_q_tags(seed_query)
+    # print(f"25: {seed_query}")
+    seed_query = strip_problem_tags(seed_query)
+    # print(f"27: {seed_query}")
+    seed_query = strip_number_tags(seed_query)
+    # print(f"29: {seed_query}")
+    for punct in [".", "!", '"', "'", ":", ")", "(", "[", "]", "}", "{"]:#, "Exercise"]:
+        seed_query = seed_query.replace(punct, " ")
+    if seed_query.startswith("Exercise "):
+        seed_query = seed_query[len("Exercise "):]
+    if seed_query.startswith("Aside "):
+        seed_query = seed_query[len("Aside "):]
+    # seed_query = seed_query.strip(".").strip("!").strip('"').strip("'").strip(")").strip("(").strip("[").strip("]").strip("}").strip("{")
+    # print(f"33: {seed_query}")
+    seed_query = " ".join(seed_query.split())
+
+    return seed_query
 
 # main
 if __name__ == "__main__":
     val_data = read_jsonl("./data/juice-dataset/devdedup.jsonl")
-    seed_queries = set()
+    seed_queries = defaultdict(lambda:[])
     for rec in tqdm(val_data):
         for cell in rec["context"]:
             if cell["cell_type"] == "markdown":
-                # remove html tags:
-                seed_query = strip_html_tags(cell["nl_original"])
-                seed_query = process_markdown(get_title_from_markdown(seed_query))
-                seed_query = remove_step_numbers(seed_query)
-                seed_query = seed_query.replace("(TODO)", " ")
-                seed_query = seed_query.replace('"', " ").replace("'", ' ').strip()
-                seed_query = seed_query.replace("(1.0 point)", " ")
-                seed_query = seed_query.replace("-", " ")
-                seed_query = strip_q_tags(seed_query)
-                seed_query = strip_problem_tags(seed_query)
-                seed_query = strip_number_tags(seed_query)
-                for punct in [".", "!", '"', "'", "!", ")", "(", "[", "]", "}", "{", "Exercise"]:
-                    seed_query = seed_query.strip(punct)
-                # seed_query = seed_query.strip(".").strip("!").strip('"').strip("'").strip(")").strip("(").strip("[").strip("]").strip("}").strip("{")
-                seed_query = " ".join(seed_query.split())
+                original_nl = cell["nl_original"]
+                seed_query = process_query(cell["nl_original"])
                 if len(seed_query) == 0: continue
                 if len(seed_query.split()) > 25: continue
-                seed_queries.add(seed_query)
-    seed_queries = sorted(list(seed_queries))
+                # seed_queries.add(seed_query)
+                seed_queries[seed_query].append(original_nl)
+    seed_queries = {k: v for k,v in sorted(seed_queries.items(), reverse=False, key=lambda x: x[0])}
     # print(seed_queries[:10])
     print(len(seed_queries))
     with open("./data/juice-dataset/seed_queries.json", "w", encoding="utf8") as f:

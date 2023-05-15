@@ -255,7 +255,7 @@ def data_plotter(dataframe: Union[str, Tuple[int, int]]="info"):
     y = [d["y"] for d in dataframe.to_dict("records")]
     plt.plot(x, y)
     plt.show()"""
-def obfuscate_code(code: str):
+def obfuscate_code(code: str, include_str_const: bool=True):
     """"""
     import ast
     try: 
@@ -266,7 +266,7 @@ def obfuscate_code(code: str):
         for node in ast.walk(root):
             if isinstance(node, ast.FunctionDef):
                 if node.name.startswith("OBF_FUNC_"): continue
-                print(node.args)
+                # print(node.args)
                 new_func_name = rename_map.get(node.name)
                 if new_func_name is None:
                     new_func_name = f"OBF_FUNC_{len(rename_map)}"
@@ -291,6 +291,9 @@ def obfuscate_code(code: str):
                     rename_map[node.arg] = new_var_name
                 # print(f"{node.arg} to {new_var_name}")
                 node.arg = new_var_name
+            elif isinstance(node, ast.Constant):
+                if isinstance(node.value, str) and include_str_const:
+                    node.value = ""
         code = ast.unparse(root)
     except SyntaxError as e: pass
     return code

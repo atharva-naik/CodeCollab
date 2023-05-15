@@ -13,6 +13,7 @@ from tqdm import tqdm
 import torch.nn as nn
 from sentence_transformers import util
 from torch.utils.data import DataLoader
+from datautils.code_cell_analysis import obfuscate_code
 from transformers import RobertaModel, RobertaTokenizerFast
 from model.code_similarity_retrievers.datautils import CodeDataset
 from model.code_search import CodeBERTSearchModel, RobertaTokenizer, JuICeKBNNCodeBERTCodeSearchDataset
@@ -83,7 +84,7 @@ class ZeroShotCodeBERTRetriever(nn.Module):
 # dense retriever based on CodeBERT
 class CodeBERTDenseSearcher:
     def __init__(self, path: str="microsoft/codebert-base", device: str="cuda:0",
-                 ckpt_path: str="./experiments/CoNaLa_CodeBERT_CodeSearch/best_model.pt", 
+                 ckpt_path: str="./experiments/CoNaLa_CSN_CodeBERT_ObfCodeSearch2/best_model.pt", 
                  tok_args: str = {
                     "return_tensors": "pt", "padding": "max_length",
                     "truncation": True, "max_length": 100,
@@ -102,8 +103,12 @@ class CodeBERTDenseSearcher:
         self.model.to(self.device)
         self.dense_index = faiss.read_index(faiss_index_path)
 
-    def search(self, queries: List[str], k: int=100):
+    def search(self, queries: List[str], k: int=10, 
+               text_query: bool=False, obf_code: bool=False,
+               use_cos_sim: bool=True):
         # inp = self.tokenizer(query, **self.tok_args)
+        assert not(text_query and obf_code), "code obfuscation not applicable in text query mode"
+        if obf_code: queries = [obfuscate_code(q) for q in queries]
         dataset = JuICeKBNNCodeBERTCodeSearchDataset(
             tokenizer=self.tokenizer,
             queries=queries,
@@ -111,12 +116,19 @@ class CodeBERTDenseSearcher:
         )
         dataloader = dataset.get_docs_loader()
         q_mat = []
-        for step, batch in enumerate(dataloader):
+        for step, batch in tqdm(
+            enumerate(dataloader),
+            total=len(dataloader),
+        ):
             self.model.zero_grad()
             with torch.no_grad():
                 for j in range(len(batch)): batch[j] = batch[j].to(self.device) # print(batch)
-                q_enc = self.model.encode(*batch, dtype="code").cpu().detach().tolist()
+                dtype = "text" if text_query else "code"
+                q_enc = self.model.encode(*batch, dtype=dtype).cpu().detach().tolist()
                 q_mat += q_enc
         q_mat = torch.as_tensor(q_mat).numpy()
-        
+        # normalize by L2 norm if cosine similarity is being used.
+        if use_cos_sim: faiss.normalize_L2(q_mat)
+        print("constructed query matrix")
+
         return self.dense_index.search(q_mat, k=k)

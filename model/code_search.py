@@ -17,6 +17,7 @@ from torch.optim import AdamW
 import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from transformers import RobertaModel, RobertaTokenizer
+from torchmetrics.functional import pairwise_cosine_similarity
 
 # import the dataset classes needed for code search for various datasets.
 from sklearn.metrics import label_ranking_average_precision_score as MRR_score
@@ -34,7 +35,8 @@ class CodeBERTSearchModel(nn.Module):
     This class implements the classic bi-encoder architecture
     for code search using two CodePLM instances.
     """
-    def __init__(self, path: str="microsoft/codebert-base", device: str="cuda"):
+    def __init__(self, path: str="microsoft/codebert-base", 
+                 device: str="cuda", use_cos_sim: bool=False):
         super(CodeBERTSearchModel, self).__init__()
         self.code_encoder = RobertaModel.from_pretrained(path)
         self.query_encoder = RobertaModel.from_pretrained(path)
@@ -42,6 +44,7 @@ class CodeBERTSearchModel(nn.Module):
         self.device = device if torch.cuda.is_available() else "cpu"
         print(f"moving model to device: {self.device}")
         self.to(device)
+        self.use_cos_sim = use_cos_sim
         self.tokenizer = RobertaTokenizer.from_pretrained(path)
 
     def encode_from_text(self, text_or_code: str, dtype: str="text"):
@@ -62,10 +65,12 @@ class CodeBERTSearchModel(nn.Module):
         code_enc = self.code_encoder(code_iids, code_attn).pooler_output
         batch_size, _ = query_enc.shape
         target = torch.as_tensor(range(batch_size)).to(self.device)
-        scores = query_enc @ code_enc.T
+        if self.use_cos_sim:
+            scores = pairwise_cosine_similarity(query_enc, code_enc)
+        else: scores = query_enc @ code_enc.T
         loss = self.ce_loss(scores, target)
 
-        return query_enc, code_enc, query_enc @ code_enc.T, loss
+        return query_enc, code_enc, scores, loss
 
     def encode(self, iids, attn, dtype: str="text"):
         if dtype == "text": return self.query_encoder(iids, attn).pooler_output
@@ -195,15 +200,16 @@ def codesearch_create_index(model, dataset, args):
         enumerate(d_loader), 
         total=len(d_loader),
     )
-    # create a Faiss CPU index for large scale NN search.
-    index = faiss.IndexFlatL2(768) # TODO: change hard coded vector dim
+    # create a Faiss CPU index for large scale NN search (using inner product metric).
+    index = faiss.IndexFlatIP(768) # TODO: change hard coded vector dim
     for step, batch in dbar:
         model.zero_grad()
         with torch.no_grad():
             for j in range(len(batch)): batch[j] = batch[j].to(args.device)
             q_enc = model.encode(*batch, dtype="code").cpu().detach().numpy()
+            if args.cos_sim: faiss.normalize_L2(q_enc)
             index.add(q_enc)
-        if step == 500: break
+        # if step == 5000: break
     # write the index to a file
     faiss.write_index(index, args.index_file_path)
     
@@ -244,7 +250,9 @@ def codesearch_val(model, dataset, args):
             d_mat += d_enc
     q_mat = torch.as_tensor(q_mat).to(args.device)
     d_mat = torch.as_tensor(d_mat).to(args.device)
-    scores = (q_mat @ d_mat.T).cpu()
+    if args.cos_sim:
+        scores = pairwise_cosine_similarity(q_mat, d_mat).cpu()
+    else: scores = (q_mat @ d_mat.T).cpu()
     doc_ids = dataset.doc_ids 
     trues = np.array(dataset.get_doc_ids_mask())
     print(scores.shape, trues.shape)
@@ -267,6 +275,7 @@ def codesearch_test_only(args):
     if args.model_type == "codebert":
         codesearch_biencoder = CodeBERTSearchModel(
             args.model_path, device=device,
+            use_cos_sim=args.cos_sim,
         )
         tok_args = {
             "return_tensors": "pt",
@@ -378,7 +387,11 @@ def create_juice_dense_index(args):
     config["tokenizer_args"] = tok_args    
 
     if args.model_type == "codebert":
-        dataset = JuICeKBNNCodeBERTCodeSearchDataset(tokenizer=tokenizer, **tok_args)
+        dataset = JuICeKBNNCodeBERTCodeSearchDataset(
+            tokenizer=tokenizer, 
+            obf_code=args.obfuscate_code, 
+            **tok_args,
+        )
     print_args(args)
     codesearch_create_index(codesearch_biencoder, dataset, args)
 
@@ -421,9 +434,12 @@ def codesearch_finetune(args):
     config["tokenizer_args"] = tok_args
     
     if args.model_type == "codebert":
-        trainset = CodeSearchNetCodeBERTCodeSearchDataset(split="train", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-        valset = CodeSearchNetCodeBERTCodeSearchDataset(split="val", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-        testset = CodeSearchNetCodeBERTCodeSearchDataset(split="test", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        trainset = CodeSearchNetCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
+                                                          folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        valset = CodeSearchNetCodeBERTCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
+                                                        folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        testset = CodeSearchNetCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
+                                                         folder=args.data_dir, tokenizer=tokenizer, **tok_args)
     elif args.model_type == "graphcodebert":
         trainset = CoNaLaGraphCodeBERTCodeSearchDataset(split="train", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
         valset = CoNaLaGraphCodeBERTCodeSearchDataset(split="val", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
@@ -552,10 +568,13 @@ code search using a bi-encoder setup''')
                         help="do validation after these many steps")
     parser.add_argument("--retrieval_result_dump_path", type=str,
                         help="where to store the inferred data")
+    parser.add_argument("-obf", "--obfuscate_code", action="store_true",
+                        help="obfuscate variable names and function defs")
     parser.add_argument("--data_dir", type=str, required=False,
-                        help="where to load the data")
+                        default="./data/CoNaLa", help="where to load the data")
     parser.add_argument("--mode", type=str, choices=['train', 'inference'], default='train',
                         help="should train or infer?")
+    parser.add_argument("--cos_sim", action="store_true", help="use cosine similarity in contrastive loss")
     parser.add_argument("--index_file_path", type=str, default="./dense_indices/codebert_partial.index")
     args = parser.parse_args()
 
@@ -574,3 +593,8 @@ if __name__ == "__main__":
 # python -m src.e_ret.code_search -mt graphcodebert -exp CoNaLa_GraphCodeBERT_CodeSearch -bs 65 -mp microsoft/graphcodebert-base
 # python -m src.e_ret.code_search -mt codebert -exp CoNaLa_CodeBERT_Python_CodeSearch -bs 100 -mp neulab/codebert-python 
 # python -m model.code_search -exp CoNaLa_CodeBERT_CodeSearch -bs 100 --mode inference
+# python -m model.code_search -exp CoNaLa_CodeBERT_CodeSearch_CosSim -bs 200 --mode train --cos_sim -e 5
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch -bs 200 --mode train -obf --data_dir "./data/CoNaLa"
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch2 -bs 500 --mode inference -obf --index_file_path ./dense_indices/codebert_obf_partial.index
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim -bs 200 --mode train --cos_sim -obf -e 50
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim -bs 500 --mode inference -obf --index_file_path ./dense_indices/codebert_obf_cos_sim.index --cos_sim

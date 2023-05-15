@@ -2,7 +2,7 @@ import re
 import tokenize
 from io import StringIO
 
-def remove_comments_and_docstrings(source,lang):
+def remove_comments_and_docstrings(source, lang: str="python"):
     if lang in ['python']:
         """
         Returns 'source' minus comments and docstrings.
