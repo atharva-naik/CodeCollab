@@ -103,6 +103,35 @@ class CodeBERTDenseSearcher:
         self.model.to(self.device)
         self.dense_index = faiss.read_index(faiss_index_path)
 
+    def encode(self, queries: List[str], k: int=10, 
+               text_query: bool=False, obf_code: bool=False,
+               use_cos_sim: bool=True):
+        # inp = self.tokenizer(query, **self.tok_args)
+        assert not(text_query and obf_code), "code obfuscation not applicable in text query mode"
+        if obf_code: queries = [obfuscate_code(q) for q in queries]
+        dataset = JuICeKBNNCodeBERTCodeSearchDataset(
+            tokenizer=self.tokenizer,
+            queries=queries,
+            **self.tok_args,
+        )
+        dataloader = dataset.get_docs_loader()
+        q_mat = []
+        for step, batch in tqdm(
+            enumerate(dataloader),
+            total=len(dataloader),
+        ):
+            self.model.zero_grad()
+            with torch.no_grad():
+                for j in range(len(batch)): batch[j] = batch[j].to(self.device)
+                dtype = "text" if text_query else "code"
+                q_enc = self.model.encode(*batch, dtype=dtype).cpu().detach().tolist()
+                q_mat += q_enc
+        q_mat = torch.as_tensor(q_mat).numpy()
+        # normalize by L2 norm if cosine similarity is being used.
+        if use_cos_sim: faiss.normalize_L2(q_mat)
+        # print("constructed query matrix")
+        return q_mat
+
     def search(self, queries: List[str], k: int=10, 
                text_query: bool=False, obf_code: bool=False,
                use_cos_sim: bool=True):

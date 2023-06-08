@@ -598,3 +598,5 @@ if __name__ == "__main__":
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch2 -bs 500 --mode inference -obf --index_file_path ./dense_indices/codebert_obf_partial.index
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim -bs 200 --mode train --cos_sim -obf -e 50
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim -bs 500 --mode inference -obf --index_file_path ./dense_indices/codebert_obf_cos_sim.index --cos_sim
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 200 --mode train --cos_sim -e 50
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 500 --mode inference --index_file_path ./dense_indices/codebert_cos_sim.index --cos_sim

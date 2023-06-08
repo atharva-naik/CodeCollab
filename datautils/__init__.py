@@ -337,6 +337,17 @@ def get_value_counts(l: List[str]) -> Dict[str, int]:
 
     return dict(counts)
 
+def load_plan_ops(path: str="./data/juice-dataset/seed_query_relabels.csv") -> List[str]:
+    import pandas as pd
+    plan_ops = set()
+    for rec in pd.read_csv(path).to_dict("records"):
+        if str(rec["human"]) == "SKIP": continue
+        name = str(rec["human"]) if str(rec["human"]).strip() != "nan" else str(rec["orig"])
+        plan_ops.add(name)
+
+    return sorted(list(plan_ops))
+
+# main
 if __name__ == "__main__":
     sampled_juice = {}
     idx = random.sample(range(1518104), k=1000)
