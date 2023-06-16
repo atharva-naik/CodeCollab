@@ -338,15 +338,84 @@ def get_value_counts(l: List[str]) -> Dict[str, int]:
     return dict(counts)
 
 def load_plan_ops(path: str="./data/juice-dataset/seed_query_relabels.csv") -> List[str]:
+    import pathlib
     import pandas as pd
+    
     plan_ops = set()
+    plan_ops_path = os.path.join(str(pathlib.Path(path).parent), "plan_ops.json")
     for rec in pd.read_csv(path).to_dict("records"):
         if str(rec["human"]) == "SKIP": continue
         name = str(rec["human"]) if str(rec["human"]).strip() != "nan" else str(rec["orig"])
         plan_ops.add(name)
+    plan_ops = sorted(list(plan_ops))
+    with open(plan_ops_path, "w") as f:
+        json.dump(plan_ops, f, indent=4)
 
-    return sorted(list(plan_ops))
+    return plan_ops
 
+def collapse_plan_operators(plan_ops: List[str]):
+    """
+    heuristic: longer plan operators
+    """
+    from tqdm import tqdm
+    from fuzzywuzzy import fuzz
+    from nltk.stem import PorterStemmer
+    # from collections import defaultdict
+
+    # plan_op2eqv = {k: i for i,k in enumerate(plan_ops)}
+    collapse_pairs = []
+    top_parents = {k: 0 for k in plan_ops}
+    ps = PorterStemmer()
+    for i in tqdm(range(len(plan_ops)-1)):
+        for j in range(i+1, len(plan_ops)):
+            pi = " ".join([ps.stem(w) for w in plan_ops[i].split()])
+            pj = " ".join([ps.stem(w) for w in plan_ops[j].split()])
+            if fuzz.token_set_ratio(pi, pj) >= 95:
+                # (parent, child)
+                if len(plan_ops[i]) <= len(plan_ops[j]):
+                    parent = plan_ops[i]
+                    child = plan_ops[j]
+                else:
+                    parent = plan_ops[j]
+                    child = plan_ops[i]
+                collapse_pairs.append((parent, child))
+                try: del top_parents[child]
+                except KeyError: pass
+                # eqv_id = min(plan_op2eqv[plan_ops[i]], plan_op2eqv[plan_ops[j]])
+                # plan_op2eqv[plan_ops[j]] = eqv_id
+                # plan_op2eqv[plan_ops[i]] = eqv_id
+    top_parents = list(top_parents.keys())
+    # eqv2plan_op = defaultdict(lambda:[])
+    # for k,i in plan_op2eqv.items():
+        # eqv2plan_op[i].append(k)
+    # eqv2plan_op = dict(eqv2plan_op)
+    return collapse_pairs, top_parents
+
+class OntologyNode:
+    def __init__(self, name: str):
+        self.parents = {}
+        self.children = {}
+        self.name = name
+
+    def add_child(self, child):
+        child.parents[self.name]= self
+        self.children[child.name] = child
+
+def build_ontology(plan_ops: List[str], top_parents: List[str], pairs: List[Tuple[str, str]]):
+    ontology_root = OntologyNode("root")
+    name_to_node = {"root": ontology_root}
+    for name in plan_ops:
+        name_to_node[name] = OntologyNode(name) 
+    for pname in top_parents:
+        pnode = name_to_node[pname]
+        ontology_root.add_child(pnode)
+    for pname, cname in pairs:
+        pnode = name_to_node[pname]
+        cnode = name_to_node[cname]
+        pnode.add_child(cnode)
+
+    return ontology_root, name_to_node
+        
 # main
 if __name__ == "__main__":
     sampled_juice = {}

@@ -15,10 +15,10 @@ from tqdm import tqdm
 import torch.nn as nn
 from torch.optim import AdamW
 import torch.nn.functional as F
+from datautils import load_plan_ops
 from torch.utils.data import DataLoader
 from transformers import RobertaModel, RobertaTokenizer
 from torchmetrics.functional import pairwise_cosine_similarity
-
 # import the dataset classes needed for code search for various datasets.
 from sklearn.metrics import label_ranking_average_precision_score as MRR_score
 from model.unixcoder import UniXcoder
@@ -36,7 +36,8 @@ class CodeBERTSearchModel(nn.Module):
     for code search using two CodePLM instances.
     """
     def __init__(self, path: str="microsoft/codebert-base", 
-                 device: str="cuda", use_cos_sim: bool=False):
+                 device: str="cuda", use_cos_sim: bool=False,
+                 rev_ret: bool=False, sym_ret: bool=False):
         super(CodeBERTSearchModel, self).__init__()
         self.code_encoder = RobertaModel.from_pretrained(path)
         self.query_encoder = RobertaModel.from_pretrained(path)
@@ -45,6 +46,9 @@ class CodeBERTSearchModel(nn.Module):
         print(f"moving model to device: {self.device}")
         self.to(device)
         self.use_cos_sim = use_cos_sim
+        self.rev_ret = rev_ret
+        self.sym_ret = sym_ret
+        assert not(self.rev_ret == True and self.sym_ret == True), "can't simultaneously train for reverse and symmetric retrieval"
         self.tokenizer = RobertaTokenizer.from_pretrained(path)
 
     def encode_from_text(self, text_or_code: str, dtype: str="text"):
@@ -66,7 +70,15 @@ class CodeBERTSearchModel(nn.Module):
         batch_size, _ = query_enc.shape
         target = torch.as_tensor(range(batch_size)).to(self.device)
         if self.use_cos_sim:
-            scores = pairwise_cosine_similarity(query_enc, code_enc)
+            code_enc = F.normalize(code_enc) # does L2 norm by default on axis-1 (768 vector dim axis)
+            query_enc = F.normalize(query_enc)
+        # if self.rev_ret: scores = pairwise_cosine_similarity(code_enc, query_enc)
+        # elif self.sym_ret: 
+        #     scores = pairwise_cosine_similarity(code_enc, query_enc) + pairwise_cosine_similarity(query_enc, code_enc)
+        # else: scores = pairwise_cosine_similarity(query_enc, code_enc)
+        if self.rev_ret: scores = code_enc @ query_enc.T
+        elif self.sym_ret:
+            scores = code_enc @ query_enc.T + query_enc @ code_enc.T
         else: scores = query_enc @ code_enc.T
         loss = self.ce_loss(scores, target)
 
@@ -121,11 +133,15 @@ class UniXcoderSearchModel(nn.Module):
     This class implements the classic bi-encoder architecture
     for code search using two CodePLM instances.
     """
-    def __init__(self, path: str="microsoft/unixcoder-base", device: str="cuda"):
+    def __init__(self, path: str="microsoft/unixcoder-base", 
+                 rev_ret: bool=False, sym_ret: bool=False, device: str="cuda"):
         super(UniXcoderSearchModel, self).__init__()
         self.code_encoder = UniXcoder(path)
         self.query_encoder = UniXcoder(path)
         self.ce_loss = nn.CrossEntropyLoss()
+        self.rev_ret = rev_ret
+        self.sym_ret = sym_ret
+        assert not(self.rev_ret == True and self.sym_ret == True), "can't simultaneously train for reverse and symmetric retrieval"
         self.device = device if torch.cuda.is_available() else "cpu"
         print(f"moving model to device: {self.device}")
         self.to(device)
@@ -135,7 +151,10 @@ class UniXcoderSearchModel(nn.Module):
         _,code_enc = self.code_encoder(code_iids)
         batch_size, _ = query_enc.shape
         target = torch.as_tensor(range(batch_size)).to(self.device)
-        scores = query_enc @ code_enc.T
+        if self.rev_ret: scores = code_enc @ query_enc.T
+        elif self.sym_ret:
+            scores = code_enc @ query_enc.T + query_enc @ code_enc.T
+        else: scores = query_enc @ code_enc.T
         loss = self.ce_loss(scores, target)
 
         return query_enc, code_enc, query_enc @ code_enc.T, loss
@@ -193,7 +212,7 @@ def recall_at_k_score(doc_ranks, doc_ids, k: int=5):
     return hits/tot
 
 def codesearch_create_index(model, dataset, args):
-    """use MRR to validate and pick best model (instead of batch level -ve sample acc.)"""
+    """create index of documents (code) or queries (NL/plan operators)."""
     model.eval()
     d_loader = dataset.get_docs_loader(batch_size=args.batch_size)
     dbar = tqdm(
@@ -206,12 +225,15 @@ def codesearch_create_index(model, dataset, args):
         model.zero_grad()
         with torch.no_grad():
             for j in range(len(batch)): batch[j] = batch[j].to(args.device)
-            q_enc = model.encode(*batch, dtype="code").cpu().detach().numpy()
+            q_enc = model.encode(*batch, dtype=args.index_modality).cpu().detach().numpy()
             if args.cos_sim: faiss.normalize_L2(q_enc)
             index.add(q_enc)
-        # if step == 5000: break
+        # if step == 10: break
     # write the index to a file
-    faiss.write_index(index, args.index_file_path)
+    index_dir = os.path.join("./dense_indices", args.experiment_name)
+    os.makedirs(index_dir, exist_ok=True)
+    index_file_path = os.path.join(index_dir, args.index_file_name)
+    faiss.write_index(index, index_file_path)
     
     # # search over the index with a query
     # query_vector = torch.randn(1, vector_dim)
@@ -276,6 +298,8 @@ def codesearch_test_only(args):
         codesearch_biencoder = CodeBERTSearchModel(
             args.model_path, device=device,
             use_cos_sim=args.cos_sim,
+            rev_ret=args.rev_ret,
+            sym_ret=args.sym_ret,
         )
         tok_args = {
             "return_tensors": "pt",
@@ -340,11 +364,14 @@ def codesearch_test_only(args):
     print("test metrics:")
     codesearch_val(codesearch_biencoder, testset, args)
 
-def create_juice_dense_index(args):
+def create_dense_index(args):
     device = args.device
     if args.model_type == "codebert":
         codesearch_biencoder = CodeBERTSearchModel(
             args.model_path, device=device,
+            use_cos_sim=args.cos_sim,
+            rev_ret=args.rev_ret,
+            sym_ret=args.sym_ret,
         )
         tok_args = {
             "return_tensors": "pt",
@@ -387,8 +414,11 @@ def create_juice_dense_index(args):
     config["tokenizer_args"] = tok_args    
 
     if args.model_type == "codebert":
+        queries = None
+        if args.index_modality == "text":
+            queries = load_plan_ops()
         dataset = JuICeKBNNCodeBERTCodeSearchDataset(
-            tokenizer=tokenizer, 
+            tokenizer=tokenizer, queries=queries, 
             obf_code=args.obfuscate_code, 
             **tok_args,
         )
@@ -400,6 +430,9 @@ def codesearch_finetune(args):
     if args.model_type == "codebert":
         codesearch_biencoder = CodeBERTSearchModel(
             args.model_path, device=device,
+            use_cos_sim=args.cos_sim,
+            rev_ret=args.rev_ret,
+            sym_ret=args.sym_ret,
         )
         tok_args = {
             "return_tensors": "pt",
@@ -568,6 +601,8 @@ code search using a bi-encoder setup''')
                         help="do validation after these many steps")
     parser.add_argument("--retrieval_result_dump_path", type=str,
                         help="where to store the inferred data")
+    parser.add_argument("-sr", "--sym_ret", action="store_true", help="use symmetric loss")
+    parser.add_argument("-rr", "--rev_ret", action="store_true", help="use reverse loss")
     parser.add_argument("-obf", "--obfuscate_code", action="store_true",
                         help="obfuscate variable names and function defs")
     parser.add_argument("--data_dir", type=str, required=False,
@@ -575,7 +610,8 @@ code search using a bi-encoder setup''')
     parser.add_argument("--mode", type=str, choices=['train', 'inference'], default='train',
                         help="should train or infer?")
     parser.add_argument("--cos_sim", action="store_true", help="use cosine similarity in contrastive loss")
-    parser.add_argument("--index_file_path", type=str, default="./dense_indices/codebert_partial.index")
+    parser.add_argument("--index_modality", type=str, default="code", help="what kind of modality is indexed")
+    parser.add_argument("--index_file_name", type=str, default="codebert_cos_sim.index")
     args = parser.parse_args()
 
     return args
@@ -586,7 +622,7 @@ if __name__ == "__main__":
     if args.mode == 'train':
         codesearch_finetune(args)
     elif args.mode == "inference":
-        create_juice_dense_index(args)
+        create_dense_index(args)
 
 # python -m src.e_ret.code_search -exp CoNaLa_CodeBERT_CodeSearch
 # python -m src.e_ret.code_search -mt unixcoder -exp CoNaLa_UniXcoder_CodeSearch -bs 85 -mp microsoft/unixcoder-base
@@ -595,8 +631,14 @@ if __name__ == "__main__":
 # python -m model.code_search -exp CoNaLa_CodeBERT_CodeSearch -bs 100 --mode inference
 # python -m model.code_search -exp CoNaLa_CodeBERT_CodeSearch_CosSim -bs 200 --mode train --cos_sim -e 5
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch -bs 200 --mode train -obf --data_dir "./data/CoNaLa"
-# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch2 -bs 500 --mode inference -obf --index_file_path ./dense_indices/codebert_obf_partial.index
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch2 -bs 500 --mode inference -obf --index_file_name codebert_obf_partial.index
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim -bs 200 --mode train --cos_sim -obf -e 50
-# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim -bs 500 --mode inference -obf --index_file_path ./dense_indices/codebert_obf_cos_sim.index --cos_sim
-# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 200 --mode train --cos_sim -e 50
-# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 500 --mode inference --index_file_path ./dense_indices/codebert_cos_sim.index --cos_sim
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim -bs 500 --mode inference -obf --index_file_name codebert_obf_cos_sim.index --cos_sim
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2.5_CosSim -bs 200 --mode train --cos_sim -e 50
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_Rev -bs 200 --mode train -e 50 --rev_ret
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_Sym -bs 200 --mode train -e 50 --sym_ret
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch3_CosSim -bs 200 --mode train --cos_sim -e 50
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_Sym -bs 500 --mode inference --index_file_name codebert_cos_sim.index --cos_sim
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 500 --mode inference --index_file_name codebert_cos_sim.index --cos_sim
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 500 --mode inference --index_file_name codebert_plan_ops_cos_sim.index --cos_sim --index_modality text
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_Sym -bs 500 --mode inference --index_file_name codebert_plan_ops_cos_sim.index --cos_sim --index_modality text
