@@ -114,7 +114,7 @@
             },
             {
                 "code": "pds_g = pds.groupby(by='donor_category')\npds_g = pds_g['donation_total'].mean()\npds_gx = pds_g.plot(kind='bar')\npds_gx.set_ylabel(\"Average Donation Amount\")\npds_gx.set_title('Plot between donor category and Average donation amount', fontsize=14)",
-                "true_label": "",
+                "true_label": "use pandas to make a bar chart",
                 "top5_preds": [
                     "line plot with a dataframe",
                     "pandas plotting",
@@ -125,7 +125,7 @@
             },
             {
                 "code": "subjects = pds.primary_focus_subject.drop_duplicates()\ndf = pd.DataFrame(columns = ['Subjects','donor_teacher_project','donor_teacher_other','donor_other'])\ndf['Subjects'] = subjects\ndf = df.set_index('Subjects')\n\n# Filling the data frame\npds1 = pds.groupby('primary_focus_subject')\nfor sub,group_s in pds1:\n    pds2 = group_s.groupby('donor_category')\n    for dc,group_dc in pds2:\n        df.loc[sub,dc] = 100*(group_dc.donation_total.sum())/(group_s.donation_total.sum())\ndf.head(10)",
-                "true_label": "",
+                "true_label": "create dataframe with given values",
                 "top5_preds": [
                     "from dictionary to dataframe",
                     "create dataframe with given values",
@@ -136,7 +136,7 @@
             },
             {
                 "code": "a = pds[pds.donor_category == 'donor_teacher_project']\n#a = a[(100 * a.donation_total / a.total_donations) > 33]\nax = a.groupby(by='primary_focus_subject')['donation_total'].mean().plot(kind='bar',figsize=(20,5))\nax.set_ylabel('Average Donation Amount')\nax.set_title('Plot between Subject and Donation amount for a teacher contributing to own project', fontsize=14)",
-                "true_label": "",
+                "true_label": "use pandas to make a bar chart",
                 "top5_preds": [
                     "line plot with a dataframe",
                     "predicting a categorical response",
@@ -147,7 +147,7 @@
             },
             {
                 "code": "b = pds[pds.donor_category == 'donor_teacher_other']\n#a = a[(100 * a.donation_total / a.total_donations) > 33]\nbx = b.groupby(by='primary_focus_subject')['donation_total'].mean().plot(kind='bar',figsize=(20,5))\nbx.set_ylabel('Average Donation Amount')\nbx.set_title('Plot between Subject and Donation amount for a teacher contributing to other project', fontsize=14)",
-                "true_label": "",
+                "true_label": "use pandas to make a bar chart",
                 "top5_preds": [
                     "predicting a categorical response",
                     "line plot with a dataframe",
@@ -158,7 +158,7 @@
             },
             {
                 "code": "c = pds[pds.donor_category == 'donor_other']\n#a = a[(100 * a.donation_total / a.total_donations) > 33]\ncx = c.groupby(by='primary_focus_subject')['donation_total'].mean().plot(kind='bar',figsize=(20,5))\ncx.set_ylabel('Average Donation Amount')\ncx.set_title('Plot between Subject and Donation amount for a non-teacher', fontsize=14)",
-                "true_label": "",
+                "true_label": "use pandas to make a bar chart",
                 "top5_preds": [
                     "predicting a categorical response",
                     "line plot with a dataframe",
@@ -204,7 +204,7 @@
         [
             {
                 "code": "!cat ~/.keras/keras.json",
-                "true_label": "",
+                "true_label": "cat file",
                 "top5_preds": [
                     "loading json in python",
                     "running a local postgres database",
@@ -215,7 +215,7 @@
             },
             {
                 "code": "from gpu import share\n\nsimultaneous_users_count = 2\nshare(simultaneous_users_count)",
-                "true_label": "",
+                "true_label": "cpu vs gpu",
                 "top5_preds": [
                     "get a positive integer from a user",
                     "cpu vs gpu",
@@ -226,7 +226,7 @@
             },
             {
                 "code": "from keras.models import Sequential\nfrom keras.layers import BatchNormalization, Dense, Dropout, ELU, Flatten\n\nclasses_count = len(classes)\ntop_model = Sequential([\n        Flatten(input_shape=training_intermediate_output.shape[1:]),\n        ELU(),\n        Dense(512),\n        Dropout(0.5),\n        Dense(classes_count, activation='softmax', name='predictions')\n    ])\n\ntop_model.compile(optimizer='adam', # NOTE: several optimizers to choose from besides regular gradient descent\n                  loss='categorical_crossentropy', # NOTE: several error metrics to choose from (e.g., MSE for regression)\n                  metrics=['accuracy'])",
-                "true_label": "",
+                "true_label": "keras sequential model",
                 "top5_preds": [
                     "tensorflow + keras",
                     "logistic regression using tensorflow",
