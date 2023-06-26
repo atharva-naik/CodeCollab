@@ -416,7 +416,7 @@ def create_dense_index(args):
     if args.model_type == "codebert":
         queries = None
         if args.index_modality == "text":
-            queries = load_plan_ops()
+            queries = json.load(open("./data/juice-dataset/plan_ops.json"))
         dataset = JuICeKBNNCodeBERTCodeSearchDataset(
             tokenizer=tokenizer, queries=queries, 
             obf_code=args.obfuscate_code, 

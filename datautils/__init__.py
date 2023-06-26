@@ -1,4 +1,8 @@
+# -*- coding: utf-8 -*-
+# script to process 
+
 # package for dataset processing
+
 import os
 import re
 import json
@@ -398,8 +402,64 @@ class OntologyNode:
         self.name = name
 
     def add_child(self, child):
-        child.parents[self.name]= self
+        child.parents[self.name] = self
         self.children[child.name] = child
+
+    def to_json(self):
+        parents = list(self.parents.keys())
+        children = list(self.children.keys())
+        return {
+            "parents": parents,
+            "children": children,
+            "name": self.name,
+        }
+
+    @classmethod
+    def from_json(cls, node_json: Dict[str, List[str]],
+                  ontology_map: Dict[str, Any]):
+        node = cls(node_json["name"])
+        for parent in node_json["parents"]:
+            node.parents[parent] = ontology_map.get(
+                parent, cls(parent)
+            )
+            # ontology_map[parent] = node.parents[parent]
+        for child in node_json["children"]:
+            node.children[child] = ontology_map.get(
+                child, cls(child)
+            )
+            # ontology_map[child] = node.children[child]
+        return node#, ontology_map
+
+    def del_children(self, children: list):
+        for child in children:
+            try: del child.parents[self.name]
+            except KeyError: pass
+        children_names = [child.name for child in children]
+        self.children = {child_name: child for child_name, child in self.children.items() if child_name not in children_names} 
+
+    def del_child(self, child):
+        try: del child.parents[self.name]
+        except KeyError: pass
+        try: del self.children[child.name]
+        except KeyError: pass
+
+def save_ontology(name_to_node: Dict[str, Any]):
+    ontology_json = {}
+    for name, node in name_to_node.items():
+        ontology_json[name] = node.to_json()
+    with open("./data/juice-dataset/plan_ops_ontology.json", "w") as f:
+        json.dump(ontology_json, f, indent=4)
+
+def load_ontology(path: str="./data/juice-dataset/plan_ops_ontology.json"):
+    name_to_node = {}
+    with open(path, "r") as f:
+        ontology_json = json.load(f)
+        for name, node_json in ontology_json.items():
+            node = OntologyNode.from_json(node_json=node_json,
+                                          ontology_map=name_to_node)
+            name_to_node[name] = node
+
+    return name_to_node
 
 def build_ontology(plan_ops: List[str], top_parents: List[str], pairs: List[Tuple[str, str]]):
     ontology_root = OntologyNode("root")
@@ -416,6 +476,21 @@ def build_ontology(plan_ops: List[str], top_parents: List[str], pairs: List[Tupl
 
     return ontology_root, name_to_node
         
+def simplify_ontology(name_to_node):
+    from tqdm import tqdm
+    for name in tqdm(name_to_node):
+        node = name_to_node[name]
+        # orig_size = len(node.children)
+        for child in node.children.values():
+            grand_children = list(child.children.values())
+            # print(f"{child.name}: {[c.name for c in grand_children]}")
+            # print([child.name for child in children_to_delete])
+            node.del_children(grand_children)
+        # new_size = len(node.children)
+        # print(f"{name}: {orig_size} -> {new_size}")
+        # if name == "root": break
+    return name_to_node
+
 # main
 if __name__ == "__main__":
     sampled_juice = {}
