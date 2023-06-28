@@ -357,9 +357,71 @@ def load_plan_ops(path: str="./data/juice-dataset/seed_query_relabels.csv") -> L
 
     return plan_ops
 
-def collapse_plan_operators(plan_ops: List[str]):
+# def collapse_plan_operators(plan_ops: List[str]):
+#     """
+#     heuristic: longer plan operators
+#     """
+#     from tqdm import tqdm
+#     from fuzzywuzzy import fuzz
+#     from nltk.stem import PorterStemmer
+#     # from collections import defaultdict
+
+#     # plan_op2eqv = {k: i for i,k in enumerate(plan_ops)}
+#     collapse_pairs = []
+#     top_parents = {k: 0 for k in plan_ops}
+#     ps = PorterStemmer()
+#     for i in tqdm(range(len(plan_ops)-1)):
+#         for j in range(i+1, len(plan_ops)):
+#             pi = " ".join([ps.stem(w) for w in plan_ops[i].split()])
+#             pj = " ".join([ps.stem(w) for w in plan_ops[j].split()])
+#             if fuzz.token_set_ratio(pi, pj) >= 95:
+#                 # (parent, child)
+#                 if len(plan_ops[i]) <= len(plan_ops[j]):
+#                     parent = plan_ops[i]
+#                     child = plan_ops[j]
+#                 else:
+#                     parent = plan_ops[j]
+#                     child = plan_ops[i]
+#                 collapse_pairs.append((parent, child))
+#                 try: del top_parents[child]
+#                 except KeyError: pass
+#                 # eqv_id = min(plan_op2eqv[plan_ops[i]], plan_op2eqv[plan_ops[j]])
+#                 # plan_op2eqv[plan_ops[j]] = eqv_id
+#                 # plan_op2eqv[plan_ops[i]] = eqv_id
+#     top_parents = list(top_parents.keys())
+#     # eqv2plan_op = defaultdict(lambda:[])
+#     # for k,i in plan_op2eqv.items():
+#         # eqv2plan_op[i].append(k)
+#     # eqv2plan_op = dict(eqv2plan_op)
+#     return collapse_pairs, top_parents
+def score_pair_mask(v, thresh: float=0.8):
+    import torch
+    return ((torch.triu(v @ v.T)-torch.eye(len(v))) >= thresh).bool()
+
+def semantic_pair_plan_operators(plan_ops: List[str]):
+    import faiss
+    import torch
+
+    faiss_index_path = "./dense_indices/CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim/codebert_plan_ops_cos_sim.index"
+    plan_ops_index = faiss.read_index(faiss_index_path)
+    plan_ops_vecs = plan_ops_index.reconstruct_n(0, len(plan_ops))
+    plan_ops_vecs = torch.as_tensor(plan_ops_vecs)
+    
+    mask = score_pair_mask(plan_ops_vecs)
+    semantic_pairs = []
+    print(f"mask: {mask.sum()}")
+    for i in tqdm(range(len(plan_ops)-1)):
+        for j in range(i+1, len(plan_ops)):
+            if mask[i][j].item(): 
+                pi = plan_ops[i]
+                pj = plan_ops[j]
+                semantic_pairs.append((pi, pj))
+
+    return semantic_pairs
+
+def fuzzy_pair_plan_operators(plan_ops: List[str]):
     """
-    heuristic: longer plan operators
+    heuristic: longer plan operators are children of shorter plan operators/longer plan operators are more specific than shorter plan operators
     """
     from tqdm import tqdm
     from fuzzywuzzy import fuzz
@@ -367,9 +429,10 @@ def collapse_plan_operators(plan_ops: List[str]):
     # from collections import defaultdict
 
     # plan_op2eqv = {k: i for i,k in enumerate(plan_ops)}
-    collapse_pairs = []
-    top_parents = {k: 0 for k in plan_ops}
+    fuzzy_pairs = []
     ps = PorterStemmer()
+    for i in range(len(plan_ops)):
+        fuzzy_pairs.append(("root", plan_ops[i]))
     for i in tqdm(range(len(plan_ops)-1)):
         for j in range(i+1, len(plan_ops)):
             pi = " ".join([ps.stem(w) for w in plan_ops[i].split()])
@@ -382,18 +445,9 @@ def collapse_plan_operators(plan_ops: List[str]):
                 else:
                     parent = plan_ops[j]
                     child = plan_ops[i]
-                collapse_pairs.append((parent, child))
-                try: del top_parents[child]
-                except KeyError: pass
-                # eqv_id = min(plan_op2eqv[plan_ops[i]], plan_op2eqv[plan_ops[j]])
-                # plan_op2eqv[plan_ops[j]] = eqv_id
-                # plan_op2eqv[plan_ops[i]] = eqv_id
-    top_parents = list(top_parents.keys())
-    # eqv2plan_op = defaultdict(lambda:[])
-    # for k,i in plan_op2eqv.items():
-        # eqv2plan_op[i].append(k)
-    # eqv2plan_op = dict(eqv2plan_op)
-    return collapse_pairs, top_parents
+                fuzzy_pairs.append((parent, child))
+
+    return fuzzy_pairs
 
 class OntologyNode:
     def __init__(self, name: str):
@@ -461,14 +515,26 @@ def load_ontology(path: str="./data/juice-dataset/plan_ops_ontology.json"):
 
     return name_to_node
 
-def build_ontology(plan_ops: List[str], top_parents: List[str], pairs: List[Tuple[str, str]]):
+# def build_ontology(plan_ops: List[str], top_parents: List[str], pairs: List[Tuple[str, str]]):
+#     ontology_root = OntologyNode("root")
+#     name_to_node = {"root": ontology_root}
+#     for name in plan_ops:
+#         name_to_node[name] = OntologyNode(name) 
+#     for pname in top_parents:
+#         pnode = name_to_node[pname]
+#         ontology_root.add_child(pnode)
+#     for pname, cname in pairs:
+#         pnode = name_to_node[pname]
+#         cnode = name_to_node[cname]
+#         pnode.add_child(cnode)
+
+#     return ontology_root, name_to_node
+
+def build_ontology(plan_ops: List[str], pairs: List[Tuple[str, str]]):
     ontology_root = OntologyNode("root")
     name_to_node = {"root": ontology_root}
     for name in plan_ops:
-        name_to_node[name] = OntologyNode(name) 
-    for pname in top_parents:
-        pnode = name_to_node[pname]
-        ontology_root.add_child(pnode)
+        name_to_node[name] = OntologyNode(name)
     for pname, cname in pairs:
         pnode = name_to_node[pname]
         cnode = name_to_node[cname]

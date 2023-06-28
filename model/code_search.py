@@ -69,9 +69,9 @@ class CodeBERTSearchModel(nn.Module):
         code_enc = self.code_encoder(code_iids, code_attn).pooler_output
         batch_size, _ = query_enc.shape
         target = torch.as_tensor(range(batch_size)).to(self.device)
-        if self.use_cos_sim:
-            code_enc = F.normalize(code_enc) # does L2 norm by default on axis-1 (768 vector dim axis)
-            query_enc = F.normalize(query_enc)
+        # if self.use_cos_sim:
+        #     code_enc = F.normalize(code_enc) # does L2 norm by default on axis-1 (768 vector dim axis)
+        #     query_enc = F.normalize(query_enc)
         # if self.rev_ret: scores = pairwise_cosine_similarity(code_enc, query_enc)
         # elif self.sym_ret: 
         #     scores = pairwise_cosine_similarity(code_enc, query_enc) + pairwise_cosine_similarity(query_enc, code_enc)
@@ -93,7 +93,9 @@ class GraphCodeBERTSearchModel(nn.Module):
     This class implements the classic bi-encoder architecture
     for code search using two CodePLM instances.
     """
-    def __init__(self, path: str="microsoft/graphcodebert-base", device: str="cuda"):
+    def __init__(self, path: str="microsoft/graphcodebert-base",
+                 device: str="cuda", use_cos_sim: bool=False,
+                 rev_ret: bool=False, sym_ret: bool=False):
         super(GraphCodeBERTSearchModel, self).__init__()
         self.code_encoder = RobertaModel.from_pretrained(path)
         self.query_encoder = RobertaModel.from_pretrained(path)
@@ -101,6 +103,11 @@ class GraphCodeBERTSearchModel(nn.Module):
         self.device = device if torch.cuda.is_available() else "cpu"
         print(f"moving model to device: {self.device}")
         self.to(device)
+        self.use_cos_sim = use_cos_sim
+        self.rev_ret = rev_ret
+        self.sym_ret = sym_ret
+        assert not(self.rev_ret == True and self.sym_ret == True), "can't simultaneously train for reverse and symmetric retrieval"
+        self.tokenizer = RobertaTokenizer.from_pretrained(path)
 
     def forward(self, query_iids, code_iids, code_attn, code_pos_idx):
         query_enc = self.encode(iids=query_iids, dtype="text")
@@ -110,10 +117,16 @@ class GraphCodeBERTSearchModel(nn.Module):
         )
         batch_size, _ = query_enc.shape
         target = torch.as_tensor(range(batch_size)).to(self.device)
-        scores = query_enc @ code_enc.T
+        # if self.use_cos_sim:
+        #     code_enc = F.normalize(code_enc) # does L2 norm by default on axis-1 (768 vector dim axis)
+        #     query_enc = F.normalize(query_enc)
+        if self.rev_ret: scores = code_enc @ query_enc.T
+        elif self.sym_ret:
+            scores = code_enc @ query_enc.T + query_enc @ code_enc.T
+        else: scores = query_enc @ code_enc.T
         loss = self.ce_loss(scores, target)
 
-        return query_enc, code_enc, query_enc @ code_enc.T, loss
+        return query_enc, code_enc, scores, loss
 
     def encode(self, iids=None, attn=None, 
                pos_idx=None, dtype: str="text"):
@@ -134,30 +147,36 @@ class UniXcoderSearchModel(nn.Module):
     for code search using two CodePLM instances.
     """
     def __init__(self, path: str="microsoft/unixcoder-base", 
-                 rev_ret: bool=False, sym_ret: bool=False, device: str="cuda"):
+                 device: str="cuda", use_cos_sim: bool=False,
+                 rev_ret: bool=False, sym_ret: bool=False):
         super(UniXcoderSearchModel, self).__init__()
         self.code_encoder = UniXcoder(path)
         self.query_encoder = UniXcoder(path)
         self.ce_loss = nn.CrossEntropyLoss()
-        self.rev_ret = rev_ret
-        self.sym_ret = sym_ret
-        assert not(self.rev_ret == True and self.sym_ret == True), "can't simultaneously train for reverse and symmetric retrieval"
         self.device = device if torch.cuda.is_available() else "cpu"
         print(f"moving model to device: {self.device}")
         self.to(device)
+        self.use_cos_sim = use_cos_sim
+        self.rev_ret = rev_ret
+        self.sym_ret = sym_ret
+        assert not(self.rev_ret == True and self.sym_ret == True), "can't simultaneously train for reverse and symmetric retrieval"
+        self.tokenizer = RobertaTokenizer.from_pretrained(path)
 
     def forward(self, query_iids, code_iids):
         _,query_enc = self.query_encoder(query_iids)
         _,code_enc = self.code_encoder(code_iids)
         batch_size, _ = query_enc.shape
         target = torch.as_tensor(range(batch_size)).to(self.device)
+        # if self.use_cos_sim:
+        #     code_enc = F.normalize(code_enc) # does L2 norm by default on axis-1 (768 vector dim axis)
+        #     query_enc = F.normalize(query_enc)
         if self.rev_ret: scores = code_enc @ query_enc.T
         elif self.sym_ret:
             scores = code_enc @ query_enc.T + query_enc @ code_enc.T
         else: scores = query_enc @ code_enc.T
         loss = self.ce_loss(scores, target)
 
-        return query_enc, code_enc, query_enc @ code_enc.T, loss
+        return query_enc, code_enc, scores, loss
 
     def encode(self, iids, dtype: str="text"):
         if dtype == "text": return self.query_encoder(iids)[1]
@@ -310,6 +329,9 @@ def codesearch_test_only(args):
     elif args.model_type == "graphcodebert":
         codesearch_biencoder = GraphCodeBERTSearchModel(
             args.model_path, device=device,
+            use_cos_sim=args.cos_sim,
+            rev_ret=args.rev_ret,
+            sym_ret=args.sym_ret,
         )
         tok_args = {
             "nl_length": 100, 
@@ -319,6 +341,9 @@ def codesearch_test_only(args):
     elif args.model_type == "unixcoder":
         codesearch_biencoder = UniXcoderSearchModel(
             args.model_path, device=device,
+            use_cos_sim=args.cos_sim,
+            rev_ret=args.rev_ret,
+            sym_ret=args.sym_ret,
         )
         tok_args = {
             "return_tensors": "pt",
@@ -382,6 +407,9 @@ def create_dense_index(args):
     elif args.model_type == "graphcodebert":
         codesearch_biencoder = GraphCodeBERTSearchModel(
             args.model_path, device=device,
+            use_cos_sim=args.cos_sim,
+            rev_ret=args.rev_ret,
+            sym_ret=args.sym_ret,
         )
         tok_args = {
             "nl_length": 100, 
@@ -391,6 +419,9 @@ def create_dense_index(args):
     elif args.model_type == "unixcoder":
         codesearch_biencoder = UniXcoderSearchModel(
             args.model_path, device=device,
+            use_cos_sim=args.cos_sim,
+            rev_ret=args.rev_ret,
+            sym_ret=args.sym_ret,
         )
         tok_args = {
             "return_tensors": "pt",
@@ -474,13 +505,31 @@ def codesearch_finetune(args):
         testset = CodeSearchNetCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
                                                          folder=args.data_dir, tokenizer=tokenizer, **tok_args)
     elif args.model_type == "graphcodebert":
-        trainset = CoNaLaGraphCodeBERTCodeSearchDataset(split="train", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-        valset = CoNaLaGraphCodeBERTCodeSearchDataset(split="val", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-        testset = CoNaLaGraphCodeBERTCodeSearchDataset(split="test", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        trainset = CodeSearchNetGraphCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code,
+                                                               folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        valset = CodeSearchNetGraphCodeBERTCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
+                                                             folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        testset = CodeSearchNetGraphCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
+                                                              folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        # trainset = CoNaLaGraphCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code,
+        #                                                 folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        # valset = CoNaLaGraphCodeBERTCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
+        #                                               folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        # testset = CoNaLaGraphCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
+        #                                                folder=args.data_dir, tokenizer=tokenizer, **tok_args)
     elif args.model_type == "unixcoder":
-        trainset = CoNaLaUniXcoderCodeSearchDataset(split="train", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-        valset = CoNaLaUniXcoderCodeSearchDataset(split="val", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-        testset = CoNaLaUniXcoderCodeSearchDataset(split="test", folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        trainset = CodeSearchNetUniXcoderCodeSearchDataset(split="train", obf_code=args.obfuscate_code,
+                                                           folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        valset = CodeSearchNetUniXcoderCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
+                                                         folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        testset = CodeSearchNetUniXcoderCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
+                                                          folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        # trainset = CoNaLaUniXcoderCodeSearchDataset(split="train", obf_code=args.obfuscate_code,
+        #                                             folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        # valset = CoNaLaUniXcoderCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
+        #                                           folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        # testset = CoNaLaUniXcoderCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
+        #                                            folder=args.data_dir, tokenizer=tokenizer, **tok_args)
 
     optimizer = AdamW(
         codesearch_biencoder.parameters(),
@@ -630,6 +679,8 @@ if __name__ == "__main__":
 # python -m src.e_ret.code_search -mt codebert -exp CoNaLa_CodeBERT_Python_CodeSearch -bs 100 -mp neulab/codebert-python 
 # python -m model.code_search -exp CoNaLa_CodeBERT_CodeSearch -bs 100 --mode inference
 # python -m model.code_search -exp CoNaLa_CodeBERT_CodeSearch_CosSim -bs 200 --mode train --cos_sim -e 5
+# python -m model.code_search -exp CoNaLa_UniXcoder_CodeSearch_CosSim -bs 200 -mt unixcoder --mode train -e 50
+# python -m model.code_search -exp CoNaLa_GraphCodeBERT_CodeSearch_CosSim -bs 200 -mt graphcodebert --mode train -e 50
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch -bs 200 --mode train -obf --data_dir "./data/CoNaLa"
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch2 -bs 500 --mode inference -obf --index_file_name codebert_obf_partial.index
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim -bs 200 --mode train --cos_sim -obf -e 50

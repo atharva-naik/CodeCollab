@@ -445,7 +445,7 @@ class QueryGraphCodeBERTInferenceDataset(Dataset):
         super(QueryGraphCodeBERTInferenceDataset, self).__init__()
         self.tokenizer = tokenizer
         self.tok_args = tok_args
-        LANGUAGE = Language('./parser/py_parser.so', 'python')
+        LANGUAGE = Language('./model/parser/py_parser.so', 'python')
         PARSER = Parser()
         PARSER.set_language(LANGUAGE)
         self.parser = [PARSER, DFG_python]
@@ -522,7 +522,7 @@ class DocsGraphCodeBERTInferenceDataset(Dataset):
         self.tokenizer = tokenizer
         self.tok_args = tok_args
         
-        LANGUAGE = Language('src/e_ret/parser/py_parser.so', 'python')
+        LANGUAGE = Language('./model/parser/py_parser.so', 'python')
         PARSER = Parser()
         PARSER.set_language(LANGUAGE)
         self.parser = [PARSER, DFG_python]
@@ -803,14 +803,6 @@ class CodeSearchNetCodeBERTCodeSearchDataset(Dataset):
             c_tok_dict["input_ids"][0], c_tok_dict["attention_mask"][0],
         ]
 
-# class CodeBERTCodeSearchDataset(Dataset):
-#     """load CoNaLa and CodeSearchNet data for code-search training"""
-#     def __init__(self, conala_dir: str="./data/CoNaLa",
-#                  codesearchnet_dir: str="./data/CodeSearchNet",
-#                  ):
-#         self.conala_dir = conala_dir
-#         self.codesearchnet_dir = codesearchnet_dir
-
 class CoNaLaGraphCodeBERTCodeSearchDataset(Dataset):
     """load CoNaLa data for code-search training."""
     def __init__(self, folder: str="./data/CoNaLa", 
@@ -819,7 +811,7 @@ class CoNaLaGraphCodeBERTCodeSearchDataset(Dataset):
         self.split = split
         self.tok_args = tok_args
         self.tokenizer = tokenizer
-        LANGUAGE = Language('src/e_ret/parser/py_parser.so', 'python')
+        LANGUAGE = Language('./model/parser/py_parser.so', 'python')
         PARSER = Parser()
         PARSER.set_language(LANGUAGE)
         self.parser = [PARSER, DFG_python]
@@ -982,6 +974,212 @@ class CoNaLaGraphCodeBERTCodeSearchDataset(Dataset):
             c_attn, c_pos_idx,
         ]
 
+class CodeSearchNetGraphCodeBERTCodeSearchDataset(Dataset):
+    """load CoNaLa+CodeSearchNet data for code-search training."""
+    def __init__(self, folder: str="./data/CoNaLa", split: str="train", tokenizer=None, 
+                 obf_code: bool=False, csn_folder="./data/CodeSearchNet/", 
+                 filt_conala_top_k: bool=True, filt_k: int=100000, **tok_args):
+        super(CodeSearchNetGraphCodeBERTCodeSearchDataset, self).__init__()
+        self.split = split
+        LANGUAGE = Language('./model/parser/py_parser.so', 'python')
+        PARSER = Parser()
+        PARSER.set_language(LANGUAGE)
+        self.parser = [PARSER, DFG_python]
+        print(f"obf_code: {obf_code}")
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        self.filt_k = filt_k
+        self.filt_conala_top_k = filt_conala_top_k
+        if self.split == "train":
+            self.data = read_jsonl(os.path.join(
+                folder, "train.jsonl"
+            ))
+            # filter CoNaLa instances based on decreasing order of relevance
+            # CoNaLa data is already organized in decreasing order of relevance.
+            if filt_conala_top_k:
+                self.data = self.data[:self.filt_k]
+            if obf_code: desc = "obfuscating CoNaLa"
+            else: desc = "loading CoNaLa"          
+            for i in tqdm(range(len(self.data)), desc=desc): 
+                # remove comments and docstrings.
+                self.data[i]["snippet"] = remove_comments_and_docstrings(self.data[i]["snippet"])
+                if obf_code: self.data[i]["snippet"] = obfuscate_code(self.data[i]["snippet"])
+            if csn_folder is not None:
+                print(f"\x1b[32;1madding CodeSearchNet data\x1b[0m")
+                all_csn_data = []
+                for idx in range(5):
+                    csn_data = read_jsonl(os.path.join(csn_folder, "train", f"python_train_{idx}.jsonl"))
+                    if obf_code: desc = "obfuscating CSN"
+                    else: desc = "loading CSN"
+                    for rec in tqdm(csn_data, desc=desc):
+                        code = remove_comments_and_docstrings(rec["code"])
+                        if obf_code: code = obfuscate_code(code)
+                        all_csn_data.append({
+                            "snippet": code,
+                            "intent": rec["docstring"]
+                        })
+                print(f"\x1b[32;1madded CodeSearchNet data\x1b[0m")
+                self.data += all_csn_data
+        else:
+            self.data = json.load(open(
+                os.path.join(
+                    folder, f"{split}.json"
+                )
+            ))
+            for i in tqdm(range(len(self.data)), desc="obfuscating code"): 
+                # remove comments and docstrings.
+                self.data[i]["snippet"] = remove_comments_and_docstrings(self.data[i]["snippet"])
+                if obf_code: self.data[i]["snippet"] = obfuscate_code(self.data[i]["snippet"])
+            self.queries = {}
+            self.doc_ids = defaultdict(lambda:[])
+            self.docs = {}
+            d_ctr = 0
+            q_ctr = 0
+            for i, rec in enumerate(self.data):
+                q = rec['intent']
+                d = rec['snippet']
+                if q not in self.queries: 
+                    self.queries[q] = q_ctr
+                    q_ctr += 1
+                if d not in self.docs: 
+                    self.docs[d] = d_ctr
+                    d_ctr += 1
+            for i, rec in enumerate(self.data):
+                q = rec['intent']
+                d = rec['snippet']
+                self.doc_ids[q].append(self.docs[d])
+            self.queries = list(self.queries.keys())
+            self.docs = list(self.docs.keys())
+            self.doc_ids = list(self.doc_ids.values())
+            
+    def get_doc_ids_mask(self):
+        mask = np.zeros((len(self.queries), len(self.docs)))
+        for i, ids in enumerate(self.doc_ids):
+            for j in ids: mask[i][j] = 1
+        return mask
+
+    def get_query_loader(self, batch_size: int=100):
+        qset = QueryGraphCodeBERTDataset(
+            self.queries, self.doc_ids, 
+            self.tokenizer, self.parser, 
+            **self.tok_args
+        )
+        q_loader = DataLoader(qset, batch_size=batch_size, shuffle=False)
+        return q_loader
+
+    def get_docs_loader(self, batch_size: int=100):
+        dset = DocsGraphCodeBERTDataset(
+            self.docs, self.tokenizer, 
+            self.parser, **self.tok_args
+        )
+        d_loader = DataLoader(dset, batch_size=batch_size, shuffle=False)
+        return d_loader
+
+    def __len__(self):
+        return len(self.data)
+
+    def proc_code(self, code: str):
+        try: code = remove_comments_and_docstrings(code, 'python')
+        except: pass
+        tree = self.parser[0].parse(bytes(code, 'utf8'))
+        root_node = tree.root_node
+        tokens_index=tree_to_token_index(root_node)     
+        code=code.split('\n')
+        code_tokens=[index_to_code_token(x,code) for x in tokens_index]  
+        index_to_code={}
+        for idx,(index,code) in enumerate(zip(tokens_index,code_tokens)):
+            index_to_code[index]=(idx,code)  
+        try: DFG,_=self.parser[1](root_node,index_to_code,{}) 
+        except Exception as e: print("error in src.e_ret.datautils.CoNaLaGraphCodeBERTCodeSearchDataset.proc_code:", e); DFG=[]
+        DFG=sorted(DFG,key=lambda x:x[1])
+        indexs=set()
+        for d in DFG:
+            if len(d[-1])!=0: indexs.add(d[1])
+            for x in d[-1]: indexs.add(x)
+        new_DFG=[]
+        for d in DFG:
+            if d[1] in indexs: new_DFG.append(d)
+        dfg=new_DFG
+        code_tokens=[self.tokenizer.tokenize('@ '+x)[1:] if idx!=0 else self.tokenizer.tokenize(x) for idx,x in enumerate(code_tokens)]
+        ori2cur_pos={}
+        ori2cur_pos[-1]=(0,0)
+        for i in range(len(code_tokens)):
+            ori2cur_pos[i]=(ori2cur_pos[i-1][1],ori2cur_pos[i-1][1]+len(code_tokens[i]))    
+        code_tokens=[y for x in code_tokens for y in x]  
+        #truncating
+        code_tokens=code_tokens[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]-2-min(len(dfg),self.tok_args["data_flow_length"])]
+        code_tokens =[self.tokenizer.cls_token]+code_tokens+[self.tokenizer.sep_token]
+        code_ids = self.tokenizer.convert_tokens_to_ids(code_tokens)
+        position_idx = [i+self.tokenizer.pad_token_id + 1 for i in range(len(code_tokens))]
+        dfg=dfg[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]
+                -len(code_tokens)]
+        code_tokens+=[x[0] for x in dfg]
+        position_idx+=[0 for x in dfg]
+        code_ids+=[self.tokenizer.unk_token_id for x in dfg]
+        padding_length=self.tok_args["code_length"]+self.tok_args["data_flow_length"]-len(code_ids)
+        position_idx+=[self.tokenizer.pad_token_id]*padding_length
+        code_ids+=[self.tokenizer.pad_token_id]*padding_length    
+        # reindex
+        reverse_index={}
+        for idx,x in enumerate(dfg):
+            reverse_index[x[1]]=idx
+        for idx,x in enumerate(dfg):
+            dfg[idx]=x[:-1]+([reverse_index[i] for i in x[-1] if i in reverse_index],)    
+        dfg_to_dfg=[x[-1] for x in dfg]
+        dfg_to_code=[ori2cur_pos[x[1]] for x in dfg]
+        length=len([self.tokenizer.cls_token])
+        dfg_to_code=[(x[0]+length,x[1]+length) for x in dfg_to_code] 
+        #calculate graph-guided masked function
+        attn_mask=np.zeros((self.tok_args["code_length"]+self.tok_args["data_flow_length"],
+                            self.tok_args["code_length"]+self.tok_args["data_flow_length"]),
+                            dtype=bool)
+        #calculate begin index of node and max length of input
+        node_index=sum([i>1 for i in position_idx])
+        max_length=sum([i!=1 for i in position_idx])
+        #sequence can attend to sequence
+        attn_mask[:node_index,:node_index]=True
+        #special tokens attend to all tokens
+        for idx,i in enumerate(code_ids):
+            if i in [0,2]:
+                attn_mask[idx,:max_length]=True
+        #nodes attend to code tokens that are identified from
+        for idx,(a,b) in enumerate(dfg_to_code):
+            if a<node_index and b<node_index:
+                attn_mask[idx+node_index,a:b]=True
+                attn_mask[a:b,idx+node_index]=True
+        #nodes attend to adjacent nodes 
+        for idx,nodes in enumerate(dfg_to_dfg):
+            for a in nodes:
+                if a+node_index<len(position_idx):
+                    attn_mask[idx+node_index,a+node_index]=True  
+        
+        c_iids = torch.tensor(code_ids)
+        c_attn = torch.tensor(attn_mask)
+        c_pos_idx = torch.tensor(position_idx) 
+        
+        return c_iids, c_attn, c_pos_idx
+
+    def proc_text(self, q: str):
+        nl_tokens=self.tokenizer.tokenize(q)[:self.tok_args["nl_length"]-2]
+        nl_tokens =[self.tokenizer.cls_token]+nl_tokens+[self.tokenizer.sep_token]
+        nl_ids =  self.tokenizer.convert_tokens_to_ids(nl_tokens)
+        padding_length = self.tok_args["nl_length"] - len(nl_ids)
+        nl_ids+=[self.tokenizer.pad_token_id]*padding_length
+
+        return torch.tensor(nl_ids)
+
+    def __getitem__(self, i):
+        q = self.data[i]["intent"] # query
+        c = self.data[i]["snippet"] # document/code
+        q_iids = self.proc_text(q)     
+        c_iids, c_attn, c_pos_idx = self.proc_code(c)
+
+        return [
+            q_iids, c_iids, 
+            c_attn, c_pos_idx,
+        ]
+
 class CoNaLaUniXcoderCodeSearchDataset(Dataset):
     """load CoNaLa data for code-search training."""
     def __init__(self, folder: str="./data/CoNaLa", 
@@ -1001,6 +1199,114 @@ class CoNaLaUniXcoderCodeSearchDataset(Dataset):
                     folder, f"{split}.json"
                 )
             ))
+            self.queries = {}
+            self.doc_ids = defaultdict(lambda:[])
+            self.docs = {}
+            d_ctr = 0
+            q_ctr = 0
+            for i, rec in enumerate(self.data):
+                q = rec['intent']
+                d = rec['snippet']
+                if q not in self.queries: 
+                    self.queries[q] = q_ctr
+                    q_ctr += 1
+                if d not in self.docs: 
+                    self.docs[d] = d_ctr
+                    d_ctr += 1
+            for i, rec in enumerate(self.data):
+                q = rec['intent']
+                d = rec['snippet']
+                self.doc_ids[q].append(self.docs[d])
+            self.queries = list(self.queries.keys())
+            self.docs = list(self.docs.keys())
+            self.doc_ids = list(self.doc_ids.values())
+            # print(self.doc_ids[-5:])
+    def get_doc_ids_mask(self):
+        mask = np.zeros((len(self.queries), len(self.docs)))
+        for i, ids in enumerate(self.doc_ids):
+            for j in ids: mask[i][j] = 1
+        return mask
+
+    def get_query_loader(self, batch_size: int=100):
+        qset = QueryUniXcoderDataset(
+            self.queries, self.doc_ids, 
+            self.tokenizer, **self.tok_args,
+        )
+        q_loader = DataLoader(qset, batch_size=batch_size, shuffle=False)
+        return q_loader
+
+    def get_docs_loader(self, batch_size: int=100):
+        dset = DocsUniXcoderDataset(
+            self.docs, self.tokenizer, 
+            **self.tok_args
+        )
+        d_loader = DataLoader(dset, batch_size=batch_size, shuffle=False)
+        return d_loader
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, i):
+        q = self.data[i]["intent"] # query
+        c = self.data[i]["snippet"] # document/code
+        q_iids = self.tokenizer(q, **self.tok_args)["input_ids"][0]
+        c_iids = self.tokenizer(c, **self.tok_args)["input_ids"][0]
+        
+        return [q_iids, c_iids]
+
+class CodeSearchNetUniXcoderCodeSearchDataset(Dataset):
+    """load CoNaLa+CodeSearchNet data for code-search training."""
+    def __init__(self, folder: str="./data/CoNaLa", split: str="train", tokenizer=None, 
+                 obf_code: bool=False, csn_folder="./data/CodeSearchNet/", 
+                 filt_conala_top_k: bool=True, filt_k: int=100000, **tok_args):
+        super(CodeSearchNetUniXcoderCodeSearchDataset, self).__init__()
+        self.split = split
+        print(f"obf_code: {obf_code}")
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        self.filt_k = filt_k
+        self.filt_conala_top_k = filt_conala_top_k
+        if self.split == "train":
+            self.data = read_jsonl(os.path.join(
+                folder, "train.jsonl"
+            ))
+            # filter CoNaLa instances based on decreasing order of relevance
+            # CoNaLa data is already organized in decreasing order of relevance.
+            if filt_conala_top_k:
+                self.data = self.data[:self.filt_k]
+            if obf_code: desc = "obfuscating CoNaLa"
+            else: desc = "loading CoNaLa"          
+            for i in tqdm(range(len(self.data)), desc=desc): 
+                # remove comments and docstrings.
+                self.data[i]["snippet"] = remove_comments_and_docstrings(self.data[i]["snippet"])
+                if obf_code: self.data[i]["snippet"] = obfuscate_code(self.data[i]["snippet"])
+            if csn_folder is not None:
+                print(f"\x1b[32;1madding CodeSearchNet data\x1b[0m")
+                all_csn_data = []
+                for idx in range(5):
+                    csn_data = read_jsonl(os.path.join(csn_folder, "train", f"python_train_{idx}.jsonl"))
+                    if obf_code: desc = "obfuscating CSN"
+                    else: desc = "loading CSN"
+                    for rec in tqdm(csn_data, desc=desc):
+                        code = remove_comments_and_docstrings(rec["code"])
+                        if obf_code: code = obfuscate_code(code)
+                        all_csn_data.append({
+                            "snippet": code,
+                            "intent": rec["docstring"]
+                        })
+                print(f"\x1b[32;1madded CodeSearchNet data\x1b[0m")
+                self.data += all_csn_data
+        else:
+            self.data = json.load(open(
+                os.path.join(
+                    folder, f"{split}.json"
+                )
+            ))
+            for i in tqdm(range(len(self.data)), desc="obfuscating code"): 
+                # remove comments and docstrings.
+                self.data[i]["snippet"] = remove_comments_and_docstrings(self.data[i]["snippet"])
+                if obf_code: self.data[i]["snippet"] = obfuscate_code(self.data[i]["snippet"])
             self.queries = {}
             self.doc_ids = defaultdict(lambda:[])
             self.docs = {}

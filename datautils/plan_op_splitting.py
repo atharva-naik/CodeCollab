@@ -17,10 +17,13 @@ EXCEPTION_LIST = [
     "helper to create two separate dataframes for classification and regression",
     "using principal component analysis to plot in two dimensions",
     "how many rows and columns are in kallisto",
+    "split a dataframe into a testing and a test set",
+    "split up the data into a training set and a test set",
 ]
 SKIP_LIST = set([
     "introduction", "linear", "load", "loading",
     "do exploratory data analysis", "bar charts",
+    "assign it to a variable"
 ])
 def split_plan_op(op: str, nlp, plan_ops: List[str]):
     # get 2 candidate operators from op

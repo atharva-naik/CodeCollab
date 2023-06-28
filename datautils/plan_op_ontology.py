@@ -8,7 +8,7 @@ import spacy
 from typing import *
 from tqdm import tqdm
 from datautils.plan_op_splitting import dissolve_compound_plan_ops
-from datautils import load_plan_ops, collapse_plan_operators, build_ontology, simplify_ontology, save_ontology
+from datautils import load_plan_ops, fuzzy_pair_plan_operators, build_ontology, simplify_ontology, save_ontology
 
 # main
 if __name__ == "__main__":
@@ -19,7 +19,7 @@ if __name__ == "__main__":
     with open("./data/juice-dataset/plan_ops.json", "w") as f:
         json.dump(plan_ops, f, indent=4)
     print("plan_ops:", len(plan_ops))
-    collapse_pairs, top_parents = collapse_plan_operators(plan_ops)
-    root, name_to_node = build_ontology(plan_ops, top_parents, collapse_pairs)
+    fuzzy_pairs = fuzzy_pair_plan_operators(plan_ops)
+    root, name_to_node = build_ontology(plan_ops, fuzzy_pairs)
     name_to_node = simplify_ontology(name_to_node)
     save_ontology(name_to_node)
