@@ -643,7 +643,7 @@ class DocsUniXcoderInferenceDataset(Dataset):
         else:
             return [self.tokenizer(d_text, **self.tok_args)["input_ids"][0]]
 
-# training classes
+# inference classes
 class JuICeKBNNCodeBERTCodeSearchDataset(Dataset):
     """load JuICe Code KB data for NN search using CodeBERT dense representations"""
     def __init__(self, folder: str="./JuICe_train_code_KB.json", queries=None, 
@@ -695,6 +695,89 @@ class JuICeKBNNCodeBERTCodeSearchDataset(Dataset):
             q_tok_dict["input_ids"][0], q_tok_dict["attention_mask"][0],
             c_tok_dict["input_ids"][0], c_tok_dict["attention_mask"][0],
         ]
+
+class JuICeKBNNGraphCodeBERTCodeSearchDataset(Dataset):
+    """load JuICe Code KB data for NN search using GraphCodeBERT dense representations"""
+    def __init__(self, folder: str="./JuICe_train_code_KB.json", queries=None, 
+                 obf_code: bool=False, tokenizer=None, **tok_args):
+        super(JuICeKBNNGraphCodeBERTCodeSearchDataset, self).__init__()
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        self.obf_code = obf_code
+        LANGUAGE = Language('./model/parser/py_parser.so', 'python')
+        PARSER = Parser()
+        PARSER.set_language(LANGUAGE)
+        self.parser = [PARSER, DFG_python]
+        folder_stem, ext = os.path.splitext(folder)
+        if obf_code:
+            folder_ = folder_stem + "_obf" + ext
+            if not os.path.exists(folder_):
+                codes = list(json.load(open(folder)).keys())
+                for ind in tqdm(range(len(codes))):
+                    try: codes[ind] = obfuscate_code(codes[ind])
+                    except RecursionError: pass
+                with open(folder_, "w") as f:
+                    json.dump(codes, f, indent=4)
+            folder = folder_
+        if queries is not None:
+            self.docs = queries
+        else:
+            self.data = json.load(open(folder))
+            self.docs = []
+            if isinstance(self.data, dict):
+                for i, code in enumerate(self.data.keys()):
+                    self.docs.append(code)
+            elif isinstance(self.data, list):
+                for i, code in enumerate(self.data):
+                    self.docs.append(code)
+
+    def get_docs_loader(self, batch_size: int=100):
+        dset = DocsGraphCodeBERTDataset(
+            self.docs, self.tokenizer, 
+            self.parser, **self.tok_args
+        )
+        d_loader = DataLoader(dset, batch_size=batch_size, shuffle=False)
+        
+        return d_loader
+
+class JuICeKBNNUniXcoderCodeSearchDataset(Dataset):
+    """load JuICe Code KB data for NN search using GraphCodeBERT dense representations"""
+    def __init__(self, folder: str="./JuICe_train_code_KB.json", queries=None, 
+                 obf_code: bool=False, tokenizer=None, **tok_args):
+        super(JuICeKBNNUniXcoderCodeSearchDataset, self).__init__()
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        self.obf_code = obf_code
+        folder_stem, ext = os.path.splitext(folder)
+        if obf_code:
+            folder_ = folder_stem + "_obf" + ext
+            if not os.path.exists(folder_):
+                codes = list(json.load(open(folder)).keys())
+                for ind in tqdm(range(len(codes))):
+                    try: codes[ind] = obfuscate_code(codes[ind])
+                    except RecursionError: pass
+                with open(folder_, "w") as f:
+                    json.dump(codes, f, indent=4)
+            folder = folder_
+        if queries is not None:
+            self.docs = queries
+        else:
+            self.data = json.load(open(folder))
+            self.docs = []
+            if isinstance(self.data, dict):
+                for i, code in enumerate(self.data.keys()):
+                    self.docs.append(code)
+            elif isinstance(self.data, list):
+                for i, code in enumerate(self.data):
+                    self.docs.append(code)
+
+    def get_docs_loader(self, batch_size: int=100):
+        dset = DocsUniXcoderDataset(self.docs, self.tokenizer, **self.tok_args)
+        d_loader = DataLoader(dset, batch_size=batch_size, shuffle=False)
+        
+        return d_loader
 
 # training classes
 class CodeSearchNetCodeBERTCodeSearchDataset(Dataset):

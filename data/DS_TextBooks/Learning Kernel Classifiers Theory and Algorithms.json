@@ -1,0 +1,223 @@
+{
+    "The Learning Problem and Statistical Inference::T": {
+        "Supervised Learning::T": {
+            "Classification Learning::T": null,
+            "Preference Learning::T": null,
+            "Function Learning::T": null
+        },
+        "Unsupervised Learning::T": null,
+        "Reinforcement Learning::T": null
+    },
+    "Learning Kernel Classifiers::T": {
+        "STEPS": [
+            "distance measure",
+            "store training samples",
+            "compute distance to all samples",
+            "classify"
+        ]
+    },
+    "Purposes of Learning Theory::C": {
+        "Number of training samples for given performance::C": null,
+        "Performance guarantee of learned function on given sample::C": null,
+        "Choosing learning algorithm for given sample for best performance::C": null
+    },
+    "Learning Algorithms::M": {
+        "Kernel Classifiers::M": {
+            "Basic::T": {
+                "STEPS": [
+                    "learning problem",
+                    "features and feature space",
+                    "linear function and linear classifier",
+                    "expected risk || classification loss || cost matrices"
+                ],
+                "Handwritten Digit Recognition::T": null
+            },
+            "Risk Minimization::T": {
+                "STEPS": [
+                    "learning algorithm",
+                    "generalization error",
+                    "empirical risk"
+                ],
+                "Empirical Risk Minimization::T": null,
+                "Structural Risk Minimization::T": null,
+                "Primal Perceptron:::M": {
+                    "Version Space::C": null
+                },
+                "Regularized Risk Functionals::M": null
+            },
+            "Nonlinear Classifiers::M": null,
+            "Kernels and Linear Classifiers::M": {
+                "Kernel::C": null,
+                "Gram Matrix::C": null,
+                "Kernel Technique::C": {
+                    "Mercer's Theorem::C": null,
+                    "Mercer Kernels::M": null,
+                    "Mahalanobis Metric::C": null
+                },
+                "Kernel Families::M": {
+                    "Functions of Kernels::C": null,
+                    "Kernels on Inner Product Spaces::M": {
+                        "Polynomial and RBF Kernels::M": {
+                            "pth degree Polynomial Kernel::M": null,
+                            "Complete Polynomial Kernel::M": null,
+                            "RBF Kernel::M": null,
+                            "Mahalanobis Kernel::M": null
+                        }
+                    },
+                    "Kernels on Strings::M": {
+                        "STEPS": [
+                            "strings and alphabets",
+                            "subsequences and substrings"
+                        ],
+                        "Ridge Problem::C": null
+                    },
+                    "Kernels from Probabilistic Models of the Data::M": {
+                        "Fisher Score and Fisher Information Matrix::C": null,
+                        "Fisher Kernel::C": null
+                    }
+                },
+                "The Representer Theorem::C": {
+                    "Reproducing Kernel Hilbert Spaces::C": null
+                }
+            },
+            "Support Vector Classification Learning::T": {
+                "Maximizing the Margin::T": {
+                    "Margins::C": {
+                        "Functional Margin::C": null,
+                        "Geometrical Margin::C": null
+                    },
+                    "Perceptron Convergence Theorem::C": null
+                },
+                "Soft Margins::M": {
+                    "Linear Approximation::M": null,
+                    "Quadratic Approximation::M": null,
+                    "Data Independent Hypothesis Spaces::C": null,
+                    "Cost Matrices::C": null
+                },
+                "Geometrical Viewpoints on Margin Maximization::C": null,
+                "The ν–Trick and Other Variants::C": {
+                    "Multiclass Support Vector Machines::M": null,
+                    "Support Vector Regression Estimation::M": null,
+                    "ν–Support Vector Machines for Classification::M": null
+                }
+            },
+            "Adaptive Margin Machines::M": {
+                "Assessment of Learning Algorithms::E": {
+                    "Expected Risk of a Learning Algorithm::E": null,
+                    "Leave-one-out Error::E": null,
+                    "Unbiasedness of the Leave-one-out Error::C": null,
+                    "Leave-one-out Bound::C": null
+                },
+                "Leave-one-out Machines (LOOM)::M": null,
+                "Pitfalls of Minimizing a Leave-one-out Bound::C": {
+                    "Model Selection::T": null
+                },
+                "Clustering in Feature Space::T": null
+            },
+            "Bayesian Framework::C": {
+                "STEPS": [
+                    "likelihood",
+                    "prior",
+                    "evidence of hypothesis"
+                ],
+                "Likelihood::C": null,
+                "Inverse Loss Likelihood::C": null,
+                "PAC Likelihood::C": null,
+                "Conjugate Prior::C": null,
+                "Conditioning on Data::C": {
+                    "Maximum-a-posteriori Estimator::M": null,
+                    "Bayes Classification Strategy::M": null,
+                    "Gibbs Classification Strategy::M": null
+                }
+            },
+            "Gaussian Processes::C": {
+                "Bayesian Linear Regression::M": {
+                    "Stochastic and Gaussian Processes::C": null,
+                    "Covariance Function and Kernels::C": null,
+                    "Evidence Maximization with Gaussian Processes::T": null,
+                    "Automatic Relevance Determination::T": null
+                },
+                "From Regression to Classification::C": {
+                    "Support Vector Classification Learning::T": null
+                }
+            },
+            "The Relevance Vector Machine::M": {
+                "Sparsity in Relevance Vector Machines::C": null
+            },
+            "Bayes Point Machines::M": {
+                "Bayes Point::C": null,
+                "Estimating the Bayes Point::T": null
+            },
+            "Fisher Discriminants::C": {
+                "Least Squares Regression and Fisher Discriminant::C": null
+            }
+        }
+    },
+    "Learning Theory::C": {
+        "Mathematical Models of Learning::M": {
+            "Generative vs Discriminative Models::C": {
+                "Estimator::C": null,
+                "Convergence of Probability Measures::C": {
+                    "L1–Convergence of Probability Measures::C": null
+                }
+            },
+            "PAC and VC Frameworks::C": {
+                "VC and PAC Generalization Error Bounds::C": null,
+                "Uniform Convergence of Frequencies to Probabilities::C": null,
+                "Classical PAC and VC Analysis::C": {
+                    "VC Bound for Finite Hypothesis Spaces::C": null,
+                    "Confidence Intervals::C": null,
+                    "Optimize for Constants::T": null
+                },
+                "Growth Function and VC Dimension::C": {
+                    "Covering Number and Growth Function::C": null,
+                    "Growth Function Bound and VC Dimension::C": null,
+                    "Sufficient Training Sample Size::C": null,
+                    "Data Dependent Hypotheses Spaces::C": null,
+                    "VC Dimension and Parameters::C": null
+                },
+                "Structural Risk Minimization::T": {
+                    "Multiple Testing::C": null,
+                    "Role of Discrete Probability Measure::C": null
+                }
+            },
+            "The Luckiness Framework::C": {
+                "STEPS": [
+                    "formalize conditions to use training sample to decompose hypothesis space",
+                    "provide uniform bounds on expected risks"
+                ],
+                "Luckiness Generlaization Error Bound::B": null,
+                "Luckiness Function and Level::C": null,
+                "Probable Smoothness of Luckiness Function::C": null,
+                "Luckiness Bound::B": null,
+                "Conditional Confidence Intervals::C": null,
+                "PAC Luckiness::C": null,
+                "Empirical VC Dimension Luckiness::C": null,
+                "Vanilla Luckiness::C": null
+            },
+            "PAC and VC Frameworks for Real-Valued Classifiers::C": {
+                "Covering Number of Real-Valued Functions::C": null,
+                "Covering Number Bound::B": null,
+                "Bounds using the Empirical Covering Number::B": null,
+                "VC Dimensions for Real-Valued Function Classes::C": {
+                    "VC Dimension of Real-Valued Function Classes::C": null,
+                    "Bound on the Covering Number::B": null,
+                    "Fat Shattering Bound::B": null
+                },
+                "The PAC Margin Bound::B": {
+                    "Fat Shattering Bound for Linear Classifiers::B": null,
+                    "PAC Margin Bound::B": null,
+                    "Sufficient Training Sample Size::C": null
+                },
+                "Robust Margin Bounds::B": {
+                    "Margin Distribution::C": null,
+                    "Justification of Soft Margin Support Vector Machines::C": null,
+                    "Application to Adaptive Margin Machines::C": null,
+                    "Adaptive Margin Machines Bound::B": null
+                }
+            }
+        },
+        "Bounds for Specific Algorithms::B": {}
+    },
+    "Proofs and Drivations::C": {}
+}

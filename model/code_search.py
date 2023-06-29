@@ -14,15 +14,16 @@ from typing import *
 from tqdm import tqdm
 import torch.nn as nn
 from torch.optim import AdamW
+from model.datautils import *
 import torch.nn.functional as F
+from model.unixcoder import UniXcoder
 from datautils import load_plan_ops
 from torch.utils.data import DataLoader
 from transformers import RobertaModel, RobertaTokenizer
 from torchmetrics.functional import pairwise_cosine_similarity
 # import the dataset classes needed for code search for various datasets.
 from sklearn.metrics import label_ranking_average_precision_score as MRR_score
-from model.unixcoder import UniXcoder
-from model.datautils import *
+
 
 # seed
 random.seed(0)
@@ -444,11 +445,23 @@ def create_dense_index(args):
     config = vars(args)
     config["tokenizer_args"] = tok_args    
 
+    queries = None
+    if args.index_modality == "text":
+        queries = json.load(open("./data/juice-dataset/plan_ops.json"))
     if args.model_type == "codebert":
-        queries = None
-        if args.index_modality == "text":
-            queries = json.load(open("./data/juice-dataset/plan_ops.json"))
         dataset = JuICeKBNNCodeBERTCodeSearchDataset(
+            tokenizer=tokenizer, queries=queries, 
+            obf_code=args.obfuscate_code, 
+            **tok_args,
+        )
+    elif args.model_type == "graphcodebert":
+        dataset = JuICeKBNNGraphCodeBERTCodeSearchDataset(
+            tokenizer=tokenizer, queries=queries, 
+            obf_code=args.obfuscate_code, 
+            **tok_args,
+        )
+    elif args.model_type == "unixcoder":
+        dataset = JuICeKBNNUniXcoderCodeSearchDataset(
             tokenizer=tokenizer, queries=queries, 
             obf_code=args.obfuscate_code, 
             **tok_args,
@@ -691,5 +704,7 @@ if __name__ == "__main__":
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch3_CosSim -bs 200 --mode train --cos_sim -e 50
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_Sym -bs 500 --mode inference --index_file_name codebert_cos_sim.index --cos_sim
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 500 --mode inference --index_file_name codebert_cos_sim.index --cos_sim
+# python -m model.code_search -exp CoNaLa_CSN_GraphCodeBERT_CodeSearch_CosSim -bs 500 -mt graphcodebert --mode inference --index_file_name graphcodebert_cos_sim.index --cos_sim
+# python -m model.code_search -exp CoNaLa_CSN_UniXcoder_CodeSearch_CosSim -bs 500 -mt unixcoder --mode inference --index_file_name unixcoder_cos_sim.index --cos_sim
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 500 --mode inference --index_file_name codebert_plan_ops_cos_sim.index --cos_sim --index_modality text
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_Sym -bs 500 --mode inference --index_file_name codebert_plan_ops_cos_sim.index --cos_sim --index_modality text
