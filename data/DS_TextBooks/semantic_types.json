@@ -1,0 +1,13 @@
+{
+    "D": "Data",
+    "M": "Model/Learning Algorithm",
+    "T": "Task/Setting/Objective/Loss",
+    "E": "Evaulation metric",
+    "C": "Concepts/Theory",
+    "V": "Visualization",
+    "A": "Analysis",
+    "B": "Theoretical Bounds",
+    "F": "Representation/Features",
+    "S": "Statistical Measure or Distribution",
+    "s": "Step"
+}

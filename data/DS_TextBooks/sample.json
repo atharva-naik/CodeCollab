@@ -1,0 +1,16 @@
+{
+    "K1::C": null,
+    "K2::T": {
+        "STEPS": ["V1", "V2", "V3"],
+        "K3::M": null,
+        "K4::E": {
+            "STEPS": ["V5", "V6"],
+            "K5::B": null,
+            "K6::F": null
+        },
+        "K7::V": null,
+        "K8::A": null
+    },
+    "K9::S": null,
+    "K10::D": null
+}

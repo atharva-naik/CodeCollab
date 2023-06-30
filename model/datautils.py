@@ -20,6 +20,89 @@ from model.parser import (remove_comments_and_docstrings,
                               tree_to_variable_index)
 from datautils.code_cell_analysis import obfuscate_code
 
+def graphcodebert_proc_code(code: str, parser, tokenizer, tok_args: dict):
+    try: code = remove_comments_and_docstrings(code, 'python')
+    except: pass
+    tree = parser[0].parse(bytes(code, 'utf8'))
+    root_node = tree.root_node
+    try: 
+        tokens_index=tree_to_token_index(root_node)     
+        code=code.split('\n')
+        code_tokens=[index_to_code_token(x,code) for x in tokens_index]  
+        index_to_code={}
+        for idx,(index,code) in enumerate(zip(tokens_index,code_tokens)):
+            index_to_code[index]=(idx,code)
+        try: DFG,_=parser[1](root_node,index_to_code,{}) 
+        except Exception as e: print("error in src.e_ret.datautils.CoNaLaGraphCodeBERTCodeSearchDataset.proc_code:", e); DFG=[]
+    except Exception as e: print("error in src.e_ret.datautils.CoNaLaGraphCodeBERTCodeSearchDataset.proc_code:", e); DFG=[]
+    DFG=sorted(DFG,key=lambda x:x[1])
+    indexs=set()
+    for d in DFG:
+        if len(d[-1])!=0: indexs.add(d[1])
+        for x in d[-1]: indexs.add(x)
+    new_DFG=[]
+    for d in DFG:
+        if d[1] in indexs: new_DFG.append(d)
+    dfg=new_DFG
+    code_tokens=[tokenizer.tokenize('@ '+x)[1:] if idx!=0 else tokenizer.tokenize(x) for idx,x in enumerate(code_tokens)]
+    ori2cur_pos={}
+    ori2cur_pos[-1]=(0,0)
+    for i in range(len(code_tokens)):
+        ori2cur_pos[i]=(ori2cur_pos[i-1][1],ori2cur_pos[i-1][1]+len(code_tokens[i]))    
+    code_tokens=[y for x in code_tokens for y in x]  
+    #truncating
+    code_tokens=code_tokens[:tok_args["code_length"]+tok_args["data_flow_length"]-2-min(len(dfg),tok_args["data_flow_length"])]
+    code_tokens =[tokenizer.cls_token]+code_tokens+[tokenizer.sep_token]
+    code_ids = tokenizer.convert_tokens_to_ids(code_tokens)
+    position_idx = [i+tokenizer.pad_token_id + 1 for i in range(len(code_tokens))]
+    dfg=dfg[:tok_args["code_length"]+tok_args["data_flow_length"]
+            -len(code_tokens)]
+    code_tokens+=[x[0] for x in dfg]
+    position_idx+=[0 for x in dfg]
+    code_ids+=[tokenizer.unk_token_id for x in dfg]
+    padding_length=tok_args["code_length"]+tok_args["data_flow_length"]-len(code_ids)
+    position_idx+=[tokenizer.pad_token_id]*padding_length
+    code_ids+=[tokenizer.pad_token_id]*padding_length    
+    # reindex
+    reverse_index={}
+    for idx,x in enumerate(dfg):
+        reverse_index[x[1]]=idx
+    for idx,x in enumerate(dfg):
+        dfg[idx]=x[:-1]+([reverse_index[i] for i in x[-1] if i in reverse_index],)    
+    dfg_to_dfg=[x[-1] for x in dfg]
+    dfg_to_code=[ori2cur_pos[x[1]] for x in dfg]
+    length=len([tokenizer.cls_token])
+    dfg_to_code=[(x[0]+length,x[1]+length) for x in dfg_to_code] 
+    #calculate graph-guided masked function
+    attn_mask=np.zeros((tok_args["code_length"]+tok_args["data_flow_length"],
+                        tok_args["code_length"]+tok_args["data_flow_length"]),
+                        dtype=bool)
+    #calculate begin index of node and max length of input
+    node_index=sum([i>1 for i in position_idx])
+    max_length=sum([i!=1 for i in position_idx])
+    #sequence can attend to sequence
+    attn_mask[:node_index,:node_index]=True
+    #special tokens attend to all tokens
+    for idx,i in enumerate(code_ids):
+        if i in [0,2]:
+            attn_mask[idx,:max_length]=True
+    #nodes attend to code tokens that are identified from
+    for idx,(a,b) in enumerate(dfg_to_code):
+        if a<node_index and b<node_index:
+            attn_mask[idx+node_index,a:b]=True
+            attn_mask[a:b,idx+node_index]=True
+    #nodes attend to adjacent nodes 
+    for idx,nodes in enumerate(dfg_to_dfg):
+        for a in nodes:
+            if a+node_index<len(position_idx):
+                attn_mask[idx+node_index,a+node_index]=True  
+    
+    c_iids = torch.tensor(code_ids)
+    c_attn = torch.tensor(attn_mask)
+    c_pos_idx = torch.tensor(position_idx) 
+    
+    return c_iids, c_attn, c_pos_idx
+
 # cell sequence prediction dataloaders:
 class SimpleCellSeqDataset(Dataset):
     """simplest possible cell sequence prediction dataset"""
@@ -313,90 +396,11 @@ class DocsGraphCodeBERTDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-    def proc_code(self, code: str):
-        try: code = remove_comments_and_docstrings(code, 'python')
-        except: pass
-        tree = self.parser[0].parse(bytes(code, 'utf8'))
-        root_node = tree.root_node
-        tokens_index=tree_to_token_index(root_node)     
-        code=code.split('\n')
-        code_tokens=[index_to_code_token(x,code) for x in tokens_index]  
-        index_to_code={}
-        for idx,(index,code) in enumerate(zip(tokens_index,code_tokens)):
-            index_to_code[index]=(idx,code)  
-        try: DFG,_=self.parser[1](root_node,index_to_code,{}) 
-        except Exception as e: print("error in src.e_ret.datautils.CoNaLaGraphCodeBERTCodeSearchDataset.proc_code:", e); DFG=[]
-        DFG=sorted(DFG,key=lambda x:x[1])
-        indexs=set()
-        for d in DFG:
-            if len(d[-1])!=0: indexs.add(d[1])
-            for x in d[-1]: indexs.add(x)
-        new_DFG=[]
-        for d in DFG:
-            if d[1] in indexs: new_DFG.append(d)
-        dfg=new_DFG
-        code_tokens=[self.tokenizer.tokenize('@ '+x)[1:] if idx!=0 else self.tokenizer.tokenize(x) for idx,x in enumerate(code_tokens)]
-        ori2cur_pos={}
-        ori2cur_pos[-1]=(0,0)
-        for i in range(len(code_tokens)):
-            ori2cur_pos[i]=(ori2cur_pos[i-1][1],ori2cur_pos[i-1][1]+len(code_tokens[i]))    
-        code_tokens=[y for x in code_tokens for y in x]  
-        #truncating
-        code_tokens=code_tokens[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]-2-min(len(dfg),self.tok_args["data_flow_length"])]
-        code_tokens =[self.tokenizer.cls_token]+code_tokens+[self.tokenizer.sep_token]
-        code_ids = self.tokenizer.convert_tokens_to_ids(code_tokens)
-        position_idx = [i+self.tokenizer.pad_token_id + 1 for i in range(len(code_tokens))]
-        dfg=dfg[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]
-                -len(code_tokens)]
-        code_tokens+=[x[0] for x in dfg]
-        position_idx+=[0 for x in dfg]
-        code_ids+=[self.tokenizer.unk_token_id for x in dfg]
-        padding_length=self.tok_args["code_length"]+self.tok_args["data_flow_length"]-len(code_ids)
-        position_idx+=[self.tokenizer.pad_token_id]*padding_length
-        code_ids+=[self.tokenizer.pad_token_id]*padding_length    
-        # reindex
-        reverse_index={}
-        for idx,x in enumerate(dfg):
-            reverse_index[x[1]]=idx
-        for idx,x in enumerate(dfg):
-            dfg[idx]=x[:-1]+([reverse_index[i] for i in x[-1] if i in reverse_index],)    
-        dfg_to_dfg=[x[-1] for x in dfg]
-        dfg_to_code=[ori2cur_pos[x[1]] for x in dfg]
-        length=len([self.tokenizer.cls_token])
-        dfg_to_code=[(x[0]+length,x[1]+length) for x in dfg_to_code] 
-        #calculate graph-guided masked function
-        attn_mask=np.zeros((self.tok_args["code_length"]+self.tok_args["data_flow_length"],
-                            self.tok_args["code_length"]+self.tok_args["data_flow_length"]),
-                            dtype=bool)
-        #calculate begin index of node and max length of input
-        node_index=sum([i>1 for i in position_idx])
-        max_length=sum([i!=1 for i in position_idx])
-        #sequence can attend to sequence
-        attn_mask[:node_index,:node_index]=True
-        #special tokens attend to all tokens
-        for idx,i in enumerate(code_ids):
-            if i in [0,2]:
-                attn_mask[idx,:max_length]=True
-        #nodes attend to code tokens that are identified from
-        for idx,(a,b) in enumerate(dfg_to_code):
-            if a<node_index and b<node_index:
-                attn_mask[idx+node_index,a:b]=True
-                attn_mask[a:b,idx+node_index]=True
-        #nodes attend to adjacent nodes 
-        for idx,nodes in enumerate(dfg_to_dfg):
-            for a in nodes:
-                if a+node_index<len(position_idx):
-                    attn_mask[idx+node_index,a+node_index]=True  
-        
-        c_iids = torch.tensor(code_ids)
-        c_attn = torch.tensor(attn_mask)
-        c_pos_idx = torch.tensor(position_idx) 
-        
-        return c_iids, c_attn, c_pos_idx
-
     def __getitem__(self, i):
         c = self.data[i]
-        c_iids, c_attn, c_pos_idx = self.proc_code(c)
+        c_iids, c_attn, c_pos_idx = graphcodebert_proc_code(code=c, parser=self.parser, 
+                                                            tokenizer=self.tokenizer, 
+                                                            tok_args=self.tok_args)
 
         return [c_iids, c_attn, c_pos_idx]
 
@@ -533,92 +537,13 @@ class DocsGraphCodeBERTInferenceDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-    def proc_code(self, code: str):
-        try: code = remove_comments_and_docstrings(code, 'python')
-        except: pass
-        tree = self.parser[0].parse(bytes(code, 'utf8'))
-        root_node = tree.root_node
-        tokens_index=tree_to_token_index(root_node)     
-        code=code.split('\n')
-        code_tokens=[index_to_code_token(x,code) for x in tokens_index]  
-        index_to_code={}
-        for idx,(index,code) in enumerate(zip(tokens_index,code_tokens)):
-            index_to_code[index]=(idx,code)  
-        try: DFG,_=self.parser[1](root_node,index_to_code,{}) 
-        except Exception as e: print("error in src.e_ret.datautils.CoNaLaGraphCodeBERTCodeSearchDataset.proc_code:", e); DFG=[]
-        DFG=sorted(DFG,key=lambda x:x[1])
-        indexs=set()
-        for d in DFG:
-            if len(d[-1])!=0: indexs.add(d[1])
-            for x in d[-1]: indexs.add(x)
-        new_DFG=[]
-        for d in DFG:
-            if d[1] in indexs: new_DFG.append(d)
-        dfg=new_DFG
-        code_tokens=[self.tokenizer.tokenize('@ '+x)[1:] if idx!=0 else self.tokenizer.tokenize(x) for idx,x in enumerate(code_tokens)]
-        ori2cur_pos={}
-        ori2cur_pos[-1]=(0,0)
-        for i in range(len(code_tokens)):
-            ori2cur_pos[i]=(ori2cur_pos[i-1][1],ori2cur_pos[i-1][1]+len(code_tokens[i]))    
-        code_tokens=[y for x in code_tokens for y in x]  
-        #truncating
-        code_tokens=code_tokens[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]-2-min(len(dfg),self.tok_args["data_flow_length"])]
-        code_tokens =[self.tokenizer.cls_token]+code_tokens+[self.tokenizer.sep_token]
-        code_ids = self.tokenizer.convert_tokens_to_ids(code_tokens)
-        position_idx = [i+self.tokenizer.pad_token_id + 1 for i in range(len(code_tokens))]
-        dfg=dfg[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]
-                -len(code_tokens)]
-        code_tokens+=[x[0] for x in dfg]
-        position_idx+=[0 for x in dfg]
-        code_ids+=[self.tokenizer.unk_token_id for x in dfg]
-        padding_length=self.tok_args["code_length"]+self.tok_args["data_flow_length"]-len(code_ids)
-        position_idx+=[self.tokenizer.pad_token_id]*padding_length
-        code_ids+=[self.tokenizer.pad_token_id]*padding_length    
-        # reindex
-        reverse_index={}
-        for idx,x in enumerate(dfg):
-            reverse_index[x[1]]=idx
-        for idx,x in enumerate(dfg):
-            dfg[idx]=x[:-1]+([reverse_index[i] for i in x[-1] if i in reverse_index],)    
-        dfg_to_dfg=[x[-1] for x in dfg]
-        dfg_to_code=[ori2cur_pos[x[1]] for x in dfg]
-        length=len([self.tokenizer.cls_token])
-        dfg_to_code=[(x[0]+length,x[1]+length) for x in dfg_to_code] 
-        #calculate graph-guided masked function
-        attn_mask=np.zeros((self.tok_args["code_length"]+self.tok_args["data_flow_length"],
-                            self.tok_args["code_length"]+self.tok_args["data_flow_length"]),
-                            dtype=bool)
-        #calculate begin index of node and max length of input
-        node_index=sum([i>1 for i in position_idx])
-        max_length=sum([i!=1 for i in position_idx])
-        #sequence can attend to sequence
-        attn_mask[:node_index,:node_index]=True
-        #special tokens attend to all tokens
-        for idx,i in enumerate(code_ids):
-            if i in [0,2]:
-                attn_mask[idx,:max_length]=True
-        #nodes attend to code tokens that are identified from
-        for idx,(a,b) in enumerate(dfg_to_code):
-            if a<node_index and b<node_index:
-                attn_mask[idx+node_index,a:b]=True
-                attn_mask[a:b,idx+node_index]=True
-        #nodes attend to adjacent nodes 
-        for idx,nodes in enumerate(dfg_to_dfg):
-            for a in nodes:
-                if a+node_index<len(position_idx):
-                    attn_mask[idx+node_index,a+node_index]=True  
-        
-        c_iids = torch.tensor(code_ids)
-        c_attn = torch.tensor(attn_mask)
-        c_pos_idx = torch.tensor(position_idx) 
-        
-        return c_iids, c_attn, c_pos_idx
-
     def __getitem__(self, i):
         c = self.data[i]
         # c_id = c['id']
         c_text = c['text']
-        c_iids, c_attn, c_pos_idx = self.proc_code(c_text)
+        c_iids, c_attn, c_pos_idx = graphcodebert_proc_code(code=c_text, parser=self.parser, 
+                                                            tokenizer=self.tokenizer, 
+                                                            tok_args=self.tok_args)
 
         return [c_iids, c_attn, c_pos_idx]
 
@@ -956,87 +881,6 @@ class CoNaLaGraphCodeBERTCodeSearchDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-    def proc_code(self, code: str):
-        try: code = remove_comments_and_docstrings(code, 'python')
-        except: pass
-        tree = self.parser[0].parse(bytes(code, 'utf8'))
-        root_node = tree.root_node
-        tokens_index=tree_to_token_index(root_node)     
-        code=code.split('\n')
-        code_tokens=[index_to_code_token(x,code) for x in tokens_index]  
-        index_to_code={}
-        for idx,(index,code) in enumerate(zip(tokens_index,code_tokens)):
-            index_to_code[index]=(idx,code)  
-        try: DFG,_=self.parser[1](root_node,index_to_code,{}) 
-        except Exception as e: print("error in src.e_ret.datautils.CoNaLaGraphCodeBERTCodeSearchDataset.proc_code:", e); DFG=[]
-        DFG=sorted(DFG,key=lambda x:x[1])
-        indexs=set()
-        for d in DFG:
-            if len(d[-1])!=0: indexs.add(d[1])
-            for x in d[-1]: indexs.add(x)
-        new_DFG=[]
-        for d in DFG:
-            if d[1] in indexs: new_DFG.append(d)
-        dfg=new_DFG
-        code_tokens=[self.tokenizer.tokenize('@ '+x)[1:] if idx!=0 else self.tokenizer.tokenize(x) for idx,x in enumerate(code_tokens)]
-        ori2cur_pos={}
-        ori2cur_pos[-1]=(0,0)
-        for i in range(len(code_tokens)):
-            ori2cur_pos[i]=(ori2cur_pos[i-1][1],ori2cur_pos[i-1][1]+len(code_tokens[i]))    
-        code_tokens=[y for x in code_tokens for y in x]  
-        #truncating
-        code_tokens=code_tokens[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]-2-min(len(dfg),self.tok_args["data_flow_length"])]
-        code_tokens =[self.tokenizer.cls_token]+code_tokens+[self.tokenizer.sep_token]
-        code_ids = self.tokenizer.convert_tokens_to_ids(code_tokens)
-        position_idx = [i+self.tokenizer.pad_token_id + 1 for i in range(len(code_tokens))]
-        dfg=dfg[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]
-                -len(code_tokens)]
-        code_tokens+=[x[0] for x in dfg]
-        position_idx+=[0 for x in dfg]
-        code_ids+=[self.tokenizer.unk_token_id for x in dfg]
-        padding_length=self.tok_args["code_length"]+self.tok_args["data_flow_length"]-len(code_ids)
-        position_idx+=[self.tokenizer.pad_token_id]*padding_length
-        code_ids+=[self.tokenizer.pad_token_id]*padding_length    
-        # reindex
-        reverse_index={}
-        for idx,x in enumerate(dfg):
-            reverse_index[x[1]]=idx
-        for idx,x in enumerate(dfg):
-            dfg[idx]=x[:-1]+([reverse_index[i] for i in x[-1] if i in reverse_index],)    
-        dfg_to_dfg=[x[-1] for x in dfg]
-        dfg_to_code=[ori2cur_pos[x[1]] for x in dfg]
-        length=len([self.tokenizer.cls_token])
-        dfg_to_code=[(x[0]+length,x[1]+length) for x in dfg_to_code] 
-        #calculate graph-guided masked function
-        attn_mask=np.zeros((self.tok_args["code_length"]+self.tok_args["data_flow_length"],
-                            self.tok_args["code_length"]+self.tok_args["data_flow_length"]),
-                            dtype=bool)
-        #calculate begin index of node and max length of input
-        node_index=sum([i>1 for i in position_idx])
-        max_length=sum([i!=1 for i in position_idx])
-        #sequence can attend to sequence
-        attn_mask[:node_index,:node_index]=True
-        #special tokens attend to all tokens
-        for idx,i in enumerate(code_ids):
-            if i in [0,2]:
-                attn_mask[idx,:max_length]=True
-        #nodes attend to code tokens that are identified from
-        for idx,(a,b) in enumerate(dfg_to_code):
-            if a<node_index and b<node_index:
-                attn_mask[idx+node_index,a:b]=True
-                attn_mask[a:b,idx+node_index]=True
-        #nodes attend to adjacent nodes 
-        for idx,nodes in enumerate(dfg_to_dfg):
-            for a in nodes:
-                if a+node_index<len(position_idx):
-                    attn_mask[idx+node_index,a+node_index]=True  
-        
-        c_iids = torch.tensor(code_ids)
-        c_attn = torch.tensor(attn_mask)
-        c_pos_idx = torch.tensor(position_idx) 
-        
-        return c_iids, c_attn, c_pos_idx
-
     def proc_text(self, q: str):
         nl_tokens=self.tokenizer.tokenize(q)[:self.tok_args["nl_length"]-2]
         nl_tokens =[self.tokenizer.cls_token]+nl_tokens+[self.tokenizer.sep_token]
@@ -1050,7 +894,9 @@ class CoNaLaGraphCodeBERTCodeSearchDataset(Dataset):
         q = self.data[i]["intent"] # query
         c = self.data[i]["snippet"] # document/code
         q_iids = self.proc_text(q)     
-        c_iids, c_attn, c_pos_idx = self.proc_code(c)
+        c_iids, c_attn, c_pos_idx = graphcodebert_proc_code(code=c, parser=self.parser, 
+                                                            tokenizer=self.tokenizer, 
+                                                            tok_args=self.tok_args)
 
         return [
             q_iids, c_iids, 
@@ -1162,87 +1008,6 @@ class CodeSearchNetGraphCodeBERTCodeSearchDataset(Dataset):
     def __len__(self):
         return len(self.data)
 
-    def proc_code(self, code: str):
-        try: code = remove_comments_and_docstrings(code, 'python')
-        except: pass
-        tree = self.parser[0].parse(bytes(code, 'utf8'))
-        root_node = tree.root_node
-        tokens_index=tree_to_token_index(root_node)     
-        code=code.split('\n')
-        code_tokens=[index_to_code_token(x,code) for x in tokens_index]  
-        index_to_code={}
-        for idx,(index,code) in enumerate(zip(tokens_index,code_tokens)):
-            index_to_code[index]=(idx,code)  
-        try: DFG,_=self.parser[1](root_node,index_to_code,{}) 
-        except Exception as e: print("error in src.e_ret.datautils.CoNaLaGraphCodeBERTCodeSearchDataset.proc_code:", e); DFG=[]
-        DFG=sorted(DFG,key=lambda x:x[1])
-        indexs=set()
-        for d in DFG:
-            if len(d[-1])!=0: indexs.add(d[1])
-            for x in d[-1]: indexs.add(x)
-        new_DFG=[]
-        for d in DFG:
-            if d[1] in indexs: new_DFG.append(d)
-        dfg=new_DFG
-        code_tokens=[self.tokenizer.tokenize('@ '+x)[1:] if idx!=0 else self.tokenizer.tokenize(x) for idx,x in enumerate(code_tokens)]
-        ori2cur_pos={}
-        ori2cur_pos[-1]=(0,0)
-        for i in range(len(code_tokens)):
-            ori2cur_pos[i]=(ori2cur_pos[i-1][1],ori2cur_pos[i-1][1]+len(code_tokens[i]))    
-        code_tokens=[y for x in code_tokens for y in x]  
-        #truncating
-        code_tokens=code_tokens[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]-2-min(len(dfg),self.tok_args["data_flow_length"])]
-        code_tokens =[self.tokenizer.cls_token]+code_tokens+[self.tokenizer.sep_token]
-        code_ids = self.tokenizer.convert_tokens_to_ids(code_tokens)
-        position_idx = [i+self.tokenizer.pad_token_id + 1 for i in range(len(code_tokens))]
-        dfg=dfg[:self.tok_args["code_length"]+self.tok_args["data_flow_length"]
-                -len(code_tokens)]
-        code_tokens+=[x[0] for x in dfg]
-        position_idx+=[0 for x in dfg]
-        code_ids+=[self.tokenizer.unk_token_id for x in dfg]
-        padding_length=self.tok_args["code_length"]+self.tok_args["data_flow_length"]-len(code_ids)
-        position_idx+=[self.tokenizer.pad_token_id]*padding_length
-        code_ids+=[self.tokenizer.pad_token_id]*padding_length    
-        # reindex
-        reverse_index={}
-        for idx,x in enumerate(dfg):
-            reverse_index[x[1]]=idx
-        for idx,x in enumerate(dfg):
-            dfg[idx]=x[:-1]+([reverse_index[i] for i in x[-1] if i in reverse_index],)    
-        dfg_to_dfg=[x[-1] for x in dfg]
-        dfg_to_code=[ori2cur_pos[x[1]] for x in dfg]
-        length=len([self.tokenizer.cls_token])
-        dfg_to_code=[(x[0]+length,x[1]+length) for x in dfg_to_code] 
-        #calculate graph-guided masked function
-        attn_mask=np.zeros((self.tok_args["code_length"]+self.tok_args["data_flow_length"],
-                            self.tok_args["code_length"]+self.tok_args["data_flow_length"]),
-                            dtype=bool)
-        #calculate begin index of node and max length of input
-        node_index=sum([i>1 for i in position_idx])
-        max_length=sum([i!=1 for i in position_idx])
-        #sequence can attend to sequence
-        attn_mask[:node_index,:node_index]=True
-        #special tokens attend to all tokens
-        for idx,i in enumerate(code_ids):
-            if i in [0,2]:
-                attn_mask[idx,:max_length]=True
-        #nodes attend to code tokens that are identified from
-        for idx,(a,b) in enumerate(dfg_to_code):
-            if a<node_index and b<node_index:
-                attn_mask[idx+node_index,a:b]=True
-                attn_mask[a:b,idx+node_index]=True
-        #nodes attend to adjacent nodes 
-        for idx,nodes in enumerate(dfg_to_dfg):
-            for a in nodes:
-                if a+node_index<len(position_idx):
-                    attn_mask[idx+node_index,a+node_index]=True  
-        
-        c_iids = torch.tensor(code_ids)
-        c_attn = torch.tensor(attn_mask)
-        c_pos_idx = torch.tensor(position_idx) 
-        
-        return c_iids, c_attn, c_pos_idx
-
     def proc_text(self, q: str):
         nl_tokens=self.tokenizer.tokenize(q)[:self.tok_args["nl_length"]-2]
         nl_tokens =[self.tokenizer.cls_token]+nl_tokens+[self.tokenizer.sep_token]
@@ -1256,7 +1021,9 @@ class CodeSearchNetGraphCodeBERTCodeSearchDataset(Dataset):
         q = self.data[i]["intent"] # query
         c = self.data[i]["snippet"] # document/code
         q_iids = self.proc_text(q)     
-        c_iids, c_attn, c_pos_idx = self.proc_code(c)
+        c_iids, c_attn, c_pos_idx = graphcodebert_proc_code(code=c, parser=self.parser, 
+                                                            tokenizer=self.tokenizer, 
+                                                            tok_args=self.tok_args)
 
         return [
             q_iids, c_iids, 

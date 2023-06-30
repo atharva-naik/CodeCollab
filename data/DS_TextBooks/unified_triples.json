@@ -1,0 +1,3742 @@
+[
+    {
+        "sub": [
+            "The Learning Problem and Statistical Inference",
+            "T"
+        ],
+        "obj": [
+            "Supervised Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning",
+            "T"
+        ],
+        "obj": [
+            "The Learning Problem and Statistical Inference",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning",
+            "T"
+        ],
+        "obj": [
+            "Classification Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Classification Learning",
+            "T"
+        ],
+        "obj": [
+            "Supervised Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning",
+            "T"
+        ],
+        "obj": [
+            "Preference Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Preference Learning",
+            "T"
+        ],
+        "obj": [
+            "Supervised Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning",
+            "T"
+        ],
+        "obj": [
+            "Function Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Function Learning",
+            "T"
+        ],
+        "obj": [
+            "Supervised Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Learning Problem and Statistical Inference",
+            "T"
+        ],
+        "obj": [
+            "Unsupervised Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning",
+            "T"
+        ],
+        "obj": [
+            "The Learning Problem and Statistical Inference",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Learning Problem and Statistical Inference",
+            "T"
+        ],
+        "obj": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "obj": [
+            "The Learning Problem and Statistical Inference",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Kernel Classifiers",
+            "T"
+        ],
+        "obj": [
+            "distance measure",
+            "s"
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "distance measure",
+            "s"
+        ],
+        "obj": [
+            "Learning Kernel Classifiers",
+            "T"
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "distance measure",
+            "s"
+        ],
+        "obj": [
+            "store training samples",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "store training samples",
+            "s"
+        ],
+        "obj": [
+            "distance measure",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "store training samples",
+            "s"
+        ],
+        "obj": [
+            "compute distance to all samples",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "compute distance to all samples",
+            "s"
+        ],
+        "obj": [
+            "store training samples",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "compute distance to all samples",
+            "s"
+        ],
+        "obj": [
+            "classify",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "classify",
+            "s"
+        ],
+        "obj": [
+            "compute distance to all samples",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Learning Kernel Classifiers",
+            "T"
+        ],
+        "obj": [
+            "classify",
+            "s"
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "classify",
+            "s"
+        ],
+        "obj": [
+            "Learning Kernel Classifiers",
+            "T"
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Purposes of Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "Number of training samples for given performance",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Number of training samples for given performance",
+            "C"
+        ],
+        "obj": [
+            "Purposes of Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Purposes of Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "Performance guarantee of learned function on given sample",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Performance guarantee of learned function on given sample",
+            "C"
+        ],
+        "obj": [
+            "Purposes of Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Purposes of Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "Choosing learning algorithm for given sample for best performance",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Choosing learning algorithm for given sample for best performance",
+            "C"
+        ],
+        "obj": [
+            "Purposes of Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Learning Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Basic",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Basic",
+            "T"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Basic",
+            "T"
+        ],
+        "obj": [
+            "learning problem",
+            "s"
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "learning problem",
+            "s"
+        ],
+        "obj": [
+            "Basic",
+            "T"
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "learning problem",
+            "s"
+        ],
+        "obj": [
+            "features and feature space",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "features and feature space",
+            "s"
+        ],
+        "obj": [
+            "learning problem",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "features and feature space",
+            "s"
+        ],
+        "obj": [
+            "linear function and linear classifier",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "linear function and linear classifier",
+            "s"
+        ],
+        "obj": [
+            "features and feature space",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "linear function and linear classifier",
+            "s"
+        ],
+        "obj": [
+            "expected risk || classification loss || cost matrices",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "expected risk || classification loss || cost matrices",
+            "s"
+        ],
+        "obj": [
+            "linear function and linear classifier",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Basic",
+            "T"
+        ],
+        "obj": [
+            "expected risk || classification loss || cost matrices",
+            "s"
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "expected risk || classification loss || cost matrices",
+            "s"
+        ],
+        "obj": [
+            "Basic",
+            "T"
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Basic",
+            "T"
+        ],
+        "obj": [
+            "Handwritten Digit Recognition",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Handwritten Digit Recognition",
+            "T"
+        ],
+        "obj": [
+            "Basic",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Risk Minimization",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "learning algorithm",
+            "s"
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "learning algorithm",
+            "s"
+        ],
+        "obj": [
+            "Risk Minimization",
+            "T"
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "learning algorithm",
+            "s"
+        ],
+        "obj": [
+            "generalization error",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "generalization error",
+            "s"
+        ],
+        "obj": [
+            "learning algorithm",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "generalization error",
+            "s"
+        ],
+        "obj": [
+            "empirical risk",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "empirical risk",
+            "s"
+        ],
+        "obj": [
+            "generalization error",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "empirical risk",
+            "s"
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "empirical risk",
+            "s"
+        ],
+        "obj": [
+            "Risk Minimization",
+            "T"
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Empirical Risk Minimization",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Empirical Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Risk Minimization",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Structural Risk Minimization",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Structural Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Risk Minimization",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Primal Perceptron",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Primal Perceptron",
+            "M"
+        ],
+        "obj": [
+            "Risk Minimization",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Primal Perceptron",
+            "M"
+        ],
+        "obj": [
+            "Version Space",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Version Space",
+            "F"
+        ],
+        "obj": [
+            "Primal Perceptron",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Regularized Risk Functionals",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Regularized Risk Functionals",
+            "M"
+        ],
+        "obj": [
+            "Risk Minimization",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Nonlinear Classifiers",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Nonlinear Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Kernel",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernel",
+            "C"
+        ],
+        "obj": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Gram Matrix",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Gram Matrix",
+            "C"
+        ],
+        "obj": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Kernel Technique",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernel Technique",
+            "C"
+        ],
+        "obj": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Technique",
+            "C"
+        ],
+        "obj": [
+            "Mercer's Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mercer's Theorem",
+            "C"
+        ],
+        "obj": [
+            "Kernel Technique",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Technique",
+            "C"
+        ],
+        "obj": [
+            "Mercer Kernels",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mercer Kernels",
+            "M"
+        ],
+        "obj": [
+            "Kernel Technique",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Technique",
+            "C"
+        ],
+        "obj": [
+            "Mahalanobis Metric",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mahalanobis Metric",
+            "C"
+        ],
+        "obj": [
+            "Kernel Technique",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Kernel Families",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernel Families",
+            "M"
+        ],
+        "obj": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Families",
+            "M"
+        ],
+        "obj": [
+            "Functions of Kernels",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Functions of Kernels",
+            "C"
+        ],
+        "obj": [
+            "Kernel Families",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Families",
+            "M"
+        ],
+        "obj": [
+            "Kernels on Inner Product Spaces",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernels on Inner Product Spaces",
+            "M"
+        ],
+        "obj": [
+            "Kernel Families",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels on Inner Product Spaces",
+            "M"
+        ],
+        "obj": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "obj": [
+            "Kernels on Inner Product Spaces",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "obj": [
+            "pth degree Polynomial Kernel",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "pth degree Polynomial Kernel",
+            "M"
+        ],
+        "obj": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "obj": [
+            "Complete Polynomial Kernel",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Complete Polynomial Kernel",
+            "M"
+        ],
+        "obj": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "obj": [
+            "RBF Kernel",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "RBF Kernel",
+            "M"
+        ],
+        "obj": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "obj": [
+            "Mahalanobis Kernel",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mahalanobis Kernel",
+            "M"
+        ],
+        "obj": [
+            "Polynomial and RBF Kernels",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Families",
+            "M"
+        ],
+        "obj": [
+            "Kernels on Strings",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernels on Strings",
+            "M"
+        ],
+        "obj": [
+            "Kernel Families",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels on Strings",
+            "M"
+        ],
+        "obj": [
+            "strings and alphabets",
+            "s"
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "strings and alphabets",
+            "s"
+        ],
+        "obj": [
+            "Kernels on Strings",
+            "M"
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "strings and alphabets",
+            "s"
+        ],
+        "obj": [
+            "subsequences and substrings",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "subsequences and substrings",
+            "s"
+        ],
+        "obj": [
+            "strings and alphabets",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Kernels on Strings",
+            "M"
+        ],
+        "obj": [
+            "subsequences and substrings",
+            "s"
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "subsequences and substrings",
+            "s"
+        ],
+        "obj": [
+            "Kernels on Strings",
+            "M"
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Kernels on Strings",
+            "M"
+        ],
+        "obj": [
+            "Ridge Problem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Ridge Problem",
+            "C"
+        ],
+        "obj": [
+            "Kernels on Strings",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Families",
+            "M"
+        ],
+        "obj": [
+            "Kernels from Probabilistic Models of the Data",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernels from Probabilistic Models of the Data",
+            "M"
+        ],
+        "obj": [
+            "Kernel Families",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels from Probabilistic Models of the Data",
+            "M"
+        ],
+        "obj": [
+            "Fisher Score and Fisher Information Matrix",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fisher Score and Fisher Information Matrix",
+            "C"
+        ],
+        "obj": [
+            "Kernels from Probabilistic Models of the Data",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels from Probabilistic Models of the Data",
+            "M"
+        ],
+        "obj": [
+            "Fisher Kernel",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fisher Kernel",
+            "C"
+        ],
+        "obj": [
+            "Kernels from Probabilistic Models of the Data",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "obj": [
+            "The Representer Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "The Representer Theorem",
+            "C"
+        ],
+        "obj": [
+            "Kernels and Linear Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Representer Theorem",
+            "C"
+        ],
+        "obj": [
+            "Reproducing Kernel Hilbert Spaces",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Reproducing Kernel Hilbert Spaces",
+            "C"
+        ],
+        "obj": [
+            "The Representer Theorem",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "obj": [
+            "Maximizing the Margin",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Maximizing the Margin",
+            "T"
+        ],
+        "obj": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Maximizing the Margin",
+            "T"
+        ],
+        "obj": [
+            "Margins",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Margins",
+            "C"
+        ],
+        "obj": [
+            "Maximizing the Margin",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Margins",
+            "C"
+        ],
+        "obj": [
+            "Functional Margin",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Functional Margin",
+            "C"
+        ],
+        "obj": [
+            "Margins",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Margins",
+            "C"
+        ],
+        "obj": [
+            "Geometrical Margin",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Geometrical Margin",
+            "C"
+        ],
+        "obj": [
+            "Margins",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Maximizing the Margin",
+            "T"
+        ],
+        "obj": [
+            "Perceptron Convergence Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Perceptron Convergence Theorem",
+            "C"
+        ],
+        "obj": [
+            "Maximizing the Margin",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "obj": [
+            "Soft Margins",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Soft Margins",
+            "M"
+        ],
+        "obj": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Soft Margins",
+            "M"
+        ],
+        "obj": [
+            "Linear Approximation",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Linear Approximation",
+            "M"
+        ],
+        "obj": [
+            "Soft Margins",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Soft Margins",
+            "M"
+        ],
+        "obj": [
+            "Quadratic Approximation",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Quadratic Approximation",
+            "M"
+        ],
+        "obj": [
+            "Soft Margins",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Soft Margins",
+            "M"
+        ],
+        "obj": [
+            "Data Independent Hypothesis Spaces",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Data Independent Hypothesis Spaces",
+            "F"
+        ],
+        "obj": [
+            "Soft Margins",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Soft Margins",
+            "M"
+        ],
+        "obj": [
+            "Cost Matrices",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Cost Matrices",
+            "C"
+        ],
+        "obj": [
+            "Soft Margins",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "obj": [
+            "Geometrical Viewpoints on Margin Maximization",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Geometrical Viewpoints on Margin Maximization",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "obj": [
+            "The \u03bd\u2013Trick and Other Variants",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "The \u03bd\u2013Trick and Other Variants",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The \u03bd\u2013Trick and Other Variants",
+            "C"
+        ],
+        "obj": [
+            "Multiclass Support Vector Machines",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Multiclass Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "The \u03bd\u2013Trick and Other Variants",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The \u03bd\u2013Trick and Other Variants",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Regression Estimation",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Support Vector Regression Estimation",
+            "M"
+        ],
+        "obj": [
+            "The \u03bd\u2013Trick and Other Variants",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The \u03bd\u2013Trick and Other Variants",
+            "C"
+        ],
+        "obj": [
+            "\u03bd\u2013Support Vector Machines for Classification",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "\u03bd\u2013Support Vector Machines for Classification",
+            "M"
+        ],
+        "obj": [
+            "The \u03bd\u2013Trick and Other Variants",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "obj": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "obj": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "obj": [
+            "Expected Risk of a Learning Algorithm",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Expected Risk of a Learning Algorithm",
+            "E"
+        ],
+        "obj": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "obj": [
+            "Leave-one-out Error",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Leave-one-out Error",
+            "E"
+        ],
+        "obj": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "obj": [
+            "Unbiasedness of the Leave-one-out Error",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Unbiasedness of the Leave-one-out Error",
+            "C"
+        ],
+        "obj": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "obj": [
+            "Leave-one-out Bound",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Leave-one-out Bound",
+            "C"
+        ],
+        "obj": [
+            "Assessment of Learning Algorithms",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "obj": [
+            "Leave-one-out Machines (LOOM)",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Leave-one-out Machines (LOOM)",
+            "M"
+        ],
+        "obj": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "obj": [
+            "Pitfalls of Minimizing a Leave-one-out Bound",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Pitfalls of Minimizing a Leave-one-out Bound",
+            "C"
+        ],
+        "obj": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Pitfalls of Minimizing a Leave-one-out Bound",
+            "C"
+        ],
+        "obj": [
+            "Model Selection",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Model Selection",
+            "T"
+        ],
+        "obj": [
+            "Pitfalls of Minimizing a Leave-one-out Bound",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "obj": [
+            "Clustering in Feature Space",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Clustering in Feature Space",
+            "T"
+        ],
+        "obj": [
+            "Adaptive Margin Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "obj": [
+            "likelihood",
+            "s"
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "likelihood",
+            "s"
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "likelihood",
+            "s"
+        ],
+        "obj": [
+            "prior",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "prior",
+            "s"
+        ],
+        "obj": [
+            "likelihood",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "prior",
+            "s"
+        ],
+        "obj": [
+            "evidence of hypothesis",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "evidence of hypothesis",
+            "s"
+        ],
+        "obj": [
+            "prior",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "obj": [
+            "evidence of hypothesis",
+            "s"
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "evidence of hypothesis",
+            "s"
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "obj": [
+            "Likelihood",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Likelihood",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "obj": [
+            "Inverse Loss Likelihood",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inverse Loss Likelihood",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "obj": [
+            "PAC Likelihood",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC Likelihood",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "obj": [
+            "Conjugate Prior",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Conjugate Prior",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "obj": [
+            "Conditioning on Data",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Conditioning on Data",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Conditioning on Data",
+            "C"
+        ],
+        "obj": [
+            "Maximum-a-posteriori Estimator",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Maximum-a-posteriori Estimator",
+            "M"
+        ],
+        "obj": [
+            "Conditioning on Data",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Conditioning on Data",
+            "C"
+        ],
+        "obj": [
+            "Bayes Classification Strategy",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Classification Strategy",
+            "M"
+        ],
+        "obj": [
+            "Conditioning on Data",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Conditioning on Data",
+            "C"
+        ],
+        "obj": [
+            "Gibbs Classification Strategy",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Gibbs Classification Strategy",
+            "M"
+        ],
+        "obj": [
+            "Conditioning on Data",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Gaussian Processes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Gaussian Processes",
+            "C"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Gaussian Processes",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "obj": [
+            "Gaussian Processes",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "obj": [
+            "Stochastic and Gaussian Processes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Stochastic and Gaussian Processes",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "obj": [
+            "Covariance Function and Kernels",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Covariance Function and Kernels",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "obj": [
+            "Evidence Maximization with Gaussian Processes",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Evidence Maximization with Gaussian Processes",
+            "T"
+        ],
+        "obj": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "obj": [
+            "Automatic Relevance Determination",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Automatic Relevance Determination",
+            "T"
+        ],
+        "obj": [
+            "Bayesian Linear Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Gaussian Processes",
+            "C"
+        ],
+        "obj": [
+            "From Regression to Classification",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "From Regression to Classification",
+            "C"
+        ],
+        "obj": [
+            "Gaussian Processes",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "From Regression to Classification",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Support Vector Classification Learning",
+            "T"
+        ],
+        "obj": [
+            "From Regression to Classification",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "The Relevance Vector Machine",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "The Relevance Vector Machine",
+            "M"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Relevance Vector Machine",
+            "M"
+        ],
+        "obj": [
+            "Sparsity in Relevance Vector Machines",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sparsity in Relevance Vector Machines",
+            "C"
+        ],
+        "obj": [
+            "The Relevance Vector Machine",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Bayes Point Machines",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Point Machines",
+            "M"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Point Machines",
+            "M"
+        ],
+        "obj": [
+            "Bayes Point",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Point",
+            "C"
+        ],
+        "obj": [
+            "Bayes Point Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Point Machines",
+            "M"
+        ],
+        "obj": [
+            "Estimating the Bayes Point",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Estimating the Bayes Point",
+            "T"
+        ],
+        "obj": [
+            "Bayes Point Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Fisher Discriminants",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fisher Discriminants",
+            "C"
+        ],
+        "obj": [
+            "Kernel Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Fisher Discriminants",
+            "C"
+        ],
+        "obj": [
+            "Least Squares Regression and Fisher Discriminant",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Least Squares Regression and Fisher Discriminant",
+            "C"
+        ],
+        "obj": [
+            "Fisher Discriminants",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "obj": [
+            "Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "obj": [
+            "Generative vs Discriminative Models",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Generative vs Discriminative Models",
+            "C"
+        ],
+        "obj": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Generative vs Discriminative Models",
+            "C"
+        ],
+        "obj": [
+            "Estimator",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Estimator",
+            "C"
+        ],
+        "obj": [
+            "Generative vs Discriminative Models",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Generative vs Discriminative Models",
+            "C"
+        ],
+        "obj": [
+            "Convergence of Probability Measures",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Convergence of Probability Measures",
+            "C"
+        ],
+        "obj": [
+            "Generative vs Discriminative Models",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Convergence of Probability Measures",
+            "C"
+        ],
+        "obj": [
+            "L1\u2013Convergence of Probability Measures",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "L1\u2013Convergence of Probability Measures",
+            "C"
+        ],
+        "obj": [
+            "Convergence of Probability Measures",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "obj": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "obj": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "obj": [
+            "VC and PAC Generalization Error Bounds",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "VC and PAC Generalization Error Bounds",
+            "C"
+        ],
+        "obj": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "obj": [
+            "Uniform Convergence of Frequencies to Probabilities",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Uniform Convergence of Frequencies to Probabilities",
+            "C"
+        ],
+        "obj": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "obj": [
+            "Classical PAC and VC Analysis",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Classical PAC and VC Analysis",
+            "C"
+        ],
+        "obj": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Classical PAC and VC Analysis",
+            "C"
+        ],
+        "obj": [
+            "VC Bound for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "VC Bound for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "Classical PAC and VC Analysis",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Classical PAC and VC Analysis",
+            "C"
+        ],
+        "obj": [
+            "Confidence Intervals",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Confidence Intervals",
+            "C"
+        ],
+        "obj": [
+            "Classical PAC and VC Analysis",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Classical PAC and VC Analysis",
+            "C"
+        ],
+        "obj": [
+            "Optimize for Constants",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Optimize for Constants",
+            "T"
+        ],
+        "obj": [
+            "Classical PAC and VC Analysis",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "obj": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "Covering Number and Growth Function",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Covering Number and Growth Function",
+            "C"
+        ],
+        "obj": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "Growth Function Bound and VC Dimension",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Growth Function Bound and VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "Sufficient Training Sample Size",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sufficient Training Sample Size",
+            "C"
+        ],
+        "obj": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "Data Dependent Hypotheses Spaces",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Data Dependent Hypotheses Spaces",
+            "F"
+        ],
+        "obj": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "VC Dimension and Parameters",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "VC Dimension and Parameters",
+            "C"
+        ],
+        "obj": [
+            "Growth Function and VC Dimension",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "obj": [
+            "Structural Risk Minimization",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Structural Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "PAC and VC Frameworks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Structural Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "C"
+        ],
+        "obj": [
+            "Structural Risk Minimization",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Structural Risk Minimization",
+            "T"
+        ],
+        "obj": [
+            "Role of Discrete Probability Measure",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Role of Discrete Probability Measure",
+            "C"
+        ],
+        "obj": [
+            "Structural Risk Minimization",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "formalize conditions to use training sample to decompose hypothesis space",
+            "s"
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "formalize conditions to use training sample to decompose hypothesis space",
+            "s"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "formalize conditions to use training sample to decompose hypothesis space",
+            "s"
+        ],
+        "obj": [
+            "provide uniform bounds on expected risks",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "provide uniform bounds on expected risks",
+            "s"
+        ],
+        "obj": [
+            "formalize conditions to use training sample to decompose hypothesis space",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "provide uniform bounds on expected risks",
+            "s"
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "provide uniform bounds on expected risks",
+            "s"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "Luckiness Generlaization Error Bound",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Luckiness Generlaization Error Bound",
+            "B"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "Luckiness Function and Level",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Luckiness Function and Level",
+            "C"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "Probable Smoothness of Luckiness Function",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Probable Smoothness of Luckiness Function",
+            "C"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "Luckiness Bound",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Luckiness Bound",
+            "B"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "Conditional Confidence Intervals",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Conditional Confidence Intervals",
+            "C"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "PAC Luckiness",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC Luckiness",
+            "C"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "Empirical VC Dimension Luckiness",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Empirical VC Dimension Luckiness",
+            "C"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "obj": [
+            "Vanilla Luckiness",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Vanilla Luckiness",
+            "C"
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "obj": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "obj": [
+            "Mathematical Models of Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "obj": [
+            "Covering Number of Real-Valued Functions",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Covering Number of Real-Valued Functions",
+            "C"
+        ],
+        "obj": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "obj": [
+            "Covering Number Bound",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Covering Number Bound",
+            "B"
+        ],
+        "obj": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "obj": [
+            "Bounds using the Empirical Covering Number",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bounds using the Empirical Covering Number",
+            "B"
+        ],
+        "obj": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "obj": [
+            "VC Dimensions for Real-Valued Function Classes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "VC Dimensions for Real-Valued Function Classes",
+            "C"
+        ],
+        "obj": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "VC Dimensions for Real-Valued Function Classes",
+            "C"
+        ],
+        "obj": [
+            "VC Dimension of Real-Valued Function Classes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "VC Dimension of Real-Valued Function Classes",
+            "C"
+        ],
+        "obj": [
+            "VC Dimensions for Real-Valued Function Classes",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "VC Dimensions for Real-Valued Function Classes",
+            "C"
+        ],
+        "obj": [
+            "Bound on the Covering Number",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bound on the Covering Number",
+            "B"
+        ],
+        "obj": [
+            "VC Dimensions for Real-Valued Function Classes",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "VC Dimensions for Real-Valued Function Classes",
+            "C"
+        ],
+        "obj": [
+            "Fat Shattering Bound",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fat Shattering Bound",
+            "B"
+        ],
+        "obj": [
+            "VC Dimensions for Real-Valued Function Classes",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "obj": [
+            "The PAC Margin Bound",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "The PAC Margin Bound",
+            "B"
+        ],
+        "obj": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The PAC Margin Bound",
+            "B"
+        ],
+        "obj": [
+            "Fat Shattering Bound for Linear Classifiers",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fat Shattering Bound for Linear Classifiers",
+            "B"
+        ],
+        "obj": [
+            "The PAC Margin Bound",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The PAC Margin Bound",
+            "B"
+        ],
+        "obj": [
+            "PAC Margin Bound",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC Margin Bound",
+            "B"
+        ],
+        "obj": [
+            "The PAC Margin Bound",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The PAC Margin Bound",
+            "B"
+        ],
+        "obj": [
+            "Sufficient Training Sample Size",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sufficient Training Sample Size",
+            "C"
+        ],
+        "obj": [
+            "The PAC Margin Bound",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "obj": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "obj": [
+            "PAC and VC Frameworks for Real-Valued Classifiers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "obj": [
+            "Margin Distribution",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Margin Distribution",
+            "S"
+        ],
+        "obj": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "obj": [
+            "Justification of Soft Margin Support Vector Machines",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Justification of Soft Margin Support Vector Machines",
+            "C"
+        ],
+        "obj": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "obj": [
+            "Application to Adaptive Margin Machines",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Application to Adaptive Margin Machines",
+            "C"
+        ],
+        "obj": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "obj": [
+            "Adaptive Margin Machines Bound",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Adaptive Margin Machines Bound",
+            "B"
+        ],
+        "obj": [
+            "Robust Margin Bounds",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "Bounds for Specific Algorithms",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bounds for Specific Algorithms",
+            "B"
+        ],
+        "obj": [
+            "Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bounds for Specific Algorithms",
+            "B"
+        ],
+        "obj": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "obj": [
+            "Bounds for Specific Algorithms",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "obj": [
+            "A Bound for the MAP Estimator",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "A Bound for the MAP Estimator",
+            "B"
+        ],
+        "obj": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "obj": [
+            "Bound for Single Hypotheses",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bound for Single Hypotheses",
+            "B"
+        ],
+        "obj": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "obj": [
+            "A Bound for the Gibbs Classification Strategy",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "A Bound for the Gibbs Classification Strategy",
+            "B"
+        ],
+        "obj": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "obj": [
+            "Bound for Subsets of Hypotheses",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bound for Subsets of Hypotheses",
+            "B"
+        ],
+        "obj": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "obj": [
+            "The Gibbs-Bayes Lemma",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "The Gibbs-Bayes Lemma",
+            "C"
+        ],
+        "obj": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "obj": [
+            "Bound for the Bayes Classification Strategy",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bound for the Bayes Classification Strategy",
+            "B"
+        ],
+        "obj": [
+            "PAC-Bayesian Bounds for Bayesian Algorithms",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    }
+]

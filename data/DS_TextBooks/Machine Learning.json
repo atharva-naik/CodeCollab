@@ -1,0 +1,143 @@
+{
+    "Well Posed Learning Problems::T": {},
+    "Designing a Learning System::C": {
+        "Choosing the Training Experience::C": null,
+        "Choosing the Target Function::C": null,
+        "Choosing a Representation for the Target Function::C": null,
+        "Choosing a Function Approximation Algorithm::C": null
+    },
+    "Issues in Machine Learning::C": null,
+    "Concept Learning::M": {
+        "Concept Learning Task::T": {
+            "Inductive Learning Hypothesis::C": null
+        },
+        "Concept Learning as Search::C": {
+            "General-to-Specifc Ordering of Hypotheses::C": null
+        },
+        "Finding a Maximally Specific Hypothesis::T": null,
+        "Version Spaces and Candidate Elimination Algorithm::C": {
+            "Representation::F": null,
+            "List then Eliminate Algorithm::M": null,
+            "More Compact Representation of Version Spaces::F": null,
+            "Candidate Elimination Learning Algorithm::M": null
+        },
+        "Version Spaces and Candidate Elimination::C": {
+            "Convergence to Correct Hypothesis for Candidate Elimination Algorithm::C": null,
+            "Deciding Next Training Example for Learner::C": null,
+            "Using Partially Learned Concepts::C": null
+        },
+        "Inductive Bias": {
+            "Biased Hypothesis Space::F": null,
+            "Unbiased Learner::M": null,
+            "Futility of Bias-Free Learning::C": null
+        }
+    },
+    "Decision Tree Learning::M": {
+        "Decision Tree Representation::F": null,
+        "Problems for Decision Tree Learning::C": null,
+        "Basic Decision Tree Learning Algorithm::M": {
+            "Best Classifier Attribute::C": null
+        },
+        "Hypothesis Space Search in Decision Tree Learning::C": null,
+        "Inductive Bias in Decision Tree Learning::C": {
+            "Restriction Biases and Preference Biases::C": null,
+            "Preference of Short Hypotheses::C": null
+        },
+        "Issues in Decision Tree Learning::C": {
+            "Avoiding Overfitting::C": null,
+            "Incorporating Continuous Valued Attributes::C": null,
+            "Alternative Measures for Selecting Attributes::C": null,
+            "Handling Training Examples wuth Missing Attribute Values::C": null,
+            "Handling Attributes with Differing Costs::C": null
+        }
+    },
+    "Artificial Neural Networks::M": {
+        "Biological Motivation::C": null,
+        "Neural Network Representations::F": null,
+        "Appropriate Problems for Neural Network Learning::T": null,
+        "Perceptrons::M": {
+            "Representational Power of Perceptrons::C": null,
+            "Perceptron Training Rule::C": null,
+            "Gradient Descent and Delta Rule::C": null
+        },
+        "Multilayer Networks and Backpropagation Algorithm::C": {
+            "Differentiable Threshold Unit::C": null,
+            "Backpropagation Algorithm::M": {
+                "Convergence and Local Minima::C": null,
+                "Representational Power of Feedforward Networks::C": null,
+                "Hypothesis Space Search and Inductive Bias::C": null,
+                "Hidden Layer Representations::F": null,
+                "Generalization, Overfitting, and Stopping Criterion::C": null
+            },
+            "Derivation of Backpropagation Rule::C": null
+        },    
+        "Face Recognition::T": {
+            "Task Description::C": null,
+            "Design Choices::C": null,
+            "Learned Hidden Representations::F": null
+        },
+        "Advanced Topics in Artificial Neural Networks::C": {
+            "Alternative Error Functions::T": null,
+            "Alternative Error Minimization Procedures::M": null,
+            "Recurrent Networks::M": null,
+            "Dynamically Modifying Network Structure::C": null
+        }
+    },
+    "Evaluating Hypotheses::C": {
+        "Estimating Hypothesis Accuracy::C": {
+            "Sample Error and True Error::E": null,
+            "Confidence Intervals for Discrete Valued Hypothesis::E": null
+        },
+        "Sampling Theory::C": {
+            "Error Estimation and Estimating Binomial Proportions::C": null,
+            "Binomial Distribution::S": null,
+            "Mean and Variance::S": null,
+            "Estimators, Bias and Variance::S": null,
+            "Confidence Intervals::S": null,
+            "Two Sided and One Sided Bounds::B": null
+        },
+        "Deriving Confidence Intervals::S": {
+            "Central Limit Theorem::S": null
+        },
+        "Difference in Error of Hypotheses::E": {
+            "Hypothesis Testing::S": null
+        },
+        "Comparing Learning Algorithms::C": {
+            "Paired t Tests::S": null
+        }
+    },
+    "Bayesian Learning::T": {
+        "Bayes Theorem::C": null,
+        "Bayes Theorem and Concept Learning::C": {
+            "Brute Force Bayes Concept Learning::M": null,
+            "MAP Hypotheses and Consistent Learners::C": null
+        },
+        "Maximum Likelihood and Least Squared Error Hypotheses::C": null,
+        "Maximum Likelihood Hypotheses for Predicting Probabilities::C": {
+            "Gradient Search to Maximize Likelihood in a Neural Net::M": null
+        },
+        "Minimum Description Length Principle::C": null,
+        "Bayes Optimal Classifier::M": null,
+        "Gibbs Algorithm::M": null,
+        "Naive Bayes Classifier::M": null,
+        "Text Classification::T": null, // Learning to Classify Text
+        "Bayesian Belief Networks::M": {
+            "Conditional Independence::S": null,
+            "Representation::F": null,
+            "Inference::C": null,
+            "Learning Bayesian Belief Networks::T": null,
+            "Gradient Ascent Training of Bayesian Networks::M": null,
+            "Learning Structure of Bayesian Networks::T": null
+        },
+        "Expectation Maximization Algorithm::M": { // The EM Algorithm
+            "Estimating Means of k": null
+        }
+    },
+    "Computational Learning Theory::C": null,
+    "Instance Based Learning::T": null,
+    "Genetic Algorithms::M": null,
+    "Learning Sets of Rules::T": null,
+    "Analytical Learning::T": null,
+    "Combining Inductive and Analytical Learning::T": null,
+    "Reinforcement Learning::T": null
+}

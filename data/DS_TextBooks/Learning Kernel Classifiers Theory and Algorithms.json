@@ -40,8 +40,8 @@
                 ],
                 "Empirical Risk Minimization::T": null,
                 "Structural Risk Minimization::T": null,
-                "Primal Perceptron:::M": {
-                    "Version Space::C": null
+                "Primal Perceptron::M": {
+                    "Version Space::F": null
                 },
                 "Regularized Risk Functionals::M": null
             },
@@ -91,7 +91,7 @@
                 "Soft Margins::M": {
                     "Linear Approximation::M": null,
                     "Quadratic Approximation::M": null,
-                    "Data Independent Hypothesis Spaces::C": null,
+                    "Data Independent Hypothesis Spaces::F": null,
                     "Cost Matrices::C": null
                 },
                 "Geometrical Viewpoints on Margin Maximization::C": null,
@@ -173,7 +173,7 @@
                     "Covering Number and Growth Function::C": null,
                     "Growth Function Bound and VC Dimension::C": null,
                     "Sufficient Training Sample Size::C": null,
-                    "Data Dependent Hypotheses Spaces::C": null,
+                    "Data Dependent Hypotheses Spaces::F": null,
                     "VC Dimension and Parameters::C": null
                 },
                 "Structural Risk Minimization::T": {
@@ -210,14 +210,23 @@
                     "Sufficient Training Sample Size::C": null
                 },
                 "Robust Margin Bounds::B": {
-                    "Margin Distribution::C": null,
+                    "Margin Distribution::S": null,
                     "Justification of Soft Margin Support Vector Machines::C": null,
                     "Application to Adaptive Margin Machines::C": null,
                     "Adaptive Margin Machines Bound::B": null
                 }
             }
         },
-        "Bounds for Specific Algorithms::B": {}
+        "Bounds for Specific Algorithms::B": {
+            "PAC-Bayesian Bounds for Bayesian Algorithms::B": {
+                "A Bound for the MAP Estimator::B": null,
+                "Bound for Single Hypotheses::B": null,
+                "A Bound for the Gibbs Classification Strategy::B": null,
+                "Bound for Subsets of Hypotheses::B": null,
+                "The Gibbs-Bayes Lemma::C": null,
+                "Bound for the Bayes Classification Strategy::B": null
+            } 
+        }
     },
     "Proofs and Drivations::C": {}
 }
