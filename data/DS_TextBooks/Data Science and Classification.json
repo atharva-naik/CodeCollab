@@ -1,10 +1,10 @@
 {
-    "Similarity and Dissimilarity": [
-        "A Tree-Based Similarity for Evaluating Concept Proximities in an Ontology",
-        "Improved Fréchet Distance for Time Series",
-        "Comparison of Distance Indices Between Partitions",
-        "Design of Dissimilarity Measures: A New Dissimilarity Between Species Distribution Areas",
-        "Dissimilarities for Web Usage Mining",
-        "Properties and Performance of Shape Similarity Measures"
-    ]
+    "Similarity and Dissimilarity::C": {
+        "Tree-Based Similarity for Evaluating Concept Proximities in an Ontology::C": null,
+        "Improved Fréchet Distance for Time Series::C": null,
+        "Comparison of Distance Indices Between Partitions::C": null,
+        "Design of Dissimilarity Measures: A New Dissimilarity Between Species Distribution Areas::C": null,
+        "Dissimilarities for Web Usage Mining::C": null,
+        "Properties and Performance of Shape Similarity Measures::C": null
+    }
 }

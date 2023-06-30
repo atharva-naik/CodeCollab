@@ -120,7 +120,7 @@
         "Bayes Optimal Classifier::M": null,
         "Gibbs Algorithm::M": null,
         "Naive Bayes Classifier::M": null,
-        "Text Classification::T": null, // Learning to Classify Text
+        "Text Classification::T": null,
         "Bayesian Belief Networks::M": {
             "Conditional Independence::S": null,
             "Representation::F": null,
@@ -129,7 +129,7 @@
             "Gradient Ascent Training of Bayesian Networks::M": null,
             "Learning Structure of Bayesian Networks::T": null
         },
-        "EM Algorithm::M": { // The EM Algorithm
+        "EM Algorithm::M": {
             "Estimating Means of k Gaussians::S": null,
             "Derivation of k Means Algorithm::M": null
         }
@@ -188,14 +188,66 @@
     "Learning Sets of Rules::T": {
         "Sequential Covering Algorithms::M": {
             "General to Specific Beam Search::M": null,
-            "Variations::C": null,
-            "Learning Rule Sets::T": null,
-            "Learning First Order Rules::T": {
-                "First-Order Horn Clauses::C": null
-            }
-        } 
+            "Variations::C": null
+        },
+        "Learning Rule Sets::T": null,
+        "Learning First Order Rules::T": {
+            "First-Order Horn Clauses::C": null
+        },
+        "Learning Sets of First Order Rules FOIL::T": {
+            "Generating Candidate Specializations in FOIL::T": null,
+            "Guiding the Search in FOIL::C": null,
+            "Learning Recursive Rule Sets::T": null
+        },
+        "Induction as Inverted Deduction::C": null,
+        "Inverting Resolution::C": {
+            "First Order Resoultion::C": null,
+            "Inverting Resolution First Order Case::C": null,
+            "Generalization, θ-Subsumption, and Entailment::C": null,
+            "PROGOL::C": null
+        }
     },
-    "Analytical Learning::T": null,
-    "Combining Inductive and Analytical Learning::T": null,
-    "Reinforcement Learning::T": null
+    "Analytical Learning::T": {
+        "Inductive and Analytical Learning Problems::T": null,
+        "Learning with Perfect Domain Theories: PROLOG-EBG::C": {
+            "Illustrative Trace::C": null
+        },
+        "Explanation Based Learning::T": {
+            "Discovering New Features::F": null,
+            "Deductive Learning::C": null,
+            "Inductive Bias in Explanation Based Learning::C": null,
+            "Knowledge Level Learning::T": null
+        },
+        "Explanation Based Learning of Search Control Knowledge::T": null
+    },
+    "Combining Inductive and Analytical Learning::T": {
+        "Inductive Analytical Approaches to Learning::C": {
+            "Learning Problem::T": null,
+            "Hypothesis Space Search::M": null
+        },
+        "Using Prior Knowledge to Initialize the Hypothesis::C": {
+            "KBANN Algorithm::M": null
+        },
+        "Using Prior Knowledge to Alter the Search Objective::C": {
+            "TangentProp Algorithm::M": null,
+            "EBNN Algorithm::M": null
+        },
+        "Using Prior Knowledge to Augment Search::C": {
+            "FOCL Algorithm::M": null
+        }
+    },
+    "Reinforcement Learning::T": {
+        "Learning Task::T": null,
+        "Q Learning::M": {
+            "Q Function::C": null,
+            "Algorithm for Q Learning::M": null,
+            "Convergence::C": null,
+            "Experimentation Strategies::C": null,
+            "Updating Sequence::C": null
+        },
+        "Nondeterministic Rewards and Actions::C": null,
+        "Temporal Difference Learning::T": null,
+        "Generalizing from Examples::C": null,
+        "Relationship to Dynamic Programming::C": null
+    }
 }
