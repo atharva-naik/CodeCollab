@@ -38,7 +38,7 @@
         "Basic Decision Tree Learning Algorithm::M": {
             "Best Classifier Attribute::C": null
         },
-        "Hypothesis Space Search in Decision Tree Learning::C": null,
+        "Hypothesis Space Search in Decision Tree Learning::M": null,
         "Inductive Bias in Decision Tree Learning::C": {
             "Restriction Biases and Preference Biases::C": null,
             "Preference of Short Hypotheses::C": null
@@ -129,14 +129,72 @@
             "Gradient Ascent Training of Bayesian Networks::M": null,
             "Learning Structure of Bayesian Networks::T": null
         },
-        "Expectation Maximization Algorithm::M": { // The EM Algorithm
-            "Estimating Means of k": null
+        "EM Algorithm::M": { // The EM Algorithm
+            "Estimating Means of k Gaussians::S": null,
+            "Derivation of k Means Algorithm::M": null
         }
     },
-    "Computational Learning Theory::C": null,
-    "Instance Based Learning::T": null,
-    "Genetic Algorithms::M": null,
-    "Learning Sets of Rules::T": null,
+    "Computational Learning Theory::C": {
+        "PAC Hypothesis Learning::M": {
+            "Problem Setting::T": null,
+            "Error of Hypothesis::E": null,
+            "PAC Learnability::C": null
+        },
+        "Sample Complexity for Finite Hypothesis Spaces::C": {
+            "Agnostic Learning and Inconsistent Hypotheses::C": null,
+            "Conjunctions of Boolean Literals are PAC Learnable::C": null,
+            "PAC Learnability of Concept Classes::C": null
+        },
+        "Sample Complexity for Infinite Hypothesis Spaces::C": {
+            "Shattering a Set of Instances::C": null,
+            "VC Dimension::C": null,
+            "Sample Complexity and VC Dimension::C": null,
+            "VC Dimension for Neural Networks::C": null
+        },
+        "Mistake Bound Model of Learning::M": {
+            "Mistake Bound for Find-S Algorithm::B": null,
+            "Mistake Bound for Halving Algorithm::B": null,
+            "Optimal Mistake Bounds::B": null,
+            "Weighted Majority Algorithm::M": null
+        }
+    },
+    "Instance Based Learning::T": {
+        "k Nearest Neighbor Learning::M": {
+            "Distance Weighted Nearest Neighbor Algorithm::M": null
+        },
+        "Locally Weighted Regression::M": {
+            "Locally Weighted Linear Regression::M": null
+        },
+        "Radial Basis Functions::C": null,
+        "Case Based Reasoning::M": null,
+        "Lazy and Eager Learning::M": null
+    },
+    "Genetic Algorithms::M": {
+        "Representing Hypotheses::F": null,
+        "Genetic Operators::C": null,
+        "Fitness Function and Selection::C": null,
+        "Hypothesis Space Search::M": {
+            "Population Evolution and the Schema Theorem::C": null
+        },
+        "Genetic Programming::C": {
+            "Representing Programs::F": null
+        },
+        "Models of Evolution and Learning::M": {
+            "Lamarckian Evolution::C": null,
+            "Baldwin Effect::C": null
+        },
+        "Parallelizing Genetic Algorithms::C": null
+    },
+    "Learning Sets of Rules::T": {
+        "Sequential Covering Algorithms::M": {
+            "General to Specific Beam Search::M": null,
+            "Variations::C": null,
+            "Learning Rule Sets::T": null,
+            "Learning First Order Rules::T": {
+                "First-Order Horn Clauses::C": null
+            }
+        } 
+    },
     "Analytical Learning::T": null,
     "Combining Inductive and Analytical Learning::T": null,
     "Reinforcement Learning::T": null

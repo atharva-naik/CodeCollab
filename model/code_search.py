@@ -457,7 +457,7 @@ def create_dense_index(args):
     elif args.model_type == "graphcodebert":
         dataset = JuICeKBNNGraphCodeBERTCodeSearchDataset(
             tokenizer=tokenizer, queries=queries, 
-            obf_code=args.obfuscate_code, 
+            obf_code=args.obfuscate_code,
             **tok_args,
         )
     elif args.model_type == "unixcoder":

@@ -1,0 +1,240 @@
+{
+    "type": "lexeme",
+    "id": "L1079140",
+    "lemmas": {
+        "en": {
+            "language": "en",
+            "value": "artificial intelligence"
+        }
+    },
+    "lexicalCategory": "Q1084",
+    "language": "Q1860",
+    "claims": {
+        "P5238": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5238",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "lexeme",
+                            "numeric-id": 29899,
+                            "id": "L29899"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-lexeme"
+                },
+                "type": "statement",
+                "id": "L1079140$a5dfc848-40a6-7dfb-79c8-ec9fb0956557",
+                "rank": "normal"
+            },
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5238",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "lexeme",
+                            "numeric-id": 7928,
+                            "id": "L7928"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-lexeme"
+                },
+                "type": "statement",
+                "id": "L1079140$94d0f045-464f-d5a4-334e-6c0de66443e8",
+                "rank": "normal"
+            }
+        ],
+        "P11130": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P11130",
+                    "datavalue": {
+                        "value": "artificial intelligence",
+                        "type": "string"
+                    },
+                    "datatype": "external-id"
+                },
+                "type": "statement",
+                "id": "L1079140$8D020AB8-EBDF-4E49-999F-23BCCFC7FE76",
+                "rank": "normal",
+                "references": [
+                    {
+                        "hash": "111f93dff5483112d0a2bc736a8a7cc1be5d903d",
+                        "snaks": {
+                            "P854": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P854",
+                                    "datavalue": {
+                                        "value": "https://www.merriam-webster.com/dictionary/artificial%20intelligence",
+                                        "type": "string"
+                                    },
+                                    "datatype": "url"
+                                }
+                            ],
+                            "P1476": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P1476",
+                                    "datavalue": {
+                                        "value": {
+                                            "text": "Artificial intelligence Definition & Meaning - Merriam-Webster",
+                                            "language": "en"
+                                        },
+                                        "type": "monolingualtext"
+                                    },
+                                    "datatype": "monolingualtext"
+                                }
+                            ],
+                            "P813": [
+                                {
+                                    "snaktype": "value",
+                                    "property": "P813",
+                                    "datavalue": {
+                                        "value": {
+                                            "time": "+2023-03-12T00:00:00Z",
+                                            "timezone": 0,
+                                            "before": 0,
+                                            "after": 0,
+                                            "precision": 11,
+                                            "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                                        },
+                                        "type": "time"
+                                    },
+                                    "datatype": "time"
+                                }
+                            ]
+                        },
+                        "snaks-order": [
+                            "P854",
+                            "P1476",
+                            "P813"
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "forms": [
+        {
+            "id": "L1079140-F1",
+            "representations": {
+                "en": {
+                    "language": "en",
+                    "value": "artificial intelligence"
+                }
+            },
+            "grammaticalFeatures": [
+                "Q110786"
+            ],
+            "claims": []
+        },
+        {
+            "id": "L1079140-F2",
+            "representations": {
+                "en": {
+                    "language": "en",
+                    "value": "artificial intelligences"
+                }
+            },
+            "grammaticalFeatures": [
+                "Q146786"
+            ],
+            "claims": []
+        }
+    ],
+    "senses": [
+        {
+            "id": "L1079140-S1",
+            "glosses": {
+                "en": {
+                    "language": "en",
+                    "value": "field of computer science and engineering practices for intelligence demonstrated by machines and intelligent agents"
+                }
+            },
+            "claims": {
+                "P5137": [
+                    {
+                        "mainsnak": {
+                            "snaktype": "value",
+                            "property": "P5137",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 11660,
+                                    "id": "Q11660"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        },
+                        "type": "statement",
+                        "id": "L1079140-S1$962116ed-48b0-dbdb-8b12-da3be3d813d2",
+                        "rank": "normal"
+                    }
+                ],
+                "P5713": [
+                    {
+                        "mainsnak": {
+                            "snaktype": "value",
+                            "property": "P5713",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 110786,
+                                    "id": "Q110786"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        },
+                        "type": "statement",
+                        "id": "L1079140-S1$8ea35efb-4263-701c-f2a8-9ebc5f613cb9",
+                        "rank": "normal"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "L1079140-S2",
+            "glosses": {
+                "en": {
+                    "language": "en",
+                    "value": "instance of an artificial initelligence software or machine"
+                }
+            },
+            "claims": {
+                "P5137": [
+                    {
+                        "mainsnak": {
+                            "snaktype": "value",
+                            "property": "P5137",
+                            "datavalue": {
+                                "value": {
+                                    "entity-type": "item",
+                                    "numeric-id": 66481339,
+                                    "id": "Q66481339"
+                                },
+                                "type": "wikibase-entityid"
+                            },
+                            "datatype": "wikibase-item"
+                        },
+                        "type": "statement",
+                        "id": "L1079140-S2$13f82cc6-4b04-fd75-1f55-4cef3fd1dc3c",
+                        "rank": "normal"
+                    }
+                ]
+            }
+        }
+    ],
+    "pageid": 111866447,
+    "ns": 146,
+    "title": "Lexeme:L1079140",
+    "lastrevid": 1850370846,
+    "modified": "2023-03-12T11:07:14Z"
+}
