@@ -1,0 +1,109 @@
+{
+    "type": "lexeme",
+    "id": "L301",
+    "lemmas": {
+        "en": {
+            "language": "en",
+            "value": "sport"
+        }
+    },
+    "lexicalCategory": "Q1084",
+    "language": "Q1860",
+    "claims": {
+        "P5402": [
+            {
+                "mainsnak": {
+                    "snaktype": "value",
+                    "property": "P5402",
+                    "datavalue": {
+                        "value": {
+                            "entity-type": "lexeme",
+                            "numeric-id": 27979,
+                            "id": "L27979"
+                        },
+                        "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-lexeme"
+                },
+                "type": "statement",
+                "id": "L301$56DF0880-6AE4-4504-B0F6-C397885CA308",
+                "rank": "normal"
+            }
+        ]
+    },
+    "forms": [
+        {
+            "id": "L301-F1",
+            "representations": {
+                "en": {
+                    "language": "en",
+                    "value": "sport's"
+                }
+            },
+            "grammaticalFeatures": [
+                "Q110786",
+                "Q146233"
+            ],
+            "claims": []
+        },
+        {
+            "id": "L301-F2",
+            "representations": {
+                "en": {
+                    "language": "en",
+                    "value": "sports"
+                }
+            },
+            "grammaticalFeatures": [
+                "Q131105",
+                "Q146786"
+            ],
+            "claims": []
+        },
+        {
+            "id": "L301-F3",
+            "representations": {
+                "en": {
+                    "language": "en",
+                    "value": "sports'"
+                }
+            },
+            "grammaticalFeatures": [
+                "Q146233",
+                "Q146786"
+            ],
+            "claims": []
+        },
+        {
+            "id": "L301-F4",
+            "representations": {
+                "en": {
+                    "language": "en",
+                    "value": "sport"
+                }
+            },
+            "grammaticalFeatures": [
+                "Q110786",
+                "Q131105"
+            ],
+            "claims": []
+        }
+    ],
+    "senses": [
+        {
+            "id": "L301-S1",
+            "glosses": {
+                "en": {
+                    "language": "en",
+                    "value": "competitive event"
+                }
+            },
+            "claims": []
+        }
+    ],
+    "pageid": 54388409,
+    "ns": 146,
+    "title": "Lexeme:L301",
+    "lastrevid": 1908370075,
+    "modified": "2023-06-04T23:04:12Z"
+}
