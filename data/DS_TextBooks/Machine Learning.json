@@ -26,7 +26,7 @@
             "Deciding Next Training Example for Learner::C": null,
             "Using Partially Learned Concepts::C": null
         },
-        "Inductive Bias": {
+        "Inductive Bias::C": {
             "Biased Hypothesis Space::F": null,
             "Unbiased Learner::M": null,
             "Futility of Bias-Free Learning::C": null
@@ -210,7 +210,7 @@
     "Analytical Learning::T": {
         "Inductive and Analytical Learning Problems::T": null,
         "Learning with Perfect Domain Theories: PROLOG-EBG::C": {
-            "Illustrative Trace::C": null
+            "Illustrative Trace::D": null
         },
         "Explanation Based Learning::T": {
             "Discovering New Features::F": null,

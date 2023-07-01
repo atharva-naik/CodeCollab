@@ -3,6 +3,7 @@
 
 # extract triples from KB jsons and unify them.
 
+import os
 import sys
 import json
 from typing import *
@@ -88,11 +89,20 @@ def extract_triples(kb_json: str) -> List[dict]:
 
 # main
 if __name__ == "__main__":
-    kb_path = sys.argv[1]
-    kb_json = json.load(open(kb_path))
-    triples = extract_triples(kb_json=kb_json)
+    unified_triples = []
+    for path in os.listdir("./data/DS_TextBooks"):
+        if not path.endswith(".json"): continue
+        if path == "semantic_types.json": continue
+        if path == "unified_triples.json": continue
+        if path == "sample.json": continue
+        full_path = os.path.join("./data/DS_TextBooks", path)
+        kb_json = json.load(open(full_path))
+        triples = extract_triples(kb_json=kb_json)
+        print(f"{path}: \x1b[34;1m{len(triples)}\x1b[0m triples")
+        unified_triples += triples
+    print(f"total: \x1b[34;1m{len(unified_triples)}\x1b[0m triples")
     with open("./data/DS_TextBooks/unified_triples.json", "w") as f:
-        json.dump(triples, f, indent=4)
+        json.dump(unified_triples, f, indent=4)
     
     # visualize serializations of triples
     # for rel_type, instances in REL_TYPES.items():

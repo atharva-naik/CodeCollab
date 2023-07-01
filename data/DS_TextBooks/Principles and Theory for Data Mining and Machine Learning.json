@@ -1,0 +1,295 @@
+{
+    "Variability, Information and Prediction::C": {
+        "Curse of Dimensionality::C": null,
+        "Two Extremes::C": null,
+        "Perspectives on the Curse::C": {
+            "Curse for Squared Error Loss::C": null,
+            "Sparsity::C": null,
+            "Exploding Numbers of Models::C": null,
+            "Multicollinearity and Concurvity::C": null,
+            "Effect of Noise::C": null
+        },
+        "Coping with the Curse::C": {
+            "Selecting Design Points::T": null,
+            "Local Dimension::C": null,
+            "Parsimony::C": null
+        },
+        "Two Techniques::C": {
+            "Bootstrap::C": null,
+            "Cross Validation::T": null
+        },
+        "Optimization and Search::M": {
+            "Univariate Search::M": null,
+            "Multivariate Search::M": null,
+            "General Searches::M": null,
+            "Constraint Satisfacton and Combinatorial Search::M": null
+        },
+        "Hammersley Points::C": null,
+        "Edgeworth Expansions for the Mean::S": null,
+        "Bootstrap Asymptotics for the Studentized Mean::S": null
+    },
+    "Local Smoothers::M": {
+        "Early Smoothers::M": null,
+        "Transition to Classical Smoothers::C": {
+            "Global Versus Local Approximations::C": null,
+            "LOESS::M": null
+        },
+        "Kernel Smoothers::M": {
+            "Statistical Function Approximation::C": null,
+            "Concept of Kernel Methods and the Discrete Case::C": null,
+            "Kernel and Stochastic Designs: Density Estimation::T": null,
+            "Stochastic Designs: Asymptotics for Kernel Smoothers::S": null,
+            "Convergence Theorems and Rates for Kernel Smoothers::C": null,
+            "Kernel and Bandwidth Selection::C": null,
+            "Linear Smoothers::M": null
+        },
+        "Nearest Neighbors::C": null,
+        "Applications of Kernel Regression::T": {
+            "Simulated Example::D": null,
+            "Ethanol Data::D": null
+        }
+    },
+    "Spline Smoothing::M": {
+        "Interpolating Splines::M": null,
+        "Natural Cubic Splines::M": null,
+        "Smoothing Splines for Regression::M": {
+            "Model Selection for Spline Smoothing::T": null,
+            "Spline Smoothing Meets Kernel Smoothing::C": null
+        },
+        "Asymptotic Bias, Variance, and MISE for Spline Smoothers::C": {
+            "Ethanol Data::D": null
+        },
+        "Splines Redux: Hilbert Space Formulation::C": {
+            "Reproducing Kernels::C": null,
+            "Constructing an RKHS::C": null,
+            "Direct Sum Construction for Splines::M": null,
+            "Explicit Forms::C": null,
+            "Nonparametrics in Data Mining and Machine Learning::C": null
+        },
+        "Simulated Comparisons::C": {
+            "Dependent Noise Models::M": null,
+            "Higher Dimensions and Curse of Dimensionality::C": null
+        },
+        "Sobolev Spaces::F": null
+    },
+    "New Wave Nonparametrics::M": {
+        "Additive Models::M": {
+            "Backfitting Algorithm::M": null,
+            "Concurvity and Inference::C": null,
+            "Nonparametric Optimality::C": null
+        },
+        "Generalized Additive Models::M": null,
+        "Projection Pursuit Regression::M": null,
+        "Neural Networks::M": {
+            "Backpropagation and Inference::C": null,
+            "Barron's Result and the Curse::C": null,
+            "Approximation Properties::C": null,
+            "Barron's Theorem::C": null
+        },
+        "Recursive Partitioning Regression::M": {
+            "Growing Trees::M": null,
+            "Pruning and Selection::C": null,
+            "Regression::M": null,
+            "Bayesian Additive Regression Trees: BART::M": null
+        },
+        "MARS::M": null,
+        "Sliced Inverse Regression::M": null,
+        "ACE and AVAS::M": null,
+        "Proof of Barron's Theorem::C": null
+    },
+    "Supervised Learning: Partition Methods::M": {
+        "Multiclass Learning::T": null,
+        "Discriminant Analysis::M": {
+            "Distance Based Discriminant Analysis::M": null,
+            "Bayes Rules::C": null,
+            "Probability Based Discriminant Analysis::M": null
+        },
+        "Tree Based Classifiers::M": {
+            "Splitting Rules::M": null,
+            "Logic Trees::M": null,
+            "Random Forests::M": null
+        },
+        "Support Vector Machines::M": {
+            "Margins and Distances::C": null,
+            "Binary Classification and Risk::C": null,
+            "Prediction Bounds for Function Classes::B": null,
+            "Constructing SVM Classifiers::T": null,
+            "SVM Classification for Nonlinearly Separable Populations::C": null,
+            "SVMs in the General Nonlinear Case::C": null,
+            "Kernels Used in SVM Classification::C": null,
+            "Kernel Choice, SVMs and Model Selection::T": null,
+            "Support Vector Regression::M": null,
+            "Multiclass Support Vector Machines::M": null
+        },
+        "Neural Networks::M": null,
+        "Hoeffding's Inequality::C": null,
+        "VC Dimension::C": null
+    },
+    "Alternative Nonparametrics::M": {
+        "Ensemble Methods::M": {
+            "Bayes Model Averaging::M": null,
+            "Bagging::M": null,
+            "Stacking::M": null,
+            "Boosting::M": null,
+            "Other Averaging Methods::M": null,
+            "Oracle Inequalities::C": null
+        },
+        "Bayes Nonparametrics::M": {
+            "Dirichlet Process Priors::S": null,
+            "Polya Tree Priors::S": null,
+            "Gaussian Process Priors::S": null
+        },
+        "Relevance Vector Machine RVM::M": {
+            "RVM Regression::M": null,
+            "RVM Classification::M": null
+        },
+        "Hidden Markov Models Sequential Classification::M": null,
+        "Proof of Yang's Oracle Inequality::C": null,
+        "Proof of Lecue's Oracle Inequality::C": null
+    },
+    "Computational Comparisons::C": {
+        "Computational Results: Classification::C": {
+            "Fisher's Iris Data::D": null,
+            "Ripley's Data::D": null
+        },
+        "Computational Results: Regression::C": {
+            "Vapnik's sinc Function::C": null,
+            "Friedman's Function::C": null
+        },
+        "Systematic Simulation Study::T": null, 
+        "No Free Lunch::C": null
+    },
+    "Unsupervised Learning: Clustering::T": {
+        "Centroid Based Clustering::M": {
+            "K-Means Clustering::M": null,
+            "Variants::C": null
+        },
+        "Hierarchical Clustering::M": {
+            "Agglomerative Hierarchical Clustering::M": null,
+            "Divisive Hierarchical Clustering::M": null,
+            "Theory of Hierarchical Clustering::C": null
+        },
+        "Partitional Clustering::M": {
+            "Model Based Clustering::M": null,
+            "Graph Theoretic Clustering::M": null,
+            "Spectral Clustering::M": null
+        },
+        "Bayesian Clustering::M": {
+            "Probabilistic Clustering::M": null,
+            "Hypothesis Testing::S": null
+        },
+        "Computational Examples::D": {
+            "Ripley's Data::D": null,
+            "Iris Data::D": null 
+        },
+        "Cluster Validation::T": null,
+        "Derivatives of Functions of a Matrix::C": null,
+        "Kruskal's Algorithm::M": null,
+        "Prim's Algorithm::M": null 
+    },
+    "Learning in High Dimensions::C": {
+        "Principal Component Analysis::M": {
+            "Main Theorem::C": null,
+            "Key Properties::C": null,
+            "Extensions::C": null
+        },
+        "Factor Analysis::S": {
+            "Finding Λ and ψ::C": null,
+            "Finding K::C": null,
+            "Estimating Factor Scores::C": null
+        },
+        "Projection Pursuit::S": null,
+        "Independent Component Analysis::M": {
+            "Main Definitions::C": null,
+            "Key Results::C": null,
+            "Computational Approach::C": null
+        },
+        "Nonlinear PCA and ICA::M": {
+            "Nonlinear PCA::M": null,
+            "Nonlinear ICA::M": null
+        },
+        "Geometric Summarization::M": {
+            "Measuring Distances to an Algebraic Shape::C": null,
+            "Principal Curves and Surfaces::C": null
+        },
+        "Supervised Dimension Reduction::M": {
+            "Partial Least Squares PLS::M": {
+                "Simple PLS::M": null,
+                "PLS Procedures::M": null,
+                "Properties of PLS::C": null
+            },
+            "Sufficient Dimensions in Regression::C": null
+        },
+        "Visualization I: Basic Plots::V": {
+            "Elementary Visualization::V": null,
+            "Projections::C": null,
+            "Time Dependence::C": null
+        },
+        "Visualization II: Transformations::V": {
+            "Chernoff Faces::C": null,
+            "Multidimensional Scaling::C": null,
+            "Self Organizing Maps::C": null
+        }
+    },
+    "Variable Selection::T": {
+        "Concepts from Linear Regression::C": {
+            "Subset Seletcion::T": null,
+            "Variable Ranking::T": null
+        },
+        "Traditional Criteria::C": {
+            "Akaike Information Criterion AIC::C": null,
+            "Bayesian Information Criterion BIC::C": null,
+            "Choices of Information Criteria::C": null,
+            "Cross Validation::T": null
+        },
+        "Shrinkage Methods::M": {
+            "Shrinkage Methods for Linear Models::M": null,
+            "Grouping in Variable Selection::C": null,
+            "Least Angle Regression::M": null,
+            "Shrinkage Methods for Model Classes::M": null
+        },
+        "Bayes Variable Selection::M": {
+            "Prior Specifcation::S": null,
+            "Posterior Calculation and Exploration::S": null,
+            "Evaluating Evidence::T": null,
+            "Connections Between Bayesian and Frequentist Methods::C": null
+        },
+        "Computational Comparisons::C": {
+            "n > p Case::C": null,
+            "p > n Case::C": null
+        },
+        "Code for Generating Data::D": null
+    },
+    "Multiple Testing::S": {
+        "Analyzing Hypothesis Testing Problem::S": {
+            "Paradigmatic Setting::T": null,
+            "Counts for Multiple Tests::C": null,
+            "Measures of Error in Multiple Testing::E": null,
+            "Aspects of Error Control::C": null
+        },
+        "Controlling Familywise Error Rate::E": {
+            "One Step Adjustments::C": null,
+            "Stepwise p-Value Adjustments::C": null
+        },
+        "PCER and PFER::E": {
+            "Null Domination::C": null,
+            "Two Procedures::C": null,
+            "Type 1 Error Rate::E": null,
+            "Controlling the Type 1 Error Rate::C": null,
+            "Adjusted p-Value for PFER/PCER::C": null 
+        },
+        "False Discovery Rate FDR::E": null,
+        "Controlling FDR::C": {
+            "FDR and other Measures of Error::E": null,
+            "Benjamini-Hochberg BH Procedure::C": null,
+            "BH Theorem for a Dependent Setting::C": null,
+            "Variations on BH::C": null
+        },
+        "Bayesian Multiple Testing::S": {
+            "Fully Bayes: Hierarchical::C": null,
+            "Fully Bayes: Decision Theory::C": null
+        },
+        "Benjamini-Hochberg Theorem::C": null,
+        "Benjamini-Yekutieli Theorem::C": null
+    }
+}

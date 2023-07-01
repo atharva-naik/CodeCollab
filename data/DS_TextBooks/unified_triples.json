@@ -1,6 +1,138 @@
 [
     {
         "sub": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "obj": [
+            "Tree-Based Similarity for Evaluating Concept Proximities in an Ontology",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Tree-Based Similarity for Evaluating Concept Proximities in an Ontology",
+            "C"
+        ],
+        "obj": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "obj": [
+            "Improved Fr\u00e9chet Distance for Time Series",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Improved Fr\u00e9chet Distance for Time Series",
+            "C"
+        ],
+        "obj": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "obj": [
+            "Comparison of Distance Indices Between Partitions",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Comparison of Distance Indices Between Partitions",
+            "C"
+        ],
+        "obj": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "obj": [
+            "Design of Dissimilarity Measures: A New Dissimilarity Between Species Distribution Areas",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Design of Dissimilarity Measures: A New Dissimilarity Between Species Distribution Areas",
+            "C"
+        ],
+        "obj": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "obj": [
+            "Dissimilarities for Web Usage Mining",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Dissimilarities for Web Usage Mining",
+            "C"
+        ],
+        "obj": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "obj": [
+            "Properties and Performance of Shape Similarity Measures",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Properties and Performance of Shape Similarity Measures",
+            "C"
+        ],
+        "obj": [
+            "Similarity and Dissimilarity",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
             "The Learning Problem and Statistical Inference",
             "T"
         ],
@@ -3736,6 +3868,8938 @@
         "obj": [
             "PAC-Bayesian Bounds for Bayesian Algorithms",
             "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "obj": [
+            "Choosing the Training Experience",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Choosing the Training Experience",
+            "C"
+        ],
+        "obj": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "obj": [
+            "Choosing the Target Function",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Choosing the Target Function",
+            "C"
+        ],
+        "obj": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "obj": [
+            "Choosing a Representation for the Target Function",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Choosing a Representation for the Target Function",
+            "C"
+        ],
+        "obj": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "obj": [
+            "Choosing a Function Approximation Algorithm",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Choosing a Function Approximation Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concept Learning",
+            "M"
+        ],
+        "obj": [
+            "Concept Learning Task",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Concept Learning Task",
+            "T"
+        ],
+        "obj": [
+            "Concept Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concept Learning Task",
+            "T"
+        ],
+        "obj": [
+            "Inductive Learning Hypothesis",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inductive Learning Hypothesis",
+            "C"
+        ],
+        "obj": [
+            "Concept Learning Task",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concept Learning",
+            "M"
+        ],
+        "obj": [
+            "Concept Learning as Search",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Concept Learning as Search",
+            "C"
+        ],
+        "obj": [
+            "Concept Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concept Learning as Search",
+            "C"
+        ],
+        "obj": [
+            "General-to-Specifc Ordering of Hypotheses",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "General-to-Specifc Ordering of Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Concept Learning as Search",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concept Learning",
+            "M"
+        ],
+        "obj": [
+            "Finding a Maximally Specific Hypothesis",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Finding a Maximally Specific Hypothesis",
+            "T"
+        ],
+        "obj": [
+            "Concept Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concept Learning",
+            "M"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Concept Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Representation",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Representation",
+            "F"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "obj": [
+            "List then Eliminate Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "List then Eliminate Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "obj": [
+            "More Compact Representation of Version Spaces",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "More Compact Representation of Version Spaces",
+            "F"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Candidate Elimination Learning Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Candidate Elimination Learning Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination Algorithm",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concept Learning",
+            "M"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination",
+            "C"
+        ],
+        "obj": [
+            "Concept Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination",
+            "C"
+        ],
+        "obj": [
+            "Convergence to Correct Hypothesis for Candidate Elimination Algorithm",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Convergence to Correct Hypothesis for Candidate Elimination Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination",
+            "C"
+        ],
+        "obj": [
+            "Deciding Next Training Example for Learner",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Deciding Next Training Example for Learner",
+            "C"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Version Spaces and Candidate Elimination",
+            "C"
+        ],
+        "obj": [
+            "Using Partially Learned Concepts",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Using Partially Learned Concepts",
+            "C"
+        ],
+        "obj": [
+            "Version Spaces and Candidate Elimination",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concept Learning",
+            "M"
+        ],
+        "obj": [
+            "Inductive Bias",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inductive Bias",
+            "C"
+        ],
+        "obj": [
+            "Concept Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inductive Bias",
+            "C"
+        ],
+        "obj": [
+            "Biased Hypothesis Space",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Biased Hypothesis Space",
+            "F"
+        ],
+        "obj": [
+            "Inductive Bias",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inductive Bias",
+            "C"
+        ],
+        "obj": [
+            "Unbiased Learner",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Unbiased Learner",
+            "M"
+        ],
+        "obj": [
+            "Inductive Bias",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inductive Bias",
+            "C"
+        ],
+        "obj": [
+            "Futility of Bias-Free Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Futility of Bias-Free Learning",
+            "C"
+        ],
+        "obj": [
+            "Inductive Bias",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "obj": [
+            "Decision Tree Representation",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Decision Tree Representation",
+            "F"
+        ],
+        "obj": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "obj": [
+            "Problems for Decision Tree Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Problems for Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "obj": [
+            "Basic Decision Tree Learning Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Basic Decision Tree Learning Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Basic Decision Tree Learning Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Best Classifier Attribute",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Best Classifier Attribute",
+            "C"
+        ],
+        "obj": [
+            "Basic Decision Tree Learning Algorithm",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "obj": [
+            "Hypothesis Space Search in Decision Tree Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hypothesis Space Search in Decision Tree Learning",
+            "M"
+        ],
+        "obj": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "obj": [
+            "Inductive Bias in Decision Tree Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inductive Bias in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inductive Bias in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Restriction Biases and Preference Biases",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Restriction Biases and Preference Biases",
+            "C"
+        ],
+        "obj": [
+            "Inductive Bias in Decision Tree Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inductive Bias in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Preference of Short Hypotheses",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Preference of Short Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Inductive Bias in Decision Tree Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "obj": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Decision Tree Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Avoiding Overfitting",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Avoiding Overfitting",
+            "C"
+        ],
+        "obj": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Incorporating Continuous Valued Attributes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Incorporating Continuous Valued Attributes",
+            "C"
+        ],
+        "obj": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Alternative Measures for Selecting Attributes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Alternative Measures for Selecting Attributes",
+            "C"
+        ],
+        "obj": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Handling Training Examples wuth Missing Attribute Values",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Handling Training Examples wuth Missing Attribute Values",
+            "C"
+        ],
+        "obj": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "obj": [
+            "Handling Attributes with Differing Costs",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Handling Attributes with Differing Costs",
+            "C"
+        ],
+        "obj": [
+            "Issues in Decision Tree Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Biological Motivation",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Biological Motivation",
+            "C"
+        ],
+        "obj": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Neural Network Representations",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Neural Network Representations",
+            "F"
+        ],
+        "obj": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Appropriate Problems for Neural Network Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Appropriate Problems for Neural Network Learning",
+            "T"
+        ],
+        "obj": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Perceptrons",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Perceptrons",
+            "M"
+        ],
+        "obj": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Perceptrons",
+            "M"
+        ],
+        "obj": [
+            "Representational Power of Perceptrons",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Representational Power of Perceptrons",
+            "C"
+        ],
+        "obj": [
+            "Perceptrons",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Perceptrons",
+            "M"
+        ],
+        "obj": [
+            "Perceptron Training Rule",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Perceptron Training Rule",
+            "C"
+        ],
+        "obj": [
+            "Perceptrons",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Perceptrons",
+            "M"
+        ],
+        "obj": [
+            "Gradient Descent and Delta Rule",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Gradient Descent and Delta Rule",
+            "C"
+        ],
+        "obj": [
+            "Perceptrons",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Multilayer Networks and Backpropagation Algorithm",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Multilayer Networks and Backpropagation Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multilayer Networks and Backpropagation Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Differentiable Threshold Unit",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Differentiable Threshold Unit",
+            "C"
+        ],
+        "obj": [
+            "Multilayer Networks and Backpropagation Algorithm",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multilayer Networks and Backpropagation Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Multilayer Networks and Backpropagation Algorithm",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Convergence and Local Minima",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Convergence and Local Minima",
+            "C"
+        ],
+        "obj": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Representational Power of Feedforward Networks",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Representational Power of Feedforward Networks",
+            "C"
+        ],
+        "obj": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Hypothesis Space Search and Inductive Bias",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hypothesis Space Search and Inductive Bias",
+            "C"
+        ],
+        "obj": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Hidden Layer Representations",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hidden Layer Representations",
+            "F"
+        ],
+        "obj": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Generalization, Overfitting, and Stopping Criterion",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Generalization, Overfitting, and Stopping Criterion",
+            "C"
+        ],
+        "obj": [
+            "Backpropagation Algorithm",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multilayer Networks and Backpropagation Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Derivation of Backpropagation Rule",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Derivation of Backpropagation Rule",
+            "C"
+        ],
+        "obj": [
+            "Multilayer Networks and Backpropagation Algorithm",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Face Recognition",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Face Recognition",
+            "T"
+        ],
+        "obj": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Face Recognition",
+            "T"
+        ],
+        "obj": [
+            "Task Description",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Task Description",
+            "C"
+        ],
+        "obj": [
+            "Face Recognition",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Face Recognition",
+            "T"
+        ],
+        "obj": [
+            "Design Choices",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Design Choices",
+            "C"
+        ],
+        "obj": [
+            "Face Recognition",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Face Recognition",
+            "T"
+        ],
+        "obj": [
+            "Learned Hidden Representations",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learned Hidden Representations",
+            "F"
+        ],
+        "obj": [
+            "Face Recognition",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "obj": [
+            "Artificial Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "obj": [
+            "Alternative Error Functions",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Alternative Error Functions",
+            "T"
+        ],
+        "obj": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "obj": [
+            "Alternative Error Minimization Procedures",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Alternative Error Minimization Procedures",
+            "M"
+        ],
+        "obj": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "obj": [
+            "Recurrent Networks",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Recurrent Networks",
+            "M"
+        ],
+        "obj": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "obj": [
+            "Dynamically Modifying Network Structure",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Dynamically Modifying Network Structure",
+            "C"
+        ],
+        "obj": [
+            "Advanced Topics in Artificial Neural Networks",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Estimating Hypothesis Accuracy",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Estimating Hypothesis Accuracy",
+            "C"
+        ],
+        "obj": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Estimating Hypothesis Accuracy",
+            "C"
+        ],
+        "obj": [
+            "Sample Error and True Error",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sample Error and True Error",
+            "E"
+        ],
+        "obj": [
+            "Estimating Hypothesis Accuracy",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Estimating Hypothesis Accuracy",
+            "C"
+        ],
+        "obj": [
+            "Confidence Intervals for Discrete Valued Hypothesis",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Confidence Intervals for Discrete Valued Hypothesis",
+            "E"
+        ],
+        "obj": [
+            "Estimating Hypothesis Accuracy",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Sampling Theory",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sampling Theory",
+            "C"
+        ],
+        "obj": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sampling Theory",
+            "C"
+        ],
+        "obj": [
+            "Error Estimation and Estimating Binomial Proportions",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Error Estimation and Estimating Binomial Proportions",
+            "C"
+        ],
+        "obj": [
+            "Sampling Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sampling Theory",
+            "C"
+        ],
+        "obj": [
+            "Binomial Distribution",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Binomial Distribution",
+            "S"
+        ],
+        "obj": [
+            "Sampling Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sampling Theory",
+            "C"
+        ],
+        "obj": [
+            "Mean and Variance",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mean and Variance",
+            "S"
+        ],
+        "obj": [
+            "Sampling Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sampling Theory",
+            "C"
+        ],
+        "obj": [
+            "Estimators, Bias and Variance",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Estimators, Bias and Variance",
+            "S"
+        ],
+        "obj": [
+            "Sampling Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sampling Theory",
+            "C"
+        ],
+        "obj": [
+            "Confidence Intervals",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Confidence Intervals",
+            "S"
+        ],
+        "obj": [
+            "Sampling Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sampling Theory",
+            "C"
+        ],
+        "obj": [
+            "Two Sided and One Sided Bounds",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Two Sided and One Sided Bounds",
+            "B"
+        ],
+        "obj": [
+            "Sampling Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Deriving Confidence Intervals",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Deriving Confidence Intervals",
+            "S"
+        ],
+        "obj": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Deriving Confidence Intervals",
+            "S"
+        ],
+        "obj": [
+            "Central Limit Theorem",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Central Limit Theorem",
+            "S"
+        ],
+        "obj": [
+            "Deriving Confidence Intervals",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Difference in Error of Hypotheses",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Difference in Error of Hypotheses",
+            "E"
+        ],
+        "obj": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Difference in Error of Hypotheses",
+            "E"
+        ],
+        "obj": [
+            "Hypothesis Testing",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hypothesis Testing",
+            "S"
+        ],
+        "obj": [
+            "Difference in Error of Hypotheses",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Comparing Learning Algorithms",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Comparing Learning Algorithms",
+            "C"
+        ],
+        "obj": [
+            "Evaluating Hypotheses",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Comparing Learning Algorithms",
+            "C"
+        ],
+        "obj": [
+            "Paired t Tests",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Paired t Tests",
+            "S"
+        ],
+        "obj": [
+            "Comparing Learning Algorithms",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Bayes Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Theorem",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Bayes Theorem and Concept Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Theorem and Concept Learning",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Theorem and Concept Learning",
+            "C"
+        ],
+        "obj": [
+            "Brute Force Bayes Concept Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Brute Force Bayes Concept Learning",
+            "M"
+        ],
+        "obj": [
+            "Bayes Theorem and Concept Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Theorem and Concept Learning",
+            "C"
+        ],
+        "obj": [
+            "MAP Hypotheses and Consistent Learners",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "MAP Hypotheses and Consistent Learners",
+            "C"
+        ],
+        "obj": [
+            "Bayes Theorem and Concept Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Maximum Likelihood and Least Squared Error Hypotheses",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Maximum Likelihood and Least Squared Error Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Maximum Likelihood Hypotheses for Predicting Probabilities",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Maximum Likelihood Hypotheses for Predicting Probabilities",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Maximum Likelihood Hypotheses for Predicting Probabilities",
+            "C"
+        ],
+        "obj": [
+            "Gradient Search to Maximize Likelihood in a Neural Net",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Gradient Search to Maximize Likelihood in a Neural Net",
+            "M"
+        ],
+        "obj": [
+            "Maximum Likelihood Hypotheses for Predicting Probabilities",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Minimum Description Length Principle",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Minimum Description Length Principle",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Bayes Optimal Classifier",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Optimal Classifier",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Gibbs Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Gibbs Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Naive Bayes Classifier",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Naive Bayes Classifier",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Text Classification",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Text Classification",
+            "T"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "obj": [
+            "Conditional Independence",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Conditional Independence",
+            "S"
+        ],
+        "obj": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "obj": [
+            "Representation",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Representation",
+            "F"
+        ],
+        "obj": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "obj": [
+            "Inference",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inference",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "obj": [
+            "Learning Bayesian Belief Networks",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning Bayesian Belief Networks",
+            "T"
+        ],
+        "obj": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "obj": [
+            "Gradient Ascent Training of Bayesian Networks",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Gradient Ascent Training of Bayesian Networks",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "obj": [
+            "Learning Structure of Bayesian Networks",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning Structure of Bayesian Networks",
+            "T"
+        ],
+        "obj": [
+            "Bayesian Belief Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "obj": [
+            "EM Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "EM Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "EM Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Estimating Means of k Gaussians",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Estimating Means of k Gaussians",
+            "S"
+        ],
+        "obj": [
+            "EM Algorithm",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "EM Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Derivation of k Means Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Derivation of k Means Algorithm",
+            "M"
+        ],
+        "obj": [
+            "EM Algorithm",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "PAC Hypothesis Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC Hypothesis Learning",
+            "M"
+        ],
+        "obj": [
+            "Computational Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC Hypothesis Learning",
+            "M"
+        ],
+        "obj": [
+            "Problem Setting",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Problem Setting",
+            "T"
+        ],
+        "obj": [
+            "PAC Hypothesis Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC Hypothesis Learning",
+            "M"
+        ],
+        "obj": [
+            "Error of Hypothesis",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Error of Hypothesis",
+            "E"
+        ],
+        "obj": [
+            "PAC Hypothesis Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PAC Hypothesis Learning",
+            "M"
+        ],
+        "obj": [
+            "PAC Learnability",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC Learnability",
+            "C"
+        ],
+        "obj": [
+            "PAC Hypothesis Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "Computational Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "Agnostic Learning and Inconsistent Hypotheses",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Agnostic Learning and Inconsistent Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "Conjunctions of Boolean Literals are PAC Learnable",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Conjunctions of Boolean Literals are PAC Learnable",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "PAC Learnability of Concept Classes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PAC Learnability of Concept Classes",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Finite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "Computational Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "Shattering a Set of Instances",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Shattering a Set of Instances",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "VC Dimension",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity and VC Dimension",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity and VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "obj": [
+            "VC Dimension for Neural Networks",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "VC Dimension for Neural Networks",
+            "C"
+        ],
+        "obj": [
+            "Sample Complexity for Infinite Hypothesis Spaces",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Learning Theory",
+            "C"
+        ],
+        "obj": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "obj": [
+            "Computational Learning Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "obj": [
+            "Mistake Bound for Find-S Algorithm",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mistake Bound for Find-S Algorithm",
+            "B"
+        ],
+        "obj": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "obj": [
+            "Mistake Bound for Halving Algorithm",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Mistake Bound for Halving Algorithm",
+            "B"
+        ],
+        "obj": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "obj": [
+            "Optimal Mistake Bounds",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Optimal Mistake Bounds",
+            "B"
+        ],
+        "obj": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "obj": [
+            "Weighted Majority Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Weighted Majority Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Mistake Bound Model of Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "obj": [
+            "k Nearest Neighbor Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "k Nearest Neighbor Learning",
+            "M"
+        ],
+        "obj": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "k Nearest Neighbor Learning",
+            "M"
+        ],
+        "obj": [
+            "Distance Weighted Nearest Neighbor Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Distance Weighted Nearest Neighbor Algorithm",
+            "M"
+        ],
+        "obj": [
+            "k Nearest Neighbor Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Locally Weighted Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Locally Weighted Regression",
+            "M"
+        ],
+        "obj": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Locally Weighted Regression",
+            "M"
+        ],
+        "obj": [
+            "Locally Weighted Linear Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Locally Weighted Linear Regression",
+            "M"
+        ],
+        "obj": [
+            "Locally Weighted Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Radial Basis Functions",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Radial Basis Functions",
+            "C"
+        ],
+        "obj": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Case Based Reasoning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Case Based Reasoning",
+            "M"
+        ],
+        "obj": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Lazy and Eager Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Lazy and Eager Learning",
+            "M"
+        ],
+        "obj": [
+            "Instance Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Representing Hypotheses",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Representing Hypotheses",
+            "F"
+        ],
+        "obj": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Genetic Operators",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Genetic Operators",
+            "C"
+        ],
+        "obj": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Fitness Function and Selection",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fitness Function and Selection",
+            "C"
+        ],
+        "obj": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Hypothesis Space Search",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hypothesis Space Search",
+            "M"
+        ],
+        "obj": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Hypothesis Space Search",
+            "M"
+        ],
+        "obj": [
+            "Population Evolution and the Schema Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Population Evolution and the Schema Theorem",
+            "C"
+        ],
+        "obj": [
+            "Hypothesis Space Search",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Genetic Programming",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Genetic Programming",
+            "C"
+        ],
+        "obj": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Genetic Programming",
+            "C"
+        ],
+        "obj": [
+            "Representing Programs",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Representing Programs",
+            "F"
+        ],
+        "obj": [
+            "Genetic Programming",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Models of Evolution and Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Models of Evolution and Learning",
+            "M"
+        ],
+        "obj": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Models of Evolution and Learning",
+            "M"
+        ],
+        "obj": [
+            "Lamarckian Evolution",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Lamarckian Evolution",
+            "C"
+        ],
+        "obj": [
+            "Models of Evolution and Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Models of Evolution and Learning",
+            "M"
+        ],
+        "obj": [
+            "Baldwin Effect",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Baldwin Effect",
+            "C"
+        ],
+        "obj": [
+            "Models of Evolution and Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Parallelizing Genetic Algorithms",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Parallelizing Genetic Algorithms",
+            "C"
+        ],
+        "obj": [
+            "Genetic Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "obj": [
+            "Sequential Covering Algorithms",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sequential Covering Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sequential Covering Algorithms",
+            "M"
+        ],
+        "obj": [
+            "General to Specific Beam Search",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "General to Specific Beam Search",
+            "M"
+        ],
+        "obj": [
+            "Sequential Covering Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sequential Covering Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Variations",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Variations",
+            "C"
+        ],
+        "obj": [
+            "Sequential Covering Algorithms",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "obj": [
+            "Learning Rule Sets",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning Rule Sets",
+            "T"
+        ],
+        "obj": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "obj": [
+            "Learning First Order Rules",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning First Order Rules",
+            "T"
+        ],
+        "obj": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning First Order Rules",
+            "T"
+        ],
+        "obj": [
+            "First-Order Horn Clauses",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "First-Order Horn Clauses",
+            "C"
+        ],
+        "obj": [
+            "Learning First Order Rules",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "obj": [
+            "Learning Sets of First Order Rules FOIL",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of First Order Rules FOIL",
+            "T"
+        ],
+        "obj": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of First Order Rules FOIL",
+            "T"
+        ],
+        "obj": [
+            "Generating Candidate Specializations in FOIL",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Generating Candidate Specializations in FOIL",
+            "T"
+        ],
+        "obj": [
+            "Learning Sets of First Order Rules FOIL",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of First Order Rules FOIL",
+            "T"
+        ],
+        "obj": [
+            "Guiding the Search in FOIL",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Guiding the Search in FOIL",
+            "C"
+        ],
+        "obj": [
+            "Learning Sets of First Order Rules FOIL",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of First Order Rules FOIL",
+            "T"
+        ],
+        "obj": [
+            "Learning Recursive Rule Sets",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning Recursive Rule Sets",
+            "T"
+        ],
+        "obj": [
+            "Learning Sets of First Order Rules FOIL",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "obj": [
+            "Induction as Inverted Deduction",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Induction as Inverted Deduction",
+            "C"
+        ],
+        "obj": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "obj": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "obj": [
+            "Learning Sets of Rules",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "obj": [
+            "First Order Resoultion",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "First Order Resoultion",
+            "C"
+        ],
+        "obj": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "obj": [
+            "Inverting Resolution First Order Case",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inverting Resolution First Order Case",
+            "C"
+        ],
+        "obj": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "obj": [
+            "Generalization, \u03b8-Subsumption, and Entailment",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Generalization, \u03b8-Subsumption, and Entailment",
+            "C"
+        ],
+        "obj": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "obj": [
+            "PROGOL",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PROGOL",
+            "C"
+        ],
+        "obj": [
+            "Inverting Resolution",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Analytical Learning",
+            "T"
+        ],
+        "obj": [
+            "Inductive and Analytical Learning Problems",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inductive and Analytical Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Analytical Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Analytical Learning",
+            "T"
+        ],
+        "obj": [
+            "Learning with Perfect Domain Theories: PROLOG-EBG",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning with Perfect Domain Theories: PROLOG-EBG",
+            "C"
+        ],
+        "obj": [
+            "Analytical Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning with Perfect Domain Theories: PROLOG-EBG",
+            "C"
+        ],
+        "obj": [
+            "Illustrative Trace",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Illustrative Trace",
+            "D"
+        ],
+        "obj": [
+            "Learning with Perfect Domain Theories: PROLOG-EBG",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Analytical Learning",
+            "T"
+        ],
+        "obj": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Analytical Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Discovering New Features",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Discovering New Features",
+            "F"
+        ],
+        "obj": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Deductive Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Deductive Learning",
+            "C"
+        ],
+        "obj": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Inductive Bias in Explanation Based Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inductive Bias in Explanation Based Learning",
+            "C"
+        ],
+        "obj": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "obj": [
+            "Knowledge Level Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Knowledge Level Learning",
+            "T"
+        ],
+        "obj": [
+            "Explanation Based Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Analytical Learning",
+            "T"
+        ],
+        "obj": [
+            "Explanation Based Learning of Search Control Knowledge",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Explanation Based Learning of Search Control Knowledge",
+            "T"
+        ],
+        "obj": [
+            "Analytical Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Combining Inductive and Analytical Learning",
+            "T"
+        ],
+        "obj": [
+            "Inductive Analytical Approaches to Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inductive Analytical Approaches to Learning",
+            "C"
+        ],
+        "obj": [
+            "Combining Inductive and Analytical Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inductive Analytical Approaches to Learning",
+            "C"
+        ],
+        "obj": [
+            "Learning Problem",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Inductive Analytical Approaches to Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inductive Analytical Approaches to Learning",
+            "C"
+        ],
+        "obj": [
+            "Hypothesis Space Search",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hypothesis Space Search",
+            "M"
+        ],
+        "obj": [
+            "Inductive Analytical Approaches to Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Combining Inductive and Analytical Learning",
+            "T"
+        ],
+        "obj": [
+            "Using Prior Knowledge to Initialize the Hypothesis",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Using Prior Knowledge to Initialize the Hypothesis",
+            "C"
+        ],
+        "obj": [
+            "Combining Inductive and Analytical Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Using Prior Knowledge to Initialize the Hypothesis",
+            "C"
+        ],
+        "obj": [
+            "KBANN Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "KBANN Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Using Prior Knowledge to Initialize the Hypothesis",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Combining Inductive and Analytical Learning",
+            "T"
+        ],
+        "obj": [
+            "Using Prior Knowledge to Alter the Search Objective",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Using Prior Knowledge to Alter the Search Objective",
+            "C"
+        ],
+        "obj": [
+            "Combining Inductive and Analytical Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Using Prior Knowledge to Alter the Search Objective",
+            "C"
+        ],
+        "obj": [
+            "TangentProp Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "TangentProp Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Using Prior Knowledge to Alter the Search Objective",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Using Prior Knowledge to Alter the Search Objective",
+            "C"
+        ],
+        "obj": [
+            "EBNN Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "EBNN Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Using Prior Knowledge to Alter the Search Objective",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Combining Inductive and Analytical Learning",
+            "T"
+        ],
+        "obj": [
+            "Using Prior Knowledge to Augment Search",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Using Prior Knowledge to Augment Search",
+            "C"
+        ],
+        "obj": [
+            "Combining Inductive and Analytical Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Using Prior Knowledge to Augment Search",
+            "C"
+        ],
+        "obj": [
+            "FOCL Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "FOCL Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Using Prior Knowledge to Augment Search",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "obj": [
+            "Learning Task",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning Task",
+            "T"
+        ],
+        "obj": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "obj": [
+            "Q Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Q Learning",
+            "M"
+        ],
+        "obj": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Q Learning",
+            "M"
+        ],
+        "obj": [
+            "Q Function",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Q Function",
+            "C"
+        ],
+        "obj": [
+            "Q Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Q Learning",
+            "M"
+        ],
+        "obj": [
+            "Algorithm for Q Learning",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Algorithm for Q Learning",
+            "M"
+        ],
+        "obj": [
+            "Q Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Q Learning",
+            "M"
+        ],
+        "obj": [
+            "Convergence",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Convergence",
+            "C"
+        ],
+        "obj": [
+            "Q Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Q Learning",
+            "M"
+        ],
+        "obj": [
+            "Experimentation Strategies",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Experimentation Strategies",
+            "C"
+        ],
+        "obj": [
+            "Q Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Q Learning",
+            "M"
+        ],
+        "obj": [
+            "Updating Sequence",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Updating Sequence",
+            "C"
+        ],
+        "obj": [
+            "Q Learning",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "obj": [
+            "Nondeterministic Rewards and Actions",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Nondeterministic Rewards and Actions",
+            "C"
+        ],
+        "obj": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "obj": [
+            "Temporal Difference Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Temporal Difference Learning",
+            "T"
+        ],
+        "obj": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "obj": [
+            "Generalizing from Examples",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Generalizing from Examples",
+            "C"
+        ],
+        "obj": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "obj": [
+            "Relationship to Dynamic Programming",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Relationship to Dynamic Programming",
+            "C"
+        ],
+        "obj": [
+            "Reinforcement Learning",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Curse of Dimensionality",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Curse of Dimensionality",
+            "C"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Two Extremes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Two Extremes",
+            "C"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "obj": [
+            "Curse for Squared Error Loss",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Curse for Squared Error Loss",
+            "C"
+        ],
+        "obj": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "obj": [
+            "Sparsity",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sparsity",
+            "C"
+        ],
+        "obj": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "obj": [
+            "Exploding Numbers of Models",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Exploding Numbers of Models",
+            "C"
+        ],
+        "obj": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "obj": [
+            "Multicollinearity and Concurvity",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Multicollinearity and Concurvity",
+            "C"
+        ],
+        "obj": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "obj": [
+            "Effect of Noise",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Effect of Noise",
+            "C"
+        ],
+        "obj": [
+            "Perspectives on the Curse",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Coping with the Curse",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Coping with the Curse",
+            "C"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Coping with the Curse",
+            "C"
+        ],
+        "obj": [
+            "Selecting Design Points",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Selecting Design Points",
+            "T"
+        ],
+        "obj": [
+            "Coping with the Curse",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Coping with the Curse",
+            "C"
+        ],
+        "obj": [
+            "Local Dimension",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Local Dimension",
+            "C"
+        ],
+        "obj": [
+            "Coping with the Curse",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Coping with the Curse",
+            "C"
+        ],
+        "obj": [
+            "Parsimony",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Parsimony",
+            "C"
+        ],
+        "obj": [
+            "Coping with the Curse",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Two Techniques",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Two Techniques",
+            "C"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Two Techniques",
+            "C"
+        ],
+        "obj": [
+            "Bootstrap",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bootstrap",
+            "C"
+        ],
+        "obj": [
+            "Two Techniques",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Two Techniques",
+            "C"
+        ],
+        "obj": [
+            "Cross Validation",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Cross Validation",
+            "T"
+        ],
+        "obj": [
+            "Two Techniques",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Optimization and Search",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Optimization and Search",
+            "M"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Optimization and Search",
+            "M"
+        ],
+        "obj": [
+            "Univariate Search",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Univariate Search",
+            "M"
+        ],
+        "obj": [
+            "Optimization and Search",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Optimization and Search",
+            "M"
+        ],
+        "obj": [
+            "Multivariate Search",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Multivariate Search",
+            "M"
+        ],
+        "obj": [
+            "Optimization and Search",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Optimization and Search",
+            "M"
+        ],
+        "obj": [
+            "General Searches",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "General Searches",
+            "M"
+        ],
+        "obj": [
+            "Optimization and Search",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Optimization and Search",
+            "M"
+        ],
+        "obj": [
+            "Constraint Satisfacton and Combinatorial Search",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Constraint Satisfacton and Combinatorial Search",
+            "M"
+        ],
+        "obj": [
+            "Optimization and Search",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Hammersley Points",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hammersley Points",
+            "C"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Edgeworth Expansions for the Mean",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Edgeworth Expansions for the Mean",
+            "S"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "obj": [
+            "Bootstrap Asymptotics for the Studentized Mean",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bootstrap Asymptotics for the Studentized Mean",
+            "S"
+        ],
+        "obj": [
+            "Variability, Information and Prediction",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Local Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Early Smoothers",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Early Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Local Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Local Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Transition to Classical Smoothers",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Transition to Classical Smoothers",
+            "C"
+        ],
+        "obj": [
+            "Local Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Transition to Classical Smoothers",
+            "C"
+        ],
+        "obj": [
+            "Global Versus Local Approximations",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Global Versus Local Approximations",
+            "C"
+        ],
+        "obj": [
+            "Transition to Classical Smoothers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Transition to Classical Smoothers",
+            "C"
+        ],
+        "obj": [
+            "LOESS",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "LOESS",
+            "M"
+        ],
+        "obj": [
+            "Transition to Classical Smoothers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Local Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Local Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Statistical Function Approximation",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Statistical Function Approximation",
+            "C"
+        ],
+        "obj": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Concept of Kernel Methods and the Discrete Case",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Concept of Kernel Methods and the Discrete Case",
+            "C"
+        ],
+        "obj": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Kernel and Stochastic Designs: Density Estimation",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernel and Stochastic Designs: Density Estimation",
+            "T"
+        ],
+        "obj": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Stochastic Designs: Asymptotics for Kernel Smoothers",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Stochastic Designs: Asymptotics for Kernel Smoothers",
+            "S"
+        ],
+        "obj": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Convergence Theorems and Rates for Kernel Smoothers",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Convergence Theorems and Rates for Kernel Smoothers",
+            "C"
+        ],
+        "obj": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Kernel and Bandwidth Selection",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernel and Bandwidth Selection",
+            "C"
+        ],
+        "obj": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Linear Smoothers",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Linear Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Kernel Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Local Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Nearest Neighbors",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Nearest Neighbors",
+            "C"
+        ],
+        "obj": [
+            "Local Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Local Smoothers",
+            "M"
+        ],
+        "obj": [
+            "Applications of Kernel Regression",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Applications of Kernel Regression",
+            "T"
+        ],
+        "obj": [
+            "Local Smoothers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Applications of Kernel Regression",
+            "T"
+        ],
+        "obj": [
+            "Simulated Example",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Simulated Example",
+            "D"
+        ],
+        "obj": [
+            "Applications of Kernel Regression",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Applications of Kernel Regression",
+            "T"
+        ],
+        "obj": [
+            "Ethanol Data",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Ethanol Data",
+            "D"
+        ],
+        "obj": [
+            "Applications of Kernel Regression",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "obj": [
+            "Interpolating Splines",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Interpolating Splines",
+            "M"
+        ],
+        "obj": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "obj": [
+            "Natural Cubic Splines",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Natural Cubic Splines",
+            "M"
+        ],
+        "obj": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "obj": [
+            "Smoothing Splines for Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Smoothing Splines for Regression",
+            "M"
+        ],
+        "obj": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Smoothing Splines for Regression",
+            "M"
+        ],
+        "obj": [
+            "Model Selection for Spline Smoothing",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Model Selection for Spline Smoothing",
+            "T"
+        ],
+        "obj": [
+            "Smoothing Splines for Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Smoothing Splines for Regression",
+            "M"
+        ],
+        "obj": [
+            "Spline Smoothing Meets Kernel Smoothing",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Spline Smoothing Meets Kernel Smoothing",
+            "C"
+        ],
+        "obj": [
+            "Smoothing Splines for Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "obj": [
+            "Asymptotic Bias, Variance, and MISE for Spline Smoothers",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Asymptotic Bias, Variance, and MISE for Spline Smoothers",
+            "C"
+        ],
+        "obj": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Asymptotic Bias, Variance, and MISE for Spline Smoothers",
+            "C"
+        ],
+        "obj": [
+            "Ethanol Data",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Ethanol Data",
+            "D"
+        ],
+        "obj": [
+            "Asymptotic Bias, Variance, and MISE for Spline Smoothers",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "obj": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "obj": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "obj": [
+            "Reproducing Kernels",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Reproducing Kernels",
+            "C"
+        ],
+        "obj": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "obj": [
+            "Constructing an RKHS",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Constructing an RKHS",
+            "C"
+        ],
+        "obj": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "obj": [
+            "Direct Sum Construction for Splines",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Direct Sum Construction for Splines",
+            "M"
+        ],
+        "obj": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "obj": [
+            "Explicit Forms",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Explicit Forms",
+            "C"
+        ],
+        "obj": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "obj": [
+            "Nonparametrics in Data Mining and Machine Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Nonparametrics in Data Mining and Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Splines Redux: Hilbert Space Formulation",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "obj": [
+            "Simulated Comparisons",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Simulated Comparisons",
+            "C"
+        ],
+        "obj": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Simulated Comparisons",
+            "C"
+        ],
+        "obj": [
+            "Dependent Noise Models",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Dependent Noise Models",
+            "M"
+        ],
+        "obj": [
+            "Simulated Comparisons",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Simulated Comparisons",
+            "C"
+        ],
+        "obj": [
+            "Higher Dimensions and Curse of Dimensionality",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Higher Dimensions and Curse of Dimensionality",
+            "C"
+        ],
+        "obj": [
+            "Simulated Comparisons",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "obj": [
+            "Sobolev Spaces",
+            "F"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sobolev Spaces",
+            "F"
+        ],
+        "obj": [
+            "Spline Smoothing",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Additive Models",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Additive Models",
+            "M"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Additive Models",
+            "M"
+        ],
+        "obj": [
+            "Backfitting Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Backfitting Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Additive Models",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Additive Models",
+            "M"
+        ],
+        "obj": [
+            "Concurvity and Inference",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Concurvity and Inference",
+            "C"
+        ],
+        "obj": [
+            "Additive Models",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Additive Models",
+            "M"
+        ],
+        "obj": [
+            "Nonparametric Optimality",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Nonparametric Optimality",
+            "C"
+        ],
+        "obj": [
+            "Additive Models",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Generalized Additive Models",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Generalized Additive Models",
+            "M"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Projection Pursuit Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Projection Pursuit Regression",
+            "M"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Neural Networks",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Backpropagation and Inference",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Backpropagation and Inference",
+            "C"
+        ],
+        "obj": [
+            "Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Barron's Result and the Curse",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Barron's Result and the Curse",
+            "C"
+        ],
+        "obj": [
+            "Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Approximation Properties",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Approximation Properties",
+            "C"
+        ],
+        "obj": [
+            "Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Barron's Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Barron's Theorem",
+            "C"
+        ],
+        "obj": [
+            "Neural Networks",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "obj": [
+            "Growing Trees",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Growing Trees",
+            "M"
+        ],
+        "obj": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "obj": [
+            "Pruning and Selection",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Pruning and Selection",
+            "C"
+        ],
+        "obj": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "obj": [
+            "Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Regression",
+            "M"
+        ],
+        "obj": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Additive Regression Trees: BART",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Additive Regression Trees: BART",
+            "M"
+        ],
+        "obj": [
+            "Recursive Partitioning Regression",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "MARS",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "MARS",
+            "M"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Sliced Inverse Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sliced Inverse Regression",
+            "M"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "ACE and AVAS",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "ACE and AVAS",
+            "M"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Proof of Barron's Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Proof of Barron's Theorem",
+            "C"
+        ],
+        "obj": [
+            "New Wave Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "obj": [
+            "Multiclass Learning",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Multiclass Learning",
+            "T"
+        ],
+        "obj": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "obj": [
+            "Discriminant Analysis",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Discriminant Analysis",
+            "M"
+        ],
+        "obj": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Discriminant Analysis",
+            "M"
+        ],
+        "obj": [
+            "Distance Based Discriminant Analysis",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Distance Based Discriminant Analysis",
+            "M"
+        ],
+        "obj": [
+            "Discriminant Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Discriminant Analysis",
+            "M"
+        ],
+        "obj": [
+            "Bayes Rules",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Rules",
+            "C"
+        ],
+        "obj": [
+            "Discriminant Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Discriminant Analysis",
+            "M"
+        ],
+        "obj": [
+            "Probability Based Discriminant Analysis",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Probability Based Discriminant Analysis",
+            "M"
+        ],
+        "obj": [
+            "Discriminant Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "obj": [
+            "Tree Based Classifiers",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Tree Based Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Tree Based Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Splitting Rules",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Splitting Rules",
+            "M"
+        ],
+        "obj": [
+            "Tree Based Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Tree Based Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Logic Trees",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Logic Trees",
+            "M"
+        ],
+        "obj": [
+            "Tree Based Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Tree Based Classifiers",
+            "M"
+        ],
+        "obj": [
+            "Random Forests",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Random Forests",
+            "M"
+        ],
+        "obj": [
+            "Tree Based Classifiers",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Margins and Distances",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Margins and Distances",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Binary Classification and Risk",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Binary Classification and Risk",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Prediction Bounds for Function Classes",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Prediction Bounds for Function Classes",
+            "B"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Constructing SVM Classifiers",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Constructing SVM Classifiers",
+            "T"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "SVM Classification for Nonlinearly Separable Populations",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "SVM Classification for Nonlinearly Separable Populations",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "SVMs in the General Nonlinear Case",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "SVMs in the General Nonlinear Case",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Kernels Used in SVM Classification",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernels Used in SVM Classification",
+            "C"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Kernel Choice, SVMs and Model Selection",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kernel Choice, SVMs and Model Selection",
+            "T"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Support Vector Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Support Vector Regression",
+            "M"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Multiclass Support Vector Machines",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Multiclass Support Vector Machines",
+            "M"
+        ],
+        "obj": [
+            "Support Vector Machines",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "obj": [
+            "Neural Networks",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "obj": [
+            "Hoeffding's Inequality",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hoeffding's Inequality",
+            "C"
+        ],
+        "obj": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "obj": [
+            "VC Dimension",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "VC Dimension",
+            "C"
+        ],
+        "obj": [
+            "Supervised Learning: Partition Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "obj": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "obj": [
+            "Bayes Model Averaging",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Model Averaging",
+            "M"
+        ],
+        "obj": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "obj": [
+            "Bagging",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bagging",
+            "M"
+        ],
+        "obj": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "obj": [
+            "Stacking",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Stacking",
+            "M"
+        ],
+        "obj": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "obj": [
+            "Boosting",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Boosting",
+            "M"
+        ],
+        "obj": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "obj": [
+            "Other Averaging Methods",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Other Averaging Methods",
+            "M"
+        ],
+        "obj": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "obj": [
+            "Oracle Inequalities",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Oracle Inequalities",
+            "C"
+        ],
+        "obj": [
+            "Ensemble Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Bayes Nonparametrics",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Dirichlet Process Priors",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Dirichlet Process Priors",
+            "S"
+        ],
+        "obj": [
+            "Bayes Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Polya Tree Priors",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Polya Tree Priors",
+            "S"
+        ],
+        "obj": [
+            "Bayes Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Gaussian Process Priors",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Gaussian Process Priors",
+            "S"
+        ],
+        "obj": [
+            "Bayes Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Relevance Vector Machine RVM",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Relevance Vector Machine RVM",
+            "M"
+        ],
+        "obj": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Relevance Vector Machine RVM",
+            "M"
+        ],
+        "obj": [
+            "RVM Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "RVM Regression",
+            "M"
+        ],
+        "obj": [
+            "Relevance Vector Machine RVM",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Relevance Vector Machine RVM",
+            "M"
+        ],
+        "obj": [
+            "RVM Classification",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "RVM Classification",
+            "M"
+        ],
+        "obj": [
+            "Relevance Vector Machine RVM",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Hidden Markov Models Sequential Classification",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hidden Markov Models Sequential Classification",
+            "M"
+        ],
+        "obj": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Proof of Yang's Oracle Inequality",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Proof of Yang's Oracle Inequality",
+            "C"
+        ],
+        "obj": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "obj": [
+            "Proof of Lecue's Oracle Inequality",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Proof of Lecue's Oracle Inequality",
+            "C"
+        ],
+        "obj": [
+            "Alternative Nonparametrics",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "obj": [
+            "Computational Results: Classification",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Computational Results: Classification",
+            "C"
+        ],
+        "obj": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Results: Classification",
+            "C"
+        ],
+        "obj": [
+            "Fisher's Iris Data",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fisher's Iris Data",
+            "D"
+        ],
+        "obj": [
+            "Computational Results: Classification",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Results: Classification",
+            "C"
+        ],
+        "obj": [
+            "Ripley's Data",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Ripley's Data",
+            "D"
+        ],
+        "obj": [
+            "Computational Results: Classification",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "obj": [
+            "Computational Results: Regression",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Computational Results: Regression",
+            "C"
+        ],
+        "obj": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Results: Regression",
+            "C"
+        ],
+        "obj": [
+            "Vapnik's sinc Function",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Vapnik's sinc Function",
+            "C"
+        ],
+        "obj": [
+            "Computational Results: Regression",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Results: Regression",
+            "C"
+        ],
+        "obj": [
+            "Friedman's Function",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Friedman's Function",
+            "C"
+        ],
+        "obj": [
+            "Computational Results: Regression",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "obj": [
+            "Systematic Simulation Study",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Systematic Simulation Study",
+            "T"
+        ],
+        "obj": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "obj": [
+            "No Free Lunch",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "No Free Lunch",
+            "C"
+        ],
+        "obj": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Centroid Based Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Centroid Based Clustering",
+            "M"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Centroid Based Clustering",
+            "M"
+        ],
+        "obj": [
+            "K-Means Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "K-Means Clustering",
+            "M"
+        ],
+        "obj": [
+            "Centroid Based Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Centroid Based Clustering",
+            "M"
+        ],
+        "obj": [
+            "Variants",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Variants",
+            "C"
+        ],
+        "obj": [
+            "Centroid Based Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Hierarchical Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hierarchical Clustering",
+            "M"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Hierarchical Clustering",
+            "M"
+        ],
+        "obj": [
+            "Agglomerative Hierarchical Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Agglomerative Hierarchical Clustering",
+            "M"
+        ],
+        "obj": [
+            "Hierarchical Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Hierarchical Clustering",
+            "M"
+        ],
+        "obj": [
+            "Divisive Hierarchical Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Divisive Hierarchical Clustering",
+            "M"
+        ],
+        "obj": [
+            "Hierarchical Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Hierarchical Clustering",
+            "M"
+        ],
+        "obj": [
+            "Theory of Hierarchical Clustering",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Theory of Hierarchical Clustering",
+            "C"
+        ],
+        "obj": [
+            "Hierarchical Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Partitional Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Partitional Clustering",
+            "M"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Partitional Clustering",
+            "M"
+        ],
+        "obj": [
+            "Model Based Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Model Based Clustering",
+            "M"
+        ],
+        "obj": [
+            "Partitional Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Partitional Clustering",
+            "M"
+        ],
+        "obj": [
+            "Graph Theoretic Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Graph Theoretic Clustering",
+            "M"
+        ],
+        "obj": [
+            "Partitional Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Partitional Clustering",
+            "M"
+        ],
+        "obj": [
+            "Spectral Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Spectral Clustering",
+            "M"
+        ],
+        "obj": [
+            "Partitional Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Bayesian Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Clustering",
+            "M"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Clustering",
+            "M"
+        ],
+        "obj": [
+            "Probabilistic Clustering",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Probabilistic Clustering",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Clustering",
+            "M"
+        ],
+        "obj": [
+            "Hypothesis Testing",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hypothesis Testing",
+            "S"
+        ],
+        "obj": [
+            "Bayesian Clustering",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Computational Examples",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Computational Examples",
+            "D"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Examples",
+            "D"
+        ],
+        "obj": [
+            "Ripley's Data",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Ripley's Data",
+            "D"
+        ],
+        "obj": [
+            "Computational Examples",
+            "D"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Examples",
+            "D"
+        ],
+        "obj": [
+            "Iris Data",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Iris Data",
+            "D"
+        ],
+        "obj": [
+            "Computational Examples",
+            "D"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Cluster Validation",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Cluster Validation",
+            "T"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Derivatives of Functions of a Matrix",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Derivatives of Functions of a Matrix",
+            "C"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Kruskal's Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Kruskal's Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "obj": [
+            "Prim's Algorithm",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Prim's Algorithm",
+            "M"
+        ],
+        "obj": [
+            "Unsupervised Learning: Clustering",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Principal Component Analysis",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Principal Component Analysis",
+            "M"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Principal Component Analysis",
+            "M"
+        ],
+        "obj": [
+            "Main Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Main Theorem",
+            "C"
+        ],
+        "obj": [
+            "Principal Component Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Principal Component Analysis",
+            "M"
+        ],
+        "obj": [
+            "Key Properties",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Key Properties",
+            "C"
+        ],
+        "obj": [
+            "Principal Component Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Principal Component Analysis",
+            "M"
+        ],
+        "obj": [
+            "Extensions",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Extensions",
+            "C"
+        ],
+        "obj": [
+            "Principal Component Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Factor Analysis",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Factor Analysis",
+            "S"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Factor Analysis",
+            "S"
+        ],
+        "obj": [
+            "Finding \u039b and \u03c8",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Finding \u039b and \u03c8",
+            "C"
+        ],
+        "obj": [
+            "Factor Analysis",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Factor Analysis",
+            "S"
+        ],
+        "obj": [
+            "Finding K",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Finding K",
+            "C"
+        ],
+        "obj": [
+            "Factor Analysis",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Factor Analysis",
+            "S"
+        ],
+        "obj": [
+            "Estimating Factor Scores",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Estimating Factor Scores",
+            "C"
+        ],
+        "obj": [
+            "Factor Analysis",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Projection Pursuit",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Projection Pursuit",
+            "S"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Independent Component Analysis",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Independent Component Analysis",
+            "M"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Independent Component Analysis",
+            "M"
+        ],
+        "obj": [
+            "Main Definitions",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Main Definitions",
+            "C"
+        ],
+        "obj": [
+            "Independent Component Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Independent Component Analysis",
+            "M"
+        ],
+        "obj": [
+            "Key Results",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Key Results",
+            "C"
+        ],
+        "obj": [
+            "Independent Component Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Independent Component Analysis",
+            "M"
+        ],
+        "obj": [
+            "Computational Approach",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Computational Approach",
+            "C"
+        ],
+        "obj": [
+            "Independent Component Analysis",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Nonlinear PCA and ICA",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Nonlinear PCA and ICA",
+            "M"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Nonlinear PCA and ICA",
+            "M"
+        ],
+        "obj": [
+            "Nonlinear PCA",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Nonlinear PCA",
+            "M"
+        ],
+        "obj": [
+            "Nonlinear PCA and ICA",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Nonlinear PCA and ICA",
+            "M"
+        ],
+        "obj": [
+            "Nonlinear ICA",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Nonlinear ICA",
+            "M"
+        ],
+        "obj": [
+            "Nonlinear PCA and ICA",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Geometric Summarization",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Geometric Summarization",
+            "M"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Geometric Summarization",
+            "M"
+        ],
+        "obj": [
+            "Measuring Distances to an Algebraic Shape",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Measuring Distances to an Algebraic Shape",
+            "C"
+        ],
+        "obj": [
+            "Geometric Summarization",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Geometric Summarization",
+            "M"
+        ],
+        "obj": [
+            "Principal Curves and Surfaces",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Principal Curves and Surfaces",
+            "C"
+        ],
+        "obj": [
+            "Geometric Summarization",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Supervised Dimension Reduction",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Supervised Dimension Reduction",
+            "M"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Dimension Reduction",
+            "M"
+        ],
+        "obj": [
+            "Partial Least Squares PLS",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Partial Least Squares PLS",
+            "M"
+        ],
+        "obj": [
+            "Supervised Dimension Reduction",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Partial Least Squares PLS",
+            "M"
+        ],
+        "obj": [
+            "Simple PLS",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Simple PLS",
+            "M"
+        ],
+        "obj": [
+            "Partial Least Squares PLS",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Partial Least Squares PLS",
+            "M"
+        ],
+        "obj": [
+            "PLS Procedures",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PLS Procedures",
+            "M"
+        ],
+        "obj": [
+            "Partial Least Squares PLS",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Partial Least Squares PLS",
+            "M"
+        ],
+        "obj": [
+            "Properties of PLS",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Properties of PLS",
+            "C"
+        ],
+        "obj": [
+            "Partial Least Squares PLS",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Supervised Dimension Reduction",
+            "M"
+        ],
+        "obj": [
+            "Sufficient Dimensions in Regression",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sufficient Dimensions in Regression",
+            "C"
+        ],
+        "obj": [
+            "Supervised Dimension Reduction",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Visualization I: Basic Plots",
+            "V"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Visualization I: Basic Plots",
+            "V"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Visualization I: Basic Plots",
+            "V"
+        ],
+        "obj": [
+            "Elementary Visualization",
+            "V"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Elementary Visualization",
+            "V"
+        ],
+        "obj": [
+            "Visualization I: Basic Plots",
+            "V"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Visualization I: Basic Plots",
+            "V"
+        ],
+        "obj": [
+            "Projections",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Projections",
+            "C"
+        ],
+        "obj": [
+            "Visualization I: Basic Plots",
+            "V"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Visualization I: Basic Plots",
+            "V"
+        ],
+        "obj": [
+            "Time Dependence",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Time Dependence",
+            "C"
+        ],
+        "obj": [
+            "Visualization I: Basic Plots",
+            "V"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "obj": [
+            "Visualization II: Transformations",
+            "V"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Visualization II: Transformations",
+            "V"
+        ],
+        "obj": [
+            "Learning in High Dimensions",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Visualization II: Transformations",
+            "V"
+        ],
+        "obj": [
+            "Chernoff Faces",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Chernoff Faces",
+            "C"
+        ],
+        "obj": [
+            "Visualization II: Transformations",
+            "V"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Visualization II: Transformations",
+            "V"
+        ],
+        "obj": [
+            "Multidimensional Scaling",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Multidimensional Scaling",
+            "C"
+        ],
+        "obj": [
+            "Visualization II: Transformations",
+            "V"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Visualization II: Transformations",
+            "V"
+        ],
+        "obj": [
+            "Self Organizing Maps",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Self Organizing Maps",
+            "C"
+        ],
+        "obj": [
+            "Visualization II: Transformations",
+            "V"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variable Selection",
+            "T"
+        ],
+        "obj": [
+            "Concepts from Linear Regression",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Concepts from Linear Regression",
+            "C"
+        ],
+        "obj": [
+            "Variable Selection",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concepts from Linear Regression",
+            "C"
+        ],
+        "obj": [
+            "Subset Seletcion",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Subset Seletcion",
+            "T"
+        ],
+        "obj": [
+            "Concepts from Linear Regression",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Concepts from Linear Regression",
+            "C"
+        ],
+        "obj": [
+            "Variable Ranking",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Variable Ranking",
+            "T"
+        ],
+        "obj": [
+            "Concepts from Linear Regression",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variable Selection",
+            "T"
+        ],
+        "obj": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "obj": [
+            "Variable Selection",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "obj": [
+            "Akaike Information Criterion AIC",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Akaike Information Criterion AIC",
+            "C"
+        ],
+        "obj": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Information Criterion BIC",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Information Criterion BIC",
+            "C"
+        ],
+        "obj": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "obj": [
+            "Choices of Information Criteria",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Choices of Information Criteria",
+            "C"
+        ],
+        "obj": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "obj": [
+            "Cross Validation",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Cross Validation",
+            "T"
+        ],
+        "obj": [
+            "Traditional Criteria",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variable Selection",
+            "T"
+        ],
+        "obj": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "obj": [
+            "Variable Selection",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "obj": [
+            "Shrinkage Methods for Linear Models",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Shrinkage Methods for Linear Models",
+            "M"
+        ],
+        "obj": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "obj": [
+            "Grouping in Variable Selection",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Grouping in Variable Selection",
+            "C"
+        ],
+        "obj": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "obj": [
+            "Least Angle Regression",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Least Angle Regression",
+            "M"
+        ],
+        "obj": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "obj": [
+            "Shrinkage Methods for Model Classes",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Shrinkage Methods for Model Classes",
+            "M"
+        ],
+        "obj": [
+            "Shrinkage Methods",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variable Selection",
+            "T"
+        ],
+        "obj": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "obj": [
+            "Variable Selection",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "obj": [
+            "Prior Specifcation",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Prior Specifcation",
+            "S"
+        ],
+        "obj": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "obj": [
+            "Posterior Calculation and Exploration",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Posterior Calculation and Exploration",
+            "S"
+        ],
+        "obj": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "obj": [
+            "Evaluating Evidence",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Evaluating Evidence",
+            "T"
+        ],
+        "obj": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "obj": [
+            "Connections Between Bayesian and Frequentist Methods",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Connections Between Bayesian and Frequentist Methods",
+            "C"
+        ],
+        "obj": [
+            "Bayes Variable Selection",
+            "M"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variable Selection",
+            "T"
+        ],
+        "obj": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "obj": [
+            "Variable Selection",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "obj": [
+            "n > p Case",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "n > p Case",
+            "C"
+        ],
+        "obj": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "obj": [
+            "p > n Case",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "p > n Case",
+            "C"
+        ],
+        "obj": [
+            "Computational Comparisons",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Variable Selection",
+            "T"
+        ],
+        "obj": [
+            "Code for Generating Data",
+            "D"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Code for Generating Data",
+            "D"
+        ],
+        "obj": [
+            "Variable Selection",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "obj": [
+            "Paradigmatic Setting",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Paradigmatic Setting",
+            "T"
+        ],
+        "obj": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "obj": [
+            "Counts for Multiple Tests",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Counts for Multiple Tests",
+            "C"
+        ],
+        "obj": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "obj": [
+            "Measures of Error in Multiple Testing",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Measures of Error in Multiple Testing",
+            "E"
+        ],
+        "obj": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "obj": [
+            "Aspects of Error Control",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Aspects of Error Control",
+            "C"
+        ],
+        "obj": [
+            "Analyzing Hypothesis Testing Problem",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Controlling Familywise Error Rate",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Controlling Familywise Error Rate",
+            "E"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling Familywise Error Rate",
+            "E"
+        ],
+        "obj": [
+            "One Step Adjustments",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "One Step Adjustments",
+            "C"
+        ],
+        "obj": [
+            "Controlling Familywise Error Rate",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling Familywise Error Rate",
+            "E"
+        ],
+        "obj": [
+            "Stepwise p-Value Adjustments",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Stepwise p-Value Adjustments",
+            "C"
+        ],
+        "obj": [
+            "Controlling Familywise Error Rate",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E"
+        ],
+        "obj": [
+            "Null Domination",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Null Domination",
+            "C"
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E"
+        ],
+        "obj": [
+            "Two Procedures",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Two Procedures",
+            "C"
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E"
+        ],
+        "obj": [
+            "Type 1 Error Rate",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Type 1 Error Rate",
+            "E"
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E"
+        ],
+        "obj": [
+            "Controlling the Type 1 Error Rate",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Controlling the Type 1 Error Rate",
+            "C"
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E"
+        ],
+        "obj": [
+            "Adjusted p-Value for PFER/PCER",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Adjusted p-Value for PFER/PCER",
+            "C"
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "False Discovery Rate FDR",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "False Discovery Rate FDR",
+            "E"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C"
+        ],
+        "obj": [
+            "FDR and other Measures of Error",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "FDR and other Measures of Error",
+            "E"
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C"
+        ],
+        "obj": [
+            "Benjamini-Hochberg BH Procedure",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Benjamini-Hochberg BH Procedure",
+            "C"
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C"
+        ],
+        "obj": [
+            "BH Theorem for a Dependent Setting",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "BH Theorem for a Dependent Setting",
+            "C"
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C"
+        ],
+        "obj": [
+            "Variations on BH",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Variations on BH",
+            "C"
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Bayesian Multiple Testing",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Fully Bayes: Hierarchical",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fully Bayes: Hierarchical",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Fully Bayes: Decision Theory",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fully Bayes: Decision Theory",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Benjamini-Hochberg Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Benjamini-Hochberg Theorem",
+            "C"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S"
+        ],
+        "obj": [
+            "Benjamini-Yekutieli Theorem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Benjamini-Yekutieli Theorem",
+            "C"
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S"
         ],
         "e": "IS A PART OF"
     }
