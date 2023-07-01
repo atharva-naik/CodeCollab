@@ -8,6 +8,7 @@ truthy_path = "/data/NO-BACKUP/arnaik/WikiData/latest-truthy.nt"
 regex_pattern = "<http://www\.wikidata\.org/entity/Q\d+> <http://www.wikidata.org/prop/direct/P\d+> <http://www\.wikidata\.org/entity/Q\d+> \."
 # re.match(regex_pattern, "<http://www.wikidata.org/entity/Q31> <http://www.wikidata.org/prop/direct/P1344> <http://www.wikidata.org/entity/Q1088364> .")
 triples = []
+pmap = json.load(open("./data/WikiData/pmap.json"))
 g = open("./data/WikiData/QPQ_triples.jsonl", "w")
 with open(truthy_path, "r") as f:
     for line in tqdm(f):
@@ -21,6 +22,10 @@ with open(truthy_path, "r") as f:
             try: assert len(prop) == 1
             except AssertionError as e:
                 print("PropMismatchError:", e)
-            triple = (entities[0], prop[0], entities[1])
+            # P = pmap.get(prop[0], prop[0])
+            P = prop[0]
+            Q1 = entities[0]
+            Q2 = entities[1]
+            triple = (Q1, P, Q2)
             triples.append(triple)
             g.write(json.dumps(triple)+"\n")
