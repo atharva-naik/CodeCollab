@@ -99,10 +99,10 @@
     },
     "Supervised Learning: Partition Methods::M": {
         "Multiclass Learning::T": null,
-        "Discriminant Analysis::M": {
-            "Distance Based Discriminant Analysis::M": null,
+        "Discriminant Analysis::A": {
+            "Distance Based Discriminant Analysis::A": null,
             "Bayes Rules::C": null,
-            "Probability Based Discriminant Analysis::M": null
+            "Probability Based Discriminant Analysis::A": null
         },
         "Tree Based Classifiers::M": {
             "Splitting Rules::M": null,

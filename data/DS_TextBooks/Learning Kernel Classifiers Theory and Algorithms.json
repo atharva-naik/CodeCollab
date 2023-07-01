@@ -164,7 +164,7 @@
             "PAC and VC Frameworks::C": {
                 "VC and PAC Generalization Error Bounds::C": null,
                 "Uniform Convergence of Frequencies to Probabilities::C": null,
-                "Classical PAC and VC Analysis::C": {
+                "Classical PAC and VC Analysis::A": {
                     "VC Bound for Finite Hypothesis Spaces::C": null,
                     "Confidence Intervals::C": null,
                     "Optimize for Constants::T": null
