@@ -1,13 +1,13 @@
 {
     "Variability, Information and Prediction::C": {
-        "Curse of Dimensionality::C": null,
+        "Curse of Dimensionality::C": "Model esitmation difficulty increases superlinearly with feature space dimension",
         "Two Extremes::C": null,
         "Perspectives on the Curse::C": {
-            "Curse for Squared Error Loss::C": null,
-            "Sparsity::C": null,
-            "Exploding Numbers of Models::C": null,
-            "Multicollinearity and Concurvity::C": null,
-            "Effect of Noise::C": null
+            "Curse for Squared Error Loss::C": "The mean integrated squared error of fits increases faster than linearly in feature space dimension",
+            "Sparsity::C": "In high dimensions, all data sets are too sparse",
+            "Exploding Numbers of Models::C": "In high dimensions, the number of possible models to consider increases superexponentially in feature space dimension",
+            "Multicollinearity and Concurvity::C": "In high dimensions, all data sets show multicollinearity or concurvity",
+            "Effect of Noise::C": "As the feature space dimension increases, the error component typically has a larger effect"
         },
         "Coping with the Curse::C": {
             "Selecting Design Points::T": null,
