@@ -136,6 +136,7 @@ data/juice-dataset/*.jsonl
 data/juice-dataset/*.json
 data/juice-dataset/sampled_juice_nbs/
 data/KaggleNB/data.pkl
+data/WikiData/QPQ_triples.jsonl
 *.pt
 *.ckpt
 experiments/CoNaLa_CodeBERT_CodeSearch/logs

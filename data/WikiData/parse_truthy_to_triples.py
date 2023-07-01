@@ -21,6 +21,6 @@ with open(truthy_path, "r") as f:
             try: assert len(prop) == 1
             except AssertionError as e:
                 print("PropMismatchError:", e)
-            triple = (entities[0], prop, entities[1])
+            triple = (entities[0], prop[0], entities[1])
             triples.append(triple)
             g.write(json.dumps(triple)+"\n")
