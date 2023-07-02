@@ -8,8 +8,8 @@ import pandas as pd
 from model.code_similarity_retrievers.dense import CodeBERTDenseSearcher
 
 seed_queries = json.load(open("./data/juice-dataset/plan_ops.json"))
-exp_name: str = "CoNaLa_CSN_GraphCodeBERT_CodeSearch_CosSim"
-model_type: str = ["codebert", "graphcodebert", "unixcoder"][1]
+exp_name: str = "CoNaLa_CSN_UniXcoder_CodeSearch_CosSim"
+model_type: str = ["codebert", "graphcodebert", "unixcoder"][2]
 codes_KB = json.load(open("/home/arnaik/CodeCollab/JuICe_train_code_KB.json"))
 codes = list(codes_KB.keys())
 codes_to_nbids = json.load(open("/home/arnaik/CodeCollab/JuICe_train_code_to_nbids.json"))

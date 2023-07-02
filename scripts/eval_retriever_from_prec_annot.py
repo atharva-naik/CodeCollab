@@ -7,7 +7,8 @@ from collections import defaultdict
 # main
 if __name__ == "__main__":
     annot_path: str = "./data/prec_annot_data_for_ret2.csv"
-    preds_path: str = "./experiments/CoNaLa_CSN_GraphCodeBERT_CodeSearch_CosSim/seed_query_op2code.json"
+    preds_path: str = "./experiments/CoNaLa_CSN_UniXcoder_CodeSearch_CosSim/seed_query_op2code.json"
+    # preds_path: str = "./experiments/CoNaLa_CSN_GraphCodeBERT_CodeSearch_CosSim/seed_query_op2code.json"
     # preds_path = "./experiments/CoNaLa_CSN_CodeBERT_CodeSearch2_Sym/seed_query_op2code.json"
     #  preds_path = "./experiments/CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim/seed_query_op2code.json"
     # preds_path = "./experiments/CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim/seed_query_op2code.json"
