@@ -156,7 +156,7 @@
             "Vapnik's sinc Function::C": null,
             "Friedman's Function::C": null
         },
-        "Systematic Simulation Study::T": null, 
+        "Systematic Simulation Study::T": null,
         "No Free Lunch::C": null
     },
     "Unsupervised Learning: Clustering::T": {
@@ -180,12 +180,12 @@
         },
         "Computational Examples::D": {
             "Ripley's Data::D": null,
-            "Iris Data::D": null 
+            "Iris Data::D": null
         },
         "Cluster Validation::T": null,
         "Derivatives of Functions of a Matrix::C": null,
         "Kruskal's Algorithm::M": null,
-        "Prim's Algorithm::M": null 
+        "Prim's Algorithm::M": null
     },
     "Learning in High Dimensions::C": {
         "Principal Component Analysis::M": {
@@ -276,7 +276,7 @@
             "Two Procedures::C": null,
             "Type 1 Error Rate::E": null,
             "Controlling the Type 1 Error Rate::C": null,
-            "Adjusted p-Value for PFER/PCER::C": null 
+            "Adjusted p-Value for PFER/PCER::C": null
         },
         "False Discovery Rate FDR::E": null,
         "Controlling FDR::C": {

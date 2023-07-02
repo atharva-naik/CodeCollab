@@ -2778,14 +2778,14 @@
         ],
         "obj": [
             "Classical PAC and VC Analysis",
-            "C"
+            "A"
         ],
         "e": "CONSISTS OF"
     },
     {
         "sub": [
             "Classical PAC and VC Analysis",
-            "C"
+            "A"
         ],
         "obj": [
             "PAC and VC Frameworks",
@@ -2796,7 +2796,7 @@
     {
         "sub": [
             "Classical PAC and VC Analysis",
-            "C"
+            "A"
         ],
         "obj": [
             "VC Bound for Finite Hypothesis Spaces",
@@ -2811,14 +2811,14 @@
         ],
         "obj": [
             "Classical PAC and VC Analysis",
-            "C"
+            "A"
         ],
         "e": "IS A PART OF"
     },
     {
         "sub": [
             "Classical PAC and VC Analysis",
-            "C"
+            "A"
         ],
         "obj": [
             "Confidence Intervals",
@@ -2833,14 +2833,14 @@
         ],
         "obj": [
             "Classical PAC and VC Analysis",
-            "C"
+            "A"
         ],
         "e": "IS A PART OF"
     },
     {
         "sub": [
             "Classical PAC and VC Analysis",
-            "C"
+            "A"
         ],
         "obj": [
             "Optimize for Constants",
@@ -2855,7 +2855,7 @@
         ],
         "obj": [
             "Classical PAC and VC Analysis",
-            "C"
+            "A"
         ],
         "e": "IS A PART OF"
     },
@@ -3873,6 +3873,1040 @@
     },
     {
         "sub": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "obj": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "obj": [
+            "Learning Symbolic Representations of Concepts",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning Symbolic Representations of Concepts",
+            "T"
+        ],
+        "obj": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "obj": [
+            "Machine Learning as a Search Problem",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Machine Learning as a Search Problem",
+            "C"
+        ],
+        "obj": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "obj": [
+            "Learning as Improving Problem Solving",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning as Improving Problem Solving",
+            "C"
+        ],
+        "obj": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "obj": [
+            "Using Prior Knowledge with Data to Guide Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Using Prior Knowledge with Data to Guide Learning",
+            "C"
+        ],
+        "obj": [
+            "Artificial Intelligence",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Methods",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Methods",
+            "C"
+        ],
+        "obj": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Methods",
+            "C"
+        ],
+        "obj": [
+            "Bayes' Theorem for Calculating Probabilities of Hypotheses",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayes' Theorem for Calculating Probabilities of Hypotheses",
+            "C"
+        ],
+        "obj": [
+            "Bayesian Methods",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Methods",
+            "C"
+        ],
+        "obj": [
+            "Naive Bayes Classifier",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Naive Bayes Classifier",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Methods",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Methods",
+            "C"
+        ],
+        "obj": [
+            "Algorithms for Estimating Values of Unobserved Variables",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Algorithms for Estimating Values of Unobserved Variables",
+            "M"
+        ],
+        "obj": [
+            "Bayesian Methods",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Computational Complexity Theory",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Computational Complexity Theory",
+            "C"
+        ],
+        "obj": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Computational Complexity Theory",
+            "C"
+        ],
+        "obj": [
+            "Theoretical Bounds on Complexity of Learning Tasks",
+            "B"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Theoretical Bounds on Complexity of Learning Tasks",
+            "B"
+        ],
+        "obj": [
+            "Computational Complexity Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Theoretical Bounds on Complexity of Learning Tasks",
+            "B"
+        ],
+        "obj": [
+            "Computational Effort",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Computational Effort",
+            "C"
+        ],
+        "obj": [
+            "Theoretical Bounds on Complexity of Learning Tasks",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Theoretical Bounds on Complexity of Learning Tasks",
+            "B"
+        ],
+        "obj": [
+            "Number of Training Examples",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Number of Training Examples",
+            "C"
+        ],
+        "obj": [
+            "Theoretical Bounds on Complexity of Learning Tasks",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Theoretical Bounds on Complexity of Learning Tasks",
+            "B"
+        ],
+        "obj": [
+            "Number of Mistakes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Number of Mistakes",
+            "C"
+        ],
+        "obj": [
+            "Theoretical Bounds on Complexity of Learning Tasks",
+            "B"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Control Theory",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Control Theory",
+            "C"
+        ],
+        "obj": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Control Theory",
+            "C"
+        ],
+        "obj": [
+            "Objectives to Predict Next State of Process",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Objectives to Predict Next State of Process",
+            "T"
+        ],
+        "obj": [
+            "Control Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Control Theory",
+            "C"
+        ],
+        "obj": [
+            "Optimization Procedures to Learn to Control Process",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Optimization Procedures to Learn to Control Process",
+            "M"
+        ],
+        "obj": [
+            "Control Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Information Theory",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Information Theory",
+            "C"
+        ],
+        "obj": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Information Theory",
+            "C"
+        ],
+        "obj": [
+            "Measures of Entropy and Information Content",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Measures of Entropy and Information Content",
+            "C"
+        ],
+        "obj": [
+            "Information Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Information Theory",
+            "C"
+        ],
+        "obj": [
+            "Minimum Description Length Approach to Learning",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Minimum Description Length Approach to Learning",
+            "C"
+        ],
+        "obj": [
+            "Information Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Information Theory",
+            "C"
+        ],
+        "obj": [
+            "Optimal Codes",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Optimal Codes",
+            "C"
+        ],
+        "obj": [
+            "Information Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Information Theory",
+            "C"
+        ],
+        "obj": [
+            "Relation of Optimal Codes to Optimal Training Sequences for Encoding Hypothesis",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Relation of Optimal Codes to Optimal Training Sequences for Encoding Hypothesis",
+            "C"
+        ],
+        "obj": [
+            "Information Theory",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Philosophy",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Philosophy",
+            "C"
+        ],
+        "obj": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Philosophy",
+            "C"
+        ],
+        "obj": [
+            "Occam's Razor",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Occam's Razor",
+            "C"
+        ],
+        "obj": [
+            "Philosophy",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Philosophy",
+            "C"
+        ],
+        "obj": [
+            "Analysis of Generalization beyond Observed Data",
+            "A"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Analysis of Generalization beyond Observed Data",
+            "A"
+        ],
+        "obj": [
+            "Philosophy",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Psychology and Neurobiology",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Psychology and Neurobiology",
+            "C"
+        ],
+        "obj": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Psychology and Neurobiology",
+            "C"
+        ],
+        "obj": [
+            "Power Law of Practice",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Power Law of Practice",
+            "C"
+        ],
+        "obj": [
+            "Psychology and Neurobiology",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Psychology and Neurobiology",
+            "C"
+        ],
+        "obj": [
+            "Neurobiological Motivation for Artificial Neural Networks",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Neurobiological Motivation for Artificial Neural Networks",
+            "C"
+        ],
+        "obj": [
+            "Psychology and Neurobiology",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "obj": [
+            "Statistics",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Statistics",
+            "C"
+        ],
+        "obj": [
+            "Influence of Disciplines on Machine Learning",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Statistics",
+            "C"
+        ],
+        "obj": [
+            "Characterization of Errors",
+            "C"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Characterization of Errors",
+            "C"
+        ],
+        "obj": [
+            "Statistics",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Characterization of Errors",
+            "C"
+        ],
+        "obj": [
+            "Bias",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bias",
+            "S"
+        ],
+        "obj": [
+            "Characterization of Errors",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Characterization of Errors",
+            "C"
+        ],
+        "obj": [
+            "Variance",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Variance",
+            "S"
+        ],
+        "obj": [
+            "Characterization of Errors",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Statistics",
+            "C"
+        ],
+        "obj": [
+            "Estimating Accuracy of Hypothesis based on Limited Data Sample",
+            "E"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Estimating Accuracy of Hypothesis based on Limited Data Sample",
+            "E"
+        ],
+        "obj": [
+            "Statistics",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Statistics",
+            "C"
+        ],
+        "obj": [
+            "Confidence Intervals",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Confidence Intervals",
+            "S"
+        ],
+        "obj": [
+            "Statistics",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Statistics",
+            "C"
+        ],
+        "obj": [
+            "Statistical Tests",
+            "S"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Statistical Tests",
+            "S"
+        ],
+        "obj": [
+            "Statistics",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Learning to Recognize Spoken Words",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning to Recognize Spoken Words",
+            "T"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning to Recognize Spoken Words",
+            "T"
+        ],
+        "obj": [
+            "Sphinx System",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sphinx System",
+            "M"
+        ],
+        "obj": [
+            "Learning to Recognize Spoken Words",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning to Recognize Spoken Words",
+            "T"
+        ],
+        "obj": [
+            "Neural Networks",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Neural Networks",
+            "M"
+        ],
+        "obj": [
+            "Learning to Recognize Spoken Words",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning to Recognize Spoken Words",
+            "T"
+        ],
+        "obj": [
+            "Hidden Markov Models",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Hidden Markov Models",
+            "M"
+        ],
+        "obj": [
+            "Learning to Recognize Spoken Words",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Learning to Drive an Autonomous Vehicle",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning to Drive an Autonomous Vehicle",
+            "T"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning to Drive an Autonomous Vehicle",
+            "T"
+        ],
+        "obj": [
+            "ALVINN System",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "ALVINN System",
+            "M"
+        ],
+        "obj": [
+            "Learning to Drive an Autonomous Vehicle",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Learning to Classify new Astronomical Structures",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning to Classify new Astronomical Structures",
+            "T"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning to Classify new Astronomical Structures",
+            "T"
+        ],
+        "obj": [
+            "Decision Tree Learning Algorithms",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Decision Tree Learning Algorithms",
+            "M"
+        ],
+        "obj": [
+            "Learning to Classify new Astronomical Structures",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Learning to play Backgammon",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Learning to play Backgammon",
+            "T"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Learning to play Backgammon",
+            "T"
+        ],
+        "obj": [
+            "TD-Gammon",
+            "M"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "TD-Gammon",
+            "M"
+        ],
+        "obj": [
+            "Learning to play Backgammon",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Checkers Learning Problem",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Checkers Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Handwriting Recognition Learning Problem",
+            "T"
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Handwriting Recognition Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
             "Designing a Learning System",
             "C"
         ],
@@ -9554,14 +10588,14 @@
         ],
         "obj": [
             "Discriminant Analysis",
-            "M"
+            "A"
         ],
         "e": "CONSISTS OF"
     },
     {
         "sub": [
             "Discriminant Analysis",
-            "M"
+            "A"
         ],
         "obj": [
             "Supervised Learning: Partition Methods",
@@ -9572,29 +10606,29 @@
     {
         "sub": [
             "Discriminant Analysis",
-            "M"
+            "A"
         ],
         "obj": [
             "Distance Based Discriminant Analysis",
-            "M"
+            "A"
         ],
         "e": "CONSISTS OF"
     },
     {
         "sub": [
             "Distance Based Discriminant Analysis",
-            "M"
+            "A"
         ],
         "obj": [
             "Discriminant Analysis",
-            "M"
+            "A"
         ],
         "e": "IS A PART OF"
     },
     {
         "sub": [
             "Discriminant Analysis",
-            "M"
+            "A"
         ],
         "obj": [
             "Bayes Rules",
@@ -9609,29 +10643,29 @@
         ],
         "obj": [
             "Discriminant Analysis",
-            "M"
+            "A"
         ],
         "e": "IS A PART OF"
     },
     {
         "sub": [
             "Discriminant Analysis",
-            "M"
+            "A"
         ],
         "obj": [
             "Probability Based Discriminant Analysis",
-            "M"
+            "A"
         ],
         "e": "CONSISTS OF"
     },
     {
         "sub": [
             "Probability Based Discriminant Analysis",
-            "M"
+            "A"
         ],
         "obj": [
             "Discriminant Analysis",
-            "M"
+            "A"
         ],
         "e": "IS A PART OF"
     },

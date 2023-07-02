@@ -96,7 +96,10 @@ if __name__ == "__main__":
         if path == "unified_triples.json": continue
         if path == "sample.json": continue
         full_path = os.path.join("./data/DS_TextBooks", path)
-        kb_json = json.load(open(full_path))
+        try: kb_json = json.load(open(full_path))
+        except json.decoder.JSONDecodeError as e:
+            print(f"{path}: {e}")
+            continue
         triples = extract_triples(kb_json=kb_json)
         print(f"{path}: \x1b[34;1m{len(triples)}\x1b[0m triples")
         unified_triples += triples

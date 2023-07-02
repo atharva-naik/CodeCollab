@@ -16,7 +16,7 @@ from torch.utils.data import DataLoader
 from datautils.code_cell_analysis import obfuscate_code
 from transformers import RobertaModel, RobertaTokenizerFast
 from model.code_similarity_retrievers.datautils import CodeDataset
-from model.code_search import CodeBERTSearchModel, RobertaTokenizer, JuICeKBNNCodeBERTCodeSearchDataset
+from model.code_search import CodeBERTSearchModel, GraphCodeBERTSearchModel, UniXcoderSearchModel, RobertaTokenizer, JuICeKBNNCodeBERTCodeSearchDataset, JuICeKBNNGraphCodeBERTCodeSearchDataset, JuICeKBNNUniXcoderCodeSearchDataset
 
 tokenizer = RobertaTokenizerFast.from_pretrained("neulab/codebert-python")
 LIST_OF_PUNCT_TOKENS = ["|","\\","/",",",")","(","!",";","`","|","{","}","'",'"',"[","]"]
@@ -85,15 +85,40 @@ class ZeroShotCodeBERTRetriever(nn.Module):
 class CodeBERTDenseSearcher:
     def __init__(self, path: str="microsoft/codebert-base", device: str="cuda:0",
                  ckpt_path: str="./experiments/CoNaLa_CSN_CodeBERT_ObfCodeSearch2/best_model.pt", 
-                 tok_args: str = {
+                 tok_args: str={
                     "return_tensors": "pt", "padding": "max_length",
                     "truncation": True, "max_length": 100,
-                }, faiss_index_path: str="./dense_indices/codebert_partial.index"):
+                }, model_type: str="codebert",
+                faiss_index_path: str="./dense_indices/cos_sim.index"):
+        if model_type == "codebert":
+            tok_args = {
+                "return_tensors": "pt",
+                "padding": "max_length",
+                "truncation": True,
+                "max_length": 100,
+            }
+        elif model_type == "graphcodebert":
+            tok_args = {
+                "nl_length": 100, 
+                "code_length": 100, 
+                "data_flow_length": 64
+            }
+        elif model_type == "unixcoder":
+            tok_args = {
+                "return_tensors": "pt",
+                "padding": "max_length",
+                "truncation": True,
+                "max_length": 100,
+            }
         self.tok_args = tok_args
+        self.model_type = model_type
         self.tokenizer = RobertaTokenizer.from_pretrained(path)
-        self.model = CodeBERTSearchModel(
-            path, device=device,
-        )
+        if model_type == "codebert":
+            self.model = CodeBERTSearchModel(path, device=device)
+        elif model_type == "graphcodebert":
+            self.model = GraphCodeBERTSearchModel(path, device=device)
+        elif model_type == "unixcoder":
+            self.model = UniXcoderSearchModel(path, device=device)
         self.device = device    
         self.faiss_index_path = faiss_index_path
         # ckpt_path = os.path.join(ckp, "best_model.pt")
@@ -109,11 +134,24 @@ class CodeBERTDenseSearcher:
         # inp = self.tokenizer(query, **self.tok_args)
         assert not(text_query and obf_code), "code obfuscation not applicable in text query mode"
         if obf_code: queries = [obfuscate_code(q) for q in queries]
-        dataset = JuICeKBNNCodeBERTCodeSearchDataset(
-            tokenizer=self.tokenizer,
-            queries=queries,
-            **self.tok_args,
-        )
+        if self.model_type == "codebert":
+            dataset = JuICeKBNNCodeBERTCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        elif self.model_type == "graphcodebert":
+            dataset = JuICeKBNNGraphCodeBERTCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        elif self.model_type == "unixcoder":
+            dataset = JuICeKBNNUniXcoderCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
         dataloader = dataset.get_docs_loader()
         q_mat = []
         for step, batch in tqdm(
@@ -138,12 +176,27 @@ class CodeBERTDenseSearcher:
         # inp = self.tokenizer(query, **self.tok_args)
         assert not(text_query and obf_code), "code obfuscation not applicable in text query mode"
         if obf_code: queries = [obfuscate_code(q) for q in queries]
-        dataset = JuICeKBNNCodeBERTCodeSearchDataset(
-            tokenizer=self.tokenizer,
-            queries=queries,
-            **self.tok_args,
-        )
+        if self.model_type == "codebert":
+            dataset = JuICeKBNNCodeBERTCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        elif self.model_type == "graphcodebert":
+            dataset = JuICeKBNNGraphCodeBERTCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        elif self.model_type == "unixcoder":
+            dataset = JuICeKBNNUniXcoderCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        # print(f"dataset: {len(dataset.docs)}")
         dataloader = dataset.get_docs_loader()
+        # print(f"dataloader: {len(dataloader)}")
         q_mat = []
         for step, batch in tqdm(
             enumerate(dataloader),
@@ -153,6 +206,7 @@ class CodeBERTDenseSearcher:
             with torch.no_grad():
                 for j in range(len(batch)): batch[j] = batch[j].to(self.device) # print(batch)
                 dtype = "text" if text_query else "code"
+                # print(len(batch), dtype)
                 q_enc = self.model.encode(*batch, dtype=dtype).cpu().detach().tolist()
                 q_mat += q_enc
         q_mat = torch.as_tensor(q_mat).numpy()

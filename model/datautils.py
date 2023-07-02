@@ -660,7 +660,7 @@ class JuICeKBNNGraphCodeBERTCodeSearchDataset(Dataset):
                     json.dump(codes, f, indent=4)
             folder = folder_
         if queries is not None:
-            self.docs = queries[:skip]
+            self.docs = queries
         else:
             self.data = json.load(open(folder))
             self.docs = []

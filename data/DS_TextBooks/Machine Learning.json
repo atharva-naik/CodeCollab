@@ -16,7 +16,7 @@
                 "Computational Effort::C": null,
                 "Number of Training Examples::C": null,
                 "Number of Mistakes::C": null
-            }  
+            }
         },
         "Control Theory::C": {
             "Objectives to Predict Next State of Process::T": null,
@@ -29,13 +29,13 @@
             "Relation of Optimal Codes to Optimal Training Sequences for Encoding Hypothesis::C": null
         },
         "Philosophy::C": {
-            "Occam's Razor": "principle suggesting the simplest hypothesis is the best",
+            "Occam's Razor::C": "principle suggesting the simplest hypothesis is the best",
             "Analysis of Generalization beyond Observed Data::A": null
         },
         "Psychology and Neurobiology::C": {
-            "Power Law of Practice": "It states that over a very broad range of learning problems, people's response time improves with practice according to a power law",
+            "Power Law of Practice::C": "It states that over a very broad range of learning problems, people's response time improves with practice according to a power law",
             "Neurobiological Motivation for Artificial Neural Networks::C": null
-        }, 
+        },
         "Statistics::C": {
             "Characterization of Errors::C": {
                 "Bias::S": null,
@@ -63,7 +63,6 @@
         },
         "Checkers Learning Problem::T": null,
         "Handwriting Recognition Learning Problem::T": null
-
     },
     "Designing a Learning System::C": {
         "Choosing the Training Experience::C": null,
@@ -135,7 +134,7 @@
                 "Generalization, Overfitting, and Stopping Criterion::C": null
             },
             "Derivation of Backpropagation Rule::C": null
-        },    
+        },
         "Face Recognition::T": {
             "Task Description::C": null,
             "Design Choices::C": null,
