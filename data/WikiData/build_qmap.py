@@ -20,7 +20,7 @@ def initial_build():
         json.dump(qmap, f, indent=4)
 
 def update_build():
-    curr_qmap = json.load(open("./data/WikiData/qmap.json"))
+    curr_qmap = json.load(open("./data/WikiData/qmap1.json"))
     print(len(curr_qmap))
     qids = json.load(open("./data/WikiData/qids.json"))
     for qid in tqdm(qids):

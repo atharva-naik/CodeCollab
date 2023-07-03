@@ -9,11 +9,11 @@ from collections import defaultdict
 q_counts = defaultdict(lambda: [0,0])
 # how many times is a P code a relationship 
 p_counts = defaultdict(lambda: 0) 
-triples_graph = defaultdict(lambda: [])
-qmap = json.load(open("./data/WikiData/qmap.json"))
+triples_graph = defaultdict(lambda: {"c": 0, "E": []})
+qmap = json.load(open("./data/WikiData/qmap1.json"))
 pmap = json.load(open("./data/WikiData/pmap.json"))
 # list of relevant nodes (for data science, CS, ML, etc.)
-REL_NODES = {
+NODE_COSTS = {
     "Q11660": 0, # artificial intelligence
     "Q2539": 0, # machine learning
     "Q2374463": 0, # data science
@@ -110,30 +110,38 @@ BLOCK_LIST = [
 if __name__ == "__main__":
     with open("./data/WikiData/qpq_triples.jsonl") as f:
         pbar = tqdm(f, desc="")
+        all_ctr = 0
         edge_ctr = 0 # count number of edges
         for line in pbar:
-            Q1, P, Q2 = json.loads(line.strip())
-            Q1 = qmap.get(Q1, Q1)
-            Q2 = qmap.get(Q2, Q2)
-            if Q1 not in REL_NODES and Q2 not in REL_NODES: continue
+            all_ctr += 1
+            if all_ctr % 10000000 == 0:
+                print(f"N: {len(q_counts)} E: {edge_ctr}")
+
+            Q1, P, Q2 = json.loads(line.strip())            
+            if Q1 not in NODE_COSTS and Q2 not in NODE_COSTS: continue
             if Q1 in BLOCK_LIST or Q2 in BLOCK_LIST: continue
+
             if P not in PROPS: continue
-            if Q1 not in REL_NODES:
-                REL_NODES[Q1] = REL_NODES[Q2] + 1
-            if Q2 not in REL_NODES:
-                REL_NODES[Q2] = REL_NODES[Q1] + 1
-            if max(REL_NODES[Q1], REL_NODES[Q2]) > 5: continue
+            if Q1 not in NODE_COSTS:
+                NODE_COSTS[Q1] = NODE_COSTS[Q2] + 1
+            if Q2 not in NODE_COSTS:
+                NODE_COSTS[Q2] = NODE_COSTS[Q1] + 1
+            if max(NODE_COSTS[Q1], NODE_COSTS[Q2]) > 5: continue
+            cost =  NODE_COSTS[Q1] # node cost.
+
             q_counts[Q1][0] += 1 
             q_counts[Q2][1] += 1
             p_counts[P] += 1
-            P = pmap[P]
-            triples_graph[Q1].append((Q2,P))
-            edge_ctr += 1
-            if edge_ctr % 1000 == 0: # print number of nodes with accuracy of upto 10000
-                # break
-                print(f"N: {len(q_counts)} E: {edge_ctr}")
 
-print(f"REL_NODES: {len(REL_NODES)}")
+            Q1 = qmap.get(Q1, Q1)
+            Q2 = qmap.get(Q2, Q2)
+            P = pmap[P]
+
+            triples_graph[Q1]["c"] = cost
+            triples_graph[Q1]["E"].append((Q2,P))
+            edge_ctr += 1
+            
+print(f"NODE_COSTS: {len(NODE_COSTS)}")
 with open("./data/WikiData/qids.json", "w") as f:
     print(f"qids: {len(q_counts)}")
     json.dump(dict(q_counts), f, indent=4)
