@@ -90,18 +90,25 @@ if __name__ == "__main__":
     plt.savefig("./plots/effect_of_obfuscation_tsne_shift_and_barrier.png")
 
     # make an interactive plot to show effect of obfuscation.
-    fig = make_subplots(rows=1, cols=1, specs=[[{'type': 'scene'}]],
+    fig = make_subplots(rows=1, cols=1, #specs=[[{'type': 'scene'}]],
                         subplot_titles=('Effect of obfuscation'))
     # hoverable interactive scatterplot that displays the code when you hover over it.
+    plot_data_save_path = "./plots/interactive_tsne_plot.json"
     fig.add_trace(
-        go.Scatter2(
-            x=tsne_vecs[:,0],
-            y=tsne_vecs[:,1],
-            text=sampled_codes, 
-            hovertemplate='%{text}'
+        go.Scatter(
+            x=np.concatenate([tsne_vecs[:,0], tsne_obf_vecs[:,0]]),
+            y=np.concatenate([tsne_vecs[:,1], tsne_obf_vecs[:,1]]),
+            text=[sampled_codes]+[sampled_codes], hovertemplate='%{text}'
         ), 
         row=1, 
         col=1
     )
+    interactive_tsne_json = {
+        "x": np.concatenate([tsne_vecs[:,0], tsne_obf_vecs[:,0]]).tolist(),
+        "y": np.concatenate([tsne_vecs[:,1], tsne_obf_vecs[:,1]]).tolist(),
+        "text": [sampled_codes]+[sampled_codes],
+    }
+    with open(plot_data_save_path, "w") as f:
+        json.dump(interactive_tsne_json, f, indent=4)
     # fig.update_layout(title='Add Custom Data')
     fig.show()
