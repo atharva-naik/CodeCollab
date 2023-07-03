@@ -127,7 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-data/FCDS
+data/FCDS/codes
+data/FCDS/*.csv
+data/FCDS/code_submissions_dataset.json
 data/CoNaLa/.*jsonl
 data/CoNaLa/.*json
 data/CodeSearchNet

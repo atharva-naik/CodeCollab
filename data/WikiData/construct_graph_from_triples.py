@@ -179,6 +179,7 @@ if __name__ == "__main__":
         {"Q": "economic activity", "P": "instance of"},
         {"Q": "economic activity", "P": "subclass of"},
     )
+    filter_conditions = graph_proc.filter_conditions
     with open("./data/WikiData/qpq_triples.jsonl") as f:
         pbar = tqdm(f, desc="")
         all_ctr = 0
@@ -197,7 +198,7 @@ if __name__ == "__main__":
                 NODE_COSTS[Q1] = NODE_COSTS[Q2] + 1
             if Q2 not in NODE_COSTS:
                 NODE_COSTS[Q2] = NODE_COSTS[Q1] + 1
-            if max(NODE_COSTS[Q1], NODE_COSTS[Q2]) > 10: continue
+            if max(NODE_COSTS[Q1], NODE_COSTS[Q2]) > 7: continue
             cost =  NODE_COSTS[Q1] # node cost.
 
             q_counts[Q1][0] += 1 
@@ -207,14 +208,15 @@ if __name__ == "__main__":
             Q1 = qmap.get(Q1, Q1)
             Q2 = qmap.get(Q2, Q2)
             P = pmap[P]
-
-            triples_graph[Q1]["c"] = cost
-            triples_graph[Q1]["E"].append((Q2,P))
-            edge_ctr += 1
-    triples_graph = dict(triples_graph)
-    pruned_triples_graph = graph_proc.prune(triples_graph)
-    print(f"size of graph: {len(triples_graph)}")
-    print(f"size of pruned graph: {len(pruned_triples_graph)}")
+            
+            if f"{P.strip()} {Q2.strip()}" not in filter_conditions:
+                triples_graph[Q1]["c"] = cost
+                triples_graph[Q1]["E"].append((Q2,P))
+                edge_ctr += 1
+    # triples_graph = dict(triples_graph)
+    # pruned_triples_graph = graph_proc.prune(triples_graph)
+    # print(f"size of graph: {len(triples_graph)}")
+    # print(f"size of pruned graph: {len(pruned_triples_graph)}")
     print(f"NODE_COSTS: {len(NODE_COSTS)}")
     with open("./data/WikiData/qids.json", "w") as f:
         print(f"qids: {len(q_counts)}")
@@ -223,4 +225,4 @@ if __name__ == "__main__":
         print(f"pids: {len(p_counts)}")
         json.dump(dict(p_counts), f, indent=4)
     with open("./data/WikiData/ds_qpq_graph.json", "w") as f:
-        json.dump(dict(pruned_triples_graph), f, indent=4)
+        json.dump(dict(triples_graph), f, indent=4)
