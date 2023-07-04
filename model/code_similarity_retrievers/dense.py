@@ -218,7 +218,8 @@ class CodeBERTDenseSearcher:
         return self.dense_index.search(q_mat, k=k)
 
 class EnsembleDenseCodeSearcher:
-    def __init__(self, path: str="microsoft/codebert-base", device: str="cuda:0",
+    def __init__(self, path: str="microsoft/codebert-base", 
+                 devices: List[str]=["cuda:0","cuda:0"],
                  ckpt_paths: str=[
                     "./experiments/CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim/best_model.pt",
                     "./experiments/CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim/best_model.pt",
@@ -232,6 +233,8 @@ class EnsembleDenseCodeSearcher:
                     "./dense_indices/codebert_obf_cos_sim.index",
                 ]):
         # NOTE: SANITY CHECKS 
+        # assert that the number of devices are equal to the number of checkpoints.
+        assert len(ckpt_paths) == len(devices)
         # assert to ensure there are equal number of checkpoints and saved dense indices:
         assert len(faiss_index_paths) == len(ckpt_paths)
         # # there also should be equal number of boolean flags (whether to obfuscated code or not) as there are faiss index paths.
@@ -261,12 +264,12 @@ class EnsembleDenseCodeSearcher:
         self.model_type = model_type
         self.tokenizer = RobertaTokenizer.from_pretrained(path)
         if model_type == "codebert":
-            self.models = [CodeBERTSearchModel(path, device=device) for _ in range(len(ckpt_paths))]
+            self.models = [CodeBERTSearchModel(path, device=devices[i]) for _ in range(len(ckpt_paths))]
         elif model_type == "graphcodebert":
-            self.models = [GraphCodeBERTSearchModel(path, device=device) for _ in range(len(ckpt_paths))]
+            self.models = [GraphCodeBERTSearchModel(path, device=devices[i]) for _ in range(len(ckpt_paths))]
         elif model_type == "unixcoder":
-            self.models = [UniXcoderSearchModel(path, device=device) for _ in range(len(ckpt_paths))]
-        self.device = device    
+            self.models = [UniXcoderSearchModel(path, device=devices[i]) for _ in range(len(ckpt_paths))]
+        self.device = devices
         self.faiss_index_path = faiss_index_paths
 
         # load up the chechkpoints:
@@ -322,6 +325,7 @@ class EnsembleDenseCodeSearcher:
 
     def search(self, queries: List[str], k: int=10, use_cos_sim: bool=True):
         """this function assumes only text queries will be asked"""
+        # create dataset object.
         if self.model_type == "codebert":
             dataset = JuICeKBNNCodeBERTCodeSearchDataset(
                 tokenizer=self.tokenizer,
@@ -340,8 +344,10 @@ class EnsembleDenseCodeSearcher:
                 queries=queries,
                 **self.tok_args,
             )
+        # instantiate data loader and ensemble score aggreation data structure (list of index-wise score dictionaries)
         dataloader = dataset.get_docs_loader()
         ensemble_scores = [defaultdict(lambda: 0) for _ in queries]
+        # loop for encoding+search
         for i, model in enumerate(self.models):
             q_mat = []
             for step, batch in tqdm(
@@ -354,14 +360,17 @@ class EnsembleDenseCodeSearcher:
                     q_enc = model.encode(*batch, dtype="text").cpu().detach().tolist()
                     q_mat += q_enc
             q_mat = torch.as_tensor(q_mat).numpy()
+            
             # normalize by L2 norm if cosine similarity is being used.
             if use_cos_sim: faiss.normalize_L2(q_mat)
             print(f"doing search for model-{i+1}")
             scores, indices = self.dense_indices[i].search(q_mat, k=k)
+            
             # iterate over data/instances and aggregate scores per index
             for i in range(len(indices)):
                 for ind, score in zip(indices[i], scores[i]):
                     ensemble_scores[i][ind] += score
+        
         # get the top-k index predictions and scores from the aggregated scores.
         ensemble_inds = np.array(
             [
