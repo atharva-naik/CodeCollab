@@ -49,13 +49,13 @@ def chunk_code_to_variable_blocks(code: str) -> Dict[str, str]:
 # main
 if __name__ == "__main__":
     eg_code = """def predict_user_user(X, W, user_means, eps=1e-12):
-        X_normalized = X-user_means.reshape(-1,1)
-        X_mask = np.where(X>0, 1,0)
-        num = W.dot(X_normalized*X_mask)
-        W_non_zero = W.dot(X_mask)
-        term = num / (eps + W_non_zero)
+    X_normalized = X-user_means.reshape(-1,1)
+    X_mask = np.where(X>0, 1,0)
+    num = W.dot(X_normalized*X_mask)
+    W_non_zero = W.dot(X_mask)
+    term = num / (eps + W_non_zero)
 
-        return user_means.reshape(-1,1) + term"""
+    return user_means.reshape(-1,1) + term"""
     variable_blocks = chunk_code_to_variable_blocks(eg_code)
     for v, block in variable_blocks.items():
         print("\n------------------------------------")

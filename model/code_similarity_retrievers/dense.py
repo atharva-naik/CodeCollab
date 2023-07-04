@@ -215,3 +215,145 @@ class CodeBERTDenseSearcher:
         print("constructed query matrix")
 
         return self.dense_index.search(q_mat, k=k)
+
+class EnsembleDenseCodeSearcher:
+    def __init__(self, path: str="microsoft/codebert-base", device: str="cuda:0",
+                 ckpt_paths: str=[
+                    "./experiments/CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim/best_model.pt",
+                    "./experiments/CoNaLa_CSN_CodeBERT_ObfCodeSearch4_CosSim/best_model.pt",
+                 ], 
+                 tok_args: str={
+                    "return_tensors": "pt", "padding": "max_length",
+                    "truncation": True, "max_length": 100,
+                }, model_type: str="codebert", # requires_obf: List[bool]=[True, False],
+                faiss_index_paths: List[str]=[
+                    "./dense_indices/CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim/cos_sim.index",
+                    "./dense_indices/codebert_obf_cos_sim.index",
+                ]):
+        # NOTE: SANITY CHECKS 
+        # assert to ensure there are equal number of checkpoints and saved dense indices:
+        assert len(faiss_index_paths) == len(ckpt_paths)
+        # # there also should be equal number of boolean flags (whether to obfuscated code or not) as there are faiss index paths.
+        # assert len(requires_obf) == len(ckpt_paths)
+
+        if model_type == "codebert":
+            tok_args = {
+                "return_tensors": "pt",
+                "padding": "max_length",
+                "truncation": True,
+                "max_length": 100,
+            }
+        elif model_type == "graphcodebert":
+            tok_args = {
+                "nl_length": 100, 
+                "code_length": 100, 
+                "data_flow_length": 64
+            }
+        elif model_type == "unixcoder":
+            tok_args = {
+                "return_tensors": "pt",
+                "padding": "max_length",
+                "truncation": True,
+                "max_length": 100,
+            }
+        self.tok_args = tok_args
+        self.model_type = model_type
+        self.tokenizer = RobertaTokenizer.from_pretrained(path)
+        if model_type == "codebert":
+            self.models = [CodeBERTSearchModel(path, device=device) for _ in range(len(ckpt_paths))]
+        elif model_type == "graphcodebert":
+            self.models = [GraphCodeBERTSearchModel(path, device=device) for _ in range(len(ckpt_paths))]
+        elif model_type == "unixcoder":
+            self.models = [UniXcoderSearchModel(path, device=device) for _ in range(len(ckpt_paths))]
+        self.device = device    
+        self.faiss_index_path = faiss_index_paths
+
+        # load up the chechkpoints:
+        for i, ckpt_path in enumerate(ckpt_paths):
+            ckpt_dict = torch.load(ckpt_path, map_location="cpu")
+            print(f"loaded model from: {ckpt_path}")
+            self.models[i].load_state_dict(ckpt_dict["model_state_dict"])
+            self.models[i].to(self.device)
+
+        self.dense_indices = []
+        for faiss_index_path in faiss_index_paths:
+            self.dense_indices.append(faiss.read_index(faiss_index_path))
+
+    def encode(self, queries: List[str], use_cos_sim: bool=True):
+        """this function assumes only text queries will be asked."""
+        if self.model_type == "codebert":
+            dataset = JuICeKBNNCodeBERTCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        elif self.model_type == "graphcodebert":
+            dataset = JuICeKBNNGraphCodeBERTCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        elif self.model_type == "unixcoder":
+            dataset = JuICeKBNNUniXcoderCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        dataloader = dataset.get_docs_loader()
+        ensemble_enc = []
+        for model in self.models:
+            q_mat = []
+            for step, batch in tqdm(
+                enumerate(dataloader),
+                total=len(dataloader),
+            ):
+                self.model.zero_grad()
+                with torch.no_grad():
+                    for j in range(len(batch)): batch[j] = batch[j].to(self.device)
+                    q_enc = model.encode(*batch, dtype="text").cpu().detach().tolist()
+                    q_mat += q_enc
+            q_mat = torch.as_tensor(q_mat).numpy()
+            # normalize by L2 norm if cosine similarity is being used.
+            if use_cos_sim: faiss.normalize_L2(q_mat)
+            ensemble_enc.append(q_mat)
+        # num_models x data_size x emb_size
+        return ensemble_enc # list of encodings from each model of the ensemble
+
+    def search(self, queries: List[str], k: int=10, use_cos_sim: bool=True):
+        """this function assumes only text queries will be asked"""
+        if self.model_type == "codebert":
+            dataset = JuICeKBNNCodeBERTCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        elif self.model_type == "graphcodebert":
+            dataset = JuICeKBNNGraphCodeBERTCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        elif self.model_type == "unixcoder":
+            dataset = JuICeKBNNUniXcoderCodeSearchDataset(
+                tokenizer=self.tokenizer,
+                queries=queries,
+                **self.tok_args,
+            )
+        dataloader = dataset.get_docs_loader()
+        for i, model in enumerate(self.models):
+            q_mat = []
+            for step, batch in tqdm(
+                enumerate(dataloader),
+                total=len(dataloader),
+            ):
+                model.zero_grad()
+                with torch.no_grad():
+                    for j in range(len(batch)): batch[j] = batch[j].to(self.device)
+                    q_enc = model.encode(*batch, dtype="text").cpu().detach().tolist()
+                    q_mat += q_enc
+            q_mat = torch.as_tensor(q_mat).numpy()
+            # normalize by L2 norm if cosine similarity is being used.
+            if use_cos_sim: faiss.normalize_L2(q_mat)
+            output = self.dense_indices[i].search(q_mat, k=k)
+            
+            return output
