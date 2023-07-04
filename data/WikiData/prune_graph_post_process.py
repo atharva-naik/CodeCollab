@@ -74,6 +74,16 @@ if __name__ == "__main__":
         {"Q": "archaeology", "P": "instance of"},
         {"Q": "economic activity", "P": "instance of"},
         {"Q": "economic activity", "P": "subclass of"},
+        {"Q": "film", "P": "instance of"},
+        {"Q": "business", "P": "instance of"},
+        {"Q": "company", "P": "instance of"},
+        {"Q": "biological process", "P": "instance of"},
+        {"Q": "family tree", "P": "instance of"},
+        {"Q": "infectious disease", "P": "instance of"},
+        {"Q": "infectious disease", "P": "subclass of"},
+        {"Q": "occupation", "P": "instance of"},
+        {"Q": "article", "P": "instance of"},
+        {"Q": "article", "P": "subclass of"},
     )
     print(graph_proc)
     print(len(qpq_graph))
