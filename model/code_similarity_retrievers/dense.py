@@ -11,6 +11,7 @@ import numpy as np
 from typing import *
 from tqdm import tqdm
 import torch.nn as nn
+from collections import defaultdict
 from sentence_transformers import util
 from torch.utils.data import DataLoader
 from datautils.code_cell_analysis import obfuscate_code
@@ -340,6 +341,7 @@ class EnsembleDenseCodeSearcher:
                 **self.tok_args,
             )
         dataloader = dataset.get_docs_loader()
+        ensemble_scores = [defaultdict(lambda: 0) for _ in queries]
         for i, model in enumerate(self.models):
             q_mat = []
             for step, batch in tqdm(
@@ -354,6 +356,33 @@ class EnsembleDenseCodeSearcher:
             q_mat = torch.as_tensor(q_mat).numpy()
             # normalize by L2 norm if cosine similarity is being used.
             if use_cos_sim: faiss.normalize_L2(q_mat)
-            output = self.dense_indices[i].search(q_mat, k=k)
-            
-            return output
+            print(f"doing search for model-{i+1}")
+            scores, indices = self.dense_indices[i].search(q_mat, k=k)
+            # iterate over data/instances and aggregate scores per index
+            for i in range(len(indices)):
+                for ind, score in zip(indices[i], scores[i]):
+                    ensemble_scores[i][ind] += score
+        # get the top-k index predictions and scores from the aggregated scores.
+        ensemble_inds = np.array(
+            [
+                [
+                    k for k,v in sorted(
+                        ind_scores.items(), 
+                        key=lambda x: x[1],
+                        reverse=True
+                )
+            ][:k] for ind_scores in ensemble_scores]
+        )
+        ensemble_scores = np.array(
+            [
+                [
+                    v for k,v in sorted(
+                        ind_scores.items(), 
+                        key=lambda x: x[1],
+                        reverse=True
+                    )
+                ][:k] for ind_scores in ensemble_scores
+            ]
+        )
+
+        return ensemble_scores, ensemble_inds
