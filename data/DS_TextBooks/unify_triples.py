@@ -19,7 +19,8 @@ UNIQUE_NODES = {}
 def get_reverse_relation(rel_type: str) -> str:
     rel_type = rel_type.strip().upper()
     mapping = {"has part(s)": "part of", "influenced by": "influences", "uses": "used by",
-               "has instance": "instance of", "modeled by": "can model", "superclass of": "subclass of"}
+               "has instance": "instance of", "modeled by": "can model", "superclass of": "subclass of",
+               "evaluated by": "evaluates"}
     inv_mapping = {v: k for k,v in mapping.items()}
     mapping.update(inv_mapping)
     for key, value in mapping.items():

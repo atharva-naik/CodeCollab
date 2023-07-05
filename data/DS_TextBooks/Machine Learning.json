@@ -47,6 +47,21 @@
         }
     },
     "Well Posed Learning Problems::T": {
+        "Task T::T::has goal(s)": {
+            "Playing Checkers::T::superclass of": null,
+            "Recognizing and Classifying Handwritten Words in Images::T::superclass of": null,
+            "Driving on Public Highways using Vision Sensors::T::superclass of": null
+        },
+        "Performance Measure P::E::evaluated by": {
+            "Percent of Games Won Against Opponents::E::superclass of": null,
+            "Percent of Words Correctly Classified::E::superclass of": null,
+            "Average Distance Traveled before Error::E::superclass of": null
+        },
+        "Training Experience E::D::uses": {
+            "Practice Games Against Itself::D::superclass of": null,
+            "Database of Handwritten Words and Given Classifications::D::superclass of": null,
+            "Sequence of Images and Steering Commands Recorded while Observing Human Driver::D::superclass of": null
+        },
         "Learning to Recognize Spoken Words::T::has instance": {
             "Sphinx System::M::modeled by": "learns speaker-specific strategies for recognizing the primitive sounds (phonemes) and words from the observed speech signal",
             "Neural Networks::M::modeled by": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc.",
@@ -61,14 +76,44 @@
         "Learning to play Backgammon::T::has instance": {
             "TD-Gammon::M::modeled by": "computer program for backgammon that learns through self play"
         },
-        "Checkers Learning Problem::T::has instance": null,
-        "Handwriting Recognition Learning Problem::T::has instance": null
+        "Checkers Learning Problem::T::has instance": {
+            "Playing Checkers::T::has goal(s)": null,
+            "Percent of Games Won Against Opponents::E::evaluated by": null,
+            "Practice Games Against Itself::D::uses": null
+        },
+        "Handwriting Recognition Learning Problem::T::has instance": {
+            "Recognizing and Classifying Handwritten Words in Images::T::has goal(s)": null,
+            "Percent of Words Correctly Classified::E::evaluated by": null,
+            "Database of Handwritten Words and Given Classifications::D::uses": null
+        },
+        "Robot Driving Learning Problem::T::has instance": {
+            "Driving on Public Highways using Vision Sensors::T::has goal(s)": null,
+            "Average Distance Traveled before Error::E::evaluated by": null,
+            "Sequence of Images and Steering Commands Recorded while Observing Human Driver::D::uses": null
+        }
     },
     "Designing a Learning System::C": {
-        "Choosing the Training Experience::C::has part(s)": null,
+        "Choosing the Training Experience::C::has part(s)": {
+            "STEPS": [
+                "choose exact type of knowledge to be learned",
+                "choose representation for target knowledge",
+                "choose learning mechanism"
+            ]
+        },
         "Choosing the Target Function::C::has part(s)": null,
         "Choosing a Representation for the Target Function::C::has part(s)": null,
-        "Choosing a Function Approximation Algorithm::C::has part(s)": null
+        "Choosing a Function Approximation Algorithm::C::has part(s)": {
+            "Estimating Training Values::C::has part(s)": null,
+            "Adjusting the Weights::C::has part(s)": {
+                "LMS Weight Update Rule::C::has instance": null
+            }
+        },
+        "Final Design::C::has goal(s)": {
+            "Performance System::M::has part(s)": null,
+            "Critic::M::has part(s)": null,
+            "Generalizer::M::has part(s)": null,
+            "Experiment Generator::M::has part(s)": null
+        }
     },
     "Issues in Machine Learning::C": null,
     "Concept Learning::M": {

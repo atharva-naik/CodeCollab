@@ -4735,6 +4735,270 @@
             "T"
         ],
         "obj": [
+            "Task T",
+            "T"
+        ],
+        "e": "HAS GOAL(S)"
+    },
+    {
+        "sub": [
+            "Task T",
+            "T"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Task T",
+            "T"
+        ],
+        "obj": [
+            "Playing Checkers",
+            "T"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Playing Checkers",
+            "T"
+        ],
+        "obj": [
+            "Task T",
+            "T"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Task T",
+            "T"
+        ],
+        "obj": [
+            "Recognizing and Classifying Handwritten Words in Images",
+            "T"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Recognizing and Classifying Handwritten Words in Images",
+            "T"
+        ],
+        "obj": [
+            "Task T",
+            "T"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Task T",
+            "T"
+        ],
+        "obj": [
+            "Driving on Public Highways using Vision Sensors",
+            "T"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Driving on Public Highways using Vision Sensors",
+            "T"
+        ],
+        "obj": [
+            "Task T",
+            "T"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Performance Measure P",
+            "E"
+        ],
+        "e": "EVALUATED BY"
+    },
+    {
+        "sub": [
+            "Performance Measure P",
+            "E"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "EVALUATES"
+    },
+    {
+        "sub": [
+            "Performance Measure P",
+            "E"
+        ],
+        "obj": [
+            "Percent of Games Won Against Opponents",
+            "E"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Percent of Games Won Against Opponents",
+            "E"
+        ],
+        "obj": [
+            "Performance Measure P",
+            "E"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Performance Measure P",
+            "E"
+        ],
+        "obj": [
+            "Percent of Words Correctly Classified",
+            "E"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Percent of Words Correctly Classified",
+            "E"
+        ],
+        "obj": [
+            "Performance Measure P",
+            "E"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Performance Measure P",
+            "E"
+        ],
+        "obj": [
+            "Average Distance Traveled before Error",
+            "E"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Average Distance Traveled before Error",
+            "E"
+        ],
+        "obj": [
+            "Performance Measure P",
+            "E"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Training Experience E",
+            "D"
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Training Experience E",
+            "D"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Training Experience E",
+            "D"
+        ],
+        "obj": [
+            "Practice Games Against Itself",
+            "D"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Practice Games Against Itself",
+            "D"
+        ],
+        "obj": [
+            "Training Experience E",
+            "D"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Training Experience E",
+            "D"
+        ],
+        "obj": [
+            "Database of Handwritten Words and Given Classifications",
+            "D"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Database of Handwritten Words and Given Classifications",
+            "D"
+        ],
+        "obj": [
+            "Training Experience E",
+            "D"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Training Experience E",
+            "D"
+        ],
+        "obj": [
+            "Sequence of Images and Steering Commands Recorded while Observing Human Driver",
+            "D"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Sequence of Images and Steering Commands Recorded while Observing Human Driver",
+            "D"
+        ],
+        "obj": [
+            "Training Experience E",
+            "D"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
             "Learning to Recognize Spoken Words",
             "T"
         ],
@@ -4973,6 +5237,72 @@
     },
     {
         "sub": [
+            "Checkers Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Playing Checkers",
+            "T"
+        ],
+        "e": "HAS GOAL(S)"
+    },
+    {
+        "sub": [
+            "Playing Checkers",
+            "T"
+        ],
+        "obj": [
+            "Checkers Learning Problem",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Checkers Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Percent of Games Won Against Opponents",
+            "E"
+        ],
+        "e": "EVALUATED BY"
+    },
+    {
+        "sub": [
+            "Percent of Games Won Against Opponents",
+            "E"
+        ],
+        "obj": [
+            "Checkers Learning Problem",
+            "T"
+        ],
+        "e": "EVALUATES"
+    },
+    {
+        "sub": [
+            "Checkers Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Practice Games Against Itself",
+            "D"
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Practice Games Against Itself",
+            "D"
+        ],
+        "obj": [
+            "Checkers Learning Problem",
+            "T"
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
             "Well Posed Learning Problems",
             "T"
         ],
@@ -4995,6 +5325,160 @@
     },
     {
         "sub": [
+            "Handwriting Recognition Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Recognizing and Classifying Handwritten Words in Images",
+            "T"
+        ],
+        "e": "HAS GOAL(S)"
+    },
+    {
+        "sub": [
+            "Recognizing and Classifying Handwritten Words in Images",
+            "T"
+        ],
+        "obj": [
+            "Handwriting Recognition Learning Problem",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Handwriting Recognition Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Percent of Words Correctly Classified",
+            "E"
+        ],
+        "e": "EVALUATED BY"
+    },
+    {
+        "sub": [
+            "Percent of Words Correctly Classified",
+            "E"
+        ],
+        "obj": [
+            "Handwriting Recognition Learning Problem",
+            "T"
+        ],
+        "e": "EVALUATES"
+    },
+    {
+        "sub": [
+            "Handwriting Recognition Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Database of Handwritten Words and Given Classifications",
+            "D"
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Database of Handwritten Words and Given Classifications",
+            "D"
+        ],
+        "obj": [
+            "Handwriting Recognition Learning Problem",
+            "T"
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "obj": [
+            "Robot Driving Learning Problem",
+            "T"
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Robot Driving Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T"
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Robot Driving Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Driving on Public Highways using Vision Sensors",
+            "T"
+        ],
+        "e": "HAS GOAL(S)"
+    },
+    {
+        "sub": [
+            "Driving on Public Highways using Vision Sensors",
+            "T"
+        ],
+        "obj": [
+            "Robot Driving Learning Problem",
+            "T"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Robot Driving Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Average Distance Traveled before Error",
+            "E"
+        ],
+        "e": "EVALUATED BY"
+    },
+    {
+        "sub": [
+            "Average Distance Traveled before Error",
+            "E"
+        ],
+        "obj": [
+            "Robot Driving Learning Problem",
+            "T"
+        ],
+        "e": "EVALUATES"
+    },
+    {
+        "sub": [
+            "Robot Driving Learning Problem",
+            "T"
+        ],
+        "obj": [
+            "Sequence of Images and Steering Commands Recorded while Observing Human Driver",
+            "D"
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Sequence of Images and Steering Commands Recorded while Observing Human Driver",
+            "D"
+        ],
+        "obj": [
+            "Robot Driving Learning Problem",
+            "T"
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
             "Designing a Learning System",
             "C"
         ],
@@ -5014,6 +5498,94 @@
             "C"
         ],
         "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Choosing the Training Experience",
+            "C"
+        ],
+        "obj": [
+            "choose exact type of knowledge to be learned",
+            "s"
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "choose exact type of knowledge to be learned",
+            "s"
+        ],
+        "obj": [
+            "Choosing the Training Experience",
+            "C"
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "choose exact type of knowledge to be learned",
+            "s"
+        ],
+        "obj": [
+            "choose representation for target knowledge",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "choose representation for target knowledge",
+            "s"
+        ],
+        "obj": [
+            "choose exact type of knowledge to be learned",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "choose representation for target knowledge",
+            "s"
+        ],
+        "obj": [
+            "choose learning mechanism",
+            "s"
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "choose learning mechanism",
+            "s"
+        ],
+        "obj": [
+            "choose representation for target knowledge",
+            "s"
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Choosing the Training Experience",
+            "C"
+        ],
+        "obj": [
+            "choose learning mechanism",
+            "s"
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "choose learning mechanism",
+            "s"
+        ],
+        "obj": [
+            "Choosing the Training Experience",
+            "C"
+        ],
+        "e": "IS LAST STEP OF"
     },
     {
         "sub": [
@@ -5077,6 +5649,182 @@
         ],
         "obj": [
             "Designing a Learning System",
+            "C"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Choosing a Function Approximation Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Estimating Training Values",
+            "C"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Estimating Training Values",
+            "C"
+        ],
+        "obj": [
+            "Choosing a Function Approximation Algorithm",
+            "C"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Choosing a Function Approximation Algorithm",
+            "C"
+        ],
+        "obj": [
+            "Adjusting the Weights",
+            "C"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Adjusting the Weights",
+            "C"
+        ],
+        "obj": [
+            "Choosing a Function Approximation Algorithm",
+            "C"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Adjusting the Weights",
+            "C"
+        ],
+        "obj": [
+            "LMS Weight Update Rule",
+            "C"
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "LMS Weight Update Rule",
+            "C"
+        ],
+        "obj": [
+            "Adjusting the Weights",
+            "C"
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "obj": [
+            "Final Design",
+            "C"
+        ],
+        "e": "HAS GOAL(S)"
+    },
+    {
+        "sub": [
+            "Final Design",
+            "C"
+        ],
+        "obj": [
+            "Designing a Learning System",
+            "C"
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Final Design",
+            "C"
+        ],
+        "obj": [
+            "Performance System",
+            "M"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Performance System",
+            "M"
+        ],
+        "obj": [
+            "Final Design",
+            "C"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Final Design",
+            "C"
+        ],
+        "obj": [
+            "Critic",
+            "M"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Critic",
+            "M"
+        ],
+        "obj": [
+            "Final Design",
+            "C"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Final Design",
+            "C"
+        ],
+        "obj": [
+            "Generalizer",
+            "M"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Generalizer",
+            "M"
+        ],
+        "obj": [
+            "Final Design",
+            "C"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Final Design",
+            "C"
+        ],
+        "obj": [
+            "Experiment Generator",
+            "M"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Experiment Generator",
+            "M"
+        ],
+        "obj": [
+            "Final Design",
             "C"
         ],
         "e": "PART OF"
