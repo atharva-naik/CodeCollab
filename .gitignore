@@ -142,6 +142,7 @@ data/WikiData/qpq_triples.jsonl
 data/WikiData/qpq_triples_graph.json
 data/WikiData/qids.json
 data/WikiData/pids.json
+data/PwC
 *.pt
 *.ckpt
 experiments/CoNaLa_CodeBERT_CodeSearch/logs

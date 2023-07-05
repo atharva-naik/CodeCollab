@@ -1,12 +1,12 @@
 {
     "The Learning Problem and Statistical Inference::T": {
-        "Supervised Learning::T": {
-            "Classification Learning::T": null,
-            "Preference Learning::T": null,
-            "Function Learning::T": null
+        "Supervised Learning::T::has instance": {
+            "Classification Learning::T::has instance": null,
+            "Preference Learning::T::has instance": null,
+            "Function Learning::T::has instance": null
         },
-        "Unsupervised Learning::T": null,
-        "Reinforcement Learning::T": null
+        "Unsupervised Learning::T::has instance": null,
+        "Reinforcement Learning::T::has instance": null
     },
     "Learning Kernel Classifiers::T": {
         "STEPS": [

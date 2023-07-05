@@ -1,0 +1,17 @@
+part of
+subclass of
+has part(s)
+different from
+instance of = has instance
+has quality
+has use
+influenced by
+significant event
+has goal -> has goal(s)
+follows
+is the study of
+uses
+partially coincident with
+said to be the same as
+union of
+modeled by

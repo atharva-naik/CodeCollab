@@ -20,18 +20,29 @@ class GraphPostProcessor:
 
     def prune(self, graph: Dict[str, List[Tuple[str, str]]]):
         pruned_graph = {}
-        pruned_out_nodes = {}
+        pruned_out = {}
         for Q1, adj_list in graph.items():
+            if self.is_disease_node(Q1, adj_list): 
+                pruned_out[Q1] = graph[Q1] 
+                continue
             skip_this = False
             for Q2, P in adj_list["E"]:
                 condition = f"{P.strip()} {Q2.strip()}"
                 # skip a node if it triggers a filter condition
                 if condition in self.filter_conditions: skip_this = True; break
-            if skip_this: pruned_out_nodes[Q1] = graph[Q1]; continue
+            if skip_this: pruned_out[Q1] = graph[Q1]; continue
             pruned_graph[Q1] = graph[Q1]
+        # with open("./data/WikiData/DELETE_diseases.json", "w") as f:
+        #     print(f"{len(disease_nodes)} disease related nodes")
+        #     json.dump(disease_nodes, f, indent=4)
+        return pruned_graph, pruned_out
 
-        return pruned_graph, pruned_out_nodes
-            
+    def is_disease_node(self, node_name, adj_list):
+        if "disease" in node_name.lower(): return True
+        for Q2, P in adj_list["E"]:
+            if "disease" in Q2.lower(): return True
+        return False
+
 # main
 if __name__ == "__main__":
     qpq_graph = json.load(open("./data/WikiData/ds_qpq_graph.json"))
@@ -84,6 +95,48 @@ if __name__ == "__main__":
         {"Q": "occupation", "P": "instance of"},
         {"Q": "article", "P": "instance of"},
         {"Q": "article", "P": "subclass of"},
+        {"Q": "media franchise", "P": "instance of"},
+        {"Q": "food", "P": "instance of"},
+        {"Q": "food", "P": "subclass of"},
+        {"Q": "meeting", "P": "instance of"},
+        {"Q": "terrorist attack", "P": "instance of"},
+        {"Q": "acid", "P": "instance of"},
+        {"Q": "trial", "P": "instance of"},
+        {"Q": "trial", "P": "subclass of"},
+        {"Q": "folklore", "P": "instance of"},
+        {"Q": "folklore", "P": "subclass of"},
+        {"Q": "folklore", "P": "part of"},
+        {"Q": "rare disease", "P": "instance of"},
+        {"Q": "rare disease", "P": "subclass of"},
+        {"Q": "Christianity", "P": "instance of"},
+        {"Q": "Christianity", "P": "subclass of"},
+        {"Q": "religious conversion", "P": "subclass of"},
+        {"Q": "Christian denomination", "P": "subclass of"},
+        {"Q": "Christian denomination", "P": "instance of"},
+        {"Q": "Christianity of an area", "P": "instance of"},
+        {"Q": "Christianity of an area", "P": "subclass of"},
+        {"Q": "Christianity in Angola", "P": "subclass of"},
+        {"Q": "Christianity in Nigeria", "P": "subclass of"},
+        {"Q": "Christianity in Mongolia", "P": "subclass of"},
+        {"Q": "Protestantism", "P": "subclass of"},
+        {"Q": "Christianity in the 13th century", "P": "follows"},
+        {"Q": "Christianity in the 14th century", "P": "follows"},
+        {"Q": "creative work", "P": "instance of"},
+        {"Q": "RNA", "P": "subclass of"},
+        {"Q": "chemical substance", "P": "instance of"},
+        {"Q": "chemical substance", "P": "subclass of"},
+        {"Q": "chemical reaction", "P": "instance of"},
+        {"Q": "chemical reaction", "P": "subclass of"},
+        {"Q": "Islam of an area", "P": "instance of"},
+        {"Q": "flood", "P": "instance of"},
+        {"Q": "flood", "P": "subclass of"},
+        {"Q": "Christianity", "P": "part of"},
+        {"Q": "glass", "P": "instance of"},
+        {"Q": "glass", "P": "subclass of"},
+        {"Q": "avalanche", "P": "instance of"},
+        {"Q": "avalanche", "P": "subclass of"},
+        {"Q": "sports technique", "P": "instance of"},
+        {"Q": "sports technique", "P": "subclass of"},
     )
     print(graph_proc)
     print(len(qpq_graph))
@@ -91,7 +144,7 @@ if __name__ == "__main__":
     assert (len(pruned_out) + len(pruned_graph)) == len(qpq_graph)
     print(len(pruned_graph))
     print(len(pruned_out))
-    with open("./data/WikiData/ds_qpq_graph.json", "w") as f:
-        json.dump(pruned_graph, f, indent=4)
+    with open("./data/WikiData/ds_qpq_graph_pruned.json", "w") as f:
+        json.dump(pruned_graph, f, indent=4, ensure_ascii=False)
     # with open("DELETE.txt", "w") as f:
     #     f.write("\n".join([k for k in pruned_out]))

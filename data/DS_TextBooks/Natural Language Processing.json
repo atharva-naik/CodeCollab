@@ -1,0 +1,9 @@
+{
+    "Natural Language Processing::C": {
+        "Information Extraction::T::superclass of": {
+            "Named Entity Recognition NER::T::has part(s)": null,
+            "Named Entity Linking NEL::T::has part(s)": null,
+            "Relation Extraction::T::has part(s)": null
+        }
+    }
+}

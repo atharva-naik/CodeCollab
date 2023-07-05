@@ -1,74 +1,74 @@
 {
-    "Influence of Disciplines on Machine Learning::C": {
-        "Artificial Intelligence::C": {
-            "Learning Symbolic Representations of Concepts::T": null,
-            "Machine Learning as a Search Problem::C": null,
-            "Learning as Improving Problem Solving::C": null,
-            "Using Prior Knowledge with Data to Guide Learning::C": null
+    "Machine Learning::C": {
+        "Artificial Intelligence::C::influenced by": {
+            "Learning Symbolic Representations of Concepts::T::has goal(s)": null,
+            "Machine Learning as a Search Problem::C::has part(s)": null,
+            "Learning as Improving Problem Solving::C::has part(s)": null,
+            "Using Prior Knowledge with Data to Guide Learning::C::has goal(s)": null
         },
-        "Bayesian Methods::C": {
+        "Bayesian Methods::C::influenced by": {
             "Bayes' Theorem for Calculating Probabilities of Hypotheses::C": null,
             "Naive Bayes Classifier::M": null,
             "Algorithms for Estimating Values of Unobserved Variables::M": null
         },
-        "Computational Complexity Theory::C": {
-            "Theoretical Bounds on Complexity of Learning Tasks::B": {
-                "Computational Effort::C": null,
-                "Number of Training Examples::C": null,
-                "Number of Mistakes::C": null
+        "Computational Complexity Theory::C::influenced by": {
+            "Theoretical Bounds on Complexity of Learning Tasks::B::has goal(s)": {
+                "Computational Effort::C::has part(s)": null,
+                "Number of Training Examples::C::has part(s)": null,
+                "Number of Mistakes::C::has part(s)": null
             }
         },
-        "Control Theory::C": {
-            "Objectives to Predict Next State of Process::T": null,
-            "Optimization Procedures to Learn to Control Process::M": null
+        "Control Theory::C::influenced by": {
+            "Objectives to Predict Next State of Process::T::has part(s)": null,
+            "Optimization Procedures to Learn to Control Process::M::has part(s)": null
         },
-        "Information Theory::C": {
-            "Measures of Entropy and Information Content::C": null,
-            "Minimum Description Length Approach to Learning::C": null,
-            "Optimal Codes::C": null,
-            "Relation of Optimal Codes to Optimal Training Sequences for Encoding Hypothesis::C": null
+        "Information Theory::C::influenced by": {
+            "Measures of Entropy and Information Content::C::has part(s)": null,
+            "Minimum Description Length Approach to Learning::C::has goal(s)": null,
+            "Optimal Codes::C::has part(s)": null,
+            "Relation of Optimal Codes to Optimal Training Sequences for Encoding Hypothesis::C::has goal(s)": null
         },
-        "Philosophy::C": {
-            "Occam's Razor::C": "principle suggesting the simplest hypothesis is the best",
-            "Analysis of Generalization beyond Observed Data::A": null
+        "Philosophy::C::influenced by": {
+            "Occam's Razor::C::has part(s)": "principle suggesting the simplest hypothesis is the best",
+            "Analysis of Generalization beyond Observed Data::A::has goal(s)": null
         },
-        "Psychology and Neurobiology::C": {
-            "Power Law of Practice::C": "It states that over a very broad range of learning problems, people's response time improves with practice according to a power law",
-            "Neurobiological Motivation for Artificial Neural Networks::C": null
+        "Psychology and Neurobiology::C::influenced by": {
+            "Power Law of Practice::C::has part(s)": "It states that over a very broad range of learning problems, people's response time improves with practice according to a power law",
+            "Neurobiological Motivation for Artificial Neural Networks::C::has part(s)": null
         },
-        "Statistics::C": {
-            "Characterization of Errors::C": {
-                "Bias::S": null,
-                "Variance::S": null
+        "Statistics::C::influenced by": {
+            "Characterization of Errors::C::has part(s)": {
+                "Bias::S::uses": null,
+                "Variance::S::uses": null
             },
-            "Estimating Accuracy of Hypothesis based on Limited Data Sample::E": null,
-            "Confidence Intervals::S": null,
-            "Statistical Tests::S": null
+            "Estimating Accuracy of Hypothesis based on Limited Data Sample::E::has part(s)": null,
+            "Confidence Intervals::S::has part(s)": null,
+            "Statistical Tests::S::has part(s)": null
         }
     },
     "Well Posed Learning Problems::T": {
-        "Learning to Recognize Spoken Words::T": {
-            "Sphinx System::M": "learns speaker-specific strategies for recognizing the primitive sounds (phonemes) and words from the observed speech signal",
-            "Neural Networks::M": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc.",
-            "Hidden Markov Models::M": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc."
+        "Learning to Recognize Spoken Words::T::has instance": {
+            "Sphinx System::M::modeled by": "learns speaker-specific strategies for recognizing the primitive sounds (phonemes) and words from the observed speech signal",
+            "Neural Networks::M::modeled by": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc.",
+            "Hidden Markov Models::M::modeled by": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc."
         },
-        "Learning to Drive an Autonomous Vehicle::T": {
-            "ALVINN System::M": "learned strategies to drive unassisted at 70 to 90 mph unassisted on public highways"
+        "Learning to Drive an Autonomous Vehicle::T::has instance": {
+            "ALVINN System::M::modeled by": "learned strategies to drive unassisted at 70 to 90 mph unassisted on public highways"
         },
-        "Learning to Classify new Astronomical Structures::T": {
-            "Decision Tree Learning Algorithms::M": "classify celestial objects in observatory data"
+        "Learning to Classify new Astronomical Structures::T::has instance": {
+            "Decision Tree Learning Algorithms::M::modeled by": "classify celestial objects in observatory data"
         },
-        "Learning to play Backgammon::T": {
-            "TD-Gammon::M": "computer program for backgammon that learns through self play"
+        "Learning to play Backgammon::T::has instance": {
+            "TD-Gammon::M::modeled by": "computer program for backgammon that learns through self play"
         },
-        "Checkers Learning Problem::T": null,
-        "Handwriting Recognition Learning Problem::T": null
+        "Checkers Learning Problem::T::has instance": null,
+        "Handwriting Recognition Learning Problem::T::has instance": null
     },
     "Designing a Learning System::C": {
-        "Choosing the Training Experience::C": null,
-        "Choosing the Target Function::C": null,
-        "Choosing a Representation for the Target Function::C": null,
-        "Choosing a Function Approximation Algorithm::C": null
+        "Choosing the Training Experience::C::has part(s)": null,
+        "Choosing the Target Function::C::has part(s)": null,
+        "Choosing a Representation for the Target Function::C::has part(s)": null,
+        "Choosing a Function Approximation Algorithm::C::has part(s)": null
     },
     "Issues in Machine Learning::C": null,
     "Concept Learning::M": {
@@ -267,7 +267,7 @@
         "Inverting Resolution::C": {
             "First Order Resoultion::C": null,
             "Inverting Resolution First Order Case::C": null,
-            "Generalization, θ-Subsumption, and Entailment::C": null,
+            "Generalization, \u03b8-Subsumption, and Entailment::C": null,
             "PROGOL::C": null
         }
     },

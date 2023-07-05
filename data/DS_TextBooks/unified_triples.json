@@ -133,6 +133,94 @@
     },
     {
         "sub": [
+            "Natural Language Processing",
+            "C"
+        ],
+        "obj": [
+            "Information Extraction",
+            "T"
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Information Extraction",
+            "T"
+        ],
+        "obj": [
+            "Natural Language Processing",
+            "C"
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Information Extraction",
+            "T"
+        ],
+        "obj": [
+            "Named Entity Recognition NER",
+            "T"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Named Entity Recognition NER",
+            "T"
+        ],
+        "obj": [
+            "Information Extraction",
+            "T"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Information Extraction",
+            "T"
+        ],
+        "obj": [
+            "Named Entity Linking NEL",
+            "T"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Named Entity Linking NEL",
+            "T"
+        ],
+        "obj": [
+            "Information Extraction",
+            "T"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Information Extraction",
+            "T"
+        ],
+        "obj": [
+            "Relation Extraction",
+            "T"
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Relation Extraction",
+            "T"
+        ],
+        "obj": [
+            "Information Extraction",
+            "T"
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
             "The Learning Problem and Statistical Inference",
             "T"
         ],
@@ -140,7 +228,7 @@
             "Supervised Learning",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -151,7 +239,7 @@
             "The Learning Problem and Statistical Inference",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -162,7 +250,7 @@
             "Classification Learning",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -173,7 +261,7 @@
             "Supervised Learning",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -184,7 +272,7 @@
             "Preference Learning",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -195,7 +283,7 @@
             "Supervised Learning",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -206,7 +294,7 @@
             "Function Learning",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -217,7 +305,7 @@
             "Supervised Learning",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -228,7 +316,7 @@
             "Unsupervised Learning",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -239,7 +327,7 @@
             "The Learning Problem and Statistical Inference",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -250,7 +338,7 @@
             "Reinforcement Learning",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -261,7 +349,7 @@
             "The Learning Problem and Statistical Inference",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -3873,14 +3961,14 @@
     },
     {
         "sub": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
         "obj": [
             "Artificial Intelligence",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "INFLUENCED BY"
     },
     {
         "sub": [
@@ -3888,10 +3976,10 @@
             "C"
         ],
         "obj": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "INFLUENCES"
     },
     {
         "sub": [
@@ -3902,7 +3990,7 @@
             "Learning Symbolic Representations of Concepts",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS GOAL(S)"
     },
     {
         "sub": [
@@ -3924,7 +4012,7 @@
             "Machine Learning as a Search Problem",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -3935,7 +4023,7 @@
             "Artificial Intelligence",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -3946,7 +4034,7 @@
             "Learning as Improving Problem Solving",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -3957,7 +4045,7 @@
             "Artificial Intelligence",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -3968,7 +4056,7 @@
             "Using Prior Knowledge with Data to Guide Learning",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS GOAL(S)"
     },
     {
         "sub": [
@@ -3983,14 +4071,14 @@
     },
     {
         "sub": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
         "obj": [
             "Bayesian Methods",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "INFLUENCED BY"
     },
     {
         "sub": [
@@ -3998,10 +4086,10 @@
             "C"
         ],
         "obj": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "INFLUENCES"
     },
     {
         "sub": [
@@ -4071,14 +4159,14 @@
     },
     {
         "sub": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
         "obj": [
             "Computational Complexity Theory",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "INFLUENCED BY"
     },
     {
         "sub": [
@@ -4086,10 +4174,10 @@
             "C"
         ],
         "obj": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "INFLUENCES"
     },
     {
         "sub": [
@@ -4100,7 +4188,7 @@
             "Theoretical Bounds on Complexity of Learning Tasks",
             "B"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS GOAL(S)"
     },
     {
         "sub": [
@@ -4122,7 +4210,7 @@
             "Computational Effort",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4133,7 +4221,7 @@
             "Theoretical Bounds on Complexity of Learning Tasks",
             "B"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4144,7 +4232,7 @@
             "Number of Training Examples",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4155,7 +4243,7 @@
             "Theoretical Bounds on Complexity of Learning Tasks",
             "B"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4166,7 +4254,7 @@
             "Number of Mistakes",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4177,18 +4265,18 @@
             "Theoretical Bounds on Complexity of Learning Tasks",
             "B"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
         "obj": [
             "Control Theory",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "INFLUENCED BY"
     },
     {
         "sub": [
@@ -4196,10 +4284,10 @@
             "C"
         ],
         "obj": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "INFLUENCES"
     },
     {
         "sub": [
@@ -4210,7 +4298,7 @@
             "Objectives to Predict Next State of Process",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4221,7 +4309,7 @@
             "Control Theory",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4232,7 +4320,7 @@
             "Optimization Procedures to Learn to Control Process",
             "M"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4243,18 +4331,18 @@
             "Control Theory",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
         "obj": [
             "Information Theory",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "INFLUENCED BY"
     },
     {
         "sub": [
@@ -4262,10 +4350,10 @@
             "C"
         ],
         "obj": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "INFLUENCES"
     },
     {
         "sub": [
@@ -4276,7 +4364,7 @@
             "Measures of Entropy and Information Content",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4287,7 +4375,7 @@
             "Information Theory",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4298,7 +4386,7 @@
             "Minimum Description Length Approach to Learning",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS GOAL(S)"
     },
     {
         "sub": [
@@ -4320,7 +4408,7 @@
             "Optimal Codes",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4331,7 +4419,7 @@
             "Information Theory",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4342,7 +4430,7 @@
             "Relation of Optimal Codes to Optimal Training Sequences for Encoding Hypothesis",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS GOAL(S)"
     },
     {
         "sub": [
@@ -4357,14 +4445,14 @@
     },
     {
         "sub": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
         "obj": [
             "Philosophy",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "INFLUENCED BY"
     },
     {
         "sub": [
@@ -4372,10 +4460,10 @@
             "C"
         ],
         "obj": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "INFLUENCES"
     },
     {
         "sub": [
@@ -4386,7 +4474,7 @@
             "Occam's Razor",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4397,7 +4485,7 @@
             "Philosophy",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4408,7 +4496,7 @@
             "Analysis of Generalization beyond Observed Data",
             "A"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS GOAL(S)"
     },
     {
         "sub": [
@@ -4423,14 +4511,14 @@
     },
     {
         "sub": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
         "obj": [
             "Psychology and Neurobiology",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "INFLUENCED BY"
     },
     {
         "sub": [
@@ -4438,10 +4526,10 @@
             "C"
         ],
         "obj": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "INFLUENCES"
     },
     {
         "sub": [
@@ -4452,7 +4540,7 @@
             "Power Law of Practice",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4463,7 +4551,7 @@
             "Psychology and Neurobiology",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4474,7 +4562,7 @@
             "Neurobiological Motivation for Artificial Neural Networks",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4485,18 +4573,18 @@
             "Psychology and Neurobiology",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
         "obj": [
             "Statistics",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "INFLUENCED BY"
     },
     {
         "sub": [
@@ -4504,10 +4592,10 @@
             "C"
         ],
         "obj": [
-            "Influence of Disciplines on Machine Learning",
+            "Machine Learning",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "INFLUENCES"
     },
     {
         "sub": [
@@ -4518,7 +4606,7 @@
             "Characterization of Errors",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4529,7 +4617,7 @@
             "Statistics",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4540,7 +4628,7 @@
             "Bias",
             "S"
         ],
-        "e": "CONSISTS OF"
+        "e": "USES"
     },
     {
         "sub": [
@@ -4551,7 +4639,7 @@
             "Characterization of Errors",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "USED BY"
     },
     {
         "sub": [
@@ -4562,7 +4650,7 @@
             "Variance",
             "S"
         ],
-        "e": "CONSISTS OF"
+        "e": "USES"
     },
     {
         "sub": [
@@ -4573,7 +4661,7 @@
             "Characterization of Errors",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "USED BY"
     },
     {
         "sub": [
@@ -4584,7 +4672,7 @@
             "Estimating Accuracy of Hypothesis based on Limited Data Sample",
             "E"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4595,7 +4683,7 @@
             "Statistics",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4606,7 +4694,7 @@
             "Confidence Intervals",
             "S"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4617,7 +4705,7 @@
             "Statistics",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4628,7 +4716,7 @@
             "Statistical Tests",
             "S"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4639,7 +4727,7 @@
             "Statistics",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4650,7 +4738,7 @@
             "Learning to Recognize Spoken Words",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -4661,7 +4749,7 @@
             "Well Posed Learning Problems",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -4672,7 +4760,7 @@
             "Sphinx System",
             "M"
         ],
-        "e": "CONSISTS OF"
+        "e": "MODELED BY"
     },
     {
         "sub": [
@@ -4683,7 +4771,7 @@
             "Learning to Recognize Spoken Words",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "CAN MODEL"
     },
     {
         "sub": [
@@ -4694,7 +4782,7 @@
             "Neural Networks",
             "M"
         ],
-        "e": "CONSISTS OF"
+        "e": "MODELED BY"
     },
     {
         "sub": [
@@ -4705,7 +4793,7 @@
             "Learning to Recognize Spoken Words",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "CAN MODEL"
     },
     {
         "sub": [
@@ -4716,7 +4804,7 @@
             "Hidden Markov Models",
             "M"
         ],
-        "e": "CONSISTS OF"
+        "e": "MODELED BY"
     },
     {
         "sub": [
@@ -4727,7 +4815,7 @@
             "Learning to Recognize Spoken Words",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "CAN MODEL"
     },
     {
         "sub": [
@@ -4738,7 +4826,7 @@
             "Learning to Drive an Autonomous Vehicle",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -4749,7 +4837,7 @@
             "Well Posed Learning Problems",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -4760,7 +4848,7 @@
             "ALVINN System",
             "M"
         ],
-        "e": "CONSISTS OF"
+        "e": "MODELED BY"
     },
     {
         "sub": [
@@ -4771,7 +4859,7 @@
             "Learning to Drive an Autonomous Vehicle",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "CAN MODEL"
     },
     {
         "sub": [
@@ -4782,7 +4870,7 @@
             "Learning to Classify new Astronomical Structures",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -4793,7 +4881,7 @@
             "Well Posed Learning Problems",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -4804,7 +4892,7 @@
             "Decision Tree Learning Algorithms",
             "M"
         ],
-        "e": "CONSISTS OF"
+        "e": "MODELED BY"
     },
     {
         "sub": [
@@ -4815,7 +4903,7 @@
             "Learning to Classify new Astronomical Structures",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "CAN MODEL"
     },
     {
         "sub": [
@@ -4826,7 +4914,7 @@
             "Learning to play Backgammon",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -4837,7 +4925,7 @@
             "Well Posed Learning Problems",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -4848,7 +4936,7 @@
             "TD-Gammon",
             "M"
         ],
-        "e": "CONSISTS OF"
+        "e": "MODELED BY"
     },
     {
         "sub": [
@@ -4859,7 +4947,7 @@
             "Learning to play Backgammon",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "CAN MODEL"
     },
     {
         "sub": [
@@ -4870,7 +4958,7 @@
             "Checkers Learning Problem",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -4881,7 +4969,7 @@
             "Well Posed Learning Problems",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -4892,7 +4980,7 @@
             "Handwriting Recognition Learning Problem",
             "T"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -4903,7 +4991,7 @@
             "Well Posed Learning Problems",
             "T"
         ],
-        "e": "IS A PART OF"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -4914,7 +5002,7 @@
             "Choosing the Training Experience",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4925,7 +5013,7 @@
             "Designing a Learning System",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4936,7 +5024,7 @@
             "Choosing the Target Function",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4947,7 +5035,7 @@
             "Designing a Learning System",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4958,7 +5046,7 @@
             "Choosing a Representation for the Target Function",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4969,7 +5057,7 @@
             "Designing a Learning System",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
@@ -4980,7 +5068,7 @@
             "Choosing a Function Approximation Algorithm",
             "C"
         ],
-        "e": "CONSISTS OF"
+        "e": "HAS PART(S)"
     },
     {
         "sub": [
@@ -4991,7 +5079,7 @@
             "Designing a Learning System",
             "C"
         ],
-        "e": "IS A PART OF"
+        "e": "PART OF"
     },
     {
         "sub": [
