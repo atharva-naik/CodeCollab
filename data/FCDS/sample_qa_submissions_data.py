@@ -35,7 +35,7 @@ if __name__ == "__main__":
                 }
                 annot_df.append(rec)
     annot_df = pd.DataFrame(annot_df)
-    annot_df.to_csv("./data/FCDS/plan_op_var_block_annot.csv")
+    annot_df.to_csv("./data/FCDS/plan_op_var_block_annot.csv", index=False)
     print(f"sampling with stratum size: {stratum_size}")
     print(f"data contains {num_sub} submissions")
     print(f"{len(annot_df)} annotations to be done")

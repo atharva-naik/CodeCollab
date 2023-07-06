@@ -2,7 +2,7 @@ part of
 subclass of
 has part(s)
 different from
-instance of = has instance
+instance of -> has instance
 has quality
 has use
 influenced by
@@ -16,3 +16,4 @@ said to be the same as
 union of
 modeled by
 evaluated by
+has language -> has dataset

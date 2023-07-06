@@ -9,5 +9,7 @@
     "B": "Theoretical Bounds",
     "F": "Representation/Features",
     "S": "Statistical Measure or Distribution",
+    "l": "Language",
+    "m": "Modality",
     "s": "Step"
 }
