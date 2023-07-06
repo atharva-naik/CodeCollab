@@ -5,8 +5,12 @@ import json
 import tarfile
 from typing import *
 from tqdm import tqdm
+from collections import defaultdict
 from jupyter_notebook_parser import JupyterNotebookParser
 
+ZERO_CODE_CTR = 0
+TASKS_NOT_INVOLVING_NBS = defaultdict(lambda: 0)
+TASKS_TO_FILE_LISTS = defaultdict(lambda: set())
 def save_code(codeUrl: str, writePath: str) -> str:
     import requests
     resp = requests.get(codeUrl)
@@ -14,6 +18,7 @@ def save_code(codeUrl: str, writePath: str) -> str:
         f.write(resp.content)
 
 def create_dataset(metadata_dir: str, codes_path: str):
+    global ZERO_CODE_CTR
     data = []
     inst_ctr = 0
     for file in os.listdir(metadata_dir):
@@ -23,7 +28,12 @@ def create_dataset(metadata_dir: str, codes_path: str):
         for row in tqdm(csv.DictReader(open(metadata_path)), desc=course_id):
             code_file = course_id + "_person_id_" + row["person_id"] + "_submission_id_" + row["submission_id"] + ".tar.gz"
             code_path = os.path.join(metadata_dir, "codes", code_file)
-            code = load_code_from_tar_file(tar_path=code_path)
+            code = load_code_from_tar_file(tar_path=code_path, task_name=row["task_name"])
+            assert isinstance(code, list)
+            if len(code) == 0: 
+                ZERO_CODE_CTR += 1
+                continue
+            assert isinstance(code[0], dict)
             inst_ctr += 1
             ID = inst_ctr
             rec = {
@@ -60,9 +70,10 @@ def download_all_codes():
 
 CTR = 0
 TOT = 0
-def load_code_from_tar_file(tar_path: str) -> List[dict]:
+def load_code_from_tar_file(tar_path: str, task_name: str="") -> List[dict]:
     global CTR
     global TOT
+    global TASKS_NOT_INVOLVING_NBS
     TOT += 1
     try: tar = tarfile.open(tar_path)
     except tarfile.ReadError as e:
@@ -70,12 +81,19 @@ def load_code_from_tar_file(tar_path: str) -> List[dict]:
         print(f"TarFileReadError({CTR}):", e)
         return []
     content = None
+    member_file_names = [member.name for member in tar.getmembers()]
     for member in tar.getmembers():
         if member.name.endswith(".ipynb"):
             content = tar.extractfile(member).read()
             break
     # if no .ipynb file is found.
-    if content is None: return []
+    if content is None:
+        # if "./WEB_SERVICE_DNS" in member_file_names:
+        #     content = tar.extractfile("./WEB_SERVICE_DNS").read().decode("utf-8")
+        #     print(content)
+        TASKS_NOT_INVOLVING_NBS[task_name] += 1
+        TASKS_TO_FILE_LISTS[task_name] = TASKS_TO_FILE_LISTS[task_name].union(set(member_file_names))
+        return []
     temp_file_path = "DELETE_ME.ipynb"
     with open(temp_file_path, "wb") as f:
         f.write(content)
@@ -90,12 +108,9 @@ def load_code_from_tar_file(tar_path: str) -> List[dict]:
         rec = {
             "cell_type": cell["cell_type"], 
             "metadata": cell["metadata"], 
-            "id": cell.get("id")
+            "id": cell.get("id"),
+            cell["cell_type"]: "\n".join([line.strip() for line in cell["source"]]),
         }
-        if cell["cell_type"] == "markdown":
-            rec["markdown"] = "\n".join(cell["source"])
-        elif cell["cell_type"] == "code":
-            rec["code"] = "\n".join(cell["source"])
         code_cells.append(rec)
 
     return code_cells
@@ -103,8 +118,11 @@ def load_code_from_tar_file(tar_path: str) -> List[dict]:
 # main
 if __name__ == "__main__":
     # code_cells = load_code_from_tar_file("./data/FCDS/codes/s23_computersystems_person_id_05ad4713423be680cb99ded021f17d88032dab8ad91afea30dfb584e7f528875_submission_id_049f0cf6fbb007be524fa0849f5d224ece111bb3799f79b9a4e1663bbd4310b7.tar.gz")
-    create_dataset(
+    data = create_dataset(
         metadata_dir="./data/FCDS/",
         codes_path="./data/FCDS/codes/"
     )
-    print(f"{TOT} instances, error in {CTR} and {TOT-CTR} fixed instances")
+    print(dict(TASKS_NOT_INVOLVING_NBS))
+    print(dict(TASKS_TO_FILE_LISTS))
+    print(f"ZERO_CODE_CTR: {ZERO_CODE_CTR}")
+    print(f"{len(data)} instances, error in {CTR} and {ZERO_CODE_CTR} with zero length code")

@@ -128,6 +128,7 @@ dmypy.json
 # Pyre type checker
 .pyre/
 data/FCDS/codes
+data/FCDS/aligned_student_submissions_data.json
 data/FCDS/*.csv
 data/FCDS/code_submissions_dataset.json
 data/CoNaLa/.*jsonl

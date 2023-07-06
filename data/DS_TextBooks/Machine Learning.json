@@ -115,7 +115,23 @@
             "Experiment Generator::M::has part(s)": null
         }
     },
-    "Issues in Machine Learning::C": null,
+    "Issues in Machine Learning::C": {
+        "Learning Algorithm::M": {
+            "Generalizability of Algorithms::C": null,
+            "Convergence of Algorithms::C": null,
+            "Finding Best Algorithm for Problem Type and Representation::T": null
+        },
+        "Data::D": {
+            "Sufficient Data::C": null,
+            "Confidence Bounds with Training Experience::B": null,
+            "Character of Hypothesis Space::F": null
+        },
+        "Prior Knowledge::C": {
+            "Guiding Generalization::C": null,
+            "Usefulness if Approximately Correct::C": null
+        }
+
+    },
     "Concept Learning::M": {
         "Concept Learning Task::T": {
             "Inductive Learning Hypothesis::C": null
