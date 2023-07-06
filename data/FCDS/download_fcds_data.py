@@ -109,7 +109,7 @@ def load_code_from_tar_file(tar_path: str, task_name: str="") -> List[dict]:
             "cell_type": cell["cell_type"], 
             "metadata": cell["metadata"], 
             "id": cell.get("id"),
-            cell["cell_type"]: "\n".join([line.strip() for line in cell["source"]]),
+            cell["cell_type"]: "\n".join([line.strip("\n") for line in cell["source"]]),
         }
         code_cells.append(rec)
 
