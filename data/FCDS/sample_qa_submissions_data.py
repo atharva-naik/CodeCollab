@@ -10,6 +10,7 @@ from data.FCDS.code_chunking import chunk_code_to_variable_blocks
 
 # main
 if __name__ == "__main__":
+    random.seed(2023)
     stratum_size: int = 10 # number of sample per question
     qa_sub_data = json.load(open("./data/FCDS/code_qa_submissions.json"))
     print(f"Q/A submissions data has {len(qa_sub_data)} questions")
