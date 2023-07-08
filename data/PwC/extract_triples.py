@@ -15,12 +15,12 @@ def extract_papers_and_abstracts() -> Dict[str, dict]:
             triples[f"{sub} HAS GOAL(S) {obj}"] = {
                 "sub": (sub,"C",rec["abstract"]), 
                 "obj": (obj,"T",""), 
-                "e": "SUPERCLASS OF"
+                "e": "HAS GOAL(S)"
             }
-            triples[f"{obj} SUBCLASS OF {sub}"] = {
+            triples[f"{obj} GOAL OF {sub}"] = {
                 "sub": (obj,"T",""), 
                 "obj": (sub,"C",rec["abstract"]), 
-                "e": "SUBCLASS OF"
+                "e": "GOAL OF"
             }
         for method in rec["methods"]:
             obj = method["name"] if method["full_name"] in ["", None] else method["full_name"]
@@ -35,6 +35,18 @@ def extract_papers_and_abstracts() -> Dict[str, dict]:
                 "obj": (sub,"C",rec["abstract"]), 
                 "e": "USED BY"
             }
+            for task in rec["tasks"]:
+                sub1 = task.strip()
+                triples[f"{sub1} MODELED BY {obj}"] = {
+                    "sub": (sub1,"T",""), 
+                    "obj": (obj,"M",method["description"]), 
+                    "e": "MODELED BY"
+                }
+                triples[f"{obj} CAN MODEL {sub1}"] = {
+                    "sub": (obj,"M",method["description"]), 
+                    "obj": (sub1,"T",""), 
+                    "e": "CAN MODEL"
+                }  
             try:
                 obj1 = method["main_collection"]["name"].strip()
                 desc1 = method["main_collection"]["description"]
@@ -48,7 +60,7 @@ def extract_papers_and_abstracts() -> Dict[str, dict]:
                 "sub": (obj1,"M",desc1), 
                 "obj": (obj,"M",method["description"]), 
                 "e": "SUPERCLASS OF"
-            }
+            } 
 
     return triples
 

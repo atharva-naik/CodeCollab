@@ -29,11 +29,15 @@
             "Relation of Optimal Codes to Optimal Training Sequences for Encoding Hypothesis::C::has goal(s)": null
         },
         "Philosophy::C::influenced by": {
-            "Occam's Razor::C::has part(s)": "principle suggesting the simplest hypothesis is the best",
+            "Occam's Razor::C::has part(s)": {
+                "DESC": "principle suggesting the simplest hypothesis is the best"
+            },
             "Analysis of Generalization beyond Observed Data::A::has goal(s)": null
         },
         "Psychology and Neurobiology::C::influenced by": {
-            "Power Law of Practice::C::has part(s)": "It states that over a very broad range of learning problems, people's response time improves with practice according to a power law",
+            "Power Law of Practice::C::has part(s)": {
+                "DESC": "It states that over a very broad range of learning problems, people's response time improves with practice according to a power law"
+            },
             "Neurobiological Motivation for Artificial Neural Networks::C::has part(s)": null
         },
         "Statistics::C::influenced by": {
@@ -47,6 +51,11 @@
         }
     },
     "Well Posed Learning Problems::T": {
+        "STEPS": [
+            "define task T",
+            "learn from experience E",
+            "measure performance P on T"
+        ],
         "Task T::T::has goal(s)": {
             "Playing Checkers::T::superclass of": null,
             "Recognizing and Classifying Handwritten Words in Images::T::superclass of": null,
@@ -58,28 +67,40 @@
             "Average Distance Traveled before Error::E::superclass of": null
         },
         "Training Experience E::D::uses": {
-            "Practice Games Against Itself::D::superclass of": null,
+            "Self Play::D::superclass of": null,
             "Database of Handwritten Words and Given Classifications::D::superclass of": null,
             "Sequence of Images and Steering Commands Recorded while Observing Human Driver::D::superclass of": null
         },
         "Learning to Recognize Spoken Words::T::has instance": {
-            "Sphinx System::M::modeled by": "learns speaker-specific strategies for recognizing the primitive sounds (phonemes) and words from the observed speech signal",
-            "Neural Networks::M::modeled by": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc.",
-            "Hidden Markov Models::M::modeled by": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc."
+            "Sphinx System::M::modeled by": {
+                "DESC": "learns speaker-specific strategies for recognizing the primitive sounds (phonemes) and words from the observed speech signal"
+            },
+            "Neural Networks::M::modeled by": {
+                "DESC": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc."
+            },
+            "Hidden Markov Models::M::modeled by": {
+                "DESC": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc."
+            }
         },
         "Learning to Drive an Autonomous Vehicle::T::has instance": {
-            "ALVINN System::M::modeled by": "learned strategies to drive unassisted at 70 to 90 mph unassisted on public highways"
+            "ALVINN System::M::modeled by": {
+                "DESC": "learned strategies to drive unassisted at 70 to 90 mph unassisted on public highways"
+            }
         },
         "Learning to Classify new Astronomical Structures::T::has instance": {
-            "Decision Tree Learning Algorithms::M::modeled by": "classify celestial objects in observatory data"
+            "Decision Tree Learning Algorithms::M::modeled by": {
+                "DESC": "classify celestial objects in observatory data"
+            }
         },
         "Learning to play Backgammon::T::has instance": {
-            "TD-Gammon::M::modeled by": "computer program for backgammon that learns through self play"
+            "TD-Gammon::M::modeled by": {
+                "DESC": "computer program for backgammon that learns through self play"
+            }
         },
         "Checkers Learning Problem::T::has instance": {
             "Playing Checkers::T::has goal(s)": null,
             "Percent of Games Won Against Opponents::E::evaluated by": null,
-            "Practice Games Against Itself::D::uses": null
+            "Self Play::D::uses": null
         },
         "Handwriting Recognition Learning Problem::T::has instance": {
             "Recognizing and Classifying Handwritten Words in Images::T::has goal(s)": null,
@@ -93,14 +114,46 @@
         }
     },
     "Designing a Learning System::C": {
+        "STEPS": [
+            "fix the task T",
+            "fix performance measure P",
+            "fix training experience E",
+            "choose exact type of knowledge to be learned",
+            "choose representation for target knowledge",
+            "choose learning mechanism"
+        ],
         "Choosing the Training Experience::C::has part(s)": {
-            "STEPS": [
-                "choose exact type of knowledge to be learned",
-                "choose representation for target knowledge",
-                "choose learning mechanism"
-            ]
+            "Feedback::C::has part(s)": {
+                "Direct Feedback::C::superclass of": {
+                    "Checker Board States and Correct Moves::D::has instance": null,
+                    "Indirect Feedback::C::better than": null
+                },
+                "Indirect Feedback::C::superclass of": {
+                    "Move Sequences and Final Outcomes::D::has instance": null,
+                    "Credit Assignment::C::has part(s)": "determining the degree to which each move in the sequence deserves credit or blame for the final outcome"
+                }
+            },
+            "Sequence of Training Examples::C::has part(s)": {
+                "Teacher Controlled Sequence of Training Examples::C::superclass of": null,
+                "Learner Controlled Sequence of Training Examples::C::superclass of": {
+                    "Student Teacher Learning::C::superclass of": {
+                        "DESC": "learner proposes confusing examples and asks teacher for correct prediction"
+                    },
+                    "Self Play::C::superclass of": {
+                        "DESC": "learner has complete control over example selection and prediction",
+                        "Exploration::T": null,
+                        "Exploitation::T": null
+                    }
+                },
+                "Random Sequence of Training Examples::C::superclass of": null
+            },
+            "Distribution of Training Examples": {
+                "DESC": "how representative is the distribution of training examples to the distribution of examples over which the final system performance P must be measured"
+            }
         },
-        "Choosing the Target Function::C::has part(s)": null,
+        "Choosing the Target Function::C::has part(s)": {
+            "choose exact type of knowledge to be learned::s::has part(s)": null
+        },
         "Choosing a Representation for the Target Function::C::has part(s)": null,
         "Choosing a Function Approximation Algorithm::C::has part(s)": {
             "Estimating Training Values::C::has part(s)": null,
@@ -130,7 +183,6 @@
             "Guiding Generalization::C": null,
             "Usefulness if Approximately Correct::C": null
         }
-
     },
     "Concept Learning::M": {
         "Concept Learning Task::T": {

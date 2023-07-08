@@ -16,8 +16,8 @@ import torch.nn as nn
 from torch.optim import AdamW
 from model.datautils import *
 import torch.nn.functional as F
-from model.unixcoder import UniXcoder
 from datautils import load_plan_ops
+from model.unixcoder import UniXcoder
 from torch.utils.data import DataLoader
 from transformers import RobertaModel, RobertaTokenizer
 from torchmetrics.functional import pairwise_cosine_similarity
@@ -504,6 +504,15 @@ def codesearch_finetune(args):
             "max_length": 100,
             # "mode": "<encoder-only>",
         }
+    
+    # check if a pre-saved checkpoint should be loaded for the model before fine-tuning.
+    if args.checkpoint_path is not None:
+        ckpt_path = args.checkpoint_path
+        ckpt_dict = torch.load(ckpt_path, map_location="cpu")
+        print(f"loaded model from: {ckpt_path}")
+        codesearch_biencoder.load_state_dict(ckpt_dict["model_state_dict"])
+    
+    # initialize the tokenizer.
     if args.model_type in ["codebert", "graphcodebert", "unixcoder"]:
         tokenizer = RobertaTokenizer.from_pretrained(args.model_path)
 
@@ -511,12 +520,20 @@ def codesearch_finetune(args):
     config["tokenizer_args"] = tok_args
     
     if args.model_type == "codebert":
-        trainset = CodeSearchNetCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
-                                                          folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-        valset = CodeSearchNetCodeBERTCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
-                                                        folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-        testset = CodeSearchNetCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
-                                                         folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        if args.dataset_name == "CoNaLa+CodeSearchNet": # use CoNaLa & CodeSearchNet.
+            trainset = CodeSearchNetCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
+                                                              folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+            valset = CodeSearchNetCodeBERTCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
+                                                            folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+            testset = CodeSearchNetCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
+                                                             folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+        elif args.dataset_name == "JuICe": # use JuICe dataset.
+            trainset = JuICeCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
+                                                      tokenizer=tokenizer, **tok_args)
+            valset = JuICeCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
+                                                    tokenizer=tokenizer, **tok_args)
+            testset = JuICeCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
+                                                     tokenizer=tokenizer, **tok_args)
     elif args.model_type == "graphcodebert":
         trainset = CodeSearchNetGraphCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code,
                                                                folder=args.data_dir, tokenizer=tokenizer, **tok_args)
@@ -674,6 +691,9 @@ code search using a bi-encoder setup''')
     parser.add_argument("--cos_sim", action="store_true", help="use cosine similarity in contrastive loss")
     parser.add_argument("--index_modality", type=str, default="code", help="what kind of modality is indexed")
     parser.add_argument("--index_file_name", type=str, default="codebert_cos_sim.index")
+    parser.add_argument("-ckpt", "--checkpoint_path", default=None, type=str, 
+                        help="load the model from this checkpoint while fine-tuning")
+    parser.add_argument("-dn", "--dataset_name", type=str, default="CoNaLa+CodeSearchNet", help="dataset name")
     args = parser.parse_args()
 
     return args
@@ -685,6 +705,11 @@ if __name__ == "__main__":
         codesearch_finetune(args)
     elif args.mode == "inference":
         create_dense_index(args)
+
+# Various commands used:
+
+# for CodeBERT continual fine-tuning training on JuICe:
+# python -m model.code_search -exp JuICe_CodeBERT_CodeSearch2_CosSim -bs 200 --mode train -e 50 -ckpt ./experiments/CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim/best_model.pt -dn JuICe
 
 # python -m src.e_ret.code_search -exp CoNaLa_CodeBERT_CodeSearch
 # python -m src.e_ret.code_search -mt unixcoder -exp CoNaLa_UniXcoder_CodeSearch -bs 85 -mp microsoft/unixcoder-base

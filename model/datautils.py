@@ -19,6 +19,7 @@ from model.parser import (remove_comments_and_docstrings,
                               index_to_code_token,
                               tree_to_variable_index)
 from datautils.code_cell_analysis import obfuscate_code
+from datautils.markdown_cell_analysis import process_markdown, nb_to_nl_pl_pair
 
 def graphcodebert_proc_code(code: str, parser, tokenizer, tok_args: dict):
     try: code = remove_comments_and_docstrings(code, 'python')
@@ -718,6 +719,88 @@ class JuICeKBNNUniXcoderCodeSearchDataset(Dataset):
         d_loader = DataLoader(dset, batch_size=batch_size, shuffle=False)
         
         return d_loader
+
+# class for doing continual fine-training on JuICe NL-PL pairs to improve retrieval performance.
+class JuICeCodeBERTCodeSearchDataset(Dataset):
+    """load CodeSearchNet data for code-search training."""
+    def __init__(self, folder: str="./data/juice-dataset", 
+                 split: str="train", tokenizer=None, 
+                 obf_code: bool=False, **tok_args):
+        super(JuICeCodeBERTCodeSearchDataset, self).__init__()
+        self.split = split
+        print(f"obf_code: {obf_code}")
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        self.data = []
+        data = [
+            nb_to_nl_pl_pair(rec) for rec in read_jsonl(
+                os.path.join(folder, f"{split}.jsonl"),
+                use_tqdm=True, cutoff=500000,
+            )
+        ]
+        if obf_code: desc = "obfuscating JuICe"
+        else: desc = "processing JuICe"          
+        for i in tqdm(range(len(data)), desc=desc): 
+            # remove comments and docstrings.
+            self.data.append({})
+            self.data[i]["intent"] = process_markdown(data[i][0])
+            self.data[i]["snippet"] = remove_comments_and_docstrings(data[i][1])
+            if obf_code: self.data[i]["snippet"] = obfuscate_code(data[i][1])
+        # extra processing for val+test set.
+        if self.split != "train":
+            self.queries = {}
+            self.doc_ids = defaultdict(lambda:[])
+            self.docs = {}
+            d_ctr = 0
+            q_ctr = 0
+            for i, rec in enumerate(self.data):
+                q = rec['intent']
+                d = rec['snippet']
+                if q not in self.queries: 
+                    self.queries[q] = q_ctr
+                    q_ctr += 1
+                if d not in self.docs: 
+                    self.docs[d] = d_ctr
+                    d_ctr += 1
+            for i, rec in enumerate(self.data):
+                q = rec['intent']
+                d = rec['snippet']
+                self.doc_ids[q].append(self.docs[d])
+            self.queries = list(self.queries.keys())
+            self.docs = list(self.docs.keys())
+            self.doc_ids = list(self.doc_ids.values())
+            # print(self.doc_ids[-5:])
+    def get_doc_ids_mask(self):
+        mask = np.zeros((len(self.queries), len(self.docs)))
+        for i, ids in enumerate(self.doc_ids):
+            for j in ids: mask[i][j] = 1
+        return mask
+
+    def get_query_loader(self, batch_size: int=100):
+        qset = QueryCodeBERTDataset(self.queries, self.doc_ids, 
+                            self.tokenizer, **self.tok_args)
+        q_loader = DataLoader(qset, batch_size=batch_size, shuffle=False)
+        return q_loader
+
+    def get_docs_loader(self, batch_size: int=100):
+        dset = DocsCodeBERTDataset(self.docs, self.tokenizer, **self.tok_args)
+        d_loader = DataLoader(dset, batch_size=batch_size, shuffle=False)
+        return d_loader
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, i):
+        q = self.data[i]["intent"] # query
+        c = self.data[i]["snippet"] # document/code
+        q_tok_dict = self.tokenizer(q, **self.tok_args)
+        c_tok_dict = self.tokenizer(c, **self.tok_args)
+        
+        return [
+            q_tok_dict["input_ids"][0], q_tok_dict["attention_mask"][0],
+            c_tok_dict["input_ids"][0], c_tok_dict["attention_mask"][0],
+        ]
 
 # training classes
 class CodeSearchNetCodeBERTCodeSearchDataset(Dataset):

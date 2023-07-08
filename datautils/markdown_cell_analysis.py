@@ -6,6 +6,11 @@ import dataclasses
 from typing import *
 from collections import defaultdict
 
+def nb_to_nl_pl_pair(nb: dict) -> Tuple[str, str]: # returns NL, PL pair.
+    for cell in nb["context"]:
+        if "nl_original" in cell: return cell["nl_original"], nb["code"] 
+    else: return " ".join(nb["nl"]), nb["code"] 
+
 def get_title_hierarchy_and_stripped_title(title: str):
     ctr = 0
     for char in title.strip():

@@ -16,5 +16,6 @@ said to be the same as
 union of
 modeled by
 evaluated by
-has language -> has dataset
-has modality -> has dataset
+has language & has dataset
+has modality & has dataset
+better than & worse than (usually)
