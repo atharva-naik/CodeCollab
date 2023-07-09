@@ -530,9 +530,9 @@ def codesearch_finetune(args):
         elif args.dataset_name == "JuICe": # use JuICe dataset.
             trainset = JuICeCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
                                                       tokenizer=tokenizer, **tok_args)
-            valset = JuICeCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
+            valset = JuICeCodeBERTCodeSearchDataset(split="dev", obf_code=args.obfuscate_code, 
                                                     tokenizer=tokenizer, **tok_args)
-            testset = JuICeCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
+            testset = JuICeCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code, 
                                                      tokenizer=tokenizer, **tok_args)
     elif args.model_type == "graphcodebert":
         trainset = CodeSearchNetGraphCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code,

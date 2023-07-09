@@ -1,0 +1,15 @@
+{
+    "D": "data",
+    "M": "model",
+    "T": "task",
+    "E": "evaluatiom",
+    "C": "concept",
+    "V": "visualization",
+    "A": "analysis",
+    "B": "bound",
+    "F": "feature",
+    "S": "statistical_instrument",
+    "l": "natural_language",
+    "m": "modality_type",
+    "s": "step_of_recipe"
+}
