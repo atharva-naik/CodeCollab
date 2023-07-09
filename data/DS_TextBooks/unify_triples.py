@@ -137,9 +137,11 @@ if __name__ == "__main__":
         except json.decoder.JSONDecodeError as e:
             print(f"{path}: {e}")
             continue
-        triples = extract_triples(kb_json=kb_json)
-        print(f"{path}: \x1b[34;1m{len(triples)}\x1b[0m triples")
-        unified_triples.update(triples)
+        try:
+            triples = extract_triples(kb_json=kb_json)
+            print(f"{path}: \x1b[34;1m{len(triples)}\x1b[0m triples")
+            unified_triples.update(triples)
+        except Exception as e: print(f"{path}: {e}")
     for semantic_type in UNIQUE_NODES.values():
         SEMANTIC_TYPE_DIST[SEMANTIC_TYPES.get(semantic_type, semantic_type)] += 1
     SEMANTIC_TYPE_DIST = {k: v for k,v in sorted(SEMANTIC_TYPE_DIST.items(), reverse=True, key=lambda x: x[1])}

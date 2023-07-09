@@ -63,6 +63,7 @@ if __name__ == "__main__":
     # print(ds_kg.serialize(format='turtle'))
     sparql_queries = {
     "find all model names.": """
+        PREFIX n: <http://example.org/>
         PREFIX nt: <http://example.org/node_type/>
         PREFIX et: <http://example.org/edge_type/>
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -75,18 +76,20 @@ if __name__ == "__main__":
         }
     """,
     'find approaches that can model "234" which is "Learning to Drive an Autonomous Vehicle".': """
+        PREFIX n: <http://example.org/>
         PREFIX nt: <http://example.org/node_type/>
         PREFIX et: <http://example.org/edge_type/>
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
         SELECT ?name
         WHERE {
-            ?p et:can_model <http://example.org/234> .
+            ?p et:can_model n:234 .
 
             ?p foaf:name ?name .
         }
     """,
     "find approaches for whom we have a KB record for modeling a specific task.": """
+        PREFIX n: <http://example.org/>
         PREFIX nt: <http://example.org/node_type/>
         PREFIX et: <http://example.org/edge_type/>
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
@@ -94,6 +97,19 @@ if __name__ == "__main__":
         SELECT ?name ?q
         WHERE {
             ?p et:can_model ?q .
+
+            ?p foaf:name ?name .
+        }
+    """,
+    "anything related to decision trees": """
+        PREFIX n: <http://example.org/>
+        PREFIX nt: <http://example.org/node_type/>
+        PREFIX et: <http://example.org/edge_type/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+        SELECT ?name ?q
+        WHERE {
+            ?p ?q n:237 .
 
             ?p foaf:name ?name .
         }
@@ -111,5 +127,10 @@ if __name__ == "__main__":
     print()
     print(f"\x1b[34;1m{intents[2]}\x1b[0m") 
     for r in ds_kg.query(queries[2]):
-        print(r["name"])
-        print(rev_nodes[int(r["q"].split("/")[-1])])
+        q = rev_nodes[int(r["q"].split("/")[-1])]
+        print(f'{r["name"]} models {q}')
+    print()
+    print(f"\x1b[34;1m{intents[3]}\x1b[0m") 
+    for r in ds_kg.query(queries[3]):
+        q = r["q"].split("/")[-1].replace("_"," ").upper()
+        print(f'{r["name"]} {q} Decision Tree')

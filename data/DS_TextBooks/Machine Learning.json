@@ -71,7 +71,7 @@
             "Database of Handwritten Words and Given Classifications::D::superclass of": null,
             "Sequence of Images and Steering Commands Recorded while Observing Human Driver::D::superclass of": null
         },
-        "Learning to Recognize Spoken Words::T::has instance": {
+        "Speech Recognition::T::has instance": {
             "Sphinx System::M::modeled by": {
                 "DESC": "learns speaker-specific strategies for recognizing the primitive sounds (phonemes) and words from the observed speech signal"
             },
@@ -82,13 +82,13 @@
                 "DESC": "effective for automatically customizing to, individual speakers, vocabularies, microphone characteristics, background noise, etc."
             }
         },
-        "Learning to Drive an Autonomous Vehicle::T::has instance": {
+        "Autonomous Driving::T::has instance": {
             "ALVINN System::M::modeled by": {
                 "DESC": "learned strategies to drive unassisted at 70 to 90 mph unassisted on public highways"
             }
         },
-        "Learning to Classify new Astronomical Structures::T::has instance": {
-            "Decision Tree Learning Algorithms::M::modeled by": {
+        "Astronomical Structure Classification::T::has instance": {
+            "Decision Tree Learning::M::modeled by": {
                 "DESC": "classify celestial objects in observatory data"
             }
         },
@@ -147,7 +147,7 @@
                 },
                 "Random Sequence of Training Examples::C::superclass of": null
             },
-            "Distribution of Training Examples": {
+            "Distribution of Training Examples::S::has part(s)": {
                 "DESC": "how representative is the distribution of training examples to the distribution of examples over which the final system performance P must be measured"
             }
         },

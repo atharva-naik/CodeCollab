@@ -8,8 +8,8 @@ def recursively_check_keys(kb: dict, path: str):
     for k,v in kb.items():
         # check the key
         msg = f"{path}: Key \x1b[31;1m`{k}`\x1b[0m doesn't parse"
-        if k != "STEPS":
-            assert len(k.split("::")) == 2, msg
+        if k not in ["STEPS", "DESC"]:
+            assert len(k.split("::")) >= 2, msg
         if isinstance(v, dict):
             recursively_check_keys(v, path)
 

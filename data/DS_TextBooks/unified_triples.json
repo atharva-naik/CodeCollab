@@ -6012,7 +6012,7 @@
             ""
         ],
         "obj": [
-            "Learning to Recognize Spoken Words",
+            "Speech Recognition",
             "T",
             ""
         ],
@@ -6020,7 +6020,7 @@
     },
     {
         "sub": [
-            "Learning to Recognize Spoken Words",
+            "Speech Recognition",
             "T",
             ""
         ],
@@ -6033,7 +6033,7 @@
     },
     {
         "sub": [
-            "Learning to Recognize Spoken Words",
+            "Speech Recognition",
             "T",
             ""
         ],
@@ -6051,7 +6051,7 @@
             ""
         ],
         "obj": [
-            "Learning to Recognize Spoken Words",
+            "Speech Recognition",
             "T",
             ""
         ],
@@ -6059,7 +6059,7 @@
     },
     {
         "sub": [
-            "Learning to Recognize Spoken Words",
+            "Speech Recognition",
             "T",
             ""
         ],
@@ -6077,7 +6077,7 @@
             ""
         ],
         "obj": [
-            "Learning to Recognize Spoken Words",
+            "Speech Recognition",
             "T",
             ""
         ],
@@ -6085,7 +6085,7 @@
     },
     {
         "sub": [
-            "Learning to Recognize Spoken Words",
+            "Speech Recognition",
             "T",
             ""
         ],
@@ -6103,7 +6103,7 @@
             ""
         ],
         "obj": [
-            "Learning to Recognize Spoken Words",
+            "Speech Recognition",
             "T",
             ""
         ],
@@ -6116,7 +6116,7 @@
             ""
         ],
         "obj": [
-            "Learning to Drive an Autonomous Vehicle",
+            "Autonomous Driving",
             "T",
             ""
         ],
@@ -6124,7 +6124,7 @@
     },
     {
         "sub": [
-            "Learning to Drive an Autonomous Vehicle",
+            "Autonomous Driving",
             "T",
             ""
         ],
@@ -6137,7 +6137,7 @@
     },
     {
         "sub": [
-            "Learning to Drive an Autonomous Vehicle",
+            "Autonomous Driving",
             "T",
             ""
         ],
@@ -6155,7 +6155,7 @@
             ""
         ],
         "obj": [
-            "Learning to Drive an Autonomous Vehicle",
+            "Autonomous Driving",
             "T",
             ""
         ],
@@ -6168,7 +6168,7 @@
             ""
         ],
         "obj": [
-            "Learning to Classify new Astronomical Structures",
+            "Astronomical Structure Classification",
             "T",
             ""
         ],
@@ -6176,7 +6176,7 @@
     },
     {
         "sub": [
-            "Learning to Classify new Astronomical Structures",
+            "Astronomical Structure Classification",
             "T",
             ""
         ],
@@ -6189,12 +6189,12 @@
     },
     {
         "sub": [
-            "Learning to Classify new Astronomical Structures",
+            "Astronomical Structure Classification",
             "T",
             ""
         ],
         "obj": [
-            "Decision Tree Learning Algorithms",
+            "Decision Tree Learning",
             "M",
             ""
         ],
@@ -6202,12 +6202,12 @@
     },
     {
         "sub": [
-            "Decision Tree Learning Algorithms",
+            "Decision Tree Learning",
             "M",
             ""
         ],
         "obj": [
-            "Learning to Classify new Astronomical Structures",
+            "Astronomical Structure Classification",
             "T",
             ""
         ],
@@ -6584,7 +6584,7 @@
             ""
         ],
         "obj": [
-            "choose exact type of knowledge to be learned",
+            "fix the task T",
             "s",
             ""
         ],
@@ -6592,7 +6592,7 @@
     },
     {
         "sub": [
-            "choose exact type of knowledge to be learned",
+            "fix the task T",
             "s",
             ""
         ],
@@ -6602,6 +6602,84 @@
             ""
         ],
         "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "fix the task T",
+            "s",
+            ""
+        ],
+        "obj": [
+            "fix performance measure P",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "fix performance measure P",
+            "s",
+            ""
+        ],
+        "obj": [
+            "fix the task T",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "fix performance measure P",
+            "s",
+            ""
+        ],
+        "obj": [
+            "fix training experience E",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "fix training experience E",
+            "s",
+            ""
+        ],
+        "obj": [
+            "fix performance measure P",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "fix training experience E",
+            "s",
+            ""
+        ],
+        "obj": [
+            "choose exact type of knowledge to be learned",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "choose exact type of knowledge to be learned",
+            "s",
+            ""
+        ],
+        "obj": [
+            "fix training experience E",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
     },
     {
         "sub": [
@@ -6770,7 +6848,7 @@
             "D",
             ""
         ],
-        "e": "INSTANCE OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -6783,7 +6861,7 @@
             "C",
             ""
         ],
-        "e": "HAS INSTANCE"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -6848,7 +6926,7 @@
             "D",
             ""
         ],
-        "e": "INSTANCE OF"
+        "e": "HAS INSTANCE"
     },
     {
         "sub": [
@@ -6861,7 +6939,7 @@
             "C",
             ""
         ],
-        "e": "HAS INSTANCE"
+        "e": "INSTANCE OF"
     },
     {
         "sub": [
@@ -7073,6 +7151,58 @@
     },
     {
         "sub": [
+            "Sequence of Training Examples",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Random Sequence of Training Examples",
+            "C",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Random Sequence of Training Examples",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Sequence of Training Examples",
+            "C",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Choosing the Training Experience",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Distribution of Training Examples",
+            "S",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Distribution of Training Examples",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Choosing the Training Experience",
+            "C",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
             "Designing a Learning System",
             "C",
             ""
@@ -7092,6 +7222,32 @@
         ],
         "obj": [
             "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Choosing the Target Function",
+            "C",
+            ""
+        ],
+        "obj": [
+            "choose exact type of knowledge to be learned",
+            "s",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "choose exact type of knowledge to be learned",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Choosing the Target Function",
             "C",
             ""
         ],
