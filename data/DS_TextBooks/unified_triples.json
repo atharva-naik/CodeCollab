@@ -235,6 +235,448 @@
     },
     {
         "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Generation",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Candidate Entity Generation",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Candidate Entity Generation",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Ranking",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Candidate Entity Ranking",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Generation",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Candidate Entity Ranking",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Unlinkable Mention Prediction",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Ranking",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Unlinkable Mention Prediction",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "e": "HAS STEP"
+    },
+    {
+        "sub": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "obj": [
+            "filter out irrelevant entities",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "filter out irrelevant entities",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "filter out irrelevant entities",
+            "s",
+            ""
+        ],
+        "obj": [
+            "retrieve set of possible entities for a mention",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "retrieve set of possible entities for a mention",
+            "s",
+            ""
+        ],
+        "obj": [
+            "filter out irrelevant entities",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "obj": [
+            "retrieve set of possible entities for a mention",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "retrieve set of possible entities for a mention",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "e": "HAS STEP"
+    },
+    {
+        "sub": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "obj": [
+            "use evidence to rank candidates",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "use evidence to rank candidates",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "use evidence to rank candidates",
+            "s",
+            ""
+        ],
+        "obj": [
+            "find most likely entity for a mention",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "find most likely entity for a mention",
+            "s",
+            ""
+        ],
+        "obj": [
+            "use evidence to rank candidates",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "obj": [
+            "find most likely entity for a mention",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "find most likely entity for a mention",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "e": "HAS STEP"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "obj": [
+            "check if top ranked candidate is target entity for mention",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "check if top ranked candidate is target entity for mention",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "check if top ranked candidate is target entity for mention",
+            "s",
+            ""
+        ],
+        "obj": [
+            "return NIL if not",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "return NIL if not",
+            "s",
+            ""
+        ],
+        "obj": [
+            "check if top ranked candidate is target entity for mention",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "return NIL if not",
+            "s",
+            ""
+        ],
+        "obj": [
+            "return the candidate otherwise",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "return the candidate otherwise",
+            "s",
+            ""
+        ],
+        "obj": [
+            "return NIL if not",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "obj": [
+            "return the candidate otherwise",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "return the candidate otherwise",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
             "Information Extraction",
             "T",
             ""
@@ -17771,484 +18213,3 @@
         "e": "CONSISTS OF"
     },
     {
-        "sub": [
-            "One Step Adjustments",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Controlling Familywise Error Rate",
-            "E",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Controlling Familywise Error Rate",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Stepwise p-Value Adjustments",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Stepwise p-Value Adjustments",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Controlling Familywise Error Rate",
-            "E",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Null Domination",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Null Domination",
-            "C",
-            ""
-        ],
-        "obj": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Two Procedures",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Two Procedures",
-            "C",
-            ""
-        ],
-        "obj": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Type 1 Error Rate",
-            "E",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Type 1 Error Rate",
-            "E",
-            ""
-        ],
-        "obj": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Controlling the Type 1 Error Rate",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Controlling the Type 1 Error Rate",
-            "C",
-            ""
-        ],
-        "obj": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Adjusted p-Value for PFER/PCER",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Adjusted p-Value for PFER/PCER",
-            "C",
-            ""
-        ],
-        "obj": [
-            "PCER and PFER",
-            "E",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "False Discovery Rate FDR",
-            "E",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "False Discovery Rate FDR",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "obj": [
-            "FDR and other Measures of Error",
-            "E",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "FDR and other Measures of Error",
-            "E",
-            ""
-        ],
-        "obj": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Benjamini-Hochberg BH Procedure",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Benjamini-Hochberg BH Procedure",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "obj": [
-            "BH Theorem for a Dependent Setting",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "BH Theorem for a Dependent Setting",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Variations on BH",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Variations on BH",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Controlling FDR",
-            "C",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "Bayesian Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Bayesian Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Bayesian Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "Fully Bayes: Hierarchical",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Fully Bayes: Hierarchical",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Bayesian Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Bayesian Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "Fully Bayes: Decision Theory",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Fully Bayes: Decision Theory",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Bayesian Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "Benjamini-Hochberg Theorem",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Benjamini-Hochberg Theorem",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "IS A PART OF"
-    },
-    {
-        "sub": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "obj": [
-            "Benjamini-Yekutieli Theorem",
-            "C",
-            ""
-        ],
-        "e": "CONSISTS OF"
-    },
-    {
-        "sub": [
-            "Benjamini-Yekutieli Theorem",
-            "C",
-            ""
-        ],
-        "obj": [
-            "Multiple Testing",
-            "S",
-            ""
-        ],
-        "e": "IS A PART OF"
-    }
-]

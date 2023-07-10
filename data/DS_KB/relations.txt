@@ -19,3 +19,4 @@ evaluated by
 has language & has dataset
 has modality & has dataset
 better than & worse than (usually)
+has step & is a step of

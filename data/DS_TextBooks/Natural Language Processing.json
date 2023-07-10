@@ -2,7 +2,32 @@
     "Natural Language Processing::C": {
         "Information Extraction::T::superclass of": {
             "Named Entity Recognition NER::T::has part(s)": null,
-            "Named Entity Linking NEL::T::has part(s)": null,
+            "Named Entity Linking NEL::T::has part(s)": {
+                "STEPS": [
+                    "Candidate Entity Generation",
+                    "Candidate Entity Ranking",
+                    "Unlinkable Mention Prediction"
+                ],
+                "Candidate Entity Generation::T::has step": {
+                    "STEPS": [
+                        "filter out irrelevant entities",
+                        "retrieve set of possible entities for a mention"
+                    ]
+                },
+                "Candidate Entity Ranking::T::has step": {
+                    "STEPS": [
+                        "use evidence to rank candidates",
+                        "find most likely entity for a mention"
+                    ]
+                },
+                "Unlinkable Mention Prediction::T::has step": {
+                    "STEPS": [
+                        "check if top ranked candidate is target entity for mention",
+                        "return NIL if not",
+                        "return the candidate otherwise"
+                    ]
+                }
+            },
             "Relation Extraction::T::has part(s)": null
         }
     }
