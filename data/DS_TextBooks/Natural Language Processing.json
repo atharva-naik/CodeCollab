@@ -29,6 +29,8 @@
                 }
             },
             "Relation Extraction::T::has part(s)": null
-        }
+        },
+        "Information Retrieval::T::superclass of": null,
+        "Machine Translation::T": null
     }
 }

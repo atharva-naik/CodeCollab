@@ -1,0 +1,2056 @@
+{
+    "find approaches related to \"Autonomous Driving\".": [
+        [
+            "Closed-loop Weighted Empirical Risk Minimization",
+            "Robust Training"
+        ],
+        [
+            "Surface Nomral-based Spatial Propagation",
+            "Stereo Depth Estimation Models"
+        ],
+        [
+            "Asymmetrical Bi-RNN",
+            "Bidirectional Recurrent Neural Networks"
+        ],
+        [
+            "MotionNet",
+            "Motion Prediction Models"
+        ],
+        [
+            "Guided Anchoring",
+            "Anchor Generation Modules"
+        ],
+        [
+            "RetinaNet-RS",
+            "Object Detection Models"
+        ],
+        [
+            "RetinaNet-RS",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "Discriminative Adversarial Search",
+            "Sequence Decoding Methods"
+        ],
+        [
+            "Deep Stereo Geometry Network",
+            "3D Object Detection Models"
+        ],
+        [
+            "Strip Pooling Network",
+            "Attention Mechanisms"
+        ],
+        [
+            "Deformable RoI Pooling",
+            "RoI Feature Extractors"
+        ],
+        [
+            "Self-adaptive Training",
+            "Robust Training"
+        ],
+        [
+            "Lovasz-Softmax",
+            "Loss Functions"
+        ],
+        [
+            "Simulation as Augmentation",
+            "Adversarial Training"
+        ],
+        [
+            "Simulation as Augmentation",
+            "Trajectory Data Augmentation"
+        ],
+        [
+            "Self-training Guided Prototypical Cross-domain Self-supervised learning",
+            "Domain Adaptation"
+        ],
+        [
+            "Bottleneck Transformer",
+            "Vision Transformers"
+        ],
+        [
+            "Bottleneck Transformer",
+            "Image Models"
+        ],
+        [
+            "Neural Attention Fields",
+            "Image Model Blocks"
+        ],
+        [
+            "Neural Attention Fields",
+            "Feature Extractors"
+        ],
+        [
+            "Neural Attention Fields",
+            "Semantic Segmentation Modules"
+        ],
+        [
+            "Bottleneck Transformer Block",
+            "Image Model Blocks"
+        ],
+        [
+            "Bottleneck Transformer Block",
+            "Attention Modules"
+        ],
+        [
+            "Hierarchical BiLSTM Max Pooling",
+            "Sequence To Sequence Models"
+        ],
+        [
+            "PolarNet",
+            "Point Cloud Representations"
+        ],
+        [
+            "Inception v2",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "YOLOP",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "YOLOP",
+            "Object Detection Models"
+        ],
+        [
+            "YOLOP",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "YOLOP",
+            "Lane Detection Models"
+        ],
+        [
+            "Track objects as points",
+            "Multi-Object Tracking Models"
+        ],
+        [
+            "Height-driven Attention Network",
+            "Image Segmentation Models"
+        ],
+        [
+            "ShuffleNet V2 Downsampling Block",
+            "Image Model Blocks"
+        ],
+        [
+            "ShuffleNet v2",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Sigmoid Linear Unit",
+            "Activation Functions"
+        ],
+        [
+            "Hyperboloid Embeddings",
+            "Graph Embeddings"
+        ],
+        [
+            "Multimodal Fuzzy Fusion Framework",
+            "Non-Parametric Classification"
+        ],
+        [
+            "ShuffleNet V2 Block",
+            "Image Model Blocks"
+        ],
+        [
+            "Conditional Relation Network",
+            "Video Model Blocks"
+        ],
+        [
+            "Sparse R-CNN",
+            "Object Detection Models"
+        ],
+        [
+            "FBNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "FBNet Block",
+            "Image Model Blocks"
+        ],
+        [
+            "FBNet Block",
+            "Skip Connection Blocks"
+        ],
+        [
+            "Linformer",
+            "Transformers"
+        ],
+        [
+            "Linformer",
+            "Autoregressive Transformers"
+        ],
+        [
+            "Neural Oblivious Decision Ensembles",
+            "Deep Tabular Learning"
+        ],
+        [
+            "Soft-NMS",
+            "Proposal Filtering"
+        ],
+        [
+            "Regularized Autoencoders",
+            "Generative Models"
+        ],
+        [
+            "Generative Adversarial Imitation Learning",
+            "Adversarial Training"
+        ],
+        [
+            "SegFormer",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "PANet",
+            "Object Detection Models"
+        ],
+        [
+            "PANet",
+            "Instance Segmentation Models"
+        ],
+        [
+            "Pyramid Vision Transformer",
+            "Vision Transformers"
+        ],
+        [
+            "Spatial-Reduction Attention",
+            "Attention Modules"
+        ],
+        [
+            "Mix-FFN",
+            "Feedforward Networks"
+        ],
+        [
+            "Adaptive Feature Pooling",
+            "Pooling Operations"
+        ],
+        [
+            "MADDPG",
+            "Policy Gradient Methods"
+        ],
+        [
+            "ResNet-D",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Multi-Head Linear Attention",
+            "Attention Modules"
+        ],
+        [
+            "Semi-Pseudo-Label",
+            "Semi-Supervised Learning Methods"
+        ],
+        [
+            "CenterPoint",
+            "3D Object Detection Models"
+        ],
+        [
+            "YOLOX",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "ORB-Simultaneous localization and mapping",
+            "Localization Models"
+        ],
+        [
+            "Synthesizer",
+            "Language Models"
+        ],
+        [
+            "Compact Convolutional Transformers",
+            "Vision Transformers"
+        ],
+        [
+            "COLA",
+            "Self-Supervised Learning"
+        ],
+        [
+            "COLA",
+            "Generative Audio Models"
+        ],
+        [
+            "Thinned U-shape Module",
+            "Feature Extractors"
+        ],
+        [
+            "Self-Adversarial Negative Sampling",
+            "Negative Sampling"
+        ],
+        [
+            "Deformable DETR",
+            "Vision Transformers"
+        ],
+        [
+            "Deformable DETR",
+            "Object Detection Models"
+        ],
+        [
+            "ENet Initial Block",
+            "Image Model Blocks"
+        ],
+        [
+            "ENet",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "ENet Bottleneck",
+            "Image Model Blocks"
+        ],
+        [
+            "Adaptive Parameter-wise Diagonal Quasi-Newton Method",
+            "Stochastic Optimization"
+        ],
+        [
+            "ENet Dilated Bottleneck",
+            "Image Model Blocks"
+        ],
+        [
+            "High-resolution input",
+            "Image Representations"
+        ],
+        [
+            "Set Transformer",
+            "Attention Mechanisms"
+        ],
+        [
+            "Sparse Convolutions",
+            "Convolutions"
+        ],
+        [
+            "RAdam",
+            "Stochastic Optimization"
+        ],
+        [
+            "Twin Delayed Deep Deterministic",
+            "Policy Gradient Methods"
+        ],
+        [
+            "Clipped Double Q-learning",
+            "Off-Policy TD Control"
+        ],
+        [
+            "Target Policy Smoothing",
+            "Regularization"
+        ],
+        [
+            "Fast R-CNN",
+            "Object Detection Models"
+        ],
+        [
+            "Sparsemax",
+            "Output Functions"
+        ],
+        [
+            "EfficientDet",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "EfficientDet",
+            "Object Detection Models"
+        ],
+        [
+            "EfficientDet",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "Selective Search",
+            "Region Proposal"
+        ],
+        [
+            "Deformable Attention Module",
+            "Attention Modules"
+        ],
+        [
+            "SpatialDropout",
+            "Regularization"
+        ],
+        [
+            "PSPNet",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "LeNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Dense Prediction Transformer",
+            "Vision Transformers"
+        ],
+        [
+            "Dense Prediction Transformer",
+            "Image Models"
+        ],
+        [
+            "Stacked Hourglass Network",
+            "Pose Estimation Models"
+        ],
+        [
+            "ShuffleNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "ShuffleNet Block",
+            "Image Model Blocks"
+        ],
+        [
+            "ShuffleNet Block",
+            "Skip Connection Blocks"
+        ],
+        [
+            "Darknet-19",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Mixing Adam and SGD",
+            "Stochastic Optimization"
+        ],
+        [
+            "Electric",
+            "Autoencoding Transformers"
+        ],
+        [
+            "Electric",
+            "Language Models"
+        ],
+        [
+            "Electric",
+            "Transformers"
+        ],
+        [
+            "Hourglass Module",
+            "Image Model Blocks"
+        ],
+        [
+            "Mixture model network",
+            "Graph Models"
+        ],
+        [
+            "Temporal Adaptive Module",
+            "Attention Mechanisms"
+        ],
+        [
+            "TransE",
+            "Graph Embeddings"
+        ],
+        [
+            "Parallax",
+            "Distributed Methods"
+        ],
+        [
+            "Parallax",
+            "Parameter Server Methods"
+        ],
+        [
+            "Parallax",
+            "Hybrid Parallel Methods"
+        ],
+        [
+            "A3C",
+            "Policy Gradient Methods"
+        ],
+        [
+            "Graph Self-Attention",
+            "Attention Modules"
+        ],
+        [
+            "BiFPN",
+            "Feature Pyramid Blocks"
+        ],
+        [
+            "BiFPN",
+            "Feature Extractors"
+        ],
+        [
+            "Huber loss",
+            "Loss Functions"
+        ],
+        [
+            "Groupwise Point Convolution",
+            "Convolutions"
+        ],
+        [
+            "Cascade Corner Pooling",
+            "Pooling Operations"
+        ],
+        [
+            "Center Pooling",
+            "Pooling Operations"
+        ],
+        [
+            "Deep Graph Convolutional Neural Network",
+            "Graph Models"
+        ],
+        [
+            "Trust Region Policy Optimization",
+            "model-free reinforcement learning"
+        ],
+        [
+            "Trust Region Policy Optimization",
+            "Policy Gradient Methods"
+        ],
+        [
+            "OpenPose",
+            "Pose Estimation Models"
+        ],
+        [
+            "CenterNet",
+            "Object Detection Models"
+        ],
+        [
+            "CenterNet",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "Wide Residual Block",
+            "Image Model Blocks"
+        ],
+        [
+            "Wide Residual Block",
+            "Skip Connection Blocks"
+        ],
+        [
+            "YOLOv2",
+            "Object Detection Models"
+        ],
+        [
+            "YOLOv2",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "WideResNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "WideResNet",
+            "Image Models"
+        ],
+        [
+            "simple Copy-Paste",
+            "Image Data Augmentation"
+        ],
+        [
+            "Hierarchical Feature Fusion",
+            "Degridding"
+        ],
+        [
+            "Sparse Transformer",
+            "Transformers"
+        ],
+        [
+            "Sparse Transformer",
+            "Autoregressive Transformers"
+        ],
+        [
+            "Fast Attention Via Positive Orthogonal Random Features",
+            "Attention Mechanisms"
+        ],
+        [
+            "AutoAugment",
+            "Image Data Augmentation"
+        ],
+        [
+            "PnP",
+            "Image Model Blocks"
+        ],
+        [
+            "Prioritized Experience Replay",
+            "Replay Memory"
+        ],
+        [
+            "R-CNN",
+            "Object Detection Models"
+        ],
+        [
+            "Channel Shuffle",
+            "Miscellaneous Components"
+        ],
+        [
+            "FCOS",
+            "Object Detection Models"
+        ],
+        [
+            "FCOS",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "Performer",
+            "Transformers"
+        ],
+        [
+            "Axial Attention",
+            "Image Model Blocks"
+        ],
+        [
+            "Axial Attention",
+            "Attention Mechanisms"
+        ],
+        [
+            "FixMatch",
+            "Semi-Supervised Learning Methods"
+        ],
+        [
+            "SqueezeNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Fire Module",
+            "Image Model Blocks"
+        ],
+        [
+            "A2C",
+            "Policy Gradient Methods"
+        ],
+        [
+            "MobileNetV1",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Adaptive Robust Loss",
+            "Loss Functions"
+        ],
+        [
+            "DeepLab",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "Deep Deterministic Policy Gradient",
+            "Policy Gradient Methods"
+        ],
+        [
+            "Approximate Bayesian Computation",
+            "Approximate Inference"
+        ],
+        [
+            "Pyramid Pooling Module",
+            "Semantic Segmentation Modules"
+        ],
+        [
+            "Switchable Atrous Convolution",
+            "Convolutions"
+        ],
+        [
+            "Mutual Information Machine/Mask Image Modeling",
+            "Representation Learning"
+        ],
+        [
+            "energy-based model",
+            "Generative Models"
+        ],
+        [
+            "SegNet",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "L1 Regularization",
+            "Regularization"
+        ],
+        [
+            "L1 Regularization",
+            "Parameter Norm Penalties"
+        ],
+        [
+            "Monte-Carlo Tree Search",
+            "Heuristic Search Algorithms"
+        ],
+        [
+            "Visual Geometry Group 19 Layer CNN",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "HRNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Bootstrap Your Own Latent",
+            "Self-Supervised Learning"
+        ],
+        [
+            "Dynamic Convolution",
+            "Attention Mechanisms"
+        ],
+        [
+            "Dynamic Convolution",
+            "Convolutions"
+        ],
+        [
+            "Dynamic Convolution",
+            "Temporal Convolutions"
+        ],
+        [
+            "Restricted Boltzmann Machine",
+            "Generative Models"
+        ],
+        [
+            "Atrous Spatial Pyramid Pooling",
+            "Semantic Segmentation Modules"
+        ],
+        [
+            "Deep Layer Aggregation",
+            "Feature Extractors"
+        ],
+        [
+            "Feedback Alignment",
+            "Stochastic Optimization"
+        ],
+        [
+            "You Only Look Once",
+            "Object Detection Models"
+        ],
+        [
+            "Parameterized ReLU",
+            "Activation Functions"
+        ],
+        [
+            "Grid Sensitive",
+            "Object Detection Modules"
+        ],
+        [
+            "YOLOv4",
+            "Object Detection Models"
+        ],
+        [
+            "YOLOv4",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "Xavier Initialization",
+            "Initialization"
+        ],
+        [
+            "Pix2Pix",
+            "Generative Adversarial Networks"
+        ],
+        [
+            "Pix2Pix",
+            "Generative Models"
+        ],
+        [
+            "Pix2Pix",
+            "Conditional Image-to-Image Translation Models"
+        ],
+        [
+            "Detection Transformer",
+            "Vision Transformers"
+        ],
+        [
+            "Detection Transformer",
+            "Object Detection Models"
+        ],
+        [
+            "Conditional Variational Auto Encoder",
+            "Generative Models"
+        ],
+        [
+            "Cross-Attention Module",
+            "Attention Modules"
+        ],
+        [
+            "Deep Ensembles",
+            "Stochastic Optimization"
+        ],
+        [
+            "CSPDarknet53",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Bottom-up Path Augmentation",
+            "Feature Pyramid Blocks"
+        ],
+        [
+            "Bottom-up Path Augmentation",
+            "Feature Extractors"
+        ],
+        [
+            "PAFPN",
+            "Feature Pyramid Blocks"
+        ],
+        [
+            "PAFPN",
+            "Feature Extractors"
+        ],
+        [
+            "Non-Local Block",
+            "Image Model Blocks"
+        ],
+        [
+            "Non-Local Block",
+            "Skip Connection Blocks"
+        ],
+        [
+            "GoogLeNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Xception",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Deformable Convolution",
+            "Convolutions"
+        ],
+        [
+            "DropBlock",
+            "Regularization"
+        ],
+        [
+            "Discrete Cosine Transform",
+            "Fourier-related Transforms"
+        ],
+        [
+            "Momentum Contrast",
+            "Semi-Supervised Learning Methods"
+        ],
+        [
+            "Momentum Contrast",
+            "Self-Supervised Learning"
+        ],
+        [
+            "Non-Local Operation",
+            "Image Feature Extractors"
+        ],
+        [
+            "Path Length Regularization",
+            "Regularization"
+        ],
+        [
+            "Jigsaw",
+            "Self-Supervised Learning"
+        ],
+        [
+            "Weight Demodulation",
+            "Normalization"
+        ],
+        [
+            "Visual Attention",
+            "Attention"
+        ],
+        [
+            "Spatio-temporal stability analysis",
+            "Feature Extractors"
+        ],
+        [
+            "Monte Carlo Dropout",
+            "Interpretability"
+        ],
+        [
+            "pc",
+            "2D Parallel Distributed Methods"
+        ],
+        [
+            "StyleGAN2",
+            "Generative Adversarial Networks"
+        ],
+        [
+            "StyleGAN2",
+            "Generative Models"
+        ],
+        [
+            "CARLA: An Open Urban Driving Simulator",
+            "Video Game Models"
+        ],
+        [
+            "Scaled Exponential Linear Unit",
+            "Activation Functions"
+        ],
+        [
+            "RetinaNet",
+            "Object Detection Models"
+        ],
+        [
+            "RetinaNet",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "Proximal Policy Optimization",
+            "model-free reinforcement learning"
+        ],
+        [
+            "Proximal Policy Optimization",
+            "Policy Gradient Methods"
+        ],
+        [
+            "Random Search",
+            "Hyperparameter Search"
+        ],
+        [
+            "Dot-Product Attention",
+            "Attention Mechanisms"
+        ],
+        [
+            "PointNet",
+            "3D Representations"
+        ],
+        [
+            "Neural Radiance Field",
+            "3D Representations"
+        ],
+        [
+            "squeeze-and-excitation networks",
+            "Attention Mechanisms"
+        ],
+        [
+            "Autoencoders",
+            "Dimensionality Reduction"
+        ],
+        [
+            "Inception Module",
+            "Image Model Blocks"
+        ],
+        [
+            "ConvLSTM",
+            "Recurrent Neural Networks"
+        ],
+        [
+            "HyperNetwork",
+            "Feedforward Networks"
+        ],
+        [
+            "AlexNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "CutMix",
+            "Image Data Augmentation"
+        ],
+        [
+            "Class-activation map",
+            "Language Models"
+        ],
+        [
+            "Class-activation map",
+            "Interpretability"
+        ],
+        [
+            "SimCLR",
+            "Self-Supervised Learning"
+        ],
+        [
+            "YOLOv3",
+            "Object Detection Models"
+        ],
+        [
+            "YOLOv3",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "Normalized Temperature-scaled Cross Entropy Loss",
+            "Loss Functions"
+        ],
+        [
+            "SSD",
+            "Object Detection Models"
+        ],
+        [
+            "SSD",
+            "One-Stage Object Detection Models"
+        ],
+        [
+            "k-Nearest Neighbors",
+            "Non-Parametric Regression"
+        ],
+        [
+            "k-Nearest Neighbors",
+            "Non-Parametric Classification"
+        ],
+        [
+            "Random Gaussian Blur",
+            "Image Data Augmentation"
+        ],
+        [
+            "Darknet-53",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Laplacian Positional Encodings",
+            "Graph Embeddings"
+        ],
+        [
+            "Graph Transformer",
+            "Graph Models"
+        ],
+        [
+            "Color Jitter",
+            "Image Data Augmentation"
+        ],
+        [
+            "Laplacian EigenMap",
+            "Graph Embeddings"
+        ],
+        [
+            "Deep Q-Network",
+            "Q-Learning Networks"
+        ],
+        [
+            "Spatial Transformer",
+            "Image Model Blocks"
+        ],
+        [
+            "Model-Agnostic Meta-Learning",
+            "Meta-Learning Algorithms"
+        ],
+        [
+            "Spatial Attention Module",
+            "Image Model Blocks"
+        ],
+        [
+            "Spatial Attention Module",
+            "Attention Modules"
+        ],
+        [
+            "Network On Network",
+            "Deep Tabular Learning"
+        ],
+        [
+            "R1 Regularization",
+            "Regularization"
+        ],
+        [
+            "Greedy Policy Search",
+            "Image Data Augmentation"
+        ],
+        [
+            "Random Resized Crop",
+            "Image Data Augmentation"
+        ],
+        [
+            "MobileNetV2",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "MobileNetV2",
+            "Image Models"
+        ],
+        [
+            "Residual Attention Network",
+            "Attention Mechanisms"
+        ],
+        [
+            "CycleGAN",
+            "Generative Adversarial Networks"
+        ],
+        [
+            "CycleGAN",
+            "Generative Models"
+        ],
+        [
+            "CycleGAN",
+            "Unpaired Image-to-Image Translation"
+        ],
+        [
+            "Mish",
+            "Activation Functions"
+        ],
+        [
+            "Swin Transformer",
+            "Vision Transformers"
+        ],
+        [
+            "Swin Transformer",
+            "Image Models"
+        ],
+        [
+            "Local Response Normalization",
+            "Normalization"
+        ],
+        [
+            "VGG-16",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "GAN Least Squares Loss",
+            "Loss Functions"
+        ],
+        [
+            "Entropy Regularization",
+            "Regularization"
+        ],
+        [
+            "Fully Convolutional Network",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "Experience Replay",
+            "Replay Memory"
+        ],
+        [
+            "Non Maximum Suppression",
+            "Proposal Filtering"
+        ],
+        [
+            "Diffusion-Convolutional Neural Networks",
+            "Graph Models"
+        ],
+        [
+            "Spatial Pyramid Pooling",
+            "Pooling Operations"
+        ],
+        [
+            "Softplus",
+            "Activation Functions"
+        ],
+        [
+            "Temporal attention",
+            "Attention Mechanisms"
+        ],
+        [
+            "Stochastic Depth",
+            "Regularization"
+        ],
+        [
+            "3D Convolution",
+            "Convolutions"
+        ],
+        [
+            "EfficientNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "EfficientNet",
+            "Image Models"
+        ],
+        [
+            "EfficientNet",
+            "convolutional neural network"
+        ],
+        [
+            "Cycle Consistency Loss",
+            "Loss Functions"
+        ],
+        [
+            "Inpainting",
+            "Self-Supervised Learning"
+        ],
+        [
+            "PatchGAN",
+            "Discriminators"
+        ],
+        [
+            "Auxiliary Classifier",
+            "Miscellaneous Components"
+        ],
+        [
+            "Faster R-CNN",
+            "Object Detection Models"
+        ],
+        [
+            "Heatmap",
+            "Output Functions"
+        ],
+        [
+            "InfoNCE",
+            "Loss Functions"
+        ],
+        [
+            "Colorization",
+            "Self-Supervised Learning"
+        ],
+        [
+            "Instance Normalization",
+            "Normalization"
+        ],
+        [
+            "Swish",
+            "Activation Functions"
+        ],
+        [
+            "Swish",
+            "Adaptive Activation Functions"
+        ],
+        [
+            "Feature Pyramid Network",
+            "Feature Pyramid Blocks"
+        ],
+        [
+            "Feature Pyramid Network",
+            "Feature Extractors"
+        ],
+        [
+            "Mask R-CNN",
+            "Object Detection Models"
+        ],
+        [
+            "Mask R-CNN",
+            "Instance Segmentation Models"
+        ],
+        [
+            "Triplet Loss",
+            "Loss Functions"
+        ],
+        [
+            "Normalizing Flows",
+            "Distribution Approximation"
+        ],
+        [
+            "DenseNet",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Adapter",
+            "Feedforward Networks"
+        ],
+        [
+            "RoIPool",
+            "RoI Feature Extractors"
+        ],
+        [
+            "RMSProp",
+            "Stochastic Optimization"
+        ],
+        [
+            "VGG",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Focal Loss",
+            "Loss Functions"
+        ],
+        [
+            "Stochastic Gradient Descent",
+            "Stochastic Optimization"
+        ],
+        [
+            "Siamese Network",
+            "Twin Networks"
+        ],
+        [
+            "Squeeze-and-Excitation Block",
+            "Image Model Blocks"
+        ],
+        [
+            "Dense Block",
+            "Image Model Blocks"
+        ],
+        [
+            "Dense Block",
+            "Skip Connection Blocks"
+        ],
+        [
+            "Grouped Convolution",
+            "Convolutions"
+        ],
+        [
+            "Linear Regression",
+            "Generalized Linear Models"
+        ],
+        [
+            "Self-Learning",
+            "Lifelong Learning"
+        ],
+        [
+            "RoIAlign",
+            "RoI Feature Extractors"
+        ],
+        [
+            "Mixup",
+            "Image Data Augmentation"
+        ],
+        [
+            "Conditional Random Field",
+            "Structured Prediction"
+        ],
+        [
+            "Graph Convolutional Networks",
+            "Graph Models"
+        ],
+        [
+            "Inverted Residual Block",
+            "Skip Connection Blocks"
+        ],
+        [
+            "Memory Network",
+            "Working Memory Models"
+        ],
+        [
+            "Dilated Convolution",
+            "Convolutions"
+        ],
+        [
+            "k-Means Clustering",
+            "Clustering"
+        ],
+        [
+            "Sequence to Sequence",
+            "Sequence To Sequence Models"
+        ],
+        [
+            "Sequence to Sequence",
+            "Machine Translation Models"
+        ],
+        [
+            "Gaussian Process",
+            "Non-Parametric Regression"
+        ],
+        [
+            "Gaussian Process",
+            "Non-Parametric Classification"
+        ],
+        [
+            "Fixed Factorized Attention",
+            "Attention Patterns"
+        ],
+        [
+            "Strided Attention",
+            "Attention Patterns"
+        ],
+        [
+            "Gated Recurrent Unit",
+            "Recurrent Neural Networks"
+        ],
+        [
+            "Feature Selection",
+            "AutoML"
+        ],
+        [
+            "GPT-3",
+            "Language Models"
+        ],
+        [
+            "GPT-3",
+            "Transformers"
+        ],
+        [
+            "GPT-3",
+            "Autoregressive Transformers"
+        ],
+        [
+            "Depthwise Separable Convolution",
+            "Convolutions"
+        ],
+        [
+            "Variational Autoencoder",
+            "Generative Models"
+        ],
+        [
+            "Variational Autoencoder",
+            "Likelihood-Based Generative Models"
+        ],
+        [
+            "Leaky ReLU",
+            "Activation Functions"
+        ],
+        [
+            "Graph Convolutional Network",
+            "Graph Models"
+        ],
+        [
+            "Region Proposal Network",
+            "Region Proposal"
+        ],
+        [
+            "Depthwise Convolution",
+            "Convolutions"
+        ],
+        [
+            "Pointwise Convolution",
+            "Convolutions"
+        ],
+        [
+            "Q-Learning",
+            "Off-Policy TD Control"
+        ],
+        [
+            "Feedforward Network",
+            "Feedforward Networks"
+        ],
+        [
+            "Focus",
+            "Transformers"
+        ],
+        [
+            "Vision Transformer",
+            "Vision Transformers"
+        ],
+        [
+            "Vision Transformer",
+            "Image Models"
+        ],
+        [
+            "Variational Inference",
+            "Dimensionality Reduction"
+        ],
+        [
+            "Logistic Regression",
+            "Generalized Linear Models"
+        ],
+        [
+            "Contrastive Language-Image Pre-training",
+            "Vision and Language Pre-Trained Models"
+        ],
+        [
+            "Contrastive Language-Image Pre-training",
+            "Image Representations"
+        ],
+        [
+            "Generative Adversarial Network",
+            "Generative Adversarial Networks"
+        ],
+        [
+            "Generative Adversarial Network",
+            "Generative Models"
+        ],
+        [
+            "Support Vector Machine",
+            "Non-Parametric Regression"
+        ],
+        [
+            "Support Vector Machine",
+            "Non-Parametric Classification"
+        ],
+        [
+            "U-Net",
+            "Semantic Segmentation Models"
+        ],
+        [
+            "Interpretability",
+            "Image Models"
+        ],
+        [
+            "ALIGN",
+            "Vision and Language Pre-Trained Models"
+        ],
+        [
+            "Linear Warmup With Cosine Annealing",
+            "Learning Rate Schedules"
+        ],
+        [
+            "Attentive Walk-Aggregating Graph Neural Network",
+            "Graph Representation Learning"
+        ],
+        [
+            "Cosine Annealing",
+            "Learning Rate Schedules"
+        ],
+        [
+            "Bottleneck Residual Block",
+            "Image Model Blocks"
+        ],
+        [
+            "Bottleneck Residual Block",
+            "Skip Connection Blocks"
+        ],
+        [
+            "Residual Network",
+            "Convolutional Neural Networks"
+        ],
+        [
+            "Concatenated Skip Connection",
+            "Skip Connections"
+        ],
+        [
+            "Diffusion",
+            "Image Generation Models"
+        ],
+        [
+            "Balanced Selection",
+            "Active Learning"
+        ],
+        [
+            "Kaiming Initialization",
+            "Initialization"
+        ],
+        [
+            "Residual Block",
+            "Image Model Blocks"
+        ],
+        [
+            "Residual Block",
+            "Skip Connection Blocks"
+        ],
+        [
+            "Global Average Pooling",
+            "Pooling Operations"
+        ],
+        [
+            "AutoEncoder",
+            "Generative Models"
+        ],
+        [
+            "Average Pooling",
+            "Pooling Operations"
+        ],
+        [
+            "1x1 Convolution",
+            "Convolutions"
+        ],
+        [
+            "Batch Normalization",
+            "Normalization"
+        ],
+        [
+            "Max Pooling",
+            "Pooling Operations"
+        ],
+        [
+            "Long Short-Term Memory",
+            "Recurrent Neural Networks"
+        ],
+        [
+            "SPEED: Separable Pyramidal Pooling EncodEr-Decoder for Real-Time Monocular Depth Estimation on Low-Resource Settings",
+            "Monocular Depth Estimation Models"
+        ],
+        [
+            "Attention Dropout",
+            "Regularization"
+        ],
+        [
+            "Knowledge Distillation",
+            "Knowledge Distillation"
+        ],
+        [
+            "Weight Decay",
+            "Regularization"
+        ],
+        [
+            "Weight Decay",
+            "Parameter Norm Penalties"
+        ],
+        [
+            "Gaussian Error Linear Units",
+            "Activation Functions"
+        ],
+        [
+            "Tanh Activation",
+            "Activation Functions"
+        ],
+        [
+            "test",
+            "method"
+        ],
+        [
+            "Sigmoid Activation",
+            "Activation Functions"
+        ],
+        [
+            "Contrastive Learning",
+            "Graph Representation Learning"
+        ],
+        [
+            "Rectified Linear Units",
+            "Activation Functions"
+        ],
+        [
+            "Absolute Position Encodings",
+            "Position Embeddings"
+        ],
+        [
+            "Transformer",
+            "Transformers"
+        ],
+        [
+            "Transformer",
+            "Autoregressive Transformers"
+        ],
+        [
+            "Position-Wise Feed-Forward Layer",
+            "Feedforward Networks"
+        ],
+        [
+            "Label Smoothing",
+            "Regularization"
+        ],
+        [
+            "Byte Pair Encoding",
+            "Subword Segmentation"
+        ],
+        [
+            "Convolution",
+            "Convolutions"
+        ],
+        [
+            "Adam",
+            "Optimization"
+        ],
+        [
+            "Adam",
+            "Large Batch Optimization"
+        ],
+        [
+            "Adam",
+            "Stochastic Optimization"
+        ],
+        [
+            "Layer Normalization",
+            "Normalization"
+        ],
+        [
+            "Multi-Head Attention",
+            "Attention Modules"
+        ],
+        [
+            "Scaled Dot-Product Attention",
+            "Attention Mechanisms"
+        ],
+        [
+            "Linear Layer",
+            "Feedforward Networks"
+        ],
+        [
+            "Dropout",
+            "Regularization"
+        ],
+        [
+            "Dense Connections",
+            "Feedforward Networks"
+        ],
+        [
+            "Residual Connection",
+            "Skip Connections"
+        ],
+        [
+            "Softmax",
+            "Output Functions"
+        ]
+    ],
+    "anything related to Decision Tree Learning": [
+        "Decision Tree Representation IS A PART OF Decision Tree Learning",
+        "Problems for Decision Tree Learning IS A PART OF Decision Tree Learning",
+        "Hypothesis Space Search in Decision Tree Learning IS A PART OF Decision Tree Learning",
+        "Astronomical Structure Classification MODELED BY Decision Tree Learning",
+        "Basic Decision Tree Learning Algorithm IS A PART OF Decision Tree Learning",
+        "Inductive Bias in Decision Tree Learning IS A PART OF Decision Tree Learning",
+        "Issues in Decision Tree Learning IS A PART OF Decision Tree Learning"
+    ],
+    "anything related to CutMix": [
+        "Insurance Prediction MODELED BY CutMix",
+        "Image Animation MODELED BY CutMix",
+        "Extracting Buildings In Remote Sensing Images MODELED BY CutMix",
+        "Pneumothorax Detection MODELED BY CutMix",
+        "Image Data Augmentation SUPERCLASS OF CutMix",
+        "Vehicle Speed Estimation MODELED BY CutMix",
+        "Dial Meter Reading MODELED BY CutMix",
+        "Compiler Optimization MODELED BY CutMix",
+        "Colorectal Polyps Characterization MODELED BY CutMix",
+        "Component Classification MODELED BY CutMix",
+        "Meter Reading MODELED BY CutMix",
+        "Image-based Automatic Meter Reading MODELED BY CutMix",
+        "Pancreas Segmentation MODELED BY CutMix",
+        "Nutrition MODELED BY CutMix",
+        "License Plate Detection MODELED BY CutMix",
+        "Explainable Models MODELED BY CutMix",
+        "Fire Detection MODELED BY CutMix",
+        "Homography Estimation MODELED BY CutMix",
+        "Data Compression MODELED BY CutMix",
+        "Camera Calibration MODELED BY CutMix",
+        "Document Layout Analysis MODELED BY CutMix",
+        "Data Poisoning MODELED BY CutMix",
+        "Weakly supervised Semantic Segmentation MODELED BY CutMix",
+        "Object Detection In Aerial Images MODELED BY CutMix",
+        "Document Image Classification MODELED BY CutMix",
+        "Unity MODELED BY CutMix",
+        "Learning Theory MODELED BY CutMix",
+        "Weakly-Supervised Semantic Segmentation MODELED BY CutMix",
+        "Traffic Sign Detection MODELED BY CutMix",
+        "Traffic Sign Recognition MODELED BY CutMix",
+        "Semi-Supervised Semantic Segmentation MODELED BY CutMix",
+        "License Plate Recognition MODELED BY CutMix",
+        "Medical Object Detection MODELED BY CutMix",
+        "Adversarial Defense MODELED BY CutMix",
+        "Small Object Detection MODELED BY CutMix",
+        "Disease Prediction MODELED BY CutMix",
+        "Object Counting MODELED BY CutMix",
+        "2D Semantic Segmentation MODELED BY CutMix",
+        "Out-of-Distribution Generalization MODELED BY CutMix",
+        "Fraud Detection MODELED BY CutMix",
+        "Long-tail Learning MODELED BY CutMix",
+        "Multiple Object Tracking MODELED BY CutMix",
+        "Facial Expression Recognition MODELED BY CutMix",
+        "Vocal Bursts Type Prediction MODELED BY CutMix",
+        "Image Quality Assessment MODELED BY CutMix",
+        "Brain Tumor Segmentation MODELED BY CutMix",
+        "Video Retrieval MODELED BY CutMix",
+        "Explainable artificial intelligence MODELED BY CutMix",
+        "whole slide images MODELED BY CutMix",
+        "2D Object Detection MODELED BY CutMix",
+        "Region Proposal MODELED BY CutMix",
+        "Tumor Segmentation MODELED BY CutMix",
+        "Image Inpainting MODELED BY CutMix",
+        "Self-Driving Cars MODELED BY CutMix",
+        "Event Detection MODELED BY CutMix",
+        "Conditional Image Generation MODELED BY CutMix",
+        "Image Augmentation MODELED BY CutMix",
+        "Salient Object Detection MODELED BY CutMix",
+        "Binarization MODELED BY CutMix",
+        "Lesion Segmentation MODELED BY CutMix",
+        "Image Compression MODELED BY CutMix",
+        "Multi-Object Tracking MODELED BY CutMix",
+        "Pedestrian Detection MODELED BY CutMix",
+        "Edge-computing MODELED BY CutMix",
+        "Self-Supervised Image Classification MODELED BY CutMix",
+        "Real-Time Semantic Segmentation MODELED BY CutMix",
+        "Descriptive MODELED BY CutMix",
+        "Privacy Preserving MODELED BY CutMix",
+        "Face Detection MODELED BY CutMix",
+        "Facial Expression Recognition (FER) MODELED BY CutMix",
+        "Object Localization MODELED BY CutMix",
+        "Medical Diagnosis MODELED BY CutMix",
+        "Computed Tomography (CT) MODELED BY CutMix",
+        "Out-of-Distribution Detection MODELED BY CutMix",
+        "Adversarial Robustness MODELED BY CutMix",
+        "Active Learning MODELED BY CutMix",
+        "Panoptic Segmentation MODELED BY CutMix",
+        "Fine-Grained Image Classification MODELED BY CutMix",
+        "Federated Learning MODELED BY CutMix",
+        "Multi-Label Classification MODELED BY CutMix",
+        "Few-Shot Image Classification MODELED BY CutMix",
+        "Image Reconstruction MODELED BY CutMix",
+        "Domain Generalization MODELED BY CutMix",
+        "text-classification MODELED BY CutMix",
+        "Continual Learning MODELED BY CutMix",
+        "Real-Time Object Detection MODELED BY CutMix",
+        "Metric Learning MODELED BY CutMix",
+        "Optical Character Recognition (OCR) MODELED BY CutMix",
+        "Temporal Action Localization MODELED BY CutMix",
+        "Adversarial Attack MODELED BY CutMix",
+        "Object Tracking MODELED BY CutMix",
+        "Autonomous Vehicles MODELED BY CutMix",
+        "Model Compression MODELED BY CutMix",
+        "Person Re-Identification MODELED BY CutMix",
+        "Specificity MODELED BY CutMix",
+        "Image Captioning MODELED BY CutMix",
+        "3D Object Detection MODELED BY CutMix",
+        "Super-Resolution MODELED BY CutMix",
+        "Face Recognition MODELED BY CutMix",
+        "Medical Image Segmentation MODELED BY CutMix",
+        "Image Super-Resolution MODELED BY CutMix",
+        "Management MODELED BY CutMix",
+        "Benchmarking MODELED BY CutMix",
+        "Image Retrieval MODELED BY CutMix",
+        "Image Segmentation MODELED BY CutMix",
+        "Vocal Bursts Intensity Prediction MODELED BY CutMix",
+        "Denoising MODELED BY CutMix",
+        "BIG-bench Machine Learning MODELED BY CutMix",
+        "regression MODELED BY CutMix",
+        "Action Recognition MODELED BY CutMix",
+        "Quantization MODELED BY CutMix",
+        "Autonomous Driving MODELED BY CutMix",
+        "Self-Supervised Learning MODELED BY CutMix",
+        "Retrieval MODELED BY CutMix",
+        "Translation MODELED BY CutMix",
+        "Domain Adaptation MODELED BY CutMix",
+        "Instance Segmentation MODELED BY CutMix",
+        "Text Classification MODELED BY CutMix",
+        "Image Generation MODELED BY CutMix",
+        "Representation Learning MODELED BY CutMix",
+        "Transfer Learning MODELED BY CutMix",
+        "General Classification MODELED BY CutMix",
+        "Data Augmentation MODELED BY CutMix",
+        "Classification MODELED BY CutMix",
+        "object-detection MODELED BY CutMix",
+        "Language Modelling MODELED BY CutMix",
+        "Object Detection MODELED BY CutMix",
+        "Knowledge Distillation MODELED BY CutMix",
+        "Semantic Segmentation MODELED BY CutMix",
+        "Image Classification MODELED BY CutMix",
+        "Contrastive Learning MODELED BY CutMix"
+    ],
+    "anything related to Path Planning": [
+        "Path Planning and Motion Control SUBCLASS OF Path Planning"
+    ],
+    "anything related to Capsule Network": [
+        "Image and Video Forgery Detection MODELED BY Capsule Network",
+        "Multiple Action Detection MODELED BY Capsule Network",
+        "Sequential Pattern Mining MODELED BY Capsule Network",
+        "Affordance Detection MODELED BY Capsule Network",
+        "Collaborative Inference MODELED BY Capsule Network",
+        "Weakly Supervised Defect Detection MODELED BY Capsule Network",
+        "Classification Of Breast Cancer Histology Images MODELED BY Capsule Network",
+        "Volumetric Medical Image Segmentation MODELED BY Capsule Network",
+        "Handwritten Digit Recognition MODELED BY Capsule Network",
+        "Lung Cancer Diagnosis MODELED BY Capsule Network",
+        "Quantum Machine Learning MODELED BY Capsule Network",
+        "Cross-corpus MODELED BY Capsule Network",
+        "Hierarchical Multi-label Classification MODELED BY Capsule Network",
+        "Toxic Comment Classification MODELED BY Capsule Network",
+        "Gait Recognition MODELED BY Capsule Network",
+        "Natural Language Queries MODELED BY Capsule Network",
+        "Unsupervised Image Classification MODELED BY Capsule Network",
+        "Hippocampus MODELED BY Capsule Network",
+        "Multimodal Machine Translation MODELED BY Capsule Network",
+        "Pneumonia Detection MODELED BY Capsule Network",
+        "Action Localization MODELED BY Capsule Network",
+        "Multi-Label Image Classification MODELED BY Capsule Network",
+        "Text Categorization MODELED BY Capsule Network",
+        "Experimental Design MODELED BY Capsule Network",
+        "Image Colorization MODELED BY Capsule Network",
+        "Referring Expression Segmentation MODELED BY Capsule Network",
+        "Gaze Estimation MODELED BY Capsule Network",
+        "Action Segmentation MODELED BY Capsule Network",
+        "Multimodal Sentiment Analysis MODELED BY Capsule Network",
+        "Sequential Recommendation MODELED BY Capsule Network",
+        "Video Segmentation MODELED BY Capsule Network",
+        "Robust classification MODELED BY Capsule Network",
+        "Hyperspectral Image Classification MODELED BY Capsule Network",
+        "Transliteration MODELED BY Capsule Network",
+        "Sign Language Recognition MODELED BY Capsule Network",
+        "Lesion Classification MODELED BY Capsule Network",
+        "Small Data Image Classification MODELED BY Capsule Network",
+        "RGB Salient Object Detection MODELED BY Capsule Network",
+        "Spoken Language Understanding MODELED BY Capsule Network",
+        "Gaussian Processes MODELED BY Capsule Network",
+        "Fraud Detection MODELED BY Capsule Network",
+        "Traffic Prediction MODELED BY Capsule Network",
+        "Vocal Bursts Type Prediction MODELED BY Capsule Network",
+        "Marketing MODELED BY Capsule Network",
+        "Convolutional Neural Networks SUPERCLASS OF Capsule Network",
+        "Defect Detection MODELED BY Capsule Network",
+        "Speech Emotion Recognition MODELED BY Capsule Network",
+        "NMT MODELED BY Capsule Network",
+        "COVID-19 Diagnosis MODELED BY Capsule Network",
+        "Word Sense Disambiguation MODELED BY Capsule Network",
+        "Video Semantic Segmentation MODELED BY Capsule Network",
+        "Machine Reading Comprehension MODELED BY Capsule Network",
+        "Speaker Verification MODELED BY Capsule Network",
+        "Skeleton Based Action Recognition MODELED BY Capsule Network",
+        "Sentiment Classification MODELED BY Capsule Network",
+        "Outlier Detection MODELED BY Capsule Network",
+        "Self-Driving Cars MODELED BY Capsule Network",
+        "Hate Speech Detection MODELED BY Capsule Network",
+        "Salient Object Detection MODELED BY Capsule Network",
+        "Binarization MODELED BY Capsule Network",
+        "Trajectory Prediction MODELED BY Capsule Network",
+        "Action Detection MODELED BY Capsule Network",
+        "Graph Representation Learning MODELED BY Capsule Network",
+        "Speaker Recognition MODELED BY Capsule Network",
+        "Electroencephalogram (EEG) MODELED BY Capsule Network",
+        "Visual Question Answering MODELED BY Capsule Network",
+        "Semantic Similarity MODELED BY Capsule Network",
+        "Change Detection MODELED BY Capsule Network",
+        "Feature Engineering MODELED BY Capsule Network",
+        "Time Series Forecasting MODELED BY Capsule Network",
+        "Action Classification MODELED BY Capsule Network",
+        "Computed Tomography (CT) MODELED BY Capsule Network",
+        "Activity Recognition MODELED BY Capsule Network",
+        "feature selection MODELED BY Capsule Network",
+        "Semantic Textual Similarity MODELED BY Capsule Network",
+        "Disentanglement MODELED BY Capsule Network",
+        "Graph Classification MODELED BY Capsule Network",
+        "Federated Learning MODELED BY Capsule Network",
+        "Semi-Supervised Image Classification MODELED BY Capsule Network",
+        "Multi-Label Classification MODELED BY Capsule Network",
+        "Image Reconstruction MODELED BY Capsule Network",
+        "Colorization MODELED BY Capsule Network",
+        "Automatic Speech Recognition MODELED BY Capsule Network",
+        "text-classification MODELED BY Capsule Network",
+        "Continual Learning MODELED BY Capsule Network",
+        "Optical Flow Estimation MODELED BY Capsule Network",
+        "Binary Classification MODELED BY Capsule Network",
+        "Automatic Speech Recognition (ASR) MODELED BY Capsule Network",
+        "Temporal Action Localization MODELED BY Capsule Network",
+        "Reading Comprehension MODELED BY Capsule Network",
+        "Relation Extraction MODELED BY Capsule Network",
+        "Specificity MODELED BY Capsule Network",
+        "Emotion Recognition MODELED BY Capsule Network",
+        "Word Embeddings MODELED BY Capsule Network",
+        "Face Recognition MODELED BY Capsule Network",
+        "Medical Image Segmentation MODELED BY Capsule Network",
+        "Management MODELED BY Capsule Network",
+        "Recommendation Systems MODELED BY Capsule Network",
+        "Meta-Learning MODELED BY Capsule Network",
+        "speech-recognition MODELED BY Capsule Network",
+        "Benchmarking MODELED BY Capsule Network",
+        "Image Retrieval MODELED BY Capsule Network",
+        "Visual Question Answering (VQA) MODELED BY Capsule Network",
+        "Image Segmentation MODELED BY Capsule Network",
+        "Multi-Task Learning MODELED BY Capsule Network",
+        "Vocal Bursts Intensity Prediction MODELED BY Capsule Network",
+        "Time Series Analysis MODELED BY Capsule Network",
+        "Clustering MODELED BY Capsule Network",
+        "reinforcement-learning MODELED BY Capsule Network",
+        "Decision Making MODELED BY Capsule Network",
+        "BIG-bench Machine Learning MODELED BY Capsule Network",
+        "regression MODELED BY Capsule Network",
+        "Action Recognition MODELED BY Capsule Network",
+        "Sentiment Analysis MODELED BY Capsule Network",
+        "Neural Architecture Search SUPERCLASS OF Capsule Network",
+        "Pose Estimation MODELED BY Capsule Network",
+        "Variational Inference MODELED BY Capsule Network",
+        "Reinforcement Learning (RL) MODELED BY Capsule Network",
+        "Anomaly Detection MODELED BY Capsule Network",
+        "Self-Supervised Learning MODELED BY Capsule Network",
+        "Retrieval MODELED BY Capsule Network",
+        "Translation MODELED BY Capsule Network",
+        "Domain Adaptation MODELED BY Capsule Network",
+        "Machine Translation MODELED BY Capsule Network",
+        "Text Classification MODELED BY Capsule Network",
+        "Image Generation MODELED BY Capsule Network",
+        "Representation Learning MODELED BY Capsule Network",
+        "Transfer Learning MODELED BY Capsule Network",
+        "General Classification MODELED BY Capsule Network",
+        "Data Augmentation MODELED BY Capsule Network",
+        "Classification MODELED BY Capsule Network",
+        "object-detection MODELED BY Capsule Network",
+        "Language Modelling MODELED BY Capsule Network",
+        "Question Answering MODELED BY Capsule Network",
+        "Speech Recognition MODELED BY Capsule Network",
+        "Object Detection MODELED BY Capsule Network",
+        "Knowledge Distillation MODELED BY Capsule Network",
+        "Semantic Segmentation MODELED BY Capsule Network",
+        "Image Classification MODELED BY Capsule Network",
+        "Contrastive Learning MODELED BY Capsule Network"
+    ],
+    "modeling approaches for sentiment classification": [
+        "Dual Graph Convolutional Networks CAN MODEL Sentiment Classification",
+        "Multi-source Sentiment Generative Adversarial Network CAN MODEL Sentiment Classification",
+        "Serf CAN MODEL Sentiment Classification",
+        "Supporting Clustering with Contrastive Learning CAN MODEL Sentiment Classification",
+        "Quasi-Recurrent Neural Network CAN MODEL Sentiment Classification",
+        "Legendre Memory Unit CAN MODEL Sentiment Classification",
+        "Orthogonal Regularization CAN MODEL Sentiment Classification",
+        "Zoneout CAN MODEL Sentiment Classification",
+        "Galactica CAN MODEL Sentiment Classification",
+        "Masked Convolution CAN MODEL Sentiment Classification",
+        "Vision-and-Langauge Transformer CAN MODEL Sentiment Classification",
+        "VisualBERT CAN MODEL Sentiment Classification",
+        "Slanted Triangular Learning Rates CAN MODEL Sentiment Classification",
+        "Universal Language Model Fine-tuning CAN MODEL Sentiment Classification",
+        "Graph Self-Attention CAN MODEL Sentiment Classification",
+        "ASGD Weight-Dropped LSTM CAN MODEL Sentiment Classification",
+        "Temporal Activation Regularization CAN MODEL Sentiment Classification",
+        "Activation Regularization CAN MODEL Sentiment Classification",
+        "Activation Normalization CAN MODEL Sentiment Classification",
+        "Weight Tying CAN MODEL Sentiment Classification",
+        "Embedding Dropout CAN MODEL Sentiment Classification",
+        "Mutual Information Machine/Mask Image Modeling CAN MODEL Sentiment Classification",
+        "DropConnect CAN MODEL Sentiment Classification",
+        "ERNIE CAN MODEL Sentiment Classification",
+        "Dynamic Convolution CAN MODEL Sentiment Classification",
+        "Global and Sliding Window Attention CAN MODEL Sentiment Classification",
+        "Dilated Sliding Window Attention CAN MODEL Sentiment Classification",
+        "Sliding Window Attention CAN MODEL Sentiment Classification",
+        "Recurrent models of visual attention CAN MODEL Sentiment Classification",
+        "Longformer CAN MODEL Sentiment Classification",
+        "Bidirectional GRU CAN MODEL Sentiment Classification",
+        "Spiking Neural Networks CAN MODEL Sentiment Classification",
+        "1-Dimensional Convolutional Neural Networks CAN MODEL Sentiment Classification",
+        "Deep Ensembles CAN MODEL Sentiment Classification",
+        "AdamW CAN MODEL Sentiment Classification",
+        "Variational Dropout CAN MODEL Sentiment Classification",
+        "DistilBERT CAN MODEL Sentiment Classification",
+        "Visual Attention CAN MODEL Sentiment Classification",
+        "Scaled Exponential Linear Unit CAN MODEL Sentiment Classification",
+        "Graph Attention Network CAN MODEL Sentiment Classification",
+        "mBERT CAN MODEL Sentiment Classification",
+        "ALBERT CAN MODEL Sentiment Classification",
+        "HyperNetwork CAN MODEL Sentiment Classification",
+        "k-Nearest Neighbors CAN MODEL Sentiment Classification",
+        "Capsule Network CAN MODEL Sentiment Classification",
+        "Denoising Autoencoder CAN MODEL Sentiment Classification",
+        "LAMB CAN MODEL Sentiment Classification",
+        "XLNet CAN MODEL Sentiment Classification",
+        "Residual Attention Network CAN MODEL Sentiment Classification",
+        "ELMo CAN MODEL Sentiment Classification",
+        "Mish CAN MODEL Sentiment Classification",
+        "GloVe Embeddings CAN MODEL Sentiment Classification",
+        "Softplus CAN MODEL Sentiment Classification",
+        "Temporal attention CAN MODEL Sentiment Classification",
+        "Linear Discriminant Analysis CAN MODEL Sentiment Classification",
+        "XLM-R CAN MODEL Sentiment Classification",
+        "Swish CAN MODEL Sentiment Classification",
+        "GPT CAN MODEL Sentiment Classification",
+        "GPT-2 CAN MODEL Sentiment Classification",
+        "Adapter CAN MODEL Sentiment Classification",
+        "RMSProp CAN MODEL Sentiment Classification",
+        "Stochastic Gradient Descent CAN MODEL Sentiment Classification",
+        "Siamese Network CAN MODEL Sentiment Classification",
+        "Dense Block CAN MODEL Sentiment Classification",
+        "Self-Learning CAN MODEL Sentiment Classification",
+        "Mixup CAN MODEL Sentiment Classification",
+        "Graph Convolutional Networks CAN MODEL Sentiment Classification",
+        "Inverse Square Root Schedule CAN MODEL Sentiment Classification",
+        "T5 CAN MODEL Sentiment Classification",
+        "Memory Network CAN MODEL Sentiment Classification",
+        "Principal Components Analysis CAN MODEL Sentiment Classification",
+        "Adafactor CAN MODEL Sentiment Classification",
+        "k-Means Clustering CAN MODEL Sentiment Classification",
+        "RoBERTa CAN MODEL Sentiment Classification",
+        "Fixed Factorized Attention CAN MODEL Sentiment Classification",
+        "Strided Attention CAN MODEL Sentiment Classification",
+        "Gated Recurrent Unit CAN MODEL Sentiment Classification",
+        "Feature Selection CAN MODEL Sentiment Classification",
+        "GPT-3 CAN MODEL Sentiment Classification",
+        "Gated Linear Unit CAN MODEL Sentiment Classification",
+        "Bidirectional LSTM CAN MODEL Sentiment Classification",
+        "Discriminative Fine-Tuning CAN MODEL Sentiment Classification",
+        "Graph Convolutional Network CAN MODEL Sentiment Classification",
+        "SentencePiece CAN MODEL Sentiment Classification",
+        "Focus CAN MODEL Sentiment Classification",
+        "Logistic Regression CAN MODEL Sentiment Classification",
+        "Contrastive Language-Image Pre-training CAN MODEL Sentiment Classification",
+        "Support Vector Machine CAN MODEL Sentiment Classification",
+        "Interpretability CAN MODEL Sentiment Classification",
+        "ALIGN CAN MODEL Sentiment Classification",
+        "Linear Warmup With Cosine Annealing CAN MODEL Sentiment Classification",
+        "Attentive Walk-Aggregating Graph Neural Network CAN MODEL Sentiment Classification",
+        "Cosine Annealing CAN MODEL Sentiment Classification",
+        "Concatenated Skip Connection CAN MODEL Sentiment Classification",
+        "Diffusion CAN MODEL Sentiment Classification",
+        "Balanced Selection CAN MODEL Sentiment Classification",
+        "BERT CAN MODEL Sentiment Classification",
+        "AutoEncoder CAN MODEL Sentiment Classification",
+        "Linear Warmup With Linear Decay CAN MODEL Sentiment Classification",
+        "WordPiece CAN MODEL Sentiment Classification",
+        "Max Pooling CAN MODEL Sentiment Classification",
+        "Long Short-Term Memory CAN MODEL Sentiment Classification",
+        "SPEED: Separable Pyramidal Pooling EncodEr-Decoder for Real-Time Monocular Depth Estimation on Low-Resource Settings CAN MODEL Sentiment Classification",
+        "Attention Dropout CAN MODEL Sentiment Classification",
+        "Knowledge Distillation CAN MODEL Sentiment Classification",
+        "Weight Decay CAN MODEL Sentiment Classification",
+        "Gaussian Error Linear Units CAN MODEL Sentiment Classification",
+        "Tanh Activation CAN MODEL Sentiment Classification",
+        "test CAN MODEL Sentiment Classification",
+        "Sigmoid Activation CAN MODEL Sentiment Classification",
+        "Contrastive Learning CAN MODEL Sentiment Classification",
+        "Rectified Linear Units CAN MODEL Sentiment Classification",
+        "Absolute Position Encodings CAN MODEL Sentiment Classification",
+        "Transformer CAN MODEL Sentiment Classification",
+        "Position-Wise Feed-Forward Layer CAN MODEL Sentiment Classification",
+        "Label Smoothing CAN MODEL Sentiment Classification",
+        "Byte Pair Encoding CAN MODEL Sentiment Classification",
+        "Convolution CAN MODEL Sentiment Classification",
+        "Adam CAN MODEL Sentiment Classification",
+        "Layer Normalization CAN MODEL Sentiment Classification",
+        "Multi-Head Attention CAN MODEL Sentiment Classification",
+        "Scaled Dot-Product Attention CAN MODEL Sentiment Classification",
+        "Linear Layer CAN MODEL Sentiment Classification",
+        "Dropout CAN MODEL Sentiment Classification",
+        "Dense Connections CAN MODEL Sentiment Classification",
+        "Residual Connection CAN MODEL Sentiment Classification",
+        "Softmax CAN MODEL Sentiment Classification"
+    ],
+    "find loss functions related to \"Autonomous Driving\".": [
+        "Lovasz-Softmax",
+        "Huber loss",
+        "Adaptive Robust Loss",
+        "Normalized Temperature-scaled Cross Entropy Loss",
+        "GAN Least Squares Loss",
+        "Cycle Consistency Loss",
+        "InfoNCE",
+        "Triplet Loss",
+        "Focal Loss"
+    ],
+    "find CNNs related to \"Autonomous Driving\".": [
+        "Inception v2",
+        "ShuffleNet v2",
+        "FBNet",
+        "ResNet-D",
+        "LeNet",
+        "ShuffleNet",
+        "Darknet-19",
+        "WideResNet",
+        "SqueezeNet",
+        "MobileNetV1",
+        "Visual Geometry Group 19 Layer CNN",
+        "HRNet",
+        "CSPDarknet53",
+        "GoogLeNet",
+        "Xception",
+        "AlexNet",
+        "Darknet-53",
+        "MobileNetV2",
+        "VGG-16",
+        "EfficientNet",
+        "DenseNet",
+        "VGG",
+        "Residual Network"
+    ]
+}

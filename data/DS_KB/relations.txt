@@ -1,11 +1,10 @@
-part of
-subclass of
-has part(s)
+part of/has part(s)
+subclass of/superclass of
 different from
-instance of -> has instance
+instance of/has instance
 has quality
-has use
-influenced by
+has use/uses
+influenced by/influences
 significant event
 has goal(s)
 follows
@@ -16,7 +15,7 @@ said to be the same as
 union of
 modeled by
 evaluated by
-has language & has dataset
-has modality & has dataset
-better than & worse than (usually)
-has step & is a step of
+has language/has dataset
+has modality/has dataset
+better than/worse than (usually)
+has step/is a step of

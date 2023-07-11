@@ -240,6 +240,7 @@
         "Multilayer Networks and Backpropagation Algorithm::C": {
             "Differentiable Threshold Unit::C": null,
             "Backpropagation Algorithm::M": {
+                "DESC": "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs.",
                 "Convergence and Local Minima::C": null,
                 "Representational Power of Feedforward Networks::C": null,
                 "Hypothesis Space Search and Inductive Bias::C": null,

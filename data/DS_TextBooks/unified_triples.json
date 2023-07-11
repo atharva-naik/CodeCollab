@@ -703,6 +703,58 @@
     },
     {
         "sub": [
+            "Natural Language Processing",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Information Retrieval",
+            "T",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Information Retrieval",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Natural Language Processing",
+            "C",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Natural Language Processing",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Machine Translation",
+            "T",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Machine Translation",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Natural Language Processing",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
             "The Learning Problem and Statistical Inference",
             "T",
             ""
@@ -18213,3 +18265,484 @@
         "e": "CONSISTS OF"
     },
     {
+        "sub": [
+            "One Step Adjustments",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Controlling Familywise Error Rate",
+            "E",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling Familywise Error Rate",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Stepwise p-Value Adjustments",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Stepwise p-Value Adjustments",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Controlling Familywise Error Rate",
+            "E",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Null Domination",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Null Domination",
+            "C",
+            ""
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Two Procedures",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Two Procedures",
+            "C",
+            ""
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Type 1 Error Rate",
+            "E",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Type 1 Error Rate",
+            "E",
+            ""
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Controlling the Type 1 Error Rate",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Controlling the Type 1 Error Rate",
+            "C",
+            ""
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Adjusted p-Value for PFER/PCER",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Adjusted p-Value for PFER/PCER",
+            "C",
+            ""
+        ],
+        "obj": [
+            "PCER and PFER",
+            "E",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "False Discovery Rate FDR",
+            "E",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "False Discovery Rate FDR",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "obj": [
+            "FDR and other Measures of Error",
+            "E",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "FDR and other Measures of Error",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Benjamini-Hochberg BH Procedure",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Benjamini-Hochberg BH Procedure",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "obj": [
+            "BH Theorem for a Dependent Setting",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "BH Theorem for a Dependent Setting",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Variations on BH",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Variations on BH",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Controlling FDR",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Bayesian Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Bayesian Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Fully Bayes: Hierarchical",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fully Bayes: Hierarchical",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Bayesian Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Bayesian Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Fully Bayes: Decision Theory",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Fully Bayes: Decision Theory",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Bayesian Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Benjamini-Hochberg Theorem",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Benjamini-Hochberg Theorem",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Benjamini-Yekutieli Theorem",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Benjamini-Yekutieli Theorem",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Multiple Testing",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    }
+]

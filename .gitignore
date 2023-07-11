@@ -127,25 +127,36 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
 data/FCDS/codes
 data/FCDS/aligned_student_submissions_data.json
 data/FCDS/*.csv
 data/FCDS/code_submissions_dataset.json
+
 data/CoNaLa/.*jsonl
 data/CoNaLa/.*json
+
 data/CodeSearchNet
+
 data/ExeDS/.*json
+
 data/juice-dataset/*.jsonl
 data/juice-dataset/*.json
 data/juice-dataset/sampled_juice_nbs/
+
 data/KaggleNB/data.pkl
+
 data/WikiData/qpq_triples.jsonl
 data/WikiData/qpq_triples_graph.json
 data/WikiData/qids.json
 data/WikiData/pids.json
+
+# data/DS_KB/rdf_triples_turtle.txt
+
 data/PwC/*
-!data/FCDS/plan_op_var_block_annot.csv
+
 !data/PwC/extract_triples.py
+!data/FCDS/plan_op_var_block_annot.csv
 *.pt
 *.ckpt
 experiments/CoNaLa_CodeBERT_CodeSearch/logs

@@ -2,7 +2,7 @@
     "D": "data",
     "M": "model",
     "T": "task",
-    "E": "evaluatiom",
+    "E": "evaluation",
     "C": "concept",
     "V": "visualization",
     "A": "analysis",
@@ -11,5 +11,6 @@
     "S": "statistical_instrument",
     "l": "natural_language",
     "m": "modality_type",
-    "s": "step_of_recipe"
+    "s": "step_of_recipe",
+    "U": "unknown"
 }

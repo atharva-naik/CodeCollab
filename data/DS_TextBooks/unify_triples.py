@@ -151,7 +151,8 @@ if __name__ == "__main__":
     print(format_dist(SEMANTIC_TYPE_DIST))
     print("\x1b[34;1mRelation Type Distribution:\x1b[0m")
     print(format_dist(RELATION_TYPE_DIST))
-    print(f"total: \x1b[34;1m{len(unified_triples)}\x1b[0m triples")
+    print(f"|N|: \x1b[34;1m{len(UNIQUE_NODES)}\x1b[0m nodes")
+    print(f"|E|: \x1b[34;1m{len(unified_triples)}\x1b[0m triples")
     unified_triples = list(unified_triples.values())
     with open("./data/DS_TextBooks/unified_triples.json", "w") as f:
         json.dump(unified_triples, f, indent=4)
