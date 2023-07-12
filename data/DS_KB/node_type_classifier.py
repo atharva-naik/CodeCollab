@@ -265,7 +265,7 @@ class SentenceBERTKNNClassifier(nn.Module):
     def predict(self, x, k: int=5):
         X = self.sent_bert.encode(x, show_progress_bar=True)
         cos_sim_indices = torch.topk(util.cos_sim(X, self.sent_embs), k=k, axis=-1).indices
-        print(cos_sim_indices.shape)
+        # print(cos_sim_indices.shape)
         preds = [
             self.majority_vote(
                 [  
@@ -273,8 +273,7 @@ class SentenceBERTKNNClassifier(nn.Module):
                 ]
             ) for neighbor_labels in cos_sim_indices
         ]
-        print("number of predictions:", len(preds))
-
+        # print("number of predictions:", len(preds))
         return preds
 
 # rule based classifier (uses heuristics)
