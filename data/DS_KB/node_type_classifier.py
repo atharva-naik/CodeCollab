@@ -10,8 +10,10 @@ from typing import *
 from tqdm import tqdm
 import torch.nn as nn
 from torch.optim import AdamW
+from collections import defaultdict
 from torch.utils.data import DataLoader, Dataset
 from sklearn.model_selection import train_test_split
+from sentence_transformers import SentenceTransformer, util
 from transformers.models.bert.modeling_bert import BertPooler
 from transformers import AutoTokenizer, DebertaTokenizerFast, DebertaModel
 
@@ -81,7 +83,10 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
         super(BERTBasedWikiDataNodeClassifier, self).__init__()
         self.model_path = model_path
         self.tokenizer = DebertaTokenizerFast.from_pretrained(model_path)
-        self.model = DebertaModel.from_pretrained(model_path)
+        self.bert = DebertaModel.from_pretrained(model_path)
+        # freeze the bert model.
+        for param in self.bert.parameters():
+            param.requires_grad = False
         self.classifier = nn.Linear(args.hidden_size, args.num_classes)
         self.pooler = BertPooler(args)
         self.loss_fn = nn.CrossEntropyLoss()
@@ -110,7 +115,7 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
         return test_acc, test_batch_losses, round(np.mean(test_batch_losses), 3)
 
     def forward(self, labels=None, **args):
-        base_model_output = self.model(**args) # base model output (last hidden states)
+        base_model_output = self.bert(**args) # base model output (last hidden states)
         # cls representation
         cls_output = base_model_output.last_hidden_state
         pooler_output = self.pooler(cls_output)
@@ -142,8 +147,8 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
 
         # intialize the optimizer
         self.optimizer = AdamW(
-            self.parameters(), 
-            lr=args.learning_rate,
+            list(self.pooler.parameters())+list(self.classifier.parameters()), 
+            lr=args.learning_rate, eps=1e-8,
         )
 
         # metrics and best epoch/step when model is saved.
@@ -214,6 +219,63 @@ def train_bert_clf():
     # initialize model and fit it on the data.
     model = BERTBasedWikiDataNodeClassifier(args)
     model.fit(data, args)
+
+def fit_predict_sbert_knn_clf():
+    """function to fit SBERT embeddings based KNN classifier and predict the labels."""
+    # load data.
+    data = json.load(open("./data/DS_KB/wikidata_node_classification_data.json"))
+    
+    # load unclassified data.
+    unclf_data = json.load(open("./data/DS_KB/wikidata_node_unclassified_data.json"))
+
+    # fit KNN classifier on the data.
+    sbert_knn_clf = SentenceBERTKNNClassifier()
+    sbert_knn_clf.fit(data)
+
+    # predict labels for the unclassified points.
+    preds = sbert_knn_clf.predict(unclf_data)
+
+    # associate predictions with the unclassified data.
+    labeled_data = {k: v for k,v in zip(unclf_data, preds)}
+    with open("./data/DS_KB/wikidata_node_unclassified_preds_sbert_knn.json", "w") as f:
+        json.dump(labeled_data, f, indent=4)
+
+# KNN classifier that uses cos sim computed using sentence bert embeddings.
+class SentenceBERTKNNClassifier(nn.Module):
+    def __init__(self, sent_bert_path: str="all-mpnet-base-v2"):
+        super().__init__()
+        self.sent_bert = SentenceTransformer(sent_bert_path)
+        self.sent_embs = None
+        self.sent_labels = None
+
+    def fit(self, data: List[Tuple[str, str]]):
+        nodes = [x for x,_ in data]
+        labels = [y for _,y in data]
+        self.sent_embs = self.sent_bert.encode(nodes, show_progress_bar=True)
+        self.sent_labels = labels
+
+    def majority_vote(self, neighbor_labels: List[str]):
+        counts = defaultdict(lambda: 0)
+        for label in neighbor_labels:
+            counts[label] += 1
+        i = np.argmax(list(counts.values()))
+        
+        return list(counts.keys())[i]
+
+    def predict(self, x, k: int=5):
+        X = self.sent_bert.encode(x, show_progress_bar=True)
+        cos_sim_indices = torch.topk(util.cos_sim(X, self.sent_embs), k=k, axis=-1).indices
+        print(cos_sim_indices.shape)
+        preds = [
+            self.majority_vote(
+                [  
+                    self.sent_labels[ind] for ind in neighbor_labels.tolist()
+                ]
+            ) for neighbor_labels in cos_sim_indices
+        ]
+        print("number of predictions:", len(preds))
+
+        return preds
 
 # rule based classifier (uses heuristics)
 class RuleBasedWikiDataNodeClassifier:
@@ -311,6 +373,7 @@ def rule_based_clf_predict():
     print(f"{succ_count}/{tot} and {100*(succ_count/tot):.2f}% are successfully classified ({unk_count} are still unknown)")
     with open("./data/DS_KB/wikidata_pred_node_classes.json", "w") as f:
         json.dump(node_to_class_mapping, f, indent=4)
+    unlabeled_data = {k.lower(): v for k,v in node_to_class_mapping.items() if v == "U"}
     labeled_data = {k.lower(): v for k,v in node_to_class_mapping.items() if v != "U"}
     labeled_data.update({k.lower(): v for k,v in wiki_clf.curated_nodes.items()})
     # also add PwC data.
@@ -323,8 +386,11 @@ def rule_based_clf_predict():
             if obj[0] not in labeled_data: labeled_data[obj[0].lower()] = obj[1] 
     with open("./data/DS_KB/wikidata_node_classification_data.json", "w") as f:
         json.dump(list(labeled_data.items()), f, indent=4)
+    with open("./data/DS_KB/wikidata_node_unclassified_data.json", "w") as f:
+        json.dump(list(unlabeled_data.keys()), f, indent=4)
 
 # main
 if __name__ == "__main__":
-    # rule_based_clf_predict()
-    train_bert_clf()
+    rule_based_clf_predict()
+    # train_bert_clf()
+    fit_predict_sbert_knn_clf()
