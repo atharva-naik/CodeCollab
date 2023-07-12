@@ -3,6 +3,7 @@
 import os
 import json
 import torch
+import random
 import argparse
 import numpy as np
 from typing import *
@@ -16,6 +17,11 @@ from transformers import AutoTokenizer, DebertaTokenizerFast, DebertaModel
 
 INIT_POINTS = {"decision tree": "M", "decision tree learning": "M", "machine learning":"C", "artificial intelligence": "C", "epistemology": "C", "cognitive psychology": "C", "psychology": "C", "cognitive linguistics": "C", "digital data": "D", "data": "D", "statistics": "S", "scientific theory": "C", "data structure": "C", "array data structure": "C", "norm": "C", "problem": "T", "informatics": "C", "Computational physiology": "C", "computational science": "C", "hypothesis testing": "S", "algorithm": "M", "ontology": "C", "design": "C", "error": "E", "error detection and correction": "C", "process": "C", "information retrieval": "C", "sampling bias": "C", "cognitive bias": "C", "engineering": "C", "research project": "C", "mathematical model": "M", "partial differential equation": "C", "nonlinear partial differential equation": "C", "conjecture": "C", "poisson bracket": "C", "graph": "C", "method": "M", "generative model": "M", "physics terminology": "C", "area of mathematics": "C", "theory": "C", "discrete mathematics": "C", "logic gate": "M", "polynomial root": "C", "lemma": "C", "computer science": "C", "computer network protocol": "C", "nonparametric regression": "M", "nonparametric statistics": "S", "statistical method": "S", "data scrubbing": "C", "data management": "C", "data extraction": "C", "data processing": "C", "type of test": "E", "modular exponentiation": "M", "integer factorization": "M", "bounded lattice": "C", "maximum": "C", "minimum": "C", "model-free reinforcement learning": "T", "physics": "C", "chemical analysis": "C", "LR parser": "M", "parsing": "T", "field of study": "C", "neuroscience": "C", "applied science": "C", "factorial moment": "S", "Method of moments": "S", "kurtosis": "S", "moment of order r": "S", "moment of order r of a discrete random variable": "S", 'statistic': "S", "correlation coefficient": "S", "Spearman's rank correlation coefficient": "S", "Pearson product-moment correlation coefficient": "S"}
 RANDOM_SEED = 2023
+
+# do all the random seeding.
+random.seed(RANDOM_SEED)
+np.random.seed(RANDOM_SEED)
+torch.manual_seed(RANDOM_SEED)
 
 # dataset for processing the node names.
 class WikiDataNodeDataset(Dataset):
@@ -44,7 +50,7 @@ class WikiDataNodeDataLoader(DataLoader):
         enc_inputs = self.tokenizer(
             [item[0] for item in batch], padding="longest", 
             truncation=True, add_special_tokens=True, 
-            max_length="50", return_tensors="pt"
+            max_length=50, return_tensors="pt"
         )
         label_tensor = torch.as_tensor([item[1] for item in batch])
         enc_inputs.update({"labels": label_tensor})
@@ -55,12 +61,12 @@ def get_args():
     parser = argparse.ArgumentParser(description='Train deberta like classifier on ')
     parser.add_argument('-ts', "--test_size", type=float, default=0.2, 
                         help="size of test data in percent of total data")
-    parser.add_argument('-bs', "--batch_size", type=int, default=128,
+    parser.add_argument('-bs', "--batch_size", type=int, default=32,
                         help="batch size used for training")
     parser.add_argument('-d', "--device", type=str, default="cuda:0", help="device used")
     parser.add_argument('-e', "--epochs", type=int, default=10, 
                         help="number of epochs for training")
-    parser.add_argument('-es', "eval_steps", type=int, default=200,
+    parser.add_argument('-es', "--eval_steps", type=int, default=200,
                         help="number of steps after which eval is performed")
     parser.add_argument('-lr', "--learning_rate", type=float, default=1e-5)
     parser.add_argument("--hidden_size", type=int, default=768)
@@ -72,6 +78,7 @@ def get_args():
 # deberta model to classify the semantic type of nodes given the natural language name and the  
 class BERTBasedWikiDataNodeClassifier(nn.Module):
     def __init__(self, args, model_path="microsoft/deberta-base", num_classes: int=14):
+        super(BERTBasedWikiDataNodeClassifier, self).__init__()
         self.model_path = model_path
         self.tokenizer = DebertaTokenizerFast.from_pretrained(model_path)
         self.model = DebertaModel.from_pretrained(model_path)
@@ -80,7 +87,7 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
         self.loss_fn = nn.CrossEntropyLoss()
 
     def validate(self, test_loader, args):
-        test_tot, test_matches = 0
+        test_tot, test_matches = 0, 0
         test_batch_losses = []
         test_bar = tqdm(
             enumerate(test_loader),
@@ -94,17 +101,19 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
             with torch.no_grad(): 
                 logits, loss = self(**batch)
             # update total matches for train acc.
-            batch_matches = (logits.argmax(dim=-1).detach() == batch["labels"]).cpu().sum()
+            batch_matches = (logits.argmax(dim=-1).detach() == batch["labels"]).cpu().sum().item()
             test_matches += batch_matches
             test_acc = round(100*test_matches/test_tot, 2)
             batch_acc = round(100*batch_matches/batch_tot, 2)
-            test_bar.update(f"ba: {batch_acc} a: {test_acc}")
+            test_bar.set_description(f"ba: {batch_acc} a: {test_acc}")
 
         return test_acc, test_batch_losses, round(np.mean(test_batch_losses), 3)
 
     def forward(self, labels=None, **args):
         base_model_output = self.model(**args) # base model output (last hidden states)
-        pooler_output = self.pooler(base_model_output.last_hidden_state)
+        # cls representation
+        cls_output = base_model_output.last_hidden_state
+        pooler_output = self.pooler(cls_output)
         logits = self.classifier(pooler_output)
         if labels is None: return logits, None
         loss = self.loss_fn(logits, labels)
@@ -123,8 +132,13 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
         self.to(args.device)
         train_dataset = WikiDataNodeDataset(X_train, Y_train)
         test_dataset = WikiDataNodeDataset(X_test, Y_test)
-        train_loader = WikiDataNodeDataLoader(train_dataset)
-        test_loader = WikiDataNodeDataLoader(test_dataset)
+        train_loader = WikiDataNodeDataLoader(
+            train_dataset, tokenizer=self.tokenizer, 
+            batch_size=args.batch_size, shuffle=True)
+        test_loader = WikiDataNodeDataLoader(
+            test_dataset, tokenizer=self.tokenizer,
+            batch_size=args.batch_size, shuffle=False
+        )
 
         # intialize the optimizer
         self.optimizer = AdamW(
@@ -132,12 +146,15 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
             lr=args.learning_rate,
         )
 
+        # metrics and best epoch/step when model is saved.
         best_acc = 0
         best_epoch = 0
         best_step = 0
+
         # training loop.
         for epoch_i in range(args.epochs):
-            # training step.
+            
+            # training part of the loop.
             train_tot, train_matches = 0, 0
             train_batch_losses = []
             train_bar = tqdm(
@@ -145,22 +162,28 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
                 total=len(train_loader),
                 desc="training"
             )
+            
             for step, batch in train_bar:
                 for k in batch: batch[k] = batch[k].to(args.device)
                 batch_tot = len(batch["labels"])
                 train_tot += batch_tot
+
+                # forward step
                 logits, loss = self(**batch)
+                
                 # compute loss and do optimization
                 loss.backward()
                 self.optimizer.step()
+                
                 # update total matches for train acc.
-                batch_matches = (logits.argmax(dim=-1).detach() == batch["labels"]).cpu().sum()
+                batch_matches = (logits.argmax(dim=-1).detach() == batch["labels"]).cpu().sum().item()
                 train_matches += batch_matches
                 train_acc = round(100*train_matches/train_tot, 2)
                 batch_acc = round(100*batch_matches/batch_tot, 2)
                 batch_loss = loss.cpu().item()
                 train_batch_losses.append(batch_loss)
-                train_bar.update(f"ba: {batch_acc} a: {train_acc} bl: {batch_loss:.3f} l: {np.mean(train_batch_losses):.3f}")
+                train_bar.set_description(f"ba: {batch_acc} a: {train_acc} bl: {batch_loss:.3f} l: {np.mean(train_batch_losses):.3f}")
+                
                 # do evaluation if eval steps have elapsed.
                 if (step+1) % args.eval_steps == 0 or (step+1) == len(train_loader):
                     test_acc, test_batch_losses, test_loss = self.validate(test_loader, args)
@@ -169,12 +192,15 @@ class BERTBasedWikiDataNodeClassifier(nn.Module):
                         best_epoch = (epoch_i+1)
                         best_acc = test_acc
                         print(f"saving best model at: \nstep: {best_step}\nepoch: {best_epoch}\nacc: {best_acc}")
+                        
+                        # save model checkpoint.
                         checkpoint = {
                             "model_state_dict": self.state_dict(),
                             "optim_state_dict": self.optimizer.state_dict(),
                             "step": best_step, "epoch": best_epoch,
                             "acc": best_acc, "loss": test_loss,
                         }
+                        os.makedirs("./experiments/DeBERTa_NodeType_Classifier", exist_ok=True)
                         torch.save(checkpoint, "./experiments/DeBERTa_NodeType_Classifier/best_model.pt")
 
 def train_bert_clf():
@@ -300,4 +326,5 @@ def rule_based_clf_predict():
 
 # main
 if __name__ == "__main__":
-    rule_based_clf_predict()
+    # rule_based_clf_predict()
+    train_bert_clf()
