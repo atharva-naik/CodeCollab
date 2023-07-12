@@ -3,6 +3,8 @@ import os
 import json
 from typing import *
 
+FILTER_LIST = ["Walgreens", "Bihar school meal poisoning incident", "Scientology", "scientology in Norway", "lead paragraph", "abstract", "emissions", "pollution", "human tooth", "dental notation"]
+# class for post processing the graph.
 class GraphPostProcessor:
     def __init__(self, filter_conditions: List[Dict[str, str]]=[]):
         self.filter_conditions = filter_conditions
@@ -22,24 +24,72 @@ class GraphPostProcessor:
         pruned_graph = {}
         pruned_out = {}
         for Q1, adj_list in graph.items():
-            if self.is_disease_node(Q1, adj_list): 
+            if self.is_medical_term(Q1, adj_list) or Q1 in FILTER_LIST or self.is_animal_term(Q1) or self.is_food_term(Q1) or self.is_religion(Q1) or self.is_legal_term(Q1, adj_list) or Q1.startswith("reserved for private use"): 
                 pruned_out[Q1] = graph[Q1] 
                 continue
             skip_this = False
+            subG = {"E": [], "c": graph[Q1]["c"]}
             for Q2, P in adj_list["E"]:
+                if Q2 in FILTER_LIST: continue
                 condition = f"{P.strip()} {Q2.strip()}"
                 # skip a node if it triggers a filter condition
+                if not(self.is_animal_term(Q2) or self.is_medical_term(Q2) or self.is_legal_term(Q2) or self.is_food_term(Q2) or self.is_religion(Q2) or Q2.startswith("reserved for private use")): 
+                    subG["E"].append((Q2, P))
                 if condition in self.filter_conditions: skip_this = True; break
+            if len(subG["E"]) == 0: 
+                pruned_out[Q1] = graph[Q1]
+                continue
             if skip_this: pruned_out[Q1] = graph[Q1]; continue
-            pruned_graph[Q1] = graph[Q1]
+            pruned_graph[Q1] = subG
         # with open("./data/WikiData/DELETE_diseases.json", "w") as f:
         #     print(f"{len(disease_nodes)} disease related nodes")
         #     json.dump(disease_nodes, f, indent=4)
         return pruned_graph, pruned_out
 
-    def is_disease_node(self, node_name, adj_list):
+    def is_religion(self, node_name: str):
+        if "christian" in node_name.lower(): return True
+        if "buddhism" in node_name.lower(): return True
+        if "religio" in node_name.lower(): return True
+        if "muslim" in node_name.lower(): return True
+        if "islam" in node_name.lower(): return True
+        if "hindu" in node_name.lower(): return True
+        return False
+
+    def is_food_term(self, node_name: str):
+        return "food" in node_name.lower()
+
+    def is_animal_term(self, node_name: str):
+        if "ecolog" in node_name.lower(): return True
+        if "dinosaur" in node_name.lower(): return True
+        if "agricultur" in node_name.lower(): return True
+        return False
+
+    def is_legal_term(self, node_name: str, adj_list: Dict[str, Union[int, List[Tuple[str, str]]]]={"E": []}):
+        if "legal" in node_name.lower(): return True
+        for Q2, P in adj_list["E"]: 
+            if "legal" in Q2.lower(): return True
+        return False
+
+    def is_medical_term(self, node_name: str, adj_list: Dict[str, Union[int, List[Tuple[str, str]]]]={"E": []}):
+        if "skin " in node_name.lower(): return True
+        if "bone" in node_name.lower(): return True
+        if "foot" in node_name.lower(): return True
         if "disease" in node_name.lower(): return True
-        for Q2, P in adj_list["E"]:
+        if "rbcl" in node_name.lower(): return True
+        if "syndrome" in node_name.lower(): return True
+        if "(deoxy)" in node_name.lower(): return True
+        if "lipoma" in node_name.lower(): return True
+        if "carcinoma" in node_name.lower(): return True
+        if "cancer" in node_name.lower(): return True
+        if "melanoma" in node_name.lower(): return True
+        if "lymphoma" in node_name.lower(): return True
+        # not medical term (related to olypmics)
+        if "olympic" in node_name.lower(): return True
+        if node_name.lower().endswith("[cytosol]"): return True
+        if node_name.lower().endswith("[nucleoplasm]"): return True
+        if node_name.lower().endswith("[plasma membrane]"): return True
+        if node_name.lower().endswith("[extracellular region]"): return True
+        for Q2, P in adj_list["E"]: 
             if "disease" in Q2.lower(): return True
         return False
 
@@ -137,8 +187,42 @@ if __name__ == "__main__":
         {"Q": "avalanche", "P": "subclass of"},
         {"Q": "sports technique", "P": "instance of"},
         {"Q": "sports technique", "P": "subclass of"},
+        {"Q": "Request for Comments", "P": "instance of"},
+        {"Q": "agriculture", "P": "instance of"},
+        {"Q": "agriculture", "P": "subclass of"},
+        {"Q": "agriculture by country or territory", "P": "instance of"},
+        {"Q": "agriculture and forestry", "P": "subclass of"},
+        {"Q": "evolution", "P": "instance of"},
+        {"Q": "evolution", "P": "subclass of"},
+        {"Q": "anthropology", "P": "instance of"},
+        {"Q": "anthropology", "P": "subclass of"},
+        {"Q": "S&P 500", "P": "part of"},
+        {"Q": "mental state", "P": "instance of"},
+        {"Q": "mental state", "P": "subclass of"},
+        {"Q": "ecology", "P": "instance of"},
+        {"Q": "ecology", "P": "subclass of"},
+        {"Q": "woodworking", "P": "has use"},
+        {"Q": "woodworking", "P": "part of"},
+        {"Q": "woodworking", "P": "subclass of"},
+        {"Q": "review", "P": "instance of"},
+        {"Q": "Scientology", "P": "instance of"},
+        {"Q": "Scientology", "P": "subclass of"},
+        {"Q": "Scientology", "P": "said to be the same as"},
+        {"Q": "abstract", "P": "instance of"},
+        {"Q": "strike", "P": "instance of"},
+        {"Q": "strike", "P": "subclass of"},
+        {"Q": "medicinal plant", "P": "has use"},
+        {"Q": "nursing", "P": "instance of"},
+        {"Q": "permanent mission", "P": "instance of"},
+        {"Q": "incident", "P": "instance of"},
+        {"Q": "company", "P": "instance of"},
+        {"Q": "company", "P": "subclass of"},
+        {"Q": "business", "P": "instance of"},
+        {"Q": "business", "P": "subclass of"},
+        {"Q": "sexual assault", "P": "instance of"},
+        {"Q": "sexual assault", "P": "subclass of"},
     )
-    print(graph_proc)
+    # print(graph_proc)
     print(len(qpq_graph))
     pruned_graph, pruned_out = graph_proc.prune(qpq_graph)
     assert (len(pruned_out) + len(pruned_graph)) == len(qpq_graph)
