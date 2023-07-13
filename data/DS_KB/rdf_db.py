@@ -25,11 +25,12 @@ for k, v in json.load(open("./data/DS_KB/semantic_types.json")).items():
 # for k, v in json.load(open("./data/DS_KB/relation_types.json")).items():
 #     edge_types_map[k] = URIRef(f"http://example.org/edge_type/{v}")
 
-def load_ds_kg(do_reset: bool, 
-               save_path: str="./data/DS_KB/rdf_triples_turtle.txt",
+def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.txt",
+               weights_save_path: str="./data/DS_KB/all_edge_weights.json",
                nodes_save_path: str="./data/DS_KB/all_nodes.json"):
     # create graph object to store datascience RDF triples.
     ds_kg = Graph()
+    edge_weights = {}
     if do_reset:
         all_graphs = []
         unified_ds_textbook_KG = json.load(open("./data/DS_TextBooks/unified_triples.json"))
@@ -48,6 +49,9 @@ def load_ds_kg(do_reset: bool,
                 subn = sub[0].lower()
                 objn = obj[0].lower()
                 e = triple["e"]
+                weight = triple.get("w")
+                if weight is not None:
+                    edge_weights[subn+"::"+objn] = weight
                 if subn not in all_nodes:
                     all_nodes[subn] = (global_ctr, sub[1], {graph_source: None})
                     sub_id = global_ctr
@@ -76,16 +80,20 @@ def load_ds_kg(do_reset: bool,
                 edge_type = e.lower().strip().replace("(","").replace(")","").replace(" ","_")
                 rel = URIRef(f"http://example.org/edge_type/{edge_type}")
                 ds_kg.add((sub_node, rel, obj_node))
+                
                 # print(sub_node, rel, obj_node)
+        with open(weights_save_path, "w") as f:
+            json.dump(edge_weights, f, indent=4, ensure_ascii=False)
         with open(nodes_save_path, "w") as f:
             json.dump(all_nodes, f, indent=4, ensure_ascii=False)
         with open(save_path, "w") as f:
             f.write(ds_kg.serialize(format='turtle'))
     else: 
         all_nodes = json.load(open(nodes_save_path))
+        edge_weights = json.load(open(weights_save_path))
         ds_kg.parse(save_path)
     
-    return ds_kg, all_nodes
+    return ds_kg, all_nodes, edge_weights
 
 # for s, p, o in g:
 #     print((s, p, o))
@@ -94,8 +102,8 @@ def load_ds_kg(do_reset: bool,
 if __name__ == "__main__":
     do_reset = False
     if len(sys.argv) > 1 and sys.argv[1] == "reset": do_reset = True
-    ds_kg, all_nodes = load_ds_kg(do_reset=do_reset)
-    print(f"|V|: {len(all_nodes)}, |E|: {len(ds_kg)}")
+    ds_kg, all_nodes, edge_weights = load_ds_kg(do_reset=do_reset)
+    print(f"|V|: {len(all_nodes)}, |E|: {len(ds_kg)}, |w|: {len(edge_weights)}")
     # print(ds_kg.serialize(format='turtle'))
     sparql_queries = {
     "find all model names.": """
@@ -228,7 +236,37 @@ if __name__ == "__main__":
             ?p et:subclass_of n:"""+str(all_nodes['convolutional neural networks'][0])+""" .
             ?p foaf:name ?name .
         }
+    """,
+    'find models that address Sentiment Analysis as a task along with the metrics': """
+        PREFIX n: <http://example.org/>
+        PREFIX nt: <http://example.org/node_type/>
+        PREFIX et: <http://example.org/edge_type/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+        SELECT ?model_name ?metric_name ?dataset_name
+        WHERE {
+            ?model et:can_model n:"""+str(all_nodes['sentiment analysis'][0])+""" .
+            ?dataset et:has_goals n:"""+str(all_nodes['sentiment analysis'][0])+""" .
+            ?dataset et:evaluated_by ?metric .
+            ?model et:has_score ?metric .
+            ?dataset foaf:name ?dataset_name .
+            ?metric foaf:name ?metric_name .
+            ?model foaf:name ?model_name .
+        }
+    """,
+    "techniques that handle missing values": """
+        PREFIX n: <http://example.org/>
+        PREFIX nt: <http://example.org/node_type/>
+        PREFIX et: <http://example.org/edge_type/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+        SELECT ?name
+        WHERE {
+            ?p et:handles n:"""+str(all_nodes['missing values'][0])+""" .
+            ?p foaf:name ?name .
+        }
     """}
+
     rev_nodes = {v[0]: k for k,v in all_nodes.items()}
     eg_results = {}
 
@@ -298,6 +336,21 @@ if __name__ == "__main__":
     for r in ds_kg.query(queries[9]):
         # print(r["name"])
         eg_results[intents[9]].append(r["name"])
+
+    # eg_results[intents[10]] = [] 
+    # print(f"\x1b[34;1m{intents[10]}\x1b[0m") 
+    # for r in ds_kg.query(queries[10]):
+    #     M = r["model_name"]
+    #     E = r["metric_name"]
+    #     D = r["dataset_name"]
+    #     weight = edge_weights[f"{M}::{E}"]
+    #     print(M, D, E, weight)
+
+    eg_results[intents[11]] = [] 
+    print(f"\x1b[34;1m{intents[11]}\x1b[0m") 
+    for r in ds_kg.query(queries[11]):
+        print(r["name"])
+        eg_results[intents[11]].append(r["name"])
 
     eg_results_save_path = "./data/DS_KB/eg_query_results.json"
     with open(eg_results_save_path, "w") as f:

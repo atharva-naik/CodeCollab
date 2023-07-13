@@ -8,19 +8,19 @@
                     "Candidate Entity Ranking",
                     "Unlinkable Mention Prediction"
                 ],
-                "Candidate Entity Generation::T::has step": {
+                "Candidate Entity Generation::T::has step(s)": {
                     "STEPS": [
                         "filter out irrelevant entities",
                         "retrieve set of possible entities for a mention"
                     ]
                 },
-                "Candidate Entity Ranking::T::has step": {
+                "Candidate Entity Ranking::T::has step(s)": {
                     "STEPS": [
                         "use evidence to rank candidates",
                         "find most likely entity for a mention"
                     ]
                 },
-                "Unlinkable Mention Prediction::T::has step": {
+                "Unlinkable Mention Prediction::T::has step(s)": {
                     "STEPS": [
                         "check if top ranked candidate is target entity for mention",
                         "return NIL if not",

@@ -147,15 +147,15 @@ def extract_evaluation_tables(eval_tables: list=None, pbar=None) -> Dict[str, di
         for dataset in rec.get("datasets",[]):
             obj = dataset["dataset"].strip()
             ALL_NODES.add(obj)
-            triples[f"{sub} USES {obj}"] = {
+            triples[f"{sub} GOAL OF {obj}"] = {
                 "sub": (sub,"T",rec["description"]), 
                 "obj": (obj,"D",dataset["description"]), 
-                "e": "USES"
+                "e": "GOAL OF"
             }
-            triples[f"{obj} USED BY {sub}"] = {
+            triples[f"{obj} HAS GOAL(S) {sub}"] = {
                 "sub": (obj,"D",dataset["description"]),
                 "obj": (sub,"T",rec["description"]), 
-                "e": "USED BY"
+                "e": "HAS GOAL(S)"
             }
             pbar.update(2)
             # link methods in the tables to their scores.

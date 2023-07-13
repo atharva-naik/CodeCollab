@@ -6,7 +6,7 @@ has quality
 has use/uses
 influenced by/influences
 significant event
-has goal(s)
+has goal(s)/goal of
 follows
 is the study of
 uses

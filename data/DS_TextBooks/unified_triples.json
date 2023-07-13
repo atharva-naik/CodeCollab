@@ -348,7 +348,7 @@
             "T",
             ""
         ],
-        "e": "HAS STEP"
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -452,7 +452,7 @@
             "T",
             ""
         ],
-        "e": "HAS STEP"
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -556,7 +556,7 @@
             "T",
             ""
         ],
-        "e": "HAS STEP"
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -19012,8 +19012,658 @@
             ""
         ],
         "obj": [
-            "Outliers",
+            "Sorting",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Missing Values",
             "C",
+            ""
+        ],
+        "e": "HANDLES"
+    },
+    {
+        "sub": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Outliers",
+            "S",
+            ""
+        ],
+        "e": "HANDLES"
+    },
+    {
+        "sub": [
+            "Outliers",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Whisker Plot",
+            "V",
+            ""
+        ],
+        "e": "SAID TO BE THE SAME AS"
+    },
+    {
+        "sub": [
+            "Whisker Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Maximum",
+            "C",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Maximum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Mainimum",
+            "C",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Mainimum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Median",
+            "S",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Median",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Lower Quartile",
+            "S",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Lower Quartile",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Upper Quartile",
+            "S",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Upper Quartile",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Whisker",
+            "V",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Whisker",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Inter Quartile Range IQR",
+            "S",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Inter Quartile Range IQR",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inter Quartile Range IQR",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Lower Quartile",
+            "S",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Lower Quartile",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Inter Quartile Range IQR",
+            "S",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Inter Quartile Range IQR",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Upper Quartile",
+            "S",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Upper Quartile",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Inter Quartile Range IQR",
+            "S",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "e": "HAS USE"
+    },
+    {
+        "sub": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Compute Quartiles",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Compute Quartiles",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Compute Quartiles",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Compute IQR",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Compute IQR",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Compute Quartiles",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Compute IQR",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Mark points outside of 1.5 IQR as potential outliers",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Mark points outside of 1.5 IQR as potential outliers",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Compute IQR",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Mark points outside of 1.5 IQR as potential outliers",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Mark points outside of 1.5 IQR as potential outliers",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Summarize Statistics",
+            "T",
+            ""
+        ],
+        "e": "HAS USE"
+    },
+    {
+        "sub": [
+            "Summarize Statistics",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "V",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Summarize Statistics",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Mean",
+            "S",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Mean",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Summarize Statistics",
+            "T",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Summarize Statistics",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Skewness",
+            "S",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Skewness",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Summarize Statistics",
+            "T",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Outliers",
+            "S",
             ""
         ],
         "e": "CONSISTS OF"
@@ -19021,7 +19671,7 @@
     {
         "sub": [
             "Outliers",
-            "C",
+            "S",
             ""
         ],
         "obj": [
@@ -19111,6 +19761,84 @@
     },
     {
         "sub": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Missing Completely at Random MCAR",
+            "C",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Missing Completely at Random MCAR",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Missing at Random MAR",
+            "C",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Missing at Random MAR",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Not Missing at Random NMAR",
+            "C",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Not Missing at Random NMAR",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
             "Transforming Data",
             "s",
             ""
@@ -19139,7 +19867,137 @@
         "sub": [
             "Imputation",
             "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
+        ],
+        "obj": [
+            "Mean Imputation",
+            "S",
             ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Mean Imputation",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Imputation",
+            "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Mean Imputation",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Homogenous Groups",
+            "D",
+            ""
+        ],
+        "e": "HANDLES"
+    },
+    {
+        "sub": [
+            "Homogenous Groups",
+            "D",
+            ""
+        ],
+        "obj": [
+            "Mean Imputation",
+            "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Imputation",
+            "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
+        ],
+        "obj": [
+            "Hot and Cold Deck Imputation",
+            "S",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Hot and Cold Deck Imputation",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Imputation",
+            "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Imputation",
+            "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
+        ],
+        "obj": [
+            "Regression Imputation",
+            "S",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Regression Imputation",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Imputation",
+            "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Imputation",
+            "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
+        ],
+        "obj": [
+            "Interpolation and Extrapolation",
+            "S",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Interpolation and Extrapolation",
+            "S",
+            ""
+        ],
+        "obj": [
+            "Imputation",
+            "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Imputation",
+            "s",
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
         ],
         "obj": [
             "Missing Values",
@@ -19157,7 +20015,7 @@
         "obj": [
             "Imputation",
             "s",
-            ""
+            "Imputation replaces missing values in the dataset with other values. The replacement values are not random."
         ],
         "e": "IS A PART OF"
     },
@@ -19273,7 +20131,7 @@
         ],
         "obj": [
             "Outliers",
-            "C",
+            "S",
             ""
         ],
         "e": "CONSISTS OF"
@@ -19281,7 +20139,7 @@
     {
         "sub": [
             "Outliers",
-            "C",
+            "S",
             ""
         ],
         "obj": [

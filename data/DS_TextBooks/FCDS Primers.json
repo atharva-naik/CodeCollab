@@ -8,12 +8,52 @@
         "Matplotlib::M::implemented by": null,
         "Theano::M::implemented by": null,
         "Inspecting Data::s::has step(s)": {
-            "Outliers::C": null,
+            "STEPS": ["Sorting", "Box Plot"],
+            "Sorting::s": {
+                "Missing Values::C::handles": null
+            },
+            "Box Plot::V": {
+                "Outliers::S::handles": null,
+                "Whisker Plot::V::said to be the same as": null,
+                "Maximum::C::has part(s)": null,
+                "Mainimum::C::has part(s)": null,
+                "Median::S::has part(s)": null,
+                "Lower Quartile::S::has part(s)": null,
+                "Upper Quartile::S::has part(s)": null,
+                "Whisker::V::has part(s)": {
+                    "DESC": "Whiskers are the lines extending from the box formed the upper and lower quantiles of a box plot."
+                },
+                "Inter Quartile Range IQR::S": {
+                    "Lower Quartile::S::uses": null,
+                    "Upper Quartile::S::uses": null
+                },
+                "Identify Outliers::T::has use": {
+                    "STEPS": ["Compute Quartiles", "Compute IQR", "Mark points outside of 1.5 IQR as potential outliers"]
+                },
+                "Summarize Statistics::T::has use": {
+                    "Mean::S::has part(s)": null,
+                    "Skewness::S::has part(s)": null
+                }
+            },
+            "Outliers::S": null,
             "Z-score::E": null
         },
         "Transforming Data::s::has step(s)": {
-            "Missing Values::C::handles": null,
+            "Missing Values::C::handles": {
+                "Missing Completely at Random MCAR::C::superclass of": {
+                    "DESC": "Missing data is not related to the data. The probability of data being missing is same for all observations"
+                },
+                "Missing at Random MAR::C::superclass of": null,
+                "Not Missing at Random NMAR::C::superclass of": null 
+            },
             "Imputation::s::instance of": {
+                "DESC": "Imputation replaces missing values in the dataset with other values. The replacement values are not random.",
+                "Mean Imputation::S::superclass of": {
+                    "Homogenous Groups::D::handles": null
+                },
+                "Hot and Cold Deck Imputation::S::superclass of": null,
+                "Regression Imputation::S::superclass of": null,
+                "Interpolation and Extrapolation::S::superclass of": null,
                 "Missing Values::C::handles": null
             },
             "Omission::s::instance of": {
@@ -22,7 +62,9 @@
             "Subsetting::s::instance of": {
                 "Missing Values::C::handles": null
             },
-            "Outliers::C": null,
+            "Outliers::S": {
+                "DESC": "Rather small or large observation within your dataset compared to other values in the dataset is called an outlier."
+            },
             "Transforming Categorical Data::s::subclass of": null,
             "Transforming Quantitative Data::s::subclass of": null
         },
