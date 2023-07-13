@@ -17,7 +17,7 @@ from sentence_transformers import SentenceTransformer, util
 from transformers.models.bert.modeling_bert import BertPooler
 from transformers import AutoTokenizer, DebertaTokenizerFast, DebertaModel
 
-INIT_POINTS = {"decision tree": "M", "decision tree learning": "M", "machine learning":"C", "artificial intelligence": "C", "epistemology": "C", "cognitive psychology": "C", "psychology": "C", "cognitive linguistics": "C", "digital data": "D", "data": "D", "statistics": "S", "scientific theory": "C", "data structure": "C", "array data structure": "C", "norm": "C", "problem": "T", "informatics": "C", "Computational physiology": "C", "computational science": "C", "hypothesis testing": "S", "algorithm": "M", "ontology": "C", "design": "C", "error": "E", "error detection and correction": "C", "process": "C", "information retrieval": "C", "sampling bias": "C", "cognitive bias": "C", "engineering": "C", "research project": "C", "mathematical model": "M", "partial differential equation": "C", "nonlinear partial differential equation": "C", "conjecture": "C", "poisson bracket": "C", "graph": "C", "method": "M", "generative model": "M", "physics terminology": "C", "area of mathematics": "C", "theory": "C", "discrete mathematics": "C", "logic gate": "M", "polynomial root": "C", "lemma": "C", "computer science": "C", "computer network protocol": "C", "nonparametric regression": "M", "nonparametric statistics": "S", "statistical method": "S", "data scrubbing": "C", "data management": "C", "data extraction": "C", "data processing": "C", "type of test": "E", "modular exponentiation": "M", "integer factorization": "M", "bounded lattice": "C", "maximum": "C", "minimum": "C", "model-free reinforcement learning": "T", "physics": "C", "chemical analysis": "C", "LR parser": "M", "parsing": "T", "field of study": "C", "neuroscience": "C", "applied science": "C", "factorial moment": "S", "Method of moments": "S", "kurtosis": "S", "moment of order r": "S", "moment of order r of a discrete random variable": "S", 'statistic': "S", "correlation coefficient": "S", "Spearman's rank correlation coefficient": "S", "Pearson product-moment correlation coefficient": "S"}
+INIT_POINTS = {"decision tree": "M", "decision tree learning": "M", "machine learning":"C", "artificial intelligence": "C", "epistemology": "C", "cognitive psychology": "C", "psychology": "C", "cognitive linguistics": "C", "digital data": "D", "data": "D", "statistics": "S", "scientific theory": "C", "data structure": "C", "array data structure": "C", "norm": "C", "problem": "T", "informatics": "C", "Computational physiology": "C", "computational science": "C", "hypothesis testing": "S", "algorithm": "M", "ontology": "C", "design": "C", "error": "E", "error detection and correction": "C", "process": "C", "information retrieval": "C", "sampling bias": "C", "cognitive bias": "C", "engineering": "C", "research project": "C", "mathematical model": "M", "partial differential equation": "C", "nonlinear partial differential equation": "C", "conjecture": "C", "poisson bracket": "C", "graph": "C", "method": "M", "generative model": "M", "physics terminology": "C", "area of mathematics": "C", "theory": "C", "discrete mathematics": "C", "logic gate": "M", "polynomial root": "C", "lemma": "C", "computer science": "C", "computer network protocol": "C", "nonparametric regression": "M", "nonparametric statistics": "S", "statistical method": "S", "data scrubbing": "C", "data management": "C", "data extraction": "C", "data processing": "C", "type of test": "E", "modular exponentiation": "M", "integer factorization": "M", "bounded lattice": "C", "maximum": "C", "minimum": "C", "model-free reinforcement learning": "T", "physics": "C", "chemical analysis": "C", "LR parser": "M", "parsing": "T", "field of study": "C", "neuroscience": "C", "applied science": "C", "factorial moment": "S", "Method of moments": "S", "kurtosis": "S", "moment of order r": "S", "moment of order r of a discrete random variable": "S", 'statistic': "S", "correlation coefficient": "S", "Spearman's rank correlation coefficient": "S", "Pearson product-moment correlation coefficient": "S", "regression curve": "V", "covariance": "S", "analysis of covariance": "S"}
 RANDOM_SEED = 2023
 
 # do all the random seeding.
@@ -238,7 +238,7 @@ def fit_predict_sbert_knn_clf():
     # associate predictions with the unclassified data.
     labeled_data = {k: v for k,v in zip(unclf_data, preds)}
     with open("./data/DS_KB/wikidata_node_unclassified_preds_sbert_knn.json", "w") as f:
-        json.dump(labeled_data, f, indent=4)
+        json.dump(labeled_data, f, indent=4, ensure_ascii=False)
 
 # KNN classifier that uses cos sim computed using sentence bert embeddings.
 class SentenceBERTKNNClassifier(nn.Module):
@@ -256,13 +256,14 @@ class SentenceBERTKNNClassifier(nn.Module):
 
     def majority_vote(self, neighbor_labels: List[str]):
         counts = defaultdict(lambda: 0)
-        for label in neighbor_labels:
-            counts[label] += 1
+        for label in neighbor_labels: counts[label] += 1
         i = np.argmax(list(counts.values()))
+        if list(counts.values())[i] < (self.k-1)//2: return "U"
         
         return list(counts.keys())[i]
 
     def predict(self, x, k: int=5):
+        self.k = k
         X = self.sent_bert.encode(x, show_progress_bar=True)
         cos_sim_indices = torch.topk(util.cos_sim(X, self.sent_embs), k=k, axis=-1).indices
         # print(cos_sim_indices.shape)
@@ -297,6 +298,7 @@ class RuleBasedWikiDataNodeClassifier:
             # print(f"overrode class for {node_name}")
             self.known_points[node_name] = overridden_class
             return overridden_class
+        if node_name.lower().endswith(" concept"): return "C"
         if node_name.lower().endswith(" problem"): return "T"
         if node_name.lower().endswith("engineering"): return "C"
         if node_name.lower().endswith(" science"): return "C"
@@ -384,9 +386,9 @@ def rule_based_clf_predict():
             if sub[0] not in labeled_data: labeled_data[sub[0].lower()] = sub[1] 
             if obj[0] not in labeled_data: labeled_data[obj[0].lower()] = obj[1] 
     with open("./data/DS_KB/wikidata_node_classification_data.json", "w") as f:
-        json.dump(list(labeled_data.items()), f, indent=4)
+        json.dump(list(labeled_data.items()), f, indent=4, ensure_ascii=False)
     with open("./data/DS_KB/wikidata_node_unclassified_data.json", "w") as f:
-        json.dump(list(unlabeled_data.keys()), f, indent=4)
+        json.dump(list(unlabeled_data.keys()), f, indent=4, ensure_ascii=False)
 
 # main
 if __name__ == "__main__":

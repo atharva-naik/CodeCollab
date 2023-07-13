@@ -33,41 +33,45 @@ def load_ds_kg(do_reset: bool,
     if do_reset:
         all_graphs = []
         unified_ds_textbook_KG = json.load(open("./data/DS_TextBooks/unified_triples.json"))
-        all_graphs.append(unified_ds_textbook_KG)
+        all_graphs.append((unified_ds_textbook_KG, "DS TextBooks"))
         pwc_papers_KG = json.load(open("./data/PwC/unified_pwc_triples.json"))
-        all_graphs.append(pwc_papers_KG)
+        all_graphs.append((pwc_papers_KG, "PwC Papers"))
         wikidata_KG = convert_to_triples(json.load(open("./data/WikiData/ds_qpq_graph_pruned.json")))
-        all_graphs.append(wikidata_KG)
+        all_graphs.append((wikidata_KG, "WikiData"))
         global_ctr = 1
         all_nodes = {}
-        for graph in all_graphs:
+        for graph, graph_source in all_graphs:
             for triple in tqdm(graph):
                 # Add triples using store's add() method.
                 sub = triple["sub"]
                 obj = triple["obj"]
+                subn = sub[0].lower()
+                objn = obj[0].lower()
                 e = triple["e"]
-                if sub[0] not in all_nodes:
-                    all_nodes[sub[0]] = global_ctr
+                if subn not in all_nodes:
+                    all_nodes[subn] = (global_ctr, sub[1], {graph_source: None})
                     sub_id = global_ctr
                     sub_node = URIRef(f"http://example.org/{sub_id}")
                     sub_node_type = node_types_map[sub[1]]
                     ds_kg.add((sub_node, RDF.type, URIRef(sub_node_type)))
-                    ds_kg.add((sub_node, FOAF.name, Literal(sub[0])))
+                    ds_kg.add((sub_node, FOAF.name, Literal(subn)))
                     global_ctr += 1
                 else: # subject node already exists.
-                    sub_id = all_nodes[sub[0]]
+                    sub_id = all_nodes[subn][0]
+                    all_nodes[subn][-1][graph_source] = None
                     sub_node = URIRef(f"http://example.org/{sub_id}")
-                if obj[0] not in all_nodes:
-                    all_nodes[obj[0]] = global_ctr
+                if objn not in all_nodes:
+                    all_nodes[objn] = (global_ctr, sub[1], {graph_source: None})
                     obj_id = global_ctr
                     obj_node = URIRef(f"http://example.org/{obj_id}")
                     obj_node_type = node_types_map[obj[1]]
                     # print(obj_node_type)
                     ds_kg.add((obj_node, RDF.type, URIRef(obj_node_type)))
-                    ds_kg.add((obj_node, FOAF.name, Literal(obj[0])))
+                    ds_kg.add((obj_node, FOAF.name, Literal(objn)))
                     global_ctr += 1
                 else: # object node already exists.
-                    obj_id = all_nodes[obj[0]]
+                    obj_id = all_nodes[objn][0]
+                    all_nodes[objn][-1][graph_source] = None
                     obj_node = URIRef(f"http://example.org/{obj_id}")
                 edge_type = e.lower().strip().replace("(","").replace(")","").replace(" ","_")
                 rel = URIRef(f"http://example.org/edge_type/{edge_type}")
@@ -91,6 +95,7 @@ if __name__ == "__main__":
     do_reset = False
     if len(sys.argv) > 1 and sys.argv[1] == "reset": do_reset = True
     ds_kg, all_nodes = load_ds_kg(do_reset=do_reset)
+    print(f"|V|: {len(all_nodes)}, |E|: {len(ds_kg)}")
     # print(ds_kg.serialize(format='turtle'))
     sparql_queries = {
     "find all model names.": """
@@ -114,7 +119,7 @@ if __name__ == "__main__":
 
         SELECT ?name ?collection
         WHERE {
-            ?p et:can_model n:"""+str(all_nodes['Autonomous Driving'])+""" .
+            ?p et:can_model n:"""+str(all_nodes['autonomous driving'][0])+""" .
             ?p et:subclass_of ?q .
             ?q foaf:name ?collection .
             ?p foaf:name ?name .
@@ -141,7 +146,7 @@ if __name__ == "__main__":
 
         SELECT ?name ?q
         WHERE {
-            ?p ?q n:"""+str(all_nodes['Decision Tree Learning'])+""" .
+            ?p ?q n:"""+str(all_nodes['decision tree learning'][0])+""" .
 
             ?p foaf:name ?name .
         }
@@ -154,7 +159,7 @@ if __name__ == "__main__":
 
         SELECT ?name ?q
         WHERE {
-            ?p ?q n:"""+str(all_nodes['CutMix'])+""" .
+            ?p ?q n:"""+str(all_nodes['cutmix'][0])+""" .
 
             ?p foaf:name ?name .
         }
@@ -167,7 +172,7 @@ if __name__ == "__main__":
 
         SELECT ?name ?q
         WHERE {
-            ?p ?q n:"""+str(all_nodes['Path Planning'])+""" .
+            ?p ?q n:"""+str(all_nodes['path planning'][0])+""" .
 
             ?p foaf:name ?name .
         }
@@ -180,7 +185,7 @@ if __name__ == "__main__":
 
         SELECT ?name ?q
         WHERE {
-            ?p ?q n:"""+str(all_nodes['Capsule Network'])+""" .
+            ?p ?q n:"""+str(all_nodes['capsule network'][0])+""" .
 
             ?p foaf:name ?name .
         }
@@ -193,7 +198,7 @@ if __name__ == "__main__":
 
         SELECT ?name ?q
         WHERE {
-            ?p et:can_model n:"""+str(all_nodes['Sentiment Classification'])+""" .
+            ?p et:can_model n:"""+str(all_nodes['sentiment classification'][0])+""" .
 
             ?p foaf:name ?name .
         }
@@ -206,8 +211,8 @@ if __name__ == "__main__":
 
         SELECT ?name
         WHERE {
-            ?p et:can_model n:"""+str(all_nodes['Autonomous Driving'])+""" .
-            ?p et:subclass_of n:"""+str(all_nodes['Loss Functions'])+""" .
+            ?p et:can_model n:"""+str(all_nodes['autonomous driving'][0])+""" .
+            ?p et:subclass_of n:"""+str(all_nodes['loss functions'][0])+""" .
             ?p foaf:name ?name .
         }
     """,
@@ -219,12 +224,12 @@ if __name__ == "__main__":
 
         SELECT ?name
         WHERE {
-            ?p et:can_model n:"""+str(all_nodes['Autonomous Driving'])+""" .
-            ?p et:subclass_of n:"""+str(all_nodes['Convolutional Neural Networks'])+""" .
+            ?p et:can_model n:"""+str(all_nodes['autonomous driving'][0])+""" .
+            ?p et:subclass_of n:"""+str(all_nodes['convolutional neural networks'][0])+""" .
             ?p foaf:name ?name .
         }
     """}
-    rev_nodes = {v: k for k,v in all_nodes.items()}
+    rev_nodes = {v[0]: k for k,v in all_nodes.items()}
     eg_results = {}
 
     # queries and intents
@@ -233,63 +238,65 @@ if __name__ == "__main__":
     
     # Apply the query to the graph and iterate through results
     # for r in ds_kg.query(sparql_queries[0]): print(r["name"])
-    print(f"\x1b[34;1m{intents[1]}\x1b[0m")
+
     ctr = 0
     eg_results[intents[1]] = []
+    # print(f"\x1b[34;1m{intents[1]}\x1b[0m")    
     for r in ds_kg.query(queries[1]): 
         eg_results[intents[1]].append((r["name"], r["collection"]))
-        print(r["name"], r["collection"])
+        # print(r["name"], r["collection"])
         ctr += 1
-    print(f"got {ctr} hits\n")
+    # print(f"got {ctr} hits\n")
+
     # print(f"\x1b[34;1m{intents[2]}\x1b[0m") 
     # for r in ds_kg.query(queries[2]):
     #     q = rev_nodes[int(r["q"].split("/")[-1])]
     #     print(f'{r["name"]} models {q}')
     # print()
     eg_results[intents[3]] = [] 
-    print(f"\x1b[34;1m{intents[3]}\x1b[0m") 
+    # print(f"\x1b[34;1m{intents[3]}\x1b[0m") 
     for r in ds_kg.query(queries[3]):
         q = r["q"].split("/")[-1].replace("_"," ").upper()
-        print(f'{r["name"]} {q} Decision Tree Learning')
+        # print(f'{r["name"]} {q} Decision Tree Learning')
         eg_results[intents[3]].append(f'{r["name"]} {q} Decision Tree Learning')
 
     eg_results[intents[4]] = [] 
-    print(f"\x1b[34;1m{intents[4]}\x1b[0m") 
+    # print(f"\x1b[34;1m{intents[4]}\x1b[0m") 
     for r in ds_kg.query(queries[4]):
         q = r["q"].split("/")[-1].replace("_"," ").upper()
-        print(f'{r["name"]} {q} CutMix')
+        # print(f'{r["name"]} {q} CutMix')
         eg_results[intents[4]].append(f'{r["name"]} {q} CutMix')
 
     eg_results[intents[5]] = [] 
-    print(f"\x1b[34;1m{intents[5]}\x1b[0m") 
+    # print(f"\x1b[34;1m{intents[5]}\x1b[0m") 
     for r in ds_kg.query(queries[5]):
         q = r["q"].split("/")[-1].replace("_"," ").upper()
-        print(f'{r["name"]} {q} Path Planning')
+        # print(f'{r["name"]} {q} Path Planning')
         eg_results[intents[5]].append(f'{r["name"]} {q} Path Planning')
 
     eg_results[intents[6]] = [] 
-    print(f"\x1b[34;1m{intents[6]}\x1b[0m") 
+    # print(f"\x1b[34;1m{intents[6]}\x1b[0m") 
     for r in ds_kg.query(queries[6]):
         q = r["q"].split("/")[-1].replace("_"," ").upper()
-        print(f'{r["name"]} {q} Capsule Network')
+        # print(f'{r["name"]} {q} Capsule Network')
         eg_results[intents[6]].append(f'{r["name"]} {q} Capsule Network')
 
     eg_results[intents[7]] = [] 
-    print(f"\x1b[34;1m{intents[7]}\x1b[0m") 
+    # print(f"\x1b[34;1m{intents[7]}\x1b[0m") 
     for r in ds_kg.query(queries[7]):
-        print(f'{r["name"]} CAN MODEL Sentiment Classification')
+        # print(f'{r["name"]} CAN MODEL Sentiment Classification')
         eg_results[intents[7]].append(f'{r["name"]} CAN MODEL Sentiment Classification')
 
     eg_results[intents[8]] = [] 
-    print(f"\x1b[34;1m{intents[8]}\x1b[0m") 
+    # print(f"\x1b[34;1m{intents[8]}\x1b[0m") 
     for r in ds_kg.query(queries[8]):
-        print(r["name"])
+        # print(r["name"])
         eg_results[intents[8]].append(r["name"])
 
     eg_results[intents[9]] = [] 
-    print(f"\x1b[34;1m{intents[9]}\x1b[0m") 
+    # print(f"\x1b[34;1m{intents[9]}\x1b[0m") 
     for r in ds_kg.query(queries[9]):
-        print(r["name"])
+        # print(r["name"])
         eg_results[intents[9]].append(r["name"])
 
     eg_results_save_path = "./data/DS_KB/eg_query_results.json"

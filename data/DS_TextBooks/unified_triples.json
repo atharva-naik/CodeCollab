@@ -9389,7 +9389,7 @@
         "sub": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "obj": [
             "Convergence and Local Minima",
@@ -9407,7 +9407,7 @@
         "obj": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "e": "IS A PART OF"
     },
@@ -9415,7 +9415,7 @@
         "sub": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "obj": [
             "Representational Power of Feedforward Networks",
@@ -9433,7 +9433,7 @@
         "obj": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "e": "IS A PART OF"
     },
@@ -9441,7 +9441,7 @@
         "sub": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "obj": [
             "Hypothesis Space Search and Inductive Bias",
@@ -9459,7 +9459,7 @@
         "obj": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "e": "IS A PART OF"
     },
@@ -9467,7 +9467,7 @@
         "sub": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "obj": [
             "Hidden Layer Representations",
@@ -9485,7 +9485,7 @@
         "obj": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "e": "IS A PART OF"
     },
@@ -9493,7 +9493,7 @@
         "sub": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "obj": [
             "Generalization, Overfitting, and Stopping Criterion",
@@ -9511,7 +9511,7 @@
         "obj": [
             "Backpropagation Algorithm",
             "M",
-            ""
+            "The backpropagation algorithm learns the weights for a multilayer network, given a network with a fixed set of units and interconnections. It employs gradient descent to attempt to minimize the loss between the network output values and the target values for these outputs."
         ],
         "e": "IS A PART OF"
     },
@@ -18741,6 +18741,656 @@
         "obj": [
             "Multiple Testing",
             "S",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Scikit Learn",
+            "M",
+            ""
+        ],
+        "e": "IMPLEMENTED BY"
+    },
+    {
+        "sub": [
+            "Scikit Learn",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Pandas",
+            "M",
+            ""
+        ],
+        "e": "IMPLEMENTED BY"
+    },
+    {
+        "sub": [
+            "Pandas",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Numpy",
+            "M",
+            ""
+        ],
+        "e": "IMPLEMENTED BY"
+    },
+    {
+        "sub": [
+            "Numpy",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Matplotlib",
+            "M",
+            ""
+        ],
+        "e": "IMPLEMENTED BY"
+    },
+    {
+        "sub": [
+            "Matplotlib",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Theano",
+            "M",
+            ""
+        ],
+        "e": "IMPLEMENTED BY"
+    },
+    {
+        "sub": [
+            "Theano",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Outliers",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Outliers",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Z-score",
+            "E",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Z-score",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "e": "HANDLES"
+    },
+    {
+        "sub": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Imputation",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Imputation",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Imputation",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "e": "HANDLES"
+    },
+    {
+        "sub": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Imputation",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Omission",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Omission",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Omission",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "e": "HANDLES"
+    },
+    {
+        "sub": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Omission",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Subsetting",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Subsetting",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Subsetting",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "e": "HANDLES"
+    },
+    {
+        "sub": [
+            "Missing Values",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Subsetting",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Outliers",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Outliers",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Categorical Data",
+            "s",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Transforming Categorical Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Quantitative Data",
+            "s",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Transforming Quantitative Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling to Data Exploration",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling to Data Exploration",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Integrating Data",
+            "s",
             ""
         ],
         "e": "IS A PART OF"

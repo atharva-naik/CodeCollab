@@ -98,7 +98,7 @@ def extract_op_chunks(code: str):
         if isinstance(node, CODE_CONSTRUCTS):
             sub_code = ast.unparse(node)
             block_limits[f"{node.lineno}::{node.end_lineno}"] = sub_code
-            print(sub_code)
+            # print(sub_code)
     # sort by block lengths in descending order.
     block_limits = {k: v for k,v in sorted(block_limits.items(), key=lambda x: len(x[1]), reverse=True)}
     # print(json.dumps(block_limits, indent=4))

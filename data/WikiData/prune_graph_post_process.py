@@ -3,7 +3,7 @@ import os
 import json
 from typing import *
 
-FILTER_LIST = ["Walgreens", "Bihar school meal poisoning incident", "Scientology", "scientology in Norway", "lead paragraph", "abstract", "emissions", "pollution", "human tooth", "dental notation"]
+FILTER_LIST = ["Walgreens", "Bihar school meal poisoning incident", "Scientology", "scientology in Norway", "lead paragraph", "abstract", "emissions", "pollution", "human tooth", "dental notation", "article"]
 # class for post processing the graph.
 class GraphPostProcessor:
     def __init__(self, filter_conditions: List[Dict[str, str]]=[]):
@@ -24,7 +24,7 @@ class GraphPostProcessor:
         pruned_graph = {}
         pruned_out = {}
         for Q1, adj_list in graph.items():
-            if self.is_medical_term(Q1, adj_list) or Q1 in FILTER_LIST or self.is_animal_term(Q1) or self.is_food_term(Q1) or self.is_religion(Q1) or self.is_legal_term(Q1, adj_list) or Q1.startswith("reserved for private use"): 
+            if self.is_medical_term(Q1, adj_list) or Q1 in FILTER_LIST or self.is_animal_term(Q1) or self.is_food_term(Q1) or self.is_religion(Q1) or self.is_legal_term(Q1, adj_list) or Q1.startswith("reserved for private use") or self.is_date_term(Q1): 
                 pruned_out[Q1] = graph[Q1] 
                 continue
             skip_this = False
@@ -33,7 +33,7 @@ class GraphPostProcessor:
                 if Q2 in FILTER_LIST: continue
                 condition = f"{P.strip()} {Q2.strip()}"
                 # skip a node if it triggers a filter condition
-                if not(self.is_animal_term(Q2) or self.is_medical_term(Q2) or self.is_legal_term(Q2) or self.is_food_term(Q2) or self.is_religion(Q2) or Q2.startswith("reserved for private use")): 
+                if not(self.is_animal_term(Q2) or self.is_medical_term(Q2) or self.is_legal_term(Q2) or self.is_food_term(Q2) or self.is_religion(Q2) or Q2.startswith("reserved for private use") or self.is_date_term(Q2)): 
                     subG["E"].append((Q2, P))
                 if condition in self.filter_conditions: skip_this = True; break
             if len(subG["E"]) == 0: 
@@ -46,7 +46,31 @@ class GraphPostProcessor:
         #     json.dump(disease_nodes, f, indent=4)
         return pruned_graph, pruned_out
 
+    def is_date_term(self, node_name: str):
+        if "january" in node_name.lower(): return True
+        if "february" in node_name.lower(): return True
+        if "march" in node_name.lower(): return True
+        if "april" in node_name.lower(): return True
+        if "may" in node_name.lower(): return True
+        if "june" in node_name.lower(): return True
+        if "july" in node_name.lower(): return True
+        if "august" in node_name.lower(): return True
+        if "september" in node_name.lower(): return True
+        if "october" in node_name.lower(): return True
+        if "november" in node_name.lower(): return True
+        if "december" in node_name.lower(): return True
+        if "monday" in node_name.lower(): return True
+        if "tuesday" in node_name.lower(): return True
+        if "wednesday" in node_name.lower(): return True
+        if "thursday" in node_name.lower(): return True
+        if "friday" in node_name.lower(): return True
+        if "saturday" in node_name.lower(): return True
+        if "sunday" in node_name.lower(): return True
+        if "years" in node_name.lower(): return True
+        return False
+
     def is_religion(self, node_name: str):
+        if "battle" in node_name.lower(): return True
         if "christian" in node_name.lower(): return True
         if "buddhism" in node_name.lower(): return True
         if "religio" in node_name.lower(): return True
@@ -66,6 +90,8 @@ class GraphPostProcessor:
 
     def is_legal_term(self, node_name: str, adj_list: Dict[str, Union[int, List[Tuple[str, str]]]]={"E": []}):
         if "legal" in node_name.lower(): return True
+        if " bank" in node_name.lower(): return True
+        # if " festival" in node_name.lower(): return True
         for Q2, P in adj_list["E"]: 
             if "legal" in Q2.lower(): return True
         return False
@@ -83,6 +109,7 @@ class GraphPostProcessor:
         if "cancer" in node_name.lower(): return True
         if "melanoma" in node_name.lower(): return True
         if "lymphoma" in node_name.lower(): return True
+        if "hyperplas" in node_name.lower(): return True
         # not medical term (related to olypmics)
         if "olympic" in node_name.lower(): return True
         if node_name.lower().endswith("[cytosol]"): return True
@@ -221,6 +248,21 @@ if __name__ == "__main__":
         {"Q": "business", "P": "subclass of"},
         {"Q": "sexual assault", "P": "instance of"},
         {"Q": "sexual assault", "P": "subclass of"},
+        {"Q": "patronal festival", "P": "instance of"},
+        {"Q": "rivalry", "P": "subclass of"},
+        {"Q": "symptom or sign", "P": "instance of"},
+        {"Q": "military term", "P": "instance of"},
+        {"Q": "military term", "P": "subclass of"},
+        {"Q": "policy", "P": "instance of"},
+        {"Q": "policy", "P": "subclass of"},
+        {"Q": "social policy", "P": "part of"},
+        {"Q": "social policy", "P": "instance of"},
+        {"Q": "social policy", "P": "subclass of"},
+        {"Q": "politics", "P": "instance of"},
+        {"Q": "politics", "P": "subclass of"},
+        {"Q": "politics", "P": "part of"},
+        {"Q": "political science", "P": "instance of"},
+        {"Q": "political science", "P": "subclass of"},
     )
     # print(graph_proc)
     print(len(qpq_graph))

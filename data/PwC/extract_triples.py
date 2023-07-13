@@ -58,15 +58,15 @@ def extract_papers_and_abstracts() -> Dict[str, dict]:
                 ALL_NODES.add(obj1)
                 COLLECTIONS[obj1] = ""
             except: continue
-            triples[f"{obj} SUBCLASS OF {obj1}"] = {
+            triples[f"{obj} INSTANCE OF {obj1}"] = {
                 "sub": (obj,"M",method["description"]), 
                 "obj": (obj1,"M",desc1), 
-                "e": "SUBCLASS OF"
+                "e": "INSTANCE OF"
             }
-            triples[f"{obj1} SUPERCLASS OF {obj}"] = {
+            triples[f"{obj1} HAS INSTANCE {obj}"] = {
                 "sub": (obj1,"M",desc1), 
                 "obj": (obj,"M",method["description"]), 
-                "e": "SUPERCLASS OF"
+                "e": "HAS INSTANCE"
             } 
 
     return triples
@@ -107,29 +107,42 @@ def extract_evaluation_tables(eval_tables: list=None) -> Dict[str, dict]:
                 "obj": (sub,"T",rec["description"]), 
                 "e": "USED BY"
             }
+            # link methods in the tables to their scores.
+            for row in dataset["sota"]["rows"]:
+                sub_ = (row["model_name"], "M", row["paper_title"])
+                ALL_NODES.add(sub_[0])
+                for metric_name, metric_value in row["metrics"].items():
+                    obj_ = (metric_name, "E", metric_value)
+                    ALL_NODES.add(obj_[0])
+                    triples[f"{sub_[0]} HAS SCORE {obj_[0]}"] = {
+                        "sub": sub_, "obj": obj_, "e": "HAS SCORE"
+                    }
+                    triples[f"{obj_[0]} IS SCORE OF {sub_[0]}"] = {
+                        "sub": obj_, "obj": sub_, "e": "IS SCORE OF"
+                    }
             # link to first level metrics.
             for metric in dataset["sota"]["metrics"]:
                 obj = metric.strip()
                 ALL_NODES.add(obj)
-                triples[f"{sub} USES {obj}"] = {
+                triples[f"{sub} EVALUATED BY {obj}"] = {
                     "sub": (sub,"T",rec["description"]), 
                     "obj": (obj,"E",""), 
-                    "e": "USES"
+                    "e": "EVALUATED BY"
                 }
-                triples[f"{obj} USED BY {sub}"] = {
+                triples[f"{obj} EVALUATES {sub}"] = {
                     "sub": (obj,"E",""), 
                     "obj": (sub,"T",rec["description"]), 
-                    "e": "USED BY"
+                    "e": "EVALUATES"
                 }   
-                triples[f"{sub} USES {obj}"] = {
+                triples[f"{sub} EVALUATED BY {obj}"] = {
                     "sub": (dataset["dataset"].strip(),"D",dataset["description"]), 
                     "obj": (obj,"E",""), 
-                    "e": "USES"
+                    "e": "EVALUATED BY"
                 }
-                triples[f"{obj} USED BY {sub}"] = {
+                triples[f"{obj} EVALUATES {sub}"] = {
                     "sub": (dataset["dataset"].strip(),"E",""), 
                     "obj": (sub,"D",dataset["description"]), 
-                    "e": "USED BY"
+                    "e": "EVALUATES"
                 }   
         # link to first level subtasks.
         triples.update(extract_evaluation_tables(eval_tables=rec["subtasks"]))
@@ -162,16 +175,15 @@ def extract_methods() -> Dict[str, dict]:
             obj = col["collection"].strip()
             ALL_NODES.add(obj)
             COLLECTIONS[obj] = ""
-            # links between task and dataset.
-            triples[f"{sub} SUBCLASS OF {obj}"] = {
+            triples[f"{sub} INSTANCE OF {obj}"] = {
                 "sub": (sub,"M",rec["description"]), 
                 "obj": (obj,"M",""), 
-                "e": "SUBCLASS OF"
+                "e": "INSTANCE OF"
             }
-            triples[f"{obj} SUPERCLASS OF {sub}"] = {
+            triples[f"{obj} HAS INSTANCE {sub}"] = {
                 "sub": (obj,"M",""), 
                 "obj": (sub,"M",rec["description"]), 
-                "e": "SUPERCLASS OF"
+                "e": "HAS INSTANCE"
             }
 
     return triples    

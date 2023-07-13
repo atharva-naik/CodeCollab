@@ -380,15 +380,6 @@
         ],
         "c": 2
     },
-    "French Industrial and Commercial Bank": {
-        "E": [
-            [
-                "Banque CIC Ouest",
-                "has part(s)"
-            ]
-        ],
-        "c": 3
-    },
     "Wald test": {
         "E": [
             [
@@ -869,15 +860,6 @@
         ],
         "c": 2
     },
-    "chronic lymphocytic leukemia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 4
-    },
     "non-parametric statistics": {
         "E": [
             [
@@ -913,15 +895,6 @@
             ]
         ],
         "c": 1
-    },
-    "paresis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "serialization": {
         "E": [
@@ -976,15 +949,6 @@
             ]
         ],
         "c": 3
-    },
-    "vaginismus": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Content Vectoring Protocol": {
         "E": [
@@ -1047,40 +1011,6 @@
             ]
         ],
         "c": 5
-    },
-    "hemolytic anemia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "anemia",
-                "subclass of"
-            ],
-            [
-                "normocytic anemia",
-                "subclass of"
-            ]
-        ],
-        "c": 4
-    },
-    "fecal incontinence": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "impairment of continence",
-                "subclass of"
-            ],
-            [
-                "digestive sign",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "Venus effect": {
         "E": [
@@ -1294,15 +1224,6 @@
         ],
         "c": 1
     },
-    "delusional parasitosis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "electronics refurbishment": {
         "E": [
             [
@@ -1327,19 +1248,6 @@
             ]
         ],
         "c": 3
-    },
-    "blood in stool": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "feces and droppings symptom",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "blind men and an elephant": {
         "E": [
@@ -2046,15 +1954,6 @@
         ],
         "c": 3
     },
-    "nocturia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "fly tying": {
         "E": [
             [
@@ -2135,19 +2034,6 @@
             ]
         ],
         "c": 5
-    },
-    "folie à deux": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "schizophrenia",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "outline of self": {
         "E": [
@@ -2369,15 +2255,6 @@
             ]
         ],
         "c": 3
-    },
-    "atrial flutter": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Synergetics": {
         "E": [
@@ -2708,32 +2585,6 @@
         ],
         "c": 6
     },
-    "hypoventilation": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "hematochezia": {
-        "E": [
-            [
-                "blood in stool",
-                "subclass of"
-            ],
-            [
-                "feces and droppings symptom",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "inferential role semantics": {
         "E": [
             [
@@ -2874,15 +2725,6 @@
         ],
         "c": 5
     },
-    "presbycusis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "curl": {
         "E": [
             [
@@ -2891,24 +2733,6 @@
             ]
         ],
         "c": 5
-    },
-    "social credit": {
-        "E": [
-            [
-                "political science",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "ranula": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Krylov subspace": {
         "E": [
@@ -3590,15 +3414,6 @@
         ],
         "c": 3
     },
-    "arachnodactyly": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "soft chemistry": {
         "E": [
             [
@@ -3607,15 +3422,6 @@
             ]
         ],
         "c": 3
-    },
-    "nevus of Ota": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Active safety": {
         "E": [
@@ -3647,19 +3453,6 @@
             [
                 "CDAX",
                 "part of"
-            ]
-        ],
-        "c": 5
-    },
-    "microangiopathic hemolytic anemia": {
-        "E": [
-            [
-                "hemolytic anemia",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
             ]
         ],
         "c": 5
@@ -3743,15 +3536,6 @@
         ],
         "c": 7
     },
-    "hemophilia A": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "transculturation": {
         "E": [
             [
@@ -3822,15 +3606,6 @@
             ]
         ],
         "c": 7
-    },
-    "Raiffeisen Bank International": {
-        "E": [
-            [
-                "Raiffeisen International Bank Holding",
-                "different from"
-            ]
-        ],
-        "c": 5
     },
     "Eosinophilic pustular folliculitis of infancy": {
         "E": [
@@ -4142,15 +3917,6 @@
             ]
         ],
         "c": 5
-    },
-    "reticulocytosis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Pap class": {
         "E": [
@@ -4492,23 +4258,6 @@
             ]
         ],
         "c": 5
-    },
-    "nociceptive pain": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "sensory perception of pain",
-                "subclass of"
-            ],
-            [
-                "pain",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "Poincaré half-plane model": {
         "E": [
@@ -4892,23 +4641,6 @@
         ],
         "c": 7
     },
-    "science of public administration": {
-        "E": [
-            [
-                "specialty",
-                "instance of"
-            ],
-            [
-                "political science",
-                "subclass of"
-            ],
-            [
-                "policy and administration studies",
-                "part of"
-            ]
-        ],
-        "c": 3
-    },
     "latent inhibition": {
         "E": [
             [
@@ -5145,37 +4877,6 @@
         ],
         "c": 5
     },
-    "bloody mucus": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "Price tag policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "breakthrough": {
-        "E": [
-            [
-                "concept",
-                "instance of"
-            ],
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "anthropogenic hazard": {
         "E": [
             [
@@ -5298,15 +4999,6 @@
         ],
         "c": 5
     },
-    "active hyperemia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "biological process": {
         "E": [
             [
@@ -5417,15 +5109,6 @@
         ],
         "c": 5
     },
-    "recurrent fever": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Chowla–Selberg formula": {
         "E": [
             [
@@ -5465,24 +5148,6 @@
             ]
         ],
         "c": 3
-    },
-    "sialoschesis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "social inclusion": {
-        "E": [
-            [
-                "social policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Toluene toxicity": {
         "E": [
@@ -5553,24 +5218,6 @@
             ]
         ],
         "c": 6
-    },
-    "Planned liberalism": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Gyorin": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "lab technique": {
         "E": [
@@ -5783,10 +5430,6 @@
                 "influenced by"
             ],
             [
-                "Friedrich August Wolf",
-                "influenced by"
-            ],
-            [
                 "scientific racism",
                 "subclass of"
             ]
@@ -5966,15 +5609,6 @@
         ],
         "c": 5
     },
-    "collections policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "software construction": {
         "E": [
             [
@@ -6117,15 +5751,6 @@
             ]
         ],
         "c": 5
-    },
-    "actinic conjunctivitis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "toxic effect of organic solvents": {
         "E": [
@@ -7583,15 +7208,6 @@
             ]
         ],
         "c": 1
-    },
-    "astropolitics": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Asynchronous Layered Coding": {
         "E": [
@@ -9058,15 +8674,6 @@
         ],
         "c": 1
     },
-    "father's quota": {
-        "E": [
-            [
-                "social policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Feminist constructivism": {
         "E": [
             [
@@ -9905,15 +9512,6 @@
         ],
         "c": 3
     },
-    "Liberalism in Turkey": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Lill's method": {
         "E": [
             [
@@ -9994,15 +9592,6 @@
             ]
         ],
         "c": 5
-    },
-    "maculopapular rash": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "magic cookie": {
         "E": [
@@ -10657,15 +10246,6 @@
         ],
         "c": 7
     },
-    "Politics of Barking and Dagenham": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Polyvagal Theory": {
         "E": [
             [
@@ -11061,15 +10641,6 @@
         ],
         "c": 4
     },
-    "Right to Buy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Ring latency": {
         "E": [
             [
@@ -11078,15 +10649,6 @@
             ]
         ],
         "c": 3
-    },
-    "Roadless area conservation": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Runcinated 24-cell": {
         "E": [
@@ -12319,15 +11881,6 @@
         ],
         "c": 5
     },
-    "assimilation policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "envy": {
         "E": [
             [
@@ -12594,19 +12147,6 @@
         ],
         "c": 3
     },
-    "Approval rating": {
-        "E": [
-            [
-                "dimensionless quantity",
-                "subclass of"
-            ],
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Japanese embroidery": {
         "E": [
             [
@@ -12758,15 +12298,6 @@
             ]
         ],
         "c": 5
-    },
-    "renal abscess": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "mental fatigue": {
         "E": [
@@ -13180,24 +12711,6 @@
         "E": [
             [
                 "animation",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Tangpyeongchaek": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "National Education Philosophy": {
-        "E": [
-            [
-                "policy",
                 "instance of"
             ]
         ],
@@ -13743,15 +13256,6 @@
         ],
         "c": 5
     },
-    "anaphylactic shock": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Seychelles–Tanzania Maritime Boundary Agreement": {
         "E": [
             [
@@ -13936,15 +13440,6 @@
         ],
         "c": 7
     },
-    "breakthrough seizure": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "hemiasomatognosia": {
         "E": [
             [
@@ -14118,15 +13613,6 @@
             ]
         ],
         "c": 6
-    },
-    "Site exploitation": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Petkovšek's algorithm": {
         "E": [
@@ -15496,19 +14982,6 @@
         ],
         "c": 3
     },
-    "activation": {
-        "E": [
-            [
-                "occurrence",
-                "subclass of"
-            ],
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "Patronage": {
         "E": [
             [
@@ -15539,15 +15012,6 @@
             ]
         ],
         "c": 5
-    },
-    "coxalgia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Bahraini nationality law": {
         "E": [
@@ -15808,15 +15272,6 @@
         ],
         "c": 7
     },
-    "liver necrosis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "wheelspin": {
         "E": [
             [
@@ -15865,15 +15320,6 @@
             ]
         ],
         "c": 5
-    },
-    "homeland extensionism": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "ultracentrifugation": {
         "E": [
@@ -16161,15 +15607,6 @@
         "E": [
             [
                 "research project",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "inclusion": {
-        "E": [
-            [
-                "social policy",
                 "instance of"
             ]
         ],
@@ -17656,15 +17093,6 @@
         ],
         "c": 5
     },
-    "snowfall in Moldova, April 2017": {
-        "E": [
-            [
-                "natural disaster",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Identity fusion": {
         "E": [
             [
@@ -18767,15 +18195,6 @@
         ],
         "c": 7
     },
-    "The Swiss Financial Center and Swiss Banks during the Nazi Period. The Major Swiss Banks and Germany (1931–1946)": {
-        "E": [
-            [
-                "research",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "FCERI mediated Ca+2 mobilization": {
         "E": [
             [
@@ -18952,15 +18371,6 @@
             ]
         ],
         "c": 7
-    },
-    "postcoital bleeding": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "low key": {
         "E": [
@@ -19322,15 +18732,6 @@
         ],
         "c": 5
     },
-    "activity policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Universal Procedure for Library Assessment": {
         "E": [
             [
@@ -19578,23 +18979,6 @@
         "E": [
             [
                 "infection of the central nervous system",
-                "subclass of"
-            ]
-        ],
-        "c": 6
-    },
-    "oral hemorrhage": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "bleeding",
-                "subclass of"
-            ],
-            [
-                "mouth symptom",
                 "subclass of"
             ]
         ],
@@ -20098,118 +19482,6 @@
         ],
         "c": 7
     },
-    "Monday in February": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ],
-            [
-                "Monday of the month",
-                "subclass of"
-            ],
-            [
-                "day of the week in February",
-                "subclass of"
-            ]
-        ],
-        "c": 2
-    },
-    "Tuesday in February": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ],
-            [
-                "Tuesday of the month",
-                "subclass of"
-            ],
-            [
-                "day of the week in February",
-                "subclass of"
-            ]
-        ],
-        "c": 2
-    },
-    "Wednesday in September": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ],
-            [
-                "Wednesday of the month",
-                "subclass of"
-            ]
-        ],
-        "c": 2
-    },
-    "Thursday in February": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ],
-            [
-                "Thursday of the month",
-                "subclass of"
-            ],
-            [
-                "day of the week in February",
-                "subclass of"
-            ]
-        ],
-        "c": 2
-    },
-    "Thursday in September": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ],
-            [
-                "Thursday of the month",
-                "subclass of"
-            ]
-        ],
-        "c": 2
-    },
-    "Sunday in January": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ],
-            [
-                "Sunday of the month",
-                "subclass of"
-            ],
-            [
-                "day of the week in January",
-                "subclass of"
-            ]
-        ],
-        "c": 2
-    },
-    "second day of the week in February": {
-        "E": [
-            [
-                "day of the week in February",
-                "subclass of"
-            ]
-        ],
-        "c": 4
-    },
-    "last day of the week in January": {
-        "E": [
-            [
-                "day of the week in January",
-                "subclass of"
-            ]
-        ],
-        "c": 4
-    },
     "Gallaudet Eleven": {
         "E": [
             [
@@ -20334,24 +19606,6 @@
             ]
         ],
         "c": 6
-    },
-    "Battle of Riachuelo": {
-        "E": [
-            [
-                "copying",
-                "instance of"
-            ]
-        ],
-        "c": 3
-    },
-    "adrenal medullary hyperplasia": {
-        "E": [
-            [
-                "adrenal hyperplasia",
-                "subclass of"
-            ]
-        ],
-        "c": 5
     },
     "hemophilia A with vascular abnormality": {
         "E": [
@@ -21322,15 +20576,6 @@
         ],
         "c": 7
     },
-    "controversy in the 2018 Kaohsiung mayoral election": {
-        "E": [
-            [
-                "occurrence",
-                "subclass of"
-            ]
-        ],
-        "c": 5
-    },
     "Linguistic Atlas of Brazil Project": {
         "E": [
             [
@@ -21397,15 +20642,6 @@
         ],
         "c": 5
     },
-    "Hitler Appoints Arthur Seyss-Inquart  Reich Commissioner of the Occupied Netherlands in May 1940": {
-        "E": [
-            [
-                "Nazi Germany",
-                "part of"
-            ]
-        ],
-        "c": 5
-    },
     "Ethereum ontology": {
         "E": [
             [
@@ -21456,15 +20692,6 @@
             [
                 "quality",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "General Douglas MacArthur bronze statue arson fire of October 23, 2018": {
-        "E": [
-            [
-                "arson",
-                "instance of"
             ]
         ],
         "c": 7
@@ -21841,15 +21068,6 @@
             [
                 "use",
                 "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "military slang term": {
-        "E": [
-            [
-                "military term",
-                "subclass of"
             ]
         ],
         "c": 7
@@ -23092,15 +22310,6 @@
             ]
         ],
         "c": 6
-    },
-    "haruwa–charuwa system": {
-        "E": [
-            [
-                "social policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Delta 195": {
         "E": [
@@ -25507,266 +24716,6 @@
         ],
         "c": 7
     },
-    "chest hyperemia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "impaired gag reflex": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "motor weakness": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "rigidity hypokinesia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "occasional diplopia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "mild encephalitis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "massive hepatic necrosis": {
-        "E": [
-            [
-                "liver necrosis",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "incontinence without sensory awareness": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "hypersomnia with sleep apnea": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "abdominal lump": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "diffuse rash": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "localized superficial swelling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "neurological dysfunction": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "right lower quadrant pelvic lump": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "decreased flexor withdrawal reflex": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "nail discoloration": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
-    "deltoid muscle weakness": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "periumbilic abdominal rigidity": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "left upper quadrant abdominal rigidity": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "loss of height": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "icteric mucous membrane": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "generalized seizure": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "nasal discharge": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "postural instability hypokinesia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "generalized pelvic lump": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "inability to stand": {
-        "E": [
-            [
-                "motor weakness",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "lesions in swim bladder": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "multiple sites abdominal rigidity": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "biophysical technique": {
         "E": [
             [
@@ -25797,15 +24746,6 @@
             ]
         ],
         "c": 6
-    },
-    "Africa Must Unite": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "exercise science": {
         "E": [
@@ -26511,15 +25451,6 @@
         ],
         "c": 7
     },
-    "Plano Nacional de Leitura": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "American Indian law": {
         "E": [
             [
@@ -26607,15 +25538,6 @@
             ],
             [
                 "mathematical concept",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Lustration": {
-        "E": [
-            [
-                "policy",
                 "instance of"
             ]
         ],
@@ -27187,15 +26109,6 @@
         ],
         "c": 5
     },
-    "Festa della Madonna del Soccorso": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Serebryano-Prudsky Bulletin": {
         "E": [
             [
@@ -27369,15 +26282,6 @@
         "E": [
             [
                 "ontology",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "October 2021 California rainstorm": {
-        "E": [
-            [
-                "natural disaster",
                 "instance of"
             ]
         ],
@@ -28107,15 +27011,6 @@
         ],
         "c": 3
     },
-    "Plate with the Battle of David and Goliath": {
-        "E": [
-            [
-                "metal artwork",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Thanks for Being a Helping Hand": {
         "E": [
             [
@@ -28597,15 +27492,6 @@
             ]
         ],
         "c": 5
-    },
-    "access policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "one-sided confidence interval": {
         "E": [
@@ -29309,36 +28195,6 @@
         ],
         "c": 5
     },
-    "died more than 45 years ago": {
-        "E": [
-            [
-                "heuristic for determination of copyright status of a creator",
-                "instance of"
-            ],
-            [
-                "45 years or more after author(s) death",
-                "has quality"
-            ],
-            [
-                "died more than 100 years ago",
-                "different from"
-            ]
-        ],
-        "c": 3
-    },
-    "died more than 95 years ago": {
-        "E": [
-            [
-                "heuristic for determination of copyright status of a creator",
-                "instance of"
-            ],
-            [
-                "died more than 100 years ago",
-                "different from"
-            ]
-        ],
-        "c": 3
-    },
     "local ownership": {
         "E": [
             [
@@ -29548,19 +28404,6 @@
             ]
         ],
         "c": 5
-    },
-    "allotriosmia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "olfaction disorder",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "cloning of a repository": {
         "E": [
@@ -30159,15 +29002,6 @@
         ],
         "c": 7
     },
-    "Understatement of the Holocaust in the Soviet Union": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Proposed Welsh cricket team": {
         "E": [
             [
@@ -30493,15 +29327,6 @@
         ],
         "c": 5
     },
-    "library policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Grinberg graphs": {
         "E": [
             [
@@ -30679,15 +29504,6 @@
         ],
         "c": 5
     },
-    "Research Data Policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "digital data storage": {
         "E": [
             [
@@ -30744,27 +29560,6 @@
             ]
         ],
         "c": 1
-    },
-    "anemia": {
-        "E": [
-            [
-                "cytopenia",
-                "subclass of"
-            ],
-            [
-                "hemic system symptom",
-                "subclass of"
-            ],
-            [
-                "Anemia",
-                "different from"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 5
     },
     "natural science": {
         "E": [
@@ -30941,15 +29736,6 @@
         ],
         "c": 3
     },
-    "apartheid": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "film": {
         "E": [
             [
@@ -31031,23 +29817,6 @@
             ]
         ],
         "c": 4
-    },
-    "obesity": {
-        "E": [
-            [
-                "health risk",
-                "instance of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "overnutrition",
-                "subclass of"
-            ]
-        ],
-        "c": 5
     },
     "optics": {
         "E": [
@@ -31935,15 +30704,6 @@
         ],
         "c": 5
     },
-    "don't ask, don't tell": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "sex therapy": {
         "E": [
             [
@@ -32150,15 +30910,6 @@
         ],
         "c": 7
     },
-    "anti-tobacco movement in Nazi Germany": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "permutation": {
         "E": [
             [
@@ -32231,15 +30982,6 @@
             ]
         ],
         "c": 5
-    },
-    "Ostpolitik": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "SWOT Analysis": {
         "E": [
@@ -33035,15 +31777,6 @@
         ],
         "c": 7
     },
-    "ataxia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "codification": {
         "E": [
             [
@@ -33157,19 +31890,6 @@
         ],
         "c": 7
     },
-    "tremor": {
-        "E": [
-            [
-                "rhythmic process",
-                "instance of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "descriptive set theory": {
         "E": [
             [
@@ -33178,15 +31898,6 @@
             ]
         ],
         "c": 7
-    },
-    "dysarthria": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Zufallsfund": {
         "E": [
@@ -34208,15 +32919,6 @@
         ],
         "c": 1
     },
-    "language policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Abtriebswert": {
         "E": [
             [
@@ -34393,15 +33095,6 @@
             ]
         ],
         "c": 4
-    },
-    "cholecystitis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Dagen H": {
         "E": [
@@ -35133,24 +33826,6 @@
         ],
         "c": 1
     },
-    "tendinitis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Songun": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "blockbuster": {
         "E": [
             [
@@ -35252,15 +33927,6 @@
         ],
         "c": 7
     },
-    "webcare": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "C-symmetry": {
         "E": [
             [
@@ -35309,15 +33975,6 @@
             ]
         ],
         "c": 5
-    },
-    "Sydenham's chorea": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Antibiogram": {
         "E": [
@@ -35620,15 +34277,6 @@
             ]
         ],
         "c": 7
-    },
-    "Fournier gangrene": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "License proliferation": {
         "E": [
@@ -36065,24 +34713,6 @@
             ]
         ],
         "c": 5
-    },
-    "National Spiritual Mobilization Movement": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Politics of Réunion": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "separable space": {
         "E": [
@@ -36598,15 +35228,6 @@
         ],
         "c": 3
     },
-    "hypersalivation": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "moulin": {
         "E": [
             [
@@ -36745,15 +35366,6 @@
         ],
         "c": 4
     },
-    "BKS Bank": {
-        "E": [
-            [
-                "3-Banken-Gruppe",
-                "part of"
-            ]
-        ],
-        "c": 5
-    },
     "tf–idf": {
         "E": [
             [
@@ -36869,15 +35481,6 @@
             [
                 "research project",
                 "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "youth politics": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
             ]
         ],
         "c": 7
@@ -37129,15 +35732,6 @@
         ],
         "c": 3
     },
-    "Tobin tax": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Intercropping": {
         "E": [
             [
@@ -37360,15 +35954,6 @@
         ],
         "c": 5
     },
-    "animal bite": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Arab Peace Initiative": {
         "E": [
             [
@@ -37407,15 +35992,6 @@
             ]
         ],
         "c": 3
-    },
-    "politics of the Netherlands": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "reckless driving": {
         "E": [
@@ -38603,15 +37179,6 @@
         ],
         "c": 5
     },
-    "morning sickness": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "k-nearest neighbors algorithm": {
         "E": [
             [
@@ -39040,15 +37607,6 @@
         ],
         "c": 7
     },
-    "necrotizing fasciitis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Extensible Authentication Protocol": {
         "E": [
             [
@@ -39132,24 +37690,6 @@
             ]
         ],
         "c": 6
-    },
-    "politics of Nicaragua": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "politics of Hong Kong": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "rope": {
         "E": [
@@ -39610,27 +38150,6 @@
         ],
         "c": 7
     },
-    "hepatosplenomegaly": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "hepatomegaly",
-                "subclass of"
-            ],
-            [
-                "splenomegaly",
-                "subclass of"
-            ],
-            [
-                "spleen symptom",
-                "subclass of"
-            ]
-        ],
-        "c": 6
-    },
     "cone penetration test": {
         "E": [
             [
@@ -39812,19 +38331,6 @@
         ],
         "c": 7
     },
-    "smart growth": {
-        "E": [
-            [
-                "urban planning",
-                "subclass of"
-            ],
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "combinatorial game theory": {
         "E": [
             [
@@ -39888,15 +38394,6 @@
             ]
         ],
         "c": 5
-    },
-    "April Fools' Day Request for Comments": {
-        "E": [
-            [
-                "Request for Comments",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "probabilism": {
         "E": [
@@ -40774,19 +39271,6 @@
         ],
         "c": 5
     },
-    "sibling rivalry": {
-        "E": [
-            [
-                "sibling relationship",
-                "subclass of"
-            ],
-            [
-                "rivalry",
-                "subclass of"
-            ]
-        ],
-        "c": 5
-    },
     "Forward-confirmed reverse DNS": {
         "E": [
             [
@@ -41060,15 +39544,6 @@
         ],
         "c": 5
     },
-    "menorrhagia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Gauss's Easter algorithm": {
         "E": [
             [
@@ -41077,19 +39552,6 @@
             ]
         ],
         "c": 3
-    },
-    "failure to thrive": {
-        "E": [
-            [
-                "clinical sign",
-                "instance of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "complex polytope": {
         "E": [
@@ -41701,15 +40163,6 @@
         ],
         "c": 7
     },
-    "somatosensory disorder": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Protocol Buffers": {
         "E": [
             [
@@ -41771,28 +40224,6 @@
             ]
         ],
         "c": 5
-    },
-    "Stand By Your Ad provision": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ],
-            [
-                "rule",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "political communication": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "indicator": {
         "E": [
@@ -41917,23 +40348,6 @@
             ]
         ],
         "c": 4
-    },
-    "cultural policy": {
-        "E": [
-            [
-                "politics",
-                "part of"
-            ],
-            [
-                "social policy",
-                "subclass of"
-            ],
-            [
-                "NO_LABEL",
-                "has part(s)"
-            ]
-        ],
-        "c": 6
     },
     "Supernetwork": {
         "E": [
@@ -42266,15 +40680,6 @@
         ],
         "c": 7
     },
-    "tour of duty": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Fisher's equation": {
         "E": [
             [
@@ -42330,23 +40735,6 @@
             ]
         ],
         "c": 4
-    },
-    "knee osteoarthritis": {
-        "E": [
-            [
-                "arthropathy",
-                "instance of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "osteoarthritis",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "machine epsilon": {
         "E": [
@@ -43072,15 +41460,6 @@
         ],
         "c": 3
     },
-    "net politics": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Network traffic measurement": {
         "E": [
             [
@@ -43098,15 +41477,6 @@
             ]
         ],
         "c": 7
-    },
-    "viral hepatitis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 5
     },
     "cocoliztli": {
         "E": [
@@ -43149,15 +41519,6 @@
             [
                 "quality",
                 "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "privacy policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
             ]
         ],
         "c": 7
@@ -43815,15 +42176,6 @@
         ],
         "c": 5
     },
-    "Battle of Vögelinsegg": {
-        "E": [
-            [
-                "Appenzell Wars",
-                "part of"
-            ]
-        ],
-        "c": 5
-    },
     "sleep cycle": {
         "E": [
             [
@@ -44134,15 +42486,6 @@
         ],
         "c": 5
     },
-    "guaranteed minimum income": {
-        "E": [
-            [
-                "social policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "metal theft": {
         "E": [
             [
@@ -44261,15 +42604,6 @@
             ]
         ],
         "c": 5
-    },
-    "Ceinture rouge": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "syntax theory": {
         "E": [
@@ -44706,15 +43040,6 @@
         ],
         "c": 5
     },
-    "stertorous": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "gnosiology": {
         "E": [
             [
@@ -44810,19 +43135,6 @@
         ],
         "c": 5
     },
-    "integration of disabled people": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ],
-            [
-                "social inclusion",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Milieu intérieur": {
         "E": [
             [
@@ -44831,15 +43143,6 @@
             ]
         ],
         "c": 5
-    },
-    "wounded in action": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Premix and postmix": {
         "E": [
@@ -45085,15 +43388,6 @@
         ],
         "c": 6
     },
-    "politics of Jersey": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Simple LR parser": {
         "E": [
             [
@@ -45209,15 +43503,6 @@
         "E": [
             [
                 "separation process",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "politics in The Simpsons": {
-        "E": [
-            [
-                "politics",
                 "subclass of"
             ]
         ],
@@ -45410,15 +43695,6 @@
             [
                 "psychology terminology",
                 "part of"
-            ]
-        ],
-        "c": 7
-    },
-    "strategic depth": {
-        "E": [
-            [
-                "military term",
-                "instance of"
             ]
         ],
         "c": 7
@@ -45797,24 +44073,6 @@
         ],
         "c": 7
     },
-    "Fêtes de la Madeleine": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Fêtes de Bayonne": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "organising model": {
         "E": [
             [
@@ -46029,15 +44287,6 @@
             [
                 "automaton",
                 "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "politics of the Philippines": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
             ]
         ],
         "c": 7
@@ -46750,23 +44999,6 @@
         ],
         "c": 7
     },
-    "balance disorder": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "clinical sign",
-                "subclass of"
-            ],
-            [
-                "neurological and physiological symptom",
-                "subclass of"
-            ]
-        ],
-        "c": 6
-    },
     "Lake Uniamési": {
         "E": [
             [
@@ -47046,15 +45278,6 @@
             ]
         ],
         "c": 5
-    },
-    "Politics of Nagorno-Karabakh": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Pollaczek–Khinchine formula": {
         "E": [
@@ -48559,15 +46782,6 @@
         ],
         "c": 1
     },
-    "Bahrain Bloody Thursday": {
-        "E": [
-            [
-                "Bahraini protests of 2011",
-                "part of"
-            ]
-        ],
-        "c": 5
-    },
     "Bangdiwala's B": {
         "E": [
             [
@@ -49557,15 +47771,6 @@
         ],
         "c": 4
     },
-    "De-Ba'athification": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "decision analysis": {
         "E": [
             [
@@ -50283,15 +48488,6 @@
         ],
         "c": 7
     },
-    "Freeway removal": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Fréchet algebra": {
         "E": [
             [
@@ -50872,15 +49068,6 @@
         ],
         "c": 1
     },
-    "hypnic headache": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "rose": {
         "E": [
             [
@@ -51088,15 +49275,6 @@
             ]
         ],
         "c": 4
-    },
-    "seizure": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "hemochromatosis type 2": {
         "E": [
@@ -51490,19 +49668,6 @@
         ],
         "c": 3
     },
-    "Marchenko–Pastur distribution": {
-        "E": [
-            [
-                "probability distribution",
-                "instance of"
-            ],
-            [
-                "mathematical concept",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "mass point geometry": {
         "E": [
             [
@@ -51769,19 +49934,6 @@
             ]
         ],
         "c": 5
-    },
-    "Maori politics": {
-        "E": [
-            [
-                "Māori peoples, society and community",
-                "subclass of"
-            ],
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 4
     },
     "2003 Angola Boeing 727 disappearance": {
         "E": [
@@ -52245,15 +50397,6 @@
         ],
         "c": 7
     },
-    "Persistent tunica vasculosa lentis": {
-        "E": [
-            [
-                "persistent hyperplastic primary vitreous",
-                "subclass of"
-            ]
-        ],
-        "c": 6
-    },
     "personal income": {
         "E": [
             [
@@ -52402,15 +50545,6 @@
         ],
         "c": 7
     },
-    "Politics of the Republic of Ireland": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "porokeratotic eccrine ostial and dermal duct nevus": {
         "E": [
             [
@@ -52436,15 +50570,6 @@
             ]
         ],
         "c": 5
-    },
-    "post-void dribbling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "potty parity": {
         "E": [
@@ -53574,15 +51699,6 @@
         ],
         "c": 5
     },
-    "technology policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "temporal paradox": {
         "E": [
             [
@@ -54564,15 +52680,6 @@
         ],
         "c": 7
     },
-    "Santa Catarina politics": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Grape Shears": {
         "E": [
             [
@@ -54917,15 +53024,6 @@
         ],
         "c": 5
     },
-    "South Vereker Bank": {
-        "E": [
-            [
-                "mudflat",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Tai Chi theory": {
         "E": [
             [
@@ -55067,15 +53165,6 @@
         ],
         "c": 5
     },
-    "Preservation of Old Customs Policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "kiryoku": {
         "E": [
             [
@@ -55180,15 +53269,6 @@
             ]
         ],
         "c": 5
-    },
-    "urge incontinence": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "polyprotic acid": {
         "E": [
@@ -55660,15 +53740,6 @@
         ],
         "c": 7
     },
-    "acute diarrhea": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "toxic glaucoma": {
         "E": [
             [
@@ -55859,15 +53930,6 @@
             ]
         ],
         "c": 6
-    },
-    "regional policy of the European Union": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "desiccant": {
         "E": [
@@ -56529,15 +54591,6 @@
         "E": [
             [
                 "research project",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Federal Bureau of Prisons Program Statement": {
-        "E": [
-            [
-                "policy",
                 "instance of"
             ]
         ],
@@ -57508,15 +55561,6 @@
             ]
         ],
         "c": 4
-    },
-    "mothball": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Pero hübnerata": {
         "E": [
@@ -58615,15 +56659,6 @@
         ],
         "c": 3
     },
-    "Festa Major del Clot": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Najran shelling": {
         "E": [
             [
@@ -58750,15 +56785,6 @@
             ]
         ],
         "c": 6
-    },
-    "Farming-Supermarket Docking": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Identity Registration Protocol": {
         "E": [
@@ -59084,15 +57110,6 @@
         ],
         "c": 7
     },
-    "Confidence and supply": {
-        "E": [
-            [
-                "politics",
-                "part of"
-            ]
-        ],
-        "c": 7
-    },
     "P-type sodium:potassium-exchanging transporter activity involved in regulation of cardiac muscle cell membrane potential": {
         "E": [
             [
@@ -59101,19 +57118,6 @@
             ]
         ],
         "c": 7
-    },
-    "hemorrhagic diarrhea": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "diarrhea",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "karahanamon": {
         "E": [
@@ -59850,15 +57854,6 @@
         ],
         "c": 3
     },
-    "Closing the gap": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Train Real Time Data Protocol": {
         "E": [
             [
@@ -59924,15 +57919,6 @@
             ]
         ],
         "c": 5
-    },
-    "Feast of Our Lady of the Rosary in Agüimes, España": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "credit line": {
         "E": [
@@ -61331,15 +59317,6 @@
             ]
         ],
         "c": 5
-    },
-    "body of an article": {
-        "E": [
-            [
-                "article",
-                "part of"
-            ]
-        ],
-        "c": 7
     },
     "h-recipe": {
         "E": [
@@ -64553,15 +62530,6 @@
         ],
         "c": 7
     },
-    "politick": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "13xCbxE-PROZ [Golgi lumen]": {
         "E": [
             [
@@ -65359,23 +63327,6 @@
         ],
         "c": 5
     },
-    "Thursday in January": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ],
-            [
-                "Thursday of the month",
-                "subclass of"
-            ],
-            [
-                "day of the week in January",
-                "subclass of"
-            ]
-        ],
-        "c": 2
-    },
     "Design for a Saint John with a Speech Scroll": {
         "E": [
             [
@@ -65455,15 +63406,6 @@
             ]
         ],
         "c": 1
-    },
-    "October 2000 Madrid bombing": {
-        "E": [
-            [
-                "Euskadi Ta Askatasuna campaign",
-                "part of"
-            ]
-        ],
-        "c": 7
     },
     "Real world data": {
         "E": [
@@ -66298,15 +64240,6 @@
         ],
         "c": 7
     },
-    "DLR Imprint / Credits": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Plasmodium berghei reference genome": {
         "E": [
             [
@@ -66354,10 +64287,6 @@
     },
     "returned but did not attend Parliament": {
         "E": [
-            [
-                "returned but may not have attended parliament",
-                "different from"
-            ],
             [
                 "returned but died before attending Parliament",
                 "different from"
@@ -69531,15 +67460,6 @@
         ],
         "c": 7
     },
-    "Baluster with Panel designed for the Schlesinger and Mayer Store (now Carson, Pirie, Scott and Company)": {
-        "E": [
-            [
-                "metal artwork",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Kuei": {
         "E": [
             [
@@ -70112,15 +68032,6 @@
         "c": 7
     },
     "Medal: A Betrothal Medal (obverse and reverse) (1939.674)": {
-        "E": [
-            [
-                "metal artwork",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Medal: Peace for 100 Years (obverse)": {
         "E": [
             [
                 "metal artwork",
@@ -70797,28 +68708,11 @@
                 "instance of"
             ],
             [
-                "Black Monday",
-                "has part(s)"
-            ],
-            [
-                "Black Thursday",
-                "has part(s)"
-            ],
-            [
                 "2020 Russia–Saudi Arabia oil price war",
                 "has part(s)"
             ]
         ],
         "c": 6
-    },
-    "travel policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "nucleocapsid protein": {
         "E": [
@@ -71573,23 +69467,6 @@
             ]
         ],
         "c": 1
-    },
-    "bleeding": {
-        "E": [
-            [
-                "process",
-                "subclass of"
-            ],
-            [
-                "clinical sign",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Afsharid art": {
         "E": [
@@ -72856,170 +70733,6 @@
         "E": [
             [
                 "scissors",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "right upper quadrant pelvic lump": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "inability to form words": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "abdominal rigidity": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "generalized abdominal lump": {
-        "E": [
-            [
-                "abdominal lump",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "absence of knee jerk reflex": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "progressive weakness": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "abnormal hemiwalking": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "left upper quadrant abdominal mass": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "mild hypotension": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "incomplete bladder emptying": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "moderate anemia": {
-        "E": [
-            [
-                "anemia",
-                "subclass of"
-            ],
-            [
-                "moderate",
-                "has quality"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "left lower quadrant abdominal swelling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "left upper quadrant abdominal swelling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "continuous profuse salivation": {
-        "E": [
-            [
-                "hypersalivation",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "papular rash": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "tonic seizure": {
-        "E": [
-            [
-                "generalized seizure",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
                 "instance of"
             ]
         ],
@@ -74368,15 +72081,6 @@
         "E": [
             [
                 "postage stamp",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "bunk": {
-        "E": [
-            [
-                "military term",
                 "subclass of"
             ]
         ],
@@ -75886,15 +73590,6 @@
         ],
         "c": 6
     },
-    "Social issues in Nigeria": {
-        "E": [
-            [
-                "social policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Fetal left ventricular aneurysm": {
         "E": [
             [
@@ -76440,15 +74135,6 @@
         ],
         "c": 5
     },
-    "Tactical Nearbyism in Maynooth": {
-        "E": [
-            [
-                "proposal",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "DC Comics film": {
         "E": [
             [
@@ -76895,15 +74581,6 @@
         ],
         "c": 5
     },
-    "Indigenization of the Crimean Tatars": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Roseau d'Annecy": {
         "E": [
             [
@@ -77260,28 +74937,6 @@
             ]
         ],
         "c": 5
-    },
-    "died more than 78 years ago": {
-        "E": [
-            [
-                "heuristic for determination of copyright status of a creator",
-                "instance of"
-            ],
-            [
-                "died more than 100 years ago",
-                "different from"
-            ]
-        ],
-        "c": 3
-    },
-    "software policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "fermentation (bioconversion)": {
         "E": [
@@ -78681,19 +76336,6 @@
         ],
         "c": 4
     },
-    "Gender Equality in the European Union": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ],
-            [
-                "gender equality",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "television and children": {
         "E": [
             [
@@ -78989,10 +76631,6 @@
                 "instance of"
             ],
             [
-                "April Fools' Day Request for Comments",
-                "instance of"
-            ],
-            [
                 "418 I'm a Teapot",
                 "uses"
             ]
@@ -79113,23 +76751,6 @@
         ],
         "c": 7
     },
-    "fatigue": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "clinical sign",
-                "subclass of"
-            ],
-            [
-                "neurological and physiological symptom",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "IPv6 adoption": {
         "E": [
             [
@@ -79172,15 +76793,6 @@
             ]
         ],
         "c": 0
-    },
-    "Les Santes": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Active Magnetospheric Particle Tracer Explorers": {
         "E": [
@@ -79898,19 +77510,6 @@
         ],
         "c": 7
     },
-    "delirium": {
-        "E": [
-            [
-                "neurological and physiological symptom",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "1,2-dichloroethane": {
         "E": [
             [
@@ -80356,31 +77955,6 @@
             ]
         ],
         "c": 5
-    },
-    "article": {
-        "E": [
-            [
-                "headline",
-                "has part(s)"
-            ],
-            [
-                "byline",
-                "has part(s)"
-            ],
-            [
-                "body of an article",
-                "has part(s)"
-            ],
-            [
-                "article",
-                "different from"
-            ],
-            [
-                "article",
-                "different from"
-            ]
-        ],
-        "c": 6
     },
     "emotional intelligence": {
         "E": [
@@ -80861,15 +78435,6 @@
             ]
         ],
         "c": 5
-    },
-    "agnosia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Common European Framework of Reference for Languages": {
         "E": [
@@ -82543,19 +80108,6 @@
         ],
         "c": 1
     },
-    "Operation Black Tulip": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ],
-            [
-                "plan",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "disaster tourism": {
         "E": [
             [
@@ -82731,15 +80283,6 @@
             ]
         ],
         "c": 3
-    },
-    "anasarka": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Non-church movement": {
         "E": [
@@ -83211,15 +80754,6 @@
         ],
         "c": 2
     },
-    "European Neighbourhood Policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Will to power": {
         "E": [
             [
@@ -83497,15 +81031,6 @@
             ]
         ],
         "c": 1
-    },
-    "appeasement": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "AppleTalk Address Resolution Protocol": {
         "E": [
@@ -83895,31 +81420,6 @@
             ]
         ],
         "c": 7
-    },
-    "psychological trauma": {
-        "E": [
-            [
-                "psychopathological symptom",
-                "instance of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "trauma",
-                "instance of"
-            ],
-            [
-                "psychological phenomenon",
-                "subclass of"
-            ],
-            [
-                "trauma",
-                "different from"
-            ]
-        ],
-        "c": 6
     },
     "dating": {
         "E": [
@@ -84779,15 +82279,6 @@
             ]
         ],
         "c": 5
-    },
-    "Australian regional rivalry": {
-        "E": [
-            [
-                "rivalry",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "ISO 11783": {
         "E": [
@@ -85752,19 +83243,6 @@
         ],
         "c": 5
     },
-    "hyperaemia": {
-        "E": [
-            [
-                "hemic system symptom",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "fixed asset": {
         "E": [
             [
@@ -86170,15 +83648,6 @@
             [
                 "partial parthenogenesis",
                 "different from"
-            ]
-        ],
-        "c": 7
-    },
-    "politics of Denmark": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
             ]
         ],
         "c": 7
@@ -86599,23 +84068,6 @@
         ],
         "c": 5
     },
-    "septicemia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "hemic system symptom",
-                "subclass of"
-            ],
-            [
-                "blood poisoning",
-                "said to be the same as"
-            ]
-        ],
-        "c": 6
-    },
     "fatherlessness": {
         "E": [
             [
@@ -86740,19 +84192,6 @@
         ],
         "c": 4
     },
-    "splenomegaly": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "spleen symptom",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "discourse analysis": {
         "E": [
             [
@@ -86840,15 +84279,6 @@
             ]
         ],
         "c": 5
-    },
-    "Mexico City Policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "almost everywhere": {
         "E": [
@@ -87011,19 +84441,6 @@
             ]
         ],
         "c": 5
-    },
-    "politics of Brazil": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ],
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "potential theory": {
         "E": [
@@ -87599,19 +85016,6 @@
             ]
         ],
         "c": 7
-    },
-    "kremlinology": {
-        "E": [
-            [
-                "specialty",
-                "instance of"
-            ],
-            [
-                "political science",
-                "subclass of"
-            ]
-        ],
-        "c": 3
     },
     "Dysplastic nevus": {
         "E": [
@@ -88314,19 +85718,6 @@
         ],
         "c": 3
     },
-    "tonic–clonic seizure": {
-        "E": [
-            [
-                "generalized seizure",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "homing behavior": {
         "E": [
             [
@@ -88371,19 +85762,6 @@
             ]
         ],
         "c": 7
-    },
-    "petechia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "cutaneous haemorrhage",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "catalyst poisoning": {
         "E": [
@@ -88640,15 +86018,6 @@
             ]
         ],
         "c": 5
-    },
-    "Sole Survivor Policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Friedrichs extension": {
         "E": [
@@ -89753,15 +87122,6 @@
         ],
         "c": 7
     },
-    "rollback": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "tagmemics": {
         "E": [
             [
@@ -89797,15 +87157,6 @@
         "E": [
             [
                 "mathematical problem",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "July 2010 Kampala attacks": {
-        "E": [
-            [
-                "assault",
                 "instance of"
             ]
         ],
@@ -90147,15 +87498,6 @@
             ]
         ],
         "c": 4
-    },
-    "April 1555 papal conclave": {
-        "E": [
-            [
-                "conclave",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "1513 papal conclave": {
         "E": [
@@ -90542,15 +87884,6 @@
             ]
         ],
         "c": 7
-    },
-    "Marching cubes": {
-        "E": [
-            [
-                "algorithm",
-                "instance of"
-            ]
-        ],
-        "c": 1
     },
     "Trademark Law (Germany)": {
         "E": [
@@ -92259,15 +89592,6 @@
         ],
         "c": 5
     },
-    "Uskoreniye": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "network science": {
         "E": [
             [
@@ -92348,15 +89672,6 @@
             ]
         ],
         "c": 7
-    },
-    "cardiogenic shock": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "confidence rule": {
         "E": [
@@ -92448,15 +89763,6 @@
             [
                 "knee osteoarthritis",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "vedette": {
-        "E": [
-            [
-                "military term",
-                "instance of"
             ]
         ],
         "c": 7
@@ -93824,15 +91130,6 @@
         ],
         "c": 4
     },
-    "Fiestas del Pilar": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "moral realism": {
         "E": [
             [
@@ -93890,15 +91187,6 @@
             ]
         ],
         "c": 3
-    },
-    "historiography of May 1968": {
-        "E": [
-            [
-                "historiography",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "phosphatidyl (3,5) inositol biphosphate": {
         "E": [
@@ -94443,24 +91731,6 @@
             ]
         ],
         "c": 6
-    },
-    "National Policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Dollar Diplomacy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "parley": {
         "E": [
@@ -95779,15 +93049,6 @@
         ],
         "c": 4
     },
-    "congenital adrenal hyperplasia due to 11β-hydroxylase deficiency": {
-        "E": [
-            [
-                "congenital adrenal hyperplasia",
-                "subclass of"
-            ]
-        ],
-        "c": 6
-    },
     "hyperbulia": {
         "E": [
             [
@@ -95876,15 +93137,6 @@
         "E": [
             [
                 "philosophy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "human resource policy": {
-        "E": [
-            [
-                "policy",
                 "subclass of"
             ]
         ],
@@ -96342,15 +93594,6 @@
         ],
         "c": 3
     },
-    "battle drill": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Chromatofocusing": {
         "E": [
             [
@@ -96420,15 +93663,6 @@
             ]
         ],
         "c": 4
-    },
-    "1920 Palm Sunday tornado outbreak": {
-        "E": [
-            [
-                "natural disaster",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "1243 papal election": {
         "E": [
@@ -96678,19 +93912,6 @@
             [
                 "chord",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "allergic response": {
-        "E": [
-            [
-                "immune response",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
             ]
         ],
         "c": 7
@@ -97032,15 +94253,6 @@
             ]
         ],
         "c": 5
-    },
-    "Barbados Programme of Action": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Bareiss algorithm": {
         "E": [
@@ -98175,15 +95387,6 @@
         ],
         "c": 7
     },
-    "dual naming": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "duple or quadruple meter": {
         "E": [
             [
@@ -98563,15 +95766,6 @@
             ]
         ],
         "c": 7
-    },
-    "extravasation of urine": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Eyelid dermatitis": {
         "E": [
@@ -99784,15 +96978,6 @@
         ],
         "c": 5
     },
-    "dry hacking cough": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Wireless Datagram Protocol": {
         "E": [
             [
@@ -99859,15 +97044,6 @@
             ]
         ],
         "c": 4
-    },
-    "Kill box": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Kindle single": {
         "E": [
@@ -100282,15 +97458,6 @@
             ]
         ],
         "c": 1
-    },
-    "Marriage of state": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Marshall Islands–Federated States of Micronesia Maritime Boundary Treaty": {
         "E": [
@@ -101929,15 +99096,6 @@
         ],
         "c": 5
     },
-    "sargento mayor": {
-        "E": [
-            [
-                "military rank of the Armed Forces of Spain",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "scientific jury selection": {
         "E": [
             [
@@ -102080,15 +99238,6 @@
             ]
         ],
         "c": 5
-    },
-    "Serdengeçti": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "seriation": {
         "E": [
@@ -103601,15 +100750,6 @@
         ],
         "c": 7
     },
-    "alcohol policy": {
-        "E": [
-            [
-                "social policy",
-                "part of"
-            ]
-        ],
-        "c": 7
-    },
     "non-alliance": {
         "E": [
             [
@@ -103792,15 +100932,6 @@
             ]
         ],
         "c": 3
-    },
-    "Joseon dynasty politics": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "OPUS": {
         "E": [
@@ -104390,15 +101521,6 @@
             ]
         ],
         "c": 5
-    },
-    "rice proliferation plan": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "symmetry in go": {
         "E": [
@@ -104998,15 +102120,6 @@
         ],
         "c": 1
     },
-    "Seven, Two, and One Principle": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Crout matrix decomposition": {
         "E": [
             [
@@ -105443,32 +102556,6 @@
             ]
         ],
         "c": 7
-    },
-    "Hyperplastic arteriolosclerosis": {
-        "E": [
-            [
-                "arteriolosclerosis",
-                "subclass of"
-            ]
-        ],
-        "c": 6
-    },
-    "Baader Bank AG": {
-        "E": [
-            [
-                "SDAX",
-                "part of"
-            ],
-            [
-                "SDAX",
-                "part of"
-            ],
-            [
-                "SDAX",
-                "part of"
-            ]
-        ],
-        "c": 5
     },
     "DOD-STD-2167": {
         "E": [
@@ -107074,15 +104161,6 @@
         ],
         "c": 7
     },
-    "Festa Major de Vilafranca del Penedès": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Partitura": {
         "E": [
             [
@@ -107445,15 +104523,6 @@
         ],
         "c": 5
     },
-    "Shinto nationalization": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Living Culture National Policy": {
         "E": [
             [
@@ -107489,15 +104558,6 @@
             ]
         ],
         "c": 3
-    },
-    "Festa Major de l'Arboç": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Design for a screen for the Bloedkapel in the Sint-Petruskerk in Boxtel": {
         "E": [
@@ -108733,15 +105793,6 @@
         ],
         "c": 5
     },
-    "Fiestas patronales de Segorbe": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "World's end": {
         "E": [
             [
@@ -109892,15 +106943,6 @@
             ]
         ],
         "c": 4
-    },
-    "One fixed day off and one flexible rest day policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Menger space": {
         "E": [
@@ -111089,15 +108131,6 @@
         ],
         "c": 6
     },
-    "Canada's Defence Policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Sputnik-1 EMC/EMI lab model": {
         "E": [
             [
@@ -111520,15 +108553,6 @@
         ],
         "c": 5
     },
-    "two-state solution": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Coxeter matrix": {
         "E": [
             [
@@ -111546,15 +108570,6 @@
             ]
         ],
         "c": 2
-    },
-    "Mother of All Rallies": {
-        "E": [
-            [
-                "Mother of All Marches",
-                "different from"
-            ]
-        ],
-        "c": 5
     },
     "ℝ²": {
         "E": [
@@ -112813,15 +109828,6 @@
             ]
         ],
         "c": 5
-    },
-    "fireworks policy in the European Union": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "open access in Portugal": {
         "E": [
@@ -114685,19 +111691,6 @@
         ],
         "c": 7
     },
-    "Monday in August": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ],
-            [
-                "Monday of the month",
-                "subclass of"
-            ]
-        ],
-        "c": 2
-    },
     "manufactory in Vääräkoski mill": {
         "E": [
             [
@@ -115888,15 +112881,6 @@
         ],
         "c": 6
     },
-    "content moderation policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Plasmodium malariae reference genome": {
         "E": [
             [
@@ -116938,15 +113922,6 @@
         ],
         "c": 6
     },
-    "Ustilago maydis 521 reference genome": {
-        "E": [
-            [
-                "reference genome",
-                "subclass of"
-            ]
-        ],
-        "c": 6
-    },
     "Leishmania braziliensis MHOM/BR/75/M2904 reference genome": {
         "E": [
             [
@@ -117063,15 +114038,6 @@
         "E": [
             [
                 "research project",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "AAPT Statement on Physics First": {
-        "E": [
-            [
-                "policy",
                 "instance of"
             ]
         ],
@@ -117514,15 +114480,6 @@
             ]
         ],
         "c": 5
-    },
-    "social control policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "spatial interaction": {
         "E": [
@@ -118238,24 +115195,6 @@
         "c": 7
     },
     "Medal: John Paul Jones (obverse)": {
-        "E": [
-            [
-                "metal artwork",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Medal:  Commemorating the Destruction of Kittanning by Col. Armstrong, 8 September 1756": {
-        "E": [
-            [
-                "metal artwork",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Medal: In Commemoration of the Battle and Massacre of Wyoming, 3 July 1778 (obverse)": {
         "E": [
             [
                 "metal artwork",
@@ -120180,15 +117119,6 @@
         ],
         "c": 6
     },
-    "Official accusatory act concerning the case of Gheorghe Muruziuc, October 1966 (in Russian)": {
-        "E": [
-            [
-                "miscellaneous",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Breaking Bad Biofilms. Innovative Analysis and Design Rules for Next-Generation Antifouling Interfaces": {
         "E": [
             [
@@ -120286,19 +117216,6 @@
             ]
         ],
         "c": 4
-    },
-    "idiopathic chronic fatigue": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "fatigue",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "urban dialectology": {
         "E": [
@@ -122032,136 +118949,6 @@
         ],
         "c": 6
     },
-    "leg weakness": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "multiple sites abdominal lump": {
-        "E": [
-            [
-                "abdominal lump",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "inability to swallow": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "abnormal hemiwalking hemistanding": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "extreme prostration": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "hopping": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "intense anxiety": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "left upper quadrant pelvic swelling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "simple partial seizure": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "right upper quadrant pelvic swelling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "acute cranial nerve dysfunction": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "hoarse voice": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "decreased pharyngeal tone": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "splitting of urinary stream": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Anti-epidemic system of the Czech Republic": {
         "E": [
             [
@@ -122267,15 +119054,6 @@
             ]
         ],
         "c": 5
-    },
-    "diffuse idiopathic neuroendocrine cell hyperplasia": {
-        "E": [
-            [
-                "epithelioma",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "back-transliteration": {
         "E": [
@@ -122516,15 +119294,6 @@
             [
                 "emotion",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "dismay": {
-        "E": [
-            [
-                "negative emotion",
-                "instance of"
             ]
         ],
         "c": 7
@@ -123812,15 +120581,6 @@
             [
                 "Persian art",
                 "part of"
-            ]
-        ],
-        "c": 7
-    },
-    "tobacco policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
             ]
         ],
         "c": 7
@@ -125134,10 +121894,6 @@
                 "instance of"
             ],
             [
-                "returned but may not have attended parliament",
-                "different from"
-            ],
-            [
                 "returned but died before attending Parliament",
                 "different from"
             ],
@@ -126123,15 +122879,6 @@
         ],
         "c": 7
     },
-    "comparative government and politics": {
-        "E": [
-            [
-                "political science",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "surface properties of condensed matter": {
         "E": [
             [
@@ -126536,19 +123283,6 @@
         ],
         "c": 7
     },
-    "died more than 15 years ago": {
-        "E": [
-            [
-                "heuristic for determination of copyright status of a creator",
-                "instance of"
-            ],
-            [
-                "died more than 100 years ago",
-                "different from"
-            ]
-        ],
-        "c": 3
-    },
     "multithreaded software": {
         "E": [
             [
@@ -126615,24 +123349,6 @@
             ]
         ],
         "c": 7
-    },
-    "special military operation": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Number of Present Population of Ukraine, as of January 1, 2022": {
-        "E": [
-            [
-                "statistics",
-                "instance of"
-            ]
-        ],
-        "c": 1
     },
     "clinical logopedics": {
         "E": [
@@ -126987,15 +123703,6 @@
             ]
         ],
         "c": 5
-    },
-    "founding of Caesaraugusta": {
-        "E": [
-            [
-                "City founding",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Jiang Yi hui he ming yu jiu gao tu": {
         "E": [
@@ -127509,15 +124216,6 @@
         ],
         "c": 6
     },
-    "Franco  Lombardo": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "CP100NX": {
         "E": [
             [
@@ -127550,19 +124248,6 @@
             [
                 "animal welfare",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "gender policy": {
-        "E": [
-            [
-                "social policy",
-                "subclass of"
-            ],
-            [
-                "politics",
-                "part of"
             ]
         ],
         "c": 7
@@ -127922,15 +124607,6 @@
             ]
         ],
         "c": 3
-    },
-    "presidential studies": {
-        "E": [
-            [
-                "political science",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Economic building in the civic park Theresienstein - facade renovation, 2nd construction phase (SW side)": {
         "E": [
@@ -128433,19 +125109,6 @@
         ],
         "c": 7
     },
-    "containment": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ],
-            [
-                "isolation",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "tiny house movement": {
         "E": [
             [
@@ -128636,15 +125299,6 @@
         ],
         "c": 3
     },
-    "ventricular tachycardia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "create, read, update and delete": {
         "E": [
             [
@@ -128736,19 +125390,6 @@
             ]
         ],
         "c": 4
-    },
-    "dementia": {
-        "E": [
-            [
-                "clinical sign",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "hexagon": {
         "E": [
@@ -131058,15 +127699,6 @@
         ],
         "c": 5
     },
-    "equalization payment": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Lah number": {
         "E": [
             [
@@ -131234,28 +127866,6 @@
             ]
         ],
         "c": 5
-    },
-    "hip hop rivalry": {
-        "E": [
-            [
-                "rivalry",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "thyroglossal cyst": {
-        "E": [
-            [
-                "Persistent thyroglossal duct",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "assibilation": {
         "E": [
@@ -132225,19 +128835,6 @@
         ],
         "c": 5
     },
-    "bursitis": {
-        "E": [
-            [
-                "arthropathy",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "personal development planning": {
         "E": [
             [
@@ -132319,19 +128916,6 @@
             [
                 "medical diagnosis",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "encopresis": {
-        "E": [
-            [
-                "fecal incontinence",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
             ]
         ],
         "c": 7
@@ -132905,15 +129489,6 @@
         ],
         "c": 3
     },
-    "Prometheism": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Scale-invariant feature transform": {
         "E": [
             [
@@ -132936,15 +129511,6 @@
         "E": [
             [
                 "separation process",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "politics of the Faroe Islands": {
-        "E": [
-            [
-                "politics",
                 "instance of"
             ]
         ],
@@ -133383,23 +129949,6 @@
         ],
         "c": 3
     },
-    "lymphadenopathy": {
-        "E": [
-            [
-                "immune disorder",
-                "subclass of"
-            ],
-            [
-                "clinical sign",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Fisher's z-distribution": {
         "E": [
             [
@@ -133539,19 +130088,6 @@
             [
                 "type of error",
                 "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Black Monday": {
-        "E": [
-            [
-                "stock market crash",
-                "instance of"
-            ],
-            [
-                "2020 stock market crash",
-                "part of"
             ]
         ],
         "c": 7
@@ -133948,15 +130484,6 @@
         ],
         "c": 7
     },
-    "Mitma": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "pulse detonation engine": {
         "E": [
             [
@@ -134142,15 +130669,6 @@
             ]
         ],
         "c": 3
-    },
-    "albuminuria": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 5
     },
     "aether theories": {
         "E": [
@@ -134612,15 +131130,6 @@
         ],
         "c": 7
     },
-    "politics of Lebanon": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "neusis construction": {
         "E": [
             [
@@ -135012,15 +131521,6 @@
         ],
         "c": 7
     },
-    "One-state solution": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Confiscation": {
         "E": [
             [
@@ -135043,37 +131543,10 @@
         ],
         "c": 3
     },
-    "Politics of Morocco": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "crocodile tears": {
         "E": [
             [
                 "Redewendung",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "politics of Romania": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "Politics of Cambodia": {
-        "E": [
-            [
-                "politics",
                 "instance of"
             ]
         ],
@@ -135970,15 +132443,6 @@
         ],
         "c": 3
     },
-    "urinary retention": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "atmospheric optics": {
         "E": [
             [
@@ -136137,15 +132601,6 @@
             ]
         ],
         "c": 5
-    },
-    "budgetary policy": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "production process": {
         "E": [
@@ -136363,15 +132818,6 @@
         ],
         "c": 5
     },
-    "Flügel": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "focusing": {
         "E": [
             [
@@ -136568,27 +133014,6 @@
             ]
         ],
         "c": 1
-    },
-    "hypoxemia": {
-        "E": [
-            [
-                "medical finding",
-                "instance of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "hypoxia",
-                "subclass of"
-            ],
-            [
-                "hemic system symptom",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "five lemma": {
         "E": [
@@ -136895,15 +133320,6 @@
             ]
         ],
         "c": 6
-    },
-    "Haijin": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Schanuel's conjecture": {
         "E": [
@@ -137286,15 +133702,6 @@
         ],
         "c": 7
     },
-    "politics of the Palestinian Authority": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "permutohedron": {
         "E": [
             [
@@ -137379,15 +133786,6 @@
             ]
         ],
         "c": 3
-    },
-    "cavernous hemangioma": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Fatwood": {
         "E": [
@@ -137480,15 +133878,6 @@
             ]
         ],
         "c": 5
-    },
-    "septic shock": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "Sporttotal": {
         "E": [
@@ -138025,15 +134414,6 @@
             ]
         ],
         "c": 5
-    },
-    "Monterrey Consensus": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Hecke character": {
         "E": [
@@ -139493,15 +135873,6 @@
         ],
         "c": 5
     },
-    "Three mine policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Project BLUEBIRD": {
         "E": [
             [
@@ -140250,15 +136621,6 @@
         ],
         "c": 7
     },
-    "active labour market policies": {
-        "E": [
-            [
-                "social policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "industrial property": {
         "E": [
             [
@@ -140525,15 +136887,6 @@
         ],
         "c": 4
     },
-    "biopolitics": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Cramér's V": {
         "E": [
             [
@@ -140581,15 +136934,6 @@
             ]
         ],
         "c": 4
-    },
-    "Good Fence": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "ordinary least squares": {
         "E": [
@@ -141173,19 +137517,6 @@
         ],
         "c": 6
     },
-    "retinal haemorrhage": {
-        "E": [
-            [
-                "intraocular hemorrhage",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Ego ideal": {
         "E": [
             [
@@ -141327,15 +137658,6 @@
             ]
         ],
         "c": 6
-    },
-    "low-carbon economy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "acid-fast": {
         "E": [
@@ -141616,15 +137938,6 @@
             ]
         ],
         "c": 2
-    },
-    "politics of Martinique": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Skew apeirohedron": {
         "E": [
@@ -142990,15 +139303,6 @@
         ],
         "c": 7
     },
-    "Gay male blood donor controversy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Weyl integral": {
         "E": [
             [
@@ -143889,19 +140193,6 @@
             ]
         ],
         "c": 5
-    },
-    "Atypical ductal hyperplasia": {
-        "E": [
-            [
-                "breast benign neoplasm",
-                "subclass of"
-            ],
-            [
-                "breast intraductal proliferative lesion",
-                "subclass of"
-            ]
-        ],
-        "c": 6
     },
     "Autoclitic": {
         "E": [
@@ -145635,15 +141926,6 @@
         ],
         "c": 5
     },
-    "Fiestas patronales in Puerto Rico": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Filling-in": {
         "E": [
             [
@@ -145910,15 +142192,6 @@
             ]
         ],
         "c": 3
-    },
-    "Good Neighbor policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Good–Turing frequency estimation": {
         "E": [
@@ -146964,15 +143237,6 @@
         ],
         "c": 6
     },
-    "Dido Bank": {
-        "E": [
-            [
-                "mudflat",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Lábrea fever": {
         "E": [
             [
@@ -147977,19 +144241,6 @@
         ],
         "c": 7
     },
-    "plasmacytosis": {
-        "E": [
-            [
-                "hemic system symptom",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "plot hole": {
         "E": [
             [
@@ -148044,15 +144295,6 @@
         ],
         "c": 5
     },
-    "Politics of French Guiana": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Poly1305": {
         "E": [
             [
@@ -148101,15 +144343,6 @@
             ]
         ],
         "c": 4
-    },
-    "Predistribution": {
-        "E": [
-            [
-                "social policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Primary consciousness": {
         "E": [
@@ -148775,15 +145008,6 @@
         ],
         "c": 5
     },
-    "Settlements and bankruptcies in Catholic sex abuse cases": {
-        "E": [
-            [
-                "institutional response to child sexual abuse",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "Sex cord tumour with annular tubules": {
         "E": [
             [
@@ -148928,10 +145152,6 @@
             [
                 "minimum",
                 "subclass of"
-            ],
-            [
-                "June solstice",
-                "different from"
             ]
         ],
         "c": 3
@@ -150242,15 +146462,6 @@
         ],
         "c": 7
     },
-    "integration of immigrants": {
-        "E": [
-            [
-                "social policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "counterphobic attitude": {
         "E": [
             [
@@ -150867,15 +147078,6 @@
         ],
         "c": 7
     },
-    "Festes del Tura": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Pla Especial de Reforma Interior": {
         "E": [
             [
@@ -151184,15 +147386,6 @@
             ]
         ],
         "c": 5
-    },
-    "Santiago Apóstol Festival": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "The Clinton Parameters": {
         "E": [
@@ -151603,15 +147796,6 @@
         ],
         "c": 7
     },
-    "May you live in interesting times": {
-        "E": [
-            [
-                "Redewendung",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Phaniola liturata": {
         "E": [
             [
@@ -151812,29 +147996,11 @@
         ],
         "c": 3
     },
-    "Regensic science": {
-        "E": [
-            [
-                "political science",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "bolthole": {
         "E": [
             [
                 "Redewendung",
                 "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "tourism policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
             ]
         ],
         "c": 7
@@ -152679,15 +148845,6 @@
             ]
         ],
         "c": 3
-    },
-    "Stem cell research policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Personal Attributes Questionnaire": {
         "E": [
@@ -153780,15 +149937,6 @@
         ],
         "c": 6
     },
-    "Transversality": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "peripheral dysostosis": {
         "E": [
             [
@@ -154268,15 +150416,6 @@
         ],
         "c": 7
     },
-    "politics of Africa": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "agent-centered prerogative": {
         "E": [
             [
@@ -154316,15 +150455,6 @@
             ]
         ],
         "c": 5
-    },
-    "May God have mercy upon your soul": {
-        "E": [
-            [
-                "sentence",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Mars Cube One": {
         "E": [
@@ -155931,19 +152061,6 @@
         ],
         "c": 5
     },
-    "Severely handicapped law": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ],
-            [
-                "social policy",
-                "part of"
-            ]
-        ],
-        "c": 7
-    },
     "4-trimethylammoniobutanoate": {
         "E": [
             [
@@ -156302,15 +152419,6 @@
             ]
         ],
         "c": 7
-    },
-    "January 2017 European cold wave": {
-        "E": [
-            [
-                "cold wave",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "memory control block": {
         "E": [
@@ -158326,15 +154434,6 @@
         ],
         "c": 6
     },
-    "three noes policy of 2017": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "IAHRC precautionary measures": {
         "E": [
             [
@@ -159408,15 +155507,6 @@
             [
                 "presynapse organization",
                 "part of"
-            ]
-        ],
-        "c": 7
-    },
-    "fireworks policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
             ]
         ],
         "c": 7
@@ -161425,15 +157515,6 @@
         ],
         "c": 7
     },
-    "Trademark policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "acute motor and sensory axonal neuropathy": {
         "E": [
             [
@@ -161504,33 +157585,6 @@
             ]
         ],
         "c": 7
-    },
-    "Tuesday of the month": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ]
-        ],
-        "c": 3
-    },
-    "Thursday of the month": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ]
-        ],
-        "c": 3
-    },
-    "Sunday of the month": {
-        "E": [
-            [
-                "list of values as qualifiers",
-                "union of"
-            ]
-        ],
-        "c": 3
     },
     "Curve448": {
         "E": [
@@ -162569,24 +158623,6 @@
             ]
         ],
         "c": 5
-    },
-    "data management policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "ethics policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "insecticide resistance": {
         "E": [
@@ -163746,15 +159782,6 @@
         ],
         "c": 3
     },
-    "Israeli criticism of the occupation": {
-        "E": [
-            [
-                "politics",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Diophantine geometry": {
         "E": [
             [
@@ -163893,15 +159920,6 @@
             ]
         ],
         "c": 5
-    },
-    "Repartimiento established in Hispaniola": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "behavioral research": {
         "E": [
@@ -164627,15 +160645,6 @@
         "E": [
             [
                 "embroidery",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Medal Commemorating Commodore Oliver Hazard Perry (1785-1819) and the Battle of Lake Erie": {
-        "E": [
-            [
-                "metal artwork",
                 "instance of"
             ]
         ],
@@ -165900,15 +161909,6 @@
         ],
         "c": 7
     },
-    "Controlled Application Review and Resolution Program": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "entanglement monotone": {
         "E": [
             [
@@ -166016,15 +162016,6 @@
         "E": [
             [
                 "research project",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Mask rationing scheme (Korea)": {
-        "E": [
-            [
-                "policy",
                 "instance of"
             ]
         ],
@@ -168027,15 +164018,6 @@
         ],
         "c": 3
     },
-    "short-haul flight ban": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Transportation Systems": {
         "E": [
             [
@@ -168260,122 +164242,6 @@
         "E": [
             [
                 "proposal",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "continuous leakage of urine": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "left lower quadrant abdominal rigidity": {
-        "E": [
-            [
-                "abdominal rigidity",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "pelvic mass": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "right lower quadrant abdominal lump": {
-        "E": [
-            [
-                "abdominal lump",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "multiple sites pelvic swelling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "unreactive mydriasis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "freezing hypokinesia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "periumbilic pelvic swelling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "fussy infant": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "lymph gland swelling": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "weak cry": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
-    "spleen symptom": {
-        "E": [
-            [
-                "symptom or sign",
                 "instance of"
             ]
         ],
@@ -168763,19 +164629,6 @@
         ],
         "c": 7
     },
-    "defunct more than 70 years ago": {
-        "E": [
-            [
-                "heuristic for determination of copyright status of a creator",
-                "instance of"
-            ],
-            [
-                "founded less than 70 years ago",
-                "different from"
-            ]
-        ],
-        "c": 3
-    },
     "percussion performance": {
         "E": [
             [
@@ -168964,24 +164817,6 @@
         "E": [
             [
                 "season",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Marketing Communications Policy for the University of Ghana": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Guidelines for Using the Turnitin Software to Determine Plagiarism in University Of Ghana": {
-        "E": [
-            [
-                "policy",
                 "instance of"
             ]
         ],
@@ -169627,15 +165462,6 @@
         ],
         "c": 4
     },
-    "COVID-19 policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "immune responsiveness": {
         "E": [
             [
@@ -170058,19 +165884,6 @@
         ],
         "c": 7
     },
-    "Number of the Existing Population of Ukraine as of January 1, 2017": {
-        "E": [
-            [
-                "statistics",
-                "instance of"
-            ],
-            [
-                "Number of Present Population of Ukraine, as of January 1, 2018",
-                "follows"
-            ]
-        ],
-        "c": 1
-    },
     "Unity 22": {
         "E": [
             [
@@ -170321,10 +166134,6 @@
     "returned but died before attending Parliament": {
         "E": [
             [
-                "returned but may not have attended parliament",
-                "different from"
-            ],
-            [
                 "returned but did not attend Parliament",
                 "different from"
             ],
@@ -170566,15 +166375,6 @@
             ]
         ],
         "c": 5
-    },
-    "quick enforcement response policy": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "emptying": {
         "E": [
@@ -171524,15 +167324,6 @@
             [
                 "stone tool",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "San Isidro Day": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
             ]
         ],
         "c": 7
@@ -172499,15 +168290,6 @@
             ]
         ],
         "c": 5
-    },
-    "Festa Ferdinando D'Aragona": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "bivariate normal distribution": {
         "E": [
@@ -175598,19 +171380,6 @@
         ],
         "c": 6
     },
-    "mumps": {
-        "E": [
-            [
-                "herpangina",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Early 2012 European cold wave": {
         "E": [
             [
@@ -176156,19 +171925,6 @@
         ],
         "c": 6
     },
-    "delirium tremens": {
-        "E": [
-            [
-                "delirium",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "palmitic acid": {
         "E": [
             [
@@ -176292,10 +172048,6 @@
         "E": [
             [
                 "Bank für Tirol und Vorarlberg",
-                "has part(s)"
-            ],
-            [
-                "BKS Bank",
                 "has part(s)"
             ]
         ],
@@ -177596,15 +173348,6 @@
         ],
         "c": 7
     },
-    "acute kidney injury": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "dCTP": {
         "E": [
             [
@@ -177830,15 +173573,6 @@
         ],
         "c": 7
     },
-    "politics of the Soviet Union": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Jouissance": {
         "E": [
             [
@@ -177954,23 +173688,6 @@
             ]
         ],
         "c": 5
-    },
-    "catatonia": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ],
-            [
-                "waxy flexibility",
-                "has part(s)"
-            ],
-            [
-                "neurological and physiological symptom",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Laws of the Game": {
         "E": [
@@ -178776,15 +174493,6 @@
         ],
         "c": 7
     },
-    "September 1503 papal conclave": {
-        "E": [
-            [
-                "conclave",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "decantation": {
         "E": [
             [
@@ -178962,15 +174670,6 @@
             ]
         ],
         "c": 5
-    },
-    "gunboat diplomacy": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "preliminary injunction": {
         "E": [
@@ -179280,15 +174979,6 @@
         ],
         "c": 5
     },
-    "meibomian cyst": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "adenoviral keratoconjunctivitis": {
         "E": [
             [
@@ -179350,15 +175040,6 @@
             [
                 "acid",
                 "uses"
-            ]
-        ],
-        "c": 5
-    },
-    "pyuria": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
             ]
         ],
         "c": 5
@@ -180462,15 +176143,6 @@
         ],
         "c": 4
     },
-    "Washington Consensus": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "philosophy of war": {
         "E": [
             [
@@ -180635,15 +176307,6 @@
             ]
         ],
         "c": 1
-    },
-    "politics of Iran": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Cantor distribution": {
         "E": [
@@ -180993,15 +176656,6 @@
         ],
         "c": 7
     },
-    "cleavage": {
-        "E": [
-            [
-                "political science",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "closing": {
         "E": [
             [
@@ -181064,15 +176718,6 @@
         "E": [
             [
                 "data cable",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "politics of France": {
-        "E": [
-            [
-                "politics",
                 "subclass of"
             ]
         ],
@@ -181269,24 +176914,6 @@
         ],
         "c": 7
     },
-    "osteochondrosis": {
-        "E": [
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "politics of Indonesia": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Media Transfer Protocol": {
         "E": [
             [
@@ -181370,15 +176997,6 @@
             ]
         ],
         "c": 6
-    },
-    "Kōbu gattai": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "socialization": {
         "E": [
@@ -181929,15 +177547,6 @@
             ]
         ],
         "c": 5
-    },
-    "headline": {
-        "E": [
-            [
-                "article",
-                "part of"
-            ]
-        ],
-        "c": 7
     },
     "continual improvement process": {
         "E": [
@@ -182792,15 +178401,6 @@
         ],
         "c": 7
     },
-    "power projection": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "web application security": {
         "E": [
             [
@@ -183146,15 +178746,6 @@
         ],
         "c": 5
     },
-    "Red Purge": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "broadcast syndication": {
         "E": [
             [
@@ -183221,15 +178812,6 @@
         "E": [
             [
                 "property",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "supraventricular tachycardia": {
-        "E": [
-            [
-                "symptom or sign",
                 "instance of"
             ]
         ],
@@ -183375,19 +178957,6 @@
             ]
         ],
         "c": 5
-    },
-    "hypoesthesia": {
-        "E": [
-            [
-                "somatosensory disorder",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Slavic cross": {
         "E": [
@@ -184673,19 +180242,6 @@
         ],
         "c": 7
     },
-    "serous glue ear": {
-        "E": [
-            [
-                "non-suppurative otitis media",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "Pelorus": {
         "E": [
             [
@@ -184700,19 +180256,6 @@
             [
                 "postage stamp",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "Antepartum haemorrhage": {
-        "E": [
-            [
-                "obstetrical hemorrhage",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
             ]
         ],
         "c": 7
@@ -185217,15 +180760,6 @@
         ],
         "c": 7
     },
-    "Sell in May": {
-        "E": [
-            [
-                "strategizing",
-                "instance of"
-            ]
-        ],
-        "c": 4
-    },
     "sengū": {
         "E": [
             [
@@ -185247,19 +180781,6 @@
             ]
         ],
         "c": 5
-    },
-    "hypermenorrhoea": {
-        "E": [
-            [
-                "menorrhagia",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "certainty effect": {
         "E": [
@@ -186411,15 +181932,6 @@
             ]
         ],
         "c": 3
-    },
-    "oere neger": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "diagnosis of schizophrenia": {
         "E": [
@@ -187730,15 +183242,6 @@
         ],
         "c": 7
     },
-    "Politics of Guadeloupe": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Porcelain of Valentine": {
         "E": [
             [
@@ -187862,15 +183365,6 @@
             ]
         ],
         "c": 6
-    },
-    "Surrender and regrant": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Five laws of library science": {
         "E": [
@@ -188071,15 +183565,6 @@
         "E": [
             [
                 "Art Nouveau",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "politics of the Ming Dynasty": {
-        "E": [
-            [
-                "politics",
                 "subclass of"
             ]
         ],
@@ -188687,15 +184172,6 @@
         ],
         "c": 7
     },
-    "interior lines": {
-        "E": [
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Acute necrotizing otitis media": {
         "E": [
             [
@@ -188730,35 +184206,6 @@
             ]
         ],
         "c": 6
-    },
-    "policy making": {
-        "E": [
-            [
-                "planning",
-                "subclass of"
-            ],
-            [
-                "political process",
-                "subclass of"
-            ],
-            [
-                "policy",
-                "subclass of"
-            ],
-            [
-                "planning",
-                "instance of"
-            ],
-            [
-                "political process",
-                "instance of"
-            ],
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 5
     },
     "Banking in Belarus": {
         "E": [
@@ -189323,15 +184770,6 @@
             ]
         ],
         "c": 1
-    },
-    "National Airports Policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Frobenius inequality": {
         "E": [
@@ -190626,15 +186064,6 @@
         ],
         "c": 6
     },
-    "death marches": {
-        "E": [
-            [
-                "Nazi Germany",
-                "authority"
-            ]
-        ],
-        "c": 7
-    },
     "Canopy Housing": {
         "E": [
             [
@@ -191135,19 +186564,6 @@
             ]
         ],
         "c": 3
-    },
-    "Cossack Rada": {
-        "E": [
-            [
-                "politics",
-                "part of"
-            ],
-            [
-                "meeting",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Cotlar–Stein lemma": {
         "E": [
@@ -191944,15 +187360,6 @@
         ],
         "c": 5
     },
-    "Federal-American National Bank": {
-        "E": [
-            [
-                "financial institution",
-                "has use"
-            ]
-        ],
-        "c": 3
-    },
     "felling": {
         "E": [
             [
@@ -192386,15 +187793,6 @@
         ],
         "c": 7
     },
-    "Good Neighbour Policy": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Goombah": {
         "E": [
             [
@@ -192470,15 +187868,6 @@
             ]
         ],
         "c": 5
-    },
-    "Great Blue Norther of November 11, 1911": {
-        "E": [
-            [
-                "cold wave",
-                "instance of"
-            ]
-        ],
-        "c": 6
     },
     "great icosahedral 120-cell": {
         "E": [
@@ -193168,15 +188557,6 @@
         ],
         "c": 5
     },
-    "July 2007 Argentine winter storm": {
-        "E": [
-            [
-                "cold wave",
-                "instance of"
-            ]
-        ],
-        "c": 6
-    },
     "Jump-and-Walk algorithm": {
         "E": [
             [
@@ -193328,15 +188708,6 @@
             ]
         ],
         "c": 5
-    },
-    "Sámi politics": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
     },
     "Landscape connectivity": {
         "E": [
@@ -194294,15 +189665,6 @@
         ],
         "c": 7
     },
-    "politics of the Highland council area": {
-        "E": [
-            [
-                "politics",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Pontryagin cohomology operation": {
         "E": [
             [
@@ -194522,15 +189884,6 @@
             ]
         ],
         "c": 3
-    },
-    "REMP": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "RP-570": {
         "E": [
@@ -196144,15 +191497,6 @@
         ],
         "c": 7
     },
-    "Summer Festival of Reus": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Imagery": {
         "E": [
             [
@@ -196491,19 +191835,6 @@
             [
                 "weave",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "vertigo": {
-        "E": [
-            [
-                "clinical sign",
-                "subclass of"
-            ],
-            [
-                "symptom or sign",
-                "instance of"
             ]
         ],
         "c": 7
@@ -196991,15 +192322,6 @@
         ],
         "c": 5
     },
-    "Indictment and arrest of Augusto Pinochet": {
-        "E": [
-            [
-                "Chilean transition to democracy",
-                "part of"
-            ]
-        ],
-        "c": 5
-    },
     "Tattoo allergy": {
         "E": [
             [
@@ -197214,24 +192536,6 @@
             [
                 "fiber",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "Festa Major de Gràcia": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
-    "Festes de Sant Joan de Ciutadella": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
             ]
         ],
         "c": 7
@@ -197580,15 +192884,6 @@
         "E": [
             [
                 "vegetable",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "wafelijzerpolitiek": {
-        "E": [
-            [
-                "politics",
                 "subclass of"
             ]
         ],
@@ -198189,15 +193484,6 @@
             [
                 "urban development",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "Ashoka's policy of Dhamma": {
-        "E": [
-            [
-                "policy",
-                "instance of"
             ]
         ],
         "c": 7
@@ -199501,15 +194787,6 @@
         ],
         "c": 5
     },
-    "Pulse fishing": {
-        "E": [
-            [
-                "policy",
-                "subclass of"
-            ]
-        ],
-        "c": 7
-    },
     "Lund and Browder chart": {
         "E": [
             [
@@ -200350,19 +195627,6 @@
         ],
         "c": 7
     },
-    "deactivation": {
-        "E": [
-            [
-                "occurrence",
-                "subclass of"
-            ],
-            [
-                "military term",
-                "instance of"
-            ]
-        ],
-        "c": 5
-    },
     "particle number fraction": {
         "E": [
             [
@@ -200482,15 +195746,6 @@
             ]
         ],
         "c": 6
-    },
-    "Festa Major de la Mare de Déu de la Riera de les Borges del Camp": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "nature conservation": {
         "E": [
@@ -201530,15 +196785,6 @@
         ],
         "c": 5
     },
-    "Bangladesh Bank heist": {
-        "E": [
-            [
-                "theft",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Prymnesiophyceae incertae sedis": {
         "E": [
             [
@@ -201547,15 +196793,6 @@
             ]
         ],
         "c": 5
-    },
-    "Motín de Aranjuez": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "Amazon Machine Learning": {
         "E": [
@@ -201626,15 +196863,6 @@
         ],
         "c": 3
     },
-    "Virgen de Araceli": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
-            ]
-        ],
-        "c": 7
-    },
     "Photogeochemistry": {
         "E": [
             [
@@ -201649,15 +196877,6 @@
             [
                 "antisemitism",
                 "subclass of"
-            ]
-        ],
-        "c": 7
-    },
-    "Fiesta de los Sanantones y la Encamisada": {
-        "E": [
-            [
-                "patronal festival",
-                "instance of"
             ]
         ],
         "c": 7
@@ -201922,23 +197141,6 @@
             ]
         ],
         "c": 5
-    },
-    "sentencing guidelines": {
-        "E": [
-            [
-                "guideline",
-                "subclass of"
-            ],
-            [
-                "policy",
-                "subclass of"
-            ],
-            [
-                "sentence",
-                "has use"
-            ]
-        ],
-        "c": 6
     },
     "Registration Data Access Protocol": {
         "E": [
@@ -204454,15 +199656,6 @@
             ]
         ],
         "c": 3
-    },
-    "Strategia Nazionale per le Aree Interne": {
-        "E": [
-            [
-                "policy",
-                "instance of"
-            ]
-        ],
-        "c": 7
     },
     "octagonal pyramid": {
         "E": [

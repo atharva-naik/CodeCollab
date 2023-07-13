@@ -1,0 +1,36 @@
+{
+    "Data Wrangling::s": {
+        "DESC": "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis.",
+        "STEPS": ["Inspecting Data", "Transforming Data", "Integrating Data"],
+        "Scikit Learn::M::implemented by": null,
+        "Pandas::M::implemented by": null,
+        "Numpy::M::implemented by": null,
+        "Matplotlib::M::implemented by": null,
+        "Theano::M::implemented by": null,
+        "Inspecting Data::s::has step(s)": {
+            "Outliers::C": null,
+            "Z-score::E": null
+        },
+        "Transforming Data::s::has step(s)": {
+            "Missing Values::C::handles": null,
+            "Imputation::s::instance of": {
+                "Missing Values::C::handles": null
+            },
+            "Omission::s::instance of": {
+                "Missing Values::C::handles": null
+            },
+            "Subsetting::s::instance of": {
+                "Missing Values::C::handles": null
+            },
+            "Outliers::C": null,
+            "Transforming Categorical Data::s::subclass of": null,
+            "Transforming Quantitative Data::s::subclass of": null
+        },
+        "Integrating Data::s::has step(s)": {
+            "Data Wrangling to Data Exploration::C": null
+        }
+    },
+    "Raw Data::D": {
+        "DESC": "Data that is collected from different sources are considered raw data"
+    }
+}

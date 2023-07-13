@@ -72,11 +72,15 @@
         "M"
     ],
     [
+        "regression curve",
+        "V"
+    ],
+    [
         "supervised learning",
         "T"
     ],
     [
-        "cox\u2013zucker machine",
+        "cox–zucker machine",
         "M"
     ],
     [
@@ -100,7 +104,7 @@
         "D"
     ],
     [
-        "\u03bc-law algorithm",
+        "μ-law algorithm",
         "M"
     ],
     [
@@ -122,6 +126,10 @@
     [
         "aitken's delta-squared process",
         "M"
+    ],
+    [
+        "mathematical concept",
+        "C"
     ],
     [
         "apriori algorithm",
@@ -172,7 +180,7 @@
         "S"
     ],
     [
-        "tur\u00e1n graph",
+        "turán graph",
         "C"
     ],
     [
@@ -184,7 +192,7 @@
         "C"
     ],
     [
-        "baum\u2013welch algorithm",
+        "baum–welch algorithm",
         "M"
     ],
     [
@@ -220,7 +228,7 @@
         "C"
     ],
     [
-        "cahn\u2013ingold\u2013prelog priority rules",
+        "cahn–ingold–prelog priority rules",
         "M"
     ],
     [
@@ -240,7 +248,7 @@
         "M"
     ],
     [
-        "fr\u00e9chet distribution",
+        "fréchet distribution",
         "S"
     ],
     [
@@ -252,7 +260,7 @@
         "T"
     ],
     [
-        "it\u014d calculus",
+        "itō calculus",
         "C"
     ],
     [
@@ -276,7 +284,7 @@
         "C"
     ],
     [
-        "pisot\u2013vijayaraghavan number",
+        "pisot–vijayaraghavan number",
         "C"
     ],
     [
@@ -376,7 +384,7 @@
         "M"
     ],
     [
-        "sturm\u2013liouville theory",
+        "sturm–liouville theory",
         "C"
     ],
     [
@@ -504,7 +512,7 @@
         "C"
     ],
     [
-        "feynman\u2013kac formula",
+        "feynman–kac formula",
         "M"
     ],
     [
@@ -688,7 +696,7 @@
         "M"
     ],
     [
-        "bor\u016fvka's algorithm",
+        "borůvka's algorithm",
         "M"
     ],
     [
@@ -721,6 +729,10 @@
     ],
     [
         "historical culture",
+        "C"
+    ],
+    [
+        "biblical concept",
         "C"
     ],
     [
@@ -1000,7 +1012,7 @@
         "C"
     ],
     [
-        "ces\u00e0ro mean",
+        "cesàro mean",
         "M"
     ],
     [
@@ -1069,10 +1081,6 @@
     ],
     [
         "masonic manuscripts",
-        "C"
-    ],
-    [
-        "bleeding",
         "C"
     ],
     [
@@ -1188,15 +1196,11 @@
         "C"
     ],
     [
-        "pain",
-        "C"
-    ],
-    [
-        "poincar\u00e9 half-plane model",
+        "poincaré half-plane model",
         "M"
     ],
     [
-        "walsh\u2013hadamard code",
+        "walsh–hadamard code",
         "C"
     ],
     [
@@ -1244,7 +1248,7 @@
         "C"
     ],
     [
-        "landau\u2013ramanujan constant",
+        "landau–ramanujan constant",
         "C"
     ],
     [
@@ -1312,7 +1316,7 @@
         "C"
     ],
     [
-        "lin\u2013kernighan heuristic",
+        "lin–kernighan heuristic",
         "M"
     ],
     [
@@ -1348,11 +1352,7 @@
         "C"
     ],
     [
-        "breakthrough",
-        "C"
-    ],
-    [
-        "chern\u2013weil theory",
+        "chern–weil theory",
         "C"
     ],
     [
@@ -1400,7 +1400,7 @@
         "C"
     ],
     [
-        "chowla\u2013selberg formula",
+        "chowla–selberg formula",
         "C"
     ],
     [
@@ -1540,7 +1540,7 @@
         "C"
     ],
     [
-        "b\u00e4cklund transform",
+        "bäcklund transform",
         "C"
     ],
     [
@@ -1552,7 +1552,7 @@
         "C"
     ],
     [
-        "ada lovelace\u2019 algorithm for computing bernoulli numbers",
+        "ada lovelace’ algorithm for computing bernoulli numbers",
         "M"
     ],
     [
@@ -1576,7 +1576,7 @@
         "M"
     ],
     [
-        "birnbaum\u2013saunders distribution",
+        "birnbaum–saunders distribution",
         "S"
     ],
     [
@@ -1584,7 +1584,7 @@
         "S"
     ],
     [
-        "p\u00f3lya\u2013szeg\u0151 inequality",
+        "pólya–szegő inequality",
         "C"
     ],
     [
@@ -1620,7 +1620,7 @@
         "C"
     ],
     [
-        "g\u00f6del-incomplete machine",
+        "gödel-incomplete machine",
         "C"
     ],
     [
@@ -1652,7 +1652,7 @@
         "C"
     ],
     [
-        "laplace\u2013stieltjes transform",
+        "laplace–stieltjes transform",
         "C"
     ],
     [
@@ -1676,7 +1676,7 @@
         "M"
     ],
     [
-        "gilbert\u2013johnson\u2013keerthi distance algorithm",
+        "gilbert–johnson–keerthi distance algorithm",
         "M"
     ],
     [
@@ -1744,7 +1744,7 @@
         "C"
     ],
     [
-        "dantzig\u2013wolfe decomposition",
+        "dantzig–wolfe decomposition",
         "M"
     ],
     [
@@ -1900,7 +1900,7 @@
         "C"
     ],
     [
-        "baer\u2013specker group",
+        "baer–specker group",
         "C"
     ],
     [
@@ -1924,7 +1924,7 @@
         "C"
     ],
     [
-        "beier\u2013neely morphing algorithm",
+        "beier–neely morphing algorithm",
         "M"
     ],
     [
@@ -1988,7 +1988,7 @@
         "C"
     ],
     [
-        "cholodny\u2013went model",
+        "cholodny–went model",
         "C"
     ],
     [
@@ -2004,7 +2004,7 @@
         "C"
     ],
     [
-        "cochran\u2013mantel\u2013haenszel statistics",
+        "cochran–mantel–haenszel statistics",
         "S"
     ],
     [
@@ -2144,7 +2144,7 @@
         "M"
     ],
     [
-        "deuring\u2013heilbronn phenomenon",
+        "deuring–heilbronn phenomenon",
         "C"
     ],
     [
@@ -2152,7 +2152,7 @@
         "C"
     ],
     [
-        "dieudonn\u00e9 plank",
+        "dieudonné plank",
         "C"
     ],
     [
@@ -2188,7 +2188,7 @@
         "C"
     ],
     [
-        "d\u00e9tecteur \u00e0 grande acceptance pour la physique photonucl\u00e9aire exp\u00e9rimentale",
+        "détecteur à grande acceptance pour la physique photonucléaire expérimentale",
         "C"
     ],
     [
@@ -2212,7 +2212,7 @@
         "C"
     ],
     [
-        "east pole\u2013west pole divide",
+        "east pole–west pole divide",
         "C"
     ],
     [
@@ -2224,7 +2224,7 @@
         "M"
     ],
     [
-        "einstein\u2013cartan\u2013evans theory",
+        "einstein–cartan–evans theory",
         "C"
     ],
     [
@@ -2248,7 +2248,7 @@
         "D"
     ],
     [
-        "erdelyi\u2013kober operator",
+        "erdelyi–kober operator",
         "C"
     ],
     [
@@ -2348,7 +2348,7 @@
         "C"
     ],
     [
-        "fr\u00e9chet mean",
+        "fréchet mean",
         "C"
     ],
     [
@@ -2364,7 +2364,7 @@
         "C"
     ],
     [
-        "gauss\u2013kronrod quadrature formula",
+        "gauss–kronrod quadrature formula",
         "M"
     ],
     [
@@ -2376,7 +2376,7 @@
         "M"
     ],
     [
-        "girvan\u2013newman algorithm",
+        "girvan–newman algorithm",
         "M"
     ],
     [
@@ -2792,7 +2792,7 @@
         "T"
     ],
     [
-        "reed\u2013frost model",
+        "reed–frost model",
         "M"
     ],
     [
@@ -2844,11 +2844,11 @@
         "C"
     ],
     [
-        "schramm\u2013loewner evolution",
+        "schramm–loewner evolution",
         "C"
     ],
     [
-        "schreier\u2013sims algorithm",
+        "schreier–sims algorithm",
         "M"
     ],
     [
@@ -2868,7 +2868,7 @@
         "C"
     ],
     [
-        "siegel\u2013weil formula",
+        "siegel–weil formula",
         "C"
     ],
     [
@@ -2932,7 +2932,7 @@
         "C"
     ],
     [
-        "szeg\u0151 polynomial",
+        "szegő polynomial",
         "C"
     ],
     [
@@ -2940,7 +2940,7 @@
         "T"
     ],
     [
-        "teichm\u00fcller character",
+        "teichmüller character",
         "C"
     ],
     [
@@ -2992,7 +2992,7 @@
         "C"
     ],
     [
-        "hartree\u2013fock method",
+        "hartree–fock method",
         "M"
     ],
     [
@@ -3036,7 +3036,7 @@
         "C"
     ],
     [
-        "weil\u2013petersson metric",
+        "weil–petersson metric",
         "C"
     ],
     [
@@ -3072,7 +3072,7 @@
         "C"
     ],
     [
-        "zimm\u2013bragg model",
+        "zimm–bragg model",
         "M"
     ],
     [
@@ -3120,7 +3120,7 @@
         "C"
     ],
     [
-        "cord\u00e3o de ouro",
+        "cordão de ouro",
         "C"
     ],
     [
@@ -3168,7 +3168,7 @@
         "C"
     ],
     [
-        "liu hui's \u03c0 algorithm",
+        "liu hui's π algorithm",
         "M"
     ],
     [
@@ -3308,7 +3308,7 @@
         "C"
     ],
     [
-        "stieltjes\u2013wigert polynomials",
+        "stieltjes–wigert polynomials",
         "C"
     ],
     [
@@ -3348,7 +3348,7 @@
         "C"
     ],
     [
-        "erd\u0151s\u2013nicolas number",
+        "erdős–nicolas number",
         "C"
     ],
     [
@@ -3376,7 +3376,7 @@
         "C"
     ],
     [
-        "petkov\u0161ek's algorithm",
+        "petkovšek's algorithm",
         "M"
     ],
     [
@@ -3432,7 +3432,7 @@
         "C"
     ],
     [
-        "hunt\u2013mcilroy algorithm",
+        "hunt–mcilroy algorithm",
         "M"
     ],
     [
@@ -3464,7 +3464,7 @@
         "M"
     ],
     [
-        "kermack\u2013mckendrick theory",
+        "kermack–mckendrick theory",
         "C"
     ],
     [
@@ -3564,11 +3564,11 @@
         "M"
     ],
     [
-        "j\u00f3nsson\u2013tarski algebra",
+        "jónsson–tarski algebra",
         "C"
     ],
     [
-        "g\u00f6del logic",
+        "gödel logic",
         "C"
     ],
     [
@@ -3620,7 +3620,7 @@
         "C"
     ],
     [
-        "kneser\u2013ney smoothing",
+        "kneser–ney smoothing",
         "C"
     ],
     [
@@ -3696,7 +3696,7 @@
         "C"
     ],
     [
-        "encyklopedie \u010desk\u00fdch pr\u00e1vn\u00edch d\u011bjin",
+        "encyklopedie českých právních dějin",
         "C"
     ],
     [
@@ -3768,11 +3768,11 @@
         "M"
     ],
     [
-        "newton\u2013krylov method",
+        "newton–krylov method",
         "C"
     ],
     [
-        "kadison\u2013kastler metric",
+        "kadison–kastler metric",
         "C"
     ],
     [
@@ -3828,7 +3828,7 @@
         "C"
     ],
     [
-        "kleine und fragmentarische historiker der sp\u00e4tantike",
+        "kleine und fragmentarische historiker der spätantike",
         "C"
     ],
     [
@@ -3872,7 +3872,7 @@
         "C"
     ],
     [
-        "shapiro\u2013senapathy algorithm",
+        "shapiro–senapathy algorithm",
         "M"
     ],
     [
@@ -3892,7 +3892,7 @@
         "C"
     ],
     [
-        "darwin\u2013fowler method",
+        "darwin–fowler method",
         "C"
     ],
     [
@@ -4200,7 +4200,7 @@
         "C"
     ],
     [
-        "expos\u00e9: an ontology for data mining experiments",
+        "exposé: an ontology for data mining experiments",
         "C"
     ],
     [
@@ -4396,7 +4396,7 @@
         "C"
     ],
     [
-        "milnor\u2013wood inequality",
+        "milnor–wood inequality",
         "C"
     ],
     [
@@ -4492,7 +4492,7 @@
         "D"
     ],
     [
-        "duncker\u2019s radiation problem",
+        "duncker’s radiation problem",
         "T"
     ],
     [
@@ -4580,7 +4580,7 @@
         "C"
     ],
     [
-        "first hardy\u2013littlewood conjecture",
+        "first hardy–littlewood conjecture",
         "C"
     ],
     [
@@ -4676,7 +4676,7 @@
         "C"
     ],
     [
-        "chandrasekhar\u2013page equations",
+        "chandrasekhar–page equations",
         "C"
     ],
     [
@@ -4704,7 +4704,7 @@
         "C"
     ],
     [
-        "antivirale midler der h\u00e6mmer replikation af covid-19",
+        "antivirale midler der hæmmer replikation af covid-19",
         "C"
     ],
     [
@@ -4716,7 +4716,7 @@
         "C"
     ],
     [
-        "covid-19 monitorering med m\u00e5ling af c3d, antistof og rna kopi nummer i blodet mhp p\u00e5 afklaring af om fatalt forl\u00f8b relaterer sig til immunrespons eller virusload og om antistof respons regulerer eller beskytter",
+        "covid-19 monitorering med måling af c3d, antistof og rna kopi nummer i blodet mhp på afklaring af om fatalt forløb relaterer sig til immunrespons eller virusload og om antistof respons regulerer eller beskytter",
         "C"
     ],
     [
@@ -4796,7 +4796,7 @@
         "M"
     ],
     [
-        "unveiling and activating the \u201cuncertain heritage\u201d of chinese knotting",
+        "unveiling and activating the “uncertain heritage” of chinese knotting",
         "C"
     ],
     [
@@ -4836,7 +4836,7 @@
         "M"
     ],
     [
-        "estudo de prospec\u00e7\u00e3o e defesa da paisagem urbana do funchal",
+        "estudo de prospecção e defesa da paisagem urbana do funchal",
         "C"
     ],
     [
@@ -5012,7 +5012,7 @@
         "C"
     ],
     [
-        "the hardships for life to become big  \u2013 rethinking hypoxia as an evolutionary driver for the rise of complex multicellularity",
+        "the hardships for life to become big  – rethinking hypoxia as an evolutionary driver for the rise of complex multicellularity",
         "C"
     ],
     [
@@ -5168,7 +5168,7 @@
         "C"
     ],
     [
-        "mah\u0101vidy\u0101num\u0101na",
+        "mahāvidyānumāna",
         "C"
     ],
     [
@@ -5176,7 +5176,7 @@
         "C"
     ],
     [
-        "bh\u0101vana",
+        "bhāvana",
         "C"
     ],
     [
@@ -5184,7 +5184,7 @@
         "C"
     ],
     [
-        "anyath\u0101khy\u0101ti",
+        "anyathākhyāti",
         "C"
     ],
     [
@@ -5320,7 +5320,7 @@
         "C"
     ],
     [
-        "quine\u2013putnam indispensability argument",
+        "quine–putnam indispensability argument",
         "C"
     ],
     [
@@ -5356,7 +5356,7 @@
         "C"
     ],
     [
-        "solid schmidt\u2013cassegrain telescope",
+        "solid schmidt–cassegrain telescope",
         "C"
     ],
     [
@@ -6004,6 +6004,10 @@
         "C"
     ],
     [
+        "pain",
+        "C"
+    ],
+    [
         "behavioral targeting",
         "M"
     ],
@@ -6069,6 +6073,10 @@
     ],
     [
         "conception",
+        "C"
+    ],
+    [
+        "extension of a concept",
         "C"
     ],
     [
@@ -6192,7 +6200,7 @@
         "C"
     ],
     [
-        "acid\u2013base theory",
+        "acid–base theory",
         "C"
     ],
     [
@@ -6264,7 +6272,7 @@
         "M"
     ],
     [
-        "birch\u2013murnaghan equation of state",
+        "birch–murnaghan equation of state",
         "C"
     ],
     [
@@ -6364,7 +6372,7 @@
         "C"
     ],
     [
-        "z\u00e4hlgemeinschaft",
+        "zählgemeinschaft",
         "C"
     ],
     [
@@ -6424,7 +6432,7 @@
         "C"
     ],
     [
-        "\u00e9tat l\u00e9gal",
+        "état légal",
         "C"
     ],
     [
@@ -6492,11 +6500,11 @@
         "C"
     ],
     [
-        "\u00fcbergangsgewinn",
+        "übergangsgewinn",
         "C"
     ],
     [
-        "\u00fcbergangskegel",
+        "übergangskegel",
         "C"
     ],
     [
@@ -6508,7 +6516,7 @@
         "C"
     ],
     [
-        "\u00fcberk\u00f6ten",
+        "überköten",
         "C"
     ],
     [
@@ -6520,7 +6528,7 @@
         "C"
     ],
     [
-        "\u00fcberstrahlung",
+        "überstrahlung",
         "C"
     ],
     [
@@ -6536,7 +6544,7 @@
         "C"
     ],
     [
-        "ab\u00e4tmen",
+        "abätmen",
         "C"
     ],
     [
@@ -6548,7 +6556,7 @@
         "C"
     ],
     [
-        "gilchrist\u2013thomas process",
+        "gilchrist–thomas process",
         "C"
     ],
     [
@@ -6780,7 +6788,7 @@
         "C"
     ],
     [
-        "ramanujan\u2013petersson conjecture",
+        "ramanujan–petersson conjecture",
         "C"
     ],
     [
@@ -6788,7 +6796,7 @@
         "C"
     ],
     [
-        "maxwell\u2013boltzmann distribution",
+        "maxwell–boltzmann distribution",
         "S"
     ],
     [
@@ -6928,11 +6936,11 @@
         "E"
     ],
     [
-        "aztoz\u00e1s",
+        "aztozás",
         "E"
     ],
     [
-        "tf\u2013idf",
+        "tf–idf",
         "S"
     ],
     [
@@ -6944,7 +6952,7 @@
         "E"
     ],
     [
-        "euler\u2013bernoulli beam theory",
+        "euler–bernoulli beam theory",
         "C"
     ],
     [
@@ -6988,7 +6996,7 @@
         "C"
     ],
     [
-        "fermat\u2013catalan conjecture",
+        "fermat–catalan conjecture",
         "C"
     ],
     [
@@ -7204,7 +7212,7 @@
         "C"
     ],
     [
-        "iwahori\u2013hecke algebra",
+        "iwahori–hecke algebra",
         "C"
     ],
     [
@@ -7220,7 +7228,7 @@
         "S"
     ],
     [
-        "carter\u2013goddard\u2013malrieu\u2013trinquier model",
+        "carter–goddard–malrieu–trinquier model",
         "M"
     ],
     [
@@ -7236,7 +7244,7 @@
         "C"
     ],
     [
-        "principal\u2013agent problem",
+        "principal–agent problem",
         "T"
     ],
     [
@@ -7436,7 +7444,7 @@
         "C"
     ],
     [
-        "gel\u00e4uf",
+        "geläuf",
         "C"
     ],
     [
@@ -7548,7 +7556,7 @@
         "C"
     ],
     [
-        "k\u00e4hler manifold",
+        "kähler manifold",
         "C"
     ],
     [
@@ -7684,7 +7692,7 @@
         "C"
     ],
     [
-        "fourier\u2013motzkin elimination",
+        "fourier–motzkin elimination",
         "M"
     ],
     [
@@ -7736,7 +7744,7 @@
         "M"
     ],
     [
-        "kruskal\u2013szekeres coordinates",
+        "kruskal–szekeres coordinates",
         "C"
     ],
     [
@@ -7780,7 +7788,7 @@
         "C"
     ],
     [
-        "hopcroft\u2013karp algorithm",
+        "hopcroft–karp algorithm",
         "M"
     ],
     [
@@ -7792,7 +7800,7 @@
         "C"
     ],
     [
-        "reynolds-averaged navier\u2013stokes equations",
+        "reynolds-averaged navier–stokes equations",
         "C"
     ],
     [
@@ -8000,7 +8008,7 @@
         "C"
     ],
     [
-        "pollard's p \u2212 1 algorithm",
+        "pollard's p − 1 algorithm",
         "M"
     ],
     [
@@ -8072,7 +8080,7 @@
         "M"
     ],
     [
-        "schr\u00f6der number",
+        "schröder number",
         "C"
     ],
     [
@@ -8248,6 +8256,10 @@
         "C"
     ],
     [
+        "physical concept",
+        "C"
+    ],
+    [
         "presumptive regeneration",
         "C"
     ],
@@ -8276,7 +8288,7 @@
         "C"
     ],
     [
-        "pad\u00e9 approximant",
+        "padé approximant",
         "M"
     ],
     [
@@ -8324,7 +8336,7 @@
         "C"
     ],
     [
-        "weiler\u2013atherton clipping algorithm",
+        "weiler–atherton clipping algorithm",
         "M"
     ],
     [
@@ -8348,7 +8360,7 @@
         "T"
     ],
     [
-        "milieu int\u00e9rieur",
+        "milieu intérieur",
         "C"
     ],
     [
@@ -8452,7 +8464,7 @@
         "C"
     ],
     [
-        "peak\u2013end rule",
+        "peak–end rule",
         "C"
     ],
     [
@@ -8484,7 +8496,7 @@
         "C"
     ],
     [
-        "hilbert\u2013p\u00f3lya conjecture",
+        "hilbert–pólya conjecture",
         "C"
     ],
     [
@@ -8524,7 +8536,7 @@
         "C"
     ],
     [
-        "chern\u2013weil homomorphism",
+        "chern–weil homomorphism",
         "C"
     ],
     [
@@ -8564,7 +8576,7 @@
         "C"
     ],
     [
-        "relativistic breit\u2013wigner distribution",
+        "relativistic breit–wigner distribution",
         "S"
     ],
     [
@@ -8572,7 +8584,7 @@
         "C"
     ],
     [
-        "scheff\u00e9\u2019s lemma",
+        "scheffé’s lemma",
         "C"
     ],
     [
@@ -8580,7 +8592,7 @@
         "C"
     ],
     [
-        "conway\u2013maxwell\u2013poisson distribution",
+        "conway–maxwell–poisson distribution",
         "S"
     ],
     [
@@ -8604,7 +8616,7 @@
         "S"
     ],
     [
-        "slater\u2013condon rules",
+        "slater–condon rules",
         "M"
     ],
     [
@@ -8628,7 +8640,7 @@
         "C"
     ],
     [
-        "hamilton\u2013jacobi\u2013bellman equation",
+        "hamilton–jacobi–bellman equation",
         "C"
     ],
     [
@@ -8648,11 +8660,11 @@
         "C"
     ],
     [
-        "n\u00f6rlund\u2013rice integral",
+        "nörlund–rice integral",
         "C"
     ],
     [
-        "fubini\u2013study metric",
+        "fubini–study metric",
         "C"
     ],
     [
@@ -8676,11 +8688,11 @@
         "C"
     ],
     [
-        "banach\u2013mazur game",
+        "banach–mazur game",
         "C"
     ],
     [
-        "banach\u2013mazur compactum",
+        "banach–mazur compactum",
         "C"
     ],
     [
@@ -8716,7 +8728,7 @@
         "M"
     ],
     [
-        "davenport\u2013schinzel sequence",
+        "davenport–schinzel sequence",
         "C"
     ],
     [
@@ -8732,11 +8744,11 @@
         "T"
     ],
     [
-        "lake uniam\u00e9si",
+        "lake uniamési",
         "E"
     ],
     [
-        "fr\u00e9chet manifold",
+        "fréchet manifold",
         "C"
     ],
     [
@@ -8788,7 +8800,7 @@
         "S"
     ],
     [
-        "pollaczek\u2013khinchine formula",
+        "pollaczek–khinchine formula",
         "C"
     ],
     [
@@ -8920,7 +8932,7 @@
         "C"
     ],
     [
-        "al-ins\u0101n al-k\u0101mil",
+        "al-insān al-kāmil",
         "C"
     ],
     [
@@ -9036,7 +9048,7 @@
         "M"
     ],
     [
-        "allen\u2013cahn equation",
+        "allen–cahn equation",
         "C"
     ],
     [
@@ -9044,7 +9056,7 @@
         "C"
     ],
     [
-        "andronov\u2013pontryagin criterion",
+        "andronov–pontryagin criterion",
         "C"
     ],
     [
@@ -9132,7 +9144,7 @@
         "T"
     ],
     [
-        "berry\u2013robbins problem",
+        "berry–robbins problem",
         "T"
     ],
     [
@@ -9172,11 +9184,11 @@
         "C"
     ],
     [
-        "bott\u2013samelson variety",
+        "bott–samelson variety",
         "C"
     ],
     [
-        "box\u2013behnken design",
+        "box–behnken design",
         "C"
     ],
     [
@@ -9220,7 +9232,7 @@
         "C"
     ],
     [
-        "cayley's \u03c9 process",
+        "cayley's ω process",
         "M"
     ],
     [
@@ -9308,7 +9320,7 @@
         "M"
     ],
     [
-        "cooley\u2013tukey fft algorithm",
+        "cooley–tukey fft algorithm",
         "M"
     ],
     [
@@ -9428,11 +9440,11 @@
         "C"
     ],
     [
-        "erd\u0151s cardinal",
+        "erdős cardinal",
         "C"
     ],
     [
-        "erd\u0151s\u2013diophantine graph",
+        "erdős–diophantine graph",
         "C"
     ],
     [
@@ -9440,7 +9452,7 @@
         "C"
     ],
     [
-        "euler\u2013tricomi equation",
+        "euler–tricomi equation",
         "C"
     ],
     [
@@ -9452,7 +9464,7 @@
         "C"
     ],
     [
-        "farrell\u2013jones conjecture",
+        "farrell–jones conjecture",
         "C"
     ],
     [
@@ -9484,11 +9496,11 @@
         "C"
     ],
     [
-        "fox\u2013wright function",
+        "fox–wright function",
         "C"
     ],
     [
-        "fr\u00e9chet algebra",
+        "fréchet algebra",
         "C"
     ],
     [
@@ -9548,7 +9560,7 @@
         "C"
     ],
     [
-        "g\u00e5rding domain",
+        "gårding domain",
         "C"
     ],
     [
@@ -9576,7 +9588,7 @@
         "C"
     ],
     [
-        "ho\u0159ava\u2013lifshitz gravity",
+        "hořava–lifshitz gravity",
         "C"
     ],
     [
@@ -9588,7 +9600,7 @@
         "E"
     ],
     [
-        "hyers\u2013ulam\u2013rassias stability",
+        "hyers–ulam–rassias stability",
         "C"
     ],
     [
@@ -9604,7 +9616,7 @@
         "C"
     ],
     [
-        "inside\u2013outside algorithm",
+        "inside–outside algorithm",
         "M"
     ],
     [
@@ -9624,7 +9636,7 @@
         "C"
     ],
     [
-        "jenkins\u2013traub algorithm",
+        "jenkins–traub algorithm",
         "M"
     ],
     [
@@ -9632,7 +9644,7 @@
         "M"
     ],
     [
-        "johnson\u2013lindenstrauss lemma",
+        "johnson–lindenstrauss lemma",
         "C"
     ],
     [
@@ -9644,7 +9656,7 @@
         "M"
     ],
     [
-        "karloff\u2013zwick algorithm",
+        "karloff–zwick algorithm",
         "M"
     ],
     [
@@ -9660,7 +9672,7 @@
         "C"
     ],
     [
-        "k\u00f6the conjecture",
+        "köthe conjecture",
         "C"
     ],
     [
@@ -9692,7 +9704,7 @@
         "C"
     ],
     [
-        "lemke\u2013howson algorithm",
+        "lemke–howson algorithm",
         "M"
     ],
     [
@@ -9742,10 +9754,6 @@
     [
         "manin obstruction",
         "C"
-    ],
-    [
-        "marchenko\u2013pastur distribution",
-        "S"
     ],
     [
         "mass point geometry",
@@ -9812,7 +9820,7 @@
         "C"
     ],
     [
-        "nearly k\u00e4hler manifold",
+        "nearly kähler manifold",
         "C"
     ],
     [
@@ -9936,7 +9944,7 @@
         "C"
     ],
     [
-        "picard\u2013lefschetz theory",
+        "picard–lefschetz theory",
         "C"
     ],
     [
@@ -10160,7 +10168,7 @@
         "C"
     ],
     [
-        "sylvester\u2013gallai configuration",
+        "sylvester–gallai configuration",
         "C"
     ],
     [
@@ -10168,7 +10176,7 @@
         "C"
     ],
     [
-        "szeg\u0151 kernel",
+        "szegő kernel",
         "C"
     ],
     [
@@ -10236,7 +10244,7 @@
         "C"
     ],
     [
-        "tur\u00e1n number",
+        "turán number",
         "C"
     ],
     [
@@ -10368,7 +10376,7 @@
         "C"
     ],
     [
-        "\u1e25iyal",
+        "ḥiyal",
         "C"
     ],
     [
@@ -10452,7 +10460,7 @@
         "C"
     ],
     [
-        "minakshisundaram\u2013pleijel zeta function",
+        "minakshisundaram–pleijel zeta function",
         "C"
     ],
     [
@@ -10668,7 +10676,7 @@
         "C"
     ],
     [
-        "blackman\u2013tukey transformation",
+        "blackman–tukey transformation",
         "C"
     ],
     [
@@ -10708,7 +10716,7 @@
         "C"
     ],
     [
-        "bose\u2013mesner algebra",
+        "bose–mesner algebra",
         "C"
     ],
     [
@@ -10768,7 +10776,7 @@
         "C"
     ],
     [
-        "tur\u00e1n's method",
+        "turán's method",
         "C"
     ],
     [
@@ -10796,7 +10804,7 @@
         "M"
     ],
     [
-        "snellius\u2013pothenot problem",
+        "snellius–pothenot problem",
         "T"
     ],
     [
@@ -10844,7 +10852,7 @@
         "C"
     ],
     [
-        "pero h\u00fcbnerata",
+        "pero hübnerata",
         "E"
     ],
     [
@@ -10884,7 +10892,7 @@
         "C"
     ],
     [
-        "g\u00f6del operation",
+        "gödel operation",
         "C"
     ],
     [
@@ -10948,7 +10956,7 @@
         "C"
     ],
     [
-        "inter-universal teichm\u00fcller theory",
+        "inter-universal teichmüller theory",
         "C"
     ],
     [
@@ -11008,7 +11016,7 @@
         "C"
     ],
     [
-        "corr\u00e1di's lemma",
+        "corrádi's lemma",
         "C"
     ],
     [
@@ -11204,7 +11212,7 @@
         "C"
     ],
     [
-        "neyman\u2013pearson lemma",
+        "neyman–pearson lemma",
         "C"
     ],
     [
@@ -11272,7 +11280,7 @@
         "C"
     ],
     [
-        "\u0161varc\u2013milnor lemma",
+        "švarc–milnor lemma",
         "C"
     ],
     [
@@ -11612,7 +11620,7 @@
         "C"
     ],
     [
-        "bing\u2013borsuk conjecture",
+        "bing–borsuk conjecture",
         "C"
     ],
     [
@@ -11760,7 +11768,7 @@
         "C"
     ],
     [
-        "higman\u2013sims asymptotic formula",
+        "higman–sims asymptotic formula",
         "C"
     ],
     [
@@ -11892,7 +11900,7 @@
         "C"
     ],
     [
-        "corpus vasorum antiquorum \u00f6sterreich",
+        "corpus vasorum antiquorum österreich",
         "C"
     ],
     [
@@ -12012,7 +12020,7 @@
         "C"
     ],
     [
-        "communication strategy and tools for optimizing the impact of ebola vaccination deployment \u2013 sofia ref.: 115847",
+        "communication strategy and tools for optimizing the impact of ebola vaccination deployment – sofia ref.: 115847",
         "C"
     ],
     [
@@ -12144,7 +12152,7 @@
         "C"
     ],
     [
-        "high temperature \u2013 small- scale sub-surface deformation assisted by oxidation",
+        "high temperature – small- scale sub-surface deformation assisted by oxidation",
         "C"
     ],
     [
@@ -12372,11 +12380,11 @@
         "C"
     ],
     [
-        "\u0101r\u1e63aj\u00f1\u0101na",
+        "ārṣajñāna",
         "C"
     ],
     [
-        "yogipratyak\u1e63a",
+        "yogipratyakṣa",
         "C"
     ],
     [
@@ -12432,7 +12440,7 @@
         "M"
     ],
     [
-        "adab al-mul\u016bk",
+        "adab al-mulūk",
         "C"
     ],
     [
@@ -12552,11 +12560,11 @@
         "C"
     ],
     [
-        "m\u0101ori psychology",
+        "māori psychology",
         "C"
     ],
     [
-        "m\u0101ori sociological studies",
+        "māori sociological studies",
         "C"
     ],
     [
@@ -12592,7 +12600,7 @@
         "C"
     ],
     [
-        "thomas\u2013yau conjecture",
+        "thomas–yau conjecture",
         "C"
     ],
     [
@@ -12616,7 +12624,7 @@
         "C"
     ],
     [
-        "kahn\u2013kalai conjecture",
+        "kahn–kalai conjecture",
         "C"
     ],
     [
@@ -12728,7 +12736,7 @@
         "M"
     ],
     [
-        "chup\u00edcuaro culture",
+        "chupícuaro culture",
         "C"
     ],
     [
@@ -12884,7 +12892,7 @@
         "C"
     ],
     [
-        "h\u00f6lder's inequality for sums",
+        "hölder's inequality for sums",
         "C"
     ],
     [
@@ -13017,6 +13025,10 @@
     ],
     [
         "primitive notion",
+        "C"
+    ],
+    [
+        "geometric concept",
         "C"
     ],
     [
@@ -13264,7 +13276,7 @@
         "C"
     ],
     [
-        "james\u2013lange theory",
+        "james–lange theory",
         "C"
     ],
     [
@@ -13288,7 +13300,7 @@
         "C"
     ],
     [
-        "z\u00fcgigkeit",
+        "zügigkeit",
         "C"
     ],
     [
@@ -13308,7 +13320,7 @@
         "C"
     ],
     [
-        "\u00e4quilibrierung",
+        "äquilibrierung",
         "M"
     ],
     [
@@ -13320,11 +13332,11 @@
         "C"
     ],
     [
-        "n\u00fcrnberger witz",
+        "nürnberger witz",
         "C"
     ],
     [
-        "\u00e9lan vital",
+        "élan vital",
         "C"
     ],
     [
@@ -13348,7 +13360,7 @@
         "M"
     ],
     [
-        "ford\u2013fulkerson algorithm",
+        "ford–fulkerson algorithm",
         "M"
     ],
     [
@@ -13532,7 +13544,7 @@
         "C"
     ],
     [
-        "actor\u2013network theory",
+        "actor–network theory",
         "C"
     ],
     [
@@ -13552,7 +13564,7 @@
         "C"
     ],
     [
-        "abc-\u00e1ruh\u00e1z",
+        "abc-áruház",
         "C"
     ],
     [
@@ -13616,7 +13628,7 @@
         "M"
     ],
     [
-        "cram\u00e9r's conjecture",
+        "cramér's conjecture",
         "C"
     ],
     [
@@ -13712,11 +13724,11 @@
         "C"
     ],
     [
-        "erd\u0151s\u2013r\u00e9nyi model",
+        "erdős–rényi model",
         "C"
     ],
     [
-        "liang\u2013barsky algorithm",
+        "liang–barsky algorithm",
         "M"
     ],
     [
@@ -13816,7 +13828,7 @@
         "C"
     ],
     [
-        "artin\u2013mazur zeta function",
+        "artin–mazur zeta function",
         "C"
     ],
     [
@@ -13868,7 +13880,7 @@
         "C"
     ],
     [
-        "arm\u00e1lis",
+        "armális",
         "C"
     ],
     [
@@ -13904,7 +13916,7 @@
         "S"
     ],
     [
-        "vapnik\u2013chervonenkis theory",
+        "vapnik–chervonenkis theory",
         "C"
     ],
     [
@@ -13912,7 +13924,7 @@
         "C"
     ],
     [
-        "lov\u00e1sz local lemma",
+        "lovász local lemma",
         "C"
     ],
     [
@@ -13952,7 +13964,7 @@
         "C"
     ],
     [
-        "cobb\u2013douglas production function",
+        "cobb–douglas production function",
         "C"
     ],
     [
@@ -13992,7 +14004,7 @@
         "M"
     ],
     [
-        "blum\u2013micali algorithm",
+        "blum–micali algorithm",
         "M"
     ],
     [
@@ -14004,7 +14016,7 @@
         "C"
     ],
     [
-        "borel\u2013cantelli lemma",
+        "borel–cantelli lemma",
         "C"
     ],
     [
@@ -14052,7 +14064,7 @@
         "C"
     ],
     [
-        "metropolis\u2013hastings algorithm",
+        "metropolis–hastings algorithm",
         "M"
     ],
     [
@@ -14080,7 +14092,7 @@
         "C"
     ],
     [
-        "gromov\u2013hausdorff convergence",
+        "gromov–hausdorff convergence",
         "C"
     ],
     [
@@ -14156,7 +14168,7 @@
         "S"
     ],
     [
-        "cayley\u2013purser algorithm",
+        "cayley–purser algorithm",
         "M"
     ],
     [
@@ -14172,7 +14184,7 @@
         "C"
     ],
     [
-        "k\u00f6nig's lemma",
+        "könig's lemma",
         "C"
     ],
     [
@@ -14360,7 +14372,7 @@
         "C"
     ],
     [
-        "ramer\u2013douglas\u2013peucker algorithm",
+        "ramer–douglas–peucker algorithm",
         "M"
     ],
     [
@@ -14370,10 +14382,6 @@
     [
         "sgi algorithm",
         "M"
-    ],
-    [
-        "kremlinology",
-        "C"
     ],
     [
         "miniaturization",
@@ -14432,7 +14440,7 @@
         "C"
     ],
     [
-        "erd\u0151s-moser equation",
+        "erdős-moser equation",
         "C"
     ],
     [
@@ -14468,7 +14476,7 @@
         "C"
     ],
     [
-        "hadwiger\u2013nelson problem",
+        "hadwiger–nelson problem",
         "T"
     ],
     [
@@ -14532,7 +14540,7 @@
         "C"
     ],
     [
-        "p\u00f3lya conjecture",
+        "pólya conjecture",
         "C"
     ],
     [
@@ -14552,7 +14560,7 @@
         "C"
     ],
     [
-        "wald\u2013wolfowitz runs test",
+        "wald–wolfowitz runs test",
         "C"
     ],
     [
@@ -14572,7 +14580,7 @@
         "M"
     ],
     [
-        "gauss\u2013newton algorithm",
+        "gauss–newton algorithm",
         "M"
     ],
     [
@@ -14596,7 +14604,7 @@
         "C"
     ],
     [
-        "griechisches m\u00fcnzwerk",
+        "griechisches münzwerk",
         "C"
     ],
     [
@@ -14672,6 +14680,10 @@
         "M"
     ],
     [
+        "analysis of covariance",
+        "S"
+    ],
+    [
         "space fountain",
         "C"
     ],
@@ -14744,7 +14756,7 @@
         "C"
     ],
     [
-        "poincar\u00e9 inequality",
+        "poincaré inequality",
         "C"
     ],
     [
@@ -14752,7 +14764,7 @@
         "C"
     ],
     [
-        "ornstein\u2013uhlenbeck process",
+        "ornstein–uhlenbeck process",
         "C"
     ],
     [
@@ -14780,7 +14792,7 @@
         "M"
     ],
     [
-        "kramers\u2013moyal expansion",
+        "kramers–moyal expansion",
         "C"
     ],
     [
@@ -14850,10 +14862,6 @@
     [
         "impossible puzzle",
         "C"
-    ],
-    [
-        "marching cubes",
-        "M"
     ],
     [
         "membrane biophysics",
@@ -15028,7 +15036,7 @@
         "C"
     ],
     [
-        "schleusungskriminalit\u00e4t",
+        "schleusungskriminalität",
         "C"
     ],
     [
@@ -15184,7 +15192,7 @@
         "M"
     ],
     [
-        "predictor\u2013corrector method",
+        "predictor–corrector method",
         "M"
     ],
     [
@@ -15216,7 +15224,7 @@
         "C"
     ],
     [
-        "kernighan\u2013lin algorithm",
+        "kernighan–lin algorithm",
         "M"
     ],
     [
@@ -15384,7 +15392,7 @@
         "S"
     ],
     [
-        "yule\u2013simon distribution",
+        "yule–simon distribution",
         "S"
     ],
     [
@@ -15524,7 +15532,7 @@
         "C"
     ],
     [
-        "erd\u0151s\u2013gy\u00e1rf\u00e1s conjecture",
+        "erdős–gyárfás conjecture",
         "C"
     ],
     [
@@ -15600,7 +15608,7 @@
         "C"
     ],
     [
-        "floyd\u2013rivest algorithm",
+        "floyd–rivest algorithm",
         "M"
     ],
     [
@@ -15724,7 +15732,7 @@
         "C"
     ],
     [
-        "grad\u2013shafranov equation",
+        "grad–shafranov equation",
         "C"
     ],
     [
@@ -15752,7 +15760,7 @@
         "C"
     ],
     [
-        "adleman\u2013pomerance\u2013rumely primality test",
+        "adleman–pomerance–rumely primality test",
         "M"
     ],
     [
@@ -15804,7 +15812,7 @@
         "C"
     ],
     [
-        "baily\u2013borel compactification",
+        "baily–borel compactification",
         "C"
     ],
     [
@@ -15884,7 +15892,7 @@
         "C"
     ],
     [
-        "bulirsch\u2013stoer algorithm",
+        "bulirsch–stoer algorithm",
         "M"
     ],
     [
@@ -15960,7 +15968,7 @@
         "C"
     ],
     [
-        "coffman\u2013graham algorithm",
+        "coffman–graham algorithm",
         "M"
     ],
     [
@@ -16144,7 +16152,7 @@
         "E"
     ],
     [
-        "eilenberg\u2013moore spectral sequence",
+        "eilenberg–moore spectral sequence",
         "C"
     ],
     [
@@ -16212,7 +16220,7 @@
         "C"
     ],
     [
-        "frege\u2013church ontology",
+        "frege–church ontology",
         "C"
     ],
     [
@@ -16248,7 +16256,7 @@
         "C"
     ],
     [
-        "gerchberg\u2013saxton algorithm",
+        "gerchberg–saxton algorithm",
         "M"
     ],
     [
@@ -16280,11 +16288,11 @@
         "C"
     ],
     [
-        "hahn\u2013exton q-bessel function",
+        "hahn–exton q-bessel function",
         "C"
     ],
     [
-        "hall\u2013littlewood polynomials",
+        "hall–littlewood polynomials",
         "C"
     ],
     [
@@ -16312,7 +16320,7 @@
         "C"
     ],
     [
-        "deshumanizaci\u00f3n del arte",
+        "deshumanización del arte",
         "C"
     ],
     [
@@ -16388,7 +16396,7 @@
         "C"
     ],
     [
-        "k\u00e4hler\u2013einstein manifold",
+        "kähler–einstein manifold",
         "C"
     ],
     [
@@ -16440,7 +16448,7 @@
         "C"
     ],
     [
-        "lindel\u00f6f's lemma",
+        "lindelöf's lemma",
         "C"
     ],
     [
@@ -16452,7 +16460,7 @@
         "C"
     ],
     [
-        "littlewood\u2013paley theory",
+        "littlewood–paley theory",
         "C"
     ],
     [
@@ -16464,7 +16472,7 @@
         "M"
     ],
     [
-        "maass\u2013selberg relations",
+        "maass–selberg relations",
         "C"
     ],
     [
@@ -16528,7 +16536,7 @@
         "C"
     ],
     [
-        "morris\u2013lecar model",
+        "morris–lecar model",
         "M"
     ],
     [
@@ -16540,7 +16548,7 @@
         "C"
     ],
     [
-        "c\u00fbtin",
+        "cûtin",
         "C"
     ],
     [
@@ -16548,7 +16556,7 @@
         "C"
     ],
     [
-        "m\u00fcller-breslau's principle",
+        "müller-breslau's principle",
         "M"
     ],
     [
@@ -16588,7 +16596,7 @@
         "C"
     ],
     [
-        "p-adic teichm\u00fcller theory",
+        "p-adic teichmüller theory",
         "C"
     ],
     [
@@ -16652,7 +16660,7 @@
         "C"
     ],
     [
-        "picard\u2013vessiot theory",
+        "picard–vessiot theory",
         "C"
     ],
     [
@@ -16760,7 +16768,7 @@
         "C"
     ],
     [
-        "ramsey\u2013lewis method",
+        "ramsey–lewis method",
         "C"
     ],
     [
@@ -16800,7 +16808,7 @@
         "C"
     ],
     [
-        "rogers\u2013szeg\u0151 polynomials",
+        "rogers–szegő polynomials",
         "C"
     ],
     [
@@ -16976,7 +16984,7 @@
         "M"
     ],
     [
-        "svasa\u1e43vedana",
+        "svasaṃvedana",
         "C"
     ],
     [
@@ -17008,7 +17016,7 @@
         "C"
     ],
     [
-        "terminal identifier \u2013 address resolution protocol",
+        "terminal identifier – address resolution protocol",
         "C"
     ],
     [
@@ -17132,7 +17140,7 @@
         "C"
     ],
     [
-        "\u0142ojasiewicz inequality",
+        "łojasiewicz inequality",
         "C"
     ],
     [
@@ -17240,7 +17248,7 @@
         "C"
     ],
     [
-        "\u00fcsw",
+        "üsw",
         "C"
     ],
     [
@@ -17344,7 +17352,7 @@
         "C"
     ],
     [
-        "teichm\u00fcller modular form",
+        "teichmüller modular form",
         "C"
     ],
     [
@@ -17360,7 +17368,7 @@
         "M"
     ],
     [
-        "erd\u0151s\u2013hajnal conjecture",
+        "erdős–hajnal conjecture",
         "C"
     ],
     [
@@ -17428,7 +17436,7 @@
         "C"
     ],
     [
-        "na\u00efve realism",
+        "naïve realism",
         "C"
     ],
     [
@@ -17440,7 +17448,7 @@
         "C"
     ],
     [
-        "gut\u2013brain axis",
+        "gut–brain axis",
         "C"
     ],
     [
@@ -17492,7 +17500,7 @@
         "C"
     ],
     [
-        "hard\u2013easy effect",
+        "hard–easy effect",
         "C"
     ],
     [
@@ -17660,7 +17668,7 @@
         "C"
     ],
     [
-        "judd\u2013ofelt theory",
+        "judd–ofelt theory",
         "C"
     ],
     [
@@ -17712,7 +17720,7 @@
         "C"
     ],
     [
-        "who\u2019s who?",
+        "who’s who?",
         "C"
     ],
     [
@@ -17764,7 +17772,7 @@
         "C"
     ],
     [
-        "tur\u00e1n's brick factory problem",
+        "turán's brick factory problem",
         "T"
     ],
     [
@@ -17776,11 +17784,11 @@
         "C"
     ],
     [
-        "rocha\u2013thatte cycle detection algorithm",
+        "rocha–thatte cycle detection algorithm",
         "M"
     ],
     [
-        "kadison\u2013singer problem",
+        "kadison–singer problem",
         "T"
     ],
     [
@@ -17884,7 +17892,7 @@
         "C"
     ],
     [
-        "suma qama\u00f1a",
+        "suma qamaña",
         "C"
     ],
     [
@@ -17964,6 +17972,10 @@
         "C"
     ],
     [
+        "covariance",
+        "S"
+    ],
+    [
         "reidemeister torsion",
         "C"
     ],
@@ -18008,7 +18020,7 @@
         "M"
     ],
     [
-        "chevalley\u2013eilenberg algebra",
+        "chevalley–eilenberg algebra",
         "C"
     ],
     [
@@ -18044,7 +18056,7 @@
         "C"
     ],
     [
-        "goldberg\u2013coxeter construction",
+        "goldberg–coxeter construction",
         "C"
     ],
     [
@@ -18064,7 +18076,7 @@
         "C"
     ],
     [
-        "design for a carpet for the choir of the studentenkapel onze lieve vrouw in \u2019t zand",
+        "design for a carpet for the choir of the studentenkapel onze lieve vrouw in ’t zand",
         "C"
     ],
     [
@@ -18404,7 +18416,7 @@
         "C"
     ],
     [
-        "salem\u2013spencer set",
+        "salem–spencer set",
         "C"
     ],
     [
@@ -18688,7 +18700,7 @@
         "C"
     ],
     [
-        "global justice and the remittances challenge: confronting the \u20ac1 trillion \u201cgap\u201d in the literature",
+        "global justice and the remittances challenge: confronting the €1 trillion “gap” in the literature",
         "C"
     ],
     [
@@ -18744,7 +18756,7 @@
         "C"
     ],
     [
-        "charge separation \u2013 a general motif for the activation and catalytic functionalization of strong bonds",
+        "charge separation – a general motif for the activation and catalytic functionalization of strong bonds",
         "C"
     ],
     [
@@ -18836,7 +18848,7 @@
         "C"
     ],
     [
-        "the dark side of the genome: systematically studying the biology of repressive elements\u2014 silencers\u2014in the human genome",
+        "the dark side of the genome: systematically studying the biology of repressive elements— silencers—in the human genome",
         "C"
     ],
     [
@@ -18932,7 +18944,7 @@
         "C"
     ],
     [
-        "the openneuropet archive \u2013 a molecular neuroimaging archive",
+        "the openneuropet archive – a molecular neuroimaging archive",
         "C"
     ],
     [
@@ -19080,7 +19092,7 @@
         "C"
     ],
     [
-        "pa\u00f1cabhutas",
+        "pañcabhutas",
         "C"
     ],
     [
@@ -19260,7 +19272,7 @@
         "C"
     ],
     [
-        "rudin\u2013osher\u2013fatemi model",
+        "rudin–osher–fatemi model",
         "M"
     ],
     [
@@ -19436,10 +19448,6 @@
         "M"
     ],
     [
-        "number of present population of ukraine, as of january 1, 2022",
-        "C"
-    ],
-    [
         "clinical logopedics",
         "C"
     ],
@@ -19552,7 +19560,7 @@
         "C"
     ],
     [
-        "hit\u02bea\u1e25adut \u02bbole bavel be-yi\u015bra\u02beel",
+        "hitʾaḥadut ʻole bavel be-yiśraʾel",
         "C"
     ],
     [
@@ -19560,7 +19568,7 @@
         "C"
     ],
     [
-        "marr\u2013hildreth algorithm",
+        "marr–hildreth algorithm",
         "M"
     ],
     [
@@ -19680,7 +19688,7 @@
         "C"
     ],
     [
-        "schr\u00f6dinger equation",
+        "schrödinger equation",
         "C"
     ],
     [
@@ -19888,7 +19896,7 @@
         "C"
     ],
     [
-        "\u00f6lbrot",
+        "ölbrot",
         "C"
     ],
     [
@@ -19964,11 +19972,11 @@
         "C"
     ],
     [
-        "\u00fcbersarung",
+        "übersarung",
         "C"
     ],
     [
-        "\u00fcbertreiben (mining)",
+        "übertreiben (mining)",
         "C"
     ],
     [
@@ -20100,7 +20108,7 @@
         "M"
     ],
     [
-        "needleman\u2013wunsch algorithm",
+        "needleman–wunsch algorithm",
         "M"
     ],
     [
@@ -20132,11 +20140,11 @@
         "S"
     ],
     [
-        "fermi\u2013dirac statistics",
+        "fermi–dirac statistics",
         "S"
     ],
     [
-        "maxwell\u2013boltzmann statistics",
+        "maxwell–boltzmann statistics",
         "S"
     ],
     [
@@ -20160,7 +20168,7 @@
         "C"
     ],
     [
-        "diffie\u2013hellman problem",
+        "diffie–hellman problem",
         "T"
     ],
     [
@@ -20208,7 +20216,7 @@
         "C"
     ],
     [
-        "todd\u2013coxeter algorithm",
+        "todd–coxeter algorithm",
         "M"
     ],
     [
@@ -20216,7 +20224,7 @@
         "C"
     ],
     [
-        "poincar\u00e9 conjecture",
+        "poincaré conjecture",
         "C"
     ],
     [
@@ -20328,7 +20336,7 @@
         "M"
     ],
     [
-        "p\u0101ramit\u0101",
+        "pāramitā",
         "C"
     ],
     [
@@ -20336,7 +20344,7 @@
         "C"
     ],
     [
-        "\u1e63a\u1e0d-p\u0101ramit\u0101",
+        "ṣaḍ-pāramitā",
         "C"
     ],
     [
@@ -20380,11 +20388,11 @@
         "C"
     ],
     [
-        "fokker\u2013planck equation",
+        "fokker–planck equation",
         "C"
     ],
     [
-        "jordan\u2013wigner transformation",
+        "jordan–wigner transformation",
         "C"
     ],
     [
@@ -20396,7 +20404,7 @@
         "C"
     ],
     [
-        "h\u00fcckel method",
+        "hückel method",
         "M"
     ],
     [
@@ -20428,7 +20436,7 @@
         "C"
     ],
     [
-        "lindel\u00f6f hypothesis",
+        "lindelöf hypothesis",
         "C"
     ],
     [
@@ -20500,7 +20508,7 @@
         "C"
     ],
     [
-        "deutsch\u2013jozsa algorithm",
+        "deutsch–jozsa algorithm",
         "M"
     ],
     [
@@ -20652,7 +20660,7 @@
         "C"
     ],
     [
-        "beltrami\u2013klein model",
+        "beltrami–klein model",
         "M"
     ],
     [
@@ -20696,7 +20704,7 @@
         "C"
     ],
     [
-        "doob\u2013dynkin lemma",
+        "doob–dynkin lemma",
         "C"
     ],
     [
@@ -20704,7 +20712,7 @@
         "C"
     ],
     [
-        "rescorla\u2013wagner model",
+        "rescorla–wagner model",
         "C"
     ],
     [
@@ -20716,7 +20724,7 @@
         "M"
     ],
     [
-        "sierpi\u0144ski set",
+        "sierpiński set",
         "C"
     ],
     [
@@ -20748,7 +20756,7 @@
         "C"
     ],
     [
-        "erd\u0151s\u2013straus conjecture",
+        "erdős–straus conjecture",
         "C"
     ],
     [
@@ -20988,7 +20996,7 @@
         "C"
     ],
     [
-        "klein\u2013nishina formula",
+        "klein–nishina formula",
         "C"
     ],
     [
@@ -21000,7 +21008,7 @@
         "C"
     ],
     [
-        "pohlig\u2013hellman algorithm",
+        "pohlig–hellman algorithm",
         "M"
     ],
     [
@@ -21140,7 +21148,7 @@
         "C"
     ],
     [
-        "erd\u0151s conjecture on arithmetic progressions",
+        "erdős conjecture on arithmetic progressions",
         "C"
     ],
     [
@@ -21164,7 +21172,7 @@
         "M"
     ],
     [
-        "frank\u2013wolfe algorithm",
+        "frank–wolfe algorithm",
         "M"
     ],
     [
@@ -21176,7 +21184,7 @@
         "C"
     ],
     [
-        "bron\u2013kerbosch algorithm",
+        "bron–kerbosch algorithm",
         "M"
     ],
     [
@@ -21324,7 +21332,7 @@
         "T"
     ],
     [
-        "andrews\u2013curtis conjecture",
+        "andrews–curtis conjecture",
         "C"
     ],
     [
@@ -21368,7 +21376,7 @@
         "C"
     ],
     [
-        "odlyzko\u2013sch\u00f6nhage algorithm",
+        "odlyzko–schönhage algorithm",
         "M"
     ],
     [
@@ -21452,7 +21460,7 @@
         "M"
     ],
     [
-        "pram\u0101\u1e47a",
+        "pramāṇa",
         "C"
     ],
     [
@@ -21488,11 +21496,11 @@
         "M"
     ],
     [
-        "knuth\u2013bendix completion algorithm",
+        "knuth–bendix completion algorithm",
         "M"
     ],
     [
-        "wagner\u2013fischer algorithm",
+        "wagner–fischer algorithm",
         "M"
     ],
     [
@@ -21516,7 +21524,7 @@
         "M"
     ],
     [
-        "knaster\u2013kuratowski\u2013mazurkiewicz lemma",
+        "knaster–kuratowski–mazurkiewicz lemma",
         "C"
     ],
     [
@@ -21524,7 +21532,7 @@
         "C"
     ],
     [
-        "cram\u00e9r's v",
+        "cramér's v",
         "C"
     ],
     [
@@ -21556,7 +21564,7 @@
         "C"
     ],
     [
-        "second hardy\u2013littlewood conjecture",
+        "second hardy–littlewood conjecture",
         "C"
     ],
     [
@@ -21572,7 +21580,7 @@
         "C"
     ],
     [
-        "bateman\u2013horn conjecture",
+        "bateman–horn conjecture",
         "C"
     ],
     [
@@ -21584,7 +21592,7 @@
         "C"
     ],
     [
-        "robinson\u2013schensted\u2013knuth correspondence",
+        "robinson–schensted–knuth correspondence",
         "M"
     ],
     [
@@ -21612,7 +21620,7 @@
         "M"
     ],
     [
-        "birnbaum\u2013orlicz space",
+        "birnbaum–orlicz space",
         "C"
     ],
     [
@@ -21624,7 +21632,7 @@
         "S"
     ],
     [
-        "hardy\u2013littlewood maximal function",
+        "hardy–littlewood maximal function",
         "C"
     ],
     [
@@ -21772,7 +21780,7 @@
         "C"
     ],
     [
-        "debye\u2013h\u00fcckel theory",
+        "debye–hückel theory",
         "C"
     ],
     [
@@ -21816,7 +21824,7 @@
         "C"
     ],
     [
-        "euler\u2013poisson\u2013darboux equation",
+        "euler–poisson–darboux equation",
         "C"
     ],
     [
@@ -21892,7 +21900,7 @@
         "M"
     ],
     [
-        "lubachevsky\u2013stillinger algorithm",
+        "lubachevsky–stillinger algorithm",
         "M"
     ],
     [
@@ -22016,7 +22024,7 @@
         "C"
     ],
     [
-        "askey\u2013gasper inequality",
+        "askey–gasper inequality",
         "C"
     ],
     [
@@ -22072,7 +22080,7 @@
         "M"
     ],
     [
-        "steinhaus\u2013johnson\u2013trotter algorithm",
+        "steinhaus–johnson–trotter algorithm",
         "M"
     ],
     [
@@ -22096,7 +22104,7 @@
         "M"
     ],
     [
-        "dal\u00e9n light",
+        "dalén light",
         "M"
     ],
     [
@@ -22196,7 +22204,7 @@
         "C"
     ],
     [
-        "coxeter\u2013todd lattice",
+        "coxeter–todd lattice",
         "C"
     ],
     [
@@ -22244,7 +22252,7 @@
         "C"
     ],
     [
-        "eilenberg\u2013steenrod axioms",
+        "eilenberg–steenrod axioms",
         "C"
     ],
     [
@@ -22260,7 +22268,7 @@
         "C"
     ],
     [
-        "elston\u2013stewart algorithm",
+        "elston–stewart algorithm",
         "M"
     ],
     [
@@ -22308,7 +22316,7 @@
         "C"
     ],
     [
-        "fannes\u2013audenaert inequality",
+        "fannes–audenaert inequality",
         "C"
     ],
     [
@@ -22332,11 +22340,11 @@
         "C"
     ],
     [
-        "fr\u00e9chet distance",
+        "fréchet distance",
         "C"
     ],
     [
-        "fr\u00f6berg conjecture",
+        "fröberg conjecture",
         "C"
     ],
     [
@@ -22368,7 +22376,7 @@
         "M"
     ],
     [
-        "good\u2013turing frequency estimation",
+        "good–turing frequency estimation",
         "S"
     ],
     [
@@ -22424,7 +22432,7 @@
         "T"
     ],
     [
-        "hilbert\u2013bernays provability conditions",
+        "hilbert–bernays provability conditions",
         "C"
     ],
     [
@@ -22512,7 +22520,7 @@
         "C"
     ],
     [
-        "kallman\u2013rota inequality",
+        "kallman–rota inequality",
         "C"
     ],
     [
@@ -22528,7 +22536,7 @@
         "C"
     ],
     [
-        "k\u00e4hler quotient",
+        "kähler quotient",
         "C"
     ],
     [
@@ -22536,7 +22544,7 @@
         "M"
     ],
     [
-        "laguerre\u2013p\u00f3lya class",
+        "laguerre–pólya class",
         "C"
     ],
     [
@@ -22572,7 +22580,7 @@
         "C"
     ],
     [
-        "lindsey\u2013fox algorithm",
+        "lindsey–fox algorithm",
         "M"
     ],
     [
@@ -22628,7 +22636,7 @@
         "C"
     ],
     [
-        "mesenchymal\u2013epithelial transition",
+        "mesenchymal–epithelial transition",
         "C"
     ],
     [
@@ -22676,7 +22684,7 @@
         "C"
     ],
     [
-        "na\u00efve cynicism",
+        "naïve cynicism",
         "C"
     ],
     [
@@ -22768,7 +22776,7 @@
         "C"
     ],
     [
-        "poincar\u00e9 space",
+        "poincaré space",
         "C"
     ],
     [
@@ -22816,7 +22824,7 @@
         "C"
     ],
     [
-        "q-meixner\u2013pollaczek polynomials",
+        "q-meixner–pollaczek polynomials",
         "C"
     ],
     [
@@ -22832,7 +22840,7 @@
         "C"
     ],
     [
-        "rankin\u2013selberg method",
+        "rankin–selberg method",
         "C"
     ],
     [
@@ -22872,7 +22880,7 @@
         "C"
     ],
     [
-        "ross\u2013fahroo lemma",
+        "ross–fahroo lemma",
         "C"
     ],
     [
@@ -23016,7 +23024,7 @@
         "C"
     ],
     [
-        "swendsen\u2013wang algorithm",
+        "swendsen–wang algorithm",
         "M"
     ],
     [
@@ -23036,7 +23044,7 @@
         "S"
     ],
     [
-        "tate\u2013shafarevich group",
+        "tate–shafarevich group",
         "C"
     ],
     [
@@ -23072,7 +23080,7 @@
         "M"
     ],
     [
-        "tompkins\u2013paige algorithm",
+        "tompkins–paige algorithm",
         "M"
     ],
     [
@@ -23092,7 +23100,7 @@
         "C"
     ],
     [
-        "tur\u00e1n\u2013kubilius inequality",
+        "turán–kubilius inequality",
         "C"
     ],
     [
@@ -23120,7 +23128,7 @@
         "C"
     ],
     [
-        "vietoris\u2013rips complex",
+        "vietoris–rips complex",
         "C"
     ],
     [
@@ -23164,7 +23172,7 @@
         "C"
     ],
     [
-        "\u00b11-sequence",
+        "±1-sequence",
         "C"
     ],
     [
@@ -23216,7 +23224,7 @@
         "T"
     ],
     [
-        "bl\u00e4cka",
+        "bläcka",
         "M"
     ],
     [
@@ -23228,7 +23236,7 @@
         "C"
     ],
     [
-        "alfv\u00e9n's theory",
+        "alfvén's theory",
         "C"
     ],
     [
@@ -23336,7 +23344,7 @@
         "C"
     ],
     [
-        "p\u0101r\u0101jika",
+        "pārājika",
         "C"
     ],
     [
@@ -23400,10 +23408,6 @@
         "C"
     ],
     [
-        "regensic science",
-        "C"
-    ],
-    [
         "pan-netherlands",
         "C"
     ],
@@ -23412,7 +23416,7 @@
         "C"
     ],
     [
-        "maxwell\u2013j\u00fcttner distribution",
+        "maxwell–jüttner distribution",
         "S"
     ],
     [
@@ -23444,7 +23448,7 @@
         "C"
     ],
     [
-        "manh\u00e8s-david process",
+        "manhès-david process",
         "C"
     ],
     [
@@ -23480,7 +23484,7 @@
         "C"
     ],
     [
-        "hirsch\u2013plotkin radical",
+        "hirsch–plotkin radical",
         "C"
     ],
     [
@@ -23568,7 +23572,7 @@
         "C"
     ],
     [
-        "m\u00f6ller\u2013trumbore intersection algorithm",
+        "möller–trumbore intersection algorithm",
         "M"
     ],
     [
@@ -23616,7 +23620,7 @@
         "M"
     ],
     [
-        "ramanujan\u2013sato series",
+        "ramanujan–sato series",
         "C"
     ],
     [
@@ -23640,7 +23644,7 @@
         "C"
     ],
     [
-        "poincar\u00e9 lemma",
+        "poincaré lemma",
         "C"
     ],
     [
@@ -23656,7 +23660,7 @@
         "C"
     ],
     [
-        "kleitman\u2013wang algorithms",
+        "kleitman–wang algorithms",
         "M"
     ],
     [
@@ -23808,7 +23812,7 @@
         "C"
     ],
     [
-        "radon\u2013nikodym set",
+        "radon–nikodym set",
         "C"
     ],
     [
@@ -23824,7 +23828,7 @@
         "M"
     ],
     [
-        "frenkel\u2013kontorova model",
+        "frenkel–kontorova model",
         "C"
     ],
     [
@@ -23832,7 +23836,7 @@
         "C"
     ],
     [
-        "i\u2013iii\u2013iv\u2013vi progression",
+        "i–iii–iv–vi progression",
         "C"
     ],
     [
@@ -23852,7 +23856,7 @@
         "C"
     ],
     [
-        "\u03bc(i) rheology",
+        "μ(i) rheology",
         "M"
     ],
     [
@@ -24084,7 +24088,7 @@
         "C"
     ],
     [
-        "conway\u2013alexander polynomial",
+        "conway–alexander polynomial",
         "C"
     ],
     [
@@ -24228,7 +24232,7 @@
         "T"
     ],
     [
-        "computer systems and\u00a0applications",
+        "computer systems and applications",
         "C"
     ],
     [
@@ -24340,11 +24344,11 @@
         "C"
     ],
     [
-        "vadd9\u2013vi7 progression",
+        "vadd9–vi7 progression",
         "C"
     ],
     [
-        "ii\u2013i/iii bass\u2013iv\u2013v/iv bass progression",
+        "ii–i/iii bass–iv–v/iv bass progression",
         "C"
     ],
     [
@@ -24448,7 +24452,7 @@
         "C"
     ],
     [
-        "gallai\u2013edmonds decomposition",
+        "gallai–edmonds decomposition",
         "C"
     ],
     [
@@ -24760,7 +24764,7 @@
         "C"
     ],
     [
-        "boosting the discovery using \u03c4s in the atlas detector at the large hadron collider",
+        "boosting the discovery using τs in the atlas detector at the large hadron collider",
         "C"
     ],
     [
@@ -24900,7 +24904,7 @@
         "C"
     ],
     [
-        "krigsf\u00f8relsens kredsl\u00f8b",
+        "krigsførelsens kredsløb",
         "C"
     ],
     [
@@ -25024,7 +25028,7 @@
         "C"
     ],
     [
-        "lak\u1e63a\u1e47\u0101",
+        "lakṣaṇā",
         "C"
     ],
     [
@@ -25044,7 +25048,7 @@
         "D"
     ],
     [
-        "j\u00f1\u0101nak\u0101ya",
+        "jñānakāya",
         "C"
     ],
     [
@@ -25124,10 +25128,6 @@
         "C"
     ],
     [
-        "number of the existing population of ukraine as of january 1, 2017",
-        "C"
-    ],
-    [
         "domaine d'hellocourt",
         "C"
     ],
@@ -25180,7 +25180,7 @@
         "C"
     ],
     [
-        "m\u0101ori archaeology",
+        "māori archaeology",
         "C"
     ],
     [
@@ -25196,11 +25196,11 @@
         "C"
     ],
     [
-        "m\u0101ori marine environment science",
+        "māori marine environment science",
         "C"
     ],
     [
-        "m\u0101ori social, cultural, emotional and spiritual wellbeing",
+        "māori social, cultural, emotional and spiritual wellbeing",
         "C"
     ],
     [
@@ -25432,7 +25432,7 @@
         "C"
     ],
     [
-        "weisfeiler\u2013leman algorithm",
+        "weisfeiler–leman algorithm",
         "M"
     ],
     [
@@ -25520,7 +25520,7 @@
         "C"
     ],
     [
-        "die schia und die koranf\u00e4lschung, von rainer brunner",
+        "die schia und die koranfälschung, von rainer brunner",
         "C"
     ],
     [
@@ -25648,7 +25648,7 @@
         "C"
     ],
     [
-        "forward\u2013backward algorithm",
+        "forward–backward algorithm",
         "M"
     ],
     [
@@ -25712,7 +25712,7 @@
         "C"
     ],
     [
-        "lotka\u2013volterra equations",
+        "lotka–volterra equations",
         "M"
     ],
     [
@@ -25764,7 +25764,7 @@
         "S"
     ],
     [
-        "benedict\u2013webb\u2013rubin equation",
+        "benedict–webb–rubin equation",
         "C"
     ],
     [
@@ -25896,7 +25896,7 @@
         "C"
     ],
     [
-        "z\u00fcgelma\u00df",
+        "zügelmaß",
         "C"
     ],
     [
@@ -25904,7 +25904,7 @@
         "C"
     ],
     [
-        "z\u00fcndschutzart",
+        "zündschutzart",
         "C"
     ],
     [
@@ -25916,11 +25916,11 @@
         "C"
     ],
     [
-        "\u00e4quipollenz",
+        "äquipollenz",
         "C"
     ],
     [
-        "\u00e4rztestopp",
+        "ärztestopp",
         "C"
     ],
     [
@@ -25932,7 +25932,7 @@
         "C"
     ],
     [
-        "bethe\u2013salpeter equation",
+        "bethe–salpeter equation",
         "C"
     ],
     [
@@ -25960,15 +25960,15 @@
         "C"
     ],
     [
-        "\u00fcberlieger",
+        "überlieger",
         "C"
     ],
     [
-        "\u00fcberpunktierung",
+        "überpunktierung",
         "C"
     ],
     [
-        "abs\u00e4umung",
+        "absäumung",
         "C"
     ],
     [
@@ -26004,7 +26004,7 @@
         "C"
     ],
     [
-        "chern\u2013simons form",
+        "chern–simons form",
         "C"
     ],
     [
@@ -26068,7 +26068,7 @@
         "M"
     ],
     [
-        "galton\u2013watson process",
+        "galton–watson process",
         "C"
     ],
     [
@@ -26248,7 +26248,7 @@
         "C"
     ],
     [
-        "artin\u2013schreier theory",
+        "artin–schreier theory",
         "C"
     ],
     [
@@ -26304,7 +26304,7 @@
         "T"
     ],
     [
-        "behrens\u2013fisher problem",
+        "behrens–fisher problem",
         "T"
     ],
     [
@@ -26364,7 +26364,7 @@
         "T"
     ],
     [
-        "thomas\u2013fermi model",
+        "thomas–fermi model",
         "C"
     ],
     [
@@ -26428,7 +26428,7 @@
         "M"
     ],
     [
-        "hodgkin\u2013huxley model",
+        "hodgkin–huxley model",
         "M"
     ],
     [
@@ -26520,7 +26520,7 @@
         "S"
     ],
     [
-        "poynting\u2013robertson effect",
+        "poynting–robertson effect",
         "C"
     ],
     [
@@ -26548,7 +26548,7 @@
         "C"
     ],
     [
-        "st\u00e4tte",
+        "stätte",
         "C"
     ],
     [
@@ -26632,7 +26632,7 @@
         "M"
     ],
     [
-        "stiefel\u2013whitney class",
+        "stiefel–whitney class",
         "C"
     ],
     [
@@ -26640,7 +26640,7 @@
         "C"
     ],
     [
-        "szemer\u00e9di regularity lemma",
+        "szemerédi regularity lemma",
         "C"
     ],
     [
@@ -26724,7 +26724,7 @@
         "C"
     ],
     [
-        "fej\u00e9r kernel",
+        "fejér kernel",
         "C"
     ],
     [
@@ -26796,7 +26796,7 @@
         "C"
     ],
     [
-        "fr\u00e8chet metric",
+        "frèchet metric",
         "C"
     ],
     [
@@ -26812,7 +26812,7 @@
         "C"
     ],
     [
-        "flory\u2013schulz distribution",
+        "flory–schulz distribution",
         "S"
     ],
     [
@@ -26912,7 +26912,7 @@
         "C"
     ],
     [
-        "calder\u00f3n\u2013zygmund lemma",
+        "calderón–zygmund lemma",
         "C"
     ],
     [
@@ -27236,7 +27236,7 @@
         "M"
     ],
     [
-        "hardy\u2013littlewood circle method",
+        "hardy–littlewood circle method",
         "M"
     ],
     [
@@ -27304,7 +27304,7 @@
         "S"
     ],
     [
-        "post-hartree\u2013fock",
+        "post-hartree–fock",
         "M"
     ],
     [
@@ -27328,7 +27328,7 @@
         "M"
     ],
     [
-        "cantor\u2013zassenhaus algorithm",
+        "cantor–zassenhaus algorithm",
         "M"
     ],
     [
@@ -27396,7 +27396,7 @@
         "C"
     ],
     [
-        "herzog\u2013sch\u00f6nheim conjecture",
+        "herzog–schönheim conjecture",
         "C"
     ],
     [
@@ -27448,7 +27448,7 @@
         "S"
     ],
     [
-        "gauss\u2013kuzmin distribution",
+        "gauss–kuzmin distribution",
         "S"
     ],
     [
@@ -27512,7 +27512,7 @@
         "T"
     ],
     [
-        "prouhet\u2013tarry\u2013escott problem",
+        "prouhet–tarry–escott problem",
         "T"
     ],
     [
@@ -27564,7 +27564,7 @@
         "C"
     ],
     [
-        "rudin\u2013shapiro sequence",
+        "rudin–shapiro sequence",
         "C"
     ],
     [
@@ -27792,7 +27792,7 @@
         "C"
     ],
     [
-        "aanderaa\u2013karp\u2013rosenberg conjecture",
+        "aanderaa–karp–rosenberg conjecture",
         "C"
     ],
     [
@@ -27832,7 +27832,7 @@
         "C"
     ],
     [
-        "andr\u00e9\u2013oort conjecture",
+        "andré–oort conjecture",
         "C"
     ],
     [
@@ -27852,7 +27852,7 @@
         "M"
     ],
     [
-        "arnold\u2013givental conjecture",
+        "arnold–givental conjecture",
         "C"
     ],
     [
@@ -27860,7 +27860,7 @@
         "C"
     ],
     [
-        "artin\u2013hasse exponential",
+        "artin–hasse exponential",
         "C"
     ],
     [
@@ -27916,11 +27916,11 @@
         "M"
     ],
     [
-        "bernays\u2013sch\u00f6nfinkel class",
+        "bernays–schönfinkel class",
         "C"
     ],
     [
-        "bessel\u2013maitland function",
+        "bessel–maitland function",
         "C"
     ],
     [
@@ -27944,7 +27944,7 @@
         "C"
     ],
     [
-        "bowyer\u2013watson algorithm",
+        "bowyer–watson algorithm",
         "M"
     ],
     [
@@ -28020,7 +28020,7 @@
         "C"
     ],
     [
-        "constant scalar curvature k\u00e4hler manifold",
+        "constant scalar curvature kähler manifold",
         "C"
     ],
     [
@@ -28036,7 +28036,7 @@
         "C"
     ],
     [
-        "cotlar\u2013stein lemma",
+        "cotlar–stein lemma",
         "C"
     ],
     [
@@ -28068,7 +28068,7 @@
         "C"
     ],
     [
-        "day\u2013stout\u2013warren algorithm",
+        "day–stout–warren algorithm",
         "M"
     ],
     [
@@ -28116,7 +28116,7 @@
         "C"
     ],
     [
-        "duffin\u2013schaeffer conjecture",
+        "duffin–schaeffer conjecture",
         "C"
     ],
     [
@@ -28132,15 +28132,15 @@
         "M"
     ],
     [
-        "eichler\u2013shimura isomorphism",
+        "eichler–shimura isomorphism",
         "C"
     ],
     [
-        "eilenberg\u2013maclane space",
+        "eilenberg–maclane space",
         "C"
     ],
     [
-        "eilenberg\u2013mazur swindle",
+        "eilenberg–mazur swindle",
         "C"
     ],
     [
@@ -28192,7 +28192,7 @@
         "C"
     ],
     [
-        "fenchel\u2013nielsen coordinates",
+        "fenchel–nielsen coordinates",
         "C"
     ],
     [
@@ -28204,7 +28204,7 @@
         "C"
     ],
     [
-        "fock\u2013lorentz symmetry",
+        "fock–lorentz symmetry",
         "C"
     ],
     [
@@ -28296,7 +28296,7 @@
         "T"
     ],
     [
-        "halpin\u2013tsai model",
+        "halpin–tsai model",
         "M"
     ],
     [
@@ -28308,7 +28308,7 @@
         "T"
     ],
     [
-        "hausdorff\u2013young inequality",
+        "hausdorff–young inequality",
         "C"
     ],
     [
@@ -28324,7 +28324,7 @@
         "T"
     ],
     [
-        "hodge\u2013arakelov theory",
+        "hodge–arakelov theory",
         "C"
     ],
     [
@@ -28396,7 +28396,7 @@
         "C"
     ],
     [
-        "sethi\u2013ullman algorithm",
+        "sethi–ullman algorithm",
         "M"
     ],
     [
@@ -28440,11 +28440,11 @@
         "C"
     ],
     [
-        "kodaira\u2013spencer map",
+        "kodaira–spencer map",
         "C"
     ],
     [
-        "kramers\u2013wannier duality",
+        "kramers–wannier duality",
         "C"
     ],
     [
@@ -28464,7 +28464,7 @@
         "M"
     ],
     [
-        "fisher\u2013yates shuffle",
+        "fisher–yates shuffle",
         "M"
     ],
     [
@@ -28548,7 +28548,7 @@
         "C"
     ],
     [
-        "na\u00efve physics",
+        "naïve physics",
         "C"
     ],
     [
@@ -28560,7 +28560,7 @@
         "C"
     ],
     [
-        "nielsen\u2013olesen vortex",
+        "nielsen–olesen vortex",
         "C"
     ],
     [
@@ -28568,7 +28568,7 @@
         "C"
     ],
     [
-        "n\u00e9ron differential",
+        "néron differential",
         "C"
     ],
     [
@@ -28624,11 +28624,11 @@
         "C"
     ],
     [
-        "phonologie du fran\u00e7ais contemporain",
+        "phonologie du français contemporain",
         "C"
     ],
     [
-        "pierce\u2013birkhoff conjecture",
+        "pierce–birkhoff conjecture",
         "C"
     ],
     [
@@ -28672,7 +28672,7 @@
         "C"
     ],
     [
-        "pr\u00e9kopa\u2013leindler inequality",
+        "prékopa–leindler inequality",
         "C"
     ],
     [
@@ -28708,7 +28708,7 @@
         "C"
     ],
     [
-        "reeds\u2013sloane algorithm",
+        "reeds–sloane algorithm",
         "M"
     ],
     [
@@ -28760,7 +28760,7 @@
         "C"
     ],
     [
-        "schwartz\u2013bruhat function",
+        "schwartz–bruhat function",
         "C"
     ],
     [
@@ -28816,7 +28816,7 @@
         "C"
     ],
     [
-        "spanier\u2013whitehead duality",
+        "spanier–whitehead duality",
         "C"
     ],
     [
@@ -28868,7 +28868,7 @@
         "C"
     ],
     [
-        "sz\u00e1sz\u2013mirakjan\u2013kantorovich operator",
+        "szász–mirakjan–kantorovich operator",
         "C"
     ],
     [
@@ -28876,7 +28876,7 @@
         "C"
     ],
     [
-        "tarski\u2013kuratowski algorithm",
+        "tarski–kuratowski algorithm",
         "M"
     ],
     [
@@ -28964,7 +28964,7 @@
         "C"
     ],
     [
-        "von mises\u2013fisher distribution",
+        "von mises–fisher distribution",
         "S"
     ],
     [
@@ -29160,7 +29160,7 @@
         "C"
     ],
     [
-        "\u0101k\u0101ra",
+        "ākāra",
         "C"
     ],
     [
@@ -29272,11 +29272,11 @@
         "C"
     ],
     [
-        "hasse\u2013davenport relation",
+        "hasse–davenport relation",
         "C"
     ],
     [
-        "brumer\u2013stark conjecture",
+        "brumer–stark conjecture",
         "C"
     ],
     [
@@ -29312,7 +29312,7 @@
         "C"
     ],
     [
-        "holm\u2013bonferroni method",
+        "holm–bonferroni method",
         "S"
     ],
     [
@@ -29360,7 +29360,7 @@
         "S"
     ],
     [
-        "meixner\u2013pollaczek polynomials",
+        "meixner–pollaczek polynomials",
         "C"
     ],
     [
@@ -29396,7 +29396,7 @@
         "C"
     ],
     [
-        "\u0161id\u00e1k correction",
+        "šidák correction",
         "S"
     ],
     [
@@ -29408,7 +29408,7 @@
         "C"
     ],
     [
-        "sauer\u2013shelah lemma",
+        "sauer–shelah lemma",
         "C"
     ],
     [
@@ -29444,7 +29444,7 @@
         "C"
     ],
     [
-        "painlev\u00e9 conjecture",
+        "painlevé conjecture",
         "C"
     ],
     [
@@ -29524,7 +29524,7 @@
         "C"
     ],
     [
-        "m\u0101ori phonology",
+        "māori phonology",
         "C"
     ],
     [
@@ -29640,7 +29640,7 @@
         "C"
     ],
     [
-        "weil\u2013brezin map",
+        "weil–brezin map",
         "C"
     ],
     [
@@ -29660,7 +29660,7 @@
         "T"
     ],
     [
-        "\u03b1\u03b2\u03b2",
+        "αββ",
         "M"
     ],
     [
@@ -29864,7 +29864,7 @@
         "C"
     ],
     [
-        "improved fr\u00e9chet distance for time series",
+        "improved fréchet distance for time series",
         "C"
     ],
     [
@@ -30200,7 +30200,7 @@
         "C"
     ],
     [
-        "the \u03bd\u2013trick and other variants",
+        "the ν–trick and other variants",
         "C"
     ],
     [
@@ -30212,7 +30212,7 @@
         "M"
     ],
     [
-        "\u03bd\u2013support vector machines for classification",
+        "ν–support vector machines for classification",
         "M"
     ],
     [
@@ -30376,7 +30376,7 @@
         "C"
     ],
     [
-        "l1\u2013convergence of probability measures",
+        "l1–convergence of probability measures",
         "C"
     ],
     [
@@ -31548,7 +31548,7 @@
         "C"
     ],
     [
-        "generalization, \u03b8-subsumption, and entailment",
+        "generalization, θ-subsumption, and entailment",
         "C"
     ],
     [
@@ -32252,7 +32252,7 @@
         "C"
     ],
     [
-        "finding \u03bb and \u03c8",
+        "finding λ and ψ",
         "C"
     ],
     [
@@ -35740,7 +35740,7 @@
         "D"
     ],
     [
-        "the interactive emotional dyadic motion capture\u00a0(iemocap) database",
+        "the interactive emotional dyadic motion capture (iemocap) database",
         "D"
     ],
     [
@@ -36204,7 +36204,7 @@
         "D"
     ],
     [
-        "ag\u2019s news corpus",
+        "ag’s news corpus",
         "D"
     ],
     [
@@ -37080,7 +37080,7 @@
         "T"
     ],
     [
-        "long-tail learning on cifar-10-lt (\u03c1=100)",
+        "long-tail learning on cifar-10-lt (ρ=100)",
         "T"
     ],
     [
@@ -37136,11 +37136,11 @@
         "D"
     ],
     [
-        "cifar-10-lt (\u03c1=100)",
+        "cifar-10-lt (ρ=100)",
         "D"
     ],
     [
-        "cifar-10-lt (\u03c1=10)",
+        "cifar-10-lt (ρ=10)",
         "D"
     ],
     [
@@ -37256,11 +37256,11 @@
         "D"
     ],
     [
-        "cifar-100-lt (\u03c1=100)",
+        "cifar-100-lt (ρ=100)",
         "D"
     ],
     [
-        "cifar-100-lt (\u03c1=10)",
+        "cifar-100-lt (ρ=10)",
         "D"
     ],
     [
@@ -38952,7 +38952,7 @@
         "D"
     ],
     [
-        "scene understanding 360\u00b0 panorama",
+        "scene understanding 360° panorama",
         "D"
     ],
     [
@@ -39588,7 +39588,7 @@
         "E"
     ],
     [
-        "20bn-something-something\u00a0dataset v2",
+        "20bn-something-something dataset v2",
         "D"
     ],
     [
@@ -39604,7 +39604,7 @@
         "D"
     ],
     [
-        "20bn-something-something\u00a0dataset v1",
+        "20bn-something-something dataset v1",
         "D"
     ],
     [
@@ -39736,7 +39736,7 @@
         "D"
     ],
     [
-        "pulmonary artery\u2013vein classification",
+        "pulmonary artery–vein classification",
         "T"
     ],
     [
@@ -40628,7 +40628,7 @@
         "E"
     ],
     [
-        "grammarly\u2019s yahoo answers formality corpus",
+        "grammarly’s yahoo answers formality corpus",
         "D"
     ],
     [
@@ -41820,7 +41820,7 @@
         "l"
     ],
     [
-        "apurin\u00e3",
+        "apurinã",
         "l"
     ],
     [
@@ -41980,7 +41980,7 @@
         "l"
     ],
     [
-        "mby\u00e1 guaran\u00ed",
+        "mbyá guaraní",
         "l"
     ],
     [
@@ -41992,7 +41992,7 @@
         "l"
     ],
     [
-        "munduruk\u00fa",
+        "mundurukú",
         "l"
     ],
     [
@@ -42100,7 +42100,7 @@
         "l"
     ],
     [
-        "tupinamb\u00e1",
+        "tupinambá",
         "l"
     ],
     [
@@ -42432,7 +42432,7 @@
         "T"
     ],
     [
-        "university of idaho \u2013 physical rehabilitation movement dataset",
+        "university of idaho – physical rehabilitation movement dataset",
         "D"
     ],
     [
@@ -44720,11 +44720,11 @@
         "D"
     ],
     [
-        "ag\u2019s corpus",
+        "ag’s corpus",
         "D"
     ],
     [
-        "question answering by search and reading \u2013 stack overflow",
+        "question answering by search and reading – stack overflow",
         "D"
     ],
     [
@@ -44732,7 +44732,7 @@
         "D"
     ],
     [
-        "question answering by search and reading \u2013 trivia",
+        "question answering by search and reading – trivia",
         "D"
     ],
     [
@@ -44924,7 +44924,7 @@
         "D"
     ],
     [
-        "dayton (64\u00d764) - aerial-to-ground",
+        "dayton (64×64) - aerial-to-ground",
         "D"
     ],
     [
@@ -44932,11 +44932,11 @@
         "D"
     ],
     [
-        "dayton (256\u00d7256) - aerial-to-ground",
+        "dayton (256×256) - aerial-to-ground",
         "D"
     ],
     [
-        "dayton (256\u00d7256) - ground-to-aerial",
+        "dayton (256×256) - ground-to-aerial",
         "D"
     ],
     [
@@ -45620,7 +45620,7 @@
         "D"
     ],
     [
-        "synthia-cvpr\u201916",
+        "synthia-cvpr’16",
         "D"
     ],
     [
@@ -47044,7 +47044,7 @@
         "T"
     ],
     [
-        "drug\u2013drug interaction extraction",
+        "drug–drug interaction extraction",
         "T"
     ],
     [
@@ -47252,7 +47252,7 @@
         "E"
     ],
     [
-        "thumos\u201914",
+        "thumos’14",
         "E"
     ],
     [
@@ -47644,7 +47644,7 @@
         "D"
     ],
     [
-        "tau spatial sound events 2019 \u2013 microphone array",
+        "tau spatial sound events 2019 – microphone array",
         "D"
     ],
     [
@@ -48108,7 +48108,7 @@
         "D"
     ],
     [
-        "parkinson\u2019s progression markers initiative",
+        "parkinson’s progression markers initiative",
         "D"
     ],
     [
@@ -50040,7 +50040,7 @@
         "D"
     ],
     [
-        "refer360\u00b0",
+        "refer360°",
         "D"
     ],
     [
@@ -50912,7 +50912,7 @@
         "D"
     ],
     [
-        "phd\u00b2",
+        "phd²",
         "D"
     ],
     [
@@ -51488,7 +51488,7 @@
         "D"
     ],
     [
-        "children\u2019s book test",
+        "children’s book test",
         "D"
     ],
     [
@@ -52168,7 +52168,7 @@
         "D"
     ],
     [
-        "arabic dataset for commonsense validation\u00ac\u2020",
+        "arabic dataset for commonsense validation¬†",
         "D"
     ],
     [
@@ -53960,7 +53960,7 @@
         "T"
     ],
     [
-        "egocentric dataset of the university of barcelona \u2013 segmentation",
+        "egocentric dataset of the university of barcelona – segmentation",
         "D"
     ],
     [
@@ -59728,7 +59728,7 @@
         "D"
     ],
     [
-        "vidit\u201920 validation set",
+        "vidit’20 validation set",
         "E"
     ],
     [
@@ -60296,7 +60296,7 @@
         "l"
     ],
     [
-        "k\u00f6lsch",
+        "kölsch",
         "l"
     ],
     [
@@ -60596,7 +60596,7 @@
         "l"
     ],
     [
-        "volap\u00fck",
+        "volapük",
         "l"
     ],
     [
@@ -61868,7 +61868,7 @@
         "T"
     ],
     [
-        "vqa 360\u00b0",
+        "vqa 360°",
         "D"
     ],
     [
@@ -62220,7 +62220,7 @@
         "D"
     ],
     [
-        "link\u00f6ping thermal infrared",
+        "linköping thermal infrared",
         "D"
     ],
     [
@@ -64864,7 +64864,7 @@
         "D"
     ],
     [
-        "reconnaissance & indexation de donn\u00e9es manuscrites et de fac simil\u00e9s / recognition & indexing of handwritten documents & faxes",
+        "reconnaissance & indexation de données manuscrites et de fac similés / recognition & indexing of handwritten documents & faxes",
         "D"
     ],
     [
@@ -65024,7 +65024,7 @@
         "D"
     ],
     [
-        "norwegian bokm\u00e5l",
+        "norwegian bokmål",
         "l"
     ],
     [
@@ -65728,7 +65728,7 @@
         "D"
     ],
     [
-        "t\u00f3uche-2020 (beir)",
+        "tóuche-2020 (beir)",
         "D"
     ],
     [
@@ -66032,7 +66032,7 @@
         "D"
     ],
     [
-        "th\u00f6r",
+        "thör",
         "D"
     ],
     [
@@ -67664,7 +67664,7 @@
         "D"
     ],
     [
-        "gr\u00e9vy\u2019s zebra",
+        "grévy’s zebra",
         "D"
     ],
     [
@@ -68320,7 +68320,7 @@
         "D"
     ],
     [
-        "herbarium 2021 half\u2013earth",
+        "herbarium 2021 half–earth",
         "E"
     ],
     [
@@ -69432,7 +69432,7 @@
         "D"
     ],
     [
-        "v\u0101ksa\u00f1caya\u1e25",
+        "vāksañcayaḥ",
         "D"
     ],
     [
@@ -71028,7 +71028,7 @@
         "D"
     ],
     [
-        "who\u2019s waldo",
+        "who’s waldo",
         "E"
     ],
     [
@@ -73844,7 +73844,7 @@
         "D"
     ],
     [
-        "earth\u2019s mantle convection",
+        "earth’s mantle convection",
         "D"
     ],
     [
@@ -75020,7 +75020,7 @@
         "D"
     ],
     [
-        "justice: a dataset for supreme court\u2019s judgment prediction",
+        "justice: a dataset for supreme court’s judgment prediction",
         "D"
     ],
     [
@@ -76592,7 +76592,7 @@
         "D"
     ],
     [
-        "h\u00b2o interaction",
+        "h²o interaction",
         "D"
     ],
     [
@@ -76688,7 +76688,7 @@
         "D"
     ],
     [
-        "the people\u2019s speech",
+        "the people’s speech",
         "D"
     ],
     [
@@ -78488,7 +78488,7 @@
         "E"
     ],
     [
-        "informatics for integrating biology and the bedside (i2b2) project \u2014 de-identification dataset",
+        "informatics for integrating biology and the bedside (i2b2) project — de-identification dataset",
         "D"
     ],
     [
@@ -80504,11 +80504,11 @@
         "D"
     ],
     [
-        "pir\u00e1: a bilingual portuguese-english dataset for question-answering about the ocean",
+        "pirá: a bilingual portuguese-english dataset for question-answering about the ocean",
         "D"
     ],
     [
-        "pir\u00e1",
+        "pirá",
         "D"
     ],
     [
@@ -81628,7 +81628,7 @@
         "D"
     ],
     [
-        "congolese swahili \u2013 french parallel text corpora",
+        "congolese swahili – french parallel text corpora",
         "D"
     ],
     [
@@ -82188,7 +82188,7 @@
         "T"
     ],
     [
-        "101 hours \u2013 scene noise data by voice recorder",
+        "101 hours – scene noise data by voice recorder",
         "D"
     ],
     [
@@ -82204,7 +82204,7 @@
         "D"
     ],
     [
-        "110 hours \u2013 he'nan dialect speech data by mobile phone",
+        "110 hours – he'nan dialect speech data by mobile phone",
         "D"
     ],
     [
@@ -82228,11 +82228,11 @@
         "D"
     ],
     [
-        "351 people \u2013 german speech data by mobile phone_guiding",
+        "351 people – german speech data by mobile phone_guiding",
         "D"
     ],
     [
-        "351 people \u2013 italian speech data by mobile phone_guiding",
+        "351 people – italian speech data by mobile phone_guiding",
         "D"
     ],
     [
@@ -82244,11 +82244,11 @@
         "D"
     ],
     [
-        "1,002 hours \u2013 changsha dialect speech data by mobile phone",
+        "1,002 hours – changsha dialect speech data by mobile phone",
         "D"
     ],
     [
-        "357 hours\u2013korean speech data by mobile phone",
+        "357 hours–korean speech data by mobile phone",
         "D"
     ],
     [
@@ -82256,7 +82256,7 @@
         "D"
     ],
     [
-        "531 hours \u2013 in-car noise data by microphone and mobile phone",
+        "531 hours – in-car noise data by microphone and mobile phone",
         "D"
     ],
     [
@@ -82360,15 +82360,15 @@
         "D"
     ],
     [
-        "997 hours \u2013 wuhan dialect speech data by mobile phone",
+        "997 hours – wuhan dialect speech data by mobile phone",
         "D"
     ],
     [
-        "35 hours \u2013 pinyin annotation speech data of audio book text",
+        "35 hours – pinyin annotation speech data of audio book text",
         "D"
     ],
     [
-        "998 people \u2013 mic-array speech data in home environment",
+        "998 people – mic-array speech data in home environment",
         "D"
     ],
     [
@@ -82388,7 +82388,7 @@
         "D"
     ],
     [
-        "88 hours \u2013 mandarin speech data in noisy environment by mobile phone",
+        "88 hours – mandarin speech data in noisy environment by mobile phone",
         "D"
     ],
     [
@@ -82400,7 +82400,7 @@
         "D"
     ],
     [
-        "261 hours \u2013 japanese speech data by mobile phone",
+        "261 hours – japanese speech data by mobile phone",
         "D"
     ],
     [
@@ -82416,7 +82416,7 @@
         "D"
     ],
     [
-        "849 hours \u2013 mandarin interactive speech data by mobile phone",
+        "849 hours – mandarin interactive speech data by mobile phone",
         "D"
     ],
     [
@@ -82440,7 +82440,7 @@
         "D"
     ],
     [
-        "201 people \u2013 infant cry speech data by mobile phone",
+        "201 people – infant cry speech data by mobile phone",
         "D"
     ],
     [
@@ -82472,11 +82472,11 @@
         "D"
     ],
     [
-        "200 hours \u2013 korean speaking english speech data by mobile phone",
+        "200 hours – korean speaking english speech data by mobile phone",
         "D"
     ],
     [
-        "230 hours \u2013 russian speaking english speech data by mobile phone",
+        "230 hours – russian speaking english speech data by mobile phone",
         "D"
     ],
     [
@@ -82500,7 +82500,7 @@
         "D"
     ],
     [
-        "20 people \u2013 infant laugh speech data by mobile phone",
+        "20 people – infant laugh speech data by mobile phone",
         "D"
     ],
     [
@@ -82656,7 +82656,7 @@
         "T"
     ],
     [
-        "55 videos \u2013juvenile face data",
+        "55 videos –juvenile face data",
         "D"
     ],
     [
@@ -82684,7 +82684,7 @@
         "T"
     ],
     [
-        "110 people \u2013 human face image data with multiple angles, light conditions, and expressions",
+        "110 people – human face image data with multiple angles, light conditions, and expressions",
         "D"
     ],
     [
@@ -82700,7 +82700,7 @@
         "D"
     ],
     [
-        "39,993 images \u2013 ocr data of internet image",
+        "39,993 images – ocr data of internet image",
         "D"
     ],
     [
@@ -82708,7 +82708,7 @@
         "D"
     ],
     [
-        "5,011 images \u2013 human frontal face data (male)",
+        "5,011 images – human frontal face data (male)",
         "D"
     ],
     [
@@ -82720,7 +82720,7 @@
         "D"
     ],
     [
-        "222,289 images \u2013 chinese ocr data in natural scenes",
+        "222,289 images – chinese ocr data in natural scenes",
         "D"
     ],
     [
@@ -82728,7 +82728,7 @@
         "D"
     ],
     [
-        "1,417 people \u2013 3d living_face & anti_spoofing data",
+        "1,417 people – 3d living_face & anti_spoofing data",
         "D"
     ],
     [
@@ -82888,11 +82888,11 @@
         "D"
     ],
     [
-        "828,599 images \u2013 vehicle re-id data in surveillance scenes",
+        "828,599 images – vehicle re-id data in surveillance scenes",
         "D"
     ],
     [
-        "5,199 people \u2013 3d face recognition images data",
+        "5,199 people – 3d face recognition images data",
         "D"
     ],
     [
@@ -82916,7 +82916,7 @@
         "D"
     ],
     [
-        "4,134 people \u2013 infrared face recognition data",
+        "4,134 people – infrared face recognition data",
         "D"
     ],
     [
@@ -84392,7 +84392,7 @@
         "D"
     ],
     [
-        "\u5b59\u6587\u8fea",
+        "孙文迪",
         "D"
     ],
     [
@@ -84400,7 +84400,7 @@
         "D"
     ],
     [
-        "imdb-wiki \u2013 500k+ face images with age and gender labels",
+        "imdb-wiki – 500k+ face images with age and gender labels",
         "D"
     ],
     [
@@ -85368,7 +85368,7 @@
         "D"
     ],
     [
-        "\u201cvisible\u201d physical commonsense knowledge",
+        "“visible” physical commonsense knowledge",
         "D"
     ],
     [
@@ -85580,7 +85580,7 @@
         "T"
     ],
     [
-        "univ. bourgogne franche-comt\u00e9 remote photoplethysmography",
+        "univ. bourgogne franche-comté remote photoplethysmography",
         "D"
     ],
     [
@@ -86160,7 +86160,7 @@
         "D"
     ],
     [
-        "webis-touch\u00e9-2020",
+        "webis-touché-2020",
         "D"
     ],
     [
@@ -87528,7 +87528,7 @@
         "E"
     ],
     [
-        "padding ain't enough: assessing the privacy guarantees of encrypted dns \u2013 web scans",
+        "padding ain't enough: assessing the privacy guarantees of encrypted dns – web scans",
         "D"
     ],
     [
@@ -87540,7 +87540,7 @@
         "D"
     ],
     [
-        "padding ain't enough: assessing the privacy guarantees of encrypted dns \u2013 subpage-agnostic domain classification firefox",
+        "padding ain't enough: assessing the privacy guarantees of encrypted dns – subpage-agnostic domain classification firefox",
         "D"
     ],
     [
@@ -87548,7 +87548,7 @@
         "T"
     ],
     [
-        "padding ain't enough: assessing the privacy guarantees of encrypted dns \u2013 subpage-agnostic domain classification tor browser",
+        "padding ain't enough: assessing the privacy guarantees of encrypted dns – subpage-agnostic domain classification tor browser",
         "D"
     ],
     [
@@ -88076,7 +88076,7 @@
         "D"
     ],
     [
-        "the kassel state of fluency dataset \u2013 a therapy centered dataset of stuttering",
+        "the kassel state of fluency dataset – a therapy centered dataset of stuttering",
         "D"
     ],
     [
@@ -88316,7 +88316,7 @@
         "D"
     ],
     [
-        "don\u2019t patronize me!",
+        "don’t patronize me!",
         "D"
     ],
     [
@@ -89876,7 +89876,7 @@
         "D"
     ],
     [
-        "audio \u2212visual segmentation",
+        "audio −visual segmentation",
         "D"
     ],
     [
@@ -90772,7 +90772,7 @@
         "E"
     ],
     [
-        "atm\u201922",
+        "atm’22",
         "D"
     ],
     [
@@ -91252,7 +91252,7 @@
         "D"
     ],
     [
-        "old (france) donn\u00e9es de laboratoires pour le d\u00e9pistage : indicateurs sur les mutations si-dep",
+        "old (france) données de laboratoires pour le dépistage : indicateurs sur les mutations si-dep",
         "D"
     ],
     [
@@ -93676,7 +93676,7 @@
         "E"
     ],
     [
-        "grammatical\u201d versus \u201cungrammatical",
+        "grammatical” versus “ungrammatical",
         "D"
     ],
     [
@@ -97360,7 +97360,7 @@
         "M"
     ],
     [
-        "poincar\u00e9 embeddings",
+        "poincaré embeddings",
         "M"
     ],
     [
@@ -98740,7 +98740,7 @@
         "M"
     ],
     [
-        "pangu-$\u03b1$",
+        "pangu-$α$",
         "M"
     ],
     [
@@ -99424,7 +99424,7 @@
         "M"
     ],
     [
-        "pad\u00e9 activation units",
+        "padé activation units",
         "M"
     ],
     [
@@ -99748,7 +99748,7 @@
         "M"
     ],
     [
-        "schr\u00f6dinger network",
+        "schrödinger network",
         "M"
     ],
     [
@@ -100276,7 +100276,7 @@
         "M"
     ],
     [
-        "hue \u2014 bi-dimensional empirical mode decomposition",
+        "hue — bi-dimensional empirical mode decomposition",
         "M"
     ],
     [
@@ -101004,7 +101004,7 @@
         "M"
     ],
     [
-        "nystr\u00f6mformer",
+        "nyströmformer",
         "M"
     ],
     [
@@ -101304,7 +101304,7 @@
         "M"
     ],
     [
-        "bene\u0161 block with residual switch units",
+        "beneš block with residual switch units",
         "M"
     ],
     [
@@ -101512,7 +101512,7 @@
         "M"
     ],
     [
-        "dall\u00b7e 2",
+        "dall·e 2",
         "M"
     ],
     [
@@ -103620,7 +103620,7 @@
         "E"
     ],
     [
-        "\u03b41.25",
+        "δ1.25",
         "E"
     ],
     [
@@ -108424,11 +108424,11 @@
         "E"
     ],
     [
-        "oob rate (10^\u22123)",
+        "oob rate (10^−3)",
         "E"
     ],
     [
-        "step change (10^\u22123)",
+        "step change (10^−3)",
         "E"
     ],
     [
@@ -109856,7 +109856,7 @@
         "E"
     ],
     [
-        "data3d\u2212r2n2",
+        "data3d−r2n2",
         "E"
     ],
     [
@@ -111644,7 +111644,7 @@
         "E"
     ],
     [
-        "\u2206m%",
+        "∆m%",
         "E"
     ],
     [
@@ -113748,27 +113748,27 @@
         "E"
     ],
     [
-        "accuracy (c#\u2192java)",
+        "accuracy (c#→java)",
         "E"
     ],
     [
-        "accuracy (java\u2192c#)",
+        "accuracy (java→c#)",
         "E"
     ],
     [
-        "bleu (c#\u2192java)",
+        "bleu (c#→java)",
         "E"
     ],
     [
-        "bleu (java\u2192c#)",
+        "bleu (java→c#)",
         "E"
     ],
     [
-        "codebleu (c#\u2192java)",
+        "codebleu (c#→java)",
         "E"
     ],
     [
-        "codebleu (java\u2192c#)",
+        "codebleu (java→c#)",
         "E"
     ],
     [
@@ -114256,7 +114256,7 @@
         "D"
     ],
     [
-        "worldexpo\u201910",
+        "worldexpo’10",
         "E"
     ],
     [
@@ -114844,7 +114844,7 @@
         "E"
     ],
     [
-        "rmse (subject-na\u00efve)",
+        "rmse (subject-naïve)",
         "E"
     ],
     [
@@ -115332,7 +115332,7 @@
         "T"
     ],
     [
-        "fw\u03b2",
+        "fwβ",
         "E"
     ],
     [
@@ -115340,11 +115340,11 @@
         "E"
     ],
     [
-        "relaxfb\u03b2",
+        "relaxfbβ",
         "E"
     ],
     [
-        "{max}f\u03b2",
+        "{max}fβ",
         "E"
     ],
     [
@@ -115596,7 +115596,7 @@
         "E"
     ],
     [
-        "cohen\u2019s kappa score",
+        "cohen’s kappa score",
         "E"
     ],
     [
@@ -116552,27 +116552,27 @@
         "D"
     ],
     [
-        "acc @ .25m, 2\u00b0",
+        "acc @ .25m, 2°",
         "E"
     ],
     [
-        "acc @ .5m, 5\u00b0",
+        "acc @ .5m, 5°",
         "E"
     ],
     [
-        "acc @ 5m, 10\u00b0",
+        "acc @ 5m, 10°",
         "E"
     ],
     [
-        "acc@0.25m, 2\u00b0",
+        "acc@0.25m, 2°",
         "E"
     ],
     [
-        "acc@0.5m, 5\u00b0",
+        "acc@0.5m, 5°",
         "E"
     ],
     [
-        "acc@5m, 10\u00b0",
+        "acc@5m, 10°",
         "E"
     ],
     [
@@ -116728,7 +116728,7 @@
         "E"
     ],
     [
-        "avg \u00b1 std",
+        "avg ± std",
         "E"
     ],
     [
@@ -117060,19 +117060,19 @@
         "T"
     ],
     [
-        "mae mean (\u00ba)",
+        "mae mean (º)",
         "E"
     ],
     [
-        "mae yaw (\u00ba)",
+        "mae yaw (º)",
         "E"
     ],
     [
-        "mae pitch (\u00ba)",
+        "mae pitch (º)",
         "E"
     ],
     [
-        "mae roll (\u00ba)",
+        "mae roll (º)",
         "E"
     ],
     [
@@ -117324,7 +117324,7 @@
         "E"
     ],
     [
-        "relative position error rotation [\u00ba]",
+        "relative position error rotation [º]",
         "E"
     ],
     [
@@ -118272,11 +118272,11 @@
         "E"
     ],
     [
-        "acc @ 0.5m, 2\u00b0",
+        "acc @ 0.5m, 2°",
         "E"
     ],
     [
-        "acc @ 1m, 5\u00b0",
+        "acc @ 1m, 5°",
         "E"
     ],
     [
@@ -118996,7 +118996,7 @@
         "E"
     ],
     [
-        "spl (l\u22655)",
+        "spl (l≥5)",
         "E"
     ],
     [
@@ -119004,7 +119004,7 @@
         "E"
     ],
     [
-        "success rate (l\u22655)",
+        "success rate (l≥5)",
         "E"
     ],
     [
@@ -119844,7 +119844,7 @@
         "D"
     ],
     [
-        "nodalida norwegian bokm\u00e5l",
+        "nodalida norwegian bokmål",
         "D"
     ],
     [
@@ -120108,7 +120108,7 @@
         "D"
     ],
     [
-        "ceaf\u03d54",
+        "ceafϕ4",
         "E"
     ],
     [
@@ -121664,7 +121664,7 @@
         "E"
     ],
     [
-        "barrett\u2019s esophagus",
+        "barrett’s esophagus",
         "E"
     ],
     [
@@ -122668,7 +122668,7 @@
         "D"
     ],
     [
-        "miniimagenet \u2192 cub (5-way 1-shot)",
+        "miniimagenet → cub (5-way 1-shot)",
         "D"
     ],
     [
@@ -122692,7 +122692,7 @@
         "D"
     ],
     [
-        "miniimagenet \u2192 cub (5-way 5-shot)",
+        "miniimagenet → cub (5-way 5-shot)",
         "D"
     ],
     [
@@ -122708,15 +122708,15 @@
         "E"
     ],
     [
-        "cifar-100-lt (\u03c1=200)",
+        "cifar-100-lt (ρ=200)",
         "D"
     ],
     [
-        "cifar-100-lt (\u03c1=50)",
+        "cifar-100-lt (ρ=50)",
         "D"
     ],
     [
-        "cifar-10-lt (\u03c1=200)",
+        "cifar-10-lt (ρ=200)",
         "D"
     ],
     [
@@ -122724,7 +122724,7 @@
         "D"
     ],
     [
-        "cifar-10-lt (\u03c1=50)",
+        "cifar-10-lt (ρ=50)",
         "D"
     ],
     [
@@ -124608,7 +124608,7 @@
         "D"
     ],
     [
-        "\u03b4pesq",
+        "δpesq",
         "E"
     ],
     [
@@ -127820,15 +127820,15 @@
         "E"
     ],
     [
-        "localization-dependent error rate (20\u00b0)",
+        "localization-dependent error rate (20°)",
         "E"
     ],
     [
-        "er\u226420\u00b0",
+        "er≤20°",
         "E"
     ],
     [
-        "f1\u226420\u00b0",
+        "f1≤20°",
         "E"
     ],
     [
@@ -128476,11 +128476,11 @@
         "E"
     ],
     [
-        "acc@15\u00b0",
+        "acc@15°",
         "E"
     ],
     [
-        "acc@30\u00b0",
+        "acc@30°",
         "E"
     ],
     [

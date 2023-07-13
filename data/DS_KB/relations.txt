@@ -19,3 +19,6 @@ has language/has dataset
 has modality/has dataset
 better than/worse than (usually)
 has step/is a step of
+implemented by/implements
+handles/handled by
+M has score E/E is score of M
