@@ -1,4 +1,5 @@
 # extract triples from PwC files:
+import ast
 import json
 from typing import *
 from tqdm import tqdm
@@ -71,9 +72,57 @@ def extract_papers_and_abstracts() -> Dict[str, dict]:
 
     return triples
 
-def extract_evaluation_tables(eval_tables: list=None) -> Dict[str, dict]:
+def process_val_and_delta(metric_str: str, symbol: str="±") -> Tuple[float, float]:
+    val, delta = metric_str.split(symbol)
+    val = val.replace("%","")
+    delta = delta.replace("%","")
+    val, delta = resflot(val),resflot(delta)
+
+    return (val, delta)
+
+def resflot(x):
+    """assumption: all decimals after the first one should be ignored."""
+    # remove commas.
+    x = x.replace(",","")
+    if "." in x:
+        parts = x.split(".")
+        return float(f"{parts[0]}.{''.join(parts[1:])}")
+    return float(x)
+
+def scalar_metric_convert(metric_str: str) -> Union[Tuple[float, float], float]:
+    # hard coded because I'm frustrated:
+    metric_str = metric_str.strip("-").strip("–").strip("e")
+    if metric_str in ["-", "--", "–", "?", "", "%"]: return None
+    if "," in metric_str and not("(" in metric_str or ")" in metric_str) and "." not in metric_str:
+        metric_str = metric_str.replace(",",".")  
+    if "(" in metric_str:
+        metric_str = metric_str.split("(")[0]
+    for symbol in ["+/-", "±", "+-", "-+"]:
+        if symbol in metric_str: 
+            return process_val_and_delta(metric_str, symbol=symbol)
+    multiplier = 1
+    if metric_str.endswith("M") or metric_str.endswith("m"): 
+        metric_str = metric_str[:-1]
+        multiplier = 10**6
+    elif metric_str.endswith("M+") or metric_str.endswith("m+") or metric_str.endswith("MB"): 
+        metric_str = metric_str[:-2]
+        multiplier = 10**6   
+    elif metric_str.endswith("K") or metric_str.endswith("k"): 
+        metric_str = metric_str[:-1]
+        multiplier = 10**3
+    elif metric_str.endswith("B") or metric_str.endswith("G"): 
+        metric_str = metric_str[:-1]
+        multiplier = 10**9
+    if metric_str == "0.57×1e-4": return 0.57*1e-4
+
+    return multiplier * resflot(metric_str.replace("%","").replace("..",".").replace(":",".").replace("(self-sup.)",""))
+
+ERR_CTR = 0
+def extract_evaluation_tables(eval_tables: list=None, pbar=None) -> Dict[str, dict]:
+    global ERR_CTR
     if eval_tables is None:
         eval_tables = json.load(open("./data/PwC/evaluation-tables.json"))
+        pbar = tqdm(range(1000000))
     triples = {}
     assert isinstance(eval_tables, list), f"{type(eval_tables)} {eval_tables.keys()}"
     for rec in eval_tables:
@@ -92,6 +141,7 @@ def extract_evaluation_tables(eval_tables: list=None) -> Dict[str, dict]:
                 "obj": (sub,"T",rec["description"]), 
                 "e": "SUBCLASS OF"
             }
+            pbar.update(2)
             ALL_NODES.add(obj)
         # link to first level datasets:
         for dataset in rec.get("datasets",[]):
@@ -103,23 +153,100 @@ def extract_evaluation_tables(eval_tables: list=None) -> Dict[str, dict]:
                 "e": "USES"
             }
             triples[f"{obj} USED BY {sub}"] = {
-                "sub": (obj,"D",dataset["description"]), 
+                "sub": (obj,"D",dataset["description"]),
                 "obj": (sub,"T",rec["description"]), 
                 "e": "USED BY"
             }
+            pbar.update(2)
             # link methods in the tables to their scores.
             for row in dataset["sota"]["rows"]:
                 sub_ = (row["model_name"], "M", row["paper_title"])
                 ALL_NODES.add(sub_[0])
                 for metric_name, metric_value in row["metrics"].items():
-                    obj_ = (metric_name, "E", metric_value)
+                    # hard coded out of frustration
+                    if metric_value is not None:
+                        # take care of removing hard coded strings.
+                        for HARD_CODED_STR in ["(non-standard, w/o motion modalities)", "(average of 3 split train/test)", "training label (semi-supervised)", "\ufeff", "mm", "dB", "x", "*", "Please tell us"]:
+                            metric_value = metric_value.replace(HARD_CODED_STR,"").strip()
+                        for HARD_CODED_STR, HARD_CODED_REPLACEMENT in {"O.753": "0.753", " pm ": "+-"}.items():
+                            metric_value = metric_value.replace(HARD_CODED_STR, HARD_CODED_REPLACEMENT)
+                    # metric_value based hard-coded stuff.
+                    try: 
+                        if metric_value is None: pass
+                        elif metric_name == "Acc" and dataset["dataset"] == "Stackoverflow" and sub == "Short Text Clustering": pass
+                        elif metric_value == "/": pass
+                        elif metric_value in ["N/A", "n.a.", "NA"]: metric_value = None
+                        elif "SSS: " in metric_value and "NSS: " in metric_value: pass
+                        elif "HVLA/HVHA/LVLA/LVHA: " in metric_value: pass
+                        # metric name based hard coded handlers for each kind of format.
+                        elif metric_name in ["mAP", "AP"]: # mAP/AP metric exception
+                            try: metric_value = ast.literal_eval(metric_value.split("on")[0].strip().replace("%",""))
+                            except Exception as e: metric_value = scalar_metric_convert(metric_value)
+                        elif metric_name == "MAE" and dataset["dataset"] == "deepMTJ v1":
+                            metric_value = metric_value.replace("mm","")
+                            metric_value = scalar_metric_convert(metric_value)
+                        elif metric_name in ["5 fold cross validation", "MLP Hidden Layers-width"]: 
+                            metric_value = [scalar_metric_convert(x) for x in metric_value.split("-")]
+                        elif metric_name in ["Resolution", "GFLOPs", "FLOPs (G) x views"]: # Resolution exception
+                            metric_value = eval(metric_value.replace("x","*"))
+                        elif metric_name == "SF-all":
+                            metric_value = metric_value.replace(">","").replace("(","").replace(")","")
+                            metric_value = scalar_metric_convert(metric_value)
+                        elif metric_name == "Mono" and metric_value in ["X","O"]:
+                            metric_value = 1 if "X" else 0
+                        elif metric_name == "All" and dataset["dataset"] == "custom" and sub == "graph partitioning": pass
+                        elif metric_name == "Test Time": 
+                            metric_value = resflot(metric_value.replace("s/img",""))
+                        elif metric_name in ["MC1", "Validation mIoU", "Test mIoU", 
+                                                "Validation Dice Multiclass", "Test Dice Multiclass"]:
+                            metric_value = scalar_metric_convert(metric_value.replace(" ",""))
+                        elif metric_name in ["@nose", "@mouth", "@forehead", "@cheek"]:
+                            metric_value = scalar_metric_convert(metric_value.replace("(","").replace(")",""))
+                        elif metric_name in ["1-of-100 Accuracy", "training dataset", "Text model", "Train Split",
+                                            "model", "Sentence Encoder", "Cross Sentence", "Train set", "Training Split",
+                                            "Type", "Multi-View or Monocular", "2D detector", "Backbone",
+                                            "3D Annotations", "14 gestures accuracy", "L2 Norm", "Train Set",
+                                            "Notes", "Category", "FPS on CPU", "Network", "Architecture",
+                                            "10 way 5~10 shot", "Pretraining Dataset", "PRE-TRAINING DATASET",
+                                            "Pretrain", "Pre-Training Dataset", "Actions Top-1 (S2)", "PSNR",
+                                            "Average PSNR", "detector"]: 
+                            pass # confusing metrics: left as it is.
+                        elif metric_name in ["Interpretable", "Source-free", "Multi-Task Supervision", "Pretrained",
+                                             "Source-Free", "Single-view", "Unsupervised", "10 fold Cross validation",
+                                             "Using 2D ground-truth joints", "Frozen", "official split", "Validation",
+                                             "Use Video Sequence", "Need Ground Truth 2D Pose", "ImageNet Pretrained",
+                                             "Pretrained/Transfer Learning", "Ext. data"]: # boolean metrics
+                            try: 
+                                metric_value = {
+                                    "yes": 1, "no": 0, "y": 1, "n": 0, 
+                                    "false": 0, "true": 1
+                                }[metric_value.lower()]
+                            except Exception as e: # weird exception for "Human3.6M", "Human Pose Estimation" task.
+                                metric_value = 1
+                        elif "/" in metric_value: #["LH/RH-MVE", "LH/RH-MPJPE"]:
+                            metric_value = [resflot(metric_val) for metric_val in metric_value.split("/")]
+                        elif "|" in metric_value:
+                            metric_value = [resflot(metric_val) for metric_val in metric_value.split("|")]
+
+                        # default handling case,
+                        else: metric_value = scalar_metric_convert(metric_value)
+                    except Exception as e: 
+                        # print(e)
+                        # print(f'\x1b[31;1mERROR\x1b[0m\n\ttask: {sub}\n\tdataset: {dataset["dataset"]}\n\tmetric_name: {metric_name}\n\tmetric value: {metric_value}')
+                        # exit()
+                        ERR_CTR += 1
+                        pbar.set_description(f"{ERR_CTR} errors")
+                    obj_ = (metric_name, "E", "")
                     ALL_NODES.add(obj_[0])
                     triples[f"{sub_[0]} HAS SCORE {obj_[0]}"] = {
-                        "sub": sub_, "obj": obj_, "e": "HAS SCORE"
+                        "sub": sub_, "obj": obj_, 
+                        "e": "HAS SCORE", "w": metric_value,
                     }
                     triples[f"{obj_[0]} IS SCORE OF {sub_[0]}"] = {
-                        "sub": obj_, "obj": sub_, "e": "IS SCORE OF"
+                        "sub": obj_, "obj": sub_, 
+                        "e": "IS SCORE OF", "w": metric_value
                     }
+                    pbar.update(2)
             # link to first level metrics.
             for metric in dataset["sota"]["metrics"]:
                 obj = metric.strip()
@@ -143,9 +270,10 @@ def extract_evaluation_tables(eval_tables: list=None) -> Dict[str, dict]:
                     "sub": (dataset["dataset"].strip(),"E",""), 
                     "obj": (sub,"D",dataset["description"]), 
                     "e": "EVALUATES"
-                }   
+                }
+                pbar.update(4)
         # link to first level subtasks.
-        triples.update(extract_evaluation_tables(eval_tables=rec["subtasks"]))
+        triples.update(extract_evaluation_tables(eval_tables=rec["subtasks"], pbar=pbar))
 
     return triples
 
