@@ -162,6 +162,7 @@ def extract_evaluation_tables(eval_tables: list=None, pbar=None) -> Dict[str, di
             for row in dataset["sota"]["rows"]:
                 sub_ = (row["model_name"], "M", row["paper_title"])
                 ALL_NODES.add(sub_[0])
+                metric_to_value_map = {}
                 for metric_name, metric_value in row["metrics"].items():
                     # hard coded out of frustration
                     if metric_value is not None:
@@ -236,17 +237,30 @@ def extract_evaluation_tables(eval_tables: list=None, pbar=None) -> Dict[str, di
                         # exit()
                         ERR_CTR += 1
                         pbar.set_description(f"{ERR_CTR} errors")
-                    obj_ = (metric_name, "E", "")
-                    ALL_NODES.add(obj_[0])
-                    triples[f"{sub_[0]} HAS SCORE {obj_[0]}"] = {
-                        "sub": sub_, "obj": obj_, 
-                        "e": "HAS SCORE", "w": metric_value,
-                    }
-                    triples[f"{obj_[0]} IS SCORE OF {sub_[0]}"] = {
-                        "sub": obj_, "obj": sub_, 
-                        "e": "IS SCORE OF", "w": metric_value
-                    }
-                    pbar.update(2)
+                    metric_to_value_map[metric_name] = metric_value
+                    # obj_ = (metric_name, "E", "")
+                    # ALL_NODES.add(obj_[0])
+                    # triples[f"{sub_[0]} HAS SCORE {obj_[0]}"] = {
+                    #     "sub": sub_, "obj": obj_, 
+                    #     "e": "HAS SCORE", "w": metric_value,
+                    # }
+                    # triples[f"{obj_[0]} IS SCORE OF {sub_[0]}"] = {
+                    #     "sub": obj_, "obj": sub_, 
+                    #     "e": "IS SCORE OF", "w": metric_value
+                    # }
+                obj_ = (dataset["dataset"], "D", dataset["description"])
+                ALL_NODES.add(obj_[0])
+                triples[f"{sub_[0]} HAS SCORE FOR {obj_[0]}"] = {
+                    "sub": sub_, "obj": obj_, 
+                    "e": "HAS SCORE FOR", 
+                    "w": metric_to_value_map,
+                }
+                triples[f"{obj_[0]} HAS SCORE FOR {sub_[0]}"] = {
+                    "sub": obj_, "obj": sub_, 
+                    "e": "HAS SCORE FOR", 
+                    "w": metric_to_value_map,
+                }
+                pbar.update(2)
             # link to first level metrics.
             for metric in dataset["sota"]["metrics"]:
                 obj = metric.strip()

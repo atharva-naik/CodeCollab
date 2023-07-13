@@ -237,20 +237,17 @@ if __name__ == "__main__":
             ?p foaf:name ?name .
         }
     """,
-    'find models that address Sentiment Analysis as a task along with the metrics': """
+    'find models that address Sentiment Analysis as a task and pick the best model for each dataset by Accuracy': """
         PREFIX n: <http://example.org/>
         PREFIX nt: <http://example.org/node_type/>
         PREFIX et: <http://example.org/edge_type/>
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
-        SELECT ?model_name ?metric_name ?dataset_name
+        SELECT ?model_name ?dataset_name
         WHERE {
-            ?model et:can_model n:"""+str(all_nodes['sentiment analysis'][0])+""" .
             ?dataset et:has_goals n:"""+str(all_nodes['sentiment analysis'][0])+""" .
-            ?dataset et:evaluated_by ?metric .
-            ?model et:has_score ?metric .
+            ?model et:has_score_for ?dataset .
             ?dataset foaf:name ?dataset_name .
-            ?metric foaf:name ?metric_name .
             ?model foaf:name ?model_name .
         }
     """,
@@ -337,15 +334,26 @@ if __name__ == "__main__":
         # print(r["name"])
         eg_results[intents[9]].append(r["name"])
 
-    # eg_results[intents[10]] = [] 
-    # print(f"\x1b[34;1m{intents[10]}\x1b[0m") 
-    # for r in ds_kg.query(queries[10]):
-    #     M = r["model_name"]
-    #     E = r["metric_name"]
-    #     D = r["dataset_name"]
-    #     weight = edge_weights[f"{M}::{E}"]
-    #     print(M, D, E, weight)
-
+    import numpy as np
+    from collections import defaultdict
+    dataset_wise_model_scores = defaultdict(lambda: {})
+    metrics = defaultdict(lambda: 0)
+    print(f"\x1b[34;1m{intents[10]}\x1b[0m") 
+    for r in ds_kg.query(queries[10]):
+        M = r["model_name"]
+        D = r["dataset_name"]
+        metrics_row = edge_weights[f"{M}::{D}"]
+        dataset_wise_model_scores[D][M] = metrics_row
+        for k in metrics_row: metrics[k] += 1
+        # print(M, D, metrics_row)
+    dataset_wise_model_scores = {
+        k: list(v.keys())[
+            np.argmax([val.get("Accuracy",0) for val in v.values()])
+        ] for k,v in dataset_wise_model_scores.items() if "Accuracy" in list(v.values())[0]
+    }
+    eg_results[intents[10]] = dataset_wise_model_scores
+    print(json.dumps(dataset_wise_model_scores, indent=4))
+    # print(metrics)
     eg_results[intents[11]] = [] 
     print(f"\x1b[34;1m{intents[11]}\x1b[0m") 
     for r in ds_kg.query(queries[11]):
