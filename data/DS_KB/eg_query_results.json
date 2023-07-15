@@ -504,5 +504,22 @@
         "sorting",
         "transforming data",
         "imputation"
-    ]
+    ],
+    "steps involved in defining a neural network": {
+        "setup": {},
+        "import necessary libraries": {},
+        "define and initialize neural network": {},
+        "define forward pass": {},
+        "test model by passing data": {}
+    },
+    "steps invloved in loading PyTorch data": {
+        "setup": {},
+        "import necessary libraries": {},
+        "access data in the dataset": {
+            "download dataset": {},
+            "split train test": {}
+        },
+        "iterate over data": {},
+        "visualize the data": {}
+    }
 }

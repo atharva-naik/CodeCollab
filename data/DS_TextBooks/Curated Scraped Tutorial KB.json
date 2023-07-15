@@ -1,0 +1,45 @@
+{
+    "Loading Data::s": {
+        "STEPS": ["Setup", "Import Necessary Libraries", "Access Data in the Dataset", "Iterate over Data", "Visualize the Data"],
+        "Setup::s::has step(s)" : {
+            "Setup for PyTorch::s::has instance": {
+                "STEPS": ["Install torch", "Install torchaudio", "Install torchvision"]
+            }
+        },
+        "Import Necessary Libraries::s::has step(s)": {
+            "Import Libraries for Pytorch::s::has instance": {
+                "STEPS": ["Import torch", "Import torchaudio", "Import torchvision"]
+            }
+        },
+        "Access Data in the Dataset::s::has step(s)": {
+            "STEPS": ["Download Dataset", "Split Train Test"], 
+            "Access Data in the Dataset in PyTorch::s::has instance": {
+                "STEPS": ["Download Dataset", "Split Train Test", "Create PyTorch Dataset Object"]
+            }
+        },
+        "Iterate over Data::s::has step(s)": {
+            "Iterate over Data in PyTorch::s::has instance": {
+                "STEPS": ["Create PyTorch DataLoader Object", "Iterate over DataLoader"]
+            }
+        },
+        "Visualize the Data::s::has step(s)": null
+    },
+    "Define Neural Network::s": {
+        "STEPS": ["Setup", "Import Necessary Libraries", "Define and Initialize Neural Network", "Define Forward Pass", "Test Model by Passing Data"],
+        "Setup::s::has step(s)": {
+            "Setup for PyTorch::s::has instance": {
+                "STEPS": ["Install PyTorch"]
+            }
+        },
+        "Import Necessary Libraries::s::has step(s)": {
+            "Import Libraries for Pytorch::s::has instance": {
+                "STEPS": ["Import torch", "Import torch.nn", "Import torch.nn.functional"]
+            }
+        },
+        "Define and Initialize Neural Network::s::has step(s)": {
+            "Define Neural Network in PyTorch::s::has instance": {
+                "STEPS": ["Subclass nn.Module", "Define Layers in __init__ function"]
+            }
+        }
+    }
+}

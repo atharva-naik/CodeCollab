@@ -63,6 +63,11 @@ def extract_triples(kb_json: str) -> List[dict]:
                         "obj": (v2[0], "s", ""),
                         "e": "HAS FIRST STEP"
                     }
+                    triples[f"{sub} HAS STEP(S) {v2[0]}"] = {
+                        "sub": (sub, sub_sem_type, k1_desc),
+                        "obj": (v2[0], "s", ""),
+                        "e": "HAS STEP(S)"
+                    }
                     UNIQUE_NODES[v2[0]] = "STEP"
                     RELATION_TYPE_DIST["HAS FIRST STEP"] += 1
                     triples[f"{v2[0]} IS FIRST STEP OF {sub}"] = {
@@ -70,9 +75,19 @@ def extract_triples(kb_json: str) -> List[dict]:
                         "obj": (sub, sub_sem_type, k1_desc),
                         "e": "IS FIRST STEP OF"
                     }
+                    triples[f"{sub} IS STEP OF {v2[0]}"] = {
+                        "sub": (sub, sub_sem_type, k1_desc),
+                        "obj": (v2[0], "s", ""),
+                        "e": "IS STEP OF"
+                    }
                     RELATION_TYPE_DIST["IS FIRST STEP OF"] += 1
                     # "HAS NEXT STEP" relations.
                     for i in range(len(v2)-1):
+                        triples[f"{sub} HAS STEP(S) {v2[i+1]}"] = {
+                            "sub": (sub, sub_sem_type, k1_desc),
+                            "obj": (v2[i+1], "s", ""),
+                            "e": "HAS STEP(S)"
+                        }
                         triples[f"{v2[i]} HAS NEXT STEP {v2[i+1]}"] = {
                             "sub": (v2[i], "s", ""),
                             "obj": (v2[i+1], "s", ""),
@@ -80,6 +95,11 @@ def extract_triples(kb_json: str) -> List[dict]:
                         }
                         UNIQUE_NODES[v2[i+1]] = "STEP"
                         RELATION_TYPE_DIST["HAS NEXT STEP"] += 1
+                        triples[f"{v2[i+1]} IS STEP OF {v2[i]}"] = {
+                            "sub": (v2[i+1], "s", ""),
+                            "obj": (sub, sub_sem_type, k1_desc),
+                            "e": "IS STEP OF"
+                        }
                         triples[f"{v2[i+1]} HAS PREV STEP {v2[i]}"] = {
                             "sub": (v2[i+1], "s", ""),
                             "obj": (v2[i], "s", ""),

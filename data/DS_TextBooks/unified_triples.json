@@ -248,6 +248,19 @@
     },
     {
         "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Candidate Entity Generation",
             "s",
             ""
@@ -261,6 +274,32 @@
     },
     {
         "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Generation",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Candidate Entity Generation",
             "s",
             ""
@@ -271,6 +310,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Candidate Entity Ranking",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -287,6 +339,19 @@
     },
     {
         "sub": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Candidate Entity Ranking",
             "s",
             ""
@@ -297,6 +362,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Named Entity Linking NEL",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -336,19 +414,6 @@
             ""
         ],
         "e": "IS LAST STEP OF"
-    },
-    {
-        "sub": [
-            "Named Entity Linking NEL",
-            "T",
-            ""
-        ],
-        "obj": [
-            "Candidate Entity Generation",
-            "T",
-            ""
-        ],
-        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -378,6 +443,19 @@
     },
     {
         "sub": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "obj": [
+            "filter out irrelevant entities",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "filter out irrelevant entities",
             "s",
             ""
@@ -391,6 +469,32 @@
     },
     {
         "sub": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "obj": [
+            "filter out irrelevant entities",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "obj": [
+            "retrieve set of possible entities for a mention",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "filter out irrelevant entities",
             "s",
             ""
@@ -401,6 +505,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "retrieve set of possible entities for a mention",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Generation",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -440,19 +557,6 @@
             ""
         ],
         "e": "IS LAST STEP OF"
-    },
-    {
-        "sub": [
-            "Named Entity Linking NEL",
-            "T",
-            ""
-        ],
-        "obj": [
-            "Candidate Entity Ranking",
-            "T",
-            ""
-        ],
-        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -482,6 +586,19 @@
     },
     {
         "sub": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "obj": [
+            "use evidence to rank candidates",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "use evidence to rank candidates",
             "s",
             ""
@@ -495,6 +612,32 @@
     },
     {
         "sub": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "obj": [
+            "use evidence to rank candidates",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "obj": [
+            "find most likely entity for a mention",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "use evidence to rank candidates",
             "s",
             ""
@@ -505,6 +648,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "find most likely entity for a mention",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Candidate Entity Ranking",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -544,19 +700,6 @@
             ""
         ],
         "e": "IS LAST STEP OF"
-    },
-    {
-        "sub": [
-            "Named Entity Linking NEL",
-            "T",
-            ""
-        ],
-        "obj": [
-            "Unlinkable Mention Prediction",
-            "T",
-            ""
-        ],
-        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -586,6 +729,19 @@
     },
     {
         "sub": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "obj": [
+            "check if top ranked candidate is target entity for mention",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "check if top ranked candidate is target entity for mention",
             "s",
             ""
@@ -596,6 +752,32 @@
             ""
         ],
         "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "obj": [
+            "check if top ranked candidate is target entity for mention",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "obj": [
+            "return NIL if not",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -617,11 +799,37 @@
             ""
         ],
         "obj": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "return NIL if not",
+            "s",
+            ""
+        ],
+        "obj": [
             "check if top ranked candidate is target entity for mention",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "obj": [
+            "return the candidate otherwise",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -635,6 +843,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "return the candidate otherwise",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Unlinkable Mention Prediction",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -924,6 +1145,19 @@
     },
     {
         "sub": [
+            "Learning Kernel Classifiers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "distance measure",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "distance measure",
             "s",
             ""
@@ -937,6 +1171,32 @@
     },
     {
         "sub": [
+            "Learning Kernel Classifiers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "distance measure",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Learning Kernel Classifiers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "store training samples",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "distance measure",
             "s",
             ""
@@ -955,11 +1215,37 @@
             ""
         ],
         "obj": [
+            "Learning Kernel Classifiers",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "store training samples",
+            "s",
+            ""
+        ],
+        "obj": [
             "distance measure",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Learning Kernel Classifiers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "compute distance to all samples",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -981,11 +1267,37 @@
             ""
         ],
         "obj": [
+            "Learning Kernel Classifiers",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "compute distance to all samples",
+            "s",
+            ""
+        ],
+        "obj": [
             "store training samples",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Learning Kernel Classifiers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "classify",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -999,6 +1311,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "classify",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Learning Kernel Classifiers",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -1184,6 +1509,19 @@
     },
     {
         "sub": [
+            "Basic",
+            "T",
+            ""
+        ],
+        "obj": [
+            "learning problem",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "learning problem",
             "s",
             ""
@@ -1197,6 +1535,32 @@
     },
     {
         "sub": [
+            "Basic",
+            "T",
+            ""
+        ],
+        "obj": [
+            "learning problem",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Basic",
+            "T",
+            ""
+        ],
+        "obj": [
+            "features and feature space",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "learning problem",
             "s",
             ""
@@ -1215,11 +1579,37 @@
             ""
         ],
         "obj": [
+            "Basic",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "features and feature space",
+            "s",
+            ""
+        ],
+        "obj": [
             "learning problem",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Basic",
+            "T",
+            ""
+        ],
+        "obj": [
+            "linear function and linear classifier",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -1241,11 +1631,37 @@
             ""
         ],
         "obj": [
+            "Basic",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "linear function and linear classifier",
+            "s",
+            ""
+        ],
+        "obj": [
             "features and feature space",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Basic",
+            "T",
+            ""
+        ],
+        "obj": [
+            "expected risk || classification loss || cost matrices",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -1259,6 +1675,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "expected risk || classification loss || cost matrices",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Basic",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -1366,6 +1795,19 @@
     },
     {
         "sub": [
+            "Risk Minimization",
+            "T",
+            ""
+        ],
+        "obj": [
+            "learning algorithm",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "learning algorithm",
             "s",
             ""
@@ -1376,6 +1818,32 @@
             ""
         ],
         "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T",
+            ""
+        ],
+        "obj": [
+            "learning algorithm",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T",
+            ""
+        ],
+        "obj": [
+            "generalization error",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -1397,11 +1865,37 @@
             ""
         ],
         "obj": [
+            "Risk Minimization",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "generalization error",
+            "s",
+            ""
+        ],
+        "obj": [
             "learning algorithm",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Risk Minimization",
+            "T",
+            ""
+        ],
+        "obj": [
+            "empirical risk",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -1415,6 +1909,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "empirical risk",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Risk Minimization",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -2042,6 +2549,19 @@
     },
     {
         "sub": [
+            "Kernels on Strings",
+            "M",
+            ""
+        ],
+        "obj": [
+            "strings and alphabets",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "strings and alphabets",
             "s",
             ""
@@ -2052,6 +2572,32 @@
             ""
         ],
         "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Kernels on Strings",
+            "M",
+            ""
+        ],
+        "obj": [
+            "strings and alphabets",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Kernels on Strings",
+            "M",
+            ""
+        ],
+        "obj": [
+            "subsequences and substrings",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -2065,6 +2611,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "subsequences and substrings",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Kernels on Strings",
+            "M",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -2978,6 +3537,19 @@
     },
     {
         "sub": [
+            "Bayesian Framework",
+            "C",
+            ""
+        ],
+        "obj": [
+            "likelihood",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "likelihood",
             "s",
             ""
@@ -2988,6 +3560,32 @@
             ""
         ],
         "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C",
+            ""
+        ],
+        "obj": [
+            "likelihood",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C",
+            ""
+        ],
+        "obj": [
+            "prior",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -3009,11 +3607,37 @@
             ""
         ],
         "obj": [
+            "Bayesian Framework",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "prior",
+            "s",
+            ""
+        ],
+        "obj": [
             "likelihood",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Bayesian Framework",
+            "C",
+            ""
+        ],
+        "obj": [
+            "evidence of hypothesis",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -3027,6 +3651,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "evidence of hypothesis",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Bayesian Framework",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -4252,6 +4889,19 @@
     },
     {
         "sub": [
+            "The Luckiness Framework",
+            "C",
+            ""
+        ],
+        "obj": [
+            "formalize conditions to use training sample to decompose hypothesis space",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "formalize conditions to use training sample to decompose hypothesis space",
             "s",
             ""
@@ -4262,6 +4912,32 @@
             ""
         ],
         "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C",
+            ""
+        ],
+        "obj": [
+            "formalize conditions to use training sample to decompose hypothesis space",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "The Luckiness Framework",
+            "C",
+            ""
+        ],
+        "obj": [
+            "provide uniform bounds on expected risks",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -4275,6 +4951,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "provide uniform bounds on expected risks",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Luckiness Framework",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -6098,6 +6787,19 @@
     },
     {
         "sub": [
+            "Well Posed Learning Problems",
+            "T",
+            ""
+        ],
+        "obj": [
+            "define task T",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "define task T",
             "s",
             ""
@@ -6111,6 +6813,32 @@
     },
     {
         "sub": [
+            "Well Posed Learning Problems",
+            "T",
+            ""
+        ],
+        "obj": [
+            "define task T",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Well Posed Learning Problems",
+            "T",
+            ""
+        ],
+        "obj": [
+            "learn from experience E",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "define task T",
             "s",
             ""
@@ -6121,6 +6849,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "learn from experience E",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -6137,6 +6878,19 @@
     },
     {
         "sub": [
+            "Well Posed Learning Problems",
+            "T",
+            ""
+        ],
+        "obj": [
+            "measure performance P on T",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "learn from experience E",
             "s",
             ""
@@ -6147,6 +6901,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "measure performance P on T",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Well Posed Learning Problems",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -7086,6 +7853,19 @@
     },
     {
         "sub": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "obj": [
+            "fix the task T",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "fix the task T",
             "s",
             ""
@@ -7099,6 +7879,32 @@
     },
     {
         "sub": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "obj": [
+            "fix the task T",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "obj": [
+            "fix performance measure P",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "fix the task T",
             "s",
             ""
@@ -7117,11 +7923,37 @@
             ""
         ],
         "obj": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "fix performance measure P",
+            "s",
+            ""
+        ],
+        "obj": [
             "fix the task T",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "obj": [
+            "fix training experience E",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -7143,11 +7975,37 @@
             ""
         ],
         "obj": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "fix training experience E",
+            "s",
+            ""
+        ],
+        "obj": [
             "fix performance measure P",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "obj": [
+            "choose exact type of knowledge to be learned",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -7169,11 +8027,37 @@
             ""
         ],
         "obj": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "choose exact type of knowledge to be learned",
+            "s",
+            ""
+        ],
+        "obj": [
             "fix training experience E",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "obj": [
+            "choose representation for target knowledge",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -7195,11 +8079,37 @@
             ""
         ],
         "obj": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "choose representation for target knowledge",
+            "s",
+            ""
+        ],
+        "obj": [
             "choose exact type of knowledge to be learned",
             "s",
             ""
         ],
         "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "obj": [
+            "choose learning mechanism",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
     },
     {
         "sub": [
@@ -7213,6 +8123,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "choose learning mechanism",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Designing a Learning System",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -18760,6 +19683,19 @@
     },
     {
         "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Inspecting Data",
             "s",
             ""
@@ -18773,6 +19709,32 @@
     },
     {
         "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Inspecting Data",
             "s",
             ""
@@ -18783,6 +19745,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Transforming Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -18799,6 +19774,19 @@
     },
     {
         "sub": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "obj": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Transforming Data",
             "s",
             ""
@@ -18809,6 +19797,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Integrating Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Wrangling",
+            "s",
+            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -18981,19 +19982,6 @@
     },
     {
         "sub": [
-            "Data Wrangling",
-            "s",
-            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
-        ],
-        "obj": [
-            "Inspecting Data",
-            "s",
-            ""
-        ],
-        "e": "HAS STEP(S)"
-    },
-    {
-        "sub": [
             "Inspecting Data",
             "s",
             ""
@@ -19020,6 +20008,19 @@
     },
     {
         "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Sorting",
             "s",
             ""
@@ -19033,6 +20034,32 @@
     },
     {
         "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Sorting",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Box Plot",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Sorting",
             "s",
             ""
@@ -19043,6 +20070,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Box Plot",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Inspecting Data",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -19488,6 +20528,19 @@
     },
     {
         "sub": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Compute Quartiles",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Compute Quartiles",
             "s",
             ""
@@ -19501,6 +20554,32 @@
     },
     {
         "sub": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Compute Quartiles",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Compute IQR",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Compute Quartiles",
             "s",
             ""
@@ -19511,6 +20590,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Compute IQR",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -19527,6 +20619,19 @@
     },
     {
         "sub": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Mark points outside of 1.5 IQR as potential outliers",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
             "Compute IQR",
             "s",
             ""
@@ -19537,6 +20642,19 @@
             ""
         ],
         "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Mark points outside of 1.5 IQR as potential outliers",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Identify Outliers",
+            "T",
+            ""
+        ],
+        "e": "IS STEP OF"
     },
     {
         "sub": [
@@ -19709,19 +20827,6 @@
     },
     {
         "sub": [
-            "Data Wrangling",
-            "s",
-            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
-        ],
-        "obj": [
-            "Transforming Data",
-            "s",
-            ""
-        ],
-        "e": "HAS STEP(S)"
-    },
-    {
-        "sub": [
             "Transforming Data",
             "s",
             ""
@@ -20203,19 +21308,6 @@
     },
     {
         "sub": [
-            "Data Wrangling",
-            "s",
-            "Data Wrangling is the process of cleaning, formatting, and enriching raw data to make it usable for analysis."
-        ],
-        "obj": [
-            "Integrating Data",
-            "s",
-            ""
-        ],
-        "e": "HAS STEP(S)"
-    },
-    {
-        "sub": [
             "Integrating Data",
             "s",
             ""
@@ -20252,5 +21344,1877 @@
             ""
         ],
         "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Visualize the Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Visualize the Data",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Visualize the Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Visualize the Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Visualize the Data",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Visualize the Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torchaudio",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torchaudio",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Install torchaudio",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Install torchaudio",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torchvision",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Install torchaudio",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torchvision",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Install torchvision",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Install torchvision",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torchaudio",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torchvision",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Install torchvision",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torchaudio",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torchaudio",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Import torchaudio",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import torchaudio",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torchvision",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import torchaudio",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torchvision",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Import torchvision",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import torchvision",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torchaudio",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torchvision",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Import torchvision",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create PyTorch Dataset Object",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create PyTorch Dataset Object",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Create PyTorch Dataset Object",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Create PyTorch Dataset Object",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Split Train Test",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create PyTorch Dataset Object",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Create PyTorch Dataset Object",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create PyTorch DataLoader Object",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create PyTorch DataLoader Object",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Create PyTorch DataLoader Object",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create PyTorch DataLoader Object",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over DataLoader",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Create PyTorch DataLoader Object",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over DataLoader",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Iterate over DataLoader",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Iterate over DataLoader",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create PyTorch DataLoader Object",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over DataLoader",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Iterate over DataLoader",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Visualize the Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Loading Data",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install PyTorch",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install PyTorch",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Install PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install PyTorch",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Install PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.nn",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.nn",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Import torch.nn",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import torch.nn",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.nn.functional",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import torch.nn",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.nn.functional",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Import torch.nn.functional",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import torch.nn.functional",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.nn",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.nn.functional",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Import torch.nn.functional",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Subclass nn.Module",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Subclass nn.Module",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Subclass nn.Module",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Subclass nn.Module",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Layers in __init__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Subclass nn.Module",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Layers in __init__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Define Layers in __init__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Define Layers in __init__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Subclass nn.Module",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Layers in __init__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Define Layers in __init__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
     }
 ]

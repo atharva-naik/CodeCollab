@@ -262,7 +262,39 @@ if __name__ == "__main__":
             ?p et:handles n:"""+str(all_nodes['missing values'][0])+""" .
             ?p foaf:name ?name .
         }
-    """}
+    """,
+    "steps involved in defining a neural network":"""
+        PREFIX n: <http://example.org/>
+        PREFIX nt: <http://example.org/node_type/>
+        PREFIX et: <http://example.org/edge_type/>
+        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+        SELECT ?top_level_step
+        WHERE {
+            n:"""+str(all_nodes['define neural network'][0])+""" et:has_steps ?p .
+            ?p foaf:name ?top_level_step .
+        }
+    """,
+    "steps invloved in loading PyTorch data": ""}
+
+    def recursively_find_steps(name: str, kg):
+        query = """ PREFIX n: <http://example.org/>
+            PREFIX nt: <http://example.org/node_type/>
+            PREFIX et: <http://example.org/edge_type/>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+            SELECT ?top_level_step
+            WHERE {
+                n:"""+str(all_nodes[name][0])+""" et:has_steps ?p .
+                ?p foaf:name ?top_level_step .
+            }
+        """
+        steps = {}
+        for r in kg.query(query):
+            step_name = r["top_level_step"].toPython()
+            steps[step_name] = recursively_find_steps(step_name, kg)
+
+        return steps
 
     rev_nodes = {v[0]: k for k,v in all_nodes.items()}
     eg_results = {}
@@ -359,6 +391,14 @@ if __name__ == "__main__":
     for r in ds_kg.query(queries[11]):
         print(r["name"])
         eg_results[intents[11]].append(r["name"])
+
+    print(f"\x1b[34;1m{intents[12]}\x1b[0m") 
+    eg_results[intents[12]] = recursively_find_steps("define neural network", ds_kg)
+    print(eg_results[intents[12]])
+
+    print(f"\x1b[34;1m{intents[13]}\x1b[0m") 
+    eg_results[intents[13]] = recursively_find_steps("loading data", ds_kg)
+    print(eg_results[intents[13]])
 
     eg_results_save_path = "./data/DS_KB/eg_query_results.json"
     with open(eg_results_save_path, "w") as f:
