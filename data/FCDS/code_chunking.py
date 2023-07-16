@@ -3,11 +3,14 @@
 import ast
 import sys
 import json
+import builtins
 from typing import *
 from fuzzywuzzy import fuzz
 from collections import defaultdict
-# from datautils.code_cell_analysis import remove
+from datautils.code_cell_analysis import remove_comments_and_docstrings
 
+BUILTIN_TYPES =  [getattr(builtins, d) for d in dir(builtins) if isinstance(getattr(builtins, d), type)]
+BUILTIN_TYPE_INIT_CALLS = [f"{i.__name__}()" for i in BUILTIN_TYPES]
 def get_variables_from_targets(targets: List[Union[ast.Tuple, ast.Name, ast.List]]) -> Dict[str, None]:
     variable_names = {}
     for tuple_or_name in targets:
@@ -90,40 +93,46 @@ def find_overlapping_block(code: str, lineno: int, end_lineno: int,
     return chunk_hierarchy
 
 def extract_op_chunks(code: str):
+    global BUILTIN_TYPE_INIT_CALLS
+    # remove comments and docstrings
+    code = remove_comments_and_docstrings(code)
     global CODE_CONSTRUCTS
     root = ast.parse(code)
-    chunks = {}
+    nodes = {}
+    chunk_tree = {}
     block_limits = {}
+    flat_chunk_list = {}
     for node in ast.walk(root):
         if isinstance(node, CODE_CONSTRUCTS):
             sub_code = ast.unparse(node)
+            if sub_code in BUILTIN_TYPE_INIT_CALLS: continue
             block_limits[f"{node.lineno}::{node.end_lineno}"] = sub_code
-            # print(sub_code)
+            nodes[sub_code] = node
     # sort by block lengths in descending order.
     block_limits = {k: v for k,v in sorted(block_limits.items(), key=lambda x: len(x[1]), reverse=True)}
-    # print(json.dumps(block_limits, indent=4))
-    for node in ast.walk(root):
-        if isinstance(node, CODE_CONSTRUCTS):
-            chunk_hierarchy = find_overlapping_block(
-                ast.unparse(node), node.lineno, 
-                node.end_lineno, block_limits,
-            )
-            root = chunks
-            # print(chunk_hierarchy)
-            for sub_code in chunk_hierarchy:
-                if sub_code not in root:
-                    root[sub_code] = defaultdict(lambda: {})
-                root = root[sub_code]
-            # sub_code = ast.unparse(node)
-            # root[sub_code] = defaultdict(lambda: {})
-    return chunks
+    nodes = {k: v for k,v in sorted(nodes.items(), key=lambda x: x[0], reverse=True)}
+    for node_code, node in nodes.items():
+        chunk_hierarchy = find_overlapping_block(
+            node_code, node.lineno, 
+            node.end_lineno, block_limits,
+        )
+        root = chunk_tree
+        # print(chunk_hierarchy)
+        for sub_code in chunk_hierarchy:
+            if sub_code not in flat_chunk_list:
+                flat_chunk_list[sub_code] = ""
+            if sub_code not in root:
+                root[sub_code] = defaultdict(lambda: {})
+            root = root[sub_code]
+    flat_chunk_list = list(flat_chunk_list.keys())
+                
+    return chunk_tree, flat_chunk_list
 
 def print_chunks(chunks: dict, level=1):
     for chunk, sub_chunks in chunks.items():
         print("#"*level+"\n"+chunk)
         print()
         print_chunks(sub_chunks, level=level+1)
-
 # main
 # if __name__ == "__main__":
 #     eg_code = """def predict_user_user(X, W, user_means, eps=1e-12):
@@ -141,6 +150,8 @@ def print_chunks(chunks: dict, level=1):
 #         print(block)
 #         print("------------------------------------\n")
 if __name__ == "__main__":
-    chunks = extract_op_chunks(sample_code)
+    chunk_tree, flat_chunk_list = extract_op_chunks(sample_code)
     # print_chunks(chunks)
-    print(json.dumps(chunks, indent=4))
+    print(json.dumps(chunk_tree, indent=4))
+    print(json.dumps(flat_chunk_list, indent=4))
+    
