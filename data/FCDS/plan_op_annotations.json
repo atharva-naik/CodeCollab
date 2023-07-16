@@ -1,0 +1,82 @@
+{
+    "function to compute grouped mean": [
+        "def movie_rating_by_genre(ratings, movies, genres):\n    joined_df = ratings.merge(movies, left_on='item_id', right_on='movie_id', how='left')\n    return {genre: joined_df['rating'].mul(joined_df[genre]).sum() / joined_df[genre].sum() for genre in genres}",
+        "def movie_rating_by_genre(ratings, movies, genres):\n    rating_dic = {}\n    for genre in genres:\n        cur_genre = movies.loc[movies[genre] == 1]\n        id_ls = cur_genre.index.tolist()\n        cur_genre_rating = ratings[ratings['item_id'].isin(id_ls)]\n        rating_dic[genre] = cur_genre_rating['rating'].mean()\n    return rating_dic",
+        "def movie_rating_by_genre(ratings, movies, genres):\n    result = {}\n    for genre in genres:\n        rslt_df = movies[movies[genre] == 1]\n        rate = rslt_df.set_index('movie_id').join(ratings.set_index('item_id'))['rating'].mean()\n        result[genre] = rate\n    return result",
+        "def movie_rating_by_genre(ratings, movies, genres):\n    joined_df = ratings.merge(movies, left_on='item_id', right_on='movie_id', how='left')\n    mp = {}\n    for genre in genres:\n        genre_df = joined_df.loc[joined_df[genre] == 1]\n        mp[genre] = genre_df['rating'].mean()\n    return mp",
+        "def movie_rating_by_genre(ratings, movies, genres):\n    Dict = {}\n    for key in genres:\n        movie_ids = movies[movies[key] == 1].index\n        Dict[key] = ratings[ratings['item_id'].isin(movie_ids)]['rating'].mean()\n    return Dict\n    pass",
+        "def movie_rating_by_genre(ratings, movies, genres):\n    new_ratings = ratings.merge(movies[genres], how='outer', left_on='item_id', right_on='movie_id')\n    new_ratings.head()\n    d = {}\n    for i in genres:\n        d[i] = new_ratings[new_ratings[i] == 1].rating.mean()\n    return d",
+        "def movie_rating_by_genre(ratings, movies, genres):\n    d = {}\n    for i in genres:\n        m = movies[movies[i] == 1].index.values\n        d[i] = ratings[ratings['item_id'].isin(m)]['rating'].mean()\n    return d",
+        "def movie_rating_by_genre(ratings, movies, genres):\n    movie_rating_by_genre_dict = dict()\n    for genre in genres:\n        movie_by_genre = movies[movies[genre] == 1]\n        avg = ratings[ratings['item_id'].isin(movie_by_genre.index)]['rating'].mean()\n        movie_rating_by_genre_dict[genre] = avg\n    return movie_rating_by_genre_dict"
+    ],
+    "data joining": [
+        "ratings.merge(movies, left_on='item_id', right_on='movie_id', how='left')",
+        "ratings.merge(movies, left_on='item_id', right_on='movie_id', how='left')",
+        "ratings.merge(movies[genres], how='outer', left_on='item_id', right_on='movie_id')"
+    ],
+    "elementwise multiplication": [
+        "joined_df['rating'].mul(joined_df[genre])"
+    ],
+    "compute grouped mean": [
+        "for genre in genres:\n    cur_genre = movies.loc[movies[genre] == 1]\n    id_ls = cur_genre.index.tolist()\n    cur_genre_rating = ratings[ratings['item_id'].isin(id_ls)]\n    rating_dic[genre] = cur_genre_rating['rating'].mean()",
+        "for genre in genres:\n    rslt_df = movies[movies[genre] == 1]\n    rate = rslt_df.set_index('movie_id').join(ratings.set_index('item_id'))['rating'].mean()\n    result[genre] = rate",
+        "for genre in genres:\n    genre_df = joined_df.loc[joined_df[genre] == 1]\n    mp[genre] = genre_df['rating'].mean()",
+        "for key in genres:\n    movie_ids = movies[movies[key] == 1].index\n    Dict[key] = ratings[ratings['item_id'].isin(movie_ids)]['rating'].mean()",
+        "for i in genres:\n    d[i] = new_ratings[new_ratings[i] == 1].rating.mean()",
+        "for i in genres:\n    m = movies[movies[i] == 1].index.values\n    d[i] = ratings[ratings['item_id'].isin(m)]['rating'].mean()",
+        "for genre in genres:\n    movie_by_genre = movies[movies[genre] == 1]\n    avg = ratings[ratings['item_id'].isin(movie_by_genre.index)]['rating'].mean()\n    movie_rating_by_genre_dict[genre] = avg"
+    ],
+    "data filtering condition": [
+        "ratings['item_id'].isin(id_ls)",
+        "ratings['item_id'].isin(movie_ids)",
+        "ratings['item_id'].isin(m)",
+        "ratings['item_id'].isin(movie_by_genre.index)"
+    ],
+    "data aggregation": [
+        "cur_genre_rating['rating'].mean()",
+        "genre_df['rating'].mean()"
+    ],
+    "create dictionary": [
+        "rating_dic = {}",
+        "result = {}",
+        "mp = {}",
+        "Dict = {}",
+        "d = {}",
+        "d = {}",
+        "movie_rating_by_genre_dict = dict()"
+    ],
+    "convert index to list": [
+        "cur_genre.index.tolist()"
+    ],
+    "data filtering": [
+        "cur_genre = movies.loc[movies[genre] == 1]",
+        "rslt_df = movies[movies[genre] == 1]",
+        "genre_df = joined_df.loc[joined_df[genre] == 1]",
+        "movie_ids = movies[movies[key] == 1].index",
+        "m = movies[movies[i] == 1].index.values",
+        "movie_by_genre = movies[movies[genre] == 1]"
+    ],
+    "set column as index": [
+        "rslt_df.set_index('movie_id')"
+    ],
+    "populate dictionary": [
+        "result[genre] = rate",
+        "movie_rating_by_genre_dict[genre] = avg"
+    ],
+    "function to compute mean of a group": [
+        "def find_rating_scores(group, ratings, genre):\n    avg_rating = 0\n    if group[genre].iloc[0] == 1:\n        avg_rating = ratings.loc[group[genre].index].sum()['rating'] / len(ratings.loc[group[genre].index])\n    return avg_rating"
+    ],
+    "compute mean of a group": [
+        "if group[genre].iloc[0] == 1:\n    avg_rating = ratings.loc[group[genre].index].sum()['rating'] / len(ratings.loc[group[genre].index])"
+    ],
+    "data filtering; data aggregation": [
+        "ratings.loc[group[genre].index].sum()",
+        "new_ratings[new_ratings[i] == 1].rating.mean()"
+    ],
+    "create numeric variable": [
+        "avg_rating = 0"
+    ],
+    "get first n rows": [
+        "new_ratings.head()"
+    ]
+}

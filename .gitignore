@@ -158,6 +158,7 @@ data/PwC/*
 !data/PwC/extract_triples.py
 !data/FCDS/plan_op_var_block_annot.csv
 !data/FCDS/plan_op_code_chunks_annot.csv
+!data/FCDS/FCDS Plan Operator Annotations.csv
 *.pt
 *.ckpt
 experiments/CoNaLa_CodeBERT_CodeSearch/logs

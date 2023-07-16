@@ -92,6 +92,23 @@ def find_overlapping_block(code: str, lineno: int, end_lineno: int,
 
     return chunk_hierarchy
 
+def sort_function(l, c):
+    return 10000*l+c
+
+def sort_chunk_tree(chunk_tree: dict, node_to_loc_mapping: Dict[str, Tuple[int, int, int, int]]):
+    """recursively sort a chunk tree based on code line numbers and column offsets."""
+    sorted_chunk_tree = {}
+    for chunk, subtree in chunk_tree.items():
+        sorted_chunk_tree[chunk] = sort_chunk_tree(subtree, node_to_loc_mapping)
+    sorted_chunk_tree = {
+        chunk: subtree for chunk, subtree in sorted(
+            sorted_chunk_tree.items(), reverse=False, 
+            key=lambda x: sort_function(*node_to_loc_mapping[x[0]])
+        )
+    }
+
+    return sorted_chunk_tree
+
 def extract_op_chunks(code: str):
     global BUILTIN_TYPE_INIT_CALLS
     # remove comments and docstrings
@@ -102,12 +119,14 @@ def extract_op_chunks(code: str):
     chunk_tree = {}
     block_limits = {}
     flat_chunk_list = {}
+    node_to_loc_map = {}
     for node in ast.walk(root):
         if isinstance(node, CODE_CONSTRUCTS):
             sub_code = ast.unparse(node)
             if sub_code in BUILTIN_TYPE_INIT_CALLS: continue
             block_limits[f"{node.lineno}::{node.end_lineno}"] = sub_code
             nodes[sub_code] = node
+            node_to_loc_map[sub_code] = (node.lineno, node.col_offset)
     # sort by block lengths in descending order.
     block_limits = {k: v for k,v in sorted(block_limits.items(), key=lambda x: len(x[1]), reverse=True)}
     nodes = {k: v for k,v in sorted(nodes.items(), key=lambda x: x[0], reverse=True)}
@@ -124,6 +143,7 @@ def extract_op_chunks(code: str):
             if sub_code not in root:
                 root[sub_code] = defaultdict(lambda: {})
             root = root[sub_code]
+    chunk_tree = sort_chunk_tree(chunk_tree, node_to_loc_map)
     flat_chunk_list = list(flat_chunk_list.keys())
                 
     return chunk_tree, flat_chunk_list
