@@ -1,5 +1,6 @@
 import sys
 import json
+from typing import *
 from tqdm import tqdm
 from rdflib.namespace import FOAF
 from rdflib import Graph, Literal, RDF, URIRef
@@ -53,7 +54,7 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
                 if weight is not None:
                     edge_weights[subn+"::"+objn] = weight
                 if subn not in all_nodes:
-                    all_nodes[subn] = (global_ctr, sub[1], {graph_source: None})
+                    all_nodes[subn] = (global_ctr, sub[1], set(), set())
                     sub_id = global_ctr
                     sub_node = URIRef(f"http://example.org/{sub_id}")
                     sub_node_type = node_types_map[sub[1]]
@@ -62,10 +63,11 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
                     global_ctr += 1
                 else: # subject node already exists.
                     sub_id = all_nodes[subn][0]
-                    all_nodes[subn][-1][graph_source] = None
+                    all_nodes[subn][-2].add(sub[2])
+                    all_nodes[subn][-1].add(graph_source)
                     sub_node = URIRef(f"http://example.org/{sub_id}")
                 if objn not in all_nodes:
-                    all_nodes[objn] = (global_ctr, sub[1], {graph_source: None})
+                    all_nodes[objn] = (global_ctr, obj[1], set(), set())
                     obj_id = global_ctr
                     obj_node = URIRef(f"http://example.org/{obj_id}")
                     obj_node_type = node_types_map[obj[1]]
@@ -75,7 +77,8 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
                     global_ctr += 1
                 else: # object node already exists.
                     obj_id = all_nodes[objn][0]
-                    all_nodes[objn][-1][graph_source] = None
+                    all_nodes[objn][-2].add(obj[2])
+                    all_nodes[objn][-1].add(graph_source)
                     obj_node = URIRef(f"http://example.org/{obj_id}")
                 edge_type = e.lower().strip().replace("(","").replace(")","").replace(" ","_")
                 rel = URIRef(f"http://example.org/edge_type/{edge_type}")
@@ -85,6 +88,14 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
         with open(weights_save_path, "w") as f:
             json.dump(edge_weights, f, indent=4, ensure_ascii=False)
         with open(nodes_save_path, "w") as f:
+            all_nodes_serialized = {}
+            for k,v in all_nodes.items():
+                all_nodes_serialized[k] = [
+                    v[0], v[1],
+                    list(v[2]),
+                    list(v[3])
+                ] 
+            all_nodes = all_nodes_serialized
             json.dump(all_nodes, f, indent=4, ensure_ascii=False)
         with open(save_path, "w") as f:
             f.write(ds_kg.serialize(format='turtle'))
@@ -275,9 +286,32 @@ if __name__ == "__main__":
             ?p foaf:name ?top_level_step .
         }
     """,
-    "steps invloved in loading PyTorch data": ""}
+    "steps invloved in loading PyTorch data": "",
+    "find ancestors of a node": "",
+    "steps involved in developing PyTorch DataLoaders": ""}
 
-    def recursively_find_steps(name: str, kg):
+    def recursively_find_ancestors(name: str, kg, rel_types: List[str]=["subclass_of", "instance_of"]):
+        query = """ PREFIX n: <http://example.org/>
+            PREFIX nt: <http://example.org/node_type/>
+            PREFIX et: <http://example.org/edge_type/>
+            PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+
+            SELECT ?name
+            WHERE {
+                n:"""+str(all_nodes[name][0])+""" et:{} ?p .
+                ?p foaf:name ?name .
+            }
+        """
+        ancestors = {}
+        for rel_type in rel_types:
+            ancestors[rel_type] = {}
+            for r in kg.query(query.format(rel_type)):
+                name = r["name"].toPython()
+                ancestors[rel_type][name] = recursively_find_ancestors(name, kg)
+
+        return ancestors
+
+    def recursively_find_steps(name: str, kg, all_nodes: dict):
         query = """ PREFIX n: <http://example.org/>
             PREFIX nt: <http://example.org/node_type/>
             PREFIX et: <http://example.org/edge_type/>
@@ -292,7 +326,11 @@ if __name__ == "__main__":
         steps = {}
         for r in kg.query(query):
             step_name = r["top_level_step"].toPython()
-            steps[step_name] = recursively_find_steps(step_name, kg)
+            steps[step_name] = {}
+            steps[step_name]["description"] = all_nodes[step_name][-2]
+            steps[step_name]["children"] = recursively_find_steps(
+                step_name, kg, all_nodes
+            )
 
         return steps
 
@@ -392,13 +430,30 @@ if __name__ == "__main__":
         print(r["name"])
         eg_results[intents[11]].append(r["name"])
 
-    print(f"\x1b[34;1m{intents[12]}\x1b[0m") 
-    eg_results[intents[12]] = recursively_find_steps("define neural network", ds_kg)
-    print(eg_results[intents[12]])
+    # print(f"\x1b[34;1m{intents[12]}\x1b[0m") 
+    eg_results[intents[12]] = recursively_find_steps(
+        "define neural network", 
+        ds_kg, all_nodes
+    )
+    # print(eg_results[intents[12]])
 
-    print(f"\x1b[34;1m{intents[13]}\x1b[0m") 
-    eg_results[intents[13]] = recursively_find_steps("loading data", ds_kg)
-    print(eg_results[intents[13]])
+    # print(f"\x1b[34;1m{intents[13]}\x1b[0m") 
+    eg_results[intents[13]] = recursively_find_steps(
+        "loading data", 
+        ds_kg, all_nodes
+    )
+    # print(eg_results[intents[13]])
+
+    # print(f"\x1b[34;1m{intents[14]}\x1b[0m") 
+    # eg_results[intents[14]] = recursively_find_ancestors("model interpretability with captum", ds_kg)
+    # print(eg_results[intents[14]])
+
+    print(f"\x1b[34;1m{intents[15]}\x1b[0m") 
+    eg_results[intents[15]] = recursively_find_steps(
+        "developing custom pytorch dataloaders", 
+        ds_kg, all_nodes
+    )
+    print(json.dumps(eg_results[intents[15]], indent=4))
 
     eg_results_save_path = "./data/DS_KB/eg_query_results.json"
     with open(eg_results_save_path, "w") as f:

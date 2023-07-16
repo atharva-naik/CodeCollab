@@ -156,8 +156,8 @@
         "continual learning MODELED BY CutMix",
         "optical character recognition (ocr) MODELED BY CutMix",
         "fine-grained image classification MODELED BY CutMix",
-        "adversarial attack MODELED BY CutMix",
         "domain generalization MODELED BY CutMix",
+        "adversarial attack MODELED BY CutMix",
         "temporal action localization MODELED BY CutMix",
         "autonomous vehicles MODELED BY CutMix",
         "medical diagnosis MODELED BY CutMix",
@@ -235,8 +235,8 @@
         "multimodal sentiment analysis MODELED BY Capsule Network",
         "sequential recommendation MODELED BY Capsule Network",
         "referring expression segmentation MODELED BY Capsule Network",
-        "action segmentation MODELED BY Capsule Network",
         "robust classification MODELED BY Capsule Network",
+        "action segmentation MODELED BY Capsule Network",
         "video segmentation MODELED BY Capsule Network",
         "transliteration MODELED BY Capsule Network",
         "lesion classification MODELED BY Capsule Network",
@@ -506,20 +506,267 @@
         "imputation"
     ],
     "steps involved in defining a neural network": {
-        "setup": {},
-        "import necessary libraries": {},
-        "define and initialize neural network": {},
-        "define forward pass": {},
-        "test model by passing data": {}
+        "setup": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "install torch": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
+        },
+        "import necessary libraries": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "import torch": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "import torch.utils.data": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
+        },
+        "define and initialize neural network": {
+            "description": [
+                ""
+            ],
+            "children": {}
+        },
+        "define forward pass": {
+            "description": [
+                ""
+            ],
+            "children": {}
+        },
+        "test model by passing data": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "create random input": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "call forward pass on input": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "test output": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
+        }
     },
     "steps invloved in loading PyTorch data": {
-        "setup": {},
-        "import necessary libraries": {},
-        "access data in the dataset": {
-            "download dataset": {},
-            "split train test": {}
+        "setup": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "install torch": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
         },
-        "iterate over data": {},
-        "visualize the data": {}
+        "import necessary libraries": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "import torch": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "import torch.utils.data": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
+        },
+        "access data in the dataset": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "download dataset": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "split train test": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
+        },
+        "iterate over data": {
+            "description": [
+                ""
+            ],
+            "children": {}
+        },
+        "visualize the data": {
+            "description": [
+                ""
+            ],
+            "children": {}
+        }
+    },
+    "steps involved in developing PyTorch DataLoaders": {
+        "setup": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "install torch": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
+        },
+        "import necessary libraries": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "import torch": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "import torch.utils.data": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
+        },
+        "the dataset": {
+            "description": [
+                ""
+            ],
+            "children": {
+                "iterate over data": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "download dataset": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "analyze dataset format": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "helper function to show data items": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "create dataset class": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {
+                        "override __init__ function": {
+                            "description": [
+                                ""
+                            ],
+                            "children": {}
+                        },
+                        "override __len__ function": {
+                            "description": [
+                                ""
+                            ],
+                            "children": {}
+                        },
+                        "override __getitem__ function": {
+                            "description": [
+                                ""
+                            ],
+                            "children": {}
+                        }
+                    }
+                }
+            }
+        },
+        "data transformation": {
+            "description": [
+                "",
+                "custom"
+            ],
+            "children": {
+                "iterate over data": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "create callable classes": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "compose transforms": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                },
+                "apply to sample": {
+                    "description": [
+                        ""
+                    ],
+                    "children": {}
+                }
+            }
+        },
+        "the dataloader": {
+            "description": [
+                ""
+            ],
+            "children": {}
+        }
     }
 }

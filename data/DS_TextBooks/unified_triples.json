@@ -21430,7 +21430,7 @@
             ""
         ],
         "obj": [
-            "Define Neural Network",
+            "Developing Custom PyTorch DataLoaders",
             "s",
             ""
         ],
@@ -21854,6 +21854,32 @@
     },
     {
         "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
             "Import Necessary Libraries",
             "s",
             ""
@@ -22075,6 +22101,32 @@
     },
     {
         "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
             "Access Data in the Dataset",
             "s",
             ""
@@ -22387,6 +22439,32 @@
     },
     {
         "sub": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Access Data in the Dataset in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
             "Iterate over Data",
             "s",
             ""
@@ -22553,6 +22631,32 @@
             ""
         ],
         "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
     },
     {
         "sub": [
@@ -22665,7 +22769,7 @@
             ""
         ],
         "obj": [
-            "Define Neural Network",
+            "Saving Model State",
             "s",
             ""
         ],
@@ -22834,59 +22938,7 @@
             ""
         ],
         "obj": [
-            "Install PyTorch",
-            "s",
-            ""
-        ],
-        "e": "HAS FIRST STEP"
-    },
-    {
-        "sub": [
-            "Setup for PyTorch",
-            "s",
-            ""
-        ],
-        "obj": [
-            "Install PyTorch",
-            "s",
-            ""
-        ],
-        "e": "HAS STEP(S)"
-    },
-    {
-        "sub": [
-            "Install PyTorch",
-            "s",
-            ""
-        ],
-        "obj": [
-            "Setup for PyTorch",
-            "s",
-            ""
-        ],
-        "e": "IS FIRST STEP OF"
-    },
-    {
-        "sub": [
-            "Setup for PyTorch",
-            "s",
-            ""
-        ],
-        "obj": [
-            "Install PyTorch",
-            "s",
-            ""
-        ],
-        "e": "IS STEP OF"
-    },
-    {
-        "sub": [
-            "Setup for PyTorch",
-            "s",
-            ""
-        ],
-        "obj": [
-            "Install PyTorch",
+            "Install torch",
             "s",
             ""
         ],
@@ -22894,7 +22946,7 @@
     },
     {
         "sub": [
-            "Install PyTorch",
+            "Install torch",
             "s",
             ""
         ],
@@ -23216,5 +23268,4321 @@
             ""
         ],
         "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Convolutional Neural Network",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Define Convolutional Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Forward Function in PyTorch",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Define Forward Function in PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Forward Pass",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Neural Network",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Random Input",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Random Input",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Create Random Input",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Random Input",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Call Forward Pass on Input",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Create Random Input",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Call Forward Pass on Input",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Call Forward Pass on Input",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Call Forward Pass on Input",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Random Input",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Output",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Call Forward Pass on Input",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Output",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Test Output",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Test Output",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Call Forward Pass on Input",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Output",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Test Output",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Test Model by Passing Data",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Initialize Optimizer",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Initialize Optimizer",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Initialize Optimizer",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Initialize Optimizer",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define and Initialize Neural Network",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Initialize Optimizer",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Initialize Optimizer",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.optim",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import torch.nn",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.optim",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Import torch.optim",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import torch.optim",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.nn",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.optim",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Import torch.optim",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Libraries for Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Saving Model State",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State",
+            "s",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Call state_dict Function",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Call state_dict Function",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Call state_dict Function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Call state_dict Function",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Save state_dict with torch.save",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Call state_dict Function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Save state_dict with torch.save",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Save state_dict with torch.save",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Save state_dict with torch.save",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Call state_dict Function",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Save state_dict with torch.save",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Save state_dict with torch.save",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "State Dict",
+            "C",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "State Dict",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Access Model and Optimizer State in Pytorch",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Transformation",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Transformation",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The DataLoader",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The DataLoader",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "The DataLoader",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "The DataLoader",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Transformation",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The DataLoader",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "The DataLoader",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.utils.data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.utils.data",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Import torch.utils.data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Import torch.utils.data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import torch.utils.data",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Import torch.utils.data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Import Necessary Libraries",
+            "s",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Analyze Dataset Format",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Analyze Dataset Format",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Analyze Dataset Format",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Analyze Dataset Format",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Download Dataset",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Helper Function to Show Data Items",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Analyze Dataset Format",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Helper Function to Show Data Items",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Helper Function to Show Data Items",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Helper Function to Show Data Items",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Analyze Dataset Format",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Helper Function to Show Data Items",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Helper Function to Show Data Items",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __init__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __init__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Override __init__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __init__ function",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __len__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Override __init__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __len__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Override __len__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Override __len__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __init__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __getitem__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Override __len__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __getitem__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Override __getitem__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Override __getitem__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __len__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Override __getitem__ function",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Override __getitem__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Override __len__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Override __getitem__ function",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Dataset Class",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "The Dataset",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Developing Custom PyTorch DataLoaders",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "obj": [
+            "Create Callable Classes",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "obj": [
+            "Create Callable Classes",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Create Callable Classes",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "obj": [
+            "Create Callable Classes",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "obj": [
+            "Compose Transforms",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Create Callable Classes",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Compose Transforms",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Compose Transforms",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Compose Transforms",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Create Callable Classes",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "obj": [
+            "Apply to Sample",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Compose Transforms",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Apply to Sample",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Apply to Sample",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Apply to Sample",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Compose Transforms",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Apply to Sample",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Apply to Sample",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "obj": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Iterate over Data",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Data Transformation",
+            "s",
+            "custom"
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Robustness",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Fast Gradient Sign Method FGSM",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Fast Gradient Sign Method FGSM",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Robustness",
+            "C",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Robustness",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Projected Gradient Descent PGD",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Projected Gradient Descent PGD",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Robustness",
+            "C",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Robustness",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Attack Comparator",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Attack Comparator",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Robustness",
+            "C",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Robustness",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Min Param Perturbation",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Min Param Perturbation",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Robustness",
+            "C",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Data Influence",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Data Influence",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Similarity Influence",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Similarity Influence",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Trac in CP Base",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Trac in CP Base",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Trac in CP",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Trac in CP",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Trac in CP Fast",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Trac in CP Fast",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Trac in CP Fast Random Projection",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Trac in CP Fast Random Projection",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Influential Example Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Network Pruning and Feature Selection",
+            "C",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Network Pruning and Feature Selection",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Network Pruning and Feature Selection",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Binary Concrete Stochastic Gates",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Binary Concrete Stochastic Gates",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Network Pruning and Feature Selection",
+            "C",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Network Pruning and Feature Selection",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Gaussian Stochastic Gates",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Gaussian Stochastic Gates",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Network Pruning and Feature Selection",
+            "C",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Model Interpretability",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability",
+            "C",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Concept Based Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Concept Based Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Concept Based Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Concept Interpreter",
+            "C",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Concept Interpreter",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Concept Based Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Concept Interpreter",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Testing with Concept Activation Vectors TCAV",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Testing with Concept Activation Vectors TCAV",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Concept Interpreter",
+            "C",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Concept Based Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Concept",
+            "C",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Concept",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Concept Based Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Concept Based Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Classifier",
+            "C",
+            ""
+        ],
+        "e": "HAS PART(S)"
+    },
+    {
+        "sub": [
+            "Classifier",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Concept Based Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "PART OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Integrated Gradients",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Integrated Gradients",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Saliency",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Saliency",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "DeepLift",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "DeepLift",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "DeepLiftShap",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "DeepLiftShap",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "GradientShap",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "GradientShap",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Input X Gradient",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Input X Gradient",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Guided Backprop",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Guided Backprop",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Guided GradCAM",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Guided GradCAM",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Deconvolution",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Deconvolution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Feature Ablation",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Feature Ablation",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Occlusion",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Occlusion",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Feature Permutation",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Feature Permutation",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Shapley Value Sampling",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Shapley Value Sampling",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Local Interpretable Model-Agnostic Explanations LIME",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Local Interpretable Model-Agnostic Explanations LIME",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "KernelShap",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "KernelShap",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer-wise Relevance Propagation LRP",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer-wise Relevance Propagation LRP",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Attribution Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "NoiseTunnel",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "NoiseTunnel",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Conductance",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer Conductance",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Activation",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer Activation",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Internal Influence",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Internal Influence",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Gradient X Activation",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer Gradient X Activation",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "GradCAM",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "GradCAM",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer DeepLift",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer DeepLift",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer DeepLiftShap",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer DeepLiftShap",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer GradientShap",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer GradientShap",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Integrated Gradients",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer Integrated Gradients",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Feature Ablation",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer Feature Ablation",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer LRP",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Layer LRP",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Layer Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "SUPERCLASS OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "SUBCLASS OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Gradient",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron Gradient",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Integrated Gradients",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron Integrated Gradients",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Conductance",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron Conductance",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron DeepLift",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron DeepLift",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron DeepLiftShap",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron DeepLiftShap",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron GradientShap",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron GradientShap",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Guided Backprop",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron Guided Backprop",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Deconvolution",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron Deconvolution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Feature Ablation",
+            "M",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Neuron Feature Ablation",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Neuron Attribution",
+            "M",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Infidelity",
+            "E",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Infidelity",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Sensitivity",
+            "E",
+            ""
+        ],
+        "e": "CONSISTS OF"
+    },
+    {
+        "sub": [
+            "Sensitivity",
+            "E",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability Algorithms",
+            "M",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "HAS INSTANCE"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability",
+            "C",
+            ""
+        ],
+        "e": "INSTANCE OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS FIRST STEP"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS FIRST STEP OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Prepare Model",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Prepare Model",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Prepare Model",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Prepare Model",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Define Input and Baseline Tensors",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Prepare Model",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Input and Baseline Tensors",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Define Input and Baseline Tensors",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Define Input and Baseline Tensors",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Prepare Model",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Select Algorithm",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Define Input and Baseline Tensors",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Select Algorithm",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Select Algorithm",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Select Algorithm",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Define Input and Baseline Tensors",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Computing Attribution",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Select Algorithm",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Computing Attribution",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Computing Attribution",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Computing Attribution",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Select Algorithm",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Visualizing the Results",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Computing Attribution",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Visualizing the Results",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Visualizing the Results",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Visualizing the Results",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Computing Attribution",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Visualizing the Results",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Visualizing the Results",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Captum",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "Captum",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "e": "USES"
+    },
+    {
+        "sub": [
+            "PyTorch",
+            "M",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "USED BY"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability for PyTorch",
+            "C",
+            ""
+        ],
+        "e": "IS THE SAME AS"
+    },
+    {
+        "sub": [
+            "Model Interpretability for PyTorch",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Attribute Predictions of Image Classifier to Image Features",
+            "T",
+            ""
+        ],
+        "e": "HAS USE"
+    },
+    {
+        "sub": [
+            "Attribute Predictions of Image Classifier to Image Features",
+            "T",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "obj": [
+            "Visualize Feature Attribution Results",
+            "V",
+            ""
+        ],
+        "e": "HAS USE"
+    },
+    {
+        "sub": [
+            "Visualize Feature Attribution Results",
+            "V",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Setup",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Model Interpretability with Captum",
+            "C",
+            ""
+        ],
+        "e": "IS A PART OF"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install Captum",
+            "s",
+            ""
+        ],
+        "e": "HAS STEP(S)"
+    },
+    {
+        "sub": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install Captum",
+            "s",
+            ""
+        ],
+        "e": "HAS NEXT STEP"
+    },
+    {
+        "sub": [
+            "Install Captum",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS STEP OF"
+    },
+    {
+        "sub": [
+            "Install Captum",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install torch",
+            "s",
+            ""
+        ],
+        "e": "HAS PREV STEP"
+    },
+    {
+        "sub": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Install Captum",
+            "s",
+            ""
+        ],
+        "e": "HAS LAST STEP"
+    },
+    {
+        "sub": [
+            "Install Captum",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS LAST STEP OF"
+    },
+    {
+        "sub": [
+            "Install Captum",
+            "s",
+            ""
+        ],
+        "obj": [
+            "Setup for PyTorch",
+            "s",
+            ""
+        ],
+        "e": "IS A PART OF"
     }
 ]
