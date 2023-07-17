@@ -7,11 +7,20 @@ from rdflib import Graph, Literal, RDF, URIRef
 
 def convert_to_triples(wiki_graph):
     triples = []
+    node_classes = {}
+    for k, v in json.load(open("./data/DS_KB/wikidata_pred_node_classes.json")).items():
+        node_classes[k.lower()] = v
+    for k, v in json.load(open("./data/DS_KB/wikidata_node_unclassified_preds_sbert_knn.json")).items():
+        node_classes[k.lower()] = v
     for sub,v in wiki_graph.items():
+        sub = sub.lower()
+        sub_sem_type = node_classes[sub]
         for obj,e in v["E"]:
+            obj = obj.lower()
+            obj_sem_type = node_classes[obj]
             triples.append({
-                "sub": (sub,"U",""),
-                "obj": (obj,"U",""),
+                "sub": (sub,sub_sem_type,""),
+                "obj": (obj,obj_sem_type,""),
                 "e": e
             })
 
@@ -55,6 +64,8 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
                     edge_weights[subn+"::"+objn] = weight
                 if subn not in all_nodes:
                     all_nodes[subn] = (global_ctr, sub[1], set(), set())
+                    if sub[2].strip() != "": 
+                        all_nodes[subn][-2].add(sub[2])
                     sub_id = global_ctr
                     sub_node = URIRef(f"http://example.org/{sub_id}")
                     sub_node_type = node_types_map[sub[1]]
@@ -63,11 +74,14 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
                     global_ctr += 1
                 else: # subject node already exists.
                     sub_id = all_nodes[subn][0]
-                    all_nodes[subn][-2].add(sub[2])
+                    if sub[2].strip() != "": 
+                        all_nodes[subn][-2].add(sub[2])
                     all_nodes[subn][-1].add(graph_source)
                     sub_node = URIRef(f"http://example.org/{sub_id}")
                 if objn not in all_nodes:
                     all_nodes[objn] = (global_ctr, obj[1], set(), set())
+                    if obj[2].strip() != "":
+                        all_nodes[objn][-2].add(obj[2]) 
                     obj_id = global_ctr
                     obj_node = URIRef(f"http://example.org/{obj_id}")
                     obj_node_type = node_types_map[obj[1]]
@@ -77,7 +91,8 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
                     global_ctr += 1
                 else: # object node already exists.
                     obj_id = all_nodes[objn][0]
-                    all_nodes[objn][-2].add(obj[2])
+                    if obj[2].strip() != "": 
+                        all_nodes[objn][-2].add(obj[2])
                     all_nodes[objn][-1].add(graph_source)
                     obj_node = URIRef(f"http://example.org/{obj_id}")
                 edge_type = e.lower().strip().replace("(","").replace(")","").replace(" ","_")

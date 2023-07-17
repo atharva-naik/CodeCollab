@@ -145,7 +145,11 @@ def read_cell_seq(path: str, use_tqdm: bool=True): # block_size: int=1000, num_l
     # if line_ctr == 80000: break
     return cell_seqs
 
-def read_cell_content_and_type_seq(path: str, use_tqdm: bool=True): 
+def read_cell_content_and_type_seq(
+        path: str, use_tqdm: bool=True, 
+        map_cell_types: bool=False,
+        cutoff: int=80000
+    ) -> List[Tuple[str, Union[str, int]]]: 
     # block_size: int=1000, num_lines: int=1518104):
     content_and_type_seq = []
     cell_type_map = {
@@ -157,15 +161,27 @@ def read_cell_content_and_type_seq(path: str, use_tqdm: bool=True):
         for line in tqdm(f, disable=not(use_tqdm)):
             line = line.strip()
             rec = json.loads(line)
-            inst = [cell_type_map["start"]]
+            # inst = [cell_type_map["start"]]
+            inst = []
             for cell in rec["context"][::-1]:
-                inst.append(cell_type_map[cell["cell_type"]])
-            inst.append(cell_type_map["code"])
-            inst.append(cell_type_map["end"])
-            cell_seqs.append(inst)
+                cell_type = cell["cell_type"]
+                if cell_type == "markdown": 
+                    content = cell["nl_original"]
+                else: content = cell["code"]
+                if map_cell_types:
+                    cell_type = cell_type_map[cell_type]
+                inst.append((content, cell_type))
+            cell_type = "code"
+            if map_cell_types:
+                cell_type = cell_type_map[cell_type]
+            inst.append((content, cell_type))
+            content_and_type_seq.append(inst)
+            # inst.append(cell_type_map["end"])
+            # cell.append(inst)
             line_ctr += 1 
-    # if line_ctr == 80000: break
-    return cell_seqs
+            if line_ctr == 80000: break
+            
+    return content_and_type_seq
     # num_blocks = (num_lines-1) // block_size + 1
     # all_idx = list(range(num_lines))
     # for i in range(num_blocks):

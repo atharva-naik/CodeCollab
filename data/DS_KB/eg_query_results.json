@@ -502,70 +502,48 @@
     ],
     "steps involved in defining a neural network": {
         "setup": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "install torch": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "import necessary libraries": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "import torch": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "import torch.utils.data": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "define and initialize neural network": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {}
         },
         "define forward pass": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {}
         },
         "test model by passing data": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "create random input": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "call forward pass on input": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "test output": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
@@ -573,194 +551,135 @@
     },
     "steps invloved in loading PyTorch data": {
         "setup": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "install torch": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "import necessary libraries": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "import torch": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "import torch.utils.data": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "access data in the dataset": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "download dataset": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "split train test": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "iterate over data": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {}
         },
         "visualize the data": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {}
         }
     },
     "steps involved in developing PyTorch DataLoaders": {
         "setup": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "install torch": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "import necessary libraries": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "import torch": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "import torch.utils.data": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "the dataset": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {
                 "download dataset": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "analyze dataset format": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "helper function to show data items": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "create dataset class": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {
                         "override __init__ function": {
-                            "description": [
-                                ""
-                            ],
+                            "description": [],
                             "children": {}
                         },
                         "override __len__ function": {
-                            "description": [
-                                ""
-                            ],
+                            "description": [],
                             "children": {}
                         },
                         "override __getitem__ function": {
-                            "description": [
-                                ""
-                            ],
+                            "description": [],
                             "children": {}
                         }
                     }
                 },
                 "iterate over data": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "data transformation": {
             "description": [
-                "",
                 "custom"
             ],
             "children": {
                 "create callable classes": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "compose transforms": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "apply to sample": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 },
                 "iterate over data": {
-                    "description": [
-                        ""
-                    ],
+                    "description": [],
                     "children": {}
                 }
             }
         },
         "the dataloader": {
-            "description": [
-                ""
-            ],
+            "description": [],
             "children": {}
         }
     }

@@ -37,13 +37,21 @@ if __name__ == "__main__":
     # encode the nodes in the KB.
     all_node_names = list(all_nodes.keys())
 
-    from datautils import read_jsonl
+    from datautils import read_jsonl, read_cell_content_and_type_seq
     from model.entity_linker.candidate_phrase_extractor import MarkdownPhraseExtractor
 
     md_ext = MarkdownPhraseExtractor()
-    nbs = read_jsonl("./data/juice-dataset/dev.jsonl")
-    for cell in nbs[0]["context"]:
-        if cell["cell_type"] == "markdown": break
+    nbs = read_cell_content_and_type_seq("./data/juice-dataset/dev.jsonl")
+    candidate_phrases = []
+    for nb in nbs:
+        nb_phrases = []
+        for cell, cell_type in nb:
+            if cell_type == "markdown":
+                nb_phrases += md_ext(cell)
+        candidate_phrases.append(nb_phrases)
+    print(candidate_phrases[0])
+    # print(nbs[0][-1])
+    exit()
     phrases = md_ext(cell["nl_original"], k=0)
     print(cell["nl_original"])
     print(json.dumps(test_sbert_encoder([phrases], all_node_names), indent=4))

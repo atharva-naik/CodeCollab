@@ -106,8 +106,16 @@
             }
         },
         "Data Transformation::s::has step(s)": {
-            "DESC": "custom",
-            "STEPS": ["Create Callable Classes", "Compose Transforms", "Apply to Sample", "Iterate over Data"]
+            "DESC": "Custom transformations for purposes like data augmentation, generalization of algorithms etc.",
+            "STEPS": ["Create Callable Classes", "Compose Transforms", "Apply to Sample", "Iterate over Data"],
+            "Rescale::M::has instance": null,
+            "RandomCrop::M::has instance": null,
+            "Create Callable Classes::s::has step(s)": {
+                "DESC": "Create callable classes for each transform"
+            },
+            "Compose Transforms::s::has step(s)": {
+                "DESC": "Use transforms.Compose to group various transforms"
+            }
         }
     },
     "Robustness::C": {
