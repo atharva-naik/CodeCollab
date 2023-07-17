@@ -51,6 +51,6 @@ if __name__ == "__main__":
         candidate_phrases.append(nb_phrases)
     # print(candidate_phrases[0])
     print(json.dumps(test_sbert_encoder(
-        [candidate_phrases[0]], 
-        all_node_names), indent=4
+        [candidate_phrases[0]], all_node_names, 
+        unlinkable_threshold=0.85), indent=4
     ))

@@ -3,6 +3,7 @@
 # from transformers import RobertaTokenizer, T5ForConditionalGeneration
 import os
 import json
+import torch
 from typing import *
 from tqdm import tqdm
 from torch.utils.data import DataLoader
@@ -40,6 +41,8 @@ class CodeSummarizer:
     def __init__(self, model_path: str="Salesforce/codet5-base-multi-sum"):# "stmnk/codet5-small-code-summarization-python"):
         self.tokenizer = RobertaTokenizer.from_pretrained(model_path)
         self.model = T5ForConditionalGeneration.from_pretrained(model_path)
+        if torch.cuda.is_available():
+            self.model.cuda()
 
     def batched_call(self, codes: List[str], max_length: int=40, 
                      skip_special_tokens: bool=True,
