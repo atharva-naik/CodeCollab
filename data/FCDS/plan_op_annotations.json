@@ -7,7 +7,8 @@
         "def movie_rating_by_genre(ratings, movies, genres):\n    Dict = {}\n    for key in genres:\n        movie_ids = movies[movies[key] == 1].index\n        Dict[key] = ratings[ratings['item_id'].isin(movie_ids)]['rating'].mean()\n    return Dict\n    pass",
         "def movie_rating_by_genre(ratings, movies, genres):\n    new_ratings = ratings.merge(movies[genres], how='outer', left_on='item_id', right_on='movie_id')\n    new_ratings.head()\n    d = {}\n    for i in genres:\n        d[i] = new_ratings[new_ratings[i] == 1].rating.mean()\n    return d",
         "def movie_rating_by_genre(ratings, movies, genres):\n    d = {}\n    for i in genres:\n        m = movies[movies[i] == 1].index.values\n        d[i] = ratings[ratings['item_id'].isin(m)]['rating'].mean()\n    return d",
-        "def movie_rating_by_genre(ratings, movies, genres):\n    movie_rating_by_genre_dict = dict()\n    for genre in genres:\n        movie_by_genre = movies[movies[genre] == 1]\n        avg = ratings[ratings['item_id'].isin(movie_by_genre.index)]['rating'].mean()\n        movie_rating_by_genre_dict[genre] = avg\n    return movie_rating_by_genre_dict"
+        "def movie_rating_by_genre(ratings, movies, genres):\n    movie_rating_by_genre_dict = dict()\n    for genre in genres:\n        movie_by_genre = movies[movies[genre] == 1]\n        avg = ratings[ratings['item_id'].isin(movie_by_genre.index)]['rating'].mean()\n        movie_rating_by_genre_dict[genre] = avg\n    return movie_rating_by_genre_dict",
+        "def movie_rating_by_genre(ratings, movies, genres):\n    ratings_group = ratings.groupby('item_id').agg(rating_cnt=('rating', 'count'), rating_sum=('rating', 'sum'))\n    genres_rating_sum = movies[genres].multiply(ratings_group['rating_sum'], axis='index')\n    genres_rating_cnt = movies[genres].multiply(ratings_group['rating_cnt'], axis='index')\n    ans = (genres_rating_sum.sum() / genres_rating_cnt.sum()).to_dict()\n    return ans"
     ],
     "data joining": [
         "ratings.merge(movies, left_on='item_id', right_on='movie_id', how='left')",
@@ -15,7 +16,9 @@
         "ratings.merge(movies[genres], how='outer', left_on='item_id', right_on='movie_id')"
     ],
     "elementwise multiplication": [
-        "joined_df['rating'].mul(joined_df[genre])"
+        "joined_df['rating'].mul(joined_df[genre])",
+        "movies[genres].multiply(ratings_group['rating_sum'], axis='index')",
+        "movies[genres].multiply(ratings_group['rating_cnt'], axis='index')"
     ],
     "compute grouped mean": [
         "for genre in genres:\n    cur_genre = movies.loc[movies[genre] == 1]\n    id_ls = cur_genre.index.tolist()\n    cur_genre_rating = ratings[ratings['item_id'].isin(id_ls)]\n    rating_dic[genre] = cur_genre_rating['rating'].mean()",
@@ -30,11 +33,15 @@
         "ratings['item_id'].isin(id_ls)",
         "ratings['item_id'].isin(movie_ids)",
         "ratings['item_id'].isin(m)",
-        "ratings['item_id'].isin(movie_by_genre.index)"
+        "ratings['item_id'].isin(movie_by_genre.index)",
+        "df['release_date'].notna()",
+        "movies['release_date'].notna()",
+        "filt = count_df['movie_title'] > 0"
     ],
-    "data aggregation": [
+    "aggregation": [
         "cur_genre_rating['rating'].mean()",
-        "genre_df['rating'].mean()"
+        "genre_df['rating'].mean()",
+        "genres_rating_cnt.sum()"
     ],
     "create dictionary": [
         "rating_dic = {}",
@@ -43,7 +50,14 @@
         "Dict = {}",
         "d = {}",
         "d = {}",
-        "movie_rating_by_genre_dict = dict()"
+        "movie_rating_by_genre_dict = dict()",
+        "result = {}",
+        "res[genre] = {}",
+        "res = {}",
+        "out = {}",
+        "defaultdict(int)",
+        "movie_count_by_genre_year = {}",
+        "result = {}"
     ],
     "convert index to list": [
         "cur_genre.index.tolist()"
@@ -54,14 +68,22 @@
         "genre_df = joined_df.loc[joined_df[genre] == 1]",
         "movie_ids = movies[movies[key] == 1].index",
         "m = movies[movies[i] == 1].index.values",
-        "movie_by_genre = movies[movies[genre] == 1]"
+        "movie_by_genre = movies[movies[genre] == 1]",
+        "df = df[df['value'] == 1]",
+        "movie_genres = movies.loc[movies[genre] == 1]",
+        "k = new_movies.loc[new_movies[g] == 1]",
+        "movies_long = movies_long[movies_long.is_genre == 1]",
+        "genre_df = movies.loc[movies[genre] == 1]",
+        "count_df = count_df[filt]"
     ],
     "set column as index": [
         "rslt_df.set_index('movie_id')"
     ],
     "populate dictionary": [
         "result[genre] = rate",
-        "movie_rating_by_genre_dict[genre] = avg"
+        "movie_rating_by_genre_dict[genre] = avg",
+        "for genre in genres:\n    result[genre] = df.loc[genre, :].to_dict()['count']",
+        "result[genre] = year_mp"
     ],
     "function to compute mean of a group": [
         "def find_rating_scores(group, ratings, genre):\n    avg_rating = 0\n    if group[genre].iloc[0] == 1:\n        avg_rating = ratings.loc[group[genre].index].sum()['rating'] / len(ratings.loc[group[genre].index])\n    return avg_rating"
@@ -69,14 +91,109 @@
     "compute mean of a group": [
         "if group[genre].iloc[0] == 1:\n    avg_rating = ratings.loc[group[genre].index].sum()['rating'] / len(ratings.loc[group[genre].index])"
     ],
-    "data filtering; data aggregation": [
+    "data filtering; aggregation": [
         "ratings.loc[group[genre].index].sum()",
-        "new_ratings[new_ratings[i] == 1].rating.mean()"
+        "new_ratings[new_ratings[i] == 1].rating.mean()",
+        "for genre in genres:\n    if movie[genre]:\n        if year in movie_count_by_genre[genre]:\n            movie_count_by_genre[genre][year] += 1\n        else:\n            movie_count_by_genre[genre][year] = 1",
+        "for genre in genres:\n    if movie[genre]:\n        if year in movie_count_by_genre[genre]:\n            movie_count_by_genre[genre][year] += 1\n        else:\n            movie_count_by_genre[genre][year] = 1"
     ],
     "create numeric variable": [
         "avg_rating = 0"
     ],
     "get first n rows": [
-        "new_ratings.head()"
+        "new_ratings.head()",
+        "movies.head(3)"
+    ],
+    "data grouping": [
+        "ratings.groupby('item_id')",
+        "df.groupby(['genre', 'release_year'])",
+        "k.groupby('Year')",
+        "movies.groupby('release_date')",
+        "f.groupby('year')",
+        "genre_df.groupby('year')"
+    ],
+    "function to compute grouped histogram": [
+        "def movie_count_by_genre(movies, genres):\n    movie_count_by_genre = {genre: {} for genre in genres}\n    for (_, movie) in movies.iterrows():\n        try:\n            year = int(movie['release_date'][-4:])\n        except (ValueError, TypeError):\n            continue\n        for genre in genres:\n            if movie[genre]:\n                if year in movie_count_by_genre[genre]:\n                    movie_count_by_genre[genre][year] += 1\n                else:\n                    movie_count_by_genre[genre][year] = 1\n    return movie_count_by_genre",
+        "def movie_count_by_genre(movies, genres):\n    df = movies.copy()\n    df = df[df['release_date'].notna()]\n    df['release_year'] = df['release_date'].str[-4:].astype(int)\n    df = df.reset_index().drop_duplicates(['movie_id', 'release_year'])\n    df = df[['release_year'] + genres].melt(id_vars=['release_year'], value_vars=genres, var_name='genre', value_name='value')\n    df = df[df['value'] == 1]\n    df = df.groupby(['genre', 'release_year']).agg(count=('value', 'count'))\n    result = {}\n    for genre in genres:\n        result[genre] = df.loc[genre, :].to_dict()['count']\n    return result",
+        "def movie_count_by_genre(movies, genres):\n    movies['release_year'] = movies['release_date'].str[-4:]\n    res = {}\n    for genre in genres:\n        res[genre] = {}\n        movie_genres = movies.loc[movies[genre] == 1]\n        ans = movie_genres['release_year'].value_counts(dropna=True)\n        for (year, count) in ans.iteritems():\n            year = int(year)\n            res[genre][year] = count\n    return res",
+        "def movie_count_by_genre(movies, genres):\n    movie_count_by_genre = {genre: {} for genre in genres}\n    for (_, movie) in movies.iterrows():\n        try:\n            year = int(movie['release_date'][-4:])\n        except (ValueError, TypeError):\n            continue\n        for genre in genres:\n            if movie[genre]:\n                if year in movie_count_by_genre[genre]:\n                    movie_count_by_genre[genre][year] += 1\n                else:\n                    movie_count_by_genre[genre][year] = 1\n    return movie_count_by_genre",
+        "def movie_count_by_genre(movies, genres):\n    out = {}\n    new_movies = movies\n    new_movies['Year'] = new_movies['release_date'].str[-4:].dropna().astype(int)\n    for g in genres:\n        k = new_movies.loc[new_movies[g] == 1]\n        out[g] = k.groupby('Year').count()[g].to_dict()\n    return out\n    pass",
+        "def movie_count_by_genre(movies, genres):\n    movie_count_by_genre_year = {}\n    movies = movies[movies['release_date'].notna()]\n    for genre in genres:\n        grouped_date_genre = movies.groupby('release_date')[genre].sum()\n        movie_count_by_genre_year[genre] = defaultdict(int)\n        for (full_year, movie_count) in grouped_date_genre.items():\n            movie_count_by_genre_year[genre][int(full_year[-4:])] += movie_count\n    return movie_count_by_genre_year",
+        "def movie_count_by_genre(movies, genres):\n    movies_long = movies.melt(id_vars=['release_date'], value_vars=genres, var_name='genre', value_name='is_genre')\n    movies_long = movies_long[movies_long.is_genre == 1]\n    movies_long['year'] = movies_long['release_date'].apply(lambda x: int(x[-4:]))\n    return {k: f.groupby('year').agg(cnt=('is_genre', 'count')).to_dict()['cnt'] for (k, f) in movies_long.groupby('genre')}",
+        "def movie_count_by_genre(movies, genres):\n    movies = movies.dropna(subset=['release_date'])\n    movies['release_date'] = movies['release_date'].astype(str)\n    df_new = movies['release_date'].str.slice(-4)\n    movies['year'] = df_new\n    movies['year'] = movies['year'].astype(int)\n    result = {}\n    for genre in genres:\n        genre_df = movies.loc[movies[genre] == 1]\n        count_df = genre_df.groupby('year').count()\n        filt = count_df['movie_title'] > 0\n        count_df = count_df[filt]\n        year_mp = count_df['movie_title'].to_dict()\n        result[genre] = year_mp\n    return result"
+    ],
+    "compute grouped histogram": [
+        "for (_, movie) in movies.iterrows():\n    try:\n        year = int(movie['release_date'][-4:])\n    except (ValueError, TypeError):\n        continue\n    for genre in genres:\n        if movie[genre]:\n            if year in movie_count_by_genre[genre]:\n                movie_count_by_genre[genre][year] += 1\n            else:\n                movie_count_by_genre[genre][year] = 1",
+        "for genre in genres:\n    res[genre] = {}\n    movie_genres = movies.loc[movies[genre] == 1]\n    ans = movie_genres['release_year'].value_counts(dropna=True)\n    for (year, count) in ans.iteritems():\n        year = int(year)\n        res[genre][year] = count",
+        "for (_, movie) in movies.iterrows():\n    try:\n        year = int(movie['release_date'][-4:])\n    except (ValueError, TypeError):\n        continue\n    for genre in genres:\n        if movie[genre]:\n            if year in movie_count_by_genre[genre]:\n                movie_count_by_genre[genre][year] += 1\n            else:\n                movie_count_by_genre[genre][year] = 1",
+        "for g in genres:\n    k = new_movies.loc[new_movies[g] == 1]\n    out[g] = k.groupby('Year').count()[g].to_dict()",
+        "for genre in genres:\n    grouped_date_genre = movies.groupby('release_date')[genre].sum()\n    movie_count_by_genre_year[genre] = defaultdict(int)\n    for (full_year, movie_count) in grouped_date_genre.items():\n        movie_count_by_genre_year[genre][int(full_year[-4:])] += movie_count",
+        "for genre in genres:\n    genre_df = movies.loc[movies[genre] == 1]\n    count_df = genre_df.groupby('year').count()\n    filt = count_df['movie_title'] > 0\n    count_df = count_df[filt]\n    year_mp = count_df['movie_title'].to_dict()\n    result[genre] = year_mp"
+    ],
+    "convert string to integer": [
+        "int(movie['release_date'][-4:])",
+        "int(year)",
+        "int(movie['release_date'][-4:])",
+        "int(full_year[-4:])",
+        "int(x[-4:])"
+    ],
+    "iterate over dataframe": [
+        "movies.iterrows()",
+        "ans.iteritems()",
+        "movies.iterrows()"
+    ],
+    "data filtering; populate nested dictionary histogram ": [
+        "if movie[genre]:\n    if year in movie_count_by_genre[genre]:\n        movie_count_by_genre[genre][year] += 1\n    else:\n        movie_count_by_genre[genre][year] = 1",
+        "if movie[genre]:\n    if year in movie_count_by_genre[genre]:\n        movie_count_by_genre[genre][year] += 1\n    else:\n        movie_count_by_genre[genre][year] = 1",
+        "if year in movie_count_by_genre[genre]:\n    movie_count_by_genre[genre][year] += 1\nelse:\n    movie_count_by_genre[genre][year] = 1"
+    ],
+    "populate nested dictionary histogram": [
+        "if year in movie_count_by_genre[genre]:\n    movie_count_by_genre[genre][year] += 1\nelse:\n    movie_count_by_genre[genre][year] = 1",
+        "movie_count_by_genre[genre][year] = 1",
+        "for (year, count) in ans.iteritems():\n    year = int(year)\n    res[genre][year] = count",
+        "res[genre][year] = count",
+        "movie_count_by_genre[genre][year] = 1",
+        "for (full_year, movie_count) in grouped_date_genre.items():\n    movie_count_by_genre_year[genre][int(full_year[-4:])] += movie_count"
+    ],
+    "create nested dictionary histogram": [
+        "movie_count_by_genre = {genre: {} for genre in genres}",
+        "movie_count_by_genre = {genre: {} for genre in genres}"
+    ],
+    "column selection; convert series to dictionary": [
+        "df.loc[genre, :].to_dict()"
+    ],
+    "copy dataframe": [
+        "movies.copy()",
+        "new_movies = movies"
+    ],
+    "data melting": [
+        "df[['release_year'] + genres].melt(id_vars=['release_year'], value_vars=genres, var_name='genre', value_name='value')",
+        "movies.melt(id_vars=['release_date'], value_vars=genres, var_name='genre', value_name='is_genre')"
+    ],
+    "column conversion": [
+        "df['release_date'].str[-4:].astype(int)",
+        "movies['release_year'] = movies['release_date'].str[-4:]",
+        "movies['year'].astype(int)",
+        "movies['year'] = df_new",
+        "movies['release_date'].str.slice(-4)",
+        "movies['release_date'].astype(str)"
+    ],
+    "reset index": [
+        "df.reset_index()"
+    ],
+    "data grouping, aggregation; drop missing values": [
+        "movie_genres['release_year'].value_counts(dropna=True)"
+    ],
+    "column conversion; drop missing values": [
+        "new_movies['release_date'].str[-4:].dropna()"
+    ],
+    "iterate over dataframe groupby": [
+        "grouped_date_genre.items()"
+    ],
+    "convert series to dictionary": [
+        "count_df['movie_title'].to_dict()"
+    ],
+    "drop missing values": [
+        "movies.dropna(subset=['release_date'])"
     ]
 }

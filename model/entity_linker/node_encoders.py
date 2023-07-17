@@ -49,9 +49,8 @@ if __name__ == "__main__":
             if cell_type == "markdown":
                 nb_phrases += md_ext(cell)
         candidate_phrases.append(nb_phrases)
-    print(candidate_phrases[0])
-    # print(nbs[0][-1])
-    exit()
-    phrases = md_ext(cell["nl_original"], k=0)
-    print(cell["nl_original"])
-    print(json.dumps(test_sbert_encoder([phrases], all_node_names), indent=4))
+    # print(candidate_phrases[0])
+    print(json.dumps(test_sbert_encoder(
+        [candidate_phrases[0]], 
+        all_node_names), indent=4
+    ))

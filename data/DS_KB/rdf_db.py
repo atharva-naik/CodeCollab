@@ -66,6 +66,7 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
                     all_nodes[subn] = (global_ctr, sub[1], set(), set())
                     if sub[2].strip() != "": 
                         all_nodes[subn][-2].add(sub[2])
+                    all_nodes[subn][-1].add(graph_source)
                     sub_id = global_ctr
                     sub_node = URIRef(f"http://example.org/{sub_id}")
                     sub_node_type = node_types_map[sub[1]]
@@ -82,6 +83,7 @@ def load_ds_kg(do_reset: bool, save_path: str="./data/DS_KB/rdf_triples_turtle.t
                     all_nodes[objn] = (global_ctr, obj[1], set(), set())
                     if obj[2].strip() != "":
                         all_nodes[objn][-2].add(obj[2]) 
+                    all_nodes[objn][-1].add(graph_source)
                     obj_id = global_ctr
                     obj_node = URIRef(f"http://example.org/{obj_id}")
                     obj_node_type = node_types_map[obj[1]]

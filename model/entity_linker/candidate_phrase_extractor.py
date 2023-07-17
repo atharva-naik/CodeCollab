@@ -17,8 +17,8 @@ class MarkdownPhraseExtractor:
         loaded_kps = read_jsonl(kp_path)
         for rec in loaded_kps:
             md = rec["markdown"]
-            del rec["marl"]
-            self.cached_kps[md].append(rec)
+            del rec["markdown"]
+            self.cached_kps[md] = rec
 
     def expand_context(self, span: spacy.tokens.span.Span, doc: spacy.tokens.doc.Doc, k: int=0):
         first_token = span[0]
@@ -37,9 +37,9 @@ class MarkdownPhraseExtractor:
         phrases = []
         # get the KPs for this markdown
         if kp_and_title_mode:
-            first_para = para.split("\n")[0].strip()
+            first_para = cell.split("\n")[0].strip()
             if first_para.startswith("#"):
-                phrases.append(first_para.strip("#"))
+                phrases.append(first_para.strip("#").strip())
             phrases += self.cached_kps[cell]["keyphrases"]
         else:
             for para in cell.split("\n"):
