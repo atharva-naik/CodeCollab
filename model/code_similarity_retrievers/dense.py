@@ -127,11 +127,12 @@ class CodeBERTDenseSearcher:
         print(f"loaded model from: {ckpt_path}")
         self.model.load_state_dict(ckpt_dict["model_state_dict"])
         self.model.to(self.device)
-        self.dense_index = faiss.read_index(faiss_index_path)
+        self.dense_index = None
+        if faiss_index_path is not None:
+            self.dense_index = faiss.read_index(faiss_index_path)
 
-    def encode(self, queries: List[str], k: int=10, 
-               text_query: bool=False, obf_code: bool=False,
-               use_cos_sim: bool=True):
+    def encode(self, queries: List[str], text_query: bool=False, 
+               obf_code: bool=False, use_cos_sim: bool=True):
         # inp = self.tokenizer(query, **self.tok_args)
         assert not(text_query and obf_code), "code obfuscation not applicable in text query mode"
         if obf_code: queries = [obfuscate_code(q) for q in queries]

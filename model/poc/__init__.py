@@ -1,0 +1,1 @@
+# Code for implementing a tiny hint generation system that works for a narrow domain (few tasks/assignments) using a hand crafted ontology.

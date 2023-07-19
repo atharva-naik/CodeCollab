@@ -614,5 +614,975 @@
             "filt = count_df['movie_title'] > 0": "data filtering condition",
             "count_df = count_df[filt]": "data filtering"
         }
+    },
+    "489": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies_year = movies.copy()\n    movies_year['release_year'] = movies_year['release_date'].str[-4:]\n    movies_year['release_year'] = pd.to_numeric(movies_year['release_year'])\n    movies_year = movies_year.dropna(subset=['release_year'])\n    movies_year['release_year'] = movies_year['release_year'].astype('int64')\n    req_movies = movies_year[movies_year['release_year'] >= starting_year]\n    mov_ratings = ratings.join(req_movies, on='item_id', how='left', lsuffix='_mov', rsuffix='_rat').dropna(subset=['release_year'])\n    mov_ratings['release_year'] = mov_ratings['release_year'].astype('int64')\n    return mov_ratings[['release_year', 'rating']]\n    pass": {
+                "movies.copy()": {},
+                "movies_year['release_year'] = movies_year['release_date'].str[-4:]": {},
+                "pd.to_numeric(movies_year['release_year'])": {},
+                "movies_year.dropna(subset=['release_year'])": {},
+                "movies_year['release_year'].astype('int64')": {},
+                "req_movies = movies_year[movies_year['release_year'] >= starting_year]": {},
+                "ratings.join(req_movies, on='item_id', how='left', lsuffix='_mov', rsuffix='_rat')": {},
+                "mov_ratings['release_year'].astype('int64')": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "copy dataframe": {},
+                "column conversion": {},
+                "drop missing values": {},
+                "data filtering": {},
+                "data joining": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies_year = movies.copy()\n    movies_year['release_year'] = movies_year['release_date'].str[-4:]\n    movies_year['release_year'] = pd.to_numeric(movies_year['release_year'])\n    movies_year = movies_year.dropna(subset=['release_year'])\n    movies_year['release_year'] = movies_year['release_year'].astype('int64')\n    req_movies = movies_year[movies_year['release_year'] >= starting_year]\n    mov_ratings = ratings.join(req_movies, on='item_id', how='left', lsuffix='_mov', rsuffix='_rat').dropna(subset=['release_year'])\n    mov_ratings['release_year'] = mov_ratings['release_year'].astype('int64')\n    return mov_ratings[['release_year', 'rating']]\n    pass": "function to compute joint distribution",
+            "req_movies = movies_year[movies_year['release_year'] >= starting_year]": "data filtering",
+            "ratings.join(req_movies, on='item_id', how='left', lsuffix='_mov', rsuffix='_rat')": "data joining",
+            "pd.to_numeric(movies_year['release_year'])": "column conversion",
+            "movies_year['release_year'].astype('int64')": "column conversion",
+            "movies_year['release_year'] = movies_year['release_date'].str[-4:]": "column conversion",
+            "movies_year.dropna(subset=['release_year'])": "drop missing values",
+            "movies.copy()": "copy dataframe",
+            "mov_ratings['release_year'].astype('int64')": "column conversion"
+        }
+    },
+    "21790": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    year_series = movies['release_date'].apply(get_year)\n    non_nan_idx = year_series.notnull()\n    year_series = year_series[non_nan_idx].astype(dtype=np.int32)\n    movie_ids_after = set(year_series[year_series >= starting_year].index)\n    filtered_ratings = ratings[ratings['item_id'].isin(movie_ids_after)].reset_index(drop=True)\n    filtered_ratings['release_year'] = year_series[filtered_ratings['item_id']].reset_index(drop=True)\n    return filtered_ratings[['release_year', 'rating']]": {
+                "movies['release_date'].apply(get_year)": {},
+                "year_series.notnull()": {},
+                "year_series[non_nan_idx].astype(dtype=np.int32)": {},
+                "set(year_series[year_series >= starting_year].index)": {},
+                "ratings['item_id'].isin(movie_ids_after)": {},
+                "year_series[filtered_ratings['item_id']].reset_index(drop=True)": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "column conversion": {},
+                "data filtering condition; drop missing values": {},
+                "data filtering; column conversion": {},
+                "data filtering; get unique values": {},
+                "data filtering condition": {},
+                "data filtering; reset index": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    year_series = movies['release_date'].apply(get_year)\n    non_nan_idx = year_series.notnull()\n    year_series = year_series[non_nan_idx].astype(dtype=np.int32)\n    movie_ids_after = set(year_series[year_series >= starting_year].index)\n    filtered_ratings = ratings[ratings['item_id'].isin(movie_ids_after)].reset_index(drop=True)\n    filtered_ratings['release_year'] = year_series[filtered_ratings['item_id']].reset_index(drop=True)\n    return filtered_ratings[['release_year', 'rating']]": "function to compute joint distribution",
+            "year_series[non_nan_idx].astype(dtype=np.int32)": "data filtering; column conversion",
+            "year_series[filtered_ratings['item_id']].reset_index(drop=True)": "data filtering; reset index",
+            "year_series.notnull()": "data filtering condition; drop missing values",
+            "movies['release_date'].apply(get_year)": "column conversion",
+            "set(year_series[year_series >= starting_year].index)": "data filtering; get unique values",
+            "ratings['item_id'].isin(movie_ids_after)": "data filtering condition"
+        }
+    },
+    "15109": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies_ratings = movies.merge(ratings, left_on='movie_id', right_on='item_id', how='inner')\n    movies_ratings['release_year'] = movies_ratings['release_date'].str[-4:].astype('Int64')\n    x = movies_ratings[movies_ratings['release_year'].notna()]\n    return x[x['release_year'] >= 1990][['release_year', 'rating']]": {
+                "movies.merge(ratings, left_on='movie_id', right_on='item_id', how='inner')": {},
+                "movies_ratings['release_date'].str[-4:].astype('Int64')": {},
+                "movies_ratings['release_year'].notna()": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "data joining": {},
+                "column conversion": {},
+                "data filtering condition": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies_ratings = movies.merge(ratings, left_on='movie_id', right_on='item_id', how='inner')\n    movies_ratings['release_year'] = movies_ratings['release_date'].str[-4:].astype('Int64')\n    x = movies_ratings[movies_ratings['release_year'].notna()]\n    return x[x['release_year'] >= 1990][['release_year', 'rating']]": "function to compute joint distribution",
+            "movies_ratings['release_year'].notna()": "data filtering condition",
+            "movies_ratings['release_date'].str[-4:].astype('Int64')": "column conversion",
+            "movies.merge(ratings, left_on='movie_id', right_on='item_id', how='inner')": "data joining"
+        }
+    },
+    "23421": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    result_list = []\n    id_to_rating = {}\n    for (_, row) in ratings.iterrows():\n        item_id = row['item_id']\n        rating = row['rating']\n        if item_id in id_to_rating:\n            id_to_rating[item_id][0] += rating\n            id_to_rating[item_id][1] += 1\n        else:\n            id_to_rating[item_id] = [rating, 1]\n    unique_ratings = set(ratings['item_id'].unique())\n    for (movie_id, release_date) in zip(movies.index, movies['release_date']):\n        if pd.isnull(release_date):\n            continue\n        release_year = int(release_date[-4:])\n        if release_year < starting_year:\n            continue\n        if movie_id in unique_ratings:\n            movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']\n            result_list.extend(({'release_year': release_year, 'rating': int(rating)} for rating in movie_ratings))\n    return pd.DataFrame(result_list, columns=['release_year', 'rating'], dtype='int')": {
+                "result_list = []": {},
+                "id_to_rating = {}": {},
+                "for (_, row) in ratings.iterrows():\n    item_id = row['item_id']\n    rating = row['rating']\n    if item_id in id_to_rating:\n        id_to_rating[item_id][0] += rating\n        id_to_rating[item_id][1] += 1\n    else:\n        id_to_rating[item_id] = [rating, 1]": {
+                    "ratings.iterrows()": {},
+                    "item_id = row['item_id']": {},
+                    "rating = row['rating']": {},
+                    "if item_id in id_to_rating:\n    id_to_rating[item_id][0] += rating\n    id_to_rating[item_id][1] += 1\nelse:\n    id_to_rating[item_id] = [rating, 1]": {
+                        "id_to_rating[item_id] = [rating, 1]": {}
+                    }
+                },
+                "ratings['item_id'].unique()": {},
+                "for (movie_id, release_date) in zip(movies.index, movies['release_date']):\n    if pd.isnull(release_date):\n        continue\n    release_year = int(release_date[-4:])\n    if release_year < starting_year:\n        continue\n    if movie_id in unique_ratings:\n        movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']\n        result_list.extend(({'release_year': release_year, 'rating': int(rating)} for rating in movie_ratings))": {
+                    "zip(movies.index, movies['release_date'])": {},
+                    "if pd.isnull(release_date):\n    continue": {
+                        "pd.isnull(release_date)": {}
+                    },
+                    "int(release_date[-4:])": {},
+                    "if release_year < starting_year:\n    continue": {},
+                    "if movie_id in unique_ratings:\n    movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']\n    result_list.extend(({'release_year': release_year, 'rating': int(rating)} for rating in movie_ratings))": {
+                        "movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']": {},
+                        "int(rating)": {}
+                    }
+                },
+                "pd.DataFrame(result_list, columns=['release_year', 'rating'], dtype='int')": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "create list": {},
+                "create dictionary": {},
+                "aggregation": {
+                    "iterate over dataframe": {},
+                    "populate variable": {},
+                    "populate dictionary": {
+                        "populate dictionary": {}
+                    }
+                },
+                "get unique values": {},
+                "compute joint distribution": {
+                    "iterate over index and column of dataframe": {},
+                    "drop missing values": {
+                        "drop missing values": {}
+                    },
+                    "convert string to integer": {},
+                    "data filtering": {},
+                    "populate joint distribution": {
+                        "data filtering; column selection": {},
+                        "convert string to integer": {}
+                    }
+                },
+                "convert list of dictionaries to dataframe": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    result_list = []\n    id_to_rating = {}\n    for (_, row) in ratings.iterrows():\n        item_id = row['item_id']\n        rating = row['rating']\n        if item_id in id_to_rating:\n            id_to_rating[item_id][0] += rating\n            id_to_rating[item_id][1] += 1\n        else:\n            id_to_rating[item_id] = [rating, 1]\n    unique_ratings = set(ratings['item_id'].unique())\n    for (movie_id, release_date) in zip(movies.index, movies['release_date']):\n        if pd.isnull(release_date):\n            continue\n        release_year = int(release_date[-4:])\n        if release_year < starting_year:\n            continue\n        if movie_id in unique_ratings:\n            movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']\n            result_list.extend(({'release_year': release_year, 'rating': int(rating)} for rating in movie_ratings))\n    return pd.DataFrame(result_list, columns=['release_year', 'rating'], dtype='int')": "function to compute joint distribution",
+            "for (movie_id, release_date) in zip(movies.index, movies['release_date']):\n    if pd.isnull(release_date):\n        continue\n    release_year = int(release_date[-4:])\n    if release_year < starting_year:\n        continue\n    if movie_id in unique_ratings:\n        movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']\n        result_list.extend(({'release_year': release_year, 'rating': int(rating)} for rating in movie_ratings))": "compute joint distribution",
+            "zip(movies.index, movies['release_date'])": "iterate over index and column of dataframe",
+            "ratings['item_id'].unique()": "get unique values",
+            "if movie_id in unique_ratings:\n    movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']\n    result_list.extend(({'release_year': release_year, 'rating': int(rating)} for rating in movie_ratings))": "populate joint distribution",
+            "int(rating)": "convert string to integer",
+            "result_list = []": "create list",
+            "int(release_date[-4:])": "convert string to integer",
+            "for (_, row) in ratings.iterrows():\n    item_id = row['item_id']\n    rating = row['rating']\n    if item_id in id_to_rating:\n        id_to_rating[item_id][0] += rating\n        id_to_rating[item_id][1] += 1\n    else:\n        id_to_rating[item_id] = [rating, 1]": "aggregation",
+            "ratings.iterrows()": "iterate over dataframe",
+            "rating = row['rating']": "populate variable",
+            "if pd.isnull(release_date):\n    continue": "drop missing values",
+            "pd.isnull(release_date)": "drop missing values",
+            "pd.DataFrame(result_list, columns=['release_year', 'rating'], dtype='int')": "convert list of dictionaries to dataframe",
+            "movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']": "data filtering; column selection",
+            "item_id = row['item_id']": "populate variable",
+            "if release_year < starting_year:\n    continue": "data filtering",
+            "if item_id in id_to_rating:\n    id_to_rating[item_id][0] += rating\n    id_to_rating[item_id][1] += 1\nelse:\n    id_to_rating[item_id] = [rating, 1]": "populate dictionary",
+            "id_to_rating[item_id] = [rating, 1]": "populate dictionary",
+            "id_to_rating = {}": "create dictionary"
+        }
+    },
+    "21493": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies['release_year'] = movies['release_date'].str[-4:].astype('Int64')\n    ratings_with_year = ratings.merge(movies[['release_year']], left_on='item_id', right_index=True, how='left')\n    ans = ratings_with_year.loc[ratings_with_year['release_year'] >= 1990, :].loc[:, ['release_year', 'rating']]\n    return ans": {
+                "movies['release_date'].str[-4:].astype('Int64')": {},
+                "ratings.merge(movies[['release_year']], left_on='item_id', right_index=True, how='left')": {},
+                "ans = ratings_with_year.loc[ratings_with_year['release_year'] >= 1990, :].loc[:, ['release_year', 'rating']]": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "column conversion": {},
+                "data joining": {},
+                "data filtering; column selection": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies['release_year'] = movies['release_date'].str[-4:].astype('Int64')\n    ratings_with_year = ratings.merge(movies[['release_year']], left_on='item_id', right_index=True, how='left')\n    ans = ratings_with_year.loc[ratings_with_year['release_year'] >= 1990, :].loc[:, ['release_year', 'rating']]\n    return ans": "function to compute joint distribution",
+            "ratings.merge(movies[['release_year']], left_on='item_id', right_index=True, how='left')": "data joining",
+            "movies['release_date'].str[-4:].astype('Int64')": "column conversion",
+            "ans = ratings_with_year.loc[ratings_with_year['release_year'] >= 1990, :].loc[:, ['release_year', 'rating']]": "data filtering; column selection"
+        }
+    },
+    "19179": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    pass": {}
+        },
+        "plan_tree": {
+            "SKIP": {}
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    pass": "SKIP"
+        }
+    },
+    "15505": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies_modified = movies.copy()\n    movies_modified['release_year'] = pd.to_datetime(movies_modified['release_date']).dt.year\n    yearwise_ratings = movies_modified.merge(ratings, left_on='movie_id', right_on='item_id', how='inner')[['release_year', 'rating']]\n    yearwise_ratings = yearwise_ratings[yearwise_ratings['release_year'] >= starting_year]\n    yearwise_ratings['release_year'] = yearwise_ratings['release_year'].astype(int)\n    yearwise_ratings['rating'] = yearwise_ratings['rating'].astype(int)\n    return yearwise_ratings": {
+                "movies.copy()": {},
+                "pd.to_datetime(movies_modified['release_date'])": {},
+                "movies_modified.merge(ratings, left_on='movie_id', right_on='item_id', how='inner')": {},
+                "yearwise_ratings = yearwise_ratings[yearwise_ratings['release_year'] >= starting_year]": {},
+                "yearwise_ratings['release_year'].astype(int)": {},
+                "yearwise_ratings['rating'].astype(int)": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "copy dataframe": {},
+                "column conversion": {},
+                "data joining": {},
+                "data filtering": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies_modified = movies.copy()\n    movies_modified['release_year'] = pd.to_datetime(movies_modified['release_date']).dt.year\n    yearwise_ratings = movies_modified.merge(ratings, left_on='movie_id', right_on='item_id', how='inner')[['release_year', 'rating']]\n    yearwise_ratings = yearwise_ratings[yearwise_ratings['release_year'] >= starting_year]\n    yearwise_ratings['release_year'] = yearwise_ratings['release_year'].astype(int)\n    yearwise_ratings['rating'] = yearwise_ratings['rating'].astype(int)\n    return yearwise_ratings": "function to compute joint distribution",
+            "yearwise_ratings['release_year'].astype(int)": "column conversion",
+            "yearwise_ratings['rating'].astype(int)": "column conversion",
+            "yearwise_ratings = yearwise_ratings[yearwise_ratings['release_year'] >= starting_year]": "data filtering",
+            "movies_modified.merge(ratings, left_on='movie_id', right_on='item_id', how='inner')": "data joining",
+            "pd.to_datetime(movies_modified['release_date'])": "column conversion",
+            "movies.copy()": "copy dataframe"
+        }
+    },
+    "19719": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies_copy = movies.copy()\n    movies_copy['release_year'] = movies_copy['release_date'].str.split('-').str[-1].dropna().astype('int')\n    ratings_movies_merged = ratings.merge(movies_copy, left_on='item_id', right_on='movie_id', how='left')\n    ratings_movies_merged = ratings_movies_merged[ratings_movies_merged['release_year'] >= starting_year]\n    result = pd.DataFrame()\n    result.insert(0, 'release_year', ratings_movies_merged['release_year'].astype('int'))\n    result.insert(1, 'rating', ratings_movies_merged['rating'])\n    return result": {
+                "movies.copy()": {},
+                "movies_copy['release_date'].str.split('-')": {},
+                "ratings.merge(movies_copy, left_on='item_id', right_on='movie_id', how='left')": {},
+                "ratings_movies_merged = ratings_movies_merged[ratings_movies_merged['release_year'] >= starting_year]": {},
+                "pd.DataFrame()": {},
+                "ratings_movies_merged['release_year'].astype('int')": {},
+                "result.insert(1, 'rating', ratings_movies_merged['rating'])": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "copy dataframe": {},
+                "column conversion": {},
+                "data joining": {},
+                "data filtering": {},
+                "create dataframe": {},
+                "populate dataframe": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    movies_copy = movies.copy()\n    movies_copy['release_year'] = movies_copy['release_date'].str.split('-').str[-1].dropna().astype('int')\n    ratings_movies_merged = ratings.merge(movies_copy, left_on='item_id', right_on='movie_id', how='left')\n    ratings_movies_merged = ratings_movies_merged[ratings_movies_merged['release_year'] >= starting_year]\n    result = pd.DataFrame()\n    result.insert(0, 'release_year', ratings_movies_merged['release_year'].astype('int'))\n    result.insert(1, 'rating', ratings_movies_merged['rating'])\n    return result": "function to compute joint distribution",
+            "result.insert(1, 'rating', ratings_movies_merged['rating'])": "populate dataframe",
+            "ratings_movies_merged['release_year'].astype('int')": "column conversion",
+            "pd.DataFrame()": "create dataframe",
+            "ratings_movies_merged = ratings_movies_merged[ratings_movies_merged['release_year'] >= starting_year]": "data filtering",
+            "ratings.merge(movies_copy, left_on='item_id', right_on='movie_id', how='left')": "data joining",
+            "movies_copy['release_date'].str.split('-')": "column conversion",
+            "movies.copy()": "copy dataframe"
+        }
+    },
+    "22303": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    df_movie_rating = ratings.merge(movies, left_on='item_id', right_on='movie_id', how='inner')\n    df_movie_rating = df_movie_rating.dropna(subset=['release_date'])\n    df_movie_rating['release_year'] = df_movie_rating['release_date'].str.slice(-4).astype(int)\n    df_movie_rating = df_movie_rating[df_movie_rating['release_year'] >= starting_year]\n    df_movie_rating = df_movie_rating[['release_year', 'rating']]\n    return df_movie_rating": {
+                "ratings.merge(movies, left_on='item_id', right_on='movie_id', how='inner')": {},
+                "df_movie_rating.dropna(subset=['release_date'])": {},
+                "df_movie_rating['release_date'].str.slice(-4)": {},
+                "df_movie_rating = df_movie_rating[df_movie_rating['release_year'] >= starting_year]": {},
+                "df_movie_rating = df_movie_rating[['release_year', 'rating']]": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "data joining": {},
+                "drop missing values": {},
+                "column conversion": {},
+                "data filtering": {},
+                "column selection": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    df_movie_rating = ratings.merge(movies, left_on='item_id', right_on='movie_id', how='inner')\n    df_movie_rating = df_movie_rating.dropna(subset=['release_date'])\n    df_movie_rating['release_year'] = df_movie_rating['release_date'].str.slice(-4).astype(int)\n    df_movie_rating = df_movie_rating[df_movie_rating['release_year'] >= starting_year]\n    df_movie_rating = df_movie_rating[['release_year', 'rating']]\n    return df_movie_rating": "function to compute joint distribution",
+            "ratings.merge(movies, left_on='item_id', right_on='movie_id', how='inner')": "data joining",
+            "df_movie_rating['release_date'].str.slice(-4)": "column conversion",
+            "df_movie_rating.dropna(subset=['release_date'])": "drop missing values",
+            "df_movie_rating = df_movie_rating[df_movie_rating['release_year'] >= starting_year]": "data filtering",
+            "df_movie_rating = df_movie_rating[['release_year', 'rating']]": "column selection"
+        }
+    },
+    "16568": {
+        "chunk_tree": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    year = pd.to_datetime(movies['release_date']).dt.year\n    year = pd.DataFrame(year).rename(columns={'release_date': 'release_year'})\n    year_concated = pd.concat([movies, year], axis=1)\n    ratings_year = ratings.merge(year_concated, left_on='item_id', right_on='movie_id', how='left')\n    ratings_year_cleaned = ratings_year.dropna(subset=['release_year'])\n    ret = ratings_year_cleaned[ratings_year_cleaned['release_year'] >= 1990][['release_year', 'rating']]\n    ret['release_year'] = ret['release_year'].astype(int)\n    return ret": {
+                "pd.to_datetime(movies['release_date'])": {},
+                "pd.DataFrame(year)": {},
+                "pd.concat([movies, year], axis=1)": {},
+                "ratings.merge(year_concated, left_on='item_id', right_on='movie_id', how='left')": {},
+                "ratings_year.dropna(subset=['release_year'])": {},
+                "ret = ratings_year_cleaned[ratings_year_cleaned['release_year'] >= 1990][['release_year', 'rating']]": {},
+                "ret['release_year'].astype(int)": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute joint distribution": {
+                "column conversion": {},
+                "create dataframe": {},
+                "concatenate dataframe": {},
+                "data joining": {},
+                "drop missing values": {},
+                "data filtering; column conversion": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movie_rating_distribution(movies, ratings, starting_year=1990):\n    year = pd.to_datetime(movies['release_date']).dt.year\n    year = pd.DataFrame(year).rename(columns={'release_date': 'release_year'})\n    year_concated = pd.concat([movies, year], axis=1)\n    ratings_year = ratings.merge(year_concated, left_on='item_id', right_on='movie_id', how='left')\n    ratings_year_cleaned = ratings_year.dropna(subset=['release_year'])\n    ret = ratings_year_cleaned[ratings_year_cleaned['release_year'] >= 1990][['release_year', 'rating']]\n    ret['release_year'] = ret['release_year'].astype(int)\n    return ret": "function to compute joint distribution",
+            "pd.concat([movies, year], axis=1)": "concatenate dataframe",
+            "pd.to_datetime(movies['release_date'])": "column conversion",
+            "pd.DataFrame(year)": "create dataframe",
+            "ret['release_year'].astype(int)": "column conversion",
+            "ret = ratings_year_cleaned[ratings_year_cleaned['release_year'] >= 1990][['release_year', 'rating']]": "data filtering; column conversion",
+            "ratings_year.dropna(subset=['release_year'])": "drop missing values",
+            "ratings.merge(year_concated, left_on='item_id', right_on='movie_id', how='left')": "data joining"
+        }
+    },
+    "121": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    datetime_series = pd.to_datetime(ratings['timestamp'], unit='s')\n    yeartime_series = datetime_series.dt.year\n    monthtime_series = datetime_series.dt.month[yeartime_series >= year]\n    month_count = monthtime_series.value_counts()\n    month_count.sort_index(ascending=True, inplace=True)\n    df = pd.DataFrame({'month': list(month_count.index), 'rating_count': month_count})\n    return df": {
+                "pd.to_datetime(ratings['timestamp'], unit='s')": {},
+                "yeartime_series = datetime_series.dt.year": {},
+                "monthtime_series = datetime_series.dt.month[yeartime_series >= year]": {},
+                "monthtime_series.value_counts()": {},
+                "month_count.sort_index(ascending=True, inplace=True)": {},
+                "list(month_count.index)": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute distribution of a column by a variable": {
+                "column conversion": {},
+                "data filtering": {},
+                "compute distribution of a series": {},
+                "sort index": {},
+                "convert index to list": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    datetime_series = pd.to_datetime(ratings['timestamp'], unit='s')\n    yeartime_series = datetime_series.dt.year\n    monthtime_series = datetime_series.dt.month[yeartime_series >= year]\n    month_count = monthtime_series.value_counts()\n    month_count.sort_index(ascending=True, inplace=True)\n    df = pd.DataFrame({'month': list(month_count.index), 'rating_count': month_count})\n    return df": "function to compute distribution of a column by a variable",
+            "yeartime_series = datetime_series.dt.year": "column conversion",
+            "pd.to_datetime(ratings['timestamp'], unit='s')": "column conversion",
+            "list(month_count.index)": "convert index to list",
+            "monthtime_series.value_counts()": "compute distribution of a series",
+            "monthtime_series = datetime_series.dt.month[yeartime_series >= year]": "data filtering",
+            "month_count.sort_index(ascending=True, inplace=True)": "sort index"
+        }
+    },
+    "14380": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    df = pd.to_datetime(ratings['timestamp'], unit='s')\n    df = pd.DataFrame(df)\n    df = df.rename({'timestamp': 'month'}, axis=1)\n    df['rating'] = ratings['rating']\n    df['year'] = df['month'].dt.year\n    df['month'] = df['month'].dt.month\n    df = df[df['year'] == year].dropna()\n    df = df.groupby(['month']).count().dropna()\n    df = df.rename({'rating': 'rating_count'}, axis=1)\n    result = df.reset_index()\n    result = result[['month', 'rating_count']]\n    return result": {
+                "pd.to_datetime(ratings['timestamp'], unit='s')": {},
+                "pd.DataFrame(df)": {},
+                "df.rename({'timestamp': 'month'}, axis=1)": {},
+                "df['rating'] = ratings['rating']": {},
+                "df['year'] = df['month'].dt.year": {},
+                "df['month'] = df['month'].dt.month": {},
+                "df[df['year'] == year].dropna()": {},
+                "df.groupby(['month'])": {},
+                "df.rename({'rating': 'rating_count'}, axis=1)": {},
+                "df.reset_index()": {},
+                "result = result[['month', 'rating_count']]": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute distribution of a column by a variable": {
+                "column conversion": {},
+                "create dataframe": {},
+                "rename column": {},
+                "populate series": {},
+                "drop missing values": {},
+                "data grouping": {},
+                "reset index": {},
+                "column selection": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    df = pd.to_datetime(ratings['timestamp'], unit='s')\n    df = pd.DataFrame(df)\n    df = df.rename({'timestamp': 'month'}, axis=1)\n    df['rating'] = ratings['rating']\n    df['year'] = df['month'].dt.year\n    df['month'] = df['month'].dt.month\n    df = df[df['year'] == year].dropna()\n    df = df.groupby(['month']).count().dropna()\n    df = df.rename({'rating': 'rating_count'}, axis=1)\n    result = df.reset_index()\n    result = result[['month', 'rating_count']]\n    return result": "function to compute distribution of a column by a variable",
+            "result = result[['month', 'rating_count']]": "column selection",
+            "df.reset_index()": "reset index",
+            "pd.to_datetime(ratings['timestamp'], unit='s')": "column conversion",
+            "pd.DataFrame(df)": "create dataframe",
+            "df[df['year'] == year].dropna()": "drop missing values",
+            "df['year'] = df['month'].dt.year": "column conversion",
+            "df['rating'] = ratings['rating']": "populate series",
+            "df['month'] = df['month'].dt.month": "column conversion",
+            "df.rename({'timestamp': 'month'}, axis=1)": "rename column",
+            "df.rename({'rating': 'rating_count'}, axis=1)": "rename column",
+            "df.groupby(['month'])": "data grouping"
+        }
+    },
+    "19234": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    return pd.DataFrame()": {
+                "pd.DataFrame()": {}
+            }
+        },
+        "plan_tree": {
+            "SKIP": {
+                "SKIP": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    return pd.DataFrame()": "SKIP",
+            "pd.DataFrame()": "SKIP"
+        }
+    },
+    "17713": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    ratings = ratings.copy()\n    ratings['timestamp'] = pd.to_datetime(ratings['timestamp'], unit='s')\n    ratings = ratings[ratings['timestamp'].dt.year == year]\n    ratings['month'] = ratings['timestamp'].dt.month\n    ratings = ratings.groupby('month').size().reset_index(name='rating_count')\n    return ratings": {
+                "ratings.copy()": {},
+                "pd.to_datetime(ratings['timestamp'], unit='s')": {},
+                "ratings = ratings[ratings['timestamp'].dt.year == year]": {},
+                "ratings['month'] = ratings['timestamp'].dt.month": {},
+                "ratings.groupby('month')": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute distribution of a column by a variable": {
+                "copy dataframe": {},
+                "column conversion": {},
+                "data filtering": {},
+                "data grouping": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    ratings = ratings.copy()\n    ratings['timestamp'] = pd.to_datetime(ratings['timestamp'], unit='s')\n    ratings = ratings[ratings['timestamp'].dt.year == year]\n    ratings['month'] = ratings['timestamp'].dt.month\n    ratings = ratings.groupby('month').size().reset_index(name='rating_count')\n    return ratings": "function to compute distribution of a column by a variable",
+            "pd.to_datetime(ratings['timestamp'], unit='s')": "column conversion",
+            "ratings['month'] = ratings['timestamp'].dt.month": "column conversion",
+            "ratings.groupby('month')": "data grouping",
+            "ratings.copy()": "copy dataframe",
+            "ratings = ratings[ratings['timestamp'].dt.year == year]": "data filtering"
+        }
+    },
+    "16569": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    mon = pd.DataFrame(pd.to_datetime(ratings['timestamp'], unit='s').dt.month)\n    yr = pd.DataFrame(pd.to_datetime(ratings['timestamp'], unit='s').dt.year)\n    mon = mon.rename(columns={'timestamp': 'mon'})\n    yr = yr.rename(columns={'timestamp': 'year'})\n    month_integrated = pd.concat([ratings, mon, yr], axis=1)\n    month_integrated_year = month_integrated[month_integrated['year'] == year]\n    by_month = pd.DataFrame(month_integrated_year.groupby('mon').count()['rating'])\n    by_month.reset_index(inplace=True)\n    by_month = by_month.rename(columns={'mon': 'month', 'rating': 'rating_count'})\n    return by_month": {
+                "pd.to_datetime(ratings['timestamp'], unit='s')": {},
+                "mon.rename(columns={'timestamp': 'mon'})": {},
+                "yr.rename(columns={'timestamp': 'year'})": {},
+                "pd.concat([ratings, mon, yr], axis=1)": {},
+                "month_integrated_year = month_integrated[month_integrated['year'] == year]": {},
+                "month_integrated_year.groupby('mon')": {},
+                "by_month.reset_index(inplace=True)": {},
+                "by_month.rename(columns={'mon': 'month', 'rating': 'rating_count'})": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute distribution of a column by a variable": {
+                "column conversion": {},
+                "rename column": {},
+                "concatenate dataframe": {},
+                "data filtering": {},
+                "data grouping": {},
+                "reset index": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    mon = pd.DataFrame(pd.to_datetime(ratings['timestamp'], unit='s').dt.month)\n    yr = pd.DataFrame(pd.to_datetime(ratings['timestamp'], unit='s').dt.year)\n    mon = mon.rename(columns={'timestamp': 'mon'})\n    yr = yr.rename(columns={'timestamp': 'year'})\n    month_integrated = pd.concat([ratings, mon, yr], axis=1)\n    month_integrated_year = month_integrated[month_integrated['year'] == year]\n    by_month = pd.DataFrame(month_integrated_year.groupby('mon').count()['rating'])\n    by_month.reset_index(inplace=True)\n    by_month = by_month.rename(columns={'mon': 'month', 'rating': 'rating_count'})\n    return by_month": "function to compute distribution of a column by a variable",
+            "yr.rename(columns={'timestamp': 'year'})": "rename column",
+            "pd.to_datetime(ratings['timestamp'], unit='s')": "column conversion",
+            "pd.concat([ratings, mon, yr], axis=1)": "concatenate dataframe",
+            "month_integrated_year.groupby('mon')": "data grouping",
+            "month_integrated_year = month_integrated[month_integrated['year'] == year]": "data filtering",
+            "mon.rename(columns={'timestamp': 'mon'})": "rename column",
+            "by_month.reset_index(inplace=True)": "reset index",
+            "by_month.rename(columns={'mon': 'month', 'rating': 'rating_count'})": "rename column"
+        }
+    },
+    "14308": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    pass": {}
+        },
+        "plan_tree": {
+            "SKIP": {}
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    pass": "SKIP"
+        }
+    },
+    "15407": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    return pd.DataFrame()": {
+                "pd.DataFrame()": {}
+            }
+        },
+        "plan_tree": {
+            "SKIP": {
+                "SKIP": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    return pd.DataFrame()": "SKIP",
+            "pd.DataFrame()": "SKIP"
+        }
+    },
+    "17650": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    ratings['month'] = pd.to_datetime(ratings['timestamp'], unit='s').dt.month\n    ratings['year'] = pd.to_datetime(ratings['timestamp'], unit='s').dt.year\n    return ratings[ratings['year'] == year].groupby('month')[['rating']].agg(rating_count=('rating', 'count')).reset_index()": {
+                "pd.to_datetime(ratings['timestamp'], unit='s')": {},
+                "ratings[ratings['year'] == year].groupby('month')": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute distribution of a column by a variable": {
+                "column conversion": {},
+                "data filtering; data grouping": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    ratings['month'] = pd.to_datetime(ratings['timestamp'], unit='s').dt.month\n    ratings['year'] = pd.to_datetime(ratings['timestamp'], unit='s').dt.year\n    return ratings[ratings['year'] == year].groupby('month')[['rating']].agg(rating_count=('rating', 'count')).reset_index()": "function to compute distribution of a column by a variable",
+            "ratings[ratings['year'] == year].groupby('month')": "data filtering; data grouping",
+            "pd.to_datetime(ratings['timestamp'], unit='s')": "column conversion"
+        }
+    },
+    "1885": {
+        "chunk_tree": {
+            "def movies_reviewed_by_month(ratings, year):\n    work_df = ratings.copy()\n    work_df['date'] = pd.to_datetime(work_df['timestamp'], unit='s')\n    work_df['year'] = work_df.date.dt.year\n    work_df['month'] = work_df.date.dt.month\n    result = work_df[work_df.year == year].groupby(['month'], as_index=False)['rating'].count()\n    result.columns = ['month', 'rating_count']\n    return result\n    pass": {
+                "ratings.copy()": {},
+                "pd.to_datetime(work_df['timestamp'], unit='s')": {},
+                "work_df['year'] = work_df.date.dt.year": {},
+                "work_df['month'] = work_df.date.dt.month": {},
+                "work_df[work_df.year == year].groupby(['month'], as_index=False)": {},
+                "result.columns = ['month', 'rating_count']": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute distribution of a column by a variable": {
+                "copy dataframe": {},
+                "column conversion": {},
+                "data filtering; data grouping": {},
+                "rename column": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def movies_reviewed_by_month(ratings, year):\n    work_df = ratings.copy()\n    work_df['date'] = pd.to_datetime(work_df['timestamp'], unit='s')\n    work_df['year'] = work_df.date.dt.year\n    work_df['month'] = work_df.date.dt.month\n    result = work_df[work_df.year == year].groupby(['month'], as_index=False)['rating'].count()\n    result.columns = ['month', 'rating_count']\n    return result\n    pass": "function to compute distribution of a column by a variable",
+            "work_df[work_df.year == year].groupby(['month'], as_index=False)": "data filtering; data grouping",
+            "work_df['year'] = work_df.date.dt.year": "column conversion",
+            "work_df['month'] = work_df.date.dt.month": "column conversion",
+            "pd.to_datetime(work_df['timestamp'], unit='s')": "column conversion",
+            "ratings.copy()": "copy dataframe",
+            "result.columns = ['month', 'rating_count']": "rename column"
+        }
+    },
+    "1706": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    mr_dict = {}\n    for (m, r) in zip(ratings['item_id'], ratings['rating']):\n        if m not in mr_dict:\n            mr_dict[m] = []\n        mr_dict[m].append(r)\n    mr_avg = {}\n    for m in mr_dict:\n        if len(mr_dict[m]) > 50:\n            avg = sum(mr_dict[m]) / len(mr_dict[m])\n            mr_avg[m] = avg\n    sorted_avg = sorted(mr_avg.items(), key=lambda x: x[1])\n    worst = [s[0] for s in sorted_avg[:10]]\n    best = [s[0] for s in sorted_avg[-10:]][::-1]\n    return (best, worst)": {
+                "mr_dict = {}": {},
+                "for (m, r) in zip(ratings['item_id'], ratings['rating']):\n    if m not in mr_dict:\n        mr_dict[m] = []\n    mr_dict[m].append(r)": {
+                    "zip(ratings['item_id'], ratings['rating'])": {},
+                    "if m not in mr_dict:\n    mr_dict[m] = []": {
+                        "mr_dict[m] = []": {}
+                    },
+                    "mr_dict[m].append(r)": {}
+                },
+                "mr_avg = {}": {},
+                "for m in mr_dict:\n    if len(mr_dict[m]) > 50:\n        avg = sum(mr_dict[m]) / len(mr_dict[m])\n        mr_avg[m] = avg": {
+                    "if len(mr_dict[m]) > 50:\n    avg = sum(mr_dict[m]) / len(mr_dict[m])\n    mr_avg[m] = avg": {
+                        "len(mr_dict[m])": {},
+                        "mr_avg[m] = avg": {}
+                    }
+                },
+                "mr_avg.items()": {},
+                "worst = [s[0] for s in sorted_avg[:10]]": {},
+                "best = [s[0] for s in sorted_avg[-10:]][::-1]": {}
+            }
+        },
+        "plan_tree": {
+            "function to find min and max value of ungrouped column": {
+                "create dictionary": {},
+                "data grouping": {
+                    "iterate over two dataframe columns": {},
+                    "create list; populate dictionary of lists": {
+                        "create list; populate dictionary of lists": {}
+                    },
+                    "populate dictionary of lists": {}
+                },
+                "compute grouped mean": {
+                    "data filtering; compute mean; populate dictionary": {
+                        "length of list": {},
+                        "populate dictionary": {}
+                    }
+                },
+                "iterate over dictionary": {},
+                "pick bottom 10": {},
+                "pick top 10": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    mr_dict = {}\n    for (m, r) in zip(ratings['item_id'], ratings['rating']):\n        if m not in mr_dict:\n            mr_dict[m] = []\n        mr_dict[m].append(r)\n    mr_avg = {}\n    for m in mr_dict:\n        if len(mr_dict[m]) > 50:\n            avg = sum(mr_dict[m]) / len(mr_dict[m])\n            mr_avg[m] = avg\n    sorted_avg = sorted(mr_avg.items(), key=lambda x: x[1])\n    worst = [s[0] for s in sorted_avg[:10]]\n    best = [s[0] for s in sorted_avg[-10:]][::-1]\n    return (best, worst)": "function to find min and max value of ungrouped column",
+            "for (m, r) in zip(ratings['item_id'], ratings['rating']):\n    if m not in mr_dict:\n        mr_dict[m] = []\n    mr_dict[m].append(r)": "data grouping",
+            "zip(ratings['item_id'], ratings['rating'])": "iterate over two dataframe columns",
+            "worst = [s[0] for s in sorted_avg[:10]]": "pick bottom 10",
+            "for m in mr_dict:\n    if len(mr_dict[m]) > 50:\n        avg = sum(mr_dict[m]) / len(mr_dict[m])\n        mr_avg[m] = avg": "compute grouped mean",
+            "if len(mr_dict[m]) > 50:\n    avg = sum(mr_dict[m]) / len(mr_dict[m])\n    mr_avg[m] = avg": "data filtering; compute mean; populate dictionary",
+            "len(mr_dict[m])": "length of list",
+            "mr_avg.items()": "iterate over dictionary",
+            "mr_dict[m].append(r)": "populate dictionary of lists",
+            "if m not in mr_dict:\n    mr_dict[m] = []": "create list; populate dictionary of lists",
+            "mr_dict[m] = []": "create list; populate dictionary of lists",
+            "mr_dict = {}": "create dictionary",
+            "mr_avg[m] = avg": "populate dictionary",
+            "mr_avg = {}": "create dictionary",
+            "best = [s[0] for s in sorted_avg[-10:]][::-1]": "pick top 10"
+        }
+    },
+    "18452": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    pass": {}
+        },
+        "plan_tree": {
+            "SKIP": {}
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    pass": "SKIP"
+        }
+    },
+    "1787": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    all_ratings = ratings.groupby('item_id').agg({'rating': ['mean', 'count']})\n    all_ratings = all_ratings.loc[all_ratings['rating', 'count'] > threshold]\n    all_ratings.sort_values(by=[('rating', 'mean')], ascending=False, inplace=True)\n    return (list(all_ratings.index[:10]), list(all_ratings.index[::-1][:10]))": {
+                "ratings.groupby('item_id')": {},
+                "all_ratings = all_ratings.loc[all_ratings['rating', 'count'] > threshold]": {},
+                "all_ratings.sort_values(by=[('rating', 'mean')], ascending=False, inplace=True)": {},
+                "list(all_ratings.index[::-1][:10])": {}
+            }
+        },
+        "plan_tree": {
+            "function to find min and max value of ungrouped column": {
+                "data grouping": {},
+                "data filtering": {},
+                "sort dataframe": {},
+                "pick top 10; convert index to list": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    all_ratings = ratings.groupby('item_id').agg({'rating': ['mean', 'count']})\n    all_ratings = all_ratings.loc[all_ratings['rating', 'count'] > threshold]\n    all_ratings.sort_values(by=[('rating', 'mean')], ascending=False, inplace=True)\n    return (list(all_ratings.index[:10]), list(all_ratings.index[::-1][:10]))": "function to find min and max value of ungrouped column",
+            "ratings.groupby('item_id')": "data grouping",
+            "list(all_ratings.index[::-1][:10])": "pick top 10; convert index to list",
+            "all_ratings.sort_values(by=[('rating', 'mean')], ascending=False, inplace=True)": "sort dataframe",
+            "all_ratings = all_ratings.loc[all_ratings['rating', 'count'] > threshold]": "data filtering"
+        }
+    },
+    "18065": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    df1 = ratings[['item_id', 'rating']]\n    df2_robust = df1.groupby(['item_id']).count()\n    df2_robust = df2_robust.rename({'rating': 'count'}, axis=1)\n    df2_robust = df2_robust[df2_robust['count'] > threshold]\n    filter_movies = df2_robust.to_dict()['count']\n    df2 = df1[df1['item_id'].isin(filter_movies)]\n    result = df2.groupby(['item_id']).mean().sort_values(by=['rating'])\n    result = result.reset_index()\n    worst_movie_ids = result['item_id'].head(size).values.tolist()\n    result = result.sort_values(by=['rating'], ascending=False)\n    best_movie_ids = result['item_id'].head(size).values.tolist()\n    return (best_movie_ids, worst_movie_ids)": {
+                "df1 = ratings[['item_id', 'rating']]": {},
+                "df1.groupby(['item_id'])": {},
+                "df2_robust.rename({'rating': 'count'}, axis=1)": {},
+                "df2_robust = df2_robust[df2_robust['count'] > threshold]": {},
+                "df2_robust.to_dict()": {},
+                "df1['item_id'].isin(filter_movies)": {},
+                "df2.groupby(['item_id'])": {},
+                "result.reset_index()": {},
+                "result.sort_values(by=['rating'], ascending=False)": {},
+                "result['item_id'].head(size)": {}
+            }
+        },
+        "plan_tree": {
+            "function to find min and max value of ungrouped column": {
+                "column selection": {},
+                "data grouping": {},
+                "rename column": {},
+                "data filtering": {},
+                "convert dataframe to dictionary": {},
+                "data filtering condition": {},
+                "reset index": {},
+                "sort dataframe": {},
+                "get first n rows": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    df1 = ratings[['item_id', 'rating']]\n    df2_robust = df1.groupby(['item_id']).count()\n    df2_robust = df2_robust.rename({'rating': 'count'}, axis=1)\n    df2_robust = df2_robust[df2_robust['count'] > threshold]\n    filter_movies = df2_robust.to_dict()['count']\n    df2 = df1[df1['item_id'].isin(filter_movies)]\n    result = df2.groupby(['item_id']).mean().sort_values(by=['rating'])\n    result = result.reset_index()\n    worst_movie_ids = result['item_id'].head(size).values.tolist()\n    result = result.sort_values(by=['rating'], ascending=False)\n    best_movie_ids = result['item_id'].head(size).values.tolist()\n    return (best_movie_ids, worst_movie_ids)": "function to find min and max value of ungrouped column",
+            "result['item_id'].head(size)": "get first n rows",
+            "result.sort_values(by=['rating'], ascending=False)": "sort dataframe",
+            "result.reset_index()": "reset index",
+            "df2.groupby(['item_id'])": "data grouping",
+            "df2_robust.to_dict()": "convert dataframe to dictionary",
+            "df2_robust.rename({'rating': 'count'}, axis=1)": "rename column",
+            "df2_robust = df2_robust[df2_robust['count'] > threshold]": "data filtering",
+            "df1.groupby(['item_id'])": "data grouping",
+            "df1['item_id'].isin(filter_movies)": "data filtering condition",
+            "df1 = ratings[['item_id', 'rating']]": "column selection"
+        }
+    },
+    "17786": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    ratings_copy = ratings.copy()\n    df = ratings_copy.groupby(['item_id']).size().reset_index(name='counts')\n    df = df[df['counts'] > threshold]\n    movies_list = df['item_id']\n    filt = ratings_copy['item_id'].isin(movies_list)\n    ratings_copy = ratings_copy[filt]\n    df2 = ratings_copy.groupby(['item_id']).mean()\n    df2 = df2.reset_index()\n    worst = df2.sort_values(by=['rating'])['item_id'].iloc[:10].tolist()\n    best = df2.sort_values(by=['rating'], ascending=False)['item_id'].iloc[:10].tolist()\n    return (best, worst)\n    pass": {
+                "ratings.copy()": {},
+                "ratings_copy.groupby(['item_id'])": {},
+                "df = df[df['counts'] > threshold]": {},
+                "movies_list = df['item_id']": {},
+                "ratings_copy['item_id'].isin(movies_list)": {},
+                "ratings_copy = ratings_copy[filt]": {},
+                "df2.reset_index()": {},
+                "df2.sort_values(by=['rating'])": {},
+                "df2.sort_values(by=['rating'], ascending=False)": {}
+            }
+        },
+        "plan_tree": {
+            "function to find min and max value of ungrouped column": {
+                "copy dataframe": {},
+                "data grouping": {},
+                "data filtering": {},
+                "create series": {},
+                "data filtering condition": {},
+                "reset index": {},
+                "sort dataframe": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    ratings_copy = ratings.copy()\n    df = ratings_copy.groupby(['item_id']).size().reset_index(name='counts')\n    df = df[df['counts'] > threshold]\n    movies_list = df['item_id']\n    filt = ratings_copy['item_id'].isin(movies_list)\n    ratings_copy = ratings_copy[filt]\n    df2 = ratings_copy.groupby(['item_id']).mean()\n    df2 = df2.reset_index()\n    worst = df2.sort_values(by=['rating'])['item_id'].iloc[:10].tolist()\n    best = df2.sort_values(by=['rating'], ascending=False)['item_id'].iloc[:10].tolist()\n    return (best, worst)\n    pass": "function to find min and max value of ungrouped column",
+            "df2.sort_values(by=['rating'])": "sort dataframe",
+            "ratings_copy['item_id'].isin(movies_list)": "data filtering condition",
+            "ratings_copy.groupby(['item_id'])": "data grouping",
+            "ratings_copy = ratings_copy[filt]": "data filtering",
+            "ratings.copy()": "copy dataframe",
+            "movies_list = df['item_id']": "create series",
+            "df2.sort_values(by=['rating'], ascending=False)": "sort dataframe",
+            "df2.reset_index()": "reset index",
+            "df = df[df['counts'] > threshold]": "data filtering"
+        }
+    },
+    "22575": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    mean_ratings = ratings.groupby('item_id').agg({'item_id': 'count', 'rating': 'mean'})\n    mean_ratings = mean_ratings[mean_ratings.item_id > threshold]\n    sorted_ratings = mean_ratings.sort_values('rating')\n    best_movie_ids = sorted_ratings.index[::-1][:size].to_list()\n    worst_movie_ids = sorted_ratings.index[:size].to_list()\n    return (best_movie_ids, worst_movie_ids)": {
+                "ratings.groupby('item_id').agg({'item_id': 'count', 'rating': 'mean'})": {
+                    "ratings.groupby('item_id')": {}
+                },
+                "mean_ratings = mean_ratings[mean_ratings.item_id > threshold]": {},
+                "mean_ratings.sort_values('rating')": {},
+                "sorted_ratings.index[::-1][:size].to_list()": {},
+                "sorted_ratings.index[:size].to_list()": {}
+            }
+        },
+        "plan_tree": {
+            "function to find min and max value of ungrouped column": {
+                "data grouping; aggregation": {
+                    "data grouping": {}
+                },
+                "data filtering": {},
+                "sort series": {},
+                "pick top 10; convert series to list": {},
+                "pick bottom 10; convert series to list": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    mean_ratings = ratings.groupby('item_id').agg({'item_id': 'count', 'rating': 'mean'})\n    mean_ratings = mean_ratings[mean_ratings.item_id > threshold]\n    sorted_ratings = mean_ratings.sort_values('rating')\n    best_movie_ids = sorted_ratings.index[::-1][:size].to_list()\n    worst_movie_ids = sorted_ratings.index[:size].to_list()\n    return (best_movie_ids, worst_movie_ids)": "function to find min and max value of ungrouped column",
+            "sorted_ratings.index[:size].to_list()": "pick bottom 10; convert series to list",
+            "sorted_ratings.index[::-1][:size].to_list()": "pick top 10; convert series to list",
+            "mean_ratings.sort_values('rating')": "sort series",
+            "ratings.groupby('item_id').agg({'item_id': 'count', 'rating': 'mean'})": "data grouping; aggregation",
+            "ratings.groupby('item_id')": "data grouping",
+            "mean_ratings = mean_ratings[mean_ratings.item_id > threshold]": "data filtering"
+        }
+    },
+    "16318": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    ratings_count = ratings.groupby('item_id').size()\n    avg_ratings = ratings.groupby('item_id')['rating'].mean()\n    ratings_count_avg = pd.concat([ratings_count, avg_ratings], axis=1)\n    ratings_count_avg.columns = ['count', 'avg_rating']\n    ratings_count_avg = ratings_count_avg[ratings_count_avg['count'] > threshold]\n    ratings_count_avg = ratings_count_avg.sort_values('avg_rating', ascending=False)\n    best_movie_ids = ratings_count_avg.index[:size].tolist()\n    worst_movie_ids = ratings_count_avg.index[-size:].tolist()\n    worst_movie_ids.reverse()\n    return (best_movie_ids, worst_movie_ids)": {
+                "ratings.groupby('item_id')": {},
+                "pd.concat([ratings_count, avg_ratings], axis=1)": {},
+                "ratings_count_avg.columns = ['count', 'avg_rating']": {},
+                "ratings_count_avg = ratings_count_avg[ratings_count_avg['count'] > threshold]": {},
+                "ratings_count_avg.sort_values('avg_rating', ascending=False)": {},
+                "ratings_count_avg.index[:size].tolist()": {},
+                "ratings_count_avg.index[-size:].tolist()": {},
+                "worst_movie_ids.reverse()": {}
+            }
+        },
+        "plan_tree": {
+            "function to find min and max value of ungrouped column": {
+                "data grouping": {},
+                "concatenate dataframe": {},
+                "rename column": {},
+                "data filtering": {},
+                "sort dataframe": {},
+                "pick top 10; convert index to list": {},
+                "pick bottom 10; convert index to list": {},
+                "reverse list": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    ratings_count = ratings.groupby('item_id').size()\n    avg_ratings = ratings.groupby('item_id')['rating'].mean()\n    ratings_count_avg = pd.concat([ratings_count, avg_ratings], axis=1)\n    ratings_count_avg.columns = ['count', 'avg_rating']\n    ratings_count_avg = ratings_count_avg[ratings_count_avg['count'] > threshold]\n    ratings_count_avg = ratings_count_avg.sort_values('avg_rating', ascending=False)\n    best_movie_ids = ratings_count_avg.index[:size].tolist()\n    worst_movie_ids = ratings_count_avg.index[-size:].tolist()\n    worst_movie_ids.reverse()\n    return (best_movie_ids, worst_movie_ids)": "function to find min and max value of ungrouped column",
+            "worst_movie_ids.reverse()": "reverse list",
+            "ratings_count_avg.index[-size:].tolist()": "pick bottom 10; convert index to list",
+            "ratings_count_avg.sort_values('avg_rating', ascending=False)": "sort dataframe",
+            "ratings_count_avg.index[:size].tolist()": "pick top 10; convert index to list",
+            "ratings_count_avg.columns = ['count', 'avg_rating']": "rename column",
+            "ratings_count_avg = ratings_count_avg[ratings_count_avg['count'] > threshold]": "data filtering",
+            "pd.concat([ratings_count, avg_ratings], axis=1)": "concatenate dataframe",
+            "ratings.groupby('item_id')": "data grouping"
+        }
+    },
+    "797": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    temp = ratings[['item_id', 'rating']]\n    temp = temp.pivot_table(index='item_id', values='rating', aggfunc=('count', 'mean'))\n    temp = temp[temp['count'] > threshold].sort_values('mean', ascending=False)\n    best = list(temp.index[0:size])\n    worst = list(temp.index[-size:])[::-1]\n    return (best, worst)": {
+                "temp = ratings[['item_id', 'rating']]": {},
+                "temp.pivot_table(index='item_id', values='rating', aggfunc=('count', 'mean'))": {},
+                "temp[temp['count'] > threshold].sort_values('mean', ascending=False)": {},
+                "list(temp.index[0:size])": {},
+                "list(temp.index[-size:])": {}
+            }
+        },
+        "plan_tree": {
+            "function to find min and max value of ungrouped column": {
+                "column selection": {},
+                "pivot; aggregate": {},
+                "data filtering; sort dataframe": {},
+                "pick top 10": {},
+                "pick bottom 10": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    temp = ratings[['item_id', 'rating']]\n    temp = temp.pivot_table(index='item_id', values='rating', aggfunc=('count', 'mean'))\n    temp = temp[temp['count'] > threshold].sort_values('mean', ascending=False)\n    best = list(temp.index[0:size])\n    worst = list(temp.index[-size:])[::-1]\n    return (best, worst)": "function to find min and max value of ungrouped column",
+            "list(temp.index[-size:])": "pick bottom 10",
+            "temp[temp['count'] > threshold].sort_values('mean', ascending=False)": "data filtering; sort dataframe",
+            "temp.pivot_table(index='item_id', values='rating', aggfunc=('count', 'mean'))": "pivot; aggregate",
+            "temp = ratings[['item_id', 'rating']]": "column selection",
+            "list(temp.index[0:size])": "pick top 10"
+        }
+    },
+    "19910": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    pass": {}
+        },
+        "plan_tree": {
+            "SKIP": {}
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    pass": "SKIP"
+        }
+    },
+    "21332": {
+        "chunk_tree": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    df = ratings.groupby('item_id').agg(rating_count=('rating', 'count'), avg_rating=('rating', 'mean')).reset_index()\n    df = df[df['rating_count'] >= 50]\n    best_movie_ids = df.sort_values(by='avg_rating', ascending=False)['item_id'].values.tolist()[:size]\n    worst_movie_ids = df.sort_values(by='avg_rating', ascending=True)['item_id'].values.tolist()[:size]\n    return (best_movie_ids, worst_movie_ids)": {
+                "ratings.groupby('item_id').agg(rating_count=('rating', 'count'), avg_rating=('rating', 'mean'))": {
+                    "ratings.groupby('item_id')": {}
+                },
+                "df = df[df['rating_count'] >= 50]": {},
+                "df.sort_values(by='avg_rating', ascending=False)": {},
+                "df.sort_values(by='avg_rating', ascending=True)": {}
+            }
+        },
+        "plan_tree": {
+            "function to find min and max value of ungrouped column": {
+                "data grouping; aggregation": {
+                    "data grouping": {}
+                },
+                "data filtering": {},
+                "sort dataframe": {},
+                " sort dataframe": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def best_worst_movies(ratings, threshold=50, size=10):\n    df = ratings.groupby('item_id').agg(rating_count=('rating', 'count'), avg_rating=('rating', 'mean')).reset_index()\n    df = df[df['rating_count'] >= 50]\n    best_movie_ids = df.sort_values(by='avg_rating', ascending=False)['item_id'].values.tolist()[:size]\n    worst_movie_ids = df.sort_values(by='avg_rating', ascending=True)['item_id'].values.tolist()[:size]\n    return (best_movie_ids, worst_movie_ids)": "function to find min and max value of ungrouped column",
+            "df.sort_values(by='avg_rating', ascending=True)": " sort dataframe",
+            "ratings.groupby('item_id').agg(rating_count=('rating', 'count'), avg_rating=('rating', 'mean'))": "data grouping; aggregation",
+            "ratings.groupby('item_id')": "data grouping",
+            "df.sort_values(by='avg_rating', ascending=False)": "sort dataframe",
+            "df = df[df['rating_count'] >= 50]": "data filtering"
+        }
+    },
+    "2301": {
+        "chunk_tree": {
+            "def matrix_data(ratings):\n    num_users = ratings['user_id'].nunique()\n    num_movies = ratings['item_id'].nunique()\n    X = np.zeros((num_users, num_movies), dtype=int)\n    for (_, row) in ratings.iterrows():\n        user_id = row['user_id'] - 1\n        movie_id = row['item_id'] - 1\n        rating = row['rating']\n        X[user_id, movie_id] = max(X[user_id, movie_id], rating)\n    user_means = np.zeros(num_users)\n    for i in range(num_users):\n        ratings_i = X[i, :]\n        nonzero_ratings_i = ratings_i[ratings_i != 0]\n        user_means[i] = np.mean(nonzero_ratings_i)\n    movie_means = np.zeros(num_movies)\n    for j in range(num_movies):\n        ratings_j = X[:, j]\n        nonzero_ratings_j = ratings_j[ratings_j != 0]\n        movie_means[j] = np.mean(nonzero_ratings_j)\n    return (X, user_means, movie_means)": {
+                "ratings['user_id'].nunique()": {},
+                "ratings['item_id'].nunique()": {},
+                "np.zeros((num_users, num_movies), dtype=int)": {},
+                "for (_, row) in ratings.iterrows():\n    user_id = row['user_id'] - 1\n    movie_id = row['item_id'] - 1\n    rating = row['rating']\n    X[user_id, movie_id] = max(X[user_id, movie_id], rating)": {
+                    "ratings.iterrows()": {},
+                    "user_id = row['user_id'] - 1": {},
+                    "movie_id = row['item_id'] - 1": {},
+                    "rating = row['rating']": {},
+                    "max(X[user_id, movie_id], rating)": {}
+                },
+                "np.zeros(num_users)": {},
+                "for i in range(num_users):\n    ratings_i = X[i, :]\n    nonzero_ratings_i = ratings_i[ratings_i != 0]\n    user_means[i] = np.mean(nonzero_ratings_i)": {
+                    "range(num_users)": {},
+                    "ratings_i = X[i, :]": {},
+                    "nonzero_ratings_i = ratings_i[ratings_i != 0]": {},
+                    "np.mean(nonzero_ratings_i)": {}
+                },
+                "np.zeros(num_movies)": {},
+                "for j in range(num_movies):\n    ratings_j = X[:, j]\n    nonzero_ratings_j = ratings_j[ratings_j != 0]\n    movie_means[j] = np.mean(nonzero_ratings_j)": {
+                    "range(num_movies)": {},
+                    "ratings_j = X[:, j]": {},
+                    "nonzero_ratings_j = ratings_j[ratings_j != 0]": {},
+                    "np.mean(nonzero_ratings_j)": {}
+                }
+            }
+        },
+        "plan_tree": {
+            "function to compute interaction and means of two columns": {
+                "count unique values": {},
+                "create matrix": {},
+                "compute interaction matrix of two columns": {
+                    "iterate over dataframe": {},
+                    "populate variable": {},
+                    "get max value": {}
+                },
+                "create array": {},
+                "compute mean of all matrix rows": {
+                    "iterate over sequence of numbers": {},
+                    "row access": {},
+                    "data filtering": {},
+                    "aggregation": {}
+                },
+                "compute mean of all matrix columns": {
+                    "iterate over sequence of numbers": {},
+                    "column access": {},
+                    "data filtering": {},
+                    "aggregation": {}
+                }
+            }
+        },
+        "chunk_to_plan_op": {
+            "def matrix_data(ratings):\n    num_users = ratings['user_id'].nunique()\n    num_movies = ratings['item_id'].nunique()\n    X = np.zeros((num_users, num_movies), dtype=int)\n    for (_, row) in ratings.iterrows():\n        user_id = row['user_id'] - 1\n        movie_id = row['item_id'] - 1\n        rating = row['rating']\n        X[user_id, movie_id] = max(X[user_id, movie_id], rating)\n    user_means = np.zeros(num_users)\n    for i in range(num_users):\n        ratings_i = X[i, :]\n        nonzero_ratings_i = ratings_i[ratings_i != 0]\n        user_means[i] = np.mean(nonzero_ratings_i)\n    movie_means = np.zeros(num_movies)\n    for j in range(num_movies):\n        ratings_j = X[:, j]\n        nonzero_ratings_j = ratings_j[ratings_j != 0]\n        movie_means[j] = np.mean(nonzero_ratings_j)\n    return (X, user_means, movie_means)": "function to compute interaction and means of two columns",
+            "for i in range(num_users):\n    ratings_i = X[i, :]\n    nonzero_ratings_i = ratings_i[ratings_i != 0]\n    user_means[i] = np.mean(nonzero_ratings_i)": "compute mean of all matrix rows",
+            "np.mean(nonzero_ratings_i)": "aggregation",
+            "np.zeros(num_users)": "create array",
+            "for (_, row) in ratings.iterrows():\n    user_id = row['user_id'] - 1\n    movie_id = row['item_id'] - 1\n    rating = row['rating']\n    X[user_id, movie_id] = max(X[user_id, movie_id], rating)": "compute interaction matrix of two columns",
+            "user_id = row['user_id'] - 1": "populate variable",
+            "for j in range(num_movies):\n    ratings_j = X[:, j]\n    nonzero_ratings_j = ratings_j[ratings_j != 0]\n    movie_means[j] = np.mean(nonzero_ratings_j)": "compute mean of all matrix columns",
+            "ratings_j = X[:, j]": "column access",
+            "ratings_i = X[i, :]": "row access",
+            "ratings['user_id'].nunique()": "count unique values",
+            "ratings['item_id'].nunique()": "count unique values",
+            "ratings.iterrows()": "iterate over dataframe",
+            "rating = row['rating']": "populate variable",
+            "range(num_users)": "iterate over sequence of numbers",
+            "range(num_movies)": "iterate over sequence of numbers",
+            "np.zeros(num_movies)": "create array",
+            "np.zeros((num_users, num_movies), dtype=int)": "create matrix",
+            "np.mean(nonzero_ratings_j)": "aggregation",
+            "nonzero_ratings_j = ratings_j[ratings_j != 0]": "data filtering",
+            "nonzero_ratings_i = ratings_i[ratings_i != 0]": "data filtering",
+            "movie_id = row['item_id'] - 1": "populate variable",
+            "max(X[user_id, movie_id], rating)": "get max value"
+        }
+    },
+    "18426": {
+        "chunk_tree": {
+            "def matrix_data(ratings):\n    tmp_mat = ratings.pivot_table(index='user_id', columns='item_id', aggfunc='max', values='rating')\n    user_means = tmp_mat.mean(axis=1)\n    movies_means = tmp_mat.mean(axis=0)\n    tmp_mat.fillna(0, inplace=True)\n    tmp_mat = tmp_mat.values.astype(np.int64)\n    return (tmp_mat, user_means.values, movies_means.values)": {
+                "ratings.pivot_table(index='user_id', columns='item_id', aggfunc='max', values='rating')": {},
+                "tmp_mat.mean(axis=1)": {},
+                "tmp_mat.mean(axis=0)": {},
+                "tmp_mat.fillna(0, inplace=True)": {},
+                "tmp_mat.values.astype(np.int64)": {}
+            }
+        },
+        "plan_tree": {
+            "function to compute interaction and means of two columns": {
+                "pivot; aggregate": {},
+                "aggregation": {},
+                "fill missing values": {},
+                "column conversion": {}
+            }
+        },
+        "chunk_to_plan_op": {
+            "def matrix_data(ratings):\n    tmp_mat = ratings.pivot_table(index='user_id', columns='item_id', aggfunc='max', values='rating')\n    user_means = tmp_mat.mean(axis=1)\n    movies_means = tmp_mat.mean(axis=0)\n    tmp_mat.fillna(0, inplace=True)\n    tmp_mat = tmp_mat.values.astype(np.int64)\n    return (tmp_mat, user_means.values, movies_means.values)": "function to compute interaction and means of two columns",
+            "tmp_mat.mean(axis=1)": "aggregation",
+            "tmp_mat.values.astype(np.int64)": "column conversion",
+            "tmp_mat.mean(axis=0)": "aggregation",
+            "tmp_mat.fillna(0, inplace=True)": "fill missing values",
+            "ratings.pivot_table(index='user_id', columns='item_id', aggfunc='max', values='rating')": "pivot; aggregate"
+        }
     }
 }

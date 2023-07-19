@@ -1,0 +1,65 @@
+{
+    "extract unique values": [
+        "cur_genre = movies.loc[movies[genre] == 1]",
+        "movie_ids = movies[movies[key] == 1].index",
+        "movie_by_genre = movies[movies[genre] == 1]",
+        "for genre in genres:\n    if movie[genre]:\n        if year in movie_count_by_genre[genre]:\n            movie_count_by_genre[genre][year] += 1\n        else:\n            movie_count_by_genre[genre][year] = 1",
+        "if movie[genre]:\n    if year in movie_count_by_genre[genre]:\n        movie_count_by_genre[genre][year] += 1\n    else:\n        movie_count_by_genre[genre][year] = 1",
+        "movie_genres = movies.loc[movies[genre] == 1]",
+        "for genre in genres:\n    if movie[genre]:\n        if year in movie_count_by_genre[genre]:\n            movie_count_by_genre[genre][year] += 1\n        else:\n            movie_count_by_genre[genre][year] = 1",
+        "if movie[genre]:\n    if year in movie_count_by_genre[genre]:\n        movie_count_by_genre[genre][year] += 1\n    else:\n        movie_count_by_genre[genre][year] = 1",
+        "if year in movie_count_by_genre[genre]:\n    movie_count_by_genre[genre][year] += 1\nelse:\n    movie_count_by_genre[genre][year] = 1",
+        "ratings['item_id'].unique()",
+        "ratings_movies_merged = ratings_movies_merged[ratings_movies_merged['release_year'] >= starting_year]",
+        "temp[temp['count'] > threshold].sort_values('mean', ascending=False)"
+    ],
+    "1.3. Data Access": [
+        "rslt_df = movies[movies[genre] == 1]",
+        "genre_df = joined_df.loc[joined_df[genre] == 1]",
+        "df = df[df['value'] == 1]",
+        "movies_long = movies_long[movies_long.is_genre == 1]",
+        "genre_df = movies.loc[movies[genre] == 1]",
+        "year_series[non_nan_idx].astype(dtype=np.int32)",
+        "year_series[filtered_ratings['item_id']].reset_index(drop=True)",
+        "ans = ratings_with_year.loc[ratings_with_year['release_year'] >= 1990, :].loc[:, ['release_year', 'rating']]",
+        "yearwise_ratings = yearwise_ratings[yearwise_ratings['release_year'] >= starting_year]",
+        "df_movie_rating = df_movie_rating[df_movie_rating['release_year'] >= starting_year]",
+        "ret = ratings_year_cleaned[ratings_year_cleaned['release_year'] >= 1990][['release_year', 'rating']]",
+        "monthtime_series = datetime_series.dt.month[yeartime_series >= year]",
+        "ratings = ratings[ratings['timestamp'].dt.year == year]",
+        "ratings[ratings['year'] == year].groupby('month')",
+        "work_df[work_df.year == year].groupby(['month'], as_index=False)",
+        "nonzero_ratings_j = ratings_j[ratings_j != 0]"
+    ],
+    "standard numerical operations": [
+        "ratings.loc[group[genre].index].sum()",
+        "new_ratings[new_ratings[i] == 1].rating.mean()",
+        "if len(mr_dict[m]) > 50:\n    avg = sum(mr_dict[m]) / len(mr_dict[m])\n    mr_avg[m] = avg",
+        "ratings_copy = ratings_copy[filt]",
+        "mean_ratings = mean_ratings[mean_ratings.item_id > threshold]"
+    ],
+    "convert Pandas dataframe to Numpy matrix": [
+        "m = movies[movies[i] == 1].index.values",
+        "req_movies = movies_year[movies_year['release_year'] >= starting_year]",
+        "movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']",
+        "month_integrated_year = month_integrated[month_integrated['year'] == year]"
+    ],
+    "1.1. Series": [
+        "k = new_movies.loc[new_movies[g] == 1]"
+    ],
+    "data filtering": [
+        "count_df = count_df[filt]",
+        "all_ratings = all_ratings.loc[all_ratings['rating', 'count'] > threshold]",
+        "df2_robust = df2_robust[df2_robust['count'] > threshold]",
+        "df = df[df['counts'] > threshold]",
+        "ratings_count_avg = ratings_count_avg[ratings_count_avg['count'] > threshold]",
+        "df = df[df['rating_count'] >= 50]"
+    ],
+    "convert NumPy matrix to Pandas dataframe": [
+        "set(year_series[year_series >= starting_year].index)",
+        "nonzero_ratings_i = ratings_i[ratings_i != 0]"
+    ],
+    "1.2. Dataframes": [
+        "if release_year < starting_year:\n    continue"
+    ]
+}

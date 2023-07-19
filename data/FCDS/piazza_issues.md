@@ -1,6 +1,4 @@
 # Issue 1
-Most questions on piazza seem to be related to timeout issues (optimizing code)
-
 In one case a max_vocab_len constraint needed to be added (I succeeded after adding the max_vocab_len constraint to the string slices! Thanks for your pointing out!)
 
 # Issue 2
@@ -23,3 +21,12 @@ Thank yo so much!"
 **This can be, and was answered through the documentation:**
 "when shuffle is set to True, the DataLoader will create a new random order of samples at the start of each epoch.
 You can read more : https://pytorch.org/docs/stable/_modules/torch/utils/data/dataloader.html#DataLoader"
+
+# Issue 5: Q9 Not getting correct accuracy
+## This person was getting low accuracy on the hidden test cases
+Solution: "At the end of Q8 you need to load the stored state dict back into the model."
+They forgot the `model.load_state_dict()` step (forgot to load the model checkpoint). I have done this mistake before too :/
+
+# Issue 6: Timing out on sail (even though only Q1 was submitted)
+## This person was getting timeout issues
+Repeated list concatenation is expensive (you have to create a new list every time). You should use the appropriate methods to modify self.data and self.labels in place.
