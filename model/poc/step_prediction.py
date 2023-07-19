@@ -6,6 +6,8 @@ import torch
 import pandas as pd
 from typing import *
 from collections import defaultdict
+from sentence_transformers import util
+from model.code_search import CodeBERTSimModel
 from data.FCDS.code_chunking import extract_op_chunks
 from model.code_similarity_retrievers.dense import CodeBERTDenseSearcher
 
@@ -64,6 +66,30 @@ def load_primer_plan_ops(path: str="./data/FCDS/primer_only_plan_ops.json"):
 
     return all_codes, code_plan_op_mapping
 
+def zero_shot_ccsim_plan_op_map(code_to_plan_op_data):
+    # intialize code similarity model and load checkpoint.
+    codebert_code_sim_model = CodeBERTSimModel()
+    ckpt_path = "./experiments/CoNaLa_CSN_CodeBERT_CodeSim_CosSim/best_model.pt"
+    state_dict = torch.load(ckpt_path, map_location="cpu")["model_state_dict"]
+    codebert_code_sim_model.load_state_dict(state_dict)
+    if torch.cuda.is_available(): codebert_code_sim_model.cuda()
+    # load primer plan operators.
+    all_codes, code_plan_op_mapping = load_primer_plan_ops()
+    plan_op_mat = codebert_code_sim_model.encode_from_text(codes=all_codes, obf_code=True, norm_L2=True)
+    X = [code for code,_ in code_to_plan_op_data]
+    code_enc = codebert_code_sim_model.encode_from_text(codes=X, obf_code=False, norm_L2=True)
+    preds = [
+        code_plan_op_mapping[all_codes[i]][0] for i in (
+                code_enc @ plan_op_mat.T
+            ).argmax(axis=-1).tolist()
+        ]
+    plan_op_preds = defaultdict(lambda: [])
+    for code, plan_op_pred in zip(X, preds):
+        plan_op_preds[plan_op_pred].append(code)
+    plan_op_preds = dict(plan_op_preds)
+    with open("./model/poc/zero_shot_code2code_plan_op_map.json", "w") as f:
+        json.dump(plan_op_preds, f, indent=4)
+
 def zero_shot_code2code_plan_op_map(code_to_plan_op_data):
     codebert_dense_searcher = CodeBERTDenseSearcher(
         ckpt_path="./experiments/CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim/best_model.pt",
@@ -86,7 +112,7 @@ def zero_shot_code2code_plan_op_map(code_to_plan_op_data):
         plan_op_preds[plan_op_pred].append(code)
     plan_op_preds = dict(plan_op_preds)
     with open("./model/poc/zero_shot_code2code_plan_op_map.json", "w") as f:
-        json.dump(plan_op_preds, f, indent=4)    
+        json.dump(plan_op_preds, f, indent=4)
 
 def zero_shot_eval_codebert_searcher(code_to_plan_op_data, plan_op_names):
     codebert_dense_searcher = CodeBERTDenseSearcher(
@@ -94,14 +120,14 @@ def zero_shot_eval_codebert_searcher(code_to_plan_op_data, plan_op_names):
         faiss_index_path=None,
     )
     plan_op_mat = torch.as_tensor(codebert_dense_searcher.encode(
-        queries=plan_op_names, 
+        queries=plan_op_names, obf_code=True,
         text_query=True, use_cos_sim=True
     ))
     X = [code for code,_ in code_to_plan_op_data]
     y = [plan_ops for _,plan_ops in code_to_plan_op_data]
     code_enc = torch.as_tensor(codebert_dense_searcher.encode(
         queries=X, text_query=False, 
-        use_cos_sim=True
+        use_cos_sim=True, obf_code=True
     ))
     preds = [plan_op_names[i] for i in torch.argmax(code_enc @ plan_op_mat.T, axis=-1).tolist()]
     print(len(code_to_plan_op_data))
@@ -118,7 +144,10 @@ def zero_shot_eval_codebert_searcher(code_to_plan_op_data, plan_op_names):
 if __name__ == "__main__":
     # plan_op_annotations = pd.read_csv("./data/FCDS/FCDS Plan Operator Annotations.csv")
     plan_ops, data = load_plan_op_data(
-        filt_ops_list=["data filtering", "get unique values"],
+        filt_ops_list=[
+            "data filtering", "get unique values", "count unique values", "aggregation",
+            "data melting", "reset index", "data grouping", "drop missing values"
+        ],
         filt_mode="keep",
     )
     print(len(data))
@@ -126,4 +155,5 @@ if __name__ == "__main__":
     # zero_shot_eval_codebert_searcher(
     #     data, plan_ops
     # )
-    zero_shot_code2code_plan_op_map(data)
+    # zero_shot_code2code_plan_op_map(data)
+    zero_shot_ccsim_plan_op_map(data)

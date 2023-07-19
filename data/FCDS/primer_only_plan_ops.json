@@ -22,25 +22,14 @@
     "1.3. Data Access": {
         "codes": [
             "df.iloc[2,1]",
-            "df.iloc[0, [0,2]]",
-            "df.iloc[[0], [0, 2]]",
-            "df.iloc[1]",
             "df.iloc[:,1]",
             "df.iloc[1:,:-1]",
-            "df.loc[\"x\", \"c\"]",
-            "df.loc[\"x\", [\"a\", \"c\"]]",
             "df.loc[[\"x\"], [\"a\", \"c\"]]",
-            "df.loc[\"y\"]",
             "df.loc[\"y\":, :\"c\"]",
             "df.loc[[True, False, True, False], [False, True, False]]",
             "df[\"a\"]",
             "df[[\"b, \"c\"]])",
-            "df[\"x\":\"h\"]",
-            "df[[True, False, False, True]]",
-            "s[\"b\"]",
-            "s[[\"a\", \"c\"]]",
-            "s[[True, True, False]]",
-            "s.iloc[[1, 2]]"
+            "df[[True, False, False, True]]"
         ],
         "path": "1. Series and Dataframes/1.3. Data Access"
     },
@@ -89,14 +78,27 @@
         "codes": [
             "s.sum()",
             "s.std()",
-            "s.mean()"
+            "s.mean()",
+            "df.sum(axis = 0)",
+            "df.sum(axis = 1)",
+            "cur_genre_rating['rating'].mean()",
+            "genre_df['rating'].mean()",
+            "genres_rating_cnt.sum()",
+            "for (_, row) in ratings.iterrows():\n    item_id = row['item_id']\n    rating = row['rating']\n    if item_id in id_to_rating:\n        id_to_rating[item_id][0] += rating\n        id_to_rating[item_id][1] += 1\n    else:\n        id_to_rating[item_id] = [rating, 1]",
+            "np.mean(nonzero_ratings_i)",
+            "np.mean(nonzero_ratings_j)",
+            "tmp_mat.mean(axis=1)",
+            "tmp_mat.mean(axis=0)"
         ],
         "path": "2.1. Series iteration/standard numerical operations"
     },
     "extract unique values": {
         "codes": [
             "s.unique()",
-            "s.nunique()"
+            "s.nunique()",
+            "ratings['item_id'].unique()",
+            "ratings['user_id'].nunique()",
+            "ratings['item_id'].nunique()"
         ],
         "path": "2.1. Series iteration/extract unique values"
     },
@@ -141,8 +143,71 @@
     "data filtering": {
         "codes": [
             "df.loc[:, (df%2 == 1).sum(axis = 0) > len(df)/2]",
-            "df[df.sum(axis = 1) % 3 == 0]"
+            "df[df.sum(axis = 1) % 3 == 0]",
+            "cur_genre = movies.loc[movies[genre] == 1]",
+            "rslt_df = movies[movies[genre] == 1]",
+            "genre_df = joined_df.loc[joined_df[genre] == 1]",
+            "movie_ids = movies[movies[key] == 1].index",
+            "m = movies[movies[i] == 1].index.values",
+            "movie_by_genre = movies[movies[genre] == 1]",
+            "df = df[df['value'] == 1]",
+            "movie_genres = movies.loc[movies[genre] == 1]",
+            "k = new_movies.loc[new_movies[g] == 1]",
+            "movies_long = movies_long[movies_long.is_genre == 1]",
+            "genre_df = movies.loc[movies[genre] == 1]",
+            "count_df = count_df[filt]",
+            "req_movies = movies_year[movies_year['release_year'] >= starting_year]",
+            "if release_year < starting_year:\n    continue",
+            "yearwise_ratings = yearwise_ratings[yearwise_ratings['release_year'] >= starting_year]",
+            "ratings_movies_merged = ratings_movies_merged[ratings_movies_merged['release_year'] >= starting_year]",
+            "df_movie_rating = df_movie_rating[df_movie_rating['release_year'] >= starting_year]",
+            "monthtime_series = datetime_series.dt.month[yeartime_series >= year]",
+            "ratings = ratings[ratings['timestamp'].dt.year == year]",
+            "month_integrated_year = month_integrated[month_integrated['year'] == year]",
+            "all_ratings = all_ratings.loc[all_ratings['rating', 'count'] > threshold]",
+            "df2_robust = df2_robust[df2_robust['count'] > threshold]",
+            "ratings_copy = ratings_copy[filt]",
+            "df = df[df['counts'] > threshold]",
+            "mean_ratings = mean_ratings[mean_ratings.item_id > threshold]",
+            "ratings_count_avg = ratings_count_avg[ratings_count_avg['count'] > threshold]",
+            "df = df[df['rating_count'] >= 50]",
+            "nonzero_ratings_j = ratings_j[ratings_j != 0]",
+            "nonzero_ratings_i = ratings_i[ratings_i != 0]"
         ],
         "path": "2.2 DataFrame iteration/data filtering"
+    },
+    "wide format dataframe": {
+        "codes": [
+            "df_wide = pd.DataFrame({\n    \"country\" : [\"A\", \"B\", \"C\"],\n    \"population_in_million\" : [100, 200, 120],\n    \"gdp_percapita\" : [2000, 7000, 15000]\n})\ndf_wide\n"
+        ],
+        "path": "3. Manipulating DataFrames/3.1. Conversion between long and wide formats/wide format dataframe"
+    },
+    "long format dataframe": {
+        "codes": [
+            "df_long = pd.DataFrame({\n    \"country\" : [\"A\", \"A\", \"B\", \"B\", \"C\", \"C\"],\n    \"attribute\" : [\"population_in_million\", \"gdp_percapita\"] * 3,\n    \"value\" : [100, 2000, 200, 7000, 120, 15000]\n})\ndf_long"
+        ],
+        "path": "3. Manipulating DataFrames/3.1. Conversion between long and wide formats/long format dataframe"
+    },
+    "convert from long to wide": {
+        "codes": [
+            "df_long.pivot_table(index = \"country\", columns = \"attribute\", values = \"value\")"
+        ],
+        "path": "3. Manipulating DataFrames/convert from long to wide"
+    },
+    "convert from wide to long": {
+        "codes": [
+            "df_wide.melt(id_vars = [\"country\"], value_vars = [\"population_in_million\", \"gdp_percapita\"], var_name = \"attribute\", value_name = \"value\")"
+        ],
+        "path": "3. Manipulating DataFrames/convert from wide to long"
+    },
+    "reset dataframe index (not in primer)": {
+        "codes": [
+            "df.reset_index()",
+            "df.reset_index()",
+            "by_month.reset_index(inplace=True)",
+            "result.reset_index()",
+            "df2.reset_index()"
+        ],
+        "path": "reset dataframe index (not in primer)"
     }
 }

@@ -1,65 +1,115 @@
 {
-    "extract unique values": [
-        "cur_genre = movies.loc[movies[genre] == 1]",
-        "movie_ids = movies[movies[key] == 1].index",
-        "movie_by_genre = movies[movies[genre] == 1]",
+    "standard numerical operations": [
+        "cur_genre_rating['rating'].mean()",
+        "genre_df['rating'].mean()",
+        "ratings.loc[group[genre].index].sum()",
+        "new_ratings[new_ratings[i] == 1].rating.mean()",
+        "genres_rating_cnt.sum()",
         "for genre in genres:\n    if movie[genre]:\n        if year in movie_count_by_genre[genre]:\n            movie_count_by_genre[genre][year] += 1\n        else:\n            movie_count_by_genre[genre][year] = 1",
         "if movie[genre]:\n    if year in movie_count_by_genre[genre]:\n        movie_count_by_genre[genre][year] += 1\n    else:\n        movie_count_by_genre[genre][year] = 1",
-        "movie_genres = movies.loc[movies[genre] == 1]",
         "for genre in genres:\n    if movie[genre]:\n        if year in movie_count_by_genre[genre]:\n            movie_count_by_genre[genre][year] += 1\n        else:\n            movie_count_by_genre[genre][year] = 1",
         "if movie[genre]:\n    if year in movie_count_by_genre[genre]:\n        movie_count_by_genre[genre][year] += 1\n    else:\n        movie_count_by_genre[genre][year] = 1",
         "if year in movie_count_by_genre[genre]:\n    movie_count_by_genre[genre][year] += 1\nelse:\n    movie_count_by_genre[genre][year] = 1",
-        "ratings['item_id'].unique()",
-        "ratings_movies_merged = ratings_movies_merged[ratings_movies_merged['release_year'] >= starting_year]",
-        "temp[temp['count'] > threshold].sort_values('mean', ascending=False)"
+        "k.groupby('Year')",
+        "f.groupby('year')",
+        "genre_df.groupby('year')",
+        "for (_, row) in ratings.iterrows():\n    item_id = row['item_id']\n    rating = row['rating']\n    if item_id in id_to_rating:\n        id_to_rating[item_id][0] += rating\n        id_to_rating[item_id][1] += 1\n    else:\n        id_to_rating[item_id] = [rating, 1]",
+        "df.groupby(['month'])",
+        "ratings.groupby('month')",
+        "month_integrated_year.groupby('mon')",
+        "df2.groupby(['item_id'])",
+        "df1.groupby(['item_id'])",
+        "ratings_copy.groupby(['item_id'])",
+        "np.mean(nonzero_ratings_i)",
+        "np.mean(nonzero_ratings_j)",
+        "tmp_mat.mean(axis=1)",
+        "tmp_mat.mean(axis=0)"
     ],
-    "1.3. Data Access": [
+    "data filtering": [
+        "cur_genre = movies.loc[movies[genre] == 1]",
         "rslt_df = movies[movies[genre] == 1]",
         "genre_df = joined_df.loc[joined_df[genre] == 1]",
+        "movie_ids = movies[movies[key] == 1].index",
+        "m = movies[movies[i] == 1].index.values",
+        "movie_by_genre = movies[movies[genre] == 1]",
         "df = df[df['value'] == 1]",
+        "movie_genres = movies.loc[movies[genre] == 1]",
+        "k = new_movies.loc[new_movies[g] == 1]",
         "movies_long = movies_long[movies_long.is_genre == 1]",
         "genre_df = movies.loc[movies[genre] == 1]",
+        "count_df = count_df[filt]",
+        "req_movies = movies_year[movies_year['release_year'] >= starting_year]",
         "year_series[non_nan_idx].astype(dtype=np.int32)",
-        "year_series[filtered_ratings['item_id']].reset_index(drop=True)",
+        "set(year_series[year_series >= starting_year].index)",
+        "if pd.isnull(release_date):\n    continue",
+        "movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']",
+        "if release_year < starting_year:\n    continue",
         "ans = ratings_with_year.loc[ratings_with_year['release_year'] >= 1990, :].loc[:, ['release_year', 'rating']]",
         "yearwise_ratings = yearwise_ratings[yearwise_ratings['release_year'] >= starting_year]",
+        "ratings_movies_merged = ratings_movies_merged[ratings_movies_merged['release_year'] >= starting_year]",
         "df_movie_rating = df_movie_rating[df_movie_rating['release_year'] >= starting_year]",
         "ret = ratings_year_cleaned[ratings_year_cleaned['release_year'] >= 1990][['release_year', 'rating']]",
         "monthtime_series = datetime_series.dt.month[yeartime_series >= year]",
         "ratings = ratings[ratings['timestamp'].dt.year == year]",
+        "month_integrated_year = month_integrated[month_integrated['year'] == year]",
         "ratings[ratings['year'] == year].groupby('month')",
         "work_df[work_df.year == year].groupby(['month'], as_index=False)",
-        "nonzero_ratings_j = ratings_j[ratings_j != 0]"
-    ],
-    "standard numerical operations": [
-        "ratings.loc[group[genre].index].sum()",
-        "new_ratings[new_ratings[i] == 1].rating.mean()",
         "if len(mr_dict[m]) > 50:\n    avg = sum(mr_dict[m]) / len(mr_dict[m])\n    mr_avg[m] = avg",
-        "ratings_copy = ratings_copy[filt]",
-        "mean_ratings = mean_ratings[mean_ratings.item_id > threshold]"
-    ],
-    "convert Pandas dataframe to Numpy matrix": [
-        "m = movies[movies[i] == 1].index.values",
-        "req_movies = movies_year[movies_year['release_year'] >= starting_year]",
-        "movie_ratings = ratings.loc[ratings['item_id'] == movie_id, 'rating']",
-        "month_integrated_year = month_integrated[month_integrated['year'] == year]"
-    ],
-    "1.1. Series": [
-        "k = new_movies.loc[new_movies[g] == 1]"
-    ],
-    "data filtering": [
-        "count_df = count_df[filt]",
         "all_ratings = all_ratings.loc[all_ratings['rating', 'count'] > threshold]",
         "df2_robust = df2_robust[df2_robust['count'] > threshold]",
+        "ratings_copy = ratings_copy[filt]",
         "df = df[df['counts'] > threshold]",
+        "mean_ratings = mean_ratings[mean_ratings.item_id > threshold]",
         "ratings_count_avg = ratings_count_avg[ratings_count_avg['count'] > threshold]",
-        "df = df[df['rating_count'] >= 50]"
-    ],
-    "convert NumPy matrix to Pandas dataframe": [
-        "set(year_series[year_series >= starting_year].index)",
+        "df = df[df['rating_count'] >= 50]",
+        "nonzero_ratings_j = ratings_j[ratings_j != 0]",
         "nonzero_ratings_i = ratings_i[ratings_i != 0]"
     ],
-    "1.2. Dataframes": [
-        "if release_year < starting_year:\n    continue"
+    "extract unique values": [
+        "ratings.groupby('item_id')",
+        "movies.groupby('release_date')",
+        "movies.dropna(subset=['release_date'])",
+        "ratings['item_id'].unique()",
+        "df[df['year'] == year].dropna()",
+        "ratings.groupby('item_id')",
+        "ratings.groupby('item_id')",
+        "ratings.groupby('item_id')",
+        "temp[temp['count'] > threshold].sort_values('mean', ascending=False)",
+        "ratings.groupby('item_id')",
+        "ratings['user_id'].nunique()",
+        "ratings['item_id'].nunique()"
+    ],
+    "convert from wide to long": [
+        "df[['release_year'] + genres].melt(id_vars=['release_year'], value_vars=genres, var_name='genre', value_name='value')",
+        "movies.melt(id_vars=['release_date'], value_vars=genres, var_name='genre', value_name='is_genre')"
+    ],
+    "reset dataframe index (not in primer)": [
+        "df.reset_index()",
+        "movie_genres['release_year'].value_counts(dropna=True)",
+        "movies_year.dropna(subset=['release_year'])",
+        "year_series[filtered_ratings['item_id']].reset_index(drop=True)",
+        "df_movie_rating.dropna(subset=['release_date'])",
+        "ratings_year.dropna(subset=['release_year'])",
+        "df.reset_index()",
+        "by_month.reset_index(inplace=True)",
+        "result.reset_index()",
+        "df2.reset_index()"
+    ],
+    "1.3. Data Access": [
+        "df.groupby(['genre', 'release_year'])",
+        "for (m, r) in zip(ratings['item_id'], ratings['rating']):\n    if m not in mr_dict:\n        mr_dict[m] = []\n    mr_dict[m].append(r)"
+    ],
+    "lowercase strings and replace": [
+        "new_movies['release_date'].str[-4:].dropna()"
+    ],
+    "frequency count for each unique value": [
+        "year_series.notnull()"
+    ],
+    "data overview": [
+        "pd.isnull(release_date)"
+    ],
+    "convert from long to wide": [
+        "ratings.groupby('item_id').agg({'item_id': 'count', 'rating': 'mean'})",
+        "ratings.groupby('item_id').agg(rating_count=('rating', 'count'), avg_rating=('rating', 'mean'))"
     ]
 }

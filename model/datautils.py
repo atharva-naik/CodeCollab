@@ -118,6 +118,106 @@ def graphcodebert_proc_code(code: str, parser, tokenizer, tok_args: dict):
     
     return c_iids, c_attn, c_pos_idx
 
+class CSNCoNaLaCodeBERTCodeSimDataset(Dataset):
+    """load CodeSearchNet data for code-search training."""
+    def __init__(self, folder: str="./data/CoNaLa", split: str="train", tokenizer=None, 
+                 csn_folder="./data/CodeSearchNet/", filt_conala_top_k: bool=True, 
+                 filt_k: int=100000, **tok_args):
+        super(CSNCoNaLaCodeBERTCodeSimDataset, self).__init__()
+        self.split = split
+        self.tok_args = tok_args
+        self.tokenizer = tokenizer
+        self.folder = folder
+        self.filt_k = filt_k
+        self.filt_conala_top_k = filt_conala_top_k
+        if split == "train":
+            self.data = read_jsonl(os.path.join(
+                folder, "train.jsonl"
+            ))
+            # filter CoNaLa instances based on decreasing order of relevance
+            # CoNaLa data is already organized in decreasing order of relevance.
+            if filt_conala_top_k:
+                self.data = self.data[:self.filt_k]
+            desc = "obfuscating CoNaLa"
+            for i in tqdm(range(len(self.data)), desc=desc): 
+                # remove comments and docstrings.
+                self.data[i]["obf_snippet"] = obfuscate_code(remove_comments_and_docstrings(self.data[i]["snippet"]))
+            if csn_folder is not None:
+                print(f"\x1b[32;1madding CodeSearchNet data\x1b[0m")
+                all_csn_data = []
+                for idx in range(5):
+                    csn_data = read_jsonl(os.path.join(csn_folder, "train", f"python_train_{idx}.jsonl"))
+                    desc = "obfuscating CSN"
+                    for rec in tqdm(csn_data, desc=desc):
+                        obf_code = obfuscate_code(remove_comments_and_docstrings(rec["code"]))
+                        all_csn_data.append({
+                            "snippet": rec["code"],
+                            "obf_snippet": obf_code,
+                        })
+                print(f"\x1b[32;1madded CodeSearchNet data\x1b[0m")
+                self.data += all_csn_data
+        else:
+            self.data = json.load(open(
+                os.path.join(
+                    folder, f"{split}.json"
+                )
+            ))
+            for i in tqdm(range(len(self.data)), desc="obfuscating code"): 
+                # remove comments and docstrings.
+                self.data[i]["obf_snippet"] = obfuscate_code(remove_comments_and_docstrings(self.data[i]["snippet"]))
+            self.queries = {}
+            self.doc_ids = defaultdict(lambda:[])
+            self.docs = {}
+            d_ctr = 0
+            q_ctr = 0
+            for i, rec in enumerate(self.data):
+                q = rec['obf_snippet']
+                d = rec['snippet']
+                if q not in self.queries: 
+                    self.queries[q] = q_ctr
+                    q_ctr += 1
+                if d not in self.docs: 
+                    self.docs[d] = d_ctr
+                    d_ctr += 1
+            for i, rec in enumerate(self.data):
+                q = rec['obf_snippet']
+                d = rec['snippet']
+                self.doc_ids[q].append(self.docs[d])
+            self.queries = list(self.queries.keys())
+            self.docs = list(self.docs.keys())
+            self.doc_ids = list(self.doc_ids.values())
+            # print(self.doc_ids[-5:])
+    def get_doc_ids_mask(self):
+        mask = np.zeros((len(self.queries), len(self.docs)))
+        for i, ids in enumerate(self.doc_ids):
+            for j in ids: mask[i][j] = 1
+        return mask
+
+    def get_query_loader(self, batch_size: int=100):
+        qset = QueryCodeBERTDataset(self.queries, self.doc_ids, 
+                            self.tokenizer, **self.tok_args)
+        q_loader = DataLoader(qset, batch_size=batch_size, shuffle=False)
+        return q_loader
+
+    def get_docs_loader(self, batch_size: int=100):
+        dset = DocsCodeBERTDataset(self.docs, self.tokenizer, **self.tok_args)
+        d_loader = DataLoader(dset, batch_size=batch_size, shuffle=False)
+        return d_loader
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, i):
+        q = self.data[i]["obf_snippet"] # query
+        c = self.data[i]["snippet"] # document/code
+        q_tok_dict = self.tokenizer(q, **self.tok_args)
+        c_tok_dict = self.tokenizer(c, **self.tok_args)
+        
+        return [
+            q_tok_dict["input_ids"][0], q_tok_dict["attention_mask"][0],
+            c_tok_dict["input_ids"][0], c_tok_dict["attention_mask"][0],
+        ]
+
 # cell sequence prediction dataloaders:
 class SimpleCellSeqDataset(Dataset):
     """simplest possible cell sequence prediction dataset"""

@@ -30,6 +30,68 @@ random.seed(0)
 np.random.seed(0)
 torch.manual_seed(0)
 
+# single encoder for obfuscation invariant code similarity
+class CodeBERTSimModel(nn.Module):
+    """
+    This class implements the classic bi-encoder architecture
+    for code search using two CodePLM instances.
+    """
+    def __init__(self, path: str="microsoft/codebert-base", 
+                 device: str="cuda", use_cos_sim: bool=False,
+                 rev_ret: bool=False, sym_ret: bool=False):
+        super(CodeBERTSimModel, self).__init__()
+        self.code_encoder = RobertaModel.from_pretrained(path)
+        self.ce_loss = nn.CrossEntropyLoss()
+        self.device = device if torch.cuda.is_available() else "cpu"
+        print(f"moving model to device: {self.device}")
+        self.to(device)
+        self.use_cos_sim = use_cos_sim
+        self.rev_ret = rev_ret
+        self.sym_ret = sym_ret
+        assert not(self.rev_ret == True and self.sym_ret == True), "can't simultaneously train for reverse and symmetric retrieval"
+        self.tokenizer = RobertaTokenizer.from_pretrained(path)
+
+    def encode_from_text(self, codes: str, obf_code: bool=False, norm_L2: bool=False):
+        # assert self.tokenizer is not None, "need to provide tokenizer"
+        if obf_code: codes = [obfuscate_code(code) for code in codes]
+        tok_dict = self.tokenizer(
+            codes, return_tensors="pt", padding="max_length", 
+            max_length=100, truncation=True,
+        )
+        iids = tok_dict["input_ids"].to(self.device)
+        attn = tok_dict["attention_mask"].to(self.device)
+        with torch.no_grad():
+            vec = self.encode(iids, attn).squeeze()
+        if norm_L2: # normalize by L2 norm for using with cosine similarity.
+            vec = vec.cpu().numpy() # need to do this as normalize_L2 is an inplace operation.
+            faiss.normalize_L2(vec) 
+            vec = torch.as_tensor(vec).to(self.device)
+
+        return vec
+
+    def forward(self, query_iids, query_attn, code_iids, code_attn):
+        query_enc = self.code_encoder(query_iids, query_attn).pooler_output
+        code_enc = self.code_encoder(code_iids, code_attn).pooler_output
+        batch_size, _ = query_enc.shape
+        target = torch.as_tensor(range(batch_size)).to(self.device)
+        # if self.use_cos_sim:
+        #     code_enc = F.normalize(code_enc) # does L2 norm by default on axis-1 (768 vector dim axis)
+        #     query_enc = F.normalize(query_enc)
+        # if self.rev_ret: scores = pairwise_cosine_similarity(code_enc, query_enc)
+        # elif self.sym_ret: 
+        #     scores = pairwise_cosine_similarity(code_enc, query_enc) + pairwise_cosine_similarity(query_enc, code_enc)
+        # else: scores = pairwise_cosine_similarity(query_enc, code_enc)
+        if self.rev_ret: scores = code_enc @ query_enc.T
+        elif self.sym_ret:
+            scores = code_enc @ query_enc.T + query_enc @ code_enc.T
+        else: scores = query_enc @ code_enc.T
+        loss = self.ce_loss(scores, target)
+
+        return query_enc, code_enc, scores, loss
+
+    def encode(self, iids, attn):
+        return self.code_encoder(iids, attn).pooler_output
+
 # bi-encoder for code search.
 class CodeBERTSearchModel(nn.Module):
     """
@@ -472,12 +534,20 @@ def create_dense_index(args):
 def codesearch_finetune(args):
     device = args.device
     if args.model_type == "codebert":
-        codesearch_biencoder = CodeBERTSearchModel(
-            args.model_path, device=device,
-            use_cos_sim=args.cos_sim,
-            rev_ret=args.rev_ret,
-            sym_ret=args.sym_ret,
-        )
+        if args.code_sim_mode:
+            codesearch_biencoder = CodeBERTSimModel(
+                args.model_path, device=device,
+                use_cos_sim=args.cos_sim,
+                rev_ret=args.rev_ret,
+                sym_ret=args.sym_ret,
+            )
+        else:
+            codesearch_biencoder = CodeBERTSearchModel(
+                args.model_path, device=device,
+                use_cos_sim=args.cos_sim,
+                rev_ret=args.rev_ret,
+                sym_ret=args.sym_ret,
+            )
         tok_args = {
             "return_tensors": "pt",
             "padding": "max_length",
@@ -521,12 +591,20 @@ def codesearch_finetune(args):
     
     if args.model_type == "codebert":
         if args.dataset_name == "CoNaLa+CodeSearchNet": # use CoNaLa & CodeSearchNet.
-            trainset = CodeSearchNetCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
-                                                              folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-            valset = CodeSearchNetCodeBERTCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
-                                                            folder=args.data_dir, tokenizer=tokenizer, **tok_args)
-            testset = CodeSearchNetCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
-                                                             folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+            if not(args.code_sim_mode):
+                trainset = CodeSearchNetCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
+                                                                 folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+                valset = CodeSearchNetCodeBERTCodeSearchDataset(split="val", obf_code=args.obfuscate_code,
+                                                                folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+                testset = CodeSearchNetCodeBERTCodeSearchDataset(split="test", obf_code=args.obfuscate_code,
+                                                                folder=args.data_dir, tokenizer=tokenizer, **tok_args)
+            else: 
+                trainset = CSNCoNaLaCodeBERTCodeSimDataset(split="train", folder=args.data_dir, 
+                                                           tokenizer=tokenizer, **tok_args)
+                valset = CSNCoNaLaCodeBERTCodeSimDataset(split="val", folder=args.data_dir, 
+                                                         tokenizer=tokenizer, **tok_args)
+                testset = CSNCoNaLaCodeBERTCodeSimDataset(split="test", folder=args.data_dir, 
+                                                          tokenizer=tokenizer, **tok_args)
         elif args.dataset_name == "JuICe": # use JuICe dataset.
             trainset = JuICeCodeBERTCodeSearchDataset(split="train", obf_code=args.obfuscate_code, 
                                                       tokenizer=tokenizer, **tok_args)
@@ -693,6 +771,7 @@ code search using a bi-encoder setup''')
     parser.add_argument("--index_file_name", type=str, default="codebert_cos_sim.index")
     parser.add_argument("-ckpt", "--checkpoint_path", default=None, type=str, 
                         help="load the model from this checkpoint while fine-tuning")
+    parser.add_argument("-ccs", "--code_sim_mode", action="store_true", help="code similarity training")
     parser.add_argument("-dn", "--dataset_name", type=str, default="CoNaLa+CodeSearchNet", help="dataset name")
     args = parser.parse_args()
 
@@ -733,3 +812,4 @@ if __name__ == "__main__":
 # python -m model.code_search -exp CoNaLa_CSN_UniXcoder_CodeSearch_CosSim -bs 500 -mt unixcoder --mode inference --index_file_name unixcoder_cos_sim.index --cos_sim
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 500 --mode inference --index_file_name codebert_plan_ops_cos_sim.index --cos_sim --index_modality text
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_Sym -bs 500 --mode inference --index_file_name codebert_plan_ops_cos_sim.index --cos_sim --index_modality text
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSim_CosSim -bs 200 --mode train --cos_sim -ccs -e 50

@@ -1,5 +1,6 @@
 import json
 from typing import *
+from model.poc.step_prediction import load_plan_op_data
 
 curated_ops = {
     "1. Series and Dataframes": {
@@ -19,25 +20,14 @@ curated_ops = {
         ],
         "1.3. Data Access": [
             'df.iloc[2,1]',
-            'df.iloc[0, [0,2]]',
-            'df.iloc[[0], [0, 2]]',
-            'df.iloc[1]',
             'df.iloc[:,1]',
             'df.iloc[1:,:-1]',
-            'df.loc["x", "c"]',
-            'df.loc["x", ["a", "c"]]',
             'df.loc[["x"], ["a", "c"]]',
-            'df.loc["y"]',
             'df.loc["y":, :"c"]',
             'df.loc[[True, False, True, False], [False, True, False]]',
             'df["a"]',
             'df[["b, "c"]])',
-            'df["x":"h"]',
             'df[[True, False, False, True]]',
-            's["b"]',
-            's[["a", "c"]]',
-            's[[True, True, False]]',
-            's.iloc[[1, 2]]'
         ],
         "1.4. Dealing with SettingWithCopyWarning": [
             """column = df["a"]
@@ -58,7 +48,7 @@ s = pd.Series(np.random.choice(list(string.ascii_letters), size = 1000))""", 'df
         "elementwise operation between multiple series": ["s + s/2 - s**2"],
         "frequency count for each unique value": ["s.value_counts()"],
         "data overview": ["s.describe()"],
-        "standard numerical operations": ["s.sum()", "s.std()", "s.mean()"],
+        "standard numerical operations": ["s.sum()", "s.std()", "s.mean()", "df.sum(axis = 0)", "df.sum(axis = 1)"],
         "extract unique values": ["s.unique()", "s.nunique()"],
         "convert to lower case": ["s.str.lower()"],
         "get string length": ["s.str.len()"],
@@ -75,7 +65,33 @@ s = pd.Series(np.random.choice(list(string.ascii_letters), size = 1000))""", 'df
             "df.loc[:, (df%2 == 1).sum(axis = 0) > len(df)/2]",
             "df[df.sum(axis = 1) % 3 == 0]"
         ],
-    }
+    },
+    "3. Manipulating DataFrames": {
+        "3.1. Conversion between long and wide formats": {
+            "wide format dataframe": ["""df_wide = pd.DataFrame({
+    "country" : ["A", "B", "C"],
+    "population_in_million" : [100, 200, 120],
+    "gdp_percapita" : [2000, 7000, 15000]
+})
+df_wide
+"""],
+            "long format dataframe": ["""df_long = pd.DataFrame({
+    "country" : ["A", "A", "B", "B", "C", "C"],
+    "attribute" : ["population_in_million", "gdp_percapita"] * 3,
+    "value" : [100, 2000, 200, 7000, 120, 15000]
+})
+df_long"""]
+        },
+        "convert from long to wide": ['df_long.pivot_table(index = "country", columns = "attribute", values = "value")'],
+        "convert from wide to long": ['df_wide.melt(id_vars = ["country"], value_vars = ["population_in_million", "gdp_percapita"], var_name = "attribute", value_name = "value")'],
+        "3.2 Groupby: split-apply-combine": [
+            'df_grouped = df.groupby("state").agg({"city" : "count", "population" : ["sum", "max"]})'
+            '''df.groupby("state").agg(city_count = ("city", "count"), population_sum = ("population", "sum"), population_max = ("population", "max"))''',
+            'result = df.groupby("state").apply(process_group)'
+        ],
+        "remove NAN values": "result.dropna()" 
+    },
+    "reset dataframe index (not in primer)": [],
 }
 
 def unfold_dict_recursively(d: dict, subpath: List[str]=[]) -> Dict[str, Dict[str, Union[List[str], str]]]:
@@ -96,5 +112,18 @@ def unfold_dict_recursively(d: dict, subpath: List[str]=[]) -> Dict[str, Dict[st
 # main
 if __name__ == "__main__":
     unfolded_curated_ops = unfold_dict_recursively(curated_ops, subpath=[])
+    _, data = load_plan_op_data()
+    new_codes = [x for x,op in data if len(set(op).intersection({"get unique values", "count unique values"})) > 0 and len(op) == 1]
+    # print(new_codes)
+    unfolded_curated_ops["extract unique values"]["codes"] += new_codes
+    new_codes = [x for x,op in data if len(set(op).intersection({"data filtering"})) > 0 and len(op) == 1]
+    # print(new_codes)
+    unfolded_curated_ops["data filtering"]["codes"] += new_codes
+    new_codes = [x for x,op in data if len(set(op).intersection({"aggregation"})) > 0 and len(op) == 1]
+    # print(new_codes)
+    unfolded_curated_ops["standard numerical operations"]["codes"] += new_codes    
+    # print(new_codes)
+    new_codes = [x for x,op in data if len(set(op).intersection({"reset index"})) > 0 and len(op) == 1]
+    unfolded_curated_ops["reset dataframe index (not in primer)"]["codes"] += new_codes
     with open("./data/FCDS/primer_only_plan_ops.json", "w") as f:
         json.dump(unfolded_curated_ops, f, indent=4)
