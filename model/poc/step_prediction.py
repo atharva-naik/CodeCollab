@@ -3,6 +3,7 @@ import ast
 import json
 import parse
 import torch
+import statistics
 import pandas as pd
 from typing import *
 from collections import defaultdict
@@ -55,6 +56,11 @@ def load_plan_op_data(
 
     return plan_op_names, code_to_plan_op_data
 
+
+
+def majority_vote_topk(code_enc, plan_op_mat, all_codes: list, code_plan_op_mapping: dict, k: int=5):
+    return [statistics.mode([code_plan_op_mapping[all_codes[i]][0] for i in row]) for row in torch.topk(code_enc @ plan_op_mat.T, axis=-1, k=k).indices.tolist()]
+
 def load_primer_plan_ops(path: str="./data/FCDS/primer_only_plan_ops.json"):
     data = json.load(open(path))
     all_codes = []
@@ -79,10 +85,12 @@ def zero_shot_ccsim_plan_op_map(code_to_plan_op_data):
     X = [code for code,_ in code_to_plan_op_data]
     code_enc = codebert_code_sim_model.encode_from_text(codes=X, obf_code=False, norm_L2=True)
     preds = [
-        code_plan_op_mapping[all_codes[i]][0] for i in (
+        code_plan_op_mapping[
+            all_codes[i]][0] for i in (
                 code_enc @ plan_op_mat.T
             ).argmax(axis=-1).tolist()
         ]
+    # preds = majority_vote_topk(code_enc, plan_op_mat, all_codes, code_plan_op_mapping)
     plan_op_preds = defaultdict(lambda: [])
     for code, plan_op_pred in zip(X, preds):
         plan_op_preds[plan_op_pred].append(code)

@@ -200,6 +200,14 @@
         ],
         "path": "3. Manipulating DataFrames/convert from wide to long"
     },
+    "3.2 Groupby: split-apply-combine": {
+        "codes": [
+            "df_grouped = df.groupby(\"state\").agg({\"city\" : \"count\", \"population\" : [\"sum\", \"max\"]})",
+            "df.groupby(\"state\").agg(city_count = (\"city\", \"count\"), population_sum = (\"population\", \"sum\"), population_max = (\"population\", \"max\"))",
+            "result = df.groupby(\"state\").apply(process_group)"
+        ],
+        "path": "3. Manipulating DataFrames/3.2 Groupby: split-apply-combine"
+    },
     "reset dataframe index (not in primer)": {
         "codes": [
             "df.reset_index()",

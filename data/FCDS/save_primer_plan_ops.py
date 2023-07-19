@@ -85,9 +85,9 @@ df_long"""]
         "convert from long to wide": ['df_long.pivot_table(index = "country", columns = "attribute", values = "value")'],
         "convert from wide to long": ['df_wide.melt(id_vars = ["country"], value_vars = ["population_in_million", "gdp_percapita"], var_name = "attribute", value_name = "value")'],
         "3.2 Groupby: split-apply-combine": [
-            'df_grouped = df.groupby("state").agg({"city" : "count", "population" : ["sum", "max"]})'
+            'df_grouped = df.groupby("state").agg({"city" : "count", "population" : ["sum", "max"]})',
             '''df.groupby("state").agg(city_count = ("city", "count"), population_sum = ("population", "sum"), population_max = ("population", "max"))''',
-            'result = df.groupby("state").apply(process_group)'
+            'result = df.groupby("state").apply(process_group)',
         ],
         "remove NAN values": "result.dropna()" 
     },
