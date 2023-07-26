@@ -4,7 +4,7 @@
             "s = pd.Series({\"a\" : 10, \"b\" : 20, \"c\" : 30})",
             "s = pd.Series(x**2 for x in range(5, 10))"
         ],
-        "path": "1. Series and Dataframes/1.1. Series"
+        "path": "data wrangling/1. Series and Dataframes/1.1. Series"
     },
     "1.2. Dataframes": {
         "codes": [
@@ -17,7 +17,7 @@
             "pd.read_csv('example.tsv', delimiter='\t')",
             "pd.read_csv('example.tsv', dtype= {'a': np.float64, 'b': np.int32, 'c': 'Int64'})"
         ],
-        "path": "1. Series and Dataframes/1.2. Dataframes"
+        "path": "data wrangling/1. Series and Dataframes/1.2. Dataframes"
     },
     "1.3. Data Access": {
         "codes": [
@@ -31,48 +31,48 @@
             "df[[\"b, \"c\"]])",
             "df[[True, False, False, True]]"
         ],
-        "path": "1. Series and Dataframes/1.3. Data Access"
+        "path": "data wrangling/1. Series and Dataframes/1.3. Data Access"
     },
     "1.4. Dealing with SettingWithCopyWarning": {
         "codes": [
-            "column = df[\"a\"]\n    column[0] = 100",
+            "column = df[\"a\"]\n        column[0] = 100",
             "df.loc[0, \"a\"] = 100",
-            "column = df[\"a\"].copy()\n    column[0] = 100"
+            "column = df[\"a\"].copy()\n        column[0] = 100"
         ],
-        "path": "1. Series and Dataframes/1.4. Dealing with SettingWithCopyWarning"
+        "path": "data wrangling/1. Series and Dataframes/1.4. Dealing with SettingWithCopyWarning"
     },
     "convert NumPy matrix to Pandas dataframe": {
         "codes": [
             "df = pd.DataFrame(np.arange(5000).reshape(1000, 5))",
             "s = pd.Series(np.random.randint(low = 0, high = 10, size = 1000))",
-            "import string\n# series of random alphabet letters\nnp.random.seed(0)\ns = pd.Series(np.random.choice(list(string.ascii_letters), size = 1000))",
+            "import string\n    # series of random alphabet letters\n    np.random.seed(0)\n    s = pd.Series(np.random.choice(list(string.ascii_letters), size = 1000))",
             "df = pd.DataFrame(np.random.randint(0, 10, size = 5000).reshape(1000, 5))"
         ],
-        "path": "1. Series and Dataframes/1.5. Pandas and NumPy/convert NumPy matrix to Pandas dataframe"
+        "path": "data wrangling/1. Series and Dataframes/1.5. Pandas and NumPy/convert NumPy matrix to Pandas dataframe"
     },
     "convert Pandas dataframe to Numpy matrix": {
         "codes": [
             "df.values"
         ],
-        "path": "1. Series and Dataframes/1.5. Pandas and NumPy/convert Pandas dataframe to Numpy matrix"
+        "path": "data wrangling/1. Series and Dataframes/1.5. Pandas and NumPy/convert Pandas dataframe to Numpy matrix"
     },
     "elementwise operation between multiple series": {
         "codes": [
             "s + s/2 - s**2"
         ],
-        "path": "2.1. Series iteration/elementwise operation between multiple series"
+        "path": "data wrangling/2.1. Series iteration/elementwise operation between multiple series"
     },
     "frequency count for each unique value": {
         "codes": [
             "s.value_counts()"
         ],
-        "path": "2.1. Series iteration/frequency count for each unique value"
+        "path": "data wrangling/2.1. Series iteration/frequency count for each unique value"
     },
     "data overview": {
         "codes": [
             "s.describe()"
         ],
-        "path": "2.1. Series iteration/data overview"
+        "path": "data wrangling/2.1. Series iteration/data overview"
     },
     "standard numerical operations": {
         "codes": [
@@ -90,7 +90,7 @@
             "tmp_mat.mean(axis=1)",
             "tmp_mat.mean(axis=0)"
         ],
-        "path": "2.1. Series iteration/standard numerical operations"
+        "path": "data wrangling/2.1. Series iteration/standard numerical operations"
     },
     "extract unique values": {
         "codes": [
@@ -100,45 +100,45 @@
             "ratings['user_id'].nunique()",
             "ratings['item_id'].nunique()"
         ],
-        "path": "2.1. Series iteration/extract unique values"
+        "path": "data wrangling/2.1. Series iteration/extract unique values"
     },
     "convert to lower case": {
         "codes": [
             "s.str.lower()"
         ],
-        "path": "2.1. Series iteration/convert to lower case"
+        "path": "data wrangling/2.1. Series iteration/convert to lower case"
     },
     "get string length": {
         "codes": [
             "s.str.len()"
         ],
-        "path": "2.1. Series iteration/get string length"
+        "path": "data wrangling/2.1. Series iteration/get string length"
     },
     "lowercase strings and replace": {
         "codes": [
             "s.str.lower().str.replace('s', '*')",
             "s.apply(lambda x: x.lower().replace('s', '*'))"
         ],
-        "path": "2.1. Series iteration/lowercase strings and replace"
+        "path": "data wrangling/2.1. Series iteration/lowercase strings and replace"
     },
     "dataframe iteration": {
         "codes": [
             "for col in df.columns:",
             "for index, row in df.iterrows():"
         ],
-        "path": "2.2 DataFrame iteration/dataframe iteration"
+        "path": "data wrangling/2.2 DataFrame iteration/dataframe iteration"
     },
     "Sum of every column in the dataframe": {
         "codes": [
             "df.sum(axis = 0)"
         ],
-        "path": "2.2 DataFrame iteration/Sum of every column in the dataframe"
+        "path": "data wrangling/2.2 DataFrame iteration/Sum of every column in the dataframe"
     },
     "Sum of every row in the dataframe": {
         "codes": [
             "df.sum(axis = 1)"
         ],
-        "path": "2.2 DataFrame iteration/Sum of every row in the dataframe"
+        "path": "data wrangling/2.2 DataFrame iteration/Sum of every row in the dataframe"
     },
     "data filtering": {
         "codes": [
@@ -174,31 +174,31 @@
             "nonzero_ratings_j = ratings_j[ratings_j != 0]",
             "nonzero_ratings_i = ratings_i[ratings_i != 0]"
         ],
-        "path": "2.2 DataFrame iteration/data filtering"
+        "path": "data wrangling/2.2 DataFrame iteration/data filtering"
     },
     "wide format dataframe": {
         "codes": [
-            "df_wide = pd.DataFrame({\n    \"country\" : [\"A\", \"B\", \"C\"],\n    \"population_in_million\" : [100, 200, 120],\n    \"gdp_percapita\" : [2000, 7000, 15000]\n})\ndf_wide\n"
+            "df_wide = pd.DataFrame({\n        \"country\" : [\"A\", \"B\", \"C\"],\n        \"population_in_million\" : [100, 200, 120],\n        \"gdp_percapita\" : [2000, 7000, 15000]\n    })\n    df_wide\n    "
         ],
-        "path": "3. Manipulating DataFrames/3.1. Conversion between long and wide formats/wide format dataframe"
+        "path": "data wrangling/3. Manipulating DataFrames/3.1. Conversion between long and wide formats/wide format dataframe"
     },
     "long format dataframe": {
         "codes": [
-            "df_long = pd.DataFrame({\n    \"country\" : [\"A\", \"A\", \"B\", \"B\", \"C\", \"C\"],\n    \"attribute\" : [\"population_in_million\", \"gdp_percapita\"] * 3,\n    \"value\" : [100, 2000, 200, 7000, 120, 15000]\n})\ndf_long"
+            "df_long = pd.DataFrame({\n        \"country\" : [\"A\", \"A\", \"B\", \"B\", \"C\", \"C\"],\n        \"attribute\" : [\"population_in_million\", \"gdp_percapita\"] * 3,\n        \"value\" : [100, 2000, 200, 7000, 120, 15000]\n    })\n    df_long"
         ],
-        "path": "3. Manipulating DataFrames/3.1. Conversion between long and wide formats/long format dataframe"
+        "path": "data wrangling/3. Manipulating DataFrames/3.1. Conversion between long and wide formats/long format dataframe"
     },
     "convert from long to wide": {
         "codes": [
             "df_long.pivot_table(index = \"country\", columns = \"attribute\", values = \"value\")"
         ],
-        "path": "3. Manipulating DataFrames/convert from long to wide"
+        "path": "data wrangling/3. Manipulating DataFrames/convert from long to wide"
     },
     "convert from wide to long": {
         "codes": [
             "df_wide.melt(id_vars = [\"country\"], value_vars = [\"population_in_million\", \"gdp_percapita\"], var_name = \"attribute\", value_name = \"value\")"
         ],
-        "path": "3. Manipulating DataFrames/convert from wide to long"
+        "path": "data wrangling/3. Manipulating DataFrames/convert from wide to long"
     },
     "3.2 Groupby: split-apply-combine": {
         "codes": [
@@ -206,7 +206,34 @@
             "df.groupby(\"state\").agg(city_count = (\"city\", \"count\"), population_sum = (\"population\", \"sum\"), population_max = (\"population\", \"max\"))",
             "result = df.groupby(\"state\").apply(process_group)"
         ],
-        "path": "3. Manipulating DataFrames/3.2 Groupby: split-apply-combine"
+        "path": "data wrangling/3. Manipulating DataFrames/3.2 Groupby: split-apply-combine"
+    },
+    "remove NAN values": {
+        "codes": [
+            "result.dropna()"
+        ],
+        "path": "data wrangling/3. Manipulating DataFrames/remove NAN values"
+    },
+    "4.1. Concatenation": {
+        "codes": [
+            "pd.concat([df1, df2])",
+            "pd.concat([df1, df3], axis = 1)"
+        ],
+        "path": "data wrangling/4. Working with multiple data frames/4.1. Concatenation"
+    },
+    "4.2. Joining": {
+        "codes": [
+            "df1.merge(df2, left_on = \"col1\", right_on = \"col1\", how = \"left\")",
+            "df1.merge(df2, left_on = \"col1\", right_on = \"col1\", how = \"left\")",
+            "df1.merge(df2, left_on = \"col1\", right_on = \"col1\", how = \"left\")",
+            "df1.merge(df2, left_on = \"col1\", right_on = \"col1\", how = \"left\")",
+            "df1.set_index(\"col1\", inplace = True)\n    df1.merge(df2, left_index = True, right_on = \"col1\", how = \"left\")",
+            "df.join(other, lsuffix='_caller', rsuffix='_other')",
+            "df.set_index('key').join(other.set_index('key'))",
+            "df.join(other.set_index('key'), on='key')",
+            "df.join(other.set_index('key'), on='key', validate='m:1')"
+        ],
+        "path": "data wrangling/4. Working with multiple data frames/4.2. Joining"
     },
     "reset dataframe index (not in primer)": {
         "codes": [
@@ -216,6 +243,179 @@
             "result.reset_index()",
             "df2.reset_index()"
         ],
-        "path": "reset dataframe index (not in primer)"
+        "path": "data wrangling/reset dataframe index (not in primer)"
+    },
+    "sort index/values (not in primer)": {
+        "codes": [
+            "df.sort_index()",
+            "df.sort_index(ascending=False, inplace=True)",
+            "df.sort_index(key=lambda x: x.str.lower())",
+            "df.sort_values(by=['col1'])",
+            "df.sort_values(by=['col1', 'col2'])",
+            "df.sort_values(by='col1', ascending=False)",
+            "df.sort_values(by='col1', ascending=False, na_position='first')"
+        ],
+        "path": "data wrangling/sort index/values (not in primer)"
+    },
+    "1.1 Arrays": {
+        "codes": [
+            "a = np.array([[1., 2.], [3., 4.]])",
+            "np.zeros((2,3,4))",
+            "np.ones((3,3))",
+            "np.full((2,2), 100)",
+            "np.eye(2)",
+            "np.random.normal(size = (2, 3))"
+        ],
+        "path": "data processing/1. Numpy basics/1.1 Arrays"
+    },
+    "array type": {
+        "codes": [
+            "a.dtype"
+        ],
+        "path": "data processing/1. Numpy basics/array type"
+    },
+    "array element access": {
+        "codes": [
+            "a[0, 1]"
+        ],
+        "path": "data processing/1. Numpy basics/array element access"
+    },
+    "Caution about array shapes": {
+        "codes": [
+            "a.shape",
+            "a = np.array([1,2])\nprint( a.shape )\n\nb = np.array([[1,2]])\nprint( b.shape )\n\nc = np.array([[1], [2]])\nprint( c.shape )",
+            "a.T.shape"
+        ],
+        "path": "data processing/1. Numpy basics/Caution about array shapes"
+    },
+    "Slicing": {
+        "codes": [
+            "a[0:2,1:3]",
+            "a[0:2,1:3]",
+            "a[0:2,]",
+            "a[0:2, 2:3]",
+            "a[0:2, 2]"
+        ],
+        "path": "data processing/1. Numpy basics/1.2 Array indexing/Slicing"
+    },
+    "Integer array indexing": {
+        "codes": [
+            "a[[0, 0, 1, 1, 1],:]",
+            "a[[0,3], [1,2]]",
+            "a[[0,3], [1,2]] += 100"
+        ],
+        "path": "data processing/1. Numpy basics/1.2 Array indexing/Integer array indexing"
+    },
+    "Boolean array indexing": {
+        "codes": [
+            "print(a > 2)",
+            "print((a > 2) & (a < 5))",
+            "a[a > 0.9]"
+        ],
+        "path": "data processing/1. Numpy basics/1.2 Array indexing/Boolean array indexing"
+    },
+    "Data types": {
+        "codes": [
+            "print(x.dtype, y.dtype, z.dtype)",
+            "print(x.astype(np.float64))",
+            "print(y.astype(np.int64))",
+            "print(x.astype(np.bool))"
+        ],
+        "path": "data processing/1. Numpy basics/Data types"
+    },
+    "Array math": {
+        "codes": [
+            "x = np.array([[1,2],[3,4]])\ny = np.array([[5,6],[7,8]])\n\nprint(x**2)\nprint(np.sqrt(x))\n\nprint(x + y)\nprint(x * y)\nprint(x / y)\n",
+            "np.dot(v, w))",
+            "v.dot(w)",
+            "np.outer(w, w)",
+            "w @ w.T",
+            "x.sum(axis = 0)",
+            "x.sum(axis = 1), x.sum()"
+        ],
+        "path": "data processing/1. Numpy basics/Array math"
+    },
+    "Broadcasting": {
+        "codes": [
+            "x = np.array([[1,2], [3, 4]])\nprint(x + 10)",
+            "x = np.array([[1,2,3], [4,5,6], [7,8,9], [10,11,12]])\nv = np.array([1, 0, 1])\n# add v to each row of x using broadcasting\nprint(x + v)",
+            "a = np.array([[1], [2]])\na + a.T",
+            "\nv = np.array([1, 3])\nw = np.array([5, 7])\n\nprint(np.outer(v, w))\n\nprint(v[:,None] @ w[:,None].T)"
+        ],
+        "path": "data processing/1. Numpy basics/Broadcasting"
+    },
+    "Copying dimensions": {
+        "codes": [
+            "np.tile(x, (3, 1))"
+        ],
+        "path": "data processing/1. Numpy basics/Copying dimensions"
+    },
+    "View": {
+        "codes": [
+            "X = np.array([[1, 2], [3, 4]])\ny = X[:,1]\nprint(\"Original:\", y)\ny[0] = 100\nprint(\"After modifying:\")\nprint(y)\nprint(X)"
+        ],
+        "path": "data processing/2. Properties of Numpy array/2.1. View and copy/View"
+    },
+    "integer array indexing": {
+        "codes": [
+            "X = np.array([[1, 2], [3, 4]])\nz = X[[0, 0], [1, 1]]\nprint(\"Original:\", z)\nz[0] = 200\nprint(\"After modifying:\")\nprint(z)\nprint(X)"
+        ],
+        "path": "data processing/2. Properties of Numpy array/2.1. View and copy/Copy/integer array indexing"
+    },
+    "boolean array indexing": {
+        "codes": [
+            "X = np.array([[1, 2], [3, 4]])\nt = X[X > 2]\nprint(\"Original:\", t)\nz[0] = 300\nprint(\"After modifying:\")\nprint(t)\nprint(X)"
+        ],
+        "path": "data processing/2. Properties of Numpy array/2.1. View and copy/Copy/boolean array indexing"
+    },
+    "2.2. Internal representation": {
+        "codes": [
+            "x = np.array([1, \"a\"])\nx.dtype",
+            "def add_row_loop(X):\n    for i in range(100):\n        X = np.append(X, np.ones((1, X.shape[1])), axis = 0)\n    return X",
+            "def add_row(X):\n    Y = np.ones((100, X.shape[1]))\n    return np.append(X, Y, axis = 0)"
+        ],
+        "path": "data processing/2. Properties of Numpy array/2.2. Internal representation"
+    },
+    "3.1 Creating sparse matrix": {
+        "codes": [
+            "import scipy.sparse as sp\ndata = [2, 4, 1, 3, 1, 1]\nrow = [1, 3, 2, 0, 3, 1]\ncol = [0, 0, 1, 2, 2, 3]\n\nm = sp.coo_matrix((data, (row, col)), shape = (4, 4))"
+        ],
+        "path": "data processing/3. Sparse matrix/3.1 Creating sparse matrix"
+    },
+    ".A converts the sparse matrix to its dense representation (of type np.ndarray)": {
+        "codes": [
+            "m.A"
+        ],
+        "path": "data processing/3. Sparse matrix/.A converts the sparse matrix to its dense representation (of type np.ndarray)"
+    },
+    "CSR matrix allows for fast row access": {
+        "codes": [
+            "m_rows = m.tocsr()\nprint(\"row at index 2:\")\nprint(m_rows.getrow(2).A)"
+        ],
+        "path": "data processing/3. Sparse matrix/CSR matrix allows for fast row access"
+    },
+    "CSC matrix allows for fast column access": {
+        "codes": [
+            "m_rows = m.tocsr()\nprint(\"row at index 2:\")\nprint(m_rows.getrow(2).A)"
+        ],
+        "path": "data processing/3. Sparse matrix/CSC matrix allows for fast column access"
+    },
+    "convert returned row (2D sparse matrix) to dense vector": {
+        "codes": [
+            "m_rows.getrow(2).A.ravel()"
+        ],
+        "path": "data processing/3. Sparse matrix/convert returned row (2D sparse matrix) to dense vector"
+    },
+    "convert returned column (2D sparse matrix) to dense vector": {
+        "codes": [
+            "m_rows.getcol(2).A.ravel()"
+        ],
+        "path": "data processing/3. Sparse matrix/convert returned column (2D sparse matrix) to dense vector"
+    },
+    "3.2 Operating on sparse matrix": {
+        "codes": [
+            "A = sp.eye(1000)\nB = np.eye(1000)\nx = np.random.randn(1000)\n%timeit A.dot(x)\n%timeit B.dot(x)"
+        ],
+        "path": "data processing/3. Sparse matrix/3.2 Operating on sparse matrix"
     }
 }

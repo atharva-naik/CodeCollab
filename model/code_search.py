@@ -89,7 +89,7 @@ class CodeBERTSimModel(nn.Module):
 
         return query_enc, code_enc, scores, loss
 
-    def encode(self, iids, attn):
+    def encode(self, iids, attn, dtype: str="code"):
         return self.code_encoder(iids, attn).pooler_output
 
 # bi-encoder for code search.
@@ -813,3 +813,4 @@ if __name__ == "__main__":
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_CosSim -bs 500 --mode inference --index_file_name codebert_plan_ops_cos_sim.index --cos_sim --index_modality text
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSearch2_Sym -bs 500 --mode inference --index_file_name codebert_plan_ops_cos_sim.index --cos_sim --index_modality text
 # python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSim_CosSim -bs 200 --mode train --cos_sim -ccs -e 50
+# python -m model.code_search -exp CoNaLa_CSN_CodeBERT_CodeSim2_CosSim -bs 200 --mode train --cos_sim -ccs -e 50

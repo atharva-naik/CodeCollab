@@ -9,7 +9,7 @@ from typing import *
 from collections import defaultdict
 from sentence_transformers import util
 from model.code_search import CodeBERTSimModel
-from data.FCDS.code_chunking import extract_op_chunks
+from data.FCDS.code_chunking import extract_op_chunks, extract_plan_op_chunks_v2
 from model.code_similarity_retrievers.dense import CodeBERTDenseSearcher
 
 def generalize_plan_op(plan_op: str):
@@ -26,32 +26,40 @@ def generalize_plan_op(plan_op: str):
 
     return plan_op
 
+METADATA = {}
+for q, submissions in json.load(open("./data/FCDS/code_qa_submissions.json")).items():
+    for rec in submissions:
+        METADATA[int(rec["qa_id"])] = rec
 def load_plan_op_data(
         path: str="./data/FCDS/FCDS Plan Operator Annotations.csv",
-        canonicalize_plan_operator: bool=True, 
-        filt_ops_list: List[str]=[],
-        filt_mode: str="remove",
+        canonicalize_plan_operator: bool=True, filt_ops_list: List[str]=[],
+        filt_mode: str="remove", annotated_data_only: bool=True,
+        filter_by_tasks: Union[List[str], None]=None,
     ):
+    global METADATA
     assert filt_mode in ["keep", "remove"], "filt_mode should be `keep` or `remove`"
     annotations = pd.read_csv(path)
     plan_op_names = set() # unique plan operator names
     code_to_plan_op_data = []
     for rec in annotations.to_dict("records"):
         plan_op_string = rec["plan operator"]
-        if isinstance(plan_op_string, str):
-            if plan_op_string == "SKIP": continue
-            plan_ops = []
-            for plan_op in plan_op_string.split(";"):
-                plan_op = plan_op.strip()
-                if plan_op in filt_ops_list and filt_mode == "remove": continue
-                # print(plan_op, filt_ops_list)
-                elif plan_op not in filt_ops_list and filt_mode == "keep": continue
-                if canonicalize_plan_operator:
-                    plan_op = generalize_plan_op(plan_op)
-                plan_ops.append(plan_op)
-                plan_op_names.add(plan_op)
-            if len(plan_ops) > 0:
-                code_to_plan_op_data.append((rec["block"], plan_ops))
+        # handle NaN/missing values by substituting with empty string
+        if not isinstance(plan_op_string, str): plan_op_string = ""
+        if plan_op_string == "SKIP": continue
+        plan_ops = []
+        if filter_by_tasks is not None and METADATA[rec["id"]]["task_name"] not in filter_by_tasks: continue
+        for plan_op in plan_op_string.split(";"):
+            if plan_op == "": continue
+            plan_op = plan_op.strip()
+            if plan_op in filt_ops_list and filt_mode == "remove": continue
+            # print(plan_op, filt_ops_list)
+            elif plan_op not in filt_ops_list and filt_mode == "keep": continue
+            if canonicalize_plan_operator:
+                plan_op = generalize_plan_op(plan_op)
+            plan_ops.append(plan_op)
+            plan_op_names.add(plan_op)
+        if len(plan_ops) > 0 or not(annotated_data_only):
+            code_to_plan_op_data.append((rec["block"], plan_ops))
     plan_op_names = sorted(list(plan_op_names))
 
     return plan_op_names, code_to_plan_op_data
@@ -148,15 +156,30 @@ def zero_shot_eval_codebert_searcher(code_to_plan_op_data, plan_op_names):
     acc = acc/tot
     print(round(100*acc, 2))
 
+def load_submissions_and_extract_chunks(data_path: str, tasks: List[str]=[]):
+    data = json.load(open(data_path))
+    code_and_chunks = []
+    for task, submissions in data.items():
+        if task not in tasks: continue
+        for sub in submissions: 
+            code = sub["answer"]
+            chunks = extract_plan_op_chunks_v2(code)
+            code_and_chunks.append({
+                "id": sub["id"], "qa_id": sub["qa_id"],
+                "code": code, "chunks": chunks,
+            })
+
 # main 
 if __name__ == "__main__":
     # plan_op_annotations = pd.read_csv("./data/FCDS/FCDS Plan Operator Annotations.csv")
     plan_ops, data = load_plan_op_data(
-        filt_ops_list=[
-            "data filtering", "get unique values", "count unique values", "aggregation",
-            "data melting", "reset index", "data grouping", "drop missing values"
-        ],
-        filt_mode="keep",
+        # filt_ops_list=[
+        #     "data filtering", "get unique values", "count unique values", "aggregation",
+        #     "data melting", "reset index", "data grouping", "drop missing values"
+        # ],
+        # filt_mode="keep",
+        filter_by_tasks=["Movie streaming service dataset"], 
+        annotated_data_only=False,
     )
     print(len(data))
     # print(plan_ops)

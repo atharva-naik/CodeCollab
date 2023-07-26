@@ -80,6 +80,10 @@ sample_code = '''def movie_count_by_genre(movies, genres):
 
 CODE_CONSTRUCTS = (ast.FunctionDef, ast.ClassDef, ast.For, ast.While, 
                    ast.With, ast.If, ast.IfExp, ast.Call, ast.Assign)
+EXPANDED_CODE_CONSTRUCTS = (ast.FunctionDef, ast.ClassDef, ast.For, ast.While, 
+                            ast.With, ast.If, ast.IfExp, ast.Call, ast.Assign,
+                            ast.ListComp, ast.DictComp, ast.SetComp, ast.Return,
+                            ast.Subscript)
 
 def find_overlapping_block(code: str, lineno: int, end_lineno: int, 
                            block_limits: Dict[str, str]) -> List[str]:
@@ -153,6 +157,99 @@ def print_chunks(chunks: dict, level=1):
         print("#"*level+"\n"+chunk)
         print()
         print_chunks(sub_chunks, level=level+1)
+
+class ChunkRepr:
+    def __init__(self, chunk_fields_and_values: dict):
+        self.fields_and_values = chunk_fields_and_values
+
+    def todict(self):
+        return self.fields_and_values
+
+    def __lt__(self, other):
+        if self.fields_and_values["META_lineno"] < other.fields_and_values["META_lineno"]:
+           return True
+        elif self.fields_and_values["META_lineno"] == other.fields_and_values["META_lineno"]:
+            if self.fields_and_values["META_end_lineno"] > other.fields_and_values["META_end_lineno"]:
+                return True
+            elif self.fields_and_values["META_end_lineno"] == other.fields_and_values["META_end_lineno"]:
+                if self.fields_and_values["META_col_offset"] < other.fields_and_values["META_col_offset"]:
+                    return True
+                elif self.fields_and_values["META_col_offset"] == other.fields_and_values["META_col_offset"]:
+                    return self.fields_and_values["META_end_col_offset"] > other.fields_and_values["META_end_col_offset"]
+                else: return False
+            else: return False
+        else: return False
+
+    def __eq__(self, other):
+        return self.fields_and_values["META_lineno"] == other.fields_and_values["META_lineno"] and self.fields_and_values["META_end_lineno"] == other.fields_and_values["META_end_lineno"] and self.fields_and_values["META_col_offset"] == other.fields_and_values["META_col_offset"] and self.fields_and_values["META_end_col_offset"] == other.fields_and_values["META_end_col_offset"]
+
+    def __getitem__(self, field):
+        return self.fields_and_values[field]
+
+def extract_plan_op_chunks_v2(code):
+    nodecode2id = {}
+    codecons2id = {}
+    root = ast.parse(code)
+    id = 0
+    consid = 0
+    for node in ast.walk(root):
+        nodecode = ast.unparse(node)
+        if isinstance(node, EXPANDED_CODE_CONSTRUCTS) and nodecode not in BUILTIN_TYPE_INIT_CALLS:
+            codecons2id[nodecode] = consid
+            consid += 1
+        nodecode2id[nodecode] = id
+        id += 1 
+    root = ast.parse(code)
+    chunks = []
+    for node in ast.walk(root):
+        nodecode = ast.unparse(node)
+        if not isinstance(node, EXPANDED_CODE_CONSTRUCTS) or nodecode in BUILTIN_TYPE_INIT_CALLS: continue
+        chunk = {
+            "META_chunktype": type(node).__name__,
+            "META_lineno": node.lineno,
+            "META_end_lineno": node.end_lineno, 
+            "META_col_offset": node.col_offset, 
+            "META_end_col_offset": node.end_col_offset,
+            "META_code": nodecode,
+            "META_id": codecons2id[nodecode]
+        }
+        for field in node._fields:
+            value = getattr(node, field)
+            if field == "type_comment": field = "META_type_comment"
+            if isinstance(value, list):
+                proc_value = []
+                for member in value:
+                    if isinstance(member, EXPANDED_CODE_CONSTRUCTS) and ast.unparse(value) not in BUILTIN_TYPE_INIT_CALLS:
+                        proc_value.append(codecons2id[ast.unparse(member)])
+                    elif isinstance(member, ast.AST): continue
+                    else: proc_value.append(member)
+                value = proc_value
+            elif isinstance(value, EXPANDED_CODE_CONSTRUCTS) and ast.unparse(value) not in BUILTIN_TYPE_INIT_CALLS: 
+                value = codecons2id[ast.unparse(value)]
+            elif isinstance(value, ast.AST): continue
+            else: value = str(value)
+            assert isinstance(value, (int, str, list)), f"{value}, type: {type(value)}"
+            chunk[field] = value
+        chunks.append(chunk)
+
+    return nodecode2id, codecons2id, chunks
+
+def sort_and_remap_chunks(chunks: List[dict]):
+    chunks = [chunk.todict() for chunk in sorted([ChunkRepr(chunk) for chunk in chunks])]
+    new_id_mapping = {}
+    for i, chunk in enumerate(chunks):
+        if chunk["META_id"] not in new_id_mapping:
+            new_id_mapping[chunk["META_id"]] = i
+    for chunk in chunks:
+        chunk["META_id"] = new_id_mapping[chunk["META_id"]]
+        for key, value in chunk.items():
+            if key.startswith("META"): continue
+            if isinstance(value, list):
+                chunk[key] = [new_id_mapping[v] for v in value]
+            elif isinstance(value, int):
+                chunk[key] = new_id_mapping[value]
+
+    return chunks
 # main
 # if __name__ == "__main__":
 #     eg_code = """def predict_user_user(X, W, user_means, eps=1e-12):
@@ -170,8 +267,26 @@ def print_chunks(chunks: dict, level=1):
 #         print(block)
 #         print("------------------------------------\n")
 if __name__ == "__main__":
-    chunk_tree, flat_chunk_list = extract_op_chunks(sample_code)
-    # print_chunks(chunks)
-    print(json.dumps(chunk_tree, indent=4))
-    print(json.dumps(flat_chunk_list, indent=4))
-    
+    # chunk_tree, flat_chunk_list = extract_op_chunks(sample_code)
+    # # print_chunks(chunks)
+    # print(json.dumps(chunk_tree, indent=4))
+    # print(json.dumps(flat_chunk_list, indent=4))
+    nodecode2id, codecons2id, chunks = extract_plan_op_chunks_v2(sample_code)
+    # chunks = [chunk.todict() for chunk in sorted([ChunkRepr(chunk) for chunk in chunks])]
+    chunks = sort_and_remap_chunks(chunks)
+    print(json.dumps(codecons2id, indent=4))
+    # print(json.dumps(chunks, indent=4))
+    def format_v(v):
+        if isinstance(v, int):
+            return f"\x1b[31;1m{v}\x1b[0m"
+        elif isinstance(v, list):
+            ret_out = []
+            for subv in v:
+                ret_out.append(format_v(subv))
+            return "["+", ".join(ret_out)+"]"
+        else: return v
+    for chunk in chunks:
+        chunk_args = [f'{k}={format_v(v)}' for k,v in chunk.items() if not(k.startswith('META'))]
+        print(f"\x1b[31;1m{chunk['META_id']}\x1b[0m. \x1b[34;1m{chunk['META_chunktype']}\x1b[0m({', '.join(chunk_args)})")
+        # print(f"\x1b[31;1m{chunk['META_id']}\x1b[0m")
+        print(chunk['META_code'])
