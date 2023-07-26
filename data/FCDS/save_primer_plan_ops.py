@@ -202,7 +202,7 @@ row = [1, 3, 2, 0, 3, 1]
 col = [0, 0, 1, 2, 2, 3]
 
 m = sp.coo_matrix((data, (row, col)), shape = (4, 4))"""],
-            ".A converts the sparse matrix to its dense representation (of type np.ndarray)": ["m.A"],
+            # ".A converts the sparse matrix to its dense representation (of type np.ndarray)": ["m.A"],
             "CSR matrix allows for fast row access": ["""m_rows = m.tocsr()
 print("row at index 2:")
 print(m_rows.getrow(2).A)"""],

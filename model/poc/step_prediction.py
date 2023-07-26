@@ -6,10 +6,11 @@ import torch
 import statistics
 import pandas as pd
 from typing import *
+from tqdm import tqdm
 from collections import defaultdict
 from sentence_transformers import util
 from model.code_search import CodeBERTSimModel
-from data.FCDS.code_chunking import extract_op_chunks, extract_plan_op_chunks_v2
+from data.FCDS.code_chunking import extract_op_chunks, extract_plan_op_chunks_v2, sort_and_remap_chunks
 from model.code_similarity_retrievers.dense import CodeBERTDenseSearcher
 
 def generalize_plan_op(plan_op: str):
@@ -156,21 +157,72 @@ def zero_shot_eval_codebert_searcher(code_to_plan_op_data, plan_op_names):
     acc = acc/tot
     print(round(100*acc, 2))
 
-def load_submissions_and_extract_chunks(data_path: str, tasks: List[str]=[]):
-    data = json.load(open(data_path))
-    code_and_chunks = []
-    for task, submissions in data.items():
-        if task not in tasks: continue
-        for sub in submissions: 
-            code = sub["answer"]
-            chunks = extract_plan_op_chunks_v2(code)
-            code_and_chunks.append({
-                "id": sub["id"], "qa_id": sub["qa_id"],
-                "code": code, "chunks": chunks,
-            })
+def assign_plan_ops(chunks, model, plan_op_mat, 
+                    plan_op_codes, code_plan_op_mapping):
+    code_enc = model.encode_from_text(codes=chunks, obf_code=False, norm_L2=True)
+    max_return = (code_enc @ plan_op_mat.T).max(axis=-1)
+    plan_preds = [
+        code_plan_op_mapping[
+            plan_op_codes[i]
+        ][0] for i in max_return.indices.tolist()    
+    ]
+    score_preds = max_return.values.tolist()
+    assert len(plan_preds) == len(score_preds)
+    # print(preds)
+    return plan_preds, score_preds
 
-# main 
-if __name__ == "__main__":
+def load_submissions_and_extract_chunks(data_path: str, tasks: List[str]=[]):
+    codebert_code_sim_model = CodeBERTSimModel()
+    ckpt_path = "./experiments/CoNaLa_CSN_CodeBERT_CodeSim_CosSim/best_model.pt"
+    state_dict = torch.load(ckpt_path, map_location="cpu")["model_state_dict"]
+    codebert_code_sim_model.load_state_dict(state_dict)
+    if torch.cuda.is_available(): codebert_code_sim_model.cuda()
+    # create representation of plan operation.
+    plan_op_codes, code_plan_op_mapping = load_primer_plan_ops()
+    plan_op_mat = codebert_code_sim_model.encode_from_text(codes=plan_op_codes, obf_code=True, norm_L2=True)
+
+    data = json.load(open(data_path))
+    code_and_chunks = defaultdict(lambda: [])
+    syntax_err_ctr = 0
+    zero_cons_err_ctr = 0
+    one_cons_err_ctr = 0
+    for intent, submissions in data.items():
+        for sub in tqdm(submissions, desc=intent): 
+            if sub['task_name'] not in tasks: continue
+            code = sub["answer"]
+            try:
+                nodecode2id, codecons2id, chunks = extract_plan_op_chunks_v2(code)
+                cons_codes = list(codecons2id.keys())
+                if len(cons_codes) == 0: 
+                    zero_cons_err_ctr += 1
+                    continue
+                elif len(cons_codes) == 1: 
+                    one_cons_err_ctr += 1
+                    continue
+                assigned_plan_ops, assigned_plan_op_scores = assign_plan_ops(
+                    cons_codes, codebert_code_sim_model, plan_op_mat, 
+                    plan_op_codes, code_plan_op_mapping
+                )
+                for chunk, plan_op, plan_op_score in zip(chunks, assigned_plan_ops, assigned_plan_op_scores):
+                    chunk["META_plan_op"] = plan_op
+                    chunk["META_plan_op_score"] = plan_op_score
+                chunks = sort_and_remap_chunks(chunks)
+                code_and_chunks[intent].append({
+                    "id": sub["id"], "qa_id": sub["qa_id"],
+                    "code": code, "chunks": chunks,
+                })
+            except IndexError:
+                print(code)
+                print(list(codecons2id.keys()))
+                exit()
+            except SyntaxError: syntax_err_ctr += 1
+    print(syntax_err_ctr, "syntax errors")
+    print(zero_cons_err_ctr, "zero constructs errors")
+    print(one_cons_err_ctr, "one construct errors")
+
+    return dict(code_and_chunks)
+
+def test1():
     # plan_op_annotations = pd.read_csv("./data/FCDS/FCDS Plan Operator Annotations.csv")
     plan_ops, data = load_plan_op_data(
         # filt_ops_list=[
@@ -188,3 +240,12 @@ if __name__ == "__main__":
     # )
     # zero_shot_code2code_plan_op_map(data)
     zero_shot_ccsim_plan_op_map(data)
+
+# main 
+if __name__ == "__main__":
+    code_and_chunks = load_submissions_and_extract_chunks(
+        data_path="./data/FCDS/code_qa_submissions.json",
+        tasks=["Movie streaming service dataset"]
+    )
+    with open("./data/FCDS/code_qa_submissions_and_chunks.json", "w") as f:
+        json.dump(code_and_chunks, f, indent=4)

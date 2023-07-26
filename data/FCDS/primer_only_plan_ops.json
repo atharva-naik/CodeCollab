@@ -382,12 +382,6 @@
         ],
         "path": "data processing/3. Sparse matrix/3.1 Creating sparse matrix"
     },
-    ".A converts the sparse matrix to its dense representation (of type np.ndarray)": {
-        "codes": [
-            "m.A"
-        ],
-        "path": "data processing/3. Sparse matrix/.A converts the sparse matrix to its dense representation (of type np.ndarray)"
-    },
     "CSR matrix allows for fast row access": {
         "codes": [
             "m_rows = m.tocsr()\nprint(\"row at index 2:\")\nprint(m_rows.getrow(2).A)"

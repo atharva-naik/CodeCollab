@@ -154,6 +154,7 @@ data/WikiData/pids.json
 # data/DS_KB/rdf_triples_turtle.txt
 
 data/PwC/*
+data/FCDS/code_qa_submissions_and_chunks.json
 
 !data/PwC/extract_triples.py
 !data/FCDS/plan_op_var_block_annot.csv
