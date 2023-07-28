@@ -1,10 +1,66 @@
 # do type inference based augmentation
 import re
+import ast
 import json
 import typing
 import inspect
 import mypy.api
+import importlib
+from typing import *
+from python_graphs import control_flow, data_flow, cyclomatic_complexity
 from model.poc.type_inference_class_method import get_return_type_of_class_function
+
+def extract_docstring_from_function(code: str):
+    for node in ast.walk(ast.parse(code)):
+        if isinstance(node, ast.FunctionDef):
+            return ast.get_docstring(node)
+
+# def extract_return_type(docstring):
+#     # Find the return type pattern using regular expression
+#     pattern = r'return\s*:\s*(.*?)\s*$'
+#     match = re.search(pattern, docstring, re.MULTILINE)
+    
+#     if match:
+#         return_type = match.group(1).strip()
+
+#         # Create the dictionary as per the desired output format
+#         output_dict = {}
+#         for entry in return_type.split(','):
+#             key, value = entry.split(':')
+#             output_dict[key.strip()] = value.strip()
+
+#         return return_type, output_dict
+#     else:
+#         return None, {}
+
+def extract_args_and_return_type_from_docstring(docstring: str) -> tuple:
+    """
+    Extract the names/types of arguments and the return type from a function docstring.
+
+    Args:
+        docstring (str): The docstring of the function.
+
+    Returns:
+        tuple: A tuple containing a list of argument name/type pairs and the return type.
+    """
+    arg_type_pattern = r"(\w+)\s*\(([^)]+)\)\s*:"
+    return_type_pattern = r"return\s*:\s*([^:]+)"
+
+    arg_type_matches = re.findall(arg_type_pattern, docstring, re.MULTILINE)
+    return_type_match = re.search(return_type_pattern, docstring, re.MULTILINE)
+
+    args_and_types = arg_type_matches
+    return_type = return_type_match.group(1).strip() if return_type_match else None
+
+    return args_and_types, return_type
+    # except ValueError: return args_and_types, return_type, {}
+def extract_type_info_from_docstring(code) -> List[Tuple[str, str]]:
+    """get docstring from the first function definition 
+    ahd extract typing hints from it."""
+    for node in ast.walk(ast.parse(code)):
+        if isinstance(node, ast.FunctionDef):
+            docstring = ast.get_docstring(node)
+            return extract_args_and_return_type_from_docstring(docstring)
 
 def extract_inferred_type(input_str: str) -> str:
     """
@@ -35,21 +91,20 @@ def get_return_type_of_module_function(module_name: str, function_name: str) -> 
     Returns:
         typing.Optional[typing.Type]: The return type annotation of the function, or None if not found.
     """
-    try:
-        # Import the module dynamically
-        module = __import__(module_name, fromlist=[function_name])
-        # Get the function object
-        function = getattr(module, function_name)
-        # print("function:", function)
-        # Get the function's signature
-        signature = inspect.signature(function)
-        # print("signature:", signature)
-        # Get the return annotation
-        return_annotation = signature.return_annotation
+    # Import the module dynamically
+    # module = importlib.import_module(module_name)
+    module = __import__(module_name, fromlist=[function_name])
+    # Get the function object
+    function = getattr(module, function_name)
+    assert inspect.isfunction(function), f"{module_name}.{function_name} has type {function}"
+    # print("function:", function)
+    # Get the function's signature
+    signature = inspect.signature(function)
+    print("signature:", signature)
+    # Get the return annotation
+    return_annotation = signature.return_annotation
 
-        return return_annotation
-    # Handle import errors or attribute errors if the module or function is not found
-    except (ImportError, AttributeError): return None
+    return return_annotation
 
 def infer_type_of_variable_from_code(input_code: str, variable: str) -> str:
     """
@@ -113,8 +168,27 @@ def test_typehint_with_FCDS_data():
         for sub in subs:
             code = sub["code"]
             break
-        break
-    print(code)
+        # print(code)
+        docstring = extract_docstring_from_function(code)
+        arg_types, return_type = extract_type_info_from_docstring(code)
+        print("-"*30)
+        print(docstring)
+        print("-"*30)
+        print("\x1b[34;1mArgs:\x1b[0m")
+        print(arg_types)
+        print("\x1b[34;1m\nReturn:\x1b[0m")
+        print(return_type)
+
+        dfg = data_flow.get_dataflow_graph(code)
+        cfg = control_flow.get_control_flow_graph(code)
+        val = cyclomatic_complexity.cyclomatic_complexity(cfg)
+        
+        print(code)
+        print(dfg)
+        print(cfg)
+        print(val)
+        # print(output_dict)
+        return
 
 # Example usage:
 if __name__ == "__main__":

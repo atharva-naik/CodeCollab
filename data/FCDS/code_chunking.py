@@ -213,8 +213,7 @@ def extract_plan_op_chunks_v2(code):
             "META_code": nodecode,
             "META_id": codecons2id[nodecode]
         }
-        for field in node._fields:
-            value = getattr(node, field)
+        for field, value in node.iter_fields():
             if field == "type_comment": field = "META_type_comment"
             if isinstance(value, list):
                 proc_value = []
