@@ -234,6 +234,19 @@ def extract_plan_op_chunks_v2(code):
 
     return nodecode2id, codecons2id, chunks
 
+def validate_plan_op_annot_chunks(chunks):
+    for chunk in chunks:
+        assert "META_plan_op" in chunk, f"len(chunks)={len(chunks)} {chunk['META_code']} {chunk.keys()}"
+        assert "META_plan_op_score" in chunk, f"len(chunks)={len(chunks)} {chunk['META_code']} {chunk.keys()}"
+
+def validate_plan_op_annot_submissions(task_subs):
+    for i, sub in enumerate(task_subs):
+        try: validate_plan_op_annot_chunks(sub["chunks"])
+        except AssertionError as e:
+            print("Index[", i, "]")
+            print(e)
+            return
+
 def sort_and_remap_chunks(chunks: List[dict]):
     chunks = [chunk.todict() for chunk in sorted([ChunkRepr(chunk) for chunk in chunks])]
     new_id_mapping = {}

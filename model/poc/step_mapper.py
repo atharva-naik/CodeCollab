@@ -192,21 +192,28 @@ def load_submissions_and_extract_chunks(data_path: str, tasks: List[str]=[]):
             code = sub["answer"]
             try:
                 nodecode2id, codecons2id, chunks = extract_plan_op_chunks_v2(code)
-                cons_codes = list(codecons2id.keys())
-                if len(cons_codes) == 0: 
+                chunk_codes = [chunk["META_code"] for chunk in chunks]
+                if len(chunk_codes) == 0: 
                     zero_cons_err_ctr += 1
                     continue
-                elif len(cons_codes) == 1: 
+                elif len(chunk_codes) == 1: 
                     one_cons_err_ctr += 1
                     continue
                 assigned_plan_ops, assigned_plan_op_scores = assign_plan_ops(
-                    cons_codes, codebert_code_sim_model, plan_op_mat, 
+                    chunk_codes, codebert_code_sim_model, plan_op_mat, 
                     plan_op_codes, code_plan_op_mapping
                 )
-                for chunk, plan_op, plan_op_score in zip(chunks, assigned_plan_ops, assigned_plan_op_scores):
+                # cons_codes_to_plan_op = {cons_code: (assigned_plan_op, assigned_plan_op_score) for cons_code, assigned_plan_op, assigned_plan_op_score in zip(cons_codes, assigned_plan_ops, assigned_plan_op_scores)}
+                for chunk, plan_op, score in zip(chunks, assigned_plan_ops, assigned_plan_op_scores):
                     chunk["META_plan_op"] = plan_op
-                    chunk["META_plan_op_score"] = plan_op_score
+                    chunk["META_plan_op_score"] = score
+                    # print(chunk['META_code'])
+                    # print(chunk['META_plan_op'])
+                    # print("------------")
                 chunks = sort_and_remap_chunks(chunks)
+                for chunk in chunks:
+                    assert "META_plan_op" in chunk, f"{chunk['META_code']}"
+                    assert "META_plan_op_score" in chunk, f"{chunk['META_code']}"
                 code_and_chunks[intent].append({
                     "id": sub["id"], "qa_id": sub["qa_id"],
                     "code": code, "chunks": chunks,
@@ -241,11 +248,34 @@ def test1():
     # zero_shot_code2code_plan_op_map(data)
     zero_shot_ccsim_plan_op_map(data)
 
-# main 
-if __name__ == "__main__":
+def test_plan_op_annot():
     code_and_chunks = load_submissions_and_extract_chunks(
         data_path="./data/FCDS/code_qa_submissions.json",
         tasks=["Movie streaming service dataset"]
     )
     with open("./data/FCDS/code_qa_submissions_and_chunks.json", "w") as f:
         json.dump(code_and_chunks, f, indent=4)
+
+def visualize_plan_ops_and_chunks():
+    code_and_chunks = json.load(open("./data/FCDS/code_qa_submissions_and_chunks.json"))
+    intents = list(code_and_chunks.keys())
+    chunks = code_and_chunks[intents[0]][1]["chunks"]
+    def format_v(v):
+        if isinstance(v, int):
+            return f"\x1b[31;1m{v}\x1b[0m"
+        elif isinstance(v, list):
+            ret_out = []
+            for subv in v:
+                ret_out.append(format_v(subv))
+            return "["+", ".join(ret_out)+"]"
+        else: return v
+    for chunk in chunks:
+        chunk_args = [f'{k}={format_v(v)}' for k,v in chunk.items() if not(k.startswith('META'))]
+        print(f"\x1b[31;1m{chunk['META_id']}\x1b[0m. \x1b[34;1m{chunk['META_chunktype']}\x1b[0m({', '.join(chunk_args)}) | {chunk['META_plan_op']} ({chunk['META_plan_op_score']:.2f})")
+        # print(f"\x1b[31;1m{chunk['META_id']}\x1b[0m")
+        print(chunk['META_code'])
+
+# main 
+if __name__ == "__main__":
+    # visualize_plan_ops_and_chunks()
+    test_plan_op_annot()

@@ -1,6 +1,6 @@
 import json
 from typing import *
-from model.poc.step_prediction import load_plan_op_data
+from model.poc.step_mapper import load_plan_op_data
 
 curated_ops = {
     "data wrangling": {
