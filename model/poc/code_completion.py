@@ -1,5 +1,6 @@
 # complete partial solution written by the student.
 import ast
+import json
 from text_generation import Client
 
 def remove_incomplete_code_line_by_line(code: str):
@@ -145,9 +146,15 @@ if __name__ == "__main__":
 ''']
 
     hf_codegen = HfCodeCompleter()
+    
+    partial_soln_completions = {}
     for partial_soln in partial_solns:
         soln = hf_codegen.complete(partial_soln)
         print("\x1b[34;1mPartial Solution:\x1b[0m")
         print(partial_soln)
         print("\x1b[34;1mSolution:\x1b[0m")
         print(soln)
+        partial_soln_completions[partial_soln] = soln
+    
+    with open("./data/FCDS/starcoder_completions_eg.json", "w") as f:
+        json.dump(partial_soln_completions, f, indent=4)
