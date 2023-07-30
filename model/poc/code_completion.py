@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     return result
 '''
-    partial_soln = '''def movie_count_by_genre(movies, genres):
+    partial_solns = ['''def movie_count_by_genre(movies, genres):
     """
     Count the number of movies in each movie genre.
 
@@ -77,11 +77,77 @@ if __name__ == "__main__":
     """
     result = {}
 
-    for g in genres:'''
+    for g in genres:''', '''def movie_count_by_genre(movies, genres):
+    """
+    Count the number of movies in each movie genre.
+
+    args:
+        movies (pd.DataFrame) : Dataframe containing movie attributes
+        genres (List[str]) :  the list of movie genres
+
+    return:
+        Dict[str, Dict[int, int]]  : a nested mapping from movie genre to year to number of movies in that year
+    """
+    result = {}
+
+    for g in genres:
+      temp = movies.groupby([g,movies.release_date.str[-4:]]).agg(movie_count = ("movie_title", "count")).reset_index()''', '''def movie_count_by_genre(movies, genres):
+    """
+    Count the number of movies in each movie genre.
+
+    args:
+        movies (pd.DataFrame) : Dataframe containing movie attributes
+        genres (List[str]) :  the list of movie genres
+
+    return:
+        Dict[str, Dict[int, int]]  : a nested mapping from movie genre to year to number of movies in that year
+    """
+    result = {}
+
+    for g in genres:
+      temp = movies.groupby([g,movies.release_date.str[-4:]]).agg(movie_count = ("movie_title", "count")).reset_index()
+      years = temp[temp[g]==1][['release_date','movie_count']].set_index('release_date').to_dict()['movie_count']
+''', '''def movie_count_by_genre(movies, genres):
+    """
+    Count the number of movies in each movie genre.
+
+    args:
+        movies (pd.DataFrame) : Dataframe containing movie attributes
+        genres (List[str]) :  the list of movie genres
+
+    return:
+        Dict[str, Dict[int, int]]  : a nested mapping from movie genre to year to number of movies in that year
+    """
+    result = {}
+
+    for g in genres:
+      temp = movies.groupby([g,movies.release_date.str[-4:]]).agg(movie_count = ("movie_title", "count")).reset_index()
+      years = temp[temp[g]==1][['release_date','movie_count']].set_index('release_date').to_dict()['movie_count']
+      years = {int(k):int(v) for k,v in years.items()}
+''', '''def movie_count_by_genre(movies, genres):
+    """
+    Count the number of movies in each movie genre.
+
+    args:
+        movies (pd.DataFrame) : Dataframe containing movie attributes
+        genres (List[str]) :  the list of movie genres
+
+    return:
+        Dict[str, Dict[int, int]]  : a nested mapping from movie genre to year to number of movies in that year
+    """
+    result = {}
+
+    for g in genres:
+      temp = movies.groupby([g,movies.release_date.str[-4:]]).agg(movie_count = ("movie_title", "count")).reset_index()
+      years = temp[temp[g]==1][['release_date','movie_count']].set_index('release_date').to_dict()['movie_count']
+      years = {int(k):int(v) for k,v in years.items()}
+      result[g] = years
+''']
 
     hf_codegen = HfCodeCompleter()
-    soln = hf_codegen.complete(partial_soln)
-    print("\x1b[34;1mPartial Solution:\x1b[0m")
-    print(partial_soln)
-    print("\x1b[34;1mSolution:\x1b[0m")
-    print(soln)
+    for partial_soln in partial_solns:
+        soln = hf_codegen.complete(partial_soln)
+        print("\x1b[34;1mPartial Solution:\x1b[0m")
+        print(partial_soln)
+        print("\x1b[34;1mSolution:\x1b[0m")
+        print(soln)
