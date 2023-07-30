@@ -30,7 +30,7 @@ class HfCodeCompleter:
             top_p=top_p,
         ).generated_text
         if discard_over_generations:
-            gen_text = self.discard_over_generation(partial_soln + gen_text)
+            gen_text = self.discard_over_generation(partial_soln, gen_text)
 
         return gen_text
 
