@@ -2,9 +2,8 @@
 import ast
 from text_generation import Client
 
-client = Client("http://tir-1-32:8880", timeout=60)
-print(client.generate("def read_file(filename):\n", max_new_tokens=64, top_p=0.95, temperature=0.2, do_sample=True).generated_text)
-
+# client = Client("http://tir-1-32:8880", timeout=60)
+# print(client.generate("def read_file(filename):\n", max_new_tokens=64, top_p=0.95, temperature=0.2, do_sample=True).generated_text)
 def remove_incomplete_code_line_by_line(code: str):
     """remove a line of code from a predicted completion till it can be parsed into an AST."""
     while True:
@@ -22,7 +21,8 @@ class HfCodeCompleter:
 
     def complete(
         self, partial_soln: str, add_new_line: bool=True,
-        max_new_tokens=64, top_p=0.95, temperature=0.2, do_sample=True
+        max_new_tokens=64, top_p=0.95, temperature=0.2, 
+        do_sample=True, discard_over_generations: bool=True,
     ):
         partial_soln = partial_soln.strip("\n")
         if add_new_line: partial_soln += "\n"
@@ -31,6 +31,8 @@ class HfCodeCompleter:
             temperature=temperature, do_sample=do_sample,
             top_p=top_p,
         ).generated_text
+        if discard_over_generations:
+            gen_text = self.discard_over_generation(partial_soln + gen_text)
 
         return gen_text
 
@@ -43,4 +45,45 @@ class HfCodeCompleter:
 
 # main
 if __name__ == "__main__":
-    pass
+    ref_soln = '''def movie_count_by_genre(movies, genres):
+    """
+    Count the number of movies in each movie genre.
+
+    args:
+        movies (pd.DataFrame) : Dataframe containing movie attributes
+        genres (List[str]) :  the list of movie genres
+
+    return:
+        Dict[str, Dict[int, int]]  : a nested mapping from movie genre to year to number of movies in that year
+    """
+    result = {}
+
+    for g in genres:
+      temp = movies.groupby([g,movies.release_date.str[-4:]]).agg(movie_count = ("movie_title", "count")).reset_index()
+      years = temp[temp[g]==1][['release_date','movie_count']].set_index('release_date').to_dict()['movie_count']
+      years = {int(k):int(v) for k,v in years.items()}
+      result[g] = years
+
+    return result
+'''
+    partial_soln = '''def movie_count_by_genre(movies, genres):
+    """
+    Count the number of movies in each movie genre.
+
+    args:
+        movies (pd.DataFrame) : Dataframe containing movie attributes
+        genres (List[str]) :  the list of movie genres
+
+    return:
+        Dict[str, Dict[int, int]]  : a nested mapping from movie genre to year to number of movies in that year
+    """
+    result = {}
+
+    for g in genres:'''
+
+    hf_codegen = HfCodeCompleter()
+    soln = hf_codegen.complete(partial_soln)
+    print("\x1b[34;1mPartial Solution:\x1b[0m")
+    print(partial_soln)
+    print("\x1b[34;1mSolution:\x1b[0m")
+    print(soln)
