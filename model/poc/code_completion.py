@@ -25,7 +25,7 @@ class HfCodeCompleter:
         partial_soln = partial_soln.strip("\n")
         if add_new_line: partial_soln += "\n"
         gen_text = self.client.generate(
-            partial_soln, max_new_tokens-max_new_tokens, 
+            partial_soln, max_new_tokens=max_new_tokens, 
             temperature=temperature, do_sample=do_sample,
             top_p=top_p,
         ).generated_text
