@@ -2,8 +2,6 @@
 import ast
 from text_generation import Client
 
-# client = Client("http://tir-1-32:8880", timeout=60)
-# print(client.generate("def read_file(filename):\n", max_new_tokens=64, top_p=0.95, temperature=0.2, do_sample=True).generated_text)
 def remove_incomplete_code_line_by_line(code: str):
     """remove a line of code from a predicted completion till it can be parsed into an AST."""
     while True:
