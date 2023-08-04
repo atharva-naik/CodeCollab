@@ -2,6 +2,7 @@
 # script for chunking FCDS code cells (that implement the same intent)
 import ast
 import sys
+import copy
 import json
 import builtins
 from typing import *
@@ -262,6 +263,84 @@ def sort_and_remap_chunks(chunks: List[dict]):
                 chunk[key] = new_id_mapping[value]
 
     return chunks
+
+def get_kwarg_from_args(args: ast.arguments) -> List[ast.arg]:
+    if args.kwarg: return [args.kwarg]
+    return []
+
+def get_vararg_from_args(args: ast.arguments) -> List[ast.arg]:
+    if args.vararg: return [args.vararg]
+    return []
+
+def list_funcdef_arguments(funcdef: ast.FunctionDef):    
+    kwarg = get_kwarg_from_args(funcdef.args)
+    vararg = get_vararg_from_args(funcdef.args)
+
+    return [a.arg for a in funcdef.args.args+funcdef.args.posonlyargs+funcdef.args.kwonlyargs+kwarg+vararg]
+
+def extract_arguments_from_code(code: str) -> List[str]:
+    """extract arguments from string from version implementing a function"""
+    for node in ast.walk(ast.parse(code)):
+        if isinstance(node, ast.FunctionDef):
+            return list_funcdef_arguments(node)
+    return []
+
+def extract_returned_variables_from_code(code: str) -> List[str]:
+    for node in ast.walk(ast.parse(code)):
+        if isinstance(node, ast.FunctionDef):
+            for stmt in node.body:
+                if isinstance(stmt, ast.Return):
+                    return_code = ast.unparse(stmt)
+                    return [node.id for node in ast.walk(ast.parse(return_code)) if isinstance(node, ast.Name)]
+    return [] 
+
+# single function subprogram decomposer:
+class FunctionSubProgramDecomposer:
+    """Class to do Sub program decompositions of
+    function defintions."""
+    def __init__(self):
+        self.init_io = (None, None)
+
+    def extract_subgoals_from_subprograms(self, body: List[ast.AST], inputs: List[str], 
+                                          outputs: List[str], target: List[str]):
+        next_goal = None
+        subgoal_seq = []
+        subgoal_inputs = copy.deepcopy(inputs)
+        for stmt in body:
+            if isinstance(stmt, ast.Assign):
+                if next_goal is not None:
+                    subgoal_seq.append("NEWLINE")
+                subgoal_outputs = [node.id for node in ast.walk(ast.parse(ast.unparse(stmt.targets))) if isinstance(node, ast.Name)]
+                subgoal_seq.append({
+                    "I": copy.deepcopy(subgoal_inputs), "O": subgoal_outputs, 
+                    "T": target, "code": ast.unparse(stmt
+                )})
+                subgoal_inputs += subgoal_outputs
+            elif "body" in stmt._fields:
+                construct = type(stmt).__name__.upper()
+                subgoal_seq.append(construct)
+                subgoal_seq += self.extract_subgoals_from_subprograms(
+                    stmt.body, inputs=subgoal_inputs, 
+                    outputs=outputs, target=target,
+                )
+                subgoal_seq.append("END"+construct)
+            else: print(stmt, ast.unparse(stmt))
+
+        return subgoal_seq
+
+    def __call__(self, code: str):
+        I0 = extract_arguments_from_code(code)
+        O0 = extract_returned_variables_from_code(code)
+        self.init_io = (I0, O0)
+        subgoals = [{"I": I0, "O": [], "T": O0}]
+        funcdef = ast.parse(code).body[0]
+        assert isinstance(funcdef, ast.FunctionDef), "code is not formatted as a function"
+        subgoals += self.extract_subgoals_from_subprograms(
+            funcdef.body, inputs=I0, 
+            outputs=[], target=O0, 
+        )
+        
+        return subgoals
 # main
 # if __name__ == "__main__":
 #     eg_code = """def predict_user_user(X, W, user_means, eps=1e-12):

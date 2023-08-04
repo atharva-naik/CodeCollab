@@ -187,6 +187,15 @@ def test_nsr():
     print_metric_dict(depth_wise_acc)
     print_metric_dict(intent_wise_tot)
     print_metric_dict(intent_wise_acc)
+    all_metrics = {
+        "depth_wise_tot": depth_wise_tot,
+        "depth_wise_acc": depth_wise_acc,
+        "intent_wise_tot": intent_wise_tot,
+        "intent_wise_acc": intent_wise_acc,
+    }
+    os.makedirs("./experiments/NextStepRetrieval_LCS", exist_ok=True)
+    with open("./experiments/NextStepRetrieval_LCS/metrics.json", "w") as f:
+        json.dump(all_metrics, f, indent=4)
 
 # main
 if __name__ == "__main__":

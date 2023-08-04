@@ -55,12 +55,62 @@ def extract_args_and_return_type_from_docstring(docstring: str) -> tuple:
     return args_and_types, return_type
     # except ValueError: return args_and_types, return_type, {}
 def extract_type_info_from_docstring(code) -> List[Tuple[str, str]]:
-    """get docstring from the first function definition 
-    ahd extract typing hints from it."""
+    """get docstring from the first function 
+    definition and extract typing hints from it."""
     for node in ast.walk(ast.parse(code)):
         if isinstance(node, ast.FunctionDef):
             docstring = ast.get_docstring(node)
             return extract_args_and_return_type_from_docstring(docstring)
+
+def get_kwarg_from_args(args: ast.arguments) -> List[ast.arg]:
+    if args.kwarg: return [args.kwarg]
+    return []
+
+def get_vararg_from_args(args: ast.arguments) -> List[ast.arg]:
+    if args.vararg: return [args.vararg]
+    return []
+
+def list_funcdef_arguments(funcdef: ast.FunctionDef):    
+    kwarg = get_kwarg_from_args(funcdef.args)
+    vararg = get_vararg_from_args(funcdef.args)
+
+    return [a.arg for a in funcdef.args.args+funcdef.args.posonlyargs+funcdef.args.kwonlyargs+kwarg+vararg]
+
+def extract_arguments_from_code(code: str) -> List[str]:
+    """extract arguments from string from version implementing a function"""
+    for node in ast.walk(ast.parse(code)):
+        if isinstance(node, ast.FunctionDef):
+            return list_funcdef_arguments(node)
+    return []
+
+def extract_returned_variables_from_code(code: str) -> List[str]:
+    for node in ast.walk(ast.parse(code)):
+        if isinstance(node, ast.FunctionDef):
+            for stmt in node.body:
+                if isinstance(stmt, ast.Return):
+                    return_code = ast.unparse(stmt)
+                    return [node.id for node in ast.walk(ast.parse(return_code)) if isinstance(node, ast.Name)]
+    return [] 
+
+# single function subprogram decomposer:
+class FunctionSubProgramDecomposer:
+    def __init__(self):
+        self.io_steps = []
+        self.init_io = (None, None)
+
+    def __call__(self, code: str):
+        I0 = extract_arguments_from_code(code)
+        O0 = extract_returned_variables_from_code(code)
+        self.init_io = (I0, O0)
+        funcdef = ast.parse(code).body[0]
+        assert isinstance(funcdef, ast.FunctionDef), "code is not formatted as a function"
+        for stmt in funcdef.body:
+
+# def follow_args_in_code(code: str, argnames: List[str]):
+#     for node in ast.walk(ast.parse(code)):
+#         for argname in argnames:
+#             if argname in ast.unparse(node):
+#                 print(ast.unparse(node))
 
 def extract_inferred_type(input_str: str) -> str:
     """
