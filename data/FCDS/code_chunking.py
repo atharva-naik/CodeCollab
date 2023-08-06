@@ -358,7 +358,7 @@ class FunctionSubProgramDecomposer:
     function defintions."""
     def __init__(self):
         self.init_io = (None, None)
-        self.vocab = AST_CONSTRUCTS + [f"VAR{i}" for i in range(100)] + [f"INP{i}" for i in range(100)] + [f"OUT{i}" for i in range(100)] 
+        self.vocab = AST_CONSTRUCTS + [f"VAR{i}" for i in range(100)] + [f"INP{i}" for i in range(100)] + [f"OUT{i}" for i in range(100)] + ["[STEP]", "[I]", "[O]", "[T]", "[ops]"]
 
     def extract_subgoals_from_subprograms(self, body: List[ast.AST], inputs: List[str], 
                                           outputs: List[str], target: List[str]):
@@ -430,6 +430,31 @@ class FunctionSubProgramDecomposer:
 
         return subgoals, obf_mapping 
                     
+    def serialize_subgoals(self, subgoals: List[str]):
+        stream = []
+        for subgoal in subgoals:
+            if isinstance(subgoal, dict):
+                stream.append(f"[I] {' '.join(subgoal['I']).strip()} [O] {' '.join(subgoal['O']).strip()} [T] {' '.join(subgoal['T']).strip()} [ops] {' '.join(subgoal['ops'])}")
+            elif isinstance(subgoal, str):
+                stream.append(subgoal)
+
+        return " [STEP] ".join(stream).strip()
+
+    def add_type_annotations(self, code: str, input_annotations: Dict[str, str]) -> str:
+        root = ast.parse(code)
+        for node in ast.walk(root):
+            if isinstance(node, ast.FunctionDef):
+                for index in range(len(node.body)):
+                    if isinstance(node.body[index], ast.Assign): break
+                for var, var_type in list(input_annotations.items())[::-1]:
+                    node.body.insert(index, ast.parse(f"{var}: {var_type} = None"))
+                for index in range(len(node.body)):
+                    if isinstance(node.body[index], ast.Return): break
+                node.body.insert(index, ast.parse("reveal_type(movies['year'])"))
+                break
+
+        return ast.unparse(root)
+
     def __call__(self, code: str):
         I0 = extract_arguments_from_code(code)
         O0 = extract_returned_variables_from_code(code)
@@ -440,6 +465,12 @@ class FunctionSubProgramDecomposer:
         obf_inputs = [var_obf.inp_mapping[i] for i in I0]
         obf_outputs = [var_obf.out_mapping[i] for i in O0]
 
+        from model.poc.type_inference_aug import extract_docstring_from_function, extract_args_and_return_type_from_docstring
+        docstring = extract_docstring_from_function(code)
+        input_annotations, output_annotations = extract_args_and_return_type_from_docstring(docstring)
+        input_annotations = dict(input_annotations)
+        type_annotated_code = self.add_type_annotations(code, input_annotations)
+        # print(type_annotated_code)
         subgoals = [{"I": obf_inputs, "O": [], "T": obf_outputs, "ops": []}]
         funcdef = ast.parse(obf_code).body[0]
         assert isinstance(funcdef, ast.FunctionDef), "code is not formatted as a function"
@@ -452,7 +483,8 @@ class FunctionSubProgramDecomposer:
         var_mapping.update(var_obf.obf_mapping)
         var_mapping.update(var_obf.out_mapping)
 
-        return subgoals, var_mapping # self.obfuscate_local_vars(subgoals, I0, O0)
+        return subgoals, var_mapping, self.serialize_subgoals(subgoals), type_annotated_code
+        # self.obfuscate_local_vars(subgoals, I0, O0)
 # main
 # if __name__ == "__main__":
 #     eg_code = """def predict_user_user(X, W, user_means, eps=1e-12):
