@@ -11,16 +11,35 @@ from collections import defaultdict
 from datautils.code_cell_analysis import remove_comments_and_docstrings
 
 BUILTIN_TYPES =  [getattr(builtins, d) for d in dir(builtins) if isinstance(getattr(builtins, d), type)]
+BUILTIN_TYPE_NAMES = [i.__name__ for i in BUILTIN_TYPES]
 BUILTIN_TYPE_INIT_CALLS = [f"{i.__name__}()" for i in BUILTIN_TYPES]
-def get_variables_from_targets(targets: List[Union[ast.Tuple, ast.Name, ast.List]]) -> Dict[str, None]:
+AST_CONSTRUCTS = [ele.upper() for ele in dir(ast) if type(getattr(ast, ele)) == type]
+
+def process_tuple_elt(tuple_or_name, variable_names: Dict[str, None]):
+    assert isinstance(tuple_or_name, (ast.Tuple, ast.Name, ast.Subscript, ast.List, ast.Attribute, ast.Call, ast.Constant)), f"{ast.unparse(tuple_or_name)} is a {type(tuple_or_name).__name__}"
+    if isinstance(tuple_or_name, ast.Name):
+        variable_names[tuple_or_name.id] = None
+    elif isinstance(tuple_or_name, (ast.Tuple, ast.List)):
+        variable_names.update(
+            get_variables_from_targets(tuple_or_name.elts)
+        )
+    elif isinstance(tuple_or_name, ast.Subscript):
+        process_tuple_elt(tuple_or_name.value, variable_names)
+    elif isinstance(tuple_or_name, ast.Attribute):
+        # print(ast.unparse(tuple_or_name), 
+        #       tuple_or_name.attr, 
+        #       ast.unparse(tuple_or_name.value))
+        process_tuple_elt(tuple_or_name.value, variable_names)
+
+    return variable_names
+
+def get_variables_from_targets(targets: List[Union[ast.Tuple, ast.Name, ast.Subscript, ast.List, ast.Attribute, ast.Call, ast.Constant]], return_list: bool=False) -> Dict[str, None]:
     variable_names = {}
-    for tuple_or_name in targets:
-        if isinstance(tuple_or_name, ast.Name):
-            variable_names[tuple_or_name.id] = None
-        elif isinstance(tuple_or_name, (ast.Tuple, ast.List)):
-            variable_names.update(
-                get_variables_from_targets(tuple_or_name.elts)
-            )
+    if isinstance(targets, Iterable):
+        for tuple_or_name in targets:
+            process_tuple_elt(tuple_or_name, variable_names)
+    else: process_tuple_elt(targets, variable_names)
+    if return_list: return list(variable_names.keys())
 
     return variable_names
 
@@ -294,53 +313,146 @@ def extract_returned_variables_from_code(code: str) -> List[str]:
                     return [node.id for node in ast.walk(ast.parse(return_code)) if isinstance(node, ast.Name)]
     return [] 
 
+def process_field(field_value: ast.AST):
+    if isinstance(field_value, ast.Compare):
+        return f"COMPARE(left={get_variables_from_targets(field_value.left, return_list=True)}, ops=[{', '.join([type(op).__name__.upper() for op in field_value.ops])}], comparators={get_variables_from_targets(field_value.comparators, return_list=True)})"
+    else: return get_variables_from_targets(field_value, return_list=True)
+
+class VarNameObfuscater(ast.NodeTransformer):
+    def __init__(self, input_list: List[str]=[],
+                 output_list: List[str]=[], 
+                 exclude_list: List[str]=[]):
+        super().__init__()
+        self.exclude_list = exclude_list+BUILTIN_TYPE_NAMES
+        self.input_list = input_list
+        self.output_list = output_list
+        # print(self.exclude_list)
+        self.obf_mapping = {}
+        self.inp_mapping = {}
+        self.out_mapping = {}
+
+    def visit_Name(self, node: ast.Name) -> Any:
+        if node.id in self.input_list:
+            inp_var = self.inp_mapping.get(node.id)
+            if inp_var is None:
+                inp_var = f"INP{len(self.inp_mapping)}"
+                self.inp_mapping[node.id] = inp_var
+            node.id = inp_var   
+        elif node.id in self.output_list:
+            out_var = self.out_mapping.get(node.id)
+            if out_var is None:
+                out_var = f"OUT{len(self.out_mapping)}"
+                self.out_mapping[node.id] = out_var
+            node.id = out_var             
+        elif node.id not in self.exclude_list:
+            obf_var = self.obf_mapping.get(node.id)
+            if obf_var is None:
+                obf_var = f"VAR{len(self.obf_mapping)}"
+                self.obf_mapping[node.id] = obf_var
+            node.id = obf_var 
+        return super().generic_visit(node)
+
 # single function subprogram decomposer:
 class FunctionSubProgramDecomposer:
     """Class to do Sub program decompositions of
     function defintions."""
     def __init__(self):
         self.init_io = (None, None)
+        self.vocab = AST_CONSTRUCTS + [f"VAR{i}" for i in range(100)] + [f"INP{i}" for i in range(100)] + [f"OUT{i}" for i in range(100)] 
 
     def extract_subgoals_from_subprograms(self, body: List[ast.AST], inputs: List[str], 
                                           outputs: List[str], target: List[str]):
-        next_goal = None
+        first_goal = True
         subgoal_seq = []
         subgoal_inputs = copy.deepcopy(inputs)
         for stmt in body:
             if isinstance(stmt, ast.Assign):
-                if next_goal is not None:
-                    subgoal_seq.append("NEWLINE")
-                subgoal_outputs = [node.id for node in ast.walk(ast.parse(ast.unparse(stmt.targets))) if isinstance(node, ast.Name)]
+                if not(first_goal): subgoal_seq.append("NEWLINE")
+                else: first_goal = False
+                subgoal_outputs = get_variables_from_targets(stmt.targets, return_list=True)
+                ops = [ast.unparse(node.func).split(".")[-1].strip() for node in ast.walk(stmt) if isinstance(node, ast.Call)][::-1]
                 subgoal_seq.append({
                     "I": copy.deepcopy(subgoal_inputs), "O": subgoal_outputs, 
-                    "T": target, "code": ast.unparse(stmt
-                )})
-                subgoal_inputs += subgoal_outputs
+                    "T": target, "ops": ops, "code": ast.unparse(stmt)
+                })
+                for op in subgoal_outputs:
+                    if op not in subgoal_inputs:
+                        subgoal_inputs.append(op)
+            elif isinstance(stmt, (ast.Call, ast.Expr)):
+                if isinstance(stmt, ast.Expr): 
+                    # basically dealing with inplace function calls.
+                    if isinstance(stmt.value, ast.Call):
+                        stmt = stmt.value # skip expressions that are not function calls.
+                    else: continue
+                if not(first_goal): subgoal_seq.append("NEWLINE")
+                else: first_goal = False
+                ops = [ast.unparse(node.func).split(".")[-1].strip() for node in ast.walk(stmt) if isinstance(node, ast.Call)][::-1]
+                subgoal_outputs = get_variables_from_targets(stmt.func, return_list=True)
+                subgoal_seq.append({
+                    "I": copy.deepcopy(subgoal_inputs), "O": subgoal_outputs, 
+                    "T": target, "ops": ops, "code": ast.unparse(stmt)
+                })
             elif "body" in stmt._fields:
                 construct = type(stmt).__name__.upper()
-                subgoal_seq.append(construct)
+                args_string = []
+                for k in stmt._fields:
+                    if k in ["body", "type_comment"]: continue
+                    args_string.append(f"{k}={process_field(getattr(stmt, k))}")
+                args_string = ", ".join(args_string)
+                subgoal_seq.append(construct+"("+args_string+")")
                 subgoal_seq += self.extract_subgoals_from_subprograms(
                     stmt.body, inputs=subgoal_inputs, 
                     outputs=outputs, target=target,
                 )
                 subgoal_seq.append("END"+construct)
+            elif isinstance(stmt, ast.Return):
+                subgoal_seq.append("RETURN")
             else: print(stmt, ast.unparse(stmt))
 
         return subgoal_seq
 
+    def obfuscate_local_vars(self, subgoals: list, I0, O0):
+        obf_mapping = {}
+        for i in range(len(subgoals)):
+            goal = subgoals[i]
+            # print(goal)
+            if not isinstance(goal, dict): continue
+            for k in ["I", "O"]:
+                for j, var in enumerate(goal[k]):
+                    print(var, I0+O0)
+                    if var in I0+O0: continue
+                    obf_var = obf_mapping.get(var)
+                    if obf_var is None:
+                        obf_var = f"VAR{len(obf_mapping)}"
+                        obf_mapping[var] = obf_var
+                    # print(obf_var)
+                    subgoals[i][k][j] = obf_var
+
+        return subgoals, obf_mapping 
+                    
     def __call__(self, code: str):
         I0 = extract_arguments_from_code(code)
         O0 = extract_returned_variables_from_code(code)
         self.init_io = (I0, O0)
-        subgoals = [{"I": I0, "O": [], "T": O0}]
-        funcdef = ast.parse(code).body[0]
+
+        var_obf = VarNameObfuscater(input_list=I0, output_list=O0)
+        obf_code = ast.unparse(var_obf.visit(ast.parse(code)))
+        obf_inputs = [var_obf.inp_mapping[i] for i in I0]
+        obf_outputs = [var_obf.out_mapping[i] for i in O0]
+
+        subgoals = [{"I": obf_inputs, "O": [], "T": obf_outputs, "ops": []}]
+        funcdef = ast.parse(obf_code).body[0]
         assert isinstance(funcdef, ast.FunctionDef), "code is not formatted as a function"
         subgoals += self.extract_subgoals_from_subprograms(
-            funcdef.body, inputs=I0, 
-            outputs=[], target=O0, 
+            funcdef.body, inputs=obf_inputs, 
+            outputs=[], target=obf_outputs, 
         )
-        
-        return subgoals
+        var_mapping = {}
+        var_mapping.update(var_obf.inp_mapping)
+        var_mapping.update(var_obf.obf_mapping)
+        var_mapping.update(var_obf.out_mapping)
+
+        return subgoals, var_mapping # self.obfuscate_local_vars(subgoals, I0, O0)
 # main
 # if __name__ == "__main__":
 #     eg_code = """def predict_user_user(X, W, user_means, eps=1e-12):
