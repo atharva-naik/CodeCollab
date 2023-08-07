@@ -9,6 +9,7 @@ from tqdm import tqdm
 from collections import defaultdict
 from torch.utils.data import Dataset
 from sklearn.model_selection import train_test_split
+from datautils import read_jsonl
 
 random.seed(42)
 
@@ -57,6 +58,48 @@ def squish_duplicates(seq):
         prev = step
 
     return squished_seq
+
+class NextSubProgramPredictionDataset(Dataset):
+    def __init__(self, path: str, dataset_name: str="codesearchnet", split: str="train"):
+        super().__init__()
+        from data.FCDS.code_chunking import FunctionSubProgramDecomposer
+        self.path = path
+        assert split in ["train", "test", "val"]
+        assert dataset_name in ["codesearchnet", "fcds"]
+        self.dataset_name = dataset_name
+        self.func_dec = FunctionSubProgramDecomposer()
+        if dataset_name == "codesearchnet":
+            data = []
+            if split == "train":
+                for i in range(14):
+                    filename = os.path.join(path, "train", f"python_train_{i}.jsonl")
+                    train_data_subset = read_jsonl(filename) 
+                    for j, rec in tqdm(enumerate(train_data_subset), 
+                                       total=len(train_data_subset)):
+                        assert rec["language"] == "python"
+                        subgoals, var_mapping, stream = self.func_dec(rec["code"])
+                        data.append({
+                            "code": rec["code"], "docstring": rec["docstring"], "var_mapping": var_mapping,
+                            "repo": rec["repo"], "path": rec["path"], "func_name": rec["func_name"],
+                            "url": rec["url"], "filename": filename, "index": j, "stream": stream,
+                        })
+            elif split in ["test", "val"]:
+                filename = os.path.join(path, f"{split}.jsonl")
+                for j, rec in enumerate(read_jsonl(filename)):
+                    assert rec["language"] == "python"
+                    subgoals, var_mapping, stream = self.func_dec(rec["code"])
+                    data.append({
+                        "code": rec["code"], "docstring": rec["docstring"], "var_mapping": var_mapping,
+                        "repo": rec["repo"], "path": rec["path"], "func_name": rec["func_name"],
+                        "url": rec["url"], "filename": filename, "index": j, "stream": stream,
+                    })
+        self.data = data
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, i: int):
+        return self.data[i]
 
 class NextStepFromStepAndCodeDataset(Dataset):
     """Predict the next step when the input is a
@@ -200,4 +243,5 @@ def test_nsr():
 # main
 if __name__ == "__main__":
     # test_dataset_class()
-    test_nsr()
+    # test_nsr()
+    dataset = NextSubProgramPredictionDataset("./data/CodeSearchNet")
