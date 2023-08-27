@@ -314,7 +314,7 @@ def modify_complex_return_statements_in_code(code: str) -> str:
         if isinstance(node, ast.FunctionDef):
             for index, stmt in enumerate(node.body):
                 if not isinstance(stmt, ast.Return): continue
-                if not isinstance(stmt.value, (ast.Name, ast.Tuple)):
+                if not isinstance(stmt.value, ast.Name):
                     node.body.insert(index, ast.parse(f"__SIMPLIFIED_RETURN_VARIABLE = {ast.unparse(stmt.value)}"))
                     stmt.value = ast.Name(id="__SIMPLIFIED_RETURN_VARIABLE")
     code = ast.unparse(root)
@@ -332,18 +332,42 @@ def extract_returned_variables_from_code(code: str) -> List[str]:
     return [] 
 
 def process_field(field_value: ast.AST) -> str:
-    if isinstance(field_value, Iterable):
-        return "["+', '.join([process_field(val) for val in field_value]) +"]"
-    elif field_value is None: return "NULL"
+    if isinstance(field_value, list):
+        all_vars = []
+        for val in field_value:
+            output = process_field(val)
+            if isinstance(output, str): output = [output]
+            for var in output:
+                if var in all_vars: continue
+                all_vars.append(var)
+
+        return "["+', '.join(all_vars) +"]"
+    elif isinstance(field_value, ast.Subscript):
+        return f"SUBSCRIPT(slice={process_field(field_value.slice)}, value={process_field(field_value.value)})"
+    elif isinstance(field_value, ast.Name): return field_value.id
+    elif isinstance(field_value, (ast.And, ast.Or, ast.Not, ast.Eq, ast.NotEq, ast.Lt, ast.LtE, ast.Gt, ast.GtE, ast.Is, ast.IsNot, ast.In, ast.NotIn, ast.Invert, ast.UAdd, ast.USub, ast.Add, ast.Sub, ast.Mult, ast.MatMult, ast.Div, ast.Mod, ast.Pow, ast.LShift, ast.RShift, ast.BitOr, ast.BitXor, ast.BitAnd, ast.FloorDiv, ast.Load, ast.Store, ast.Del)):
+        return type(field_value).__name__.upper()
+    elif isinstance(field_value, str): return field_value
+    elif field_value is None: return "NONE"
+    elif isinstance(field_value, ast.arguments):
+        posonlyargs = field_value.posonlyargs if field_value.posonlyargs is not None else []
+        kwonlyargs = field_value.kwonlyargs if field_value.kwonlyargs is not None else []
+        vararg = field_value.vararg.arg if field_value.vararg is not None else None
+        kwarg = field_value.kwarg.arg if field_value.kwarg is not None else None
+        return f"ARGUMENTS(args=[{', '.join([arg.arg for arg in field_value.args])}], kwarg={kwarg}, kwonlyargs=[{', '.join([arg.arg for arg in kwonlyargs])}], posonlyargs=[{', '.join([arg.arg for arg in posonlyargs])}], vararg={vararg})"
     elif isinstance(field_value, ast.Compare):
-        return f"COMPARE(left={get_variables_from_targets(field_value.left, return_list=True)}, ops=[{', '.join([type(op).__name__.upper() for op in field_value.ops])}], comparators={get_variables_from_targets(field_value.comparators, return_list=True)})"
+        # print(field_value.left)
+        return f"COMPARE(left={process_field(field_value.left)}, ops=[{', '.join([type(op).__name__.upper() for op in field_value.ops])}], comparators={process_field(field_value.comparators)})"
+    elif isinstance(field_value, ast.BinOp):
+        return f"BINOP(op={type(field_value.op).__name__.upper()}, left={process_field(field_value.left)}, right={process_field(field_value.right)})"
     elif isinstance(field_value, ast.UnaryOp):
-        return f"UNARYOP(op={field_value.op}, operand={get_variables_from_targets(field_value.operand, return_list=True)})"
-    elif isinstance(field_value, ast.BoolOp):
-        return f"BOOLOP(op={field_value.op}, values={process_field(field_value.values)})"
+        return f"UNARYOP(op={type(field_value.op).__name__.upper()}, operand={process_field(field_value.operand)})"
+    elif isinstance(field_value, ast.BoolOp): # print(field_value.values)
+        # print(ast.unparse(field_value), field_value.op, field_value.values)
+        return f"BOOLOP(op={process_field(field_value.op)}, values={process_field(field_value.values)})"
     elif isinstance(field_value, ast.withitem):
         assert not(isinstance(field_value.optional_vars, Iterable)), f"withitem.optional_vars is an iterable: {field_value}"
-        return f"WITHITEM(context_expr={field_value.context_expr}, optional_vars={field_value.optional_vars}])"
+        return f"WITHITEM(context_expr={process_field(field_value.context_expr)}, optional_vars={field_value.optional_vars.id}])"
     else: return get_variables_from_targets(field_value, return_list=True)
 
 class VarNameObfuscater(ast.NodeTransformer):
@@ -358,15 +382,18 @@ class VarNameObfuscater(ast.NodeTransformer):
         self.calls_collected = False
         # print(self.exclude_list)
         self.obf_mapping = {}
-        self.inp_mapping = {}
-        self.out_mapping = {}
+        self.inp_mapping = {input_list[i]: f"INP{i}" for i in range(len(input_list))}
+        self.out_mapping = {output_list[i]: f"OUT{i}" for i in range(len(output_list))}
+        self.out_mapping.update(self.inp_mapping)
+        self.declared_vars = {}
 
     def custom_visit(self, root: ast.AST):
         self.calls_collected = False
         self.call_names = {}
         root = self.visit(root)
         self.calls_collected = True
-        
+        self.declared_vars = {}
+
         return self.visit(root)
 
     def visit_Call(self, node: ast.Call) -> Any:
@@ -383,14 +410,15 @@ class VarNameObfuscater(ast.NodeTransformer):
                 if inp_var is None:
                     inp_var = f"INP{len(self.inp_mapping)}"
                     self.inp_mapping[node.id] = inp_var
-                node.id = inp_var   
+                node.id = self.inp_mapping[node.id]   
             elif node.id in self.output_list:
-                out_var = self.out_mapping.get(node.id)
-                if out_var is None:
-                    out_var = f"OUT{len(self.out_mapping)}"
-                    self.out_mapping[node.id] = out_var
-                node.id = out_var             
+                node.id = self.out_mapping[node.id]             
             elif node.id not in self.exclude_list:
+                if isinstance(node.ctx, ast.Store):
+                    self.declared_vars[node.id] = True
+                elif isinstance(node.ctx, ast.Load) and not(self.declared_vars.get(node.id, False)):
+                    node.id = "__MODULE_"+node.id
+                    return super().generic_visit(node) 
                 obf_var = self.obf_mapping.get(node.id)
                 if obf_var is None:
                     obf_var = f"VAR{len(self.obf_mapping)}"
@@ -399,7 +427,7 @@ class VarNameObfuscater(ast.NodeTransformer):
 
         return super().generic_visit(node)
 
-def extract_ops_form_statement(stmt: ast.AST) -> List[str]:
+def extract_ops_from_statement(stmt: ast.AST) -> List[str]:
     """extract ops (function calls, list/dict/set comprehensions etc.)"""
     ops = []
     for node in ast.walk(stmt):
@@ -419,93 +447,139 @@ class FunctionSubProgramDecomposer:
     function defintions."""
     def __init__(self):
         self.init_io = (None, None)
-        self.vocab = AST_CONSTRUCTS + [f"VAR{i}" for i in range(100)] + [f"INP{i}" for i in range(100)] + ["ORELSE"] + [f"OUT{i}" for i in range(100)] + ["[STEP]", "[I]", "[O]", "[T]", "[ops]"]
+        self.vocab = AST_CONSTRUCTS + ["END"+const for const in AST_CONSTRUCTS] + [f"VAR{i}" for i in range(100)] + [f"INP{i}" for i in range(100)] + ["ELSE", "FINALLY", "EXCEPT"] + [f"OUT{i}" for i in range(100)] + ["[STEP]", "[I]", "[O]", "[ops]"]#+["[T]"]
 
-    def extract_subgoals(self, body: List[ast.AST], target: List[str]):
+    def update_first_goal(self, first_goal, subgoal_seq) -> bool:
+        if not(first_goal): subgoal_seq.append("NEWLINE")
+        else: first_goal = False
+
+        return first_goal
+
+    def extract_subgoal_inputs(self, STMT) -> List[str]:
+        subgoal_inputs = []
+        for node in ast.walk(STMT):
+            if not isinstance(node, ast.Name): continue 
+            if not(node.id.startswith("VAR") or node.id.startswith("OUT") or node.id.startswith("INP") or node.id.startswith("__MODULE_")): continue
+            if node.id in subgoal_inputs: continue
+            if node.id.startswith("__MODULE_"): 
+                subgoal_inputs.append(node.id[len("__MODULE_"):])
+            else: subgoal_inputs.append(node.id)
+
+        return subgoal_inputs
+
+    def strip_module_tag(self, var_seq: List[str]):
+        for i in range(len(var_seq)):
+            if var_seq[i].startswith("__MODULE_"):
+                var_seq[i] = var_seq[i][len("__MODULE_"):]
+        return var_seq
+
+    def extract_subgoals(self, body: List[ast.AST]):
         first_goal = True
         subgoal_seq = []
         for stmt in body:
-            if isinstance(stmt, (ast.Assign, ast.Expr)):
-                if not(first_goal): subgoal_seq.append("NEWLINE")
-                else: first_goal = False
-                
+            if stmt is None: continue
+            elif isinstance(stmt, (ast.Assign, ast.Expr, ast.AugAssign)):
+                first_goal = self.update_first_goal(first_goal, subgoal_seq)
                 if isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call): 
                     # TODO: # likely an inplace call (test this assumption.)
                     subgoal_outputs = get_variables_from_targets(stmt.value.func, return_list=True)
+                elif isinstance(stmt, ast.AugAssign): subgoal_outputs = get_variables_from_targets(stmt.target, return_list=True)
                 elif isinstance(stmt, ast.Expr): subgoal_outputs = []
                 else: subgoal_outputs = get_variables_from_targets(stmt.targets, return_list=True)
-                ops = extract_ops_form_statement(stmt)
-                
-                subgoal_inputs = []
-                for node in ast.walk(stmt.value):
-                    if not isinstance(node, ast.Name): continue 
-                    if not(node.id.startswith("VAR") or node.id.startswith("OUT") or node.id.startswith("INP")): continue
-                    if node.id in subgoal_inputs: continue
-                    subgoal_inputs.append(node.id)
-                
+                ops = extract_ops_from_statement(stmt)
+                if isinstance(stmt, ast.AugAssign):
+                    ops.append(type(stmt.op).__name__.upper())
+                subgoal_inputs = self.extract_subgoal_inputs(stmt.value)
                 subgoal_seq.append({
-                    "I": subgoal_inputs, "O": subgoal_outputs, 
-                    "T": target, "ops": ops, "code": ast.unparse(stmt)
+                    "I": subgoal_inputs, "O": self.strip_module_tag(subgoal_outputs), 
+                    "ops": ops, "code": ast.unparse(stmt)
                 })
-                
+
+            elif isinstance(stmt, ast.Name):
+                # first_goal = self.update_first_goal(first_goal, subgoal_seq)
+                subgoal_seq.append({
+                    "I": [stmt.id], "O": self.strip_module_tag([stmt.id]), 
+                    "ops": [], "code": ast.unparse(stmt)
+                })
+
+            elif isinstance(stmt, ast.BoolOp):
+                subgoal_seq.append(f"BOOLOP(op={process_field(stmt.op)}, values={process_field(stmt.values)})")
+
+            elif isinstance(stmt, ast.Subscript):
+                subgoal_seq.append(f"SUBSCRIPT(slice={process_field(stmt.slice)}, value={process_field(stmt.value)})")
+
+            elif isinstance(stmt, ast.Global):
+                first_goal = self.update_first_goal(first_goal, subgoal_seq)
+                subgoal_seq.append(f"GLOBAL(names=[{', '.join(stmt.names)}])")
+
             elif isinstance(stmt, ast.Call):
-                if not(first_goal): subgoal_seq.append("NEWLINE")
-                else: first_goal = False 
+                # first_goal = self.update_first_goal(first_goal, subgoal_seq)
                 subgoal_outputs = get_variables_from_targets(stmt.func, return_list=True)
-                ops = extract_ops_form_statement(stmt)
+                ops = extract_ops_from_statement(stmt)
                 
                 subgoal_inputs = []
                 for node in stmt.args:
-                    for subnode in ast.walk(node):
-                        if not isinstance(subnode, ast.Name): continue 
-                        if not(subnode.id.startswith("VAR") or subnode.id.startswith("OUT") or subnode.id.startswith("INP")): continue
-                        if subnode.id in subgoal_inputs: continue
-                        subgoal_inputs.append(subnode.id)
+                    for input_var in self.extract_subgoal_inputs(node):
+                        if input_var in subgoal_inputs: continue
+                        subgoal_inputs.append(input_var)
                 
                 subgoal_seq.append({
-                    "I": subgoal_inputs, "O": subgoal_outputs, 
-                    "T": target, "ops": ops, "code": ast.unparse(stmt)
+                    "I": subgoal_inputs, "O": self.strip_module_tag(subgoal_outputs), 
+                    "ops": ops, "code": ast.unparse(stmt)
                 })
 
-            elif "body" in stmt._fields or isinstance(stmt, ast.Raise):
+            elif (hasattr(stmt, "_fields") and "body" in stmt._fields) or isinstance(stmt, (ast.Raise, ast.Delete)):
+                # first_goal = self.update_first_goal(first_goal, subgoal_seq)
                 construct = type(stmt).__name__.upper()
                 args_string = []
                 for k in stmt._fields:
-                    if k in ["body", "type_comment", "orelse", "exc"]: continue
+                    if k in ["body", "type_comment", "orelse", "exc", "targets", "handlers", "finalbody"]: continue
                     try: args_string.append(f"{k}={process_field(getattr(stmt, k))}")
-                    except AssertionError:
+                    except AssertionError as e:
+                        print(f"\x1b[31;1mAssertionError:\x1b[0m {e}")
                         print(construct)
                         print(k)
                         print(getattr(stmt, k))
-                        exit()
+                        exit("Assert triggered within process_field")
                 # add the construct
                 args_string = ", ".join(args_string)
                 subgoal_seq.append(construct+"("+args_string+")")
 
                 # add the body and other body like fields.
-                for field in ["body", "orelse", "exc"]:
+                for field in ["body", "orelse", "exc", "targets", "handlers", "finalbody"]:
                     if field not in stmt._fields: continue
                     field_value = getattr(stmt, field)
-                    if field in ["exc"]: field_value = [field_value]
+                    if not isinstance(field_value, list) : field_value = [field_value]
                     if len(field_value) == 0: continue
-                    if field_value == "ORELSE":
-                        subgoal_seq.append("ORELSE")
-                    subgoal_seq += self.extract_subgoals(
-                        field_value, target=target,
-                    )
+                    if field == "orelse": subgoal_seq.append("ELSE")
+                    elif field_value == "handlers": subgoal_seq.append("EXCEPT")
+                    elif field_value == "finalbody": subgoal_seq.append("FINALLY")
+                    subgoal_seq += self.extract_subgoals(field_value)
 
                 # end the construct and add it to the vocab if needed.
                 subgoal_seq.append("END"+construct)
                 if "END"+construct not in self.vocab:
                     self.vocab.append("END"+construct)
-
-            elif isinstance(stmt, (ast.Return, ast.Continue)):
-                if not(first_goal): subgoal_seq.append("NEWLINE")
-                else: first_goal = False
+            elif isinstance(stmt, ast.Import):
+                first_goal = self.update_first_goal(first_goal, subgoal_seq)
+                # print(f"IMPORT(alias=[{', '.join([f'ALIAS(name={alias.name}, asname={alias.asname})' for alias in stmt.names])}])")
+                return f"IMPORT(alias=[{', '.join([f'ALIAS(name={alias.name}, asname={alias.asname})' for alias in stmt.names])}])"
+            elif isinstance(stmt, ast.ImportFrom):
+                first_goal = self.update_first_goal(first_goal, subgoal_seq)
+                # print(f"IMPORTFROM(module={stmt.module}, alias=[{', '.join([f'ALIAS(name={alias.name}, asname={alias.asname})' for alias in stmt.names])}], level={stmt.level})")
+                return f"IMPORTFROM(module={stmt.module}, alias=[{', '.join([f'ALIAS(name={alias.name}, asname={alias.asname})' for alias in stmt.names])}], level={stmt.level})"
+            elif isinstance(stmt, ast.Assert):
+                first_goal = self.update_first_goal(first_goal, subgoal_seq)
+                subgoal_seq.append(f"ASSERT(test={process_field(stmt.test)}, msg={process_field(stmt.msg)})")
+            elif isinstance(stmt, (ast.Return, ast.Continue, ast.Pass, ast.Break, ast.Del, ast.Load, ast.Store)):
+                first_goal = self.update_first_goal(first_goal, subgoal_seq)
                 subgoal_seq.append(type(stmt).__name__.upper())
             else: 
+                print(f"Unhandled consruct of type: {type(stmt).__name__.upper()}")
                 print(stmt, ast.unparse(stmt))
-                exit("Aborting! Decide how to handle this construct")
+                for field in stmt._fields:
+                    print(field+":", getattr(stmt, field))
+                raise NotImplementedError
 
         return subgoal_seq
 
@@ -519,7 +593,7 @@ class FunctionSubProgramDecomposer:
                 if not(first_goal): subgoal_seq.append("NEWLINE")
                 else: first_goal = False
                 subgoal_outputs = get_variables_from_targets(stmt.targets, return_list=True)
-                ops = extract_ops_form_statement(stmt)
+                ops = extract_ops_from_statement(stmt)
                 _subgoal_inputs = []
                 for node in ast.walk(stmt.value):
                     if not isinstance(node, ast.Name): continue 
@@ -527,7 +601,7 @@ class FunctionSubProgramDecomposer:
                     if node.id in _subgoal_inputs: continue
                     _subgoal_inputs.append(node.id)
                 subgoal_seq.append({
-                    "I": _subgoal_inputs, "O": subgoal_outputs, 
+                    "I": _subgoal_inputs, "O": self.strip_module_tag(subgoal_outputs), 
                     # "I": copy.deepcopy(subgoal_inputs), "O": subgoal_outputs, 
                     "T": target, "ops": ops, "code": ast.unparse(stmt)
                 })
@@ -545,7 +619,7 @@ class FunctionSubProgramDecomposer:
                 ops = [ast.unparse(node.func).split(".")[-1].strip() for node in ast.walk(stmt) if isinstance(node, ast.Call)][::-1]
                 subgoal_outputs = get_variables_from_targets(stmt.func, return_list=True)
                 subgoal_seq.append({
-                    "I": copy.deepcopy(subgoal_inputs), "O": subgoal_outputs, 
+                    "I": copy.deepcopy(subgoal_inputs), "O": self.strip_module_tag(subgoal_outputs), 
                     "T": target, "ops": ops, "code": ast.unparse(stmt)
                 })
             elif "body" in stmt._fields:
@@ -571,8 +645,6 @@ class FunctionSubProgramDecomposer:
                     outputs=outputs, target=target,
                 )
                 subgoal_seq.append("END"+construct)
-                if "END"+construct not in self.vocab:
-                    self.vocab.append("END"+construct)
 
             elif isinstance(stmt, (ast.Return, ast.Continue)):
                 if not(first_goal): subgoal_seq.append("NEWLINE")
@@ -610,7 +682,7 @@ class FunctionSubProgramDecomposer:
                 stream.append(
                     f"[I] {' '.join(subgoal['I']).strip()}".strip() + " " + \
                     f"[O] {' '.join(subgoal['O']).strip()}".strip() + " " + \
-                    f"[T] {' '.join(subgoal['T']).strip()}".strip() + " " + \
+                    # f"[T] {' '.join(subgoal['T']).strip()}".strip() + " " + \
                     f"[ops] {' '.join(subgoal['ops'])}".strip())
             elif isinstance(subgoal, str):
                 stream.append(subgoal)
@@ -632,7 +704,8 @@ class FunctionSubProgramDecomposer:
 
         return ast.unparse(root)
 
-    def __call__(self, code: str):
+    def __call__(self, code: str, remove_docstring: bool=True):
+        if remove_docstring: code = remove_comments_and_docstrings(code)
         code = modify_complex_return_statements_in_code(code)
         I0 = extract_arguments_from_code(code)
         O0 = extract_returned_variables_from_code(code)
@@ -640,7 +713,8 @@ class FunctionSubProgramDecomposer:
 
         var_obf = VarNameObfuscater(input_list=I0, output_list=O0)
         obf_code = ast.unparse(var_obf.custom_visit(ast.parse(code)))
-        # print(O0)
+        # print(obf_code)
+        # print(var_obf.inp_mapping, var_obf.out_mapping)
         obf_inputs = [var_obf.inp_mapping[i] for i in I0]
         obf_outputs = [var_obf.out_mapping[i] for i in O0]
 
@@ -652,16 +726,18 @@ class FunctionSubProgramDecomposer:
         # type_annotated_code = self.add_type_annotations(code, input_annotations)
 
         # print(type_annotated_code)
-        subgoals = [{"I": obf_inputs, "O": [], "T": obf_outputs, "ops": []}]
+        subgoals = [{"I": obf_inputs, "O": obf_outputs, "ops": ["FUNCDEF"]}]
+
         funcdef = ast.parse(obf_code).body[0]
         assert isinstance(funcdef, ast.FunctionDef), "code is not formatted as a function"
         # subgoals += self.extract_subgoals_from_subprograms(
         #     funcdef.body, inputs=obf_inputs, 
         #     outputs=[], target=obf_outputs, 
         # )
-        subgoals += self.extract_subgoals(
-            funcdef.body, target=obf_outputs, 
-        )
+        try: subgoals += self.extract_subgoals(funcdef.body)
+        except NotImplementedError:
+            print(obf_code)
+            exit("Aborting! Decide how to handle this construct")
         var_mapping = {}
         var_mapping.update(var_obf.inp_mapping)
         var_mapping.update(var_obf.obf_mapping)
